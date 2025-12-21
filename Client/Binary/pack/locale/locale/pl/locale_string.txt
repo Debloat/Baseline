@@ -1,0 +1,1810 @@
+1	Wszyscy ludzie zostaną przeniesieni do miasta.
+2	Ta rzecz nie istnieje.
+3	Skrzynia niespodziewanie wybuchła! Straciłeś Punkty Życia.
+4	[Gildia] Sprzedaż obszaru gildii nie powiódł się.
+5	[Gildia] Nie można sprzedać obszaru gildii, ponieważ w banku gildii jest za mało Yang.
+6	[Gildia] Nie możesz opuścić gildii, gdy ankieta jest w toku.
+7	[Gildia] Gracz jest offline lub na innej mapie.
+8	[Gildia] Nie możesz wyznaczać wojowników, podczas gdy gildia prowadzi wojnę.
+9	[Gildia] Nie możesz rozpocząć innej ankiety, podczas gdy ta ankieta jest w toku.
+10	[Gildia] Podczas walki nie możesz przeprowadzić tej akcji.
+11	[Gildia] Ulepszenie jest niemożliwe, ponieważ bank gildii jest pełny.
+12	[Gildia] Nie możesz używać magazynu gildii, podczas gdy ankieta jest w toku.
+13	Jeśli będziesz wdychać zielony dym ze skrzyni, rozprzestrzenisz truciznę w swoim ciele!
+14	[Gildia] Nie możesz wykonać tej akcji, podczas gdy otwarty jest magazyn gildii.
+15	[Gildia] Podczas walki nie możesz zmienić lidera gildii.
+16	[Gildia] Gracz {} użył {}.
+17	[Gildia] Nie masz prawa używać umiejętności gildii.
+18	[Gildia] Znajdujesz się w trybie obserwatora, ponieważ osiągnąłeś swój limit ożywień.
+19	[Gildia] Sprawdź członków i lidera.
+20	[Gildia] Sprawdź wrogich członków i lidera.
+21	[Gildia] Kilku członków jest offline lub na innej mapie.
+22	[Gildia] Kilku członków wrogiej gildii jest offline lub na innej mapie.
+23	[Gildia] Za mało uczestników jest online.
+24	Otrzymano {}, {} sztuk.
+25	[Gildia] Podczas walki nie możesz wykonać tej akcji.
+26	[Gildia] Możesz użyć za 10 sek.
+27	[Gildia] Twoja postać musi znajdować się min. na 40 poziomie, by można było mu przekazać gildię.
+28	[Gildia] Wygrał: {}
+29	[Gildia] Remis
+30	[Gildia] Podczas walki nie możesz nikogo usunąć z gildii.
+31	[Gildia] Nie możesz rozpocząć ankiety, aby usunąć lidera gildii.
+32	[Gildia] Nie możesz rozpocząć ankiety, aby usunąć siebie z gildii.
+33	[Gildia] Do przekazania gildii potrzebujesz Pierścień Zastępstwa.
+34	[Gildia] Za mało miejsca w banku gildii.
+35	Ze skrzyni wypadł następujący przedmiot: {}.
+36	[Gildia] Po użyciu magazynu gildii musisz odczekać co najmniej 12 godzin, by móc opuścić gildię.
+37	Gildia [{}]! Pojawił się ostateczny cel. Zniszcz wszystkie cele i wygraj tę walkę!
+38	[Gildia] Walka kończy się za 5 min.
+39	[Gildia] Walka kończy się za 1 min.
+40	[Gildia] Nie ma gildii z naborem do gildii.
+41	[Gildia] Jeszcze żadna z gildii nie pokonała smoka.
+42	[Gildia] Zmiana listy najlepszych
+43	[Gildia] Rozpoczyna się walka z Królową Smoków Meley.
+44	[Gildia] Otwiera się brama do Schronienia Meley. Maksymalny czas pobytu wynosi jedną godzinę.
+45	[Gildia] Pokonaliście Królową Smoków Meley!
+46	Ten klucz chyba nie pasuje do zamka.
+47	[Gildia] Potrzebny czas: {} min. {} sek.
+48	[Gildia] Dla waszego bezpieczeństwa zostaniecie za 10 min. teleportowani ze Schronienia.
+49	[Gildia] Czas minął.
+50	[Gildia] Brama do Schronienia ponownie się zamyka.
+51	[Gildia] Dla waszego bezpieczeństwa zostaniecie za 1 min. teleportowani ze Schronienia.
+52	[Gildia] Schronienie zostanie zamknięte za {} min.
+53	[Gildia] Przerwaliście walkę w Schronieniu Meley.
+54	[Gildia] Nie możesz wypowiedzieć wojny gildii, podczas gdy walczysz w Smoczej Jamie.
+55	[Gildia] Wroga gildia aktualnie rozgrywa walkę w Smoczej Jamie.
+56	Nic nie dostałeś.
+57	[Gildia] Rejestracja do Schronienia Meley została pomyślnie zakończona.
+58	[Gildia] Odwiedź smoczego strażnika Dolnarra, aby móc wejść do Smoczej Jamy.
+59	Rozpoczyna się Letni Event! Odwiedź Summer w mieście. Zapatrzy was ona w przepyszne napoje orzeźwiające.
+60	Letni Event wkrótce się kończy. Summer będzie jeszcze przez 7 dni zaopatrywać miasto w przepyszne napoje orzeźwiające.
+61	Ten efekt jest już aktywny.
+62	[Gildia] Tylko co 10 sek. możesz dokonywać transakcji.
+63	[Gildia] Aktualnie inny członek gildii korzysta z banku gildii.
+64	[Gildia] Gildia [{}] przegrała walkę z [{}].
+65	Osiągnięto limit konta. Nie możesz otworzyć tej skrzyni.
+66	[Gildia] Twoja gildia nie posiada na koncie wystarczającej ilości Yang. Wpłać więcej yang i spróbuj ponownie.
+67	Masz za mało Yang, aby móc użyć tego przedmiotu.
+68	[Gildia] Obiekt został przesunięty.
+69	[Gildia] Nie możesz użyć tego logo gildii. Spróbuj ponownie.
+70	[Transmutacja] Nie możesz założyć tego przedmiotu transmutacji, ponieważ przeznaczony jest on dla innej płci.
+71	[Transmutacja] Nie możesz założyć tego przedmiotu transmutacji z powodu odmiennej klasy.
+72	[Karta potwora] Na poziomie misji {} pokonałeś potwora {}.
+73	[Karta potwora] Zakończyłeś misję potwora. Odbierz teraz swoją kartę potwora.
+74	[Karta potwora] Masz za mało miejsca w swoim ekwipunku.
+75	[Karta potwora] [{}] Awans na wyższy poziom zakończony.
+76	[Karta potwora] Możesz teraz zobaczyć animacje ruchu potwora.
+77	[Karta potwora] Możesz teraz przemienić się w potwora.
+78	Obniżyłeś swój poziom umiejętności.
+79	[Karta potwora] Możesz teraz teleportować się w pobliże potwora.
+80	[Gildia] Jako wojownik nie możesz obserwować własnej wojny gildii.
+81	[Gildia] Gildia ustaliła minimalny poziom dla podań do gildii (Minimalny poziom: {}).
+82	[Gildia] Tylko co 10 sek. możesz dokonywać transakcji.
+83	[Gildia] Gildia {} kupiła obszar.
+84	[Gildia] Na innym kanale trwa walka Świątyni Smoka.
+85	[Gildia] Logo serwera znajduje się w konserwacji.
+86	[Gildia] Logo serwera znajduje się w konserwacji.
+87	[Gildia] Ten teren należy do innego gracza.
+88	Nie możesz obniżyć swojego poziomu umiejętności.
+89	Aby wejść do Strefy Walki, musisz posiadać poziom {}.
+90	Z tej mapy nie możesz wejść do Strefy Walki.
+91	Musisz zamknąć wszystkie okna, by móc wejść do Strefy Walki lub opuścić ją.
+92	Gdy jesteś martwy, nie możesz opuścić Strefy Walki.
+93	Wchodzisz do Strefy Walki. Proszę poczekaj.
+94	Opuszczasz Strefę Walki. Proszę poczekaj.
+95	Następne wejście możliwe jest za {} min.
+96	Następne wejście możliwe jest za {} sek.
+97	Nie możesz użyć tutaj tego przedmiotu.
+98	Nie możesz użyć tutaj tego przedmiotu.
+99	Ten efekt jest już aktywny.
+100	Aby natychmiast zostać wskrzeszonym, potrzebujesz przedmiot do reinkarnacji.
+101	Strefa Walki została otwarta.
+102	Strefa Walki została zamknięta.
+103	Strefa Walki zostanie otwarta za {} min.
+104	Strefa Walki zostanie zamknięta za {} min.
+105	Trwa event i dlatego otrzymasz w tym czasie podwójne punkty.
+106	Zakończył się event w Strefie Walki.
+107	Zgłosiłeś swój odwrót i możesz opuścić Strefę Walki za {} min.
+108	Gracz zgłosił swój odwrót. Zabij go, aby otrzymać więcej punktów!
+109	Twoje zgłoszenie odwrotu zostało anulowane.
+110	Masz za mało miejsca w ekwipunku, aby przyjąć nagrodę.
+111	Ten przedmiot może być użyty tylko w kafejce internetowej.
+112	Twoje zgłoszenie odwrotu jest aktywne.
+113	Aktualnie nie można wejść do Strefy Walki.
+114	Wspaniale! Zająłeś {} miejsce w rankingu Strefy Walki. W nagrodę otrzymujesz to wyjątkowe odznaczenie.
+115	Aktualnie posiadasz {} pkt. Twoja łączna liczba punktów: {}.
+116	Nie możesz używać tego przedmiotu, podczas swojego odwrotu ze Strefy Walki.
+117	Nie możesz wypowiedzieć wojny, przebywając w Strefie Walki.
+118	Na tej mapie nie możesz przeprowadzić tej akcji.
+119	Pozostała ilość: {}
+120	[Gildia] Gildia osiągnęła maksymalną ilość swojego majątku.
+121	[Gildia] Nie możesz wypłacić Yang, ponieważ posiadasz ponad 2 mld Yang.
+122	To jest powyżej limitu.
+123	[Gildia] Nie możesz wypłacić Yang, gdy otwarte jest jeszcze inne okno.
+124	Deklaracja Wojny Gildii kończy się za 3 min.
+125	{} sek. do wejścia do Strefy Walki.
+126	{} sek. do opuszczenia Strefy Walki.
+127	Straciłeś {}pkt – pozostały czas: {}
+128	Masz za mało miejsca w swoim ekwipunku.
+129	Za tego gracza nie otrzymasz żadnych punktów.
+130	Zgłosiłeś swój odwrót i możesz opuścić Strefę Walki za {} sek.
+131	Rozpoczął się event!
+132	Użyto Księżycowego Torcika lub Nasionka.
+133	Aby kontynuować, usuń gracza {} ze swojej Listy Przyjaciół.
+134	Gracz {} zostanie natychmiast zablokowany.
+135	Gracz {} nie jest już zablokowany.
+136	Gracz {} jest już przez ciebie zablokowany.
+137	Nie możesz blokować swojego małżonka/swoją małżonkę.
+138	Odblokuj {}, aby kontynuować.
+139	Zablokował cię gracz {}.
+140	Pojawił się potwór aktualnego eventu.
+141	Masz za mało flag jubileuszowych.
+142	Rozpoczął się event jubileuszowy!
+143	Nie możesz nosić obrączki jeśli nie jesteś w związku małżeńskim.
+144	Event jubileuszowy kończy się za {} min.
+145	Nie możesz użyć tego przedmiotu, gdy masz założony inny kostium.
+146	Nie możesz założyć tego przedmiotu, jeśli masz założoną suknię ślubną lub smoking.
+147	Nie możesz wykonać tej akcji, jeśli masz założony ten przedmiot.
+148	[Gildia] Nie możesz wpłacić Yang na konto gildii lub wypłacić z konta gildii, jeśli jest otwarte inne okno.
+149	[Gildia] Podczas wpłacania Yang na konto gildii lub wypłacania z konta gildii, nie możesz przeprowadzić tej akcji.
+150	[Gildia] Okno 'Wpłać Yang' lub 'Wypłać Yang' jest otwarte.
+151	[Gildia] Nie możesz wpłacić Yang na konto gildii lub wypłacić z konta gildii, jeśli przywołałeś/aś zwierzaka.
+152	{} pojawia się tutaj: {}
+153	Dolina Seungryong
+154	Nie możesz użyć wykrawacza zdarzeń z tej pozycji.
+155	Góra Sohan
+156	Pustynia Yongbi
+157	Doyyumhwan
+158	Rozpoczął się event Ramadanu!
+159	Event Ramadanu jest zakończony.
+160	Nie możesz zmienić kanału.
+161	Poczekaj chwilkę. Kanał jest zmieniany.
+162	Ten przedmiot nie może być absorbowany.
+163	Nie możesz transmutować tego przedmiotu.
+164	Nie można zastosować "Zaczarowania Przedmiotu" na tym przedmiocie.
+165	Wykrywacz zdarzeń zniknął w rozbłysku tajemniczego światła.
+166	Nie można zastosować "Wzmocnienia Przedmiotu" na tym przedmiocie.
+167	Tylko na tej samej mapie można handlować przedmiotami.
+168	Aktualnie nie można połączyć się z kanałem. Spróbuj ponownie później!
+169	[Grupa] Nie możesz wykonać tego procesu, gdy aktywowane jest wyszukiwanie grupy.
+170	[Gaya] Masz za mało Kamyków.
+171	[Gaya] Masz za mało Yang, aby szlifować Kamyki.
+172	[Gaya] Posiadasz już maksymalną ilość Gaya.
+173	[Gaya] Szlifowanie powiodło się.
+174	[Gaya] Szlifowanie nie powiodło się.
+175	[Gaya] Lista przedmiotów została zmieniona.
+176	Wykrywacz eventów zniknął.
+177	[Gaya] Masz za mało Gaya.
+178	[Gaya] Nie możesz kupić tego przedmiotu.
+179	[Gaya] Twój ekwipunek jest pełny.
+180	[Gaya] Masz za mało 'Reset Sklepu Gaya'.
+181	[Gaya] Musisz najpierw otworzyć Sklep Gaya.
+182	[Gaya] Nie możesz dodać więcej slotów do Sklepu Gaya.
+183	[Gaya] Masz za mało {}. Potrzebujesz {} więcej, by otworzyć kolejne sloty.
+184	[Gaya] Sklep Gaya jest aktualnie niedostępny.
+185	[Gaya] Sklep Gaya jest już otwarty.
+186	[Gaya] Po zamknięciu innych okien, możesz otworzyć Sklep Gaya.
+187	Wykrywacz Kamieni Metin nie funkcjonuje w instancjach.
+188	[Grupa] Walka rozpoczęta.
+189	[Grupa] Macie do dyspozycji 1 godzinę czasu, by przejść loch.
+190	[Grupa] Wykonaliście zadanie na piątkę!
+191	[Grupa] Czas do teleportacji: {} min. {} sek.
+192	[Grupa] Za 10 minut zostaniecie teleportowani z lochu.
+193	[Grupa] Jesteście teraz zarejestrowani do Schronienia Meley.
+194	[Grupa] Aby wejść, musicie zgłosić się do odpowiedniego NPC.
+195	[Grupa] Zrezygnowaliście.
+196	[Grupa] Za minutę zostaniesz przeniesiony do miasta.
+197	Aby odebrać nagrodę, idź do {}.
+198	Wykrywacz Kamieni Metin zniknął wraz z tajemniczym światłem.
+199	[Grupa] Tworzona jest lista najlepszych grup w Schronieniu Meley.
+200	[Grupa] Aktualnie nie możesz opuścić lochu.
+201	[Grupa] Twój czas w lochu minął.
+202	[Grupa] Opuściłeś loch.
+203	[Grupa] Loch zostanie zamknięty za {} min.
+204	Otrzymaj: {} - {}
+205	Nie możesz otworzyć żadnego sklepu, dopóki jesteś skamieniały.
+206	Nie możesz użyć żadnego przedmiotu, dopóki jesteś skamieniały.
+207	Polecenie to można wykonać tylko w Świątyni Zodiaku.
+208	Masz za mało insygniów.
+209	Wykrywacz Kamieni Metin zniknął.
+210	Nie udało ci się wykonać wszystkich zadań.
+211	Potrzebujesz więcej skarbów Aventurin oraz Aureolin, aby otrzymać nagrodę.
+212	Udało ci się ożywić gracza {}.
+213	Zostałeś ożywiony przez: {}
+214	Masz za mało przedmiotów, aby ożywić.
+215	Zostałeś ożywiony.
+216	Nie możesz użyć tego w tym miejsce.
+217	Aktualnie nie możesz tego użyć.
+218	Gracz został {} ożywiony.
+219	Pierwszy poziom oczyszczony. Wróć do Mnicha Milbona.
+220	Wygrałeś {} przedmiotów.
+221	W muszli znajdujesz jedynie zwyczajny Kawałek Kamienia.
+222	Wszyscy członkowie skamienieli. Misja zakończyła się porażką.
+223	Wszystkie poziomy oczyszczone. Zostaniecie teraz teleportowani na poziom bonusowy.
+224	Misja zakończona. Po naciśnięciu przez lidera grupy przycisku, zostaniecie bezpośrednio teleportowani do poziomu {}.
+225	Misja nie została wykonana.
+226	Zlikwidowani! Jeśli nikt nie zostanie ożywiony w przeciągu minuty, skończy się wasz czas w lochu.
+227	Czas się skończył.
+228	Bramy tej świątyni otworzą się w innym dniu.
+229	Wszyscy członkowie grupy muszą znajdować się na tej samej mapie, aby wejść.
+230	Nie jesteś liderem grupy.
+231	Liczba znajdujących się w okolicy Świątyń Zodiaku: {}. Użyj odpowiedniego polecenia, by teleportować się do jednej z nich (1 - {}).
+232	Muszla zniknęła.
+233	Na tej mapie nie ma Świątyni Zodiaku.
+234	Zniszcz Kamienie Metin.
+235	Poziom bonusowy: zniszcz Kamienie Metin
+236	Zniszcz Kamienie Metin.
+237	Zniszcz Kamienie Metin.
+238	Pokonaj 5 bossów Zodiaku.
+239	Poziom bonusowy: zakupy u handlarza możecie robić tylko przez 5 minut, by powiększyć wasze zapasy.
+240	Zniszcz Kamienie Metin.
+241	Zniszcz Kamienie Metin.
+242	Zniszcz wszystkie Kamienie Metin.
+243	W muszli jest Biała Perła.
+244	Zniszcz wszystkie Kamienie Metin i pokonaj bossa Zodiaku.
+245	Zniszcz wszystkie Kamienie Metin.
+246	Pokonaj wszystkie potwory.
+247	Pokonaj wszystkie potwory.
+248	Pokonaj potwory.
+249	Pokonaj potwory.
+250	Pokonaj wszystkie potwory.
+251	Niestety nie udało się wam się dotrzeć do poziomu bonusowego.
+252	Pokonaj wszystkich bossów Zodiaku.
+253	W muszli jest Niebieska Perła.
+254	Pokonaj bossa Zodiaku.
+255	Pokonaj bossa Zodiaku.
+256	Pokonaj bossa Zodiaku, nie ginąc w walce.
+257	Pokonaj wszystkie potwory, nie ginąc w walce.
+258	Czas się skończył. Spróbuj następnym razem swojego szczęścia.
+259	Pokonaj bossa Zodiaku.
+260	Pokonaj bossa Zodiaku.
+261	Poziom bonusowy: zniszcz kamień Metin.
+262	Zniszcz Kamienie Metin. Jeśli odniesiesz sukces, otrzymasz buffa bonusowego.
+263	Masz jeszcze {} min. czasu, by zarejestrować się do turnieju PvP!
+264	W muszli jest Krwawa Perła.
+265	Nie możesz wkroczyć na arenę walki turnieju PvP.
+266	Nie możesz się transformować podczas turnieju PvP.
+267	Jeszcze {} do rozpoczęcia walki.
+268	Walka rozpoczęta.
+269	Zwycięzca: {} / Pokonany: {}
+270	Gracz {} opuścił arenę. Gracz {} wygrał.
+271	Rejestracja do turnieju PvP została zakończona.
+272	Turniej PvP rozpocznie się za {} min.
+273	Finał
+274	Nie jest łatwo zrozumieć tę książkę.
+275	Półfinał
+276	{}. runda
+277	Brak zwycięzcy
+278	Zakończył się turniej PvP.
+279	Zwycięzca turnieju to {}!
+280	Biorący udział: {}
+281	Pozostali uczestnicy: {}
+282	Aktualni uczestnicy: {}
+283	Zarejestrowałeś się do turnieju PvP.
+284	Ta książka Ci nie pomoże.
+285	Nie zarejestrowałeś się do turnieju PvP.
+286	Polecenie to można wykonać tylko na mapie turnieju PvP.
+287	Rozpoczął się Yutnori!
+288	Zbieraj pnie brzozy, rób z nich plansze do gry Yutnori i zagraj w ciekawą minigrę.
+289	Czekają na ciebie fantastyczne nagrody!
+290	Gra Yutnori zakończona.
+291	Aby odebrać nagrodę, udaj się do stołu Yutnori.
+292	Masz za mało wymaganych przedmiotów, aby grać w Yutnori.
+293	[System dusz] Użyj {}, aby otrzymać efekt.
+294	[System dusz] {} posiada już najwyższy poziom.
+295	Musisz być na 30 poziomie, aby zrozumieć tą Księge.
+296	[System dusz] Dusza jest aktywna.
+297	While using upgrading system, you cannot feed your pet.
+298	[Event: Nagonka na Potwory] Na mapie {} zaobserwowano {}.
+299	Kraj Jayang
+300	Kraj Bokjung
+301	Kraj Bakra
+302	Świątynia Hwang
+303	Kuahlo Dong (Loch Pająków)
+304	Loch Pająków 2
+305	Musisz być na 50 poziomie, aby zrozumieć tą Księgę.
+306	Klif Gautama
+307	Nefrytowa Zatoka
+308	Gromiste Góry
+309	Zaklęty Las
+310	Grota Wygnańców
+311	Grota Wygnańców 2
+312	Nie możesz wejść, jeśli siedzisz na wierzchowcu.
+313	Nie można tego użyć na założone przedmioty.
+314	Czerwony Las
+315	Wężowe Pole
+316	Nie możesz wytrenować więcej kombinacji.
+317	Potrzebujesz jeszcze: {}x{}
+318	Event został zakończony. Nie możesz już używać tego przedmiotu.
+319	Maksymalny poziom został już osiągnięty.
+320	Sukces! Efekt kwiatu {} został ulepszony do poziomu {}.
+321	Porażka! Ulepszenie efektu kwiatu {} na poziom {} nie powiodło się.
+322	Sukces! Efekt kwiatu {} jest aktywny.
+323	Porażka! Zmiana na efekt kwiatu {} nie powidła się.
+324	Sukces! Efekt kwiatu {} jest teraz aktywny.
+325	Porażka! Efekt kwiatu {} nie został aktywowany.
+326	Rozpoczął się event Dzieci Kwiaty.
+327	Gildia {} przejęła flagę Gildii {}!
+328	Już mówisz płynnie tym językiem.
+329	Zakończono event Dzieci Kwiaty.
+330	Zanim ponownie otworzysz skrzynkę pocztową, musisz krótko poczekać.
+331	Aby otworzyć skrzynkę pocztową, musisz zamknąć wszystkie inne okna.
+332	Twoja skrzynka pocztowa jest pełna.
+333	Opróżnij swoją skrzynkę pocztową, aby móc otrzymywać nowe wiadomości.
+334	Obecnie nie możesz używać.
+335	[Gildia] Umiejętności gildii nie możesz używać w polu bitwy wojny gildii.
+336	[Gildia] Możesz używać tylko w wojnie gildii.
+337	Otrzymujesz {} Won.
+338	[Gildia] Wpłacono: {} Yang
+339	Nie możesz już udoskonalić tej Umiejętności.
+340	[Gildia] Zakup został anulowany, ponieważ posiadasz już obszar gildii.
+341	[Gildia] Zakup został anulowany, ponieważ twoja gildia posiada już obszar gildii.
+342	[Schwytaj Króla] Masz za mało punktów, by otrzymać nagrodę.
+343	[Schwytaj Króla] Zagraj teraz rundę "Schwytaj Króla"!
+344	[Event Okey] Pokonuj potwory, zdobywaj katy i zagraj w rundę Okeya.
+345	[Event Okey] Czekają na ciebie drogocenne nagrody!
+346	[Schwytaj Króla] "Schwytaj Króla" zakończyło się.
+348	[Schwytaj Króla] Nie posiadasz kompletnej talii królewskiej lub masz za mało Yang.
+349	[Schwytaj Króla] Liczba punktów zdobytych przez gracza {} w "Schwytaj Króla": {}.
+350	Musisz podnieść swój poziom, aby zrozumieć tę książkę.
+351	Eliksir Poszukiwacza został już użyty.
+352	Loch "Obrona Statku" jest gotowy. Rybak wpuści was na pokład.
+353	Atakują nas potwory morskie! Przygotujcie się do walki!
+354	Ponownie atakują! Bądźcie gotowi do walki!
+355	Ląd na horyzoncie! Udało wam się obronić maszt, a po długiej podróży dotarliście do nowego kontynentu. Idźcie dalej do portalu.
+356	Wasz maszt jest zniszczony. Walczyliście dzielnie, jednak ta bitwa jest przegrana.
+357	Musicie poddać statek za {} sek.
+358	Musicie poddać statek za {} min.
+359	Bitwa morska zacznie się za {} sek.
+360	Książka jest za trudna do nauki.
+361	Pospieszcie się! Macie tylko {} min., by przedostać się przez portal na kontynent.
+362	Musicie opuścić statek, ponieważ nie rozpoczęliście bitwy morskiej.
+363	Jeśli nie rozpoczniecie bitwy morskiej w przeciągu 1 minuty, będziecie musieli opuścić statek.
+364	Pozostałe PŻ {}: {}%%
+365	SOS! Maszt został zniszczony, a wasz statek tonie. Zostaniecie teleportowani do Przylądku Smoczego Ognia.
+366	{}. Fala: brońcie przez {} sek. {}.
+367	{}. Fala: podczas obrony {}u, pokonajcie: {}.
+368	Udało wam się obronić maszt. Znakomicie! Przygotujcie się na następną falę.
+369	Następna fala rozpocznie się za {} sek.
+370	{}
+371	Nie możesz już trenować z tą książką.
+372	Możesz wycofać się z bitwy dopiero za {} sek.
+373	W danej chwili nie możesz wykonać tej akcji.
+374	Po otwarciu skrzynki pocztowej musisz odczekać {}, zanim zmienisz kanał lub się teleportujesz.
+375	Podatki ustawione na {}%%.
+376	Trening Jeździectwa jest dostępny dopiero od poziomu 50.
+377	Uniknąłeś klątwy Złego Ducha przy pomocy Zwoju Egzorcyzmu.
+378	Nie możesz czytać więcej przewodników Jeździectwa.
+379	Otrzymałeś punkt jeździectwa po przeczytaniu przewodnika jeździectwa.
+380	Możesz podnieść swoje umiejętności jeździeckie poprzez otrzymany punkt.
+381	Flaga Gildii {} została ukradziona przez gracza {}.
+382	Nie zrozumiałeś Przewodnika Jeździectwa.
+383	Twój umysł jest czysty. Możesz się skoncentrować.
+384	Twoja Ranga została zwiększona o {} punktów.
+385	Nie możesz pofarbować lub wybielić swojej aktualnej fryzury.
+386	Musisz osiągnąć poziom {}, aby móc ponownie zmienić kolor fryzury.
+387	Ten przedmiot może zostać otwarty tylko przez inną płeć.
+388	Nie możesz tego użyć z Twojego aktualnego położenia.
+389	Jesteś gotowy do przeniesienia, więc nie możesz skorzystać ze zwoju powrotu.
+390	Wróciłeś do punktu wyjścia.
+391	{} nie może być użyty w lochu.
+392	[Misja] Odebrałeś już swoją nagrodę.
+393	the
+394	the
+395	Nie posiadasz Odłamu Kamienia do usuwania.
+396	Nie możesz zmienić ulepszenia tego Przedmiotu.
+397	Nie masz ulepszenia, które mógłbyś zmienić.
+398	Możesz tego dokonać tylko w {} minut po ulepszeniu. (Zostało {} minut)
+399	Zmieniłeś ulepszenie.
+400	Ulepszenie dodane pomyślnie.
+401	Ulepszenie nie zostało dodane.
+402	Aby dodać kolejny bonus do tego przedmiotu, musisz użyć kuli błogosławieństwa.
+403	Nie możesz użyć tego na arenie.
+404	Tego przedmiotu nie można już ulepszać w ten sposób. Maksymalna ilość bonusów została osiągnięta.
+405	Kula błogosławieństwa może zostać użyty tylko na przedmiotach, które już mają 4 bonusy.
+406	Slot dodano pomyślnie.
+407	Slot nie został dodany.
+408	Do tego przedmiotu nie możesz dodać więcej nowych slotów.
+409	Nie możesz przydzielić slotu dla tego przedmiotu.
+410	Uzbrajanie pomyślne.
+411	Uzbrajanie niepomyślne.
+412	Musisz wpierw dodać slot. Użyj do tego Diamentu.
+413	Nie ma tu slotu z Klejnotami.
+414	Możesz to zrobić jedynie z założoną Maską Uczuć.
+415	Musisz dodać slot, jeśli chcesz użyć Diamentu.
+416	Do tego przedmiotu nie można dodać więcej klejnotów.
+417	Te przedmioty nie mogą zostać użyte razem.
+418	Nie możesz zmienić przynęty podczas wędkowania.
+419	Zmieniłeś aktualną przynętę na {}.
+420	Umieściłeś {} jako przynętę na haczyku.
+421	Nie masz wszystkich materiałów potrzebnych do zrobienia mikstury.
+422	Nie masz wystarczająco materiałów ({}).
+423	Nie masz wystarczającej liczby pustych butelek.
+424	Mieszanie napoju nie powiodło się.
+425	Tylko kobiety mogą to zrobić.
+426	Nie możesz umieścić kilku Kamieni Duszy tego samego rodzaju.
+427	Ten Kamień Duszy nie może zostać umieszczony w przedmiocie tego rodzaju.
+428	Nie możesz umieścić tego Kamienia Duszy w broni.
+429	Pomyślnie umieściłeś Kamień Duszy.
+430	Kamień Duszy pękł podczas umieszczania.
+431	Brak wolnych miejsc.
+432	Nie możesz teleportować twojego partnera w tym momencie.
+433	Nie możesz użyć zwoju powrotu podczas Bitwy Królestw.
+434	Nie możesz użyć zwoju powrotu przez {} sek. po otwarciu magazynu.
+435	Nie możesz skorzystać ze zwoju powrotu, gdy masz otwarte inne okno.
+436	Ta osoba nie istnieje.
+437	Nie możesz użyć Zwoju przez {} sek. po handlu.
+438	Nie możesz użyć zwoju powrotu przez {} sek. po otwarciu magazynu.
+439	Nie możesz użyć zwoju powrotu, ponieważ odległość jest zbyt mała.
+440	Po dokonaniu handlu nie możesz skorzystać ze zwoju powrotu przez {} sek.
+441	Nie możesz otworzyć Magazynu, jeśli otwarte jest inne okno.
+442	Nie możesz wyrzucić tego przedmiotu.
+443	Upuszczony przedmiot zniknie za 5 minut.
+444	Otrzymałeś {}
+445	Masz za dużo przedmiotów w ekwipunku.
+446	{} otrzymuje {}.
+447	Za chwilę wszyscy ludzie zostaną przeniesieni do wybranego miasta.
+448	Jesteś za blisko.
+449	{} otrzymał: {}
+450	Nie możesz zmienić używanych przedmiotów, gdy jesteś przemieniony.
+451	Musisz stać w miejscu, aby wyposażyć się w ten przedmiot.
+452	Zioło z małp nie nadaje się na karmę. Służy ożywianiu martwych koni.
+453	Nie możesz karmić martwego konia.
+454	Nakarmiłeś konia ziołami.
+455	Nakarmiłeś konia.
+456	Twój poziom jest za niski, aby móc nosić tą fryzurę.
+457	Masz już taką fryzurę.
+458	Jesteś już przemieniony.
+459	Jesteś za daleko.
+460	To jest zły przedmiot na handel.
+461	Nie możesz się przemienić w postać, która ma wyższy poziom od Ciebie.
+462	Twój poziom jest za niski, aby wyposażyć się w ten przedmiot.
+463	Nie jesteś wystarczająco silny, aby wyposażyć się w ten przedmiot.
+464	Twój poziom Inteligencji jest za niski, aby wyposażyć się w ten przedmiot.
+465	Masz za niską Zręczność, aby wyposażyć się w ten przedmiot.
+466	Twoja Witalność jest za niska, aby wyposażyć się w ten przedmiot.
+467	Nie możesz użyć tego przedmiotu, ponieważ nie jesteś w związku małżeńskim.
+468	Nie możesz założyć tego przedmiotu dwukrotnie.
+469	Pozostały czas do usunięcia Kieszeni {}: {}
+470	Ta akcja może zostać wykonana tylko z inną płcią.
+471	Z {} zniknął klejnot.
+472	[Gildia] Nazwa gildii jest niepoprawna.
+473	[Gildia] Ta nazwa jest już zajęta.
+474	[Gildia] Nie możesz stworzyć gildii.
+475	Gildia {} wypowiedziała wojnę Gildii {}!
+476	[Gildia] {} odrzuciła wojnę gildii.
+477	Wojna pomiędzy gildiami {} i {} rozpocznie się za kilka sekund!
+478	Wojna pomiędzy Gildiami {} oraz {} rozpoczęta!
+479	Wojna pomiędzy Gildiami {} oraz {} zakończona remisem.
+480	Gildia {} wygrała wojnę przeciwko Gildii {}.
+481	Potrzebujesz potwierdzenia partnera do tego.
+482	[Gildia] Wojna gildii została anulowana.
+483	Wojna pomiędzy Gildiami {} oraz {} została anulowana.
+484	Zamknij
+485	Akcja anulowana. Bitwa została rozpoczęta.
+486	Ktoś zalogował się na Twoje konto. Zostaniesz rozłączony.
+487	Tajemnicze światło dobiega z drzewa.
+488	Czas gry ( {} ) dodany do Twojego konta. (Numer płatności {})
+489	Możesz uczestniczyć w Bitwie Gildii jako Obserwator.
+490	Po zaznaczeniu postaci pojawi się guzik do Zakończenia Obserwacji.
+491	Nie ma żadnych przeciwników.
+492	Pojedynek z {} rozpoczęty!
+493	Jeśli nie ma przeciwników, wojna Gildii zakończy się automatycznie.
+494	Jako że wojna Gildii zakończyła się przed czasem, zostanie uznana jako remis.
+495	Energia została odbita z powodu Błogosławieństwa Imperatora.
+496	Po {} sekundach możesz użyć Błogosławieństwa Imperatora.
+497	Za mały przychód z podatków : {}
+498	[TEST_ONLY] Podatek: {}
+499	Błąd podczas przemiany.
+500	Całkowicie nauczyłeś się przekształcania.
+501	Najpierw zawołaj swojego konia.
+502	Odesłałeś swojego konia.
+503	{} wyzwał Cię na pojedynek!
+504	Musisz zejść z konia.
+505	Nie możesz karmić konia podczas siedzenia na nim.
+506	Nakarmiłeś konia ({}).
+507	Potrzebujesz {}.
+508	{} sekund do wyłączenia.
+509	Gra zostanie zamknięta po {} sekundach.
+510	{} sekund do wyłączenia.
+511	Wylogowanie zostało anulowane.
+512	Powrót do okna logowania. Proszę czekać.
+513	Zostaniesz rozłączony z serwerem. Proszę czekać.
+514	Wyzwałeś {} na pojedynek.
+515	Zmieniłeś postać. Proszę czekać.
+516	Wznowienie jeszcze nie jest możliwe. Odczekaj {} sekund.
+517	Wznowienie jeszcze nie jest możliwe. Odczekaj {} sekund.
+518	Wznowienie jeszcze nie jest możliwe. Odczekaj {} sekund.
+519	Wznowienie w mieście jeszcze nie jest możliwe. Odczekaj {} sekund.
+520	Minął czas oczekiwania. Zostaniesz wskrzeszony w mieście.
+521	Nie możesz zmienić swojego stanu, gdy jesteś przemieniony.
+522	Gracz bierze udział w walce.
+523	[Gildia] To nie należy do gildii.
+524	[Gildia] Nie możesz zmienić poziomu umiejętności gildii.
+525	Twój wybór jest błędny.
+526	[Magazyn] Podałeś złe hasło.
+527	[Magazyn] Magazyn jest już otwarty.
+528	[Magazyn] Musisz odczekać 10 sekund zanim otworzysz Magazyn ponownie.
+529	[Magazyn] Odległość pomiędzy Tobą a magazynem jest zbyt duża, aby go otworzyć.
+530	[Grupa] Serwer nie może wykonać żądania Grupy.
+531	[Grupa] Nie możesz opuścić Grupy podczas przebywania w Lochu.
+532	[Grupa] Opuściłeś grupę.
+533	[Gildia] Twoja gildia w tym momencie jest zaangażowana w inną wojnę.
+534	[Gildia] Nikt nie ma uprawnień do wojen gildii.
+535	[Gildia] Gildia o tej nazwie nie istnieje.
+536	Już jest kandydatura
+537	[Gildia] Ta gildia jest już zaangażowana w inną wojnę.
+538	[Gildia] Nie ma wystarczającej ilości Yang, aby uczestniczyć w wojnie gildii.
+539	[Gildia] Gildia nie posiada wystarczającej ilości Yang by uczestniczyć w wojnie gildii.
+540	[Gildia] Ta gildia jest już zapisana do innej wojny gildii.
+541	[Gildia] Ta gildia aktualnie uczestniczy w innej wojnie.
+542	[Gildia] Za niska ranga aby uczestniczyć w wojnie gildii.
+543	[Gildia] Przynajmniej {} graczy musi uczestniczyć w wojnie gildii.
+544	[Gildia] Ta gildia nie posiada wystarczającej liczby punktów rankingu, aby uczestniczyć w wojnie gildii.
+545	[Gildia] Gildia nie posiada wystarczająco dużo członków, aby uczestniczyć w wojnie gildii.
+546	Twój poziom musi być wyższy niż 20, aby zapisać numer telefonu komórkowego.
+547	Nie nadajesz się na Imperatora.
+548	{} odrzucił zaproszenie.
+549	Nie możesz przyjąć zaproszenia, ponieważ jesteś już w Grupie.
+550	Tylko Imperator może tego użyć.
+551	Regeneracja około {} sekund.
+552	Brakuje podatków. Aktualny kapitał : {} Brakujący kapitał : {}
+553	Rozkaz: warpto <character name>
+554	Nie możesz przenieść się do nieznanego gracza.
+555	Dodawanie gracza {} do kanału. (Aktualny kanał {})
+556	Teleport do {}.
+557	Nie możesz przenosić nieznanych graczy.
+558	[Gildia] Podczas wojny gildii nie otrzymuje się Punktów Doświadczenia z polowania.
+559	Gdy Błogosławieństwo Imperatora jest użyte, przywraca ponownie {} punktów PŻ i PE.
+560	Informacje Mojego Imperatora
+561	[Monarcha {}] : {} Posiadanie Yang {}
+562	[Monarcha {}] : {}
+563	Informacje Imperatora
+564	Tylko Imperator może tego użyć
+565	Wybierz liczbę pomiędzy 1 a 50.
+566	Podatki ustawione na {} %%.
+567	Potwór nie może być przywołany. Sprawdź numer Potwora.
+568	Punkty Życia +{}
+569	Punkty Energii +{}
+570	Błogosławieństwo Imperatora jest aktywne.
+571	Wytrzymałość +{}
+572	Inteligencja +{}
+573	Siła +{}
+574	Zręczność +{}
+575	Szybkość Ataku +{}
+576	Szybkość Ruchu {}
+577	Czas wypoczynku -{}
+578	Odnawianie Energii +{}
+579	Odnawianie Many +{}
+580	Atak Trucizny {}
+581	Gotowe. Będzie nadawać się do użytku po {}.
+582	Gwiazda +{}
+583	Redukcja Szybkości +{}
+584	Szansa na Krytyczny Atak {}%%
+585	Szansa na Przeszywający Atak od {}%%
+586	Siła Ataku Gracza przeciwko Potworom +{}%%
+587	Siła Ataku Konia przeciwko Potworom +{}%%
+588	Wzmocnienie ataku przeciwko Wonggui + {}%%
+589	Wzmocnienie ataku przeciwko Mistykom + {}%%
+590	Wzmocnienie ataku przeciwko Nieumarłym + {}%%
+591	Wzmocnienie ataku przeciwko Diabłom + {}%%
+592	Dzięki Imperatorowi Sa-Za-Hu, gracz {} otrzymuje 10%% więcej siły ataku przez 3 minuty.
+593	Pochłanianie Energii {}%% podczas ataku.
+594	Pochłanianie Many {}%% podczas ataku.
+595	Z szansą {}%% Many zostanie zabranej od wroga.
+596	Absorbowanie Many z szansą {}%% .
+597	{}%% szans na blok ataku z bliskiej odległości.
+598	{}%% szans na blok ataku dystansowego
+599	Odporność na Miecze {}%%
+600	Odporność na Broń Dwuręczną {}%%
+601	Odporność na Broń Dwuręczną {}%%
+602	Odporność na Dzwony {}%%
+603	Dzięki Imperatorowi Geum-Gang-Gwon, gracz {} otrzymuje 10%% więcej obrony przez 3 minuty.
+604	Odporność na Wachlarze {}%%
+605	Odporność na Atak z odległości {}%%
+606	Odporność na Ogień {}%%
+607	Odporność na Błyskawice {}%%
+608	Odporność na Magię {}%%
+609	Odporność na Wiatr {}%%
+610	Odbicie bezpośredniego uderzenia: {}%%
+611	Odbicie Klątwy: {}%%
+612	Odporność na Trucizny {}%%
+613	Jeśli wygrasz, Mana zostanie podniesiona do {}%%
+614	Wydarzenie już trwa. (Flag: {})
+615	Jeśli wygrasz, Doświadczenie wzrośnie do {}%%.
+616	Jeśli wygrasz, Yang wzrosną do {}%%.
+617	Jeśli wygrasz, Ilość przejętych przedmiotów wzrośnie do {}%%.
+618	Gdy weźmiesz miksturę, Moc wzrośnie do {}%%.
+619	{}%% szansa na uzupełnienie Punktów Energii po zwycięstwie.
+620	Brak Ogłuszenia {}%%
+621	Brak Spowolnienia {}%%
+622	Brak Upadku {}%%
+623	Siła Ataku +{}
+624	Obrona +{}
+625	Pytanie OX nie zostało załadowane.
+626	Atak Magiczny +{}
+627	Obrona Magiczna +{}
+628	Maksymalna Wytrzymałość +{}
+629	Silny przeciwko Wojownikom +{}%%
+630	Silny przeciwko Ninja +{}%%
+631	Silny przeciwko Sura +{}%%
+632	Silny przeciwko Szamanom +{}%%
+633	Silny przeciwko Potworom +{}%%
+634	Atak +{}%%
+635	Obrona +{}%%
+636	OX Quiz został załadowany.
+637	Doświadczenie {}%%
+638	Szansa na znalezienie przedmiotu %.1f
+639	Szansa na znalezienie Yang %.1f
+640	Górny limit Energii +{}%%
+641	Górny limit Energii +{}%%
+642	Obrażenia Umiejętności {}%%
+643	Obrażenia Uderzeń {}%%
+644	Odporność na Obrażenia Umiejętności {}%%
+645	Odporność na Trafienia {}%%
+646	{}%% Odporność na Ataki Wojownika
+647	Witamy w Metin2.
+648	{}%% Odporność na Ataki Ninja
+649	{}%% Odporność na Ataki Sura
+650	{}%% Odporność na Ataki Szamana
+651	(Procedura: {} y- {} m - {} d)
+652	Twój Chat jest zablokowany.
+653	Aby móc wołać, musisz mieć wyższy poziom postaci.
+654	Musisz mieć co najmniej {} poziom aby móc wołać.
+655	Nie jesteś w tej Grupie.
+656	Nie dołączyłeś do tej Gildii.
+657	Gracz odrzucił twoje zaproszenie do Listy Przyjaciół.
+658	Konkurs OX rozpoczęty.
+659	[Przyjaciele] Nie możesz dodać GM do Listy Przyjaciół.
+660	{} nie jest online.
+661	Po dokonaniu handlu musisz odczekać {} sekund, zanim będziesz mógł otworzyć Magazyn.
+662	Możesz handlować ponownie za {} sekund.
+663	Masz więcej niż 2 miliardy Yang. Nie możesz handlować.
+664	Nie możesz otworzyć prywatnego sklepu, dopóki otwarte jest inne okno.
+665	Ten gracz posiada więcej niż 2 miliardy Yang. Nie możesz z nim handlować.
+666	[Magazyn] Ruch niemożliwy.
+667	[Magazyn] Ten przedmiot nie może być przechowany.
+668	[Grupa] Zaproszony gracz jest offline.
+669	Bitwa Gildii nie może się rozpocząć, ponieważ serwer nie jest online.
+670	Uriel zezwolił na wejście.
+671	[Grupa] Tylko lider grupy może to zmienić.
+672	[Grupa] Wskazany cel nie jest członkiem twojej grupy.
+673	[Grupa] Nie możesz wyrzucić gracza jeśli jesteś w lochu.
+674	[Grupa] Nie możesz wyrzucić gracza jeśli jesteś w lochu.
+675	[Grupa] Zostałeś usunięty z Grupy.
+676	[Grupa] Nie możesz opuścić grupy w lochach.
+677	[Grupa] Nie możesz wyrzucać członków grupy.
+678	[Gildia] Po usunięciu gildii, nie możesz stworzyć nowej przez {} dni.
+679	[Gildia] Po opuszczeniu gildii, nie możesz stworzyć nowej przez {} dni.
+680	Nazwa Gildii jest błędna.
+681	Prosimy o liczny udział graczy.
+682	[Gildia] [{}] Gildia została stworzona.
+683	[Gildia] Zakładanie gildii nieudane.
+684	[Grupa] Tylko lider grupy może używać zdolności grupy.
+685	[Grupy] Cel nie został znaleziony.
+686	[Gildia] To nie jest poprawna ilość Yang.
+687	[Gildia] Nie masz wystarczającej liczby Yang.
+688	[Gildia] Poszukiwana osoba nie została odnaleziona.
+689	[Gildia] Ta osoba nie jest w tej samej gildii.
+690	[Gildia] Nie możesz wyrzucać członków gildii.
+691	[Gildia] Członek Gildii {} został usunięty.
+692	Konkurs OX nie został jeszcze zakończony, wystąpiły błędy. (Flag: {})
+693	[Gildia] Członek Gildii został usunięty.
+694	[Gildia] Nie możesz zmienić swojej rangi.
+695	[Gildia] Moce Mistrza Gildii nie mogą być zmienione.
+696	[Gildia] Ranga jest niepoprawna.
+697	[Gildia] Nie możesz zmienić swojej pozycji.
+698	[Gildia] Prawa Lidera Gildii nie mogą zostać zmienione.
+699	[Gildia] Wykorzystane Punkty Doświadczenia: {}.
+700	[Gildia] Przekazanie Punktów Doświadczenia nieudane.
+701	[Gildia] Za mało Yang w kasie gildii.
+702	[Gildia] Duch Smoka nie został zregenerowany.
+703	Za chwilę wydarzenie OX zostanie zrestartowane.
+704	[Gildia] Nie możesz umieszczać ogłoszeń.
+705	[Gildia] Nie możesz zmieniać pozycji.
+706	[Gildia] Ranga Mistrza Gildii nie może być zmieniona.
+707	[Gildia] Nie możesz sam siebie mianować mistrzem gildii.
+708	[Gildia] Nie możesz wybrać Lidera.
+709	[Gildia] Nie możesz wybrać więcej Liderów.
+710	Nie możesz sprzedać tego przedmiotu.
+711	Wykryto niedozwolone oprogramowanie. Gra zostanie zakończona.
+712	Masz więcej niż 2 miliardy Yang. Nie możesz handlować.
+713	Błędny Yang.
+714	Aktualny Wydarzenie jest ograniczone tylko do jednego obszaru.
+715	Rozpocznij Ruletkę Przedmiotów.
+716	Rozpocznij Ruletkę Yang.
+717	Gracz jest dostępny. Proszę skorzystać z szeptów.
+718	Numer telefonu komórkowego nie jest zapisany.
+719	Musisz być co najmniej na poziomie 20, aby wysyłać wiadomości tekstowe.
+720	Potrzebujesz 2000 Yang, aby wysłać wiadomość tekstową.
+721	Twoja wiadomość została wysłana.
+722	{} Gildii {} wzrósł do {}%%!
+723	{} Gildii {} jest ponownie normalny.
+724	{}: {} wzrósł o {}%%!
+725	Event OX zostanie zakończony.
+726	{} {} jest ponownie normalny.
+727	Twoje Punkty Wydobycia osiągnęły limit. ({})
+728	Twoje punkty Wydobycia osiągnęły najwyższy poziom.
+729	Możesz ulepszyć swój Kilof u Drwala Deokbae.
+730	Twoje Punkty Wydobycia wzrosły! ({}/{})
+731	Nie możesz wydobywać bez kilofu.
+732	Nie ma tu nic do wydobycia.
+733	Wydobycie zakończone pomyślnie.
+734	Wydobycie niepomyślne.
+735	[Przyjaciele] Dodałeś {} do Listy Przyjaciół.
+736	Za chwilę gracze zostaną przeniesieni do miasta.
+737	[Przyjaciele] Usunąłeś {} z listy.
+738	Krytyczny błąd serwera. Serwer zostanie uruchomiony ponownie.
+739	Zostaniesz rozłączony za 10 sekund.
+740	Możesz połączyć się ponownie za 5 minut.
+741	({}) Gildia utworzona. [Tymczasowo]
+742	Ta Gildia jest w stanie wojny.
+743	{}: Ta Gildia nie istnieje.
+744	Gildia o takiej nazwie lub liczbie nie istnieje.
+745	Budynek nie istnieje.
+746	Ten typ budynku może być zbudowany tylko raz.
+747	Najpierw zamknij Mapę OX. (Flag: {})
+748	Musisz najpierw zbudować Główny Budynek.
+749	Budowa zakończona niepowodzeniem z powodu błędnej wyceny.
+750	Twoja gildia nie posiada wystarczającej ilości Yang, aby zbudować ten budynek.
+751	Nie masz wystarczająco surowców na ten budynek.
+752	Nie możesz zbudować tego budynku w tym miejscu.
+753	Ta postać nie istnieje.
+754	Pojedynek nie został przerwany.
+755	Pojedynek przerwany pomyślnie.
+756	Pojedynek rozpoczęty pomyślnie.
+757	Napotkano problem przy rozpoczęciu pojedynku.
+758	Nie wystąpiły błędy.
+759	Brak przeciwników.
+760	Nie zostały żadne Punkty Statusu.
+761	Pozostało zbyt mało punktów statusu.
+762	Podałeś złą wartość.
+763	Polecenie jest nieprawidłowe.
+764	Zerwany kontrakt pomiędzy graczami {} i {}.
+765	Rozpocznij ruletkę o {} Yang.
+766	Log przedmiotów umieszczony w logu systemowym.
+767	Informacje dla Królestw
+768	Wybierz mapy Świętej Ziemi {} Wejście {} {} {}
+769	Wystąpił błąd.
+770	{} licznik zabójstw {} zabitych potworów {} zabitych bossów {} liczba świętej ziemi {}
+771	Informacje o Bitwie Królestw
+772	Twoja prośba jest wczytywana. Proszę czekać.
+773	Nie możesz otworzyć magazynu, dopóki otwarte jest inne okno.
+774	[Magazyn] Hasło do magazynu zostało zmienione.
+775	[Magazyn] Wprowadzono nieprawidłowe hasło.
+776	Twój czas gry dobiega końca za {} minut.
+777	Głosowanie.
+778	Już zagłosowałeś.
+779	{} graczy oddało już swój głos.
+780	Wypowiedziałeś wojnę tej Gildii.
+781	Event OX został zakończony. Nie wystąpiły żadne błędy. (Flag: {})
+782	Nie może być głosowany.
+783	{} nadal ma {} Yang.
+784	{} nadal ma {} Yang.
+785	Nie masz wystarczającej ilości Yang.
+786	Kandydatura {} na Imperatora została skasowana.
+787	{} nie jest kandydatem na Imperatora.
+788	{} został nominowany na Imperatora.
+789	{} nie może być nominowany na Imperatora.
+790	Imperator {} został odwołany.
+791	Imperator {} nie może zostać odwołany.
+792	Konkurs OX nie przyjmuje już nowych uczestników.
+793	Królestwo Shinsoo
+794	Królestwo Chunjo
+795	Królestwo Jinno
+796	Twoje punkty wędkarskie wzrosły! ({}/{})
+797	Osiągnąłeś maksymalną ilość Punktów Wędkarskich.
+798	Ulepsz swoją wędkę u Rybaka!
+799	Straciłeś swoją przynętę.
+800	Złapałeś rybę! ({})
+801	Długość złapanej ryby wynosi {}cm.
+802	Konkurs Wędkarski 'Najlepszy Rybak'
+803	OX Inni uczestnicy Wydarzenia są na liście.
+804	Konkurs Wędkarski 'Karp'
+805	{}: {}
+806	Złapałeś {} z {} .
+807	Ryba zniknęła w głębinach wody.
+808	W rybie znajduje się muszla.
+809	W rybie znajduje się robak.
+810	Pieczesz {} nad ogniem.
+811	Nie możesz handlować, ponieważ masz przy sobie więcej niż 2 miliardy Yang.
+812	Nie możesz nadać niewłaściwej nazwy swojemu Magazynowi.
+813	Nie możesz sprzedawać Przedmiotów z ItemShop w prywatnym Sklepie.
+814	OX Inni uczestnicy Wydarzenia nie są na liście.
+815	Górnictwo zakończone.
+816	Do wydobywania surowców potrzebny jest Kilof!
+817	Proszę wybrać Wędkę.
+818	Najpierw umieść przynętę na haczyku.
+819	Nie możesz łowić bez Wędki!
+820	[Grupa] Nie możesz wysłać Prośby, ponieważ Lider grupy jest offline.
+821	[Grupa] Nie możesz utworzyć Grupy z graczami z innych Królestw.
+822	[Grupa] Nie możesz zaprosić innych graczy, gdy jesteś w lochu.
+823	[Grupa] Nie możesz zaprosić innych graczy, gdy jesteś w Trybie Obserwatora.
+824	[Grupa] Tylko gracze z różnicą poziomu -30 do +30 mogą zostać zaproszeni.
+825	Liczba innych uczestników: {}
+826	[Grupa] Nie możesz zaprosić tego gracza, jego poziom jest za niski.
+827	[Grupa] Nie możesz zaprosić tego gracza, jego poziom jest za wysoki.
+828	[Grupa] Nie możesz zaprosić więcej graczy do swojej Grupy.
+829	Chcesz dołączyć się do Grupy {}.
+830	Ten gracz nie jest w tej Grupie.
+831	[Grupa] Nie możesz dołączyć do tej Grupy, ponieważ ma ona już maksymalną ilość członków.
+832	[Grupa] Nie masz prawa, aby zapraszać kogokolwiek.
+833	[Grupa] {} odrzucił zaproszenie do twojej Grupy.
+834	[Grupa] {} jest już w Grupie.
+835	[Grupa] Nie możesz przyjąć zaproszenia będąc w lochu.
+836	Konkurs OX zakończony.
+837	[Grupa] Nie możesz przyjąć zaproszenia.
+838	[Grupa] {} odrzucił twoje zaproszenie.
+839	[Grupa] {} dołączył do Grupy.
+840	[Grupa] {} dołączył do twojej Grupy.
+841	Nie możesz skorzystać teraz z prywatnego sklepu.
+842	W tej chwili ten gracz handluje z kimś innym.
+843	Numer potwierdzający Metin2: {}
+844	Twój numer potwierdzający jest błędny. Proszę spróbować ponownie.
+845	Numer komórkowy jest zarejestrowany.
+846	Nie możesz przenieść się do gracza.
+847	Nagroda za OX została wydana. ID: {} Ilość: {}
+848	Ten gracz nie jest online.
+849	Gracz ten jest na kanale {}. (Ty jesteś na kanale {}.)
+850	Nie możesz udać się w inne miejsce przez {} sekund po otwarciu Magazynu.
+851	Nie możesz udać się w inne miejsce przez chwilę po zakończeniu handlu.
+852	Nie możesz udać się w inne miejsce przez {} sekund po zakończeniu handlu.
+853	Pojedynek został zakończony, ponieważ zniknął twój przeciwnik.
+854	Nie ma limitu mikstur.
+855	Możesz użyć tylko {} mikstur.
+856	Walka rozpoczyna się za 10 sekund.
+857	Pojedynek rozpoczęty.
+858	TRUE
+859	Pojedynek został zakończony z powodu problemów z areną.
+860	Pojedynek został zakończony z powodu upływu czasu.
+861	Za 10 sekund zostaniesz przeniesiony do miasta.
+862	Pojedynek jest zakończony z powodu problemów z areną.
+863	Twój przeciwnik ma jakieś problemy. Pojedynek zakończony.
+864	Pojedynek został zakończony ponieważ jest problemów z przeciwnikiem.
+865	{} wygrał pojedynek.
+866	{} wygrał.
+867	Zostaniesz przeniesiony do Miasta za 10 sekund.
+868	Następna runda rozpoczyna się za 10 sekund.
+869	FALSE
+870	Wojownicy się rozdzielili. Pojedynek zakończony.
+871	Aktualnie szansa na wypadnięcie przedmiotu to: +{}%%
+872	Ilość wypadających Yang jest zwiększona o: {}%%
+873	Aktualna szansa na deszcz dropów Yang jest zwiększona o: {}%%
+874	Bonus dodatkowego doświadczenia wynosi obecnie {}%%.
+875	Twoja wersja klienta jest niewłaściwa. Proszę zainstalować normalny patch.
+876	Nie możesz handlować w sklepie, dopóki otwarte jest inne okno.
+877	Aby cokolwiek kupić, musisz podejść bliżej.
+878	Znajdujesz się za daleko od Magazynu aby sprzedawać.
+879	Nie możesz handlować, ponieważ masz przy sobie więcej niż 2 miliardy Yang.
+880	Całkowita liczba Pytań: {}
+881	Podatek od sprzedaży: {}%%.
+882	Gdy jesteś przemieniony, nie możesz jeździć konno.
+883	Nie możesz jeździć konno, gdy masz na sobie Suknię Ślubną lub Smoking.
+884	Nie masz konia.
+885	Twój koń zdechł.
+886	Wytrzymałość Twojego konia jest za niska.
+887	Nie udało się przywołać konia.
+888	Koń
+889	Ślub wkrótce dobiegnie końca.
+890	Zostanie automatycznie opuszczony.
+891	Wojna już się zakończyła.
+892	Wyniki zostaną ukazane za 10 sekund.
+893	Nie możesz handlować podczas obserwacji.
+894	Jeśli okno jest otwarte, nie możesz handlować z innymi.
+895	Nie możesz handlować teraz z tą osobą, ponieważ jest ona obecnie zajęta.
+896	Druga osoba zablokowała handel.
+897	Za mało Yang lub brak miejsca w ekwipunku.
+898	Druga osoba nie ma wystarczającej ilości Yang lub nie ma miejsca w ekwipunku.
+899	Druga osoba nie ma miejsca w ekwipunku.
+900	Handel z {} zakończony pomyślnie.
+901	Nie straciłeś doświadczenia dzięki Błogosławieństwu Boga Smoków.
+902	Aktualna punktacja: Shinsoo {}, Chunjo {}, Jinno {}
+903	Prawidłowa odpowiedź to:
+904	{} deadcount {} Empire {} killcount {}(Purpose {}) killmobcount {}, RegenFlag {}
+905	Diabeł Świętej Ziemi: [ENTER][ENTER]
+906	, nie masz prawa tu przebywać. Za 10 sekund wszyscy obywatele twojego królestwa opuszczą tę świętą ziemię.
+907	Królestwo {} zostało pokonane i odpada z Wojny Królestw.
+908	Liczba potworów w Wojnie Królestw:
+909	Jeśli pokonasz Strażnika Świętej Ziemi, staniesz się jego właścicielem.
+910	Nie upuściłeś żadnego przedmiotu, ponieważ jesteś chroniony przez Boga Smoków.
+911	Dodatkowe obrażenia od pchnięcia {}
+912	{} blokuje! ({}%%)
+913	{} robi unik! ({}%%)
+914	Tak (O)
+915	{}[{}]s Pozycja ataku: {} {}
+916	Proszę wpisać pełne polecenie.
+917	Nie możesz tego zrobić, gdy dosiadasz konia.
+918	Nie możesz wykonać tej akcji leżąc na ziemi.
+919	W moich snach? Że co?
+920	Najpierw wstań.
+921	Ta komenda nie istnieje.
+922	[Grupa] Grupa została skasowana.
+923	[Grupa] Nie możesz przenieść celu.
+924	[Grupa] Nie możesz teleportować członków grupy na swoją aktualną pozycję.
+925	Nie (X)
+926	Twoja grupa jest bardzo zgrana i członkowie grupy, którzy znajdują się w pobliżu lidera, otrzymają bonus doświadczenia.
+927	Lider
+928	Członek
+929	[Gildia] Ilość przekazanego doświadczenie jest prawdopodobnie za duża.
+930	[Gildia] Wiadomość nie może zostać usunięta.
+931	[Gildia] Za mało Ducha Smoka. ({}, {})
+932	[Gildia] Jeszcze nie możesz używać umiejętności gildii.
+933	[Gildia] {} umiejętność użyta ({}, {}) na {}.
+934	[Gildia] Gracz jest na kanale {} (aktualny kanał: {}).
+935	[Gildia] Gracz nie jest online.
+936	Po 5 sekundach, uczestnicy, którzy udzielili złej odpowiedzi zostaną wykluczeni.
+937	[Gildia] Ta umiejętność gildii może być użyta tylko podczas wojny.
+938	[Gildia] Zregenerowano {} Ducha Smoka.
+939	[Gildia] Tylko Lider Gildii może pobrać Yang.
+940	[Gildia] Gracz odrzucił zaproszenie do Gildii.
+941	[Gildia] Nie możesz zapraszać osób do Gildii.
+942	[Gildia] Nie możesz zapraszać do Gildii graczy z innych Królestw.
+943	[Gildia] Gracz może zostać zaproszony ponownie za: {} dzień/dni.
+944	[Gildia] Możesz zapraszać członków dopiero po {} dniach od reorganizacji.
+945	[Gildia] Ten gracz należy już do innej Gildii.
+946	[Gildia] Pojemność Gildii osiągnęła górny limit.
+947	Gotowi na następne pytanie?
+948	Nie możesz szkolić się w tej umiejętności.
+949	Nie możesz szkolić się w tej umiejętności do Wielkiego Mistrza.
+950	Jesteś już mistrzem w tej umiejętności. Nie możesz jej już szkolić.
+951	Twoja umiejętność nie jest na tyle wysoka, aby zostać Wielkim Mistrzem.
+952	To nie zadziałało. Bleh!
+953	Szkolenie niepomyślne. Proszę spróbować później.
+954	Moje ciało jest pełne energii!
+955	Widać już skutki treningu...
+956	Pomyślnie zakończyłeś trening przy pomocy książki.
+957	Nie możesz tego przeczytać, ponieważ brakuje Ci doświadczenia.
+958	Pytanie.
+959	Nie możesz szkolić tej umiejętności za pomocą Książki.
+960	Umiejętność nie jest odpowiednio rozwinięta, aby szkolić ją przy pomocy Książki.
+961	Robię postępy ale nie zrozumiałem jeszcze wszystkiego.
+962	Tę technikę ciężko zrozumieć. Muszę kontynuować trening.
+963	Ten rozdział już zrozumiałem, ale czeka mnie jeszcze mnóstwo ciężkiej pracy.
+964	Pomyślnie zakończyłeś trening przy pomocy książki.
+965	Teleportacja niepomyślna.
+966	Nie ma tu konia. Zapytaj Stajennego.
+967	Proszę użyć przedmiotu, aby przywołać konia.
+968	{} Użycie FP: {}
+969	Jeśli TAK, przejdź na pole O, jeśli NIE, przejdź na pole X.
+970	Płonę wewnątrz, ale to uspokaja moje ciało.
+971	Powoli, ale spokojnie.... Bez zatrzymywania.
+972	Tak, to uczucie jest świetne. Moje ciało jest pełne Chi.
+973	Przeczytałem! Teraz Chi musi popłynąć przez moje ciało.
+974	Trening zakończony.
+975	Jestem na ostatniej stronie! Trening jest prawie zakończony!
+976	Prawie koniec! Jeszcze tylko troszeczkę!
+977	Zostałem oświecony! Przeczytałem prawie wszystko!
+978	Zostało mi już tylko kilka stron do przeczytania.
+979	Czuję się odświeżony.
+980	Prawidłowo!
+981	Teraz rozumiem!
+982	Dobrze, teraz muszę pozostać skoncentrowanym!
+983	Czytam tą samą linię ponownie.
+984	Nie chcę już się więcej uczyć.
+985	To jest dużo trudniejsze niż się spodziewałem.
+986	Nie potrafię się skoncentrować. Powinienem zrobić sobie przerwę.
+987	Twój czat został tymczasowo zablokowany z powodu spamu.
+988	Twój Chat został odblokowany.
+989	Okno budowania jest już otwarte.
+990	Nie możesz nic budować, gdy jest otwarte inne okno handlu/magazynu.
+991	Postęp nie jest możliwy
+992	Okno budowania nie jest otwarte
+993	Nie masz właściwego materiału.
+994	[Gildia] Spróbuj ponownie później.
+995	Musisz przeczytać jeszcze {} Ksiąg Umiejętności aby ulepszyć tę Umiejętność.
+996	[Gildia] Spróbuj ponownie później.
+997	Możesz używać tą czynność jedynie jak jesteś w zamku.
+998	TEST: Złota sztabka została wpłacona do skarbca twojego królestwa.
+999	TEST: W skarbcu twojego królestwa są: {}
+1000	TEST: Nie możesz wpłacić złotej sztabki do skarbca twojego królestwa.
+1001	[Gildia] Ranga osiągnęła {} Punktów.
+1002	Ten przedmiot nie może być ulepszony.
+1003	Darmowe ulepszenie broni może być użyte jedynie w broniach do 20 poziomu.
+1004	Nie możesz użyć tego przedmiotu, ponieważ nie masz wszystkich kwalifikacji.
+1005	Nie możesz użyć tego przedmiotu, ponieważ nie jesteś odpowiedniej płci.
+1006	Użyj: transfer <name>
+1007	Ta czynność może być użyta tylko przez Imperatora.
+1008	Nie możesz rekrutować graczy z innego królestwa.
+1009	Gracz {} obecnie przebywa na kanale {}. (Twój Kanał: {})
+1010	Zrekrutowałeś {} graczy.
+1011	Nie ma gracza o tej nazwie.
+1012	Nie możesz przyjąć samego siebie.
+1013	Twój poziom jest niższy niż poziom przedmiotu po ulepszeniu.
+1014	Nie możesz nic ulepszyć, dopóki otwarte jest inne okno.
+1015	Imperator z {} został zmieniony na {}.
+1016	Są {} wojny, by zapalić ogniska.
+1017	{} był w stanie obronić pomyślnie.
+1018	Przez 30 minut od teraz gracz {} może dostać nagrodę, gdyż zniszczył ognisko.
+1020	Ognisko zostało zapalone w {} by ostrzec o bitwie.
+1021	{} zniszczył ognisko.
+1022	{} przegrali wojnę, ponieważ nie byli w stanie obronić zamku.
+1023	{} zniszczył ognisko.
+1024	Masz za mało Yang na ulepszenie.
+1025	Możesz otworzyć Sklep tylko gdy zdejmiesz Zbroję.
+1026	Nie możesz tego użyć siedząc na koniu.
+1027	Aby to zrobić potrzebujesz: {}
+1028	Twoja blokada czatu trwa jeszcze {} godzin {} minut {} sekund
+1029	Twoja blokada czatu trwa jeszcze {} godzin {} sekund
+1030	Twoja blokada czatu trwa jeszcze {} minut {} sekund
+1031	Szansa na deszcz dropów Yang
+1032	Nie ma Kamienia do usunięcia.
+1033	Nie można użyć.
+1034	Limit czasowy na serwerze testowym został przekroczony.
+1035	Masz za mało materiału na ulepszenie.
+1036	Punkty Rangi sięgnęły już limitu.
+1037	Wszystkie Królestwa
+1038	Częstotliwość wypadania przedmiotów
+1039	Częstotliwość wypadania Yang
+1040	Procent Doświadczenia
+1041	Nie możesz czytać Książek gdy jesteś przemieniony.
+1042	Pozostało {} sekund do końca twojej blokady pisania
+1043	Nie możesz okazywać emocji będąc na koniu.
+1044	Nie możesz okazywać emocji graczowi, który jest na koniu.
+1045	Zwój Wojny nie funkcjonuje z przedmiotami +4 lub wyżej.
+1046	{} rzuca kostką. Wyrzucona liczba to {} ({}-{}).
+1047	Rzuciłeś kostką. Wyrzuciłeś {} ({}-{}).
+1048	[Gildia] Lider Gildii przeciwnika jest offline.
+1049	Nie możesz wsiąść na Konia gdy leżysz na ziemi.
+1050	[Gildia] Obecnie ta Gildia uczestniczy już w walce.
+1051	Nie możesz tutaj łowić.
+1052	[Gildia] Twoja Gildia osiągnęła już maksymalny poziom.
+1053	Nie możesz się przemienić, podczas jazdy konnej.
+1054	Jesteś na koniu. Najpierw musisz zsiąść.
+1055	Nie możesz dołączyć tej postaci do swoich przyjaciół.
+1056	Nie możesz ulepszać tym zwojem.
+1057	Upuszczony przedmiot znika po {} minutach.
+1058	[Gildia] Ta postać nie może otrzymać twojego zaproszenia.
+1059	Nie możesz sprzedawać założonych przedmiotów.
+1060	Nie możesz sprzedawać założonych przedmiotów w prywatnym sklepie.
+1061	[Magazyn] Nie możesz przenieść tego przedmiotu do swojego Magazynu.
+1062	Nie możesz wyrzucić złota.
+1063	Twój ekwipunek jest przepełniony. Nie możesz wziąć tego przedmiotu.
+1064	Poziom Twojego przedmiotu jest za wysoki.
+1065	Można użyć tylko na broń i zbroje.
+1066	Tego Smoczego Kamienia nie możesz ponownie napełnić.
+1067	Możesz zostać nagrodzony tylko raz za każdą wyprawę do Wieży Demonów.
+1068	Usunięcie Smoczego Kamienia powiodło się.
+1069	Nie możesz przesuwać tego przedmiotu w obrębie okienka uszlachetniania.
+1070	Nie powiodło się ulepszenie twojego przedmiotu.
+1071	Obecnie na tej mapie nie ma żadnego kamienia Metin.
+1072	Ekstrakcja pozostałego czasu trwania Smoczego Kamienia powiodła się.
+1073	Ekstrakcja pozostałego czasu trwania nie powiodła się.
+1074	Usunięcie Smoczego Kamienia nie powiodło się. Otrzymano jednak: {}
+1075	Usunięcie Smoczego Kamienia nie powiodło się.
+1076	Przedmiot ten nie jest potrzebny do podwyższenia stopnia jakości.
+1077	Ten przedmiot nie może być ulepszony w ten sposób.
+1078	Podwyższenie stopnia jakości powiodło się.
+1079	Uszlachetnienie o jedną klasę wzwyż nie powiodło się.
+1080	Przedmiot ten nie jest potrzebny do uszlachetniania.
+1081	Tego Smoczego Kamienia nie można użyć w celu uszlachetniania.
+1082	Uszlachetnienie o jedną klasę wzwyż powiodło się.
+1083	Podwyższenie stopnia jakości nie powiodło się.
+1084	Nie posiadasz odpowiednich materiałów do wzmocnienia Smoczego Kamienia.
+1085	Tego Smoczego Kamienia nie można użyć w celu wzmocnienia.
+1086	Nie możesz połączyć identycznych zwojów ulepszających.
+1087	Wzmocnienie powiodło się.
+1088	Wzmocnienie nie powiodło się.
+1089	Smoczy Kamień nie jest uaktywniony.
+1090	Nosisz już ten rodzaj Smoczego Kamienia.
+1091	Nie można usunąć tego Smoczego Kamienia.
+1092	Już masz na sobie taki Smoczy Kamień.
+1093	Naładowano {} sek.
+1094	Zanim otworzysz Cor Draconis, musisz zakończyć misję Smoczego Kamienia i aktywować Alchemię Smoczych Kamieni.
+1095	Możesz zdjąć pas dopiero wtedy, gdy w jego inwentarzu nie będzie żadnego przedmiotu.
+1096	Zwój Błogosławieństwa oraz Magiczny Metal mogą zostać połączone.
+1097	Tego przedmiotu nie możesz zdeponować w inwentarzu swojego pasa.
+1098	W tym lochu nie możesz jeździć konno.
+1099	Możesz maksymalnie użyć 200 składników naraz.
+1100	Przedmiotu przywiązanego do twojej duszy nie możesz sprzedawać w prywatnym sklepie.
+1101	Nie możesz zmieniać właściwości przedmiotu przywiązanego do twojej duszy.
+1102	Nie możesz użyć przedmiotu przywiązanego do twojej duszy.
+1103	Nie możesz upuścić przedmiotu przywiązanego do twojej duszy.
+1104	Nie możesz oddać przedmiotu przywiązanego do twojej duszy.
+1105	Na tym serwerze nie możesz przywiązywać przedmiotów do swojej duszy.
+1106	Tego przedmiotu nie można przywiązać do duszy.
+1107	Zainwestowałeś {} Yang.
+1108	Nie ma już więcej Kamieni do wyjęcia.
+1109	Przedmiot ten jest już przywiązany do duszy.
+1110	Przedmiot ten znajduje się już w toku oderwania od duszy.
+1111	Ten przedmiot nie jest przywiązany do duszy.
+1112	Nie możesz ulepszyć przedmiotu przywiązanego do duszy.
+1113	Nie możesz sprzedać przedmiotu przywiązanego do duszy.
+1114	Nie możesz otworzyć tej skrzyni, ponieważ nie masz dość miejsca w swoim ekwipunku.
+1115	Nie możesz otworzyć prywatnego sklepu, dopóki handlujesz z innymi.
+1116	Nie możesz użyć tego przedmiotu podczas handlu.
+1117	Nie możesz użyć zwoju powrotu przy otwartym okienku szarfy.
+1118	Nie możesz handlować, gdy otwarte jest inne okno.
+1119	Nie możesz zapisać tej pozycji.
+1120	Możesz użyć wyłącznie szarf oraz broni i zbroi.
+1121	Przeciągnij przedmioty do okienka.
+1122	To posiada już stopień unikatowy.
+1123	Szarfa ta nie może absorbować więcej bonusów.
+1124	Możesz używać tylko szarf.
+1125	Nie można połączyć tych szarf.
+1126	Niepowodzenie!
+1127	Sukces!
+1128	Nie posiadasz wystarczająco dużo pieniędzy na kombinację.
+1129	Nie możesz użyć tego przedmiotu przy otwartych okienkach absorpcji i kombinacji.
+1130	Masz za mało miejsca w ekwipunku.
+1131	Gracz {} dokonał tego! {}%% stopni absorpcji na nowym {}. Gratulacje!
+1132	Nie możesz użyć przedmiotu przywiązanego do duszy.
+1133	Nie możesz sprzedawać żadnych przedmiotów, które właśnie używasz w prywatnym sklepie.
+1134	Nie możesz użyć tobołu podczas jazdy.
+1135	Koniec czasu - koniec pierwszej rundy
+1136	Koniec czasu - koniec drugiej rundy
+1137	Czas na ukończenie pierwszej rundy: {} min.
+1138	Czas na ukończenie drugiej rundy: {} min.
+1139	Strefa bezpieczeństwa została dezaktywowana.
+1140	Czas do dezaktywacji strefy bezpieczeństwa: {} min.
+1141	Nie możesz przenieść się do zapisanej pozycji w obcym Królestwie.
+1142	Odpowiedź pojawi się za 20 sekund.
+1143	Po 15 sekundach uczestnicy, którzy udzielili złej odpowiedzi, zostaną wykluczeni.
+1144	Masz za niski poziom, by przywołać zwierzaka.
+1145	
+1146	Przywołujesz zwierzaka {}.
+1147	Odsyłasz zwierzaka {}.
+1148	Zwierzak {} osiąga poziom {}!
+1149	{} śpi sobie w najlepsze.
+1150	Zwierzak {} wykluł się!
+1151	Twój zwierzak szama odżywkę z wielki apetytem.
+1152	Masz za mało PŻ.
+1153	{} budzi się i zabiera się za jedzenie.
+1154	{} jest teraz w klatce transportowej.
+1155	{} wychodzi z klatki transportowej.
+1156	{} osiąga {}! Wspaniale!
+1157	{} nie chce jeść!
+1158	Event został zakończony, ponieważ żadne z królestw do niego nie dołączyło.
+1159	Transfer bonusów przebiegł pomyślnie.
+1160	Nie posiadasz wystarczającej ilości Yang do wymiany.
+1161	Podaj inną nazwę.
+1162	Masz za mało Punktów Energii aby tego użyć.
+1163	Nie możesz handlować, gdy twój rozmówca ma otwarty inkubator.
+1164	Nie możesz używać inkubatora, gdy handlujesz lub masz otwarty magazyn lub prywatny sklep.
+1165	Nie możesz otworzyć prywatnego sklepu, gdy przywołujesz zwierzaka.
+1166	Nie możesz handlować, gdy przywołujesz zwierzaka.
+1167	Nie możesz handlować, gdy twój rozmówca przywołuje zwierzaka.
+1168	Twój zwierzak zebrał wystarczająco doświadczenia. Teraz potrzebuje przedmiotów EXP, aby osiągnąć następy etap rozwoju.
+1169	Twój zwierzak może osiągnąć następny etap rozwoju. Użyj w tym celu ksiąg zwierza.
+1170	Twój zwierzak osiągnął już najwyższy etap rozwoju.
+1171	Podana nazwa jest za krótka.
+1172	Osiągniesz miejsce docelowe w {} sekund po wykonaniu.
+1173	Nie posiadasz wystarczającej ilości Yang.
+1174	Dobrze trenujesz swojego zwierzaka, w mig poznaje nowe umiejętności!
+1175	Doświadczenie wzrosło do {} pkt.
+1176	Twój zwierzak zna już tę umiejętność i nie chce trenować.
+1177	Aktywowano umiejętność {}. PŻ odnowiły się o {}.
+1178	Zdobądź księgę dzielnego zwierza, aby zacząć bohaterski trening.
+1179	Aby wytrenować zwierzaka na następny etap rozwoju, musi osiągnąć poziom {}.
+1180	Aby wytrenować zwierzaka na następny etap rozwoju, wiek zwierzaka musi wynosić min. {} dni.
+1181	Aby wytrenować zwierzaka na następny etap rozwoju, zwierzak ten musi posiadać 100% doświadczenia.
+1182	Aktywowano efekt {}.
+1183	Twój poziom jest niższy od poziomu przedmiotu po ulepszeniu.
+1184	Nie aktywowano efektu {}.
+1185	Aktywowano umiejętność {}. Nie doznajesz teraz obrażeń.
+1186	Aktywowano umiejętność {}. Usunięto efekty zatrucia, spowolnienia i krwawienia.
+1187	Zachowujesz stare bonusy.
+1188	Okno jest już otwarte.
+1189	Antymagia o {}%%.
+1190	{} regeneruje swoje siły.
+1191	Nie możesz użyć tego przedmiotu w tym miejscu.
+1192	Nie możesz przywołać zwierzaka podczas handlowania.
+1193	Nie możesz otworzyć prywatnego sklepu.
+1194	Możesz używać Księżycowych Torcików tylko raz na 5 sekund.
+1195	{} nie wystarczy. Do następnego etapu rozwoju potrzebujesz {}.
+1196	Poziom zwierzaka nie może być wyższy od poziomu postaci.
+1197	poziom - Młody
+1198	poziom - Dziki
+1199	poziom - Dzielny
+1200	poziom - Bohaterski trening
+1201	@*** Rzut kostką o następujący przedmiot: {} ***
+1202	@*** ->%*s - Wynik : %4d ***
+1203	$*** Przedmiot {} zdobywa: {} ***
+1204	Nowy stopnień absorpcji: {}
+1205	Nie możesz użyć tego przedmiotu w pojedynku.
+1206	Osiągnięto maksymalny stopień absorpcji.
+1207	Już znasz tę umiejętność.
+1208	Brak wyników dla twojego wyszukiwania.
+1209	Uzbierano wystarczającą ilość dyniowych lampionów.
+1210	Zapytaj Sama Pumpkina o nagrodę.
+1211	Zaczyna się halloweenowy event!
+1212	Pogadaj no z Samem Pumpkinem!
+1213	Halloweenowy event dobiega końca. Nie zapomnij odebrać nagrody!
+1214	Oddane dyniowe lampiony: {}
+1215	Suma dyniowych lampionów: {}
+1216	Wygrałeś {} Yang.
+1217	Nie możesz założyć tutaj obozu.
+1218	Ten graczy handluje już z innym graczem.
+1219	Musisz wpierw założyć broń.
+1220	Nie możesz wybrać tego kostiumu dla tej broni.
+1221	Chcąc zmienić broń, musisz wpierw zdjąć wizerunek broni.
+1222	Nie posiadasz wystarczającej ilości Yang, by rozpocząć rundę Okey.
+1223	Brak: {}, by rozpocząć rundę Okey.
+1224	Twoja runda Okey rozpoczęła się!
+1225	Nie możesz dobrać więcej kart.
+1226	Nie możesz odłożyć kart, gdy wybrałeś karty.
+1227	Nie możesz dobierać karty, gdy wybrałeś karty.
+1228	Nie możesz rozpalić Ogniska pod wodą.
+1229	Twój ekwipunek jest pełny.
+1230	Nagrodę możesz otrzymać dopiero, gdy będziesz mieć miejsce w ekwipunku.
+1231	{} zdobył/a {} pkt w rundzie Okey.
+1232	Nie możesz rozpocząć rundy Okey podczas handlu.
+1233	Zaczyna się event Okey!
+1234	Event Okey dobiegł końca!
+1235	[Event Okey] Jeśli udało ci się uplasować w topce, masz 7 dni czasu na odebranie nagrody.
+1236	Nie możesz wykonać tej akcji podczas grania w Okey.
+1237	Zamknięte. Powinieneś poszukać klucza.
+1238	Kamień Rytualny funkcjonuje tylko w kombinacji z przedmiotami powyżej poziomu 80.
+1239	Nie możesz handlować, ponieważ przekroczyłoby to maks. ilość {} Won.
+1240	Nie masz wystarczającej ilości Yang.
+1241	Nie masz wystarczającej ilości Won.
+1242	Nie możesz wymienić, bo przekroczysz maksymalną ilość Won.
+1243	Nie możesz wymienić, bo przekroczysz maksymalną ilość Yang.
+1244	Nie możesz otworzyć prywatnego sklepu, ponieważ przekroczyłoby to maks. ilość {} Won.
+1245	Podczas handlu nie możesz rozszerzyć swojego ekwipunku.
+1246	Event Okey rozpoczyna się!
+1247	Event Okey dobiegł końca!
+1248	Ten przedmiot nie może zostać otwarty za pomocą klucza.
+1249	W Dolinie Seungryong, na Górze Sohan, w Doyyumhwan i na Pustynia Yongbi pojawiają się potwory!
+1250	Przeczesuje obszary i niszczy je. Zbiera punkty życia i wymienia je na skrzynie.
+1251	Event Łowcy Bossów kończy się za {} min.
+1252	Pan Kicaj i bossowie znikną za {} min.
+1253	Osiągnąłeś cel dnia - odbierz swą nagrodę.
+1254	Nie możesz używać wizerunku broni, gdy masz na sobie Suknię Ślubną lub Smoking.
+1255	Nie możesz handlować teraz z tą osobą, ponieważ jest ona zajęta.
+1256	Nie możesz nosić Sukni Ślubnej lub Smokingu, jeśli masz założony wizerunek broni.
+1257	Rozpoczyna się runda {}
+1258	To jest właściwy klucz.
+1259	[Gildia] Już wpłaciłeś maksymalną ilość PD.
+1260	[Gildia] Rozpoczął się nabór do gildii.
+1261	[Gildia] Przedłużono nabór do gildii.
+1262	[Gildia] Lista została zaktualizowana. Spróbuj ponownie później.
+1263	[Gildia] Nie znaleziono żadnej gildii.
+1264	[Gildia] Złożyłeś już podanie do tej gildii.
+1265	[Gildia] Twoje podanie już wpłynęło.
+1266	[Gildia] Gracz {} złożył u was podanie.
+1267	[Gildia] Lista została zaktualizowana. Spróbuj ponownie później.
+1268	[Gildia] Brak naboru.
+1269	Otrzymałeś {} Yang.
+1270	[Gildia] Brak podań.
+1271	[Gildia] Czas trwania naboru do gildii wynosi {}.
+1272	[Gildia] Twój nabór do gildii wkrótce wygasa.
+1273	[Gildia] Otrzymałeś {} Yang
+1274	[Gildia] Po odliczeniu {}%% podatku otrzymujesz {} Yang.
+1275	[Gildia] Nie możesz rozpocząć walki, podczas gdy ankieta jest w toku.
+1276	[Gildia] Nie możesz rozwiązać gildii, podczas gdy ankieta jest w toku.
+1277	[Gildia] Nie możesz nikogo zaprosić do gildii, podczas gdy ankieta jest w toku.
+1278	[Gildia] Możesz wybudować tylko jeden magazyn gildii..
+1279	Tajemnicze światło dobiega z tej skrzynki.
+1280	[Gildia] Spróbuj ponownie za 10 sek.
+1281	[Gildia] Inny członek gildii już to używa.
+1282	[Gildia] W magazynie gildii znajdują się jeszcze przedmioty.
+1283	[Gildia] Odrzuciłeś ankietę.
+1284	[Gildia] Zaakceptowałeś ankietę.
+1285	[Gildia] Członek gildii jest offline.
+1286	[Gildia] Brak aktualnej ankiety.
+1287	[Gildia] Rozpoczyna się ankieta 'Transfer lidera gildii'.
+1288	[Gildia] Rozpoczyna się ankieta 'Usuń członka gildii'.
+1289	[Gildia] Rozpoczyna się ankieta 'Sprzedaż obszaru gildii'.
+1290	Otrzymałeś {} Punktów Doświadczenia.
+1291	[Gildia] Rozpoczyna się ankieta 'Rozwiązanie gildii'.
+1292	[Gildia] Ankieta 'Transfer lidera gildii' w toku.
+1293	[Gildia] Ankieta 'Usuń członka gildii' w toku.
+1294	[Gildia] Ankieta 'Sprzedaż obszaru gildii' w toku.
+1295	[Gildia] Ankieta 'Rozwiązanie gildii' w toku.
+1296	[Gildia] Magazyn gildii jest aktualnie używany.
+1297	[Gildia] Magazyn gildii możesz ponownie otworzyć dopiero po 10 sek.
+1298	[Gildia] Twoja Gildia nie posiada magazynu gildii.
+1299	Zobacz, co wyskoczyło ze skrzyni!
+1300	[Gildia] Dla tego gracza wynik ankiety był negatywny. Spróbuj ponownie za {} miesiące/miesięcy, {} dni, {} godz. i {} min.
+1301	[Gildia] Członek gildii został usunięty z gildii z powodu nieaktywności.
+1302	[Gildia] Wziąłeś udział w aktualnej ankiecie.
+1303	[Gildia] Nie możesz rozpocząć ankiety dla swojej własnej postaci.
+1304	[Gildia] Podczas walki nie możesz rozpocząć ankiety.
+1305	[Gildia] Nie możesz sprzedać obszaru gildii swojej postaci.
+1306	[Gildia] Ta gildia nie istnieje.
+1307	[Gildia] Podczas walki nie możesz rozpocząć ankiety.
+1308	[Gildia] Poziom gildii jest za niski.
+1309	[Gildia] Twoi członkowie gildii byli przeciwko w ostatniej ankiecie. Spróbuj ponownie za {} miesiące/miesięcy, {} dni, {} godz. i {} min.
+1310	Jeśli będziesz wdychać czerwony dym ze skrzyni, będziesz szybszy!
+1311	[Gildia] Podczas walki nie możesz rozpocząć ankiety.
+1312	[Gildia] Twoi członkowie gildii byli przeciwko w ostatniej ankiecie. Spróbuj ponownie za {} miesiące/miesięcy, {} dni, {} godz. i {} min.
+1313	[Gildia] Musisz przeprowadzić ankietę przed sprzedażą swojego obszaru gildii.
+1314	[Gildia] To nie jest gildia, dla której była przeprowadzona ankieta dotycząca sprzedaży obszaru gildii.
+1315	[Gildia] W ostatniej ankiecie twoi członkowie gildii byli przeciwko sprzedaży. Spróbuj ponownie.
+1316	[Gildia] Nie możesz sprzedać obszaru gildii własnej postaci.
+1317	[Gildia] Lider gildii jest offline lub na innej mapie.
+1318	[Gildia] Gildia posiada już obszar gildii.
+1319	[Gildia] Nie znaleziono żadnego obszaru gildii.
+1320	[Gildia] Sprzedaż obszaru gildii został zakończony.
+1321	Przedmiot ten możesz używać tylko podczas trwania aktualnego eventu.
+1322	Wystąpił błąd. Bonusów nie można było zmienić.
+1323	Nie możesz obecnie przywołać swojego wierzchowca/zwierzaka.
+1330	Podczas transferu nie możesz użyć szarfy z bonusem jako odbiorcy.
+1331	Podczas transferu nie możesz użyć szarfy bez bonusu jako oryginału.
+1332	Nie możesz transferować bonusu, ponieważ szarfy mają różne stopie absorpcji.
+1333	Nie możesz transferować bonusu, ponieważ szarfy mają różne poziomy.
+1334	Porażka! Stopień absorpcji został zmniejszony o 1%.
+1335	Częściowy sukces! Stopień absorpcji został zmniejszony o 1%.
+1336	Sukces! Bonus został pomyślnie transferowany.
+1337	Podczas transferu bonusu nie możesz dropić przedmiotów.
+1338	Podczas transferu bonusu nie możesz przesuwać przedmiotów.
+1339	Podczas transferu bonusu nie możesz sprzedawać przedmiotów.
+1340	To jest to niemożliwe podczas transferu bonusu.
+1341	To jest niemożliwe podczas transferu bonusy przez innego gracza.
+1342	Aby określić przeznaczenie zwierzaka, potrzebujesz sfery losu zwierzaka.
+1343	Aktywuj najpierw swojego zwierzaka.
+1344	Podczas zmieniania parametrów swojego zwierzaka, nie możesz handlować, sprzedawać przedmiotów, używać magazynu itp.
+1345	Podczas zmieniania parametrów swojego zwierzaka, nie możesz używać przedmiotów.
+1346	Podczas zmieniania parametrów swojego zwierzaka, nie możesz dropić przedmiotów.
+1347	Podczas zmieniania parametrów swojego zwierzaka, nie możesz przenosić przedmiotów.
+1348	Podczas gdy twój partner handlowy zmieniania paramenty swojego zwierzaka, nie możesz z nim handlować.
+1349	Podczas zmieniania parametrów swojego zwierzaka, nie możesz rozmawiać z NPC.
+1350	Parametry twojego zwierzaka zostały zmienione.
+1351	Możesz otworzyć 3 sekundy po zamknięciu okna zmieniającego parametry zwierzaka.
+1352	Wszystkie sloty są zajęte.
+1399	Ten gracz obecnie nie może przyjąć twojego zaproszenia.
+1400	Po użyciu olejku wygnania, nie możesz już w tym królestwie przyjąć żadnego zaproszenia.
+1401	Umiejętność zwierzaka {} została aktywowana - {} używa bezszelestny chód.
+1403	Nazwa została już zarejestrowana.
+1404	Przed użyciem tego przedmiotu, usuń wyposażony smoczy kamień.
+1405	Tutaj nie możesz wypowiedzieć wojny gildii.
+1406	Nagroda
+1407	Nagroda za rangę: {}
+1408	Boss został pokonany! Wkrótce zostaniesz teleportowany z powrotem do Świątyni Zodiaku.
+1409	Niestety, nie udało ci się powstrzymać apokalipsy. Wkrótce zostaniesz teleportowany z powrotem do Świątyni Zodiaku.
+1410	Udało ci się wkroczyć do lochu {} o stopniu trudności {}. Walka zacznie się za {} sek.
+1411	Gdy skrzyneczka losu jest otwarta, nie możesz rozmawiać z NPC.
+1412	Gdy skrzyneczka losu jest otwarta, nie możesz używać przedmiotów.
+1413	Gdy skrzyneczka losu jest otwarta, nie możesz upuszczać przedmiotów.
+1414	Gdy skrzyneczka losu jest otwarta, nie możesz poruszać przedmiotów.
+1415	Gdy skrzyneczka losu jest otwarta, nie możesz handlować.
+1416	Gdy rozmówca ma otwartą skrzyneczkę losu, nie możecie ze sobą handlować.
+1417	Udało ci się wkroczyć do lochu {}. Walka zacznie się za {} sek.
+1418	Apokalipsa Zodiaku jest obecnie nieaktywna.
+1419	Apokalipsa Zodiaku już się rozpoczęła.
+1420	Został zmieniony bonus twojego smoczego kamienia.
+1421	[Schwytaj Króla] Pokonuj potwory, by zdobywać karty królewskie. Potrzebujesz 25 kart, by stworzyć talię królewską.
+1422	[Schwytaj Króla] Czekają na ciebie fantastyczne nagrody!
+1423	[Schwytaj Króla] Jeśli udało ci się uplasować w topce, przy stole otrzymasz swoją wygraną.
+1426	Otrzymujesz bonus magazynu z {}%% PD.
+1427	Otrzymujesz bonus magazynu z obroną: {}.
+1428	Otrzymujesz bonus magazynu z {}%% PŻ.
+1429	Otrzymujesz bonus magazynu z {}%% siła w walce z potworami.
+1430	Zanim pójdziesz na ryby upewnij się, że masz wystarczająco dużo miejsca w ekwipunku.
+1431	Gdy okno zmiany bonusu jest otwarte, nie możesz poruszać przedmiotów.
+1432	Odchodzisz z niczym. W brzuchu ryby nie było żadnych skarbów.
+1433	Nie możesz wędkować, gdy twój zwierzak jest wykluty.
+1434	Nie możesz wędkować, gdy twój zwierzak jest przywołany.
+1435	Nie możesz wędkować, gdy otwarte jest okno zmiany bonusu zwierzaka.
+1436	Nie możesz wykonać tej akcji, gdy otwarte są okna kombinacji lub absorpcji szarf.
+1437	Nie możesz wykonać tej akcji, gdy otwarte jest okno transferu bonusów szarf.
+1438	Nie możesz wykonać tej akcji, gdy otwarte jest okno transferu bonusów.
+1439	Nie możesz wędkować, gdy otwarte są inne okna.
+1440	Nie możesz wykonać tej akcji podczas wędkowania.
+1441	Pozostały czas: {} | Poziom trudności ryby: {} | Redukcja poziomu trudności: {}
+1442	Wszystkie rankingi Strefy Walki zostały zresetowane.
+1443	Dostarcz założone wizerunki broni.
+1444	W twoim ekwipunku nie ma miejsca.
+1450	Ulepszenie przedmiotu: {} nie powiodło się.
+1451	Ulepszenie przedmiotu: {} powiodło się.
+1452	Pojawił się Ołtarz Krwi.
+1453	Schwytałeś duszę.
+1454	[Rytuał Krwi] Masz za mało miejsca w ekwipunku.
+1455	[Rytuał Krwi] Masz za mało dusz.
+1456	[Rytuał Krwi] Masz za mało Yang.
+1457	Rytuał Krwi zaczyna się. Kupuj specjalne przedmioty, by otrzymać lepsze nagrody.
+1458	Rytuał Krwi zakończył się. Spróbuj ponownie następnym razem.
+1459	Zmiana ulepszenia nie powiodła się.
+1460	Ten przedmiot jest dostępny jedynie w Schronieniu Meley.
+1461	Użyto kompasu, jednak nie znaleziono strażnika.
+1462	Nie możesz tego zrobić, podczas gdy wykonujesz inną akcję.
+1463	Nie możesz tego zrobić, podczas gdy wykonujesz inną akcję.
+1464	Nie możesz ulepszyć swojej broni, gdy przywołujesz zwierzaka.
+1465	Aby otworzyć tę skrzynię, potrzebujesz pionowe miejsca ({}) w ekwipunku.
+1466	Masz za mało miejsca w ekwipunku.
+1467	[Magazyn] Nie można składować aktualnie używanego przedmiotu.
+1468	[Aura] Nie działa z przywiązanymi do duszy przedmiotami.
+1469	[Aura] Nie działa z szatą aury, na którą już został przeniesiony przedmiot.
+1470	[Aura] Twoja szata aury osiągnęła maks. poziom.
+1471	[Aura] Szatę aury można rozwinąć dopiero po jej ulepszeniu.
+1472	[Aura] Można dodać jedynie szaty aury.
+1473	[Aura] Można dodać jedynie szatę aury, tarczę, naszyjnik, kolczyk i bransoletę.
+1474	[Aura] Nie można ulepszyć.
+1475	[Aura] Można zrobić dopiero po dodaniu szaty aury.
+1476	[Aura] Dopasowano liczbę materiałów do wymaganej ilości.
+1477	[Aura] Nie można rozwinąć.
+1478	[Aura] Szatę aury można rozwinąć dopiero po jej ulepszeniu.
+1479	[Aura] Musisz dodać przedmioty.
+1480	[Aura] Ulepszenie powiodło się. Istnieje teraz możliwość rozwoju.
+1481	[Aura] Ulepszenie powiodło się!
+1482	[Aura] Nie posiadasz wystarczająco dużo pieniędzy, by rozwinąć szatę aury.
+1483	[Aura] Rozwój powiódł się!
+1484	[Aura] Sukces!
+1485	[Gildia] {} PD zostało wpłaconych.
+1486	Nie możesz karmić swojego zwierzaka przy otwartym okienku uszlachetnienia.
+1487	Rozpoczęła się Bitwa Pięciu Relikwiarzy! Będzie trwać {} dni.
+1488	Zakończyła się Bitwa Pięciu Relikwiarzy. Następna bitwa rozpoczyna się za {} godz.
+1489	Nie możesz otworzyć IU z siodła.
+1490	Obecnie event nie odbywa się.
+1491	Podczas przywoływania wierzchowca, nie możesz handlować, nie możesz się poruszać się oraz nie możesz sprzedawać przedmiotów, upuszczać lub przechowywać ich.
+1492	Bitwa została zakończona z powodu nieoczekiwanego problemu.
+1493	Bitwa Pięciu Relikwiarzy kończy się za {} min.
+1494	Potrzebujesz {} x {} więcej.
+1495	Otwarto poziom {} Smoczego Portalu. Do instancji!
+1496	Można wejść do poziomu {} Smoczego Portalu.
+1497	Zabiliśmy bossa!
+1498	Otrzymano {} PD gildii!
+1499	Minął wyznaczony czas wejścia do Smoczego Portalu.
+1500	Instancja zostanie zamknięta, jeśli nie rozpoczniesz bitwy w przeciągu {} min.
+1501	Bitwa nie została rozpoczęta. Instancja zamknięta.
+1502	{} zajął {}!
+1503	Nie możesz wpłacać, gdy przywołujesz zwierzaka.
+1504	Postać ta nie jest dostępna do pojedynku.
+1505	Od {}: Możesz jeszcze rozpakować {}.
+1506	Rozpakuj następny prezent za {} min.
+1507	{} zaatakował {}!
+1508	{} osiągał osobisty wynik {} punktów!
+1509	Nagroda za Rytuał Krwi
+1510	Za mało miejsca w ekwipunku. Nagroda zostanie wysłana do skrzynki pocztowej.
+1511	Członkowie grupy są za daleko oddaleni, by otrzymać przedmiot.
+1512	Osiągnięto maksymalny poziom gildii. Nie można dokonać już wpłat.
+1513	[Bitwa Proroków] Rozpoczęła się Bitwa Proroków!
+1514	[Bitwa Proroków] Otrzymujesz misje do minigry.
+1515	[Bitwa Proroków] Czeka na Ciebie bogaty łup!
+1516	[Bitwa Proroków] Zakończyła się Bitwa Proroków.
+1517	[Bitwa Proroków] Sprawdź swoją rangę i poproś o swoją nagrodę.
+1518	[Bitwa Proroków] Masz za mało monet proroka.
+1519	[BP] Nagroda rankingu
+1520	[Bitwa Proroków] Podniosłeś swoją wpłatę o 1.
+1521	Nie możesz użyć tego przedmiotu na przedmioty przywiązane do duszy.
+1522	Nie możesz uczestniczyć w Battle Royale.
+1524	Musisz najpierw opuścić swoją grupę.
+1525	Nie możesz wziąć udziału, ponieważ odliczanie już się rozpoczęło.
+1527	Oto zwycięzca Battle Royale: {}
+1528	{} zabił {}.
+1529	Rozpoczęło się odliczanie. Battle Royale rozpocznie się za {} sek.
+1530	Nie można rozpocząć Battle Royale, ponieważ jest za mało uczestników.
+1531	Rozpoczęła się Battle Royale. Pierwszy obszar zostanie wyświetlony za {} sek.
+1532	Strefa Walki została zaktualizowana. Za {} sek. zostanie ona zmniejszona.
+1533	Strefa Walki zostanie zmniejszona za {} sek.
+1534	Pole elektryczne się zatrzymało. Następna Strefa Walki zostanie wyświetlona za {} sek.
+1535	Battle Royale zakończy się za {} sek.
+1536	Tego nie możesz robić podczas udziału w Battle Royale.
+1537	Nie możesz zarejestrować się na tej mapie.
+1538	Nie możesz zarejestrować się na serwerze Battle Royale.
+1540	Nie możesz anulować tego na serwerze Battle Royale.
+1541	Rozpoczęła się Battle Royale!
+1542	Zakończyła się Battle Royale!
+1543	Nie ma innych Stref Walki. Za {} sek. zostanie zmniejszony cały obszar.
+1544	Obecnie nie masz żadnego debuffu.
+1545	Aby wziąć udział, potrzebujesz biletu Battle Royale.
+1546	Gdzieś upuszczono wyjątkowy pakiet z zapasami.
+1547	[Bonus Reliktu] Nosisz już relikt duszy.
+1548	Nie możesz tego użyć tutaj.
+1549	Teleportacja na Płaskowyż Siły Natury nie powiodła się.
+1550	Nie możesz tego już używać.
+1551	Masz za mało Gaya.
+1552	Status uczestników Battle Royale: ({}/{})
+1553	Zakończono rejestrację do Battle Royale.
+1554	Spróbuj ponownie później.
+1555	Nie możesz tego zrobić, podczas gdy wykonujesz inną akcję.
+1556	Turniej PvP
+1557	Nagroda za zwycięstwo w rundzie
+1558	Nagroda za zwycięstwo w turnieju
+1559	Nagrody Bitwy Proroków
+1560	Twój ekwipunek jest pełny. Twoja nagroda została Ci dostarczona drogą pocztową.
+1561	Nagroda Bitwy Proroków została Ci dostarczona drogą pocztową, ponieważ Twój ekwipunek był pełny.
+1562	Otrzymujesz {} PD za twój poziom czempiona.
+1574	Spróbuj ponownie później.
+1575	Battle Royale
+1576	Sezonowa Nagroda Battle Royale. Sezonowy ranking: {}
+1577	Ogólna Nagroda Battle Royale
+1578	Nagroda za Granie w Battle Royale. Ranga: {}
+1579	Nagroda za Walkę w Battle Royale. Zabici przeciwnicy {} lub więcej
+1580	Chwilowo nie możesz ubiegać się o osiągnięcie.
+1581	Chwilowo nie możesz używać emocji.
+1582	Yongan
+1583	Gildia {} wylicytowała w sferze {} obszar {}, {} za {} Won.
+1584	Twój lider gildii zarejestrował się w sferze {} do licytacji obszaru {},{}.
+1585	Już oddałeś swoją ofertę.
+1586	Możesz z powrotem otrzymać wydane Won.
+1587	Nie ma nic do odebrania.
+1588	Posiadasz maksymalną kwotę Won.
+1589	Otrzymujesz z powrotem {} wydanych Won.
+1590	Za dzierżawę może zapłacić tylko lider gildii albo członek gildii z dostępem do banku.
+1591	Nie musisz zapłacić za dzierżawę.
+1592	Gildia nie posiada wystarczającej ilości Yang.
+1593	[Obszar gildii] Idź do Strażnika i zapłać {} Yang za dzierżawę waszego obszaru gildii.
+1594	Zapłaciłeś {} Yang dzierżawy za obszar gildii.
+1595	Nie możesz tego zrobić, dopóki trwa licytacja obszaru.
+1596	Nie jesteś zarejestrowany do żadnej licytacji obszaru.
+1597	Nie jesteś członkiem żadnej gildii.
+1598	[Gildia] Zarejestrowałeś się już do licytacji obszaru.
+1599	Tylko lider gildii może zarejestrować się do licytacji obszaru.
+1600	Zarejestrować może się tylko gildia z poziomem {} lub wyższym.
+1601	Twoja gildia posiada już obszar gildii.
+1602	Obecnie nie odbywa się żadna licytacja obszaru.
+1603	Maksymalna oferta wynosi {} Won.
+1604	Masz za mało Won.
+1605	Twoja gildia nie jest zarejestrowana do licytacji obszaru.
+1606	Możesz licytować pod warunkiem, że należysz do gildii dłużej niż 24 godziny.
+1607	Nie zapłacono dzierżawy za obszar gildii. Porzucono obszar gildii.
+1608	Żadna z gild nie zarejestrowała się do licytacji obszaru.
+1609	Zaoferowałeś {} Won.
+1610	Ta gildia nie istnieje.
+1611	Dongan
+1612	U Strażnika w wiosce możesz z powrotem otrzymać wydane Won.
+1613	Wspaniale! Pomyślnie umieściłeś Kamień Duszy i nawet otrzymasz podwójny bonus wartości.
+1614	Joan
+1615	Pyungmo
+1616	Jungrang
+1617	Waryong
+1618	Imha
+1619	Miryang
+1620	Songpa
+1621	Daeyami
+1622	[Boss Świata] Event rozpoczęty
+1623	[Boss Świata] Event zakończony
+1624	[Boss Świata] Na kanale {}, pojawił się {} i terroryzuje obszar {}. Na polowanie!
+1625	[Boss Świata] Boss Świata na kanale {} został zaatakowany. Dołącz do polowania!
+1626	[Boss Świata] Dobra robota: {} został pokonany i pokój przywrócony... jak na teraz.
+1627	[Boss Świata] Boss Świata uciekł! Powodzenia następnym razem.
+1628	[Boss Świata] Tym razem nie otrzymasz żadnej nagrody.
+1629	[Boss Świata] Dobra robota! Oto Twoja nagroda. Dołącz też następnym razem!
+1630	[Boss Świata] Nie otrzymasz żadnej nagrody, ponieważ masz za mało miejsca w ekwipunku.
+1631	[Boss Świata] Nagroda rankingu dla poziomu łupu I: {}
+1632	[Boss Świata] Nagroda rankingu dla poziomu łupu II: {}
+1633	[Boss Świata] Nagroda rankingu dla poziomu łupu III: {}
+1634	[Boss Świata] Nagroda rankingu dla poziomu łupu IV: {}
+1635	[Dzieci Kwiaty] Masz za mało latorośli.
+1636	[Dzieci Kwiaty] Masz za mało miejsca w ekwipunku.
+1637	[Dzieci Kwiaty] Otrzymujesz nasiona kwiatów.
+1638	[Dzieci Kwiaty] Masz za małą ilość nasion kwiatów.
+1639	[Dzieci Kwiaty] Otrzymujesz latorośl chryzantemy.
+1640	[Dzieci Kwiaty] Otrzymujesz latorośl konwalii.
+1641	[Dzieci Kwiaty] Otrzymujesz latorośl narcyza.
+1642	[Dzieci Kwiaty] Otrzymujesz latorośl lilii.
+1643	[Dzieci Kwiaty] Otrzymujesz latorośl słonecznika.
+1644	[Boss Świata] Uwaga: wkrótce pojawi się Boss Świata!
+1645	[Dzieci Kwiaty] Nie możesz dłużej używać tego przedmiotu.
+1646	Nie możesz się transformować.
+1647	Zabij wszystkie potwory w określonym limicie czasowym!
+1648	Portal do kolejnego pomieszczenia jest otwarty.
+1649	Uniknij wszystkich ataków!
+1650	Portal do kolejnego poziomu jest otwarty.
+1651	Gracz {} zdobył poziom {} w Piekielnej Wieży Sunga Mahi!
+1652	Łup z Piekielnej Wieży Sunga Mahi został wysłany do twojej skrzynki pocztowej.
+1653	Piekielna Wieża: poziom {}
+1654	Łup za ukończenie Piekielnej Wieży Sunga Mahi
+1655	Walka zacznie się za {} sek.
+1656	Stajesz do walki na poziomie {}.
+1657	Zabij pary potworów, które nie należą do siebie!
+1658	Zaatakowałeś złego potwora. Zabij wszystkie potwory!
+1659	Zabij wszystkie potwory w określonym limicie czasowym!
+1660	Zniszczyłeś nieprawidłowy Kamień Metin. Pokonaj wszystkie potwory!
+1661	Zniszcz prawidłowy Kamień Metin!
+1662	Znajdź odpowiedni klucz, by uciec!
+1663	Znajdź kamień pieczęci, by usunąć pieczęć!
+1664	[Piekielna Wieża Sunga Mahi] Zabij wszystkie potwory w określonym limicie czasowym!
+1665	[Piekielna Wieża Sunga Mahi] Zakończył się aktualny cykl rankingu.
+1666	[Piekielna Wieża Sunga Mahi] Rozpoczął się nowy cykl rankingu.
+1667	Sezonowa nagroda za 1. miejsce na piętrze {} w Piekielnej Wieży.
+1668	Sezonowa Nagroda Piekielnej Wieży
+1669	Na ciebie nie została rzucona klątwa.
+1670	Anulowano wszystkie klątwy.
+1671	Czas minął. Zostaniesz przeniesiony na zewnątrz.
+1672	[Piekielna Wieża Sunga Mahi] Zniszcz demoniczny kamień!
+1673	[Piekielna Wieża Sunga Mahi] Klucz nie pasuje. Znajdź inny i spróbuj ponownie!
+1674	[Piekielna Wieża Sunga Mahi] Usuń pieczęć z pomocą kamienia pieczęci Sunga Mahi!
+1675	[Piekielna Wieża Sunga Mahi] Najpierw musisz usunąć inną pieczęć!
+1676	Od teraz możesz nosić rękawice.
+1677	Jeszcze nie możesz nosić rękawic.
+1678	Ta funkcja jest niedostępna, ponieważ znaleziono program hakerski.
+1679	[Piekielna Wieża Sunga Mahi] Udało ci się przejść ten poziom po {} sek.
+1680	W dniu założenia gildii nie możecie brać udziału w licytacji obszaru.
+1681	You have mastered {} {}'s Dragon gate.
+1683	You don't have Dragon gate reset item.
+1684	You received {} Dragon gate points.
+1685	You have failed to disolve solvent.
+1686	Zdobądź stopnie Piekielnej Wieży Sunga Mahi i wejdź na następny poziom.
+1687	[Osobisty Sklepik Premium] Nie możesz tego użyć. Udaj się do Dyspozytorki Handlowej w wiosce.
+1688	Wkroczyłeś na obszar, który znajduje się pod wpływem kontroli Sunga Mahi i cierpisz z powodu jego klątwy.
+1689	Na obszarze {} znajduje się jeszcze {} x posterunki ({}/{})
+1690	Obszar {} wybudował wszystkie posterunki i kontrola Sunga Mahi zaczyna się za {} min.
+1691	Posterunki Sunga Mahi zostały wybudowane.
+1692	Posterunki Sunga Mahi zostały wyburzone.
+1693	Wszystkie posterunki na obszarze {} zostały zniszczone, a obszar uwolnił się spod kontroli Sunga Mahi.
+1694	Seoganland
+1695	Namgan
+1696	Ulepszenie powiodło się!
+1697	Ulepszenie nie powiodło się!
+1698	Dzięki błogosławieństwu odporności jesteś uwolniony spod kontroli Sunga Mahi.
+1699	Twoje błogosławieństwo odporności wygasło. Teraz znajdujesz się ponownie pod wpływem klątwy Sunga Mahi.
+1700	Nie możesz tego zrobić z użytkownikiem programu hackerskiego.
+1701	Masz za mało materiałów do procesu ulepszenia. (Nie można używać przedmiotów przywiązanych do duszy.)
+1702	Obszar twojej gildii zostanie automatycznie porzucony za {}. Przedmioty w magazynie gildii zostaną usunięte.
+1703	[Gildia] Nie możesz wyrzucić lidera gildii.
+1704	[Gildia] Nie możesz sam siebie wyrzucić.
+1705	[Gildia] Nie możesz sam siebie mianować na lidera gildii.
+1706	[Gildia] To jest dostępne tylko dla lidera gildii. (Jeśli zostanie porzucony obszar gildii.)
+1707	[Gildia] Nie możesz porzucić obszaru gildii w trakcie Bitwy Gildii.
+1708	Nie możesz tego wymienić.
+1709	Została aktywowana akcja Piekielnej Wieży.
+1710	Po osiągnięciu poziomu czempiona możesz się tego nauczyć.
+1711	[Osobisty Sklepik Premium] Nie możesz otworzyć, ponieważ musisz jeszcze odebrać pieniądze.
+1712	[Osobisty Sklepik Premium] Nie możesz otworzyć, ponieważ musisz jeszcze odebrać przedmioty.
+1713	[Osobisty Sklepik Premium] Twój osobisty sklepik jest już otwarty.
+1714	[Osobisty Sklepik Premium] Sklepik jest w przygotowaniu.
+1715	[Osobisty Sklepik Premium] Masz za mało miejsca w swoim ekwipunku.
+1716	[Osobisty Sklepik Premium] Możesz odebrać przedmioty w swoim osobistym sklepiku.
+1717	[Osobisty Sklepik Premium] Możesz odebrać pieniądze w swoim osobistym sklepiku.
+1718	[Osobisty Sklepik Premium] Sprzedano {}. Odbierz swoje pieniądze.
+1719	[Osobisty Sklepik Premium] Sklepik możesz ponownie otworzyć dopiero po {}.
+1720	Nie możesz tego robić podczas tworzenia instancji.
+1721	Nie możesz już się ożywić. Zostaniesz teleportowany z instancji.
+1722	Otrzymałeś już swoją nagrodę. Jeśli ponownie chcesz spróbować, wróć później. Pozostały czas: {} h {} m
+1723	Możesz ożywić się jeszcze {}x
+1724	Teraz możesz wejść do Świątyni Węży. Użyj do tego Statui Węży.
+1725	Zniszczony Metin nie reaguje. Znowu pojawiły się wszystkie Metiny.
+1726	Zniszczony Metin nie reaguje. Znowu pojawiły się wszystkie Metiny.
+1727	Udało ci się zniszczy {}. Metin. Zniszcz teraz {}. Metin.
+1728	Czas minął. Zostaniesz teleportowany z instancji.
+1729	Dostępne tylko przez {} min.
+1730	Nie możesz przedłużyć licznika czasu instancji.
+1731	Do licznika czasu instancji dodano 1 min.
+1732	Udało ci się pokonać wszystkie potwory. Zostaniesz przeniesiony na poziom {}. Pozostało jeszcze {} sek.
+1733	Udało ci się zniszczyć wszystkie Metiny. Zostaniesz przeniesiony na poziom {}. Pozostało jeszcze {} sek.
+1734	Odłamek został dodany do głowy węża. Nie zadziałał.
+1735	Zostały odblokowane wszystkie kolumny węży. Poziom {} za {} sek.
+1736	Pojawił się wyjątkowy Kowal Świątyni Węży!
+1737	Pojawił się Kowal Świątyni Węży!
+1738	Udało ci się pokonać wszystkie potwory i możesz teraz udać się do poziomu bossa.
+1739	Udało ci się ukończyć Świątynię Węży. Zostaniesz teleportowany z instancji za {} sek.
+1740	Zniszcz kamienie Metin we właściwej kolejności.
+1741	Zabij wszystkie potwory.
+1742	Odbierz klucz potworom i w ten sposób odblokujesz kolumnę węży.
+1743	Dodałeś odłamek do głowy węża.
+1744	Zabij bossa.
+1745	Otwarto!
+1746	Musisz najpierw odblokować inne kolumny.
+1747	Więzienie została otwarte. Kowal uśmiecha się do ciebie.
+1748	Tym kluczem nie udało ci się otworzyć więzienia i uwolnić Kowala.
+1749	Odłamek ten nie pasuje do głowy węża.
+1750	You cannot use further over 999,999 Dragon gate points.
+1751	You cannot reset because your Dragon gate points exceed the limit.
+1752	Musisz wypełnić co najmniej 1 kulę PD na poziomie 120, by móc osiągnąć poziom czempiona.
+1753	Musisz ukończyć instancję "Obrona statku".
+1754	Osiągnąłeś już poziom czempiona.
+1755	[Osobisty Sklepik Premium] Otwierając osobisty sklepik, nie możesz używać żadnych przedmiotów.
+1756	[Osobisty Sklepik Premium] Nie możesz użyć, podczas zarządzania przedmiotami.
+1757	[Osobisty Sklepik Premium] Nie możesz używać osobistego sklepiku premium, podczas gdy masz otwarte inne okna.
+1758	[Osobisty Sklepik Premium] Nie możesz tego zrobić, podczas gdy zarządzasz przedmiotami.
+1759	You have used {} Dragon gate points.
+1760	[Bonus Reliktu] Niemożliwe z otwartym oknem reliktu duszy.
+1761	{} członków grupy opuściło walkę.
+1762	Pozostało ci jeszcze {} min.
+1763	[Osobisty Sklepik Premium] Nie możesz się tutaj pojedynkować.
+1764	[Osobisty Sklepik Premium] Pieniądze do odbioru nie będą aktualizowane, podczas gdy zarządzasz przedmiotami.
+1765	Pojawił się boss końcowy Świątyni Węży.
+1766	[Osobisty Sklepik Premium] Tutaj otwarto już sklepik. Znajdź inne miejsce, gdzie możesz otworzyć sklepik.
+1767	Nie możesz tego ulepszyć po przywołaniu zwierzaka, którego można rozwijać.
+1768	<Głębie Północnego Wiatru> Pozostało ci jeszcze {} min.
+1769	<Głębie Północnego Wiatru> Jeśli nie rozpoczniesz walki w przeciągu 3 min., instancja zostanie skasowana.
+1770	<Głębie Północnego Wiatru> Czas minął. Zostaniesz teleportowany z instancji.
+1771	It is available after you complete Dragon gate learning quest.
+1772	<Głębie Północnego Wiatru> Utworzono instancję dla Schronienia Północnego Wiatru.
+1773	HP
+1774	Defense
+1775	Leader
+1776	Tugyi
+1777	EXP
+1778	Resistance(Fire)
+1779	Resistance(Ice)
+1780	Resistance(Electric)
+1781	Resistance(Wind)
+1782	Resistance(Earth)
+1783	Resistance(Darkness)
+1784	STR
+1785	Strength(Fire)
+1786	Strength(Ice)
+1787	Strength(Electric)
+1788	Strength(Wind)
+1789	Strength(Earth)
+1790	Strength(Darkness)
+1791	Mark
+1792	Sung ma(STR)
+1793	Sung ma(Resistance)
+1794	Sung ma(VIT)
+1795	Sung ma(INT)
+1796	<Głębie Północnego Wiatru> Udało ci się pokonać Alastora! Zostaniesz teleportowany z instancji za 20 sek.
+1797	<Głębie Północnego Wiatru> Wkrótce Alastor rozpęta swój lodowy gniew!
+1798	<Głębie Północnego Wiatru> Alastor rozpętuje poziom {} swojego lodowatego gniewu!
+1799	<Głębie Północnego Wiatru> Udało ci się odeprzeć lodowaty gniew Alastora.
+1800	<Głębie Północnego Wiatru> Jeśli nie zniszczysz w przeciągu {} sek. białych smoczych jaj, to śmiertelny chłód przeniknie do schronienia.
+1801	Tutaj to jest niedostępne.
+1802	Dostępne po rozpoczęciu walki.
+1803	<Głębie Północnego Wiatru> Instancja została skasowana, ponieważ nie udało ci się w przeciągu wyznaczonego czasu rozpocząć walki.
+1804	It is not available while Dragon gate is opened.
+1807	You cannot use Dragon gate system.
+1808	Pozyskujesz {} pkt doświadczenia poziomu czempiona.
+1809	Pozyskujesz {} pkt doświadczenia.
+1810	Tracisz {} pkt doświadczenia.
+1811	Tracisz {} pkt doświadczenia poziomu czempiona.
+1812	Nie możesz tego zrobić podczas handlu.
+1813	Rozpoczął się event "Gorączka Metin"!
+1814	Zaliczaj misje z listy misji eventowych, niszcz kamienie Metin i zgarniaj nagrody.
+1815	Obecnie nie odbywa się Gorączka Metin.
+1816	[Świątynia Smoka] Utworzono instancję dla Świątyni Smoka.
+1817	[Świątynia Smoka] Twoja instancja zostanie rozwiązana, jeśli nie rozpoczniesz walki w przeciągu 3 minut.
+1818	[Świątynia Smoka] Beran-Setaou został pokonany. Zostaniesz teleportowany z instancji za {} sek.
+1819	[Świątynia Smoka] Pozostało ci jeszcze {} min.
+1820	[Świątynia Smoka] Rozwiązano instancję, ponieważ nie rozpoczęto walki.
+1821	[Świątynia Smoka] Czas dobiegł końca, i wszyscy zostaną teleportowani z lochu.
+1822	[Świątynia Smoka] Utworzono instancję dla Świątyni Smoka.
+1823	[Świątynia Smoka] Twoja instancja zostanie rozwiązana, jeśli nie rozpoczniesz walki w przeciągu 3 minut.
+1824	[Świątynia Smoka] Rozpoczęto instancję.
+1825	[Świątynia Smoka] Poddałeś się, a instancja została rozwiązana.
+1829	[Świątynia Smoka] Instancja zostanie zamknięta, jeśli nikt nie wejdzie do niej w przeciągu {} sek.
+1830	[Świątynia Smoka] Instancja zostanie zamknięta, jeśli nikt nie wejdzie do niej w wyznaczonym czasie.
+1838	Nie możesz sam siebie zablokować.
+1839	Nie możesz sam siebie dodać.
+1840	{} akcja była dozwolona.
+1844	Nakarmiłeś swojego konia {}x paszą dla konia. Zdobył on {} pkt doświadczenia.
+1845	Za mało Gaya lub Yang
+1846	Nie możesz szkolić się w tej umiejętności konnej.
+1847	[Świątynia Enigma] Tylko lider grupy może używać tego zwoju.
+1848	[Świątynia Enigma] Tylko lider grupy może używać tego zwoju.
+1849	[Świątynia Enigma] {} nie jest w zasięgu.
+1850	[Świątynia Enigma] Nie możesz użyć zwoju na swoim poziomie.
+1851	[Świątynia Enigma] Twój poziom {} jest za niski, by wejść.
+1852	[Świątynia Enigma] Gracz {} odrzucił wejście.
+1853	[Świątynia Enigma] Po 1 min. instancja zniknie, jeśli nie rozpoczniesz walki.
+1854	[Świątynia Enigma] Utworzono portal do Świątyni Enigma.
+1855	[Świątynia Enigma] Zniszcz ten prawdziwy kamień Metin.
+1856	[Świątynia Enigma] Ten kamień Metin to podróbka. Znajdź prawdziwy kamień Metin!
+1857	[Świątynia Enigma] Otrzymujesz skrzynię skarbów z kamienia Metin.
+1858	[Świątynia Enigma] Nie udało ci się znaleźć prawdziwego kamienia Metin. Użyj portalu i spróbuj jeszcze raz.
+1859	[Świątynia Enigma] Ukończono zadanie. Znajdź tajną komnatę.
+1860	[Świątynia Enigma] Znajdź prawdziwego potwora i pokonaj go! Nie daj się wywieść w pole.
+1861	[Świątynia Enigma] Nie udało ci się znaleźć prawdziwego potwora. Użyj portalu i spróbuj jeszcze raz.
+1862	[Świątynia Enigma] Pooglądaj skrzynię skarbów.
+1863	[Świątynia Enigma] Witaj w tajnej komnacie.
+1864	[Świątynia Enigma] Czas minął. Wszyscy zostaną teleportowani z instancji.
+1865	[Świątynia Enigma] Otrzymujesz w nagrodę błogosławieństwo Świątyni Enigma.
+1866	[Świątynia Enigma] Nie otrzymujesz nagrody. Pozostały czas do kolejnej nagrody: {}h, {} min.
+1867	Nagroda Świątyni Enigma
+1868	[Świątynia Enigma] Zniknęła Świątynia Enigma, ponieważ czas minął.
+1869	[Świątynia Enigma] Masz 4 min., by rozpocząć walkę przy Portalu Enigma.
+1870	[Świątynia Enigma] Dzięki błogosławieństwu Świątyni Enigma otrzymujesz kolejną skrzynię skarbów.
+1871	[Świątynia Enigma] Otrzymujesz nagrodę Świątyni Enigma. Sprawdź skrzynkę pocztową, by ją odebrać.
+1872	{} was removed.
+1873	You acquired {} skill. You can check it in the skill tap.
+1874	Masz za mało Gaya
+1876	Spróbuj później ponownie.
+1878	Czas się skończył. Wkrótce zostaniesz teleportowany do miasta.
+1879	Nie możesz już się ożywić.
+1880	Udało ci się ukończyć instancję i zostaniesz teleportowany z niej za {} min.
+1881	Udało ci się pokonać wszystkich posłańców. Udaj się do Strażnika Hae-Tae, by wejść do lochu Potępienie.
+1882	Nie możesz użyć więcej przedmiotów niż ich maksymalna ilość.
+1883	Podróż w Zaświaty dobiegła końca i nie możesz znaleźć więcej trupich płomieni.
+1884	Rozpoczęła się podróż w Zaświaty. Zabijając potwory, możesz znaleźć trupie płomienie.
+1885	Podróż w Zaświaty dobiegła końca.
+1886	Rozpoczęła się podróż w Zaświaty. Teraz możesz użyć Portalu Zaświatów przy Przylądku Smoczego Ognia.
+1887	Użyłeś {}x życiodajna woda. Pozostało ci jeszcze {}x życiodajna woda.
+1888	Otrzymujesz {}x trupi płomień.
+1895	Udało ci się pokonać Posłańca Ziemi.
+1896	Udało ci się pokonać Posłańca Nocy.
+1897	Udało ci się pokonać Posłańca Grzmotu.
+1898	Udało ci się pokonać Posłańca Niebios.
+1899	Instancja zostanie zamknięta za {} min.
+1900	Nie masz już miejsca na trupie płomienie.
+1901	Musisz jeszcze poczekać, zanim spróbujesz jeszcze raz. Pozostały czas oczekiwania: {} h {} min.
+1902	Po wejściu do Świątyni Smoka, nie możesz zmienić już grupy.
+1903	Posiadasz już maks. ilość najemników.
+1904	Wytrzymałość została przekroczona.
+1905	[Świątynia Enigma] Zniszcz Metin Enigma, by dostać się na wyższy poziom.
+1916	Nauczyłeś się już tej umiejętności.
+1917	Tej umiejętności można nauczyć się od poziomu konia 31.
+1918	Nie możesz nabyć tej umiejętności.
+1919	Tej umiejętności można nauczyć się od poziomu konia 21.
+1921	<Secret Dungeon> You cannot enter the dungeon. Level requirement is not met.

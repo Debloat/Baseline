@@ -1,0 +1,540 @@
+BoundingSphereRadius   400.000000
+BoundingSpherePosition 0.000000 0.000000 0.000000
+
+Group Particle
+{
+    StartTime           0.208000
+    List TimeEventPosition
+    {
+        0.000000 "MOVING_TYPE_DIRECT" 0.000000 0.000000 94.712997
+    }
+    
+    Group EmitterProperty
+    {
+        MaxEmissionCount        1
+    
+        CycleLength             0.500000
+        CycleLoopEnable         0
+        LoopCount               0
+    
+        EmitterShape            0
+        EmitterAdvancedType     0
+        EmitterEmitFromEdgeFlag  0
+        EmittingDirection       0.030000 0.030000 0.030000
+    
+        List TimeEventEmittingSize
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingAngularVelocity
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionX
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionY
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionZ
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingVelocity
+        {
+            0.000000 22.680412
+        }
+        List TimeEventEmissionCountPerSecond
+        {
+            0.000000 30.927835
+        }
+        List TimeEventLifeTime
+        {
+            0.000000 0.979381
+        }
+        List TimeEventSizeX
+        {
+            0.000000 64.000000
+        }
+        List TimeEventSizeY
+        {
+            0.000000 64.000000
+        }
+    }
+    
+    Group ParticleProperty
+    {
+        SrcBlendType                 3
+        DestBlendType                2
+        ColorOperationType           6
+        BillboardType                3
+        RotationType                 1
+        RotationSpeed                500.000000
+        RotationRandomStartingBegin  0
+        RotationRandomStartingEnd    0
+    
+        AttachEnable                 1
+        StretchEnable                0
+    
+        TexAniType                   0
+        TexAniDelay                  0.029000
+        TexAniRandomStartFrameEnable 1
+    
+        List TimeEventGravity
+        {
+        }
+        List TimeEventAirResistance
+        {
+        }
+        List TimeEventScaleX
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventScaleY
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventColorRed
+        {
+            0.000000 0.760784
+            0.102564 0.419608
+            0.266667 0.854902
+            0.917949 0.494118
+        }
+        List TimeEventColorGreen
+        {
+            0.000000 0.419608
+            0.102564 0.498039
+            0.266667 0.443137
+            0.917949 0.419608
+        }
+        List TimeEventColorBlue
+        {
+            0.000000 0.898039
+            0.102564 0.898039
+            0.266667 0.992157
+            0.917949 0.898039
+        }
+        List TimeEventAlpha
+        {
+            0.000000 1.000000
+            0.594286 0.855670
+            1.000000 0.000000
+        }
+        List TimeEventRotation
+        {
+            0.274286 -1000.000000
+        }
+        List TextureFiles
+        {
+            "D:\Ymir Work\effect\monster\palbang_spin.dds"
+        }
+    }
+}
+Group Particle
+{
+    StartTime           0.208000
+    List TimeEventPosition
+    {
+        0.000000 "MOVING_TYPE_DIRECT" 0.000000 0.000000 94.712997
+    }
+    
+    Group EmitterProperty
+    {
+        MaxEmissionCount        2
+    
+        CycleLength             0.500000
+        CycleLoopEnable         0
+        LoopCount               0
+    
+        EmitterShape            0
+        EmitterAdvancedType     0
+        EmitterEmitFromEdgeFlag  0
+        EmittingDirection       0.000000 0.000000 0.000000
+    
+        List TimeEventEmittingSize
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingAngularVelocity
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionX
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionY
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionZ
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingVelocity
+        {
+            0.000000 22.680412
+        }
+        List TimeEventEmissionCountPerSecond
+        {
+            0.000000 61.855671
+        }
+        List TimeEventLifeTime
+        {
+            0.002857 0.128866
+        }
+        List TimeEventSizeX
+        {
+            0.000000 128.000000
+        }
+        List TimeEventSizeY
+        {
+            0.000000 128.000000
+        }
+    }
+    
+    Group ParticleProperty
+    {
+        SrcBlendType                 5
+        DestBlendType                2
+        ColorOperationType           5
+        BillboardType                3
+        RotationType                 1
+        RotationSpeed                500.000000
+        RotationRandomStartingBegin  0
+        RotationRandomStartingEnd    0
+    
+        AttachEnable                 1
+        StretchEnable                0
+    
+        TexAniType                   0
+        TexAniDelay                  0.029000
+        TexAniRandomStartFrameEnable 1
+    
+        List TimeEventGravity
+        {
+        }
+        List TimeEventAirResistance
+        {
+        }
+        List TimeEventScaleX
+        {
+            0.000000 5.000000
+        }
+        List TimeEventScaleY
+        {
+            0.000000 5.000000
+        }
+        List TimeEventColorRed
+        {
+            0.000000 1.000000
+            0.207692 0.988235
+            0.469231 0.329412
+            0.951282 1.000000
+        }
+        List TimeEventColorGreen
+        {
+            0.000000 0.274510
+            0.207692 0.274510
+            0.469231 0.274510
+            0.951282 0.274510
+        }
+        List TimeEventColorBlue
+        {
+            0.000000 0.274510
+            0.207692 1.000000
+            0.469231 0.992157
+            0.951282 0.274510
+        }
+        List TimeEventAlpha
+        {
+            0.000000 1.000000
+            0.577143 0.814433
+            1.000000 0.278351
+        }
+        List TimeEventRotation
+        {
+            0.274286 -1500.000000
+        }
+        List TextureFiles
+        {
+            "D:\Ymir Work\effect\monster\palbang_spin_round.dds"
+        }
+    }
+}
+Group Particle
+{
+    StartTime           0.208000
+    List TimeEventPosition
+    {
+        0.000000 "MOVING_TYPE_DIRECT" 0.000000 -116.822998 94.712997
+    }
+    
+    Group EmitterProperty
+    {
+        MaxEmissionCount        2
+    
+        CycleLength             0.500000
+        CycleLoopEnable         0
+        LoopCount               0
+    
+        EmitterShape            0
+        EmitterAdvancedType     0
+        EmitterEmitFromEdgeFlag  0
+        EmittingDirection       0.000000 0.000000 0.000000
+    
+        List TimeEventEmittingSize
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingAngularVelocity
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionX
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionY
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionZ
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingVelocity
+        {
+            0.000000 22.680412
+        }
+        List TimeEventEmissionCountPerSecond
+        {
+            0.000000 30.927835
+        }
+        List TimeEventLifeTime
+        {
+            0.000000 0.979381
+        }
+        List TimeEventSizeX
+        {
+            0.000000 128.000000
+        }
+        List TimeEventSizeY
+        {
+            0.000000 128.000000
+        }
+    }
+    
+    Group ParticleProperty
+    {
+        SrcBlendType                 5
+        DestBlendType                2
+        ColorOperationType           6
+        BillboardType                3
+        RotationType                 1
+        RotationSpeed                500.000000
+        RotationRandomStartingBegin  0
+        RotationRandomStartingEnd    0
+    
+        AttachEnable                 1
+        StretchEnable                0
+    
+        TexAniType                   0
+        TexAniDelay                  0.029000
+        TexAniRandomStartFrameEnable 1
+    
+        List TimeEventGravity
+        {
+        }
+        List TimeEventAirResistance
+        {
+        }
+        List TimeEventScaleX
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventScaleY
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventColorRed
+        {
+            0.000000 0.203922
+            0.207692 0.533333
+            0.274359 0.945098
+            0.361538 0.533333
+            0.661538 0.854902
+            0.997436 0.533333
+        }
+        List TimeEventColorGreen
+        {
+            0.000000 0.274510
+            0.207692 0.203922
+            0.274359 0.709804
+            0.361538 0.203922
+            0.661538 0.203922
+            0.997436 0.203922
+        }
+        List TimeEventColorBlue
+        {
+            0.000000 0.854902
+            0.207692 0.854902
+            0.274359 1.000000
+            0.361538 0.854902
+            0.661538 0.588235
+            0.997436 0.854902
+        }
+        List TimeEventAlpha
+        {
+            0.000000 1.000000
+            0.600000 0.793814
+            1.000000 0.000000
+        }
+        List TimeEventRotation
+        {
+            0.274286 -1000.000000
+        }
+        List TextureFiles
+        {
+            "D:\Ymir Work\effect\monster\palbang_spin.dds"
+        }
+    }
+}
+Group Particle
+{
+    StartTime           0.208000
+    List TimeEventPosition
+    {
+        0.000000 "MOVING_TYPE_DIRECT" 0.000000 124.490997 94.712997
+    }
+    
+    Group EmitterProperty
+    {
+        MaxEmissionCount        2
+    
+        CycleLength             0.500000
+        CycleLoopEnable         0
+        LoopCount               0
+    
+        EmitterShape            0
+        EmitterAdvancedType     0
+        EmitterEmitFromEdgeFlag  0
+        EmittingDirection       0.100000 0.100000 0.100000
+    
+        List TimeEventEmittingSize
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingAngularVelocity
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionX
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionY
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingDirectionZ
+        {
+            0.000000 0.000000
+        }
+        List TimeEventEmittingVelocity
+        {
+            0.000000 10.000000
+        }
+        List TimeEventEmissionCountPerSecond
+        {
+            0.000000 30.927835
+        }
+        List TimeEventLifeTime
+        {
+            0.000000 0.979381
+        }
+        List TimeEventSizeX
+        {
+            0.000000 128.000000
+        }
+        List TimeEventSizeY
+        {
+            0.000000 128.000000
+        }
+    }
+    
+    Group ParticleProperty
+    {
+        SrcBlendType                 3
+        DestBlendType                2
+        ColorOperationType           5
+        BillboardType                3
+        RotationType                 1
+        RotationSpeed                500.000000
+        RotationRandomStartingBegin  0
+        RotationRandomStartingEnd    0
+    
+        AttachEnable                 0
+        StretchEnable                0
+    
+        TexAniType                   0
+        TexAniDelay                  0.029000
+        TexAniRandomStartFrameEnable 1
+    
+        List TimeEventGravity
+        {
+        }
+        List TimeEventAirResistance
+        {
+        }
+        List TimeEventScaleX
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventScaleY
+        {
+            0.000000 3.000000
+            1.000000 6.000000
+        }
+        List TimeEventColorRed
+        {
+            0.053846 0.835294
+            0.271795 0.596078
+            0.941026 0.603922
+        }
+        List TimeEventColorGreen
+        {
+            0.053846 0.141176
+            0.271795 0.705882
+            0.941026 0.254902
+        }
+        List TimeEventColorBlue
+        {
+            0.053846 0.976471
+            0.271795 1.000000
+            0.941026 0.909804
+        }
+        List TimeEventAlpha
+        {
+            0.000000 1.000000
+            0.634286 0.773196
+            1.000000 0.000000
+        }
+        List TimeEventRotation
+        {
+            0.274286 -1000.000000
+        }
+        List TextureFiles
+        {
+            "D:\Ymir Work\effect\monster\palbang_spin.dds"
+        }
+    }
+}

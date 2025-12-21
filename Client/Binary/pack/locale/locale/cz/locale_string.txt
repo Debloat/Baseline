@@ -1,0 +1,1810 @@
+1	Všichni budou brzy teleportováni do města.
+2	Tento předmět neexistuje.
+3	Bedna náhle vybuchla! Ztratil jsi body života (ZB).
+4	[Cech] Prodej cechovního území se nezdařil.
+5	[Cech] Prodej cechovního území nemůže být dokončen, protože v cechovní pokladnici není dostatek Yangů.
+6	[Cech] Nemůžeš opustit cech, pokud je aktivní hlasování.
+7	[Cech] Hráč je offline nebo je na jiné mapě.
+8	[Cech] Nemůžeš volit bojovníky, když je cech ve válce.
+9	[Cech] Nemůžeš zahájit další hlasování, když jiné již probíhá.
+10	[Cech] Tato akce není během války možná.
+11	[Cech] Nelze vylepšit, když je cechovní pokladnice plná.
+12	[Cech] Nemůžeš použít cechovní skladiště, pokud je aktivní hlasování.
+13	Pokud vdechneš zelený kouř vycházející z bedny, jed se rozšíří v tvém těle!
+14	[Cech] Nemůžeš provést tuto akci, když je otevřeno cechovní skladiště.
+15	[Cech] Nemůžeš změnit vůdce cechu během války.
+16	[Cech] {} použil {}.
+17	[Cech] Nemáš právo používat cechovní schopnosti.
+18	[Cech] Nacházíš se v pozorovatelském módu, neboť jsi již vyčerpal limit oživení.
+19	[Cech] Prosím, ověř členy a velitele.
+20	[Cech] Prosím, ověř členy a velitele protivníka.
+21	[Cech] Někteří členové jsou offline nebo na jiné mapě.
+22	[Cech] Někteří protivníci jsou offline nebo na jiné mapě.
+23	[Cech] Není online dostatek účastníků.
+24	Obdržel jsi {}, {} kusů
+25	[Cech] Nemůžeš provést tuto akci během války.
+26	[Cech] Lze použít za 10 vteřin.
+27	[Cech] Tvá postava musí být alespoň úrovně 40, aby se mohla stát velitelem.
+28	[Cech] {} vyhrál.
+29	[Cech] Remíza
+30	[Cech] Nemůžeš nikoho během války odebrat z cechu.
+31	[Cech] Nemůžeš zahájit hlasování o odebrání velitele cechu.
+32	[Cech] Nemůžeš zahájit hlasování o odebrání sebe sama z cechu.
+33	[Cech] Pro předání cechu potřebuješ Prsten následnictví.
+34	[Cech] V cechovní pokladnici není dostatek místa.
+35	V bedně je {}.
+36	[Cech] Po použití cechovního skladiště musíš počkat alespoň 12 hodin, než můžeš cech opustit.
+37	Cech [{}]! Objevil se finální cíl. Znič všechny cíle, abys vyhrál tuto válku!
+38	[Cech] Válka končí za 5 minut.
+39	[Cech] Válka končí za 1 minutu.
+40	[Cech] Neexistuje cech s reklamou.
+41	[Cech] Žádný cech zatím draka neporazil.
+42	[Cech] Aktualizace hodností.
+43	[Cech] Bitva proti dračí královně Meley začíná.
+44	[Cech] Brány do doupěte Meley jsou otevřeny. Časový limit pobytu v bludišti je jedna hodina.
+45	[Cech] Porazil jsi dračí královnou Meley!
+46	Zdá se, že klíč nesedí k zámku.
+47	[Cech] Požadovaný čas: {} min. {} vteřin
+48	[Cech] Pro tvé vlastní bezpečí budeš teleportován pryč z hnízda za 10 minut.
+49	[Cech] Čas vypršel.
+50	[Cech] Brány do doupěte Meley jsou opět zavřeny.
+51	[Cech] Pro tvé vlastní bezpečí budeš teleportován pryč z hnízda za 1 minutu.
+52	[Cech] Doupě se uzavře za {} minut.
+53	[Cech] Přerušil jsi boj v doupěti Meley.
+54	[Cech] Nemůžeš vyhlásit válku, když bojuješ v dračí jeskyni.
+55	[Cech] Nepřátelský cech momentálně bojuje v dračí jeskyni.
+56	Nic jsi nedostal.
+57	[Cech] Úspěšná registrace pro doupě Meley.
+58	[Cech] Navštiv dračího strážce Dolnarra pro vstup do dračí jeskyně.
+59	Letní akce byla zahájena. Navštiv Summer ve městě. Dá ti nějaké chutné osvěžení.
+60	Letní akce bude brzy končit. Summer bude zásobovat město chutným osvěžením ještě 7 dnů.
+61	Efekt je již aktivní.
+62	[Cech] Můžeš udělat jednu transakci každých 10 vteřin.
+63	[Cech] Cechovní pokladnice je používána jiným členem.
+64	[Cech] Cech [{}] prohrál válku s cechem [{}].
+65	Dosažen limit účtu. Tuto truhlu nemůžeš otevřít.
+66	[Cech] Tvůj cech nemá na účtu dostatek Yangů. Prosím, ulož více Yangů a zkus to znovu.
+67	Nemáš dostatek Yangů na použití tohoto předmětu.
+68	[Cech] Objekt úspěšně přesunut.
+69	[Cech] Toto cechovní logo nemůžeš použít. Prosím zkus to znovu.
+70	[Proměna] Nemůžeš použít proměněný předmět, neboť je pro druhé pohlaví.
+71	[Proměna] Nemůžeš použít proměněný předmět, neboť je pro jiný typ postavy.
+72	[Karta příšery] Úroveň mise: {}. Porazil jsi příšeru: {}.
+73	[Karta příšery] Dokončil jsi misi. Nyní si seber Kartu příšery.
+74	[Karta příšery] V inventáři nemáš dostatek místa.
+75	[Karta příšery] [{}] Vylepšení úrovně dokončeno.
+76	[Karta příšery] Nyní můžeš sledovat animace pohybu příšery.
+77	[Karta příšery] Nyní se můžeš přeměnit na tuto příšeru.
+78	Snížil jsi svou úroveň schopností.
+79	[Karta příšery] Nyní se můžeš teleportovat do lokality příšery.
+80	[Cech] Jako účastník nemůžeš sledovat válku svého vlastního cechu.
+81	[Cech] Cech nastavil minimální úroveň pro žadatele (min. úroveň: {}).
+82	[Cech] Můžeš udělat jednu transakci každých 10 vteřin.
+83	[Cech] Cech {} koupil území.
+84	[Cech] Boj o Dračí chrám probíhá na jiném kanále.
+85	[Cech] Na serveru s logy momentálně probíhá údržba.
+86	[Cech] Na serveru s logy momentálně probíhá údržba.
+87	[Cech] Půda patří jinému hráči.
+88	Nemůžeš snížit svou úroveň schopností.
+89	Musíš být úrovně alespoň {}, abys mohl vstoupit do bitevní zóny.
+90	Z této mapy se do bitevní zóny nedá vstoupit.
+91	Před vstupem nebo opuštěním bitevní zóny musíš zavřít všechna okna.
+92	Bitevní zónu nemůžeš opustit, pokud jsi mrtvý.
+93	Vstupuješ do bitevní zóny. Prosím čekej.
+94	Opouštíš bitevní zónu. Prosím čekej.
+95	Další vstup je možný za {} minut.
+96	Další vstup je možný za {} vteřin.
+97	Tento předmět zde nemůžeš použít.
+98	Tento předmět zde nemůžeš použít.
+99	Efekt je již aktivní.
+100	Pro okamžité oživení potřebuješ předmět Reinkarnace.
+101	Bitevní zóna je nyní otevřena.
+102	Bitevní zóna je nyní zavřena.
+103	Bitevní zóna se otevře za {} minut.
+104	Bitevní zóna se zavře za {} minut.
+105	Probíhá akce a proto obdržíš dvojnásobek bodů.
+106	Akce v bitevní zóně byla ukončena.
+107	Ohlásil jsi svůj útěk z bitevní zóny a můžeš ji opustit za {} minut.
+108	Hráč ohlásil svůj útěk. Zabij je pro zisk více bodů.
+109	Tvé ohlášení útěku bylo zrušeno.
+110	Nemůžeš přijmout odměnu, protože máš plný inventář.
+111	Tento předmět může být použity pouze v internetové kavárně.
+112	Tvé ohlášení útěku je aktivní.
+113	Momentálně nemůžeš do bitevní zóny vstoupit.
+114	Dobrá práce! Za dosažení hodnosti {} v hodnocení bitevní zóny obdržíš speciální vyznamenání.
+115	Momentálně máš {} bod(ů). Tvé celkové skóre je {}.
+116	Tento předmět nemůžeš použít, pokud utíkáš z bitevní zóny.
+117	V bitevní zóně nemůžeš vyhlásit válku.
+118	Tato akce není na této mapě možná.
+119	Zbývající počet: {}
+120	[Cech] Cechovní poklad je na maximální úrovni.
+121	[Cech] Nemůžeš vybrat žádné Yangy, protože máš víc jak 2 biliony Yangů.
+122	Tohle je přes limit.
+123	[Cech] Nemůžeš vybrat Yangy, když je otevřené další okno.
+124	Vyhlášení cechovní války vyprší za 3 minuty.
+125	Do bitevní zóny vstoupíš za {} vteřin.
+126	Bitevní zónu opustíš za {} vteřin.
+127	Ztratil jsi {} bodů. Zbývající body: {}
+128	Bohužel nemáš ve svém inventáři dostatek místa.
+129	Za tohoto hráče nezískáš žádné body.
+130	Ohlásil jsi svůj odchod z bitevní zóny a můžeš jí opustit za {} vteřin.
+131	Událost byla zahájena!
+132	Použitý Měsíční koláč, nebo semínko.
+133	Pro pokračování odeber {} ze seznamu přátel.
+134	{} je nyní zablokován.
+135	{} již není zablokován.
+136	{} je již zablokován.
+137	Nemůžeš zablokovat svého manžela/manželku.
+138	Po pokračování odblokuj {}.
+139	{} tě zablokoval.
+140	Objevila se příšera z aktuální události.
+141	Nemáš dostatek Výročních vlajek.
+142	Výroční událost byla zahájena!
+143	Nemůžeš nosit svatební prsten, pokud nejsi ženatý/vdaná.
+144	Výroční událost končí za {} minut.
+145	Tento předmět nemůžeš použít, pokud nosíš jiný kostým.
+146	Tento předmět nemůžeš použít, pokud máš na sobě svatební šaty nebo smoking.
+147	Toto nemůžeš udělat, když je předmět používán.
+148	[Cech] Nemůžeš vložit nebo vybrat Yangy z cechovní pokladnice, pokud je otevřeno jiné okno.
+149	[Cech] Tuto akci nemůžeš provést, pokud vkládáš nebo vybíráš Yangy z cechovní pokladnice.
+150	[Cech] Okno pro vložení nebo výběr Yangů je již otevřeno.
+151	[Cech] Nemůžeš vložit nebo vybrat Yangy z cechovní pokladnice, když máš přivolaného mazlíka.
+152	{} se objeví zde: {}
+153	Údolí Seungryong
+154	Nemůžeš použít Detektor událostí z tohoto místa.
+155	Hora Sohan
+156	Poušť Yongbi
+157	Doyyumhwan
+158	Událost Ramadán byla zahájena!
+159	Událost Ramadán byla ukončena.
+160	Nemůžeš změnit kanál.
+161	Počkej chvilku. Změna kanálu...
+162	Tento předmět nelze absorbovat.
+163	Tento předmět nelze proměnit.
+164	Na tento předmět nelze použít Začarovat předmět.
+165	Detektor událostí zmizel v magické záři.
+166	Na tento předmět nelze použít Zesílit předmět.
+167	S předmětem lze obchodovat pouze na té samé mapě.
+168	K tomuto kanálu se nyní nelze připojit. Zkus to znovu později.
+169	[Skupina] Toto nemůžeš udělat, pokud je skupinové hledání aktivní.
+170	[Gaya] Nemáš dostatek Blýskavých kamenů.
+171	[Gaya] Nemáš dostatek Yangů na řezání Blýskavých kamenů.
+172	[Gaya] Již náš maximální počet Gaya.
+173	[Gaya] Řezání bylo úspěšné.
+174	[Gaya] Řezání selhalo.
+175	[Gaya] Seznam předmětů byl obnoven.
+176	Detektor událostí zmizel.
+177	[Gaya] Nemáš dostatek Gaya.
+178	[Gaya] Tento předmět nemůžeš koupit.
+179	[Gaya] V inventáři už není místo.
+180	[Gaya] Nemáš dostatek předmětů Obnovit Gaya tržiště.
+181	[Gaya] Nejprve otevři Gaya tržiště.
+182	[Gaya] Již nemůžeš odemknout další místo na Gaya tržišti.
+183	[Gaya] Nemáš dostatek {}. Potřebuješ ještě {} pro odemčení dalšího místa.
+184	[Gaya] Gaya tržiště není nyní dostupné.
+185	[Gaya] Gaya tržiště je již otevřeno.
+186	[Gaya] Gaya tržiště můžeš otevřít pouze pokud zavřeš všechna ostatní okna.
+187	Kompas kamene Metinu nefunguje v podzemí.
+188	[Skupina] Bitva byla zahájena.
+189	[Skupina] Máš 1 hodinu na dokončení bludiště.
+190	[Skupina] Dokončil jsi svůj úkol s vyznamenáním!
+191	[Skupina] Čas do teleportace: {} min. {} sek.
+192	[Skupina] Budeš teleportován z bludiště za 10 minut.
+193	[Skupina] Zaregistroval ses do doupěte Meley.
+194	[Skupina] Promluv si s vhodným NPC o vstupu.
+195	[Skupina] Přiznal jsi to.
+196	[Skupina] Do 1 minuty budeš teleportován do města.
+197	Navštiv {} a vyzvedni si odměny!
+198	Kompas kamene Metinu zmizel v magické záři.
+199	[Skupina] Hodnocení skupin v doupěti Meley se nyní přepočítává.
+200	[Skupina] Momentálně nemůžeš bludiště opustit.
+201	[Skupina] Tvůj čas v bludišti vypršel.
+202	[Skupina] Opustil jsi bludiště.
+203	[Skupina] Bludiště se uzavře za {} minut.
+204	Získáš: {} - {}
+205	Nemůžeš otevřít obchod, když jsi proměněn v kámen.
+206	Nemůžeš používat předměty, když jsi proměněn v kámen.
+207	Tento příkaz lze použít pouze v Chrámu Zvěrokruhu.
+208	Nemáš dostatek insignií.
+209	Kompas kamene Metinu zmizel.
+210	Ještě jsi nesplnil všechny úkoly.
+211	Potřebuješ více Aventurinových a Aureolinových pokladů, abys získal odměnu.
+212	Obdržel jsi {}.
+213	Oživil tě {}.
+214	Pro oživení nemáš dostatek předmětů.
+215	Byl jsi oživen.
+216	Toto zde nemůžeš použít.
+217	Toto momentálně nemůžeš použít.
+218	{} byl oživen.
+219	První úroveň dokončena. Vrať se k mnichovi Milbonovi.
+220	Vyhrál jsi {} předmět.
+221	V mušli najdeš jen kousek kamene.
+222	Všichni členové skupiny byli proměněni v kámen. Úkol selhal.
+223	Všechny úrovně dokončeny. Nyní budeš přenesen do bonusové úrovně.
+224	Úkol dokončen. Jakmile velitel skupiny klikne na tlačítko, budeš přenesen přímo do úrovně {}.
+225	Úkol nebyl úspěšně splněn.
+226	Zmiz! Pokud nebude nikdo během minuty oživen, tvé dobrodružství v bludišti skončilo.
+227	Čas vypršel.
+228	Brány tohoto chrámu se otevřou další den.
+229	Všichni členové skupiny musí být na stejné mapě, aby bylo možno vejít.
+230	Nejsi velitel skupiny.
+231	V oblasti se nachází {} Chrámů Zvěrokruhu. Zadej odpovídající příkaz pro přenesení do jednoho z nich (1-{}).
+232	V mušli nic nebylo.
+233	Na této mapě se nenachází žádný Chrám Zvěrokruhu.
+234	Znič Kameny Metin.
+235	Bonusová úroveň: Znič Kameny Metin.
+236	Znič Kameny Metin.
+237	Znič Kameny Metin.
+238	Poraz 5 bossů Zvěrokruhu.
+239	Bonusová úroveň: Máš 5 minut na obchodování a nakoupení zásob.
+240	Znič Kameny Metin.
+241	Znič Kameny Metin.
+242	Znič všechny Kameny Metin.
+243	V mušli je Bílá perla.
+244	Znič všechny Kameny Metin a poraz bosse Zvěrokruhu.
+245	Znič všechny Kameny Metin.
+246	Poraz všechny příšery.
+247	Poraz všechny příšery.
+248	Poraz příšery.
+249	Poraz příšery.
+250	Poraz všechny příšery.
+251	Právě jsi přišel o bonusovou úroveň.
+252	Poraz všechny bossy Zvěrokruhu.
+253	V mušli je Modrá perla.
+254	Poraz bosse Zvěrokruhu.
+255	Poraz bosse Zvěrokruhu.
+256	Poraz bosse Zvěrokruhu, aniž bys sám zemřel.
+257	Poraz všechny příšery, aniž bys sám zemřel.
+258	Čas vypršel. Hodně štěstí při dalším pokusu.
+259	Poraz bosse Zvěrokruhu.
+260	Poraz bosse Zvěrokruhu.
+261	Bonusová úroveň: Znič Kamen Metin.
+262	Znič Kamen Metin. Pokud uspěješ, obdržíš bonusové posílení.
+263	Zbývá {} minut na registraci do PvP turnaje!
+264	V mušli je Krvavě rudá perla.
+265	Nemůžeš vstoupit do arény PvP turnaje.
+266	Během PvP turnaje se nemůžeš proměnit.
+267	Zbývá {} do začátku bitvy!
+268	Bitva začala.
+269	Vítěz: {} / Poražený: {}
+270	{} opustil arénu. {} vyhrál.
+271	Registrace do PvP turnaje dokončena.
+272	PvP turnaj začíná za {} minut.
+273	Finále
+274	Není jednoduché porozumět této knize.
+275	Semifinále
+276	Kolo {}
+277	Bez vítěze
+278	PvP turnaj skončil.
+279	{} je vítězem turnaje!
+280	Účastníci: {}
+281	Zbývající účastníci: {}
+282	Aktuální účastníci: {}
+283	Zaregistroval jsi se do PvP turnaje.
+284	Tato kniha Ti nepomůže.
+285	Do PvP turnaje nejsi zaregistrován.
+286	Tento příkaz lze použít pouze na mapě PvP turnaje.
+287	Yutnori ještě nebyla zahájena!
+288	Sbírej Březové větve, vyrob z nich desku na Yutnori a zahraj si vzrušující minihru.
+289	Fantastické ceny čekají!
+290	Yutnori byla ukončena!
+291	Jdi ke stolu Yutnori a vyber si výhru.
+292	Pro hraní Yutnori nemáš dostatek požadovaných předmětů.
+293	[Systém duše] Použij {} pro obdržení efektu.
+294	[Systém duše] {} je již na nejvyšší úrovni.
+295	Musíš mít nejméně úroveň 30, aby jsi této knize porozuměl.
+296	[Systém duše] Duše je aktivní.
+297	While using upgrading system, you cannot feed your pet.
+298	[Akce mlácení příšer] Mapa {} oznamuje spatření {}.
+299	Hrabství Yayang
+300	Hrabství Bokjung
+301	Hrabství Bakra
+302	Chrám Hwang
+303	Kuahlo Dong (Pavoučí podzemí)
+304	Pavoučí bludiště 2
+305	Musíš mít nejméně úroveň 50, aby jsi této knize porozuměl.
+306	Útes Gautama
+307	Nefritový záliv
+308	Bouřné hory
+309	Zakletý les
+310	Jeskyně vyhnanství
+311	Jeskyně vyhnanství 2
+312	Nemůžeš vstoupit, když jedeš!
+313	Toto nemůže být použito na právě používané předměty!
+314	Červený les
+315	Hadí pole
+316	Nemůžeš trénovat další komba.
+317	Stále potřebuješ {} {}.
+318	Událost je u konce. Tento předmět již nemůžeš použít.
+319	Bylo dosaženo maximální úrovně.
+320	Úspěch! Efekt {} byl zvýšen na úroveň {}.
+321	Selhání! Pokus o vylepšení efektu {} na úroveň{} selhal.
+322	Úspěch! Efekt {} je nyní aktivní.
+323	Selhání! Pokus o změnu efektu {} selhal.
+324	Úspěch! Efekt {} je nyní aktivní.
+325	Selhání! Efekt {} nebyl aktivován.
+326	Událost Síla květin byla zahájena!
+327	{} cech ukořistil vlajku {} cechu!
+328	Touto řečí již mluvíš plynule.
+329	Událost Síla květin byla ukončena.
+330	Před opětovným otevřením poštovní schránky musíš chvíli počkat.
+331	Před otevřením poštovní schránky musíš nejprve zavřít ostatní okna.
+332	Tvoje poštovní schránka je plná.
+333	Smaž zprávy v poštovní schránce, abys mohl dostávat nové.
+334	Toto momentálně nemůžeš použít.
+335	[Cech] Nemůžeš použít cechovní schopnosti během cechovní války.
+336	[Cech] Toto lze použít pouze během cechovní války.
+337	Obdržel jsi {} Wonů.
+338	[Cech] Uloženo: {} Yang
+339	Už nemůžeš dále vylepšovat tuto schopnost.
+340	[Cech] Nákup byl zrušen, protože již vlastníš cechovní území.
+341	[Cech] Nákup byl zrušen, protože tvůj cech již vlastní cechovní území.
+342	[Chyť krále] Pro cenu nemáš dobré skóre.
+343	[Chyť krále] Zahraj si Chyť krále nyní!
+344	Událost Okey] Zabíjej příšery, sbírek karty a hraj a hru Okey.
+345	[Událost Okey] Neuvěřitelné ceny čekají!
+346	[Chyť krále] Hra Chyť krále byla ukončena!
+348	[Chyť krále] Nemáš nasbíranou Královskou kolekci nebo nemáš dost Yangů.
+349	[Chyť krále] {} získal {} bodů ve hře Chyť krále!
+350	Musíš si zvýšit úroveň, abys porozuměl této knize.
+351	Již jsi Výzkumníkův elixír použil!
+352	Bludiště 'Obrana lodi' je připraveno. Rybář tě teď nechá nalodit.
+353	Útočí na nás mořské příšery! Připrav se na boj!
+354	Útočí znovu! Připrav si zbraně!
+355	Země na obzoru! Úspěšně jsi ubránil stěžeň a po dlouhé cestě jsi dorazil k novému kontinentu. Pokračuj k portálu.
+356	Tvůj stěžeň byl zničen. Bojoval si statečně, ale bitva byla ztracena.
+357	Musíš opustit loď za {} vteřin.
+358	Musíš opustit loď za {} minut.
+359	Námořní bitva začíná za {} vteřin.
+360	Tato kniha je příliš těžká na naučení.
+361	Pospěš si! Máš {} minut na projití portálem na kontinent.
+362	Musíš nyní opustit loď, protože jsi nezahájil námořní bitvu.
+363	Pokud nezahájíš námořní bitvu do 1 minuty, budeš muset opustit loď.
+364	{} ZB: {}%%
+365	SOS! Tvůj stěžeň byl zničen a loď se potápí. Nyní budeš přenesen do Zálivu dračího ohně.
+366	Vlna {}: Na {} vteřin musíš ochránit {} celou svou silou.
+367	Vlna {}: Při ochraně {} poraz {}.
+368	Úspěšně jsi ubránil stěžeň. Jen pokračuj! Připrav se na další vlnu.
+369	Další vlna přijde za {} vteřin.
+370	{}
+371	Nemůžeš dále trénovat s touto knihou.
+372	Z bitvy můžeš odejít za{} vteřin.
+373	Momentálně nemůžeš tuto akci provést.
+374	Po otevření poštovní schránky musíš čekat {} vteřin, než můžeš změnit kanál nebo se teleportovat.
+375	Daně nastaveny na {} %%.
+376	Potřebuješ minimálně úroveň 50 na trénink jízdy na koni.
+377	Unikl jsi kletbě zlého ducha za pomoci pergamenu exorcismu.
+378	Nemůžeš číst více průvodců jízdou na koni.
+379	Obdržel jsi body jízdy na koni po přečtení průvodce jízdou na koni.
+380	Tento bod můžeš použít k vylepšení jezdeckých schopností.
+381	Vlajka cechu {} byla ukradena hráčem {}.
+382	Nerozuměl jsi průvodci jízdou na koni.
+383	Tvá mysl je čistá. Teď se můžeš dobře soustředit.
+384	Tvá hodnost se zvýšila o {} bodů.
+385	Nemůžeš obarvit ani odbarvit tvůj současný účes.
+386	Musíš dosáhnout úrovně {}, abys mohl opět obarvit svůj účes.
+387	Tento předmět může být otevřen pouze druhým pohlavím.
+388	Tohle nemůžeš použít z této pozice.
+389	Nemůžeš použít Pergamen lokality, protože jsi připraven k teleportu.
+390	Byl jsi přenesen zpět na místo počátku.
+391	{} nemohou být použity v podzemí.
+392	[Úkol] Již jsi odměnu obdržel.
+393	to
+394	to
+395	Nejsou tu žádné odštěpky kamene k odstranění.
+396	Nemůžeš měnit vylepšení tohoto předmětu.
+397	Nemáš žádné vylepšení, které by jsi mohl případně měnit.
+398	Tohle můžeš dělat pouze {} minut po vylepšení. ({} minut zbývá)
+399	Změnil jsi vylepšení.
+400	Vylepšení úspěšně přidáno.
+401	Vylepšení nebylo přidáno.
+402	Musíš použít Mramor požehnání, abys mohl přidat další bonus.
+403	Tohle nemůžeš použít v této aréně.
+404	Věc již nelze dále vylepšit. Bylo dosaženo maximálního počtu bonusů.
+405	Pokud má věc již 4 bonusy, můžete ji vylepšit jen pomocí Mramoru požehnání.
+406	Úchyt úspěšně přidán.
+407	Úchyt nebyl přidán.
+408	Na tento předmět již nejde přidat další úchyt.
+409	Tento předmět nemůže mít více úchytů.
+410	Ozbrojení úspěšné.
+411	Ozbrojení selhalo.
+412	Nejprve musíš přidat úchyt. Na to použij diamant.
+413	Zde nejsou žádné úchyty pro drahokamy.
+414	Tohle můžeš provést pokud nosíš masku emocí.
+415	Musíš přidat úchyt, pokud chceš použít diamant.
+416	Na tento předmět již nelze přidat více drahokamů.
+417	Tyto předměty nemohou být použity spolu.
+418	Nemůžeš měnit návnadu zatímco rybaříš.
+419	Vyměnil jsi dosavadní návnadu za {}.
+420	Připevnil jsi {} na háček jako návnadu.
+421	Nemáš všechny suroviny na výrobu elixíru.
+422	Nemáš dostatek surovin ({}).
+423	Nemáš dostatek prázdných lahví.
+424	Míchání elixíru bylo neúspěšné.
+425	Pouze ženy tohle dokáží.
+426	Nemůžeš přidat více kamenů stejného typu.
+427	Tento kámen ducha nemůžeš přidat na tento typ předmětu.
+428	Tento kámen ducha nemůžeš přidat na zbraň.
+429	Kámen ducha úspěšně přidán.
+430	Kámen ducha se při přidávání rozpadl.
+431	Žádné volné úchyty.
+432	Teď a zde tato funkce není k dispozici.
+433	Nemůžeš použít Pergamen lokality v průběhu bitvy království.
+434	Nemůžeš použít Pergamen lokality {} vteřin po otevření skladiště.
+435	Nemůžeš použít Pergamen lokality pokud máš otevřené další okno.
+436	Tato osoba neexistuje.
+437	Nemůžeš použít pergamen {} sekund po obchodu.
+438	Nemůžeš použít Pergamen lokality {} vteřin po otevření skladiště.
+439	Nemůžeš použít Pergamen lokality, protože vzdálenost je příliš malá.
+440	Po obchodování nemůžeš použít Pergamen lokality po dobu {} vteřin.
+441	Nemůžeš otevřít skladiště, pokud je již otevřené jiné okno.
+442	Tento předmět nemůžeš zahodit.
+443	Zahozený předmět zmizí za 5 minut.
+444	{} obdrženo.
+445	Máš příliš mnoho věcí v inventáři.
+446	{} získává {}.
+447	Všichni budou zanedlouho teleportováni do města.
+448	Jsi příliš blízko.
+449	Obchod s předmětem: {}, {}
+450	Nemůžeš měnit používané věci po dobu tvé přeměny.
+451	Pro nasazení tohoto předmětu musíš být nehybný.
+452	Opičí bylinky nejsou určeny ke krmení živých koní. Jsou používány k oživení koní mrtvých.
+453	Nemůžeš krmit mrtvého koně.
+454	Nakrmil jsi koně bylinkami.
+455	Nakrmil jsi koně.
+456	Pro nošení tohoto účesu máš příliš nízkou úroveň.
+457	Tento účes již máš.
+458	Už jsi proměněn.
+459	Jsi příliš daleko.
+460	To je špatný předmět na proměňování.
+461	Nemůžeš se proměnit v příšeru, která má vyšší úroveň než ty.
+462	Tvá úroveň je příliš nízká pro nošení tohoto předmětu.
+463	Na nošení tohoto předmětu nejsi dost silný.
+464	Na nošení tohoto předmětu nemáš dostatečnou inteligenci.
+465	Na nošení tohoto předmětu nemáš dostatečnou pohyblivost.
+466	Na nošení tohoto předmětu nemáš dostatečnou vitalitu.
+467	Tento předmět nemůžeš použít, protože nejsi ženatý/vdaná.
+468	Tento předmět nemůžeš nosit dvakrát.
+469	Do odstranění úchytu z {} zbývá času: {}
+470	Tohle může udělat pouze druhé pohlaví.
+471	Drahokam zasazený v {} zmizel.
+472	[Cech] Jméno cechu je neplatné.
+473	[Cech] Tohle jméno cechu je již obsazeno.
+474	[Cech] Nemůžeš vytvořit cech.
+475	{} cech vyhlásil válku {} cechu!
+476	[Cech] {} nepřijal cechovní válku.
+477	Cechovní válka mezi {} a {} započne za pár vteřin!
+478	Válka mezi {} a {} začala!
+479	Válka mezi {} a {} skončila nerozhodně.
+480	Cech {} vyhrál válku proti cechu {}.
+481	Na tohle potřebuješ souhlas svého spoluhráče.
+482	[Cech] Válka cechů byla zrušena.
+483	Válka mezi cechem {} a cechem {} byla zrušena.
+484	Zavřít
+485	Zrušeno. Vstoupili jste do bitvy.
+486	Někdo se přihlásil na tvoje konto. Budeš odpojen.
+487	Ze stromu přichází tajemné světlo.
+488	{} herního času bylo přidáno na tvoje konto. (Číslo platby {})
+489	Můžeš se zúčastnit cechovního boje v režimu diváka.
+490	Při výběru postavy se objeví ikona.
+491	Nejsou žádní nepřátelé.
+492	Boj s {} začal!
+493	Pokud nebude nalezen žádný nepřítel, cechovní válka bude automaticky ukončena.
+494	Protože cechovní válka byla ukončena předčasně, bude posuzována jako remíza.
+495	Energie je odrážena císařským požehnáním.
+496	Za {} vteřin můžeš použít císařské požehnání.
+497	Nedostatek příjmu z daní: {}.
+498	[TEST_ONLY]Daň: {}
+499	Chyba při přeměňování.
+500	Přeměnu jsi se naučil kompletně.
+501	Nejdříve si zavolej koně prosím.
+502	Poslal jsi zpátky svého koně.
+503	{} tě vyzval na souboj!
+504	Musíš sesednout z koně.
+505	Nemůžeš nakrmit svého koně když na něm sedíš!
+506	Dal jsi {} koni.
+507	Potřebuješ {}.
+508	{} vteřin do vypnutí.
+509	Hra bude ukončena za {} vteřin.
+510	{} vteřin do vypnutí.
+511	Tvé odhlášení bylo zrušeno.
+512	Návrat do přihlašovacího okna. Prosím čekej.
+513	Byl jsi odpojen od serveru. Prosím čekej.
+514	Vyzval jsi {} na souboj.
+515	Změnil jsi osobu. Prosím čekej.
+516	Nový start není momentálně možný. Počkej {} vteřin.
+517	Restart není možný. Počkej dalších {} vteřin.
+518	Restart není možný. Počkej dalších {} vteřin.
+519	Stále není možný restart ve městě. Počkej dalších {} vteřin.
+520	Ztratil jsi šanci na oživení. Vrátíš se do města.
+521	Nemůžeš měnit svůj status po dobu tvé přeměny.
+522	Hráč právě bojuje.
+523	[Cech]Tohle nepatří cechu.
+524	[Cech]Nejsi oprávněn měnit úroveň cechovních schopností.
+525	Volba není správná.
+526	[Skladiště]Vložil jsi špatné heslo.
+527	[Skladiště]Skladiště je již otevřeno.
+528	[Skladiště]Musíš počkat 10 vteřin na opětovné otevření skladiště.
+529	[Skladiště] Jsi příliš daleko na otevření skladiště.
+530	[Skupina] Server nemůže vykonat skupinovou žádost.
+531	[Skupina] Na tomto místě nemůžeš opustit skupinu.
+532	[Skupina] Opustil jsi skupinu.
+533	[Cech] Tvůj cech se již účastní jiné války.
+534	[Cech] Není oprávněný na cechovní válku.
+535	[Cech] Cech s tímto jménem neexistuje.
+536	Zde už je kandidatura.
+537	[Cech] Tento cech se již účastní války.
+538	[Cech] Nedostatek Yangů na účast cechovní války.
+539	[Cech] Cech nemá dostatek Yangů na účast cechovní války.
+540	[Cech] Tento cech je již přihlášen na jinou cechovní válku.
+541	[Cech] Tento cech se již účastní jiné války.
+542	[Cech] Cechovní úroveň je příliš nízká na účast v cechovní válce.
+543	[Cech] Do války cechů se musí přihlásit minimálně {} hráčů.
+544	[Cech] Cech nemá dostatek bodů na účast ve válce.
+545	[Cech] Cech nemá dostatek členů na účast ve válce.
+546	Tvá úroveň musí být vyšší než 20 na registraci čísla tvého mobilního telefonu.
+547	Nemáte schopnosti stát se císařem.
+548	{} odmítl pozvání.
+549	Nemůžeš přijmout pozvání, protože už ve skupině jsi.
+550	Pouze císař může tohle použít.
+551	Čas čekání přibližně {} vteřin.
+552	Nedostatek daní. Současný kapitál: {} chybějící kapitál: {}
+553	Příkaz: warpto <character name>
+554	Nemůžeš se přemístit k neznámému hráči.
+555	Přidání hráče {} do kanálu. (Současný Kanál {})
+556	Přepravit k {}.
+557	Nemůžeš volat neznámé hráče.
+558	[Cech] Během cechovní války se nepočítají bodů zkušeností za lov.
+559	Pokud použiješ požehnání císaře {} ZB a MB budou opět obnoveny.
+560	Má císařská informace
+561	[{}Panovník] : {} Yangů vlastněno {}
+562	[{}Panovník] : {}
+563	Císařská informace
+564	Pouze císař smí tohle použít
+565	Vyber číslo mezi 1 a 50.
+566	Daně nastaveny na {} %%.
+567	Nestvůra nemůže být zavolána. Zkontroluj Mob-číslo.
+568	Body života +{}
+569	Body many +{}
+570	Požehnání císaře je aktivní.
+571	Vytrvalost +{}
+572	Inteligence +{}
+573	Síla +{}
+574	Pohyblivost +{}
+575	Rychlost útoku +{}
+576	Rychlost pohybu {}
+577	Čas obnovení -{}
+578	Obnova životní energie +{}
+579	Obnova bodů many +{}
+580	Útok jedem {}
+581	Připravuje se. Použitelné po {}.
+582	Hvězda +{}
+583	Snižování rychlosti +{}
+584	Šance na kritický útok {}%%
+585	Šance na pronikavý útok {}%%
+586	Hráčova síla útoku proti nestvůrám +{}%%
+587	Síla útoku koně proti nestvůrám +{}%%
+588	Posílení útoku proti Wonggui + {}%%
+589	Posílení útoku proti Milgyo + {}%%
+590	Posílení útoku proti Zombie + {}%%
+591	Posílení útoku proti ďáblům + {}%%
+592	Od císaře Sa-Za-Hu dostal hráč {} o 10%% víc útočné síly na 3 minuty.
+593	Pohlcování životní energie {}%% při útoku.
+594	Pohlcování bodů many (MB) {}%% při útoku.
+595	Šancí {}%% budou body many (MB) vzaty nepříteli.
+596	Pohlcení bodů many (MB) šancí {}%%
+597	{}%% šance na blok útoku boje zblízka.
+598	{}%% šance na blok útoku z dálky.
+599	Obrana proti jednoručním mečům {}%%
+600	Obrana proti obouručním mečům {}%%
+601	Obrana proti obouručním mečům {}%%
+602	Obrana proti zvonu {}%%
+603	Od císaře Geum-Gang-Gwon dostává hráč {} o 10%% více brnění na 3 minuty.
+604	Obrana proti vějíři {}%%
+605	Odolnost proti útoku z dálky {}%%
+606	Odolnost proti ohni {}%%
+607	Odolnost proti bleskům {}%%
+608	Odolnost proti magii {}%%
+609	Odolnost proti větru {}%%
+610	Odražení přímého zásahu: {}%%
+611	Odražení kletby: {}%%
+612	Odolnost proti jedu {}%%
+613	Body many (MB) budou zvýšeny na {}%% pokud vyhraješi.
+614	Událost již probíhá (Flag: {})
+615	Zkušenosti budou zvýšeny na {}%% pokud vyhraješ proti nepříteli.
+616	Zvýšení Yangů na {}%% pokud vyhraješ proti nepříteli.
+617	Zvýšení ukořistěných předmětů na {}%% pokud vyhraješ proti nepříteli.
+618	Zvýšení síly na {}%% při vypití elixíru.
+619	{}%% šance na naplnění bodů životní energie, pokud vyhraješ.
+620	Žadná závrať {}%%
+621	Žádné zpomalení {}%%
+622	Žádný pád {}%%
+623	Síla útoku +{}
+624	Brnění + {}
+625	OX Quiz Skript nemůže být nahrán.
+626	Magický útok + {}
+627	Magická obrana + {}
+628	Maximální vytrvalost + {}
+629	Síla proti Válečníkům + {}%%
+630	Síla proti Ninjům + {}%%
+631	Síla proti Surům + {}%%
+632	Síla proti Šamanům + {}%%
+633	Síla proti nestvůrám + {}%%
+634	Útok + {}%%
+635	Obrana + {}%%
+636	OX Quiz Skript je nahrán.
+637	Zkušenost {}%%
+638	Šance nalézt předmět %. 1f
+639	Šance nalézt Yangy %. 1f
+640	Horní limit životní energie +{}%%
+641	Horní limit životní energie +{}%%
+642	Poškození schopností {}%%
+643	Poškození úderem {}%%
+644	Odolnost proti poškození schopností {}%%
+645	Odolnost proti úderům {}%%
+646	{}%% odolnost proti útoku válečníka
+647	Vítejte v Metin2.
+648	{}%% odolnost proti útoku Ninji
+649	{}%% odolnost proti útoku Sury
+650	{}%% odolnost proti útoku Šamana
+651	(Procedura: {} r- {} m - {} d)
+652	Tvůj chat je blokován.
+653	Potřebuješ vyšší úroveň, abys mohl volat.
+654	Potřebuješ minimálně úroveň {}, abys mohl volat.
+655	Nejsi v této skupině.
+656	Nepřipojil jsi se k tomuto cechu.
+657	Hráč odmítl být přidán do tvého seznamu přátel.
+658	Soutěž OX začala.
+659	[Seznam přátel]  Nemůžes přidat GM do tvého listu přátel.
+660	{} není ve hře.
+661	Po skončení obchodování můžeš otevřít stánek až za {} vteřin.
+662	Znovu můžeš obchodovat za {} vteřin.
+663	Máš víc jak 2 Biliony Yangů. Nemůžeš obchodovat.
+664	Nemůžeš otevřít soukromý stánek, když je otevřeno další okno.
+665	Hráč má více jak 2 Biliony Yangů. Nemůžeš s ním obchodovat.
+666	[Skladiště] Není možný žádný přesun.
+667	[Skladiště] Předmět nemůže být uskladněn.
+668	[Skupina] Hráč který zval, není online.
+669	Cechovní boj nemůže začít, protože server není online.
+670	S Urielovým svolením můžeš vstoupit.
+671	[Skupina] Pouze vůdce skupiny může tohle změnit.
+672	[Skupina] Cíl není člen tvé skupiny.
+673	[Skupina] Na tomto místě nemůžeš vykopnout hráče ze skupiny.
+674	[Skupina] Na tomto místě nemůžeš vykopnout hráče ze skupiny.
+675	[Skupina] Byl jsi vykopnut ze skupiny.
+676	[Skupina] Na tomto místě nemůžeš opustit skupinu.
+677	[Skupina] Nemůžeš vykopnout členy skupiny.
+678	[Cech] Po smazání cechu nemůžeš vytvořit nový po dobu {} dní.
+679	[Cech] Po opuštění cechu nemůžeš založit nový po dobu {} dní.
+680	Jméno cechu je neplatné.
+681	Žádáme účast mnoha hráčů.
+682	[Cech] [{}] cech byl vytvořen.
+683	[Cech] Vytvoření cechu selhalo.
+684	[Skupina] Jen vedoucí skupiny může používat skupinové schopnosti.
+685	[Skupina] Cíl nenalezen.
+686	[Cech] Tohle není správné množství Yangů.
+687	[Cech] Nemáš dostatek Yangů.
+688	[Cech] Hledaná osoba nemůže být nalezena.
+689	[Cech] Tahle osoba není ve stejném cechu.
+690	[Cech] Nemůžeš vykopnout členy cechu.
+691	[Cech] Cechovní člen {} byl vykopnut z cechu.
+692	Soutěž OX ještě neskončila, objevily se chyby.(flag: {})
+693	[Cech] Vyhodil jsi člena cechu.
+694	[Cech] Nemůžeš změnit své hodnostní jméno.
+695	[Cech] Práva cechovního vůdce nemohou být změněny.
+696	[Cech] Hodnostní jméno je neplatné.
+697	[Cech] Nemůžeš změnit svoji pozici.
+698	[Cech] Práva cechovního vůdce nemůžou být změněny.
+699	[Cech] Použito {} zkušeností.
+700	[Cech] Užití zkušeností selhalo.
+701	[Cech] V cechovní pokladnici nemáš dostatek Yangů!
+702	[Cech] Dračí duch nebyl obnoven.
+703	Soutěž OX bude zakrátko znovu spuštěna.
+704	[Cech] Nemůžeš udělat prohlášení.
+705	[Cech] Nemůžeš změnit pozici.
+706	[Cech] Hodnost cechovního vůdce nemůže být změněna.
+707	[Cech] Nemůžeš se udělat cechovním vůdcem.
+708	[Cech] Nemůžeš vybrat vůdce cechu.
+709	[Cech] Nemůžeš vybrat více vůdců.
+710	Nemůžeš obchodovat s tímto předmětem.
+711	Ilegální software rozpoznán. Hra bude ukončena.
+712	Máš více jak 2 Bilionů Yangů. Nemůžeš obchodovat.
+713	Neplatný Yang.
+714	Současná událost je omezena jen na jednu oblast.
+715	Spustit ruletu předmětů.
+716	Spustit ruletu Yangů.
+717	Hráč je online. Použij šeptání na rozhovor.
+718	Mobilní telefonní číslo není registrováno.
+719	Musíš mít minimálně úroveň 20 na posílání textových zpráv.
+720	Potřebuješ 2000 DT na poslání textové zprávy.
+721	Tvá textová zpráva byla odeslána.
+722	{} cechu {} bylo zvýšeno na {}%%!
+723	{} cechu {} je opět normální.
+724	{}: {} zvýšeno o {}%%!
+725	Soutěž OX bude končit.
+726	{} 's {} je opět normální.
+727	Tvé těžební body se zvýšily na maximum. ({}).
+728	Tvé těžební body se zvýšily na nejvyšší úroveň.
+729	Můžeš vylepšit svůj krumpáč s pomocí dřevorubce Deokbae.
+730	Tvé těžební body se zvýšily! ({}/{})
+731	Bez krumpáče nemůžeš kopat.
+732	Zde není nic na kopání.
+733	Kopání bylo úspěšné.
+734	Kopání se nezdařilo.
+735	[Seznam přátel] Přidal jsi {} jako přítele.
+736	Hráč bude za chvíli přemístěn do města.
+737	[Seznam přátel] Vymazal jsi {} ze seznamu.
+738	Kritická chyba serveru. Server bude automaticky restartován.
+739	Budeš odpojen za 10 vteřin.
+740	Můžeš se připojit za 5 minut.
+741	({}) Cech vytvořen. [Dočasně]
+742	Cech je ve válce.
+743	{}: Tento cech neexistuje.
+744	Cech s tímto jménem nebo číslem neexistuje.
+745	Tato budova neexistuje.
+746	Tenhle typ budovy může být postaven pouze jednou.
+747	Nejdříve zavři kartu soutěže OX. (Flag: {})
+748	Nejdříve musí být postavena základní budova.
+749	Stavba selhala kvůli špatné stavební ceně.
+750	Tvůj cech nemá dostatek Yangů na stavbu této budovy.
+751	Na tuto budovu nemáš dostatek surovin.
+752	Nemůžeš postavit budovu na tomto místě.
+753	Tato postava neexistuje.
+754	Souboj nezrušen.
+755	Souboj úspěšně zrušen.
+756	Souboj úspěšně zahájen.
+757	Problém se zahájením souboje.
+758	Nevyskytly se žádné chyby.
+759	Zde nejsou žádní bojovníci.
+760	Nezbyly žádné body vlastností těla.
+761	Zbývá příliš málo bodů vlastností těla.
+762	Vložil jsi neplatnou hodnotu.
+763	Subordinace rozkazu je neplatná.
+764	Zrušený kontrakt mezi hráčem {} a hráčem {}.
+765	Zatočit ruletou za {} Yangů.
+766	Záznam předmětu uložen do systémového záznamu.
+767	Informace pro království
+768	Vyber informace mapy svaté země {} vstup {} {} {}
+769	Objevila se chyba.
+770	{} zabití {} zabité příšery {} zabití bossů {} Číslo svaté země {}
+771	Informace o stavu bitvy království
+772	Tvůj požadavek je zaváděn. Prosím čekej.
+773	Nemůžeš otevřít Skladiště, když je otevřeno další okno.
+774	[Skladiště] Heslo ke skladišti bylo změněno.
+775	[Skladiště] Zadal jsi špatné heslo.
+776	Tvůj herní čas vyprší za {} minut.
+777	Řádně voleno.
+778	Již voleno.
+779	Hráč {} je již ve volbě.
+780	Vyhlásil jsi válku tomuto cechu.
+781	Soutěž OX skončila, nevyskytly se žádné chyby.(Flag: {})
+782	Nemůže být zvolen.
+783	{} má stále {} Yangů.
+784	{} má stále {} Yangů
+785	Nemáš dostatek Yangů.
+786	{} byl smazán jako kandidát na císaře.
+787	{} není kandidát na císaře.
+788	{} byl nominován na císaře.
+789	{} nemůže být nominován na císaře.
+790	Císař {} byl vyhoštěn.
+791	Císař {} nemůže být vyhoštěn.
+792	Události OX se nemůže účastnit více lidí.
+793	Království Shinsoo
+794	Království Chunjo
+795	Království Jinno
+796	Tvé rybářské body se zvýšily! ({}/{})
+797	Dosáhl jsi maximálního počtu rybářských bodů.
+798	Vylepši svůj prut za pomocí rybáře.
+799	Ztratil si svoji návnadu.
+800	Chytil jsi rybu! ({})
+801	Délka chycené ryby je {}cm.
+802	Rybářská událost 'Nejlepší Rybář'
+803	OX Ostatní účastníci události jsou uvedeni.
+804	Rybářská událost 'Trpělivost růže přináší'.
+805	{}: {}
+806	Chytil jsi {} z {}.
+807	Ryba zmizela do nekonečných hlubin vody...
+808	Uvnitř ryby je mušle.
+809	Uvnitř ryby je červ.
+810	Opekáš {} nad ohněm.
+811	Nemůžeš obchodovat, protože neseš více jak 2 Biliony Yangů.
+812	Nemůžeš pojmenovat své skladiště neplatným jménem.
+813	Nemůžeš prodat předmět z obchodu doplňků v soukromém stánku.
+814	OX Další účastníci události nejsou uvedeni.
+815	Kopání dokončeno.
+816	Vezmi si krumpáč.
+817	Vyber si prut.
+818	Nejdříve dej návnadu na háček.
+819	Nemůžeš jít rybařit bez prutu.
+820	[Skupina] Nemůžeš provést požadavek, protože vedoucí skupiny není online.
+821	[Skupina] Nemůžeš vytvořit skupinu s hráči z jiných království.
+822	[Skupina] Na tomto místě nemůžeš pozvat hráče do skupiny.
+823	[Skupina] Nemůžeš pozvat hráče, když jsi v pozorovatelském módusu.
+824	[Skupina] Pouze hráči s rozdílem úrovní od -30 do +30 mohou být pozváni.
+825	Počet dalších účastníků: {}
+826	[Skupina] Nemůžeš pozvat tohoto hráče, jeho úroveň je příliš nízká.
+827	[Skupina] Nemůžeš pozvat tohoto hráče, jeho úroveň je příliš vysoká.
+828	[Skupina] Nemůžeš pozvat více hráčů do své skupiny.
+829	Chceš se připojit ke skupině hráče {}?
+830	Tento hráč není v této skupině.
+831	[Skupina] Nemůžeš se připojit k této skupině, tato je již plná.
+832	[Skupina] Nemáš právo někoho pozvat.
+833	[Skupina] {} odmítl pozvání do tvé skupiny.
+834	[Skupina] {} je již ve skupině.
+835	[Skupina] Na tomto místě nemůžeš přijmout pozvání do skupiny.
+836	Soutěž OX je u konce.
+837	[Skupina] Nemůžeš přijmout pozvání.
+838	[Skupina] {} odmítl tvé pozvání.
+839	[Skupina] {} se připojil k tvé skupině.
+840	[Skupina] {} se připojil k tvé skupině.
+841	Teď nemůžeš použít soukromý stánek.
+842	Tento hráč již s někým obchoduje.
+843	Metin2 Potvrzovací číslo: {}
+844	Vaše potvrzovací číslo není správné. Prosím zkus to znovu.
+845	Mobilní telefonní číslo je registrováno.
+846	Nemůžeš se přemístit k hráči.
+847	Odměna soutěže OX byla předána. ID: {} Množství: {}
+848	Hráč není online.
+849	Hráč je na kanále {}. (Ty jsi na kanále {}.)
+850	Nemůžeš jít nikam {} vteřin po otevření skladiště.
+851	Nemůžeš jít nikam chvíli po obchodu.
+852	Nemůžeš jít nikam {} vteřin po obchodu.
+853	Souboj skončil, tvůj bojovník zmizel.
+854	Není limit na elixíry.
+855	Můžeš použít až {} elixírů.
+856	Souboj začne za 10 vteřin.
+857	Souboj začal.
+858	TRUE
+859	Souboj skončil kvůli problému s arénou.
+860	Souboj skončil, čas vypršel.
+861	Za 10 vteřin budeš přesunut do města.
+862	Souboj skončil kvůli problému s arénou.
+863	Tvůj soupeř má problémy. Souboj se ukončuje.
+864	Souboj skončil kvůli problému se soupeřem.
+865	{} vyhrál souboj.
+866	{} vyhrál.
+867	Budeš přesunut do města za 10 vteřin.
+868	Další kolo začne za 10 vteřin.
+869	FALSE
+870	Soupeř byl oddělený. Souboj skončil.
+871	Šance na upuštění předmětů je v tuto chvíli plus {}%%
+872	Kvóta upuštěných Yangů je v tuto chvíli plus {}%%
+873	Momentální šance na padnutí Yangů je o {}%% vyšší.
+874	Zkušenostní bonus je momentálně dalších {}%%.
+875	Verze herního klienta není správná. Prosíme, nainstaluj poslední patch.
+876	Nemůžeš obchodovat, když je otevřené další okno.
+877	Jsi příliš daleko od obchodu na nákup.
+878	Jsi příliš daleko od obchodu na prodej.
+879	Nemůžeš obchodovat, protože neseš více jak 2 Biliony Yangů.
+880	Celkové číslo kvízu: {}
+881	Daň z prodeje: {}%%.
+882	Nemůžeš jet na koni po dobu tvoji proměny.
+883	Nemůžeš jet na koni pokud máš na sobě svatební šaty, nebo smoking.
+884	Nemáš koně.
+885	Tvůj kůň je mrtvý.
+886	Vytrvalost tvého koně je příliš malá.
+887	Volání koně selhalo.
+888	Kůň
+889	Svatba brzy skončí.
+890	Bude automaticky opuštěno.
+891	Válka již skončila.
+892	Výsledek bude znám za 10 vteřin.
+893	Nemůžeš obchodovat při pozorování.
+894	Pokud je otevřeno okno, nemůžeš obchodovat s ostatními.
+895	Druhá osoba je momentálně zaneprázdněna, takže s ní nyní nemůžeš obchodovat.
+896	Druhá osoba zrušila obchod.
+897	Nedostatek Yangů, nebo prostoru v inventáři.
+898	Druhá osoba nemá dostatek Yangů, nebo místa v inventáři.
+899	Druhá osoba nemá dostatek místa v inventáři.
+900	Obchod s {} byl úspěšný.
+901	Neztratil jsi žádné zkušenosti, díky požehnání dračího boha.
+902	Aktuální skóre:  Shinsoo: {}, Chunjo: {}, Jinno: {}
+903	Správná odpověď je:
+904	{} deadcount {} Empire {} killcount {}(Purpose {}) killmobcount {}, RegenFlag {}
+905	Ďábel svatého místa: [ENTER][ENTER]
+906	, nemáš žádné právo tu být. Tohle je svaté místo. Odtáhni! Příslušníci tvého království opustí svaté místo za 10 sekund.
+907	Království {} bylo poraženo a vypadlo z bitvy království.
+908	Počet příšer v Bitvě královstvích:
+909	Pokud porazíš strážce svatého místa, staneš se jeho vlastníkem.
+910	Díky ochraně dračího boha, jsi nepustil žádné věci.
+911	Extra poškození bodnou zbraní {}
+912	{} blok! ({}%%)
+913	{} vyhnout! ({}%%)
+914	Ano (O)
+915	{}[{}]s Útočná pozice: {} {}
+916	Prosím zadej rozkaz v plném znění.
+917	Tohle nemůžeš dělat pokud sedíš na koni.
+918	Tohle nemůžeš dělat pokud ležíš na zemi.
+919	V mých snech? Cože?
+920	Nejprve vstaň.
+921	Tento rozkaz neexistuje.
+922	[Skupina] Skupina byla zrušena.
+923	[Skupina] Nemůžeš zavolat cíl.
+924	[Skupina] Nemůžeš zavolat členy skupiny na tvoji současnou pozici.
+925	Ne (X)
+926	Skupina skvěle spolupracuje a její členové poblíž velitele obdrží zkušenostní bonus.
+927	Vůdce
+928	Člen
+929	[Cech] Poskytnuté zkušenosti jsou větší než zbylé zkušenosti.
+930	[Cech] Zpráva nemůže být smazána.
+931	[Cech] Nedostatek dračího ducha. ({}, {})
+932	[Cech] Nemůžeš ještě užít cechovní schopnost.
+933	[Cech] {} -schopnost byla užita ({}, {}) na {}.
+934	[Cech] Hráč je na kanále {}. (Současný kanál: {})
+935	[Cech] Hráč není online.
+936	Za 5 vteřin budou všichni kdo špatně odpověděli vyřazeni.
+937	[Cech] Tato cechovní schopnost může být použita pouze ve válce.
+938	[Cech] {} bodů dračího ducha bylo obnoveno.
+939	[Cech] Pouze cechovní mistr může vybrat Yangy.
+940	[Cech] Hráč odmítl pozvání do cechu.
+941	[Cech] Nemůžeš přijímat nikoho do cechu.
+942	[Cech] Nemůžeš přijímat do cechu hráče z jiného království.
+943	[Cech] Tento hráč může být znovu pozván za {} dní.
+944	[Cech] Po novém uspořádání můžeš opět přijímat členy za {} dní.
+945	[Cech] Tato osoba je již členem jiného cechu.
+946	[Cech] Kapacita cechu dosáhla nejvyšší úrovně.
+947	Připraven na další otázku?
+948	Nemůžeš trénovat tuto schopnost.
+949	Nemůžeš trénovat tuto schopnost na úroveň velmistra.
+950	Již jsi mistr této schopnosti. Nemůžeš ji dál trénovat.
+951	Nemáš dost vysokou úroveň tvé schopnosti pro trénink na velmistra.
+952	Upsala, tohle nefungovalo. Hrom do toho!
+953	Trénink selhal. Zkus to prosím později.
+954	Mé tělo je plné síly!
+955	Zdá se, že trénink funguje...
+956	Dokončil jsi trénink s knihou úspěšně.
+957	Tohle nemůžeš přečíst, máš málo zkušeností.
+958	Otázka.
+959	Už nemůžeš trénovat tuto schopnost s knihou.
+960	Tato schopnost není dost vysoká, aby mohla být trénována s knihou.
+961	Lepším se, ale stále nerozumím všemu.
+962	Instrukcím je těžké porozumět. Musím více studovat.
+963	Této kapitole rozumím. Ale musel jsem tvrdě pracovat.
+964	Dokončil jsi trénink s knihou úspěšně.
+965	Přemístění selhalo.
+966	Zde není žádný kůň. Zeptej se pacholka.
+967	Použij předmět, abys zavolal koně.
+968	{} SB Spotřeba: {}
+969	Pokud je to správně, jděte na O. Pokud je to špatně, jděte na X.
+970	Hořím uvnitř, ale zklidňuje to mé tělo. Moje Chi se musí stabilizovat.
+971	Pomalu... ale stále... bez zastavování!
+972	Ano, cítím se skvěle. Mé tělo je plné Chi.
+973	Přečetl jsem to! Nyní mým tělem protéká Chi.
+974	Trénink je ukončen.
+975	Jsem na poslední stránce knihy! Trénink je téměř ukončen!
+976	Skoro hotovo! Už jen trochu!
+977	Jsem osvícen! Skoro jsem to přečetl celé!
+978	Už jen pár stránek zbývá a budu to mít celé přečteno.
+979	Cítím se osvěžen.
+980	Správně!
+981	Nyní rozumím!
+982	Dobře, měl bych zůstat dále soustředěný.
+983	Čtu ten samý řádek pořád dokola.
+984	Nechci se učit nic dalšího.
+985	Je to složitější než jsem si myslel.
+986	Nemohu se pořádně soustředit. Měl bych si dát pauzu.
+987	Tvůj chat byl dočasně zablokován kvůli spamu.
+988	Tvá blokace chatu byla zrušena.
+989	Okno výroby je již otevřeno.
+990	Nemůžeš nic vyrábět, pokud je jiné okno obchodu/skladiště otevřeno.
+991	Další zlepšení není možné.
+992	Okno výroby není otevřeno.
+993	Nemáš správný materiál.
+994	[Cech] Zkus to prosím později.
+995	Musíš přečíst ještě {} knih, abys vylepšil tuto schopnost.
+996	[Cech] Zkus to prosím později.
+997	Tuhle funkci můžeš použít pouze na hradě.
+998	TEST: Zlaté pruty byly vráceny zpět do trezoru tvého království.
+999	TEST: V trezoru tvého království je: {}
+1000	TEST: Nejsi schopen zaplatit zlaté pruty zpět do trezoru tvého království.
+1001	[Cech] Dosaženo {} bodů.
+1002	Tento předmět nemůže být zlepšen.
+1003	Bezplatné zbraňové zlepšení mohou být užity pouze na zbraně do úrovně 20.
+1004	Nejsi schopen použít tento předmět, protože nemáš dostatečnou kvalifikaci.
+1005	Nemůžeš použít tento předmět, protože nejsi správného pohlaví.
+1006	Použít: transfer <name>
+1007	Tato funkce může být použita pouze císařem.
+1008	Nemůžeš nabírat hráče z jiného království.
+1009	Hráč {} je v tuto chvíli na kanále {}. (Tvůj kanál: {})
+1010	Nabral jsi {} hráče.
+1011	Zde není žádný uživatel tohoto jména.
+1012	Nemůžeš nabrat sám sebe.
+1013	Tvá úroveň je moc nízká, nemůžeš použít tento předmět.
+1014	Nemůžeš nic vylepšit, když je otevřené další okno.
+1015	Císař {} se změnil na {}.
+1016	V {} je válka na zapálení signálního ohně.
+1017	{} byl schopen se ubránit úspěšně.
+1018	30 minut od teď muže hráč {} dostat odměnu, protože zničil signální oheň.
+1020	Signální ohně byly zapáleny v {} aby upozornily na boj.
+1021	{} zničil signální oheň.
+1022	{} prohráli válku. Nebyli schopni ubránit hrad.
+1023	{} zničil všechny signální ohně.
+1024	Nedostatek Yangů na zlepšení.
+1025	Jsi schopen otevřít stánek pouze pokud se svlečeš.
+1026	Toto nemůžeš použít, když jedeš na koni.
+1027	Pro tuto akci potřebuješ: {}
+1028	{} hodin, {} minut a {} sekund bude ještě trvat tvůj blok chatu
+1029	{} hodin a {} sekund budete ještě blokování na chatu
+1030	{} minut a {} sekund bude ještě trvat blokace chatu.
+1031	Četnost padání Yangů
+1032	Zde není žádný kámen na vyjmutí.
+1033	Nemůže být použito.
+1034	Čas vymezený na testovacím serveru vypršel.
+1035	Nemáš správný materiál na výrobu tohoto předmětu.
+1036	Body hodnosti již nemohou být zvyšovány.
+1037	Všechna království
+1038	Podíl padlých předmětů
+1039	Podíl padlých Yangů
+1040	Procentová míra bodů zkušeností
+1041	Nemůžeš číst knihu, dokud jsi v proměně.
+1042	{} sekund bude ještě trvat blokace chatu.
+1043	Nemůžeš vyjadřovat emoce, pokud jedeš na koni.
+1044	Nemůžeš vyjadřovat emoce hráči, který jede na koni.
+1045	Pergamen války nefunguje na předmětech +4 nebo lepších.
+1046	{} hodil kostky. Padlo {} ({}-{}).
+1047	Hodils kostky. Padlo ti {} ({}-{}).
+1048	[Cech]Velitel nepřátelského cechu je offline.
+1049	Nemůžeš naskočit na koně, když se válíš po zemi :)
+1050	[Cech] Tento cech se momentálně účastní války.
+1051	Tady nemůžeš rybařit.
+1052	[Cech]Tvůj cech dosáhl maximální úrovně.
+1053	Nemůžete se proměnit, když jedete.
+1054	Již jedeš. Nejprve sesedni.
+1055	Nemůžeš přidat hráče, stojícího proti tobě, do seznamu přátel.
+1056	Nemůžeš zlepšovat s tímto pergamenem.
+1057	Předmět zmizí za {} minut.
+1058	[Cech]Hráč stojící proti tobě nemůže být pozván.
+1059	Nemůžeš prodat předmět, který používáš.
+1060	Používané předměty nemohou být prodány ve stánku.
+1061	[Sklad]Tento předmět nemůžeš přesunout do skladiště.
+1062	Nyní ještě nemůžeš zahodit zlato.
+1063	Tvůj inventář je plný. Předmět nelze sebrat.
+1064	Úroveň tvého předmětu je příliš vysoká.
+1065	Lze jej použít pouze na zbraň nebo brnění.
+1066	Tento dračí kámen nemůžeš znovu nabít.
+1067	Za úkol Věže Démonů můžeš být odměněn pouze jednou.
+1068	Dračí kámen byl odebrán.
+1069	Nemůžeš přesunout předmět v okně pro zušlechtění.
+1070	Vylepšení tvého předmětu selhalo.
+1071	Momentálně se na této mapě nenachází žádný kamen Metin.
+1072	Zbývající čas Dračího kamene byl odebrán.
+1073	Odebrání zbývajícího času selhalo.
+1074	Odebrání Dračího kamene selhalo. Ovšem povedlo se ti získat následující: {}
+1075	Odebrání Dračího kamene selhalo.
+1076	Tento předmět není pro vylepšení čirosti zapotřebí.
+1077	Tento předmět nemůže být zlepšen touto cestou.
+1078	Vylepšení čirosti bylo úspěšné.
+1079	Zušlechtění o jeden stupeň selhalo.
+1080	Tento předmět není pro zušlechtění třeba.
+1081	Dračí kámen nelze pro zušlechtění použít.
+1082	Zušlechtění o jeden stupeň bylo úspěšné.
+1083	Vylepšení čirosti selhalo.
+1084	Nemáš všechny suroviny, potřebné pro vylepšení Dračího kamene.
+1085	Dračí kámen nelze využít pro zesílení.
+1086	Nemůžeš kombinovat stejné pergameny na zlepšení.
+1087	Zesílení bylo úspěšné.
+1088	Zesílení se nezdařilo.
+1089	Dračí kámen není aktivován.
+1090	Již nosíš Dračí kámen tohoto typu.
+1091	Dračí kámen nelze odebrat.
+1092	Tento druh Dračího kamene již máš ve výbavě.
+1093	Bylo přidáno {} vteřin.
+1094	Před tím, než budeš moci otevřít Cor Draconis, musíš dokončit úkol Dračí kámen a aktivovat Alchymii Dračích kamenů.
+1095	Opasek můžeš odebrat pouze pokud v něm již nejsou žádné předměty.
+1096	Můžete kombinovat Magický kámen a Požehnaný pergamen.
+1097	Tento předmět si nemůžeš na opasek přidat.
+1098	V tomto bludišti nemůžeš jezdit.
+1099	Můžeš použít maximálně 200 přísad najednou.
+1100	Předměty s duševním poutem nelze ve stánku prodat.
+1101	Předmětu s duševním poutem nelze měnit atributy.
+1102	Nemůžeš použít předmět s duševním poutem.
+1103	Nemůžeš zahodit předmět s duševním poutem.
+1104	Nemůžeš darovat předmět s duševním poutem.
+1105	Na tomto serveru nemůžeš připoutat předmět k duši.
+1106	Tento předmět nemůžeš připoutat ke své duši.
+1107	Investoval jsi {} Yangů.
+1108	Zde není žádný kámen na sebrání.
+1109	Tento předmět je již k duši připoután.
+1110	Duševní pouto tohoto předmětu se již odstraňuje.
+1111	Tento předmět není připoután k duši.
+1112	Nemůžeš vylepšit předmět s duševním poutem.
+1113	Nemůžeš prodat předmět s duševním poutem.
+1114	Tuto truhlu nemůžeš otevřít, protože nemáš dostatek místa v inventáři.
+1115	Nemůžeš otevřít soukromý stánek po dobu obchodování s dalšími lidmi.
+1116	Tento předmět nemůžeš během obchodování použít.
+1117	Nemůžeš použít Pergamen lokality, protože je otevřeno okno šerpy.
+1118	Nemůžeš obchodovat, když je otevřené další okno.
+1119	Nemůžeš uložit tuto pozici.
+1120	Můžeš použít šerpy stejně jako zbraně a brnění.
+1121	Přetáhni předměty do okna.
+1122	Toto již bylo přizpůsobeno.
+1123	Šerpa již nemůže přijmout žádné další bonusy.
+1124	Můžeš použít pouze šerpy.
+1125	Tyto šerpy nelze zkombinovat.
+1126	Nezdařilo se!
+1127	Úspěšně!
+1128	Pro kombinování nemáš dostatek peněz.
+1129	Nemůžeš použít tento předmět, pokud jsou otevřena okna pro kombinování a absorpci.
+1130	Nemáš dostatek místa v inventáři.
+1131	{} bylo úspěšné! Absorpční poměr {}%% na novém {}. Gratulujeme!
+1132	Nemůžeš použít předměty s duševním poutem.
+1133	V soukromém stánku nemůžeš prodat předměty, které aktuálně používáš.
+1134	Tento měšec nemůžeš použít při jízdě.
+1135	Čas vypršel. První kolo skončilo.
+1136	Čas vypršel. Druhé kolo skončilo.
+1137	Zbývající čas do konce prvního kola: {} minut.
+1138	Zbývající čas do konce druhého kola: {} minut.
+1139	Bezpečná zóna byla právě deaktivována.
+1140	Zbývající čas do deaktivace bezpečné zóny: {} minut.
+1141	Nemůžeš se přemístit na bezpečné místo v cizím království.
+1142	Odpověď bude zobrazena za 20 vteřin.
+1143	Za 15 vteřin budou odebrání všichni, kteří neodpověděli správně.
+1144	Pro přivolání mazlíka máš příliš nízkou úroveň.
+1145	
+1146	Přivolal jsi: {}.
+1147	Odvolal jsi: {}.
+1148	{} dosáhl úrovně {}!
+1149	{} je momentálně ospalý.
+1150	{} se právě vylíhl!
+1151	Tvůj mazlík se do proteinové tyčinky pustil s veškerou vervou.
+1152	Nemáš dostatek ZB.
+1153	{} se probudil a pustil se do chutného jídla.
+1154	{} je nyní v přepravní bedně.
+1155	{} vyskočil z přepravní bedny.
+1156	{} se změnil na {}! Vynikající!
+1157	{} odmítl cokoliv jíst!
+1158	Akce skončila a nikdo z království se jí nezúčastnil.
+1159	Úspěšně jsi převedl bonusy.
+1160	Na obchodování se mnou nemáš dost Yangů.
+1161	Prosíme, zadej jiné jméno.
+1162	Nemáš dostatek bodů magie (MB) na použití.
+1163	Nemůžeš obchodovat, pokud je otevřen Inkubátor tvého partnera.
+1164	Nemůžeš otevřít Inkubátor pokud obchoduješ nebo máš otevřen sklad či privátní stánek.
+1165	Nemůžeš si otevřít soukromý stánek, pokud máš přivolaného mazlíka.
+1166	Nemůžeš obchodovat, když přivoláváš mazlíka.
+1167	Nemůžeš obchodovat, když tvůj partner přivolává mazlíka.
+1168	Tvůj mazlík získal dostatek zkušeností. Nyní potřebuje Zk. předmětu, aby dosáhl dalšího evolučního stupně.
+1169	Tvůj mazlík je připraven na evoluci. Použij knihy zvířat pro vývin.
+1170	Tvůj mazlík již dosáhl nejvyššího evolučního stupně.
+1171	Zadané jméno je příliš krátké.
+1172	{} vteřin po vykonání se dostaneš do místa určení.
+1173	Nemáš dostatek Yangů.
+1174	Vycvičil jsi mazlíka dobře! Učí se nové schopnosti opravdu rychle!
+1175	Zkušenost se zvýšila na {} bodů.
+1176	Tvůj mazlík se již tuto schopnost naučil a odmítá se ji učit znovu.
+1177	Schopnost {} aktivována. ZB zvýšeny o {}.
+1178	Musíš získat Knihu odvážného zvířete, abys mohl mazlíka poslat na hrdinný výcvik.
+1179	Tvůj mazlík musí mít úroveň {} na trénink a vývin na další evoluční stupeň.
+1180	Tvůj mazlík musí být starý {} dnů pro trénink a vývin na další evoluční stupeň.
+1181	Tvůj mazlík musí mít 100% zkušeností pro trénink a vývin na další evoluční stupeň.
+1182	Efekt {} aktivován.
+1183	Tvá úroveň je příliš nízká na použití tohoto předmětu.
+1184	Efekt {} nebyl aktivován.
+1185	Schopnost {} aktivována. Nyní nemůžeš být zraněn.
+1186	Schopnost {} aktivována. Zpomalení, otrava a krvácení byly odstraněny.
+1187	Získáváš bonusy.
+1188	Okno je již otevřeno.
+1189	Průnik kouzla {}%%.
+1190	{} obnovuje při vyčerpání.
+1191	Zde nemůžeš tento předmět použít.
+1192	Nemůžeš přivolat mazlíka když obchoduješ.
+1193	Nemůžeš otevřít soukromý stánek.
+1194	Měsíční koláček můžeš použít pouze každých 5 vteřin.
+1195	Nemáš dostatek {}. Potřebuješ {} pro další evoluční stupeň.
+1196	Úroveň mazlíka nemůže být vyšší než je úroveň hráče.
+1197	úroveň Mladý
+1198	úroveň Divoký
+1199	úroveň Odvážný
+1200	úroveň Hrdinný
+1201	@*** Házení pro tento předmět: {} ***
+1202	@*** ->%*s - skóre: %4d ***
+1203	$*** Vítěz předmětu {} je: {} ***
+1204	Nový absorpční poměr: {}
+1205	Tento předmět nemůžeš použít při souboji.
+1206	Bylo dosaženo maximální absorpčního poměru.
+1207	Tuto schopnost ses již naučil.
+1208	Pro vyhledávaná kriteria nebyly nalezeny žádné předměty.
+1209	Bylo nasbíráno dostatek dýňových luceren.
+1210	Zeptej se dýně Sama, jestli si zasloužíš odměnu.
+1211	Halloweenská akce začala!
+1212	Zajdi si promluvit s dýní Samem!
+1213	Halloweenská akce byla ukončena. Nezapomeň si vyzvednout odměny!
+1214	Doručených dýňových luceren: {}
+1215	Dýňových luceren celkem: {}
+1216	Vyhrál jsi {} Yangů.
+1217	Zde nemůžeš dělat táborák.
+1218	Tento hráč právě obchoduje s někým jiným.
+1219	Nejprve si musíš vzít zbraň.
+1220	Tento kostým nelze pro tuto zbraň použít.
+1221	Pokud si chceš vyměnit zbraň, tak musíš nejprve odebrat Vzhled zbraně.
+1222	Nemáš dostatek Yangů pro zahájení hry Okey.
+1223	Nemáš {} pro zahájení hry Okey.
+1224	Tvá hra Okey byla zahájena!
+1225	Nemůžeš rozdat více karet.
+1226	Karty nemůžeš zahodit, když máš nějaké označeny.
+1227	Nemůžeš rozdat více karet, když máš nějaké označeny.
+1228	Nemůžeš dělat táborák pod vodou... to přeci dá rozum.
+1229	Tvůj inventář je plný.
+1230	Cenu získáš jen když si uděláš místo v inventáři.
+1231	{} ve hře Okey získal {} bodů.
+1232	Během obchodování nemůže zahájit hru Okey.
+1233	Akce Okey byla zahájena!
+1234	Akce Okey skončila!
+1235	[Událost Okey] Pokud to zvládneš v hodnocení na vrchol, máš pak 7 dnů na sebrání ceny.
+1236	Toto nemůžeš udělat, když hraješ Okey.
+1237	Zavřeno. Měl bys jít hledat klíč.
+1238	Rituální kámen lze použít pouze na předměty s úrovní vyšší než 80.
+1239	Nemůžeš obchodovat, protože byl překročen maximální limit {} Wonů.
+1240	Nemáš dostatek Yangů.
+1241	Nemáš dostatek Wonů.
+1242	Nemůžeš pokračovat ve výměně, protože by byl překročen maximální počet Wonů.
+1243	Nemůžeš pokračovat ve výměně, protože by byl překročen maximální počet Yangů.
+1244	Nemůžeš otevřít soukromý stánek, protože by mohlo dojít k překročení maximálního počtu {} Wonů.
+1245	Nemůžeš rozšířit inventář když obchoduješ.
+1246	Událost Okey byla zahájena!
+1247	Událost Okey skončila!
+1248	Tento předmět nemůže být otevřen klíčem.
+1249	Příšery se objevily v údolí Seungryong, na hoře Sohan, v Doyyumhwan a v poušti Yongbi!
+1250	Projdi oblasti a zabij je. Získávej zásahy a vyměň je za truhly.
+1251	Událost Boss Reaper končí za {} minut.
+1252	Pan B a bossové zmizí za {} minut.
+1253	Splnil jsi svůj denní cíl - vyber si odměnu.
+1254	Nemůžeš používat vzhledy zbraní, pokud máš na sobě svatební šaty nebo smoking.
+1255	Druhá osoba je momentálně zaneprázdněna, takže s ní nyní nemůžeš obchodovat.
+1256	Nemůžeš si obléct svatební šaty nebo smoking, pokud používáš vzhled zbraně.
+1257	Kolo {} začíná.
+1258	Tohle je správný klíč.
+1259	[Cech] Již jsi daroval maximální množství BZK.
+1260	[Cech] Cechovní reklama spuštěna.
+1261	[Cech] Cechovní reklama prodloužena.
+1262	[Cech] Seznam se aktualizuje. Zkus to znovu později.
+1263	[Cech] Nebyl nalezen žádný cech.
+1264	[Cech] Tomuto cechu jsi již poslal žádost.
+1265	[Cech] Tvá žádost byla zaregistrována.
+1266	[Cech] Hráč {} požádal o vstup do cechu.
+1267	[Cech] Seznam se aktualizuje. Zkus to znovu později.
+1268	[Cech] Není dostupná žádná cechovní reklama.
+1269	Obdržel jsi {} Yangů.
+1270	[Cech] Nejsou žádné žádosti.
+1271	[Cech] Cechovní reklama poběží {}.
+1272	[Cech] Cechovní reklama bude brzy ukončena.
+1273	[Cech] Obdrženo {} Yangů.
+1274	[Cech] Po sražení daně {}%% obdržíš {} Yangů.
+1275	[Cech] Nemůžeš vyhlásit válku, pokud je aktivní hlasování.
+1276	[Cech] Nemůžeš rozpustit cech, pokud je aktivní hlasování.
+1277	[Cech] Nemůžeš někoho pozvat do cechu, pokud je aktivní hlasování.
+1278	[Cech] Můžeš postavit pouze jedno cechovní skladiště.
+1279	Z této bedny vychází tajemná záře.
+1280	[Cech] Zkus to prosím znovu za 10 vteřin.
+1281	[Cech] Toto je používáno jiným členem.
+1282	[Cech] V cechovním skladišti se stále nachází předměty.
+1283	[Cech] Volil jsi proti.
+1284	[Cech] Volil jsi pro.
+1285	[Cech] Člen je momentálně offline.
+1286	[Cech] Neprobíhá žádné hlasování.
+1287	[Cech] Začíná hlasování 'Změna velitele'.
+1288	[Cech] Začíná hlasování 'Odebrat člena'.
+1289	[Cech] Začíná hlasování 'Prodej cechovního území'.
+1290	Obdržel jsi {} bodů zkušeností.
+1291	[Cech] Začíná hlasování 'Opuštění cechovního území'.
+1292	[Cech] Probíhá hlasování 'Změna velitele'.
+1293	[Cech] Probíhá hlasování 'Odebrat člena'.
+1294	[Cech] Probíhá hlasování 'Prodej cechovního území'.
+1295	[Cech] Probíhá hlasování 'Opuštění cechovního území'.
+1296	[Cech] Cechovní skladiště je momentálně používáno.
+1297	[Cech] Před znovuotevřením cechovního skladiště musíš čekat 10 vteřin.
+1298	[Cech] Tvůj cech nemá skladiště.
+1299	Podívej, co vypadlo z bedny!
+1300	[Cech] Hlasování o tomto hráči selhalo. Zkus to znovu za {} měsíců, {} dnů, {} hodin a {} minut.
+1301	[Cech] Člen byl odebrán z cechu pro neaktivitu.
+1302	[Cech] Zúčastnil ses aktuálního hlasování.
+1303	[Cech] Nemůžeš zahájit hlasování o své postavě.
+1304	[Cech] Nemůžeš zahájit hlasování během války.
+1305	[Cech] Nemůžeš prodat cechovní území sám sobě.
+1306	[Cech] Tento cech neexistuje.
+1307	[Cech] Nemůžeš zahájit hlasování během války.
+1308	[Cech] Úroveň cechu je příliš nízká.
+1309	[Cech] Člen cechu odmítl poslední hlasování. Zkus to znovu za {} měsíců, {} dnů, {} hodin a {} minut.
+1310	Pokud vdechneš rudý kouř vycházející z bedny, budeš rychlejší!
+1311	[Cech] Nemůžeš zahájit hlasování během války.
+1312	[Cech] Člen cechu odmítl poslední hlasování. Zkus to znovu za {} měsíců, {} dnů, {} hodin a {} minut.
+1313	[Cech] Musíš hlasovat než prodáš cechovní území.
+1314	[Cech] Tento cech není ten, který byl v cechovním hlasování.
+1315	[Cech] Člen cechu odmítl poslední hlasování o prodeji. Zkus to znovu.
+1316	[Cech] Nemůžeš prodat cechovní území sám sobě.
+1317	[Cech] Velitel cechu je offline nebo na jiné mapě.
+1318	[Cech] Cech již cechovní území vlastní.
+1319	[Cech] Nebylo nalezeno žádné cechovní území.
+1320	[Cech] Prodej cechovního území je dokončen.
+1321	Tento předmět můžeš použít pouze během aktuální události.
+1322	Objevila se chyba. Bonusy nebylo možné změnit.
+1323	Momentálně nemůžeš vyvolat své zvíře.
+1330	Za cíl nemůžeš použít šerpu s bonusem.
+1331	Za zdroj nemůžeš použít šerpu bez bonusu.
+1332	Nemůžeš přenést bonus, protože šerpy mají různý absorpční poměr.
+1333	Nemůžeš přenést bonus, protože šerpy mají různý stupeň.
+1334	Selhání! Absorpční poměr byl snížen o 1 %.
+1335	Částečný úspěch! Absorpční poměr byl snížen o 1 %.
+1336	Úspěch! Bonus byl úspěšně přenesen.
+1337	Během přenosu bonusu nemůžeš vyhazovat předměty.
+1338	Během přenosu bonusu nemůžeš přesouvat předměty.
+1339	Během přenosu bonusu nemůžeš prodávat předměty.
+1340	Není možné během přenosu bonusu.
+1341	Toto není možné, protože druhý hráč přenáší bonusy.
+1342	Pro určení osudu mazlíky potřebuješ Kámen osudu mazlíka.
+1343	Nejprve musíš aktivovat mazlíka.
+1344	Během modifikování atributů mazlíka nemůžeš obchodovat, prodávat předměty, používat skladiště atd.
+1345	Nemůžeš použít předměty, když modifikuješ atributy mazlíka.
+1346	Nemůžeš zahodit předměty, když modifikuješ atributy mazlíka.
+1347	Nemůžeš přesunout předměty, když modifikuješ atributy mazlíka.
+1348	Nemůžeš obchodovat, když obchodní partner modifikuje atributy mazlíka.
+1349	Nemůžeš mluvit s NPC když modifikuješ atributy mazlíka.
+1350	Atributy tvého mazlíka byly změněny.
+1351	Můžeš to otevřít 3 vteřiny po uzavření nabídky na modifikaci atributů mazlíka.
+1352	Všechny pozice jsou obsazeny.
+1399	Hráč momentálně nemůže přijmout tvé pozvání.
+1400	Po použití Tinktury království již nemůžeš v tomto království přijímat žádná pozvání.
+1401	Byly aktivovány schopnosti mazlíka. {}. {} používá Našlapování polehoučku.
+1403	Toto jméno je již použito.
+1404	Prosíme, odeber nejprve Dračí kámen před použitím tohoto předmětu.
+1405	Zde nemůžeš vyhlásit cechovní válku.
+1406	Odměna
+1407	Odměny za hodnocení {}
+1408	Boss byl poražen! Brzy budeš teleportován zpět do Chrámu Zvěrokruhu.
+1409	Bohužel se ti nepodařilo zastavit apokalypsu. Brzy budeš teleportován zpět do Chrámu Zvěrokruhu.
+1410	Vstoupil jsi do bludiště {} s obtížností {}. Bitva začíná za {} vteřin.
+1411	Nemůžeš mluvit s NPC, když je otevřená Truhla Štěstí.
+1412	Nemůžeš používat předměty, když je otevřená Truhla Štěstí.
+1413	Nemůžeš zahazovat předměty, když je otevřená Truhla Štěstí.
+1414	Nemůžeš přesouvat předměty, když je otevřená Truhla Štěstí.
+1415	Nemůžeš obchodovat, když je otevřená Truhla Štěstí.
+1416	Nemůžeš obchodovat, když tvůj partner má otevřenou Truhlu Štěstí.
+1417	Vstoupil jsi do bludiště {}. Bitva začíná za {} vteřin.
+1418	Apokalypsa Zvěrokruhu není momentálně aktivní.
+1419	Apokalypsa Zvěrokruhu již začala.
+1420	Bonus tvého Dračího kamene byl změněn.
+1421	[Chyť krále] Zabíjej příšery a sbírej Královské karty. Potřebuješ celkem 25 karet pro Královskou kolekci
+1422	[Chyť krále] Čeká na tebe spousta cen!
+1423	[Chyť krále] Pokud se dostaneš na vysokou pozici v hodnocení, získáš skvělou cenu z herního stolu.
+1426	Obdržel jsi skladištní bonus {}%% BZK.
+1427	Obdržel jsi skladištní bonus {} obrany.
+1428	Obdržel jsi skladištní bonus {}%% ZB.
+1429	Obdržel jsi skladištní bonus {}%% síly proti monstrům.
+1430	Před rybařením se ujistit, že máš v inventáři dostatek místa.
+1431	Nemůžeš přesouvat předměty, když je otevřeno okno se změnou bonusů.
+1432	Bohužel v břiše ryby nebyl žádný poklad.
+1433	Nemůžeš rybařit, když se snažíš vylíhnout mazlíka.
+1434	Nemůžeš rybařit, když máš přivolaného mazlíka.
+1435	Nemůžeš rybařit, když je otevřeno okno se změnou bonusů.
+1436	Tuto akci nemůžeš provést, když máš otevřené okno pro kombinování nebo absorbování Šerpy.
+1437	Tuto akci nemůžeš provést, když máš otevřené okno pro přenos bonusů Šerpy.
+1438	Tuto akci nemůžeš provést, když máš otevřené okno pro přenos bonusů.
+1439	Nemůžeš rybařit, když máš otevřena jiná okna.
+1440	Při rybaření nemůžeš tuto akci provést.
+1441	Zbývající čas: {} | Obtížnost ryby: {} | Snížení obtížnosti: {}
+1442	Všechna hodnocení Bitevní zóny byla zresetována.
+1443	Dodat používaný vzhled zbraně.
+1444	Tvůj inventář je plný.
+1450	{} vylepšení selhalo.
+1451	{} vylepšení se zdařilo.
+1452	Objevil se Oltář krve.
+1453	Chytil jsi duši.
+1454	[Krvavý rituál] Bohužel nemáš ve svém inventáři dostatek místa.
+1455	[Krvavý rituál] Bohužel nemáš dostatek duší.
+1456	[Krvavý rituál] Bohužel nemáš dostatek Yangů.
+1457	Krvavý rituál započal. Kup si speciální předměty pro zisk lepších odměn.
+1458	Krvavý rituál skončil. Zkus to znovu jindy.
+1459	Vylepšení změny selhalo.
+1460	Tento předmět je dostupný pouze v Doupěti Meley.
+1461	Byl použit Kompas, ale Strážný nebyl nalezen.
+1462	Toto nemůžeš udělat, když provádíš jinou akci.
+1463	Toto nemůžeš udělat, když provádíš jinou akci.
+1464	Nemůžeš vylepšit zbraň, když máš přivolaného mazlíka.
+1465	Pro otevření truhly potřebuješ {} míst v inventáři.
+1466	Bohužel nemáš ve svém inventáři dostatek místa.
+1467	[Skladiště] Nelze uložit předmět, který se právě používá.
+1468	[Aura] Nefunguje na předmětem s duševním poutem.
+1469	[Aura] Nefunguje s Kostýmem s aurou, na který již byl přenesen předmět.
+1470	[Aura] Kostým s aurou získal maximální úroveň.
+1471	[Aura] Nemůžeš vyvinout Kostým s aurou, než jej vylepšíš.
+1472	[Aura] Lze použít pouze Kostým s aurou.
+1473	[Aura] Lze vložit pouze kostým, náhrdelník, náušnice nebo náramek s aurou.
+1474	[Aura] Nelze vylepšit.
+1475	[Aura] Lze provést pouze pokud je vložen Kostým s aurou.
+1476	[Aura] Množství vložených materiálů bylo upraveno, aby dosáhlo požadovaného množství.
+1477	[Aura] Nelze vyvinout.
+1478	[Aura] Nemůžeš vyvinout Kostým s aurou, než jej vylepšíš.
+1479	[Aura] Musíš vložit předměty!
+1480	[Aura] Vylepšení se zdařilo. Evoluce je nyní možná.
+1481	[Aura] Vylepšení se zdařilo!
+1482	[Aura] Pro vývoj Kostýmu s aurou nemáš dostatek peněz.
+1483	[Aura] Evoluce se zdařila!
+1484	[Aura] Úspěch!
+1485	[Cech] Bylo darováno {} BZK.
+1486	Nemůžeš nakrmit mazlíka, když je otevřeno okno zušlechťování.
+1487	Bitva pěti oltářů začala! Bude trvat {} dnů.
+1488	Bitva pěti oltářů skončila. Další bitva začne za {} hodin.
+1489	Rozhraní nelze otevřít, když jedeš na zvířeti.
+1490	Událost není momentálně aktivní.
+1491	Během přivolávání jezdeckého zvířete nemůžeš obchodovat, pohybovat se ani ukládat nebo zahazovat předměty.
+1492	Bitva byla ukončena v důsledku neočekávaných okolností.
+1493	Bitva pěti oltářů končí za {} minut.
+1494	Potřebuješ {} x {} více.
+1495	Otevřel se Dračí portál {}. úrovně. Zaútočit na bludiště!!
+1496	Nyní lze vstoupit do Dračího portálu {}. úrovně.
+1497	Sejmuli jsme bosse!
+1498	[Cech] Obdrženo {} BZK!
+1499	Čas pro vstup do Dračího portálu vypršel!
+1500	Bludiště se uzavře, pokud do něj nevstoupíš do {} minut.
+1501	Bitva nebyla zahájena. Bludiště uzavřeno.
+1502	{} obsadil {}!
+1503	Nemůžeš darovat, když máš přivolaného mazlíka.
+1504	Tato postava není k dispozici pro souboj.
+1505	Z {} dárků můžeš rozbalit {}.
+1506	Další dárek můžeš rozbalit za {} minut.
+1507	{} útočí na {}!
+1508	{} dosáhl osobního skóre {}!
+1509	Odměna za Krvavý rituál
+1510	Nedostatek místa v inventáři. Odměna bude odeslána do tvé poštovní schránky.
+1511	Člen skupiny je příliš daleko, aby mohl obdržet předmět.
+1512	Dosaženo maximální úrovně cechu. Již nejsou možné žádné další dary.
+1513	[Souboj věštců] Souboj věštců byl zahájen!
+1514	[Souboj věštců] Pro mini hru obdržíš úkol.
+1515	[Souboj věštců] Bohaté odměny čekají!
+1516	[Souboj věštců] Souboj věštců skončil.
+1517	[Souboj věštců] Podívej se na své umístění a vyber si odměny.
+1518	[Souboj věštců] Nemáš dostatek Věšteckých mincí.
+1519	[SV] Odměna za umístění
+1520	[Souboj věštců] Zvýšil jsi počet tvých darů o 1.
+1521	Tento předmět nemůžeš na předmět s duševním poutem!
+1522	Královské bitvy se nemůžeš účastnit.
+1524	Nejprve musíš opustit skupinu.
+1525	Nemůžeš vstoupit, protože odpočítávání již začalo.
+1527	Toto je vítěz Královské bitvy: {}
+1528	{} zabil {}.
+1529	Odpočítávání bylo zahájeno. Královská bitva začíná za {} vteřin.
+1530	Královská bitva nemůže být zahájena, protože není dostatek účastníků.
+1531	Královská bitva začala. První oblast bude zobrazena ze {} vteřin.
+1532	Bitevní zóna byla aktualizována. Bude uzavřena za {} vteřin.
+1533	Bitevní zóna bude uzavřena za {} vteřin.
+1534	Elektrické pole přestalo fungovat. Další Bitevní zóna bude zobrazena za {} vteřin.
+1535	Královská bitva končí za {} vteřin.
+1536	Toto nemůžeš během Královské bitvy udělat.
+1537	Na této mapě se nemůžeš registrovat.
+1538	Na serveru Královské bitvy se pro to nemůžeš registrovat.
+1540	Na serveru Královské bitvy toto nemůžeš stornovat.
+1541	Královská bitva začala!!!
+1542	Královská bitva skončila!!!
+1543	Již nejsou žádné Bitevní zóny. Celá oblast bude uzavřena za {} vteřin.
+1544	Momentálně nemáš žádné záporné posílení.
+1545	Pro vstup potřebuješ Propustku do Královské bitvy.
+1546	Někde byl umístěn speciální balíček se zásobami.
+1547	[Bonus relikvie] Již nosíš Relikvii duše.
+1548	Toto zde nemůžeš použít.
+1549	Teleport na Náhorní plošinu Prvotních sil selhal.
+1550	Toto již nemůžeš použít.
+1551	Nemáš dostatek Gaya.
+1552	Stav účastníků Královské bitvy: ({}/{})
+1553	Registrace do Královské bitvy byly ukončeny.
+1554	Zkus to prosím později.
+1555	Toto nemůžeš udělat, když provádíš jinou akci.
+1556	PvP turnaj
+1557	Odměny za výhru v kole
+1558	Odměny za výhru v turnaji
+1559	Ceny za Souboj věštců
+1560	Tvůj inventář je plný. Tvá odměna bude doručena poštou.
+1561	Odměna za Souboj věštců bude doručena poštou, protože tvůj inventář je plný.
+1562	Obdržel jsi {} BZK za úroveň šampióna.
+1574	Zkus to prosím později.
+1575	Královská bitva
+1576	Odměna za sezónu Královské bitvy. Umístění: {}
+1577	Obecná odměna za Královskou bitvu.
+1578	Herní odměna za Královskou bitvu. Umístění: {}
+1579	Bitevní odměna za Královskou bitvu. Zabito více než {} protivníků
+1580	Nyní nemůžeš úspěch sebrat.
+1581	Nyní nemůžeš použít žádné emoce.
+1582	Yongan
+1583	Cech {} koupil území v oblasti {} na pozici {},{} za {} Wonů.
+1584	Tvůj vůdce cechu se zaregistroval na aukci území v oblasti {} na pozici {},{}.
+1585	Již jsi odeslal svou nabídku.
+1586	Můžeš si vzít nabídnuté Wony zpět.
+1587	Není co sebrat.
+1588	Již náš maximální množství Wonů.
+1589	Vzal sis zpět {} Wonů, které jsi nabídl.
+1590	Pouze velitel cechu nebo člen s přístupem k pokladnici může zaplatit pronájem.
+1591	Není třeba platit žádný pronájem.
+1592	Cech nemá dostatek Yangů.
+1593	[Území cechu] Jdi za strážcem a zaplať {} Yangů za pronájem cechovního území.
+1594	Zaplatil jsi {} Yangů za pronájem cechovního území.
+1595	Toto nemůžeš udělat během pobíhající aukce cechovního území.
+1596	Nejsi zaregistrován do žádné aukce cechovního území.
+1597	Nepatříš k žádnému cechu.
+1598	Již jsi do aukce cechovního území zaregistrován.
+1599	Pouze vůdce cechu může provést registraci do aukce.
+1600	Registrovat se mohou pouze cechy úrovně {} nebo vyšší.
+1601	Tvůj cech již má cechovní území.
+1602	Momentálně neprobíhá žádná aukce cechovního území.
+1603	Maximální částka je {} Wonů.
+1604	Nemáš dostatek Wonů.
+1605	Tvůj cech není do aukce registrován.
+1606	Přihodit můžeš pouze pokud jsi členem cechu déle než 24 hodin.
+1607	Nájemné za cechovní území nebylo zaplaceno. Území cechu bylo opuštěno.
+1608	Do aukce cechovního území se nezaregistroval žádný cech.
+1609	Nabídl jsi {} Wonů.
+1610	Tento cech neexistuje.
+1611	Planiny Dong Gwang
+1612	Wony, které jsi nabídl, můžeš získat zpět u strážce vesnice.
+1613	Perfektní! Úspěšně jsi přidal Kámen ducha a nyní získáš dvojitý bonus na hodnoty.
+1614	Joan
+1615	Pyungmoo
+1616	Jungrang
+1617	Waryong
+1618	Imha
+1619	Miryang
+1620	Songpa
+1621	Daeyami
+1622	[Světový boss] Událost začala
+1623	[Světový boss] Událost dokončena
+1624	[Světový boss] Na kanále {} byl spatřen {} terorizující oblast {}. Tak jdeme lovit!
+1625	[Světový boss] Světový boss na kanále {} byl napaden. Přidej se k lovu!
+1626	[Světový boss] Výborně: {} byl poražen a mír znovu nastolen... na chvíli.
+1627	[Světový boss] Světový boss uprchl! Hodně štěstí při dalším pokusu.
+1628	[Světový boss] Nyní nemůžeš získat odměnu.
+1629	[Světový boss] Skvěle! Tady je tvoje odměna. Přidej se i příště!
+1630	[Světový boss] Nyní nemůžeš získat odměnu, protože nemáš v inventáři dostatek místa.
+1631	[Světový boss] Odměna Úrovně kořisti I za umístění: {}
+1632	[Světový boss] Odměna Úrovně kořisti II za umístění: {}
+1633	[Světový boss] Odměna Úrovně kořisti III za umístění: {}
+1634	[Světový boss] Odměna Úrovně kořisti IV za umístění: {}
+1635	[Síla květin] Nemáš dostatek výhonků.
+1636	[Síla květin] Nemáš dostatek místa v inventáři.
+1637	[Síla Květin] Získal jsi Semena květin.
+1638	[Síla květin] Nemáš dostatek Semen květin.
+1639	[Síla květin] Obdržel jsi Výhonek chryzantémy.
+1640	[Síla květin] Obdržel jsi Výhonek konvalinky.
+1641	[Síla květin] Obdržel jsi Výhonek narcisu.
+1642	[Síla květin] Obdržel jsi Výhonek lilie.
+1643	[Síla květin] Obdržel jsi Výhonek slunečnice.
+1644	[Světový boss] Pozor: Světový boss se brzy objeví!
+1645	[Síla květin] Předmět již nelze použít.
+1646	Momentálně se nemůžeš proměnit.
+1647	Zabij všechny příšery v časovém limitu!
+1648	Portál do další místnosti je otevřený.
+1649	Vyhni se všem útokům!
+1650	Portál do další úrovně je otevřený.
+1651	{} dokončil úroveň {} ve Věži Sung Mahi!
+1652	Kořist z Věže Sung Mahi ti byla zaslána do poštovní schránky.
+1653	Věž Sung Mahi: úroveň {}
+1654	Kořist za dokončení Věže Sung Mahi
+1655	Bitva začíná za {} vteřin.
+1656	Jsi na úrovni {}.
+1657	Zabij páry příšer, které k sobě nepatří!
+1658	Zaútočil jsi na špatnou příšeru. Zabij všechny příšery!
+1659	Zabij všechny příšery v časovém limitu!
+1660	Zničil jsi špatný kámen Metin. Poraz všechny příšery.
+1661	Znič správný kámen Metin!
+1662	Najdi správný klíč pro únik!
+1663	Najdi Pečetní kámen pro rozbití pečetě!
+1664	[Věž Sung Mahi] Zabij všechny příšery v časovém limitu!
+1665	[Věž Sung Mahi] Aktuální cyklus hodnocení byl ukončen.
+1666	[Věž Sung Mahi] Nový cyklus hodnocení byl zahájen.
+1667	Sezónní odměna za 1. místo na úrovni {} Věže Sung Mahi.
+1668	Sezónní odměna Věže Sung Mahi
+1669	Nejsi prokletý.
+1670	Tvé prokletí pominulo.
+1671	Čas vypršel. Budeš přenesen ven.
+1672	[Věž Sung Mahi] Znič kámen Démona!
+1673	[Věž Sung Mahi] Klíč nesedí. Najdi jiný a zkus to znovu.
+1674	[Věž Sung Mahi] Rozbij pečeť pomocí Pečetního kamene Sung Mahi!
+1675	[Věž Sung Mahi] Nejprve musíš rozbít první pečeť!
+1676	Nyní můžeš nosit rukavice.
+1677	Zatím nemůžeš rukavice nosit.
+1678	Tato funkce není dostupná, protože byl detekován ilegální software.
+1679	[Věž Sung Mahi] Dokončil jsi tuto úroveň za {} vteřin.
+1680	Nemůžeš se účastnit aukce území cechu v den, kdy byl cech založen.
+1681	You have mastered {} {}'s Dragon gate.
+1683	You don't have Dragon gate reset item.
+1684	You received {} Dragon gate points.
+1685	You have failed to disolve solvent.
+1686	Vystoupej na další úroveň ve Věži Sung Mahi!
+1687	[Osobní prémiový obchod] Toto nemůžeš použít. Jdi do vesnice ke Správkyni obchodů.
+1688	Vstoupil jsi do oblasti pod vlivem Sung Mahi a cítíš následky prokletí.
+1689	{} má pořád {} základen. ({}/{})
+1690	{} postavil všechny základny a kontrola Sung Mahi začne za {} minut.
+1691	Základny Sung Mahi byly postaveny.
+1692	Základny Sung Mahi byly zničeny.
+1693	Všechny základny v {} byly zničeny a oblast již není pod kontrolou Sung Mahi.
+1694	Pustiny Seo Gwang
+1695	Propast Nam Gwang
+1696	Vylepšení bylo úspěšné!
+1697	Bohužel, vylepšení selhalo.
+1698	Díky požehnání imunity nejsi ovlivněn přítomností Sung Mahi.
+1699	Tvá imunita vypršela a opět jsi ovlivněn přítomností a prokletím Sung Mahi.
+1700	Pokud uživatel používá ilegální software, nemůžeš toto udělat.
+1701	Pro vylepšení nemáš dostatek materiálu. (Předměty s duševním poutem nelze použít)
+1702	Území tvého cechu bude automaticky zrušeno za {} hodin. Všechny předměty v cechovním skladišti budou zničeny.
+1703	[Cech] Nemůžeš vyhodit velitele cechu.
+1704	[Cech] Nemůžeš vyhodit sám sebe.
+1705	[Cech] Nemůžeš se udělat velitelem cechu.
+1706	[Cech] Toto je dostupné pouze veliteli cechu (pokud bylo cechovní území zrušeno).
+1707	[Cech] Nemůžeš opustit cechovní území během cechovní bitvy.
+1708	Toto nemůžeš vyměnit.
+1709	Událost Věž byla aktivována.
+1710	Toto se můžeš naučit až po dosažení úrovně Šampión.
+1711	[Osobní prémiový obchod] Toto nemůžeš otevřít, protože máš stále peníze k sebrání.
+1712	[Osobní prémiový obchod] Toto nemůžeš otevřít, protože máš stále předměty k sebrání.
+1713	[Osobní prémiový obchod] Již sis Osobní prémiový obchod otevřel.
+1714	[Osobní prémiový obchod] Obchod se nyní připravuje.
+1715	[Osobní prémiový obchod] V inventáři nemáš dostatek místa.
+1716	[Osobní prémiový obchod] Ve svém Osobním prémiovém obchodě můžeš sebrat předměty.
+1717	[Osobní prémiový obchod] Ve svém Osobním prémiovém obchodě můžeš sebrat peníze.
+1718	[Osobní prémiový obchod] Prodalo se: {} Prosím, seber si nyní své peníze.
+1719	[Osobní prémiový obchod] Obchod nemůžeš znovu otevřít {} vteřin po jeho zavření.
+1720	Toto nemůžeš udělat během vytváření bludiště.
+1721	Již se nemůžeš oživit. Budeš teleportován z bludiště.
+1722	Již jsi odměnu obdržel. Pokud to chceš zkusit znovu, příjď později. Zbývající čas: {} h {} m
+1723	Můžeš se oživit ještě {}x.
+1724	Nyní můžeš vstoupit do Hadího chrámu. Použij na to Sochu hada.
+1725	Zničený Metin nereaguje. Všechny Metiny se znovu objevily.
+1726	Zničený Metin nereaguje. Všechny Metiny se znovu objevily.
+1727	Zničil jsi Metin {}. Nyní znič Metin {}.
+1728	Čas vypršel. Budeš teleportován z bludiště.
+1729	Toto je dostupné za {} minut.
+1730	Již nemůžeš prodloužit čas v bludišti.
+1731	Čas v bludišti je prodloužen o 1 minutu.
+1732	Zabil jsi všechny příšery. Budeš přenesen na úroveň {}. Zbývá k tomu {} vteřin.
+1733	Zničil jsi všechny Metiny. Budeš přenesen na úroveň {}. Zbývá k tomu {} vteřin.
+1734	Kus byl přidán na hadí hlavu. Ale nic se nestalo.
+1735	Všechny Hadí kobky byly odemčeny. {} úrovní za {} vteřin.
+1736	Speciální Kovář Hadího chrámu se objevil!
+1737	Kovář Hadího chrámu se objevil!
+1738	Zabil jsi všechny příšery a můžeš postoupit na úroveň s bossem.
+1739	Dokončil jsi Hadí chrám. Budeš teleportován z bludiště za {} vteřin.
+1740	Znič kameny Metin ve správném pořadí.
+1741	Zabij všechny příšery.
+1742	Pro odemčení Hadího pilíře musíš sebrat klíč příšerám.
+1743	Přidal jsi kus na Hadí hlavu.
+1744	Zabij bosse.
+1745	Úspěšně otevřeno!
+1746	Nejprve musíš odemknout jiný pilíř.
+1747	Vězení bylo odemčeno. Kovář se na tebe usmívá.
+1748	Tento klíč vězení neotevřel a nezachránil kováře.
+1749	Tento kus na Hadí hlavu nepasuje.
+1750	You cannot use further over 999,999 Dragon gate points.
+1751	You cannot reset because your Dragon gate points exceed the limit.
+1752	Musíš naplnit alespoň 1 Mramor BZK na úrovni 120, abys dosáhl na úroveň Šampióna.
+1753	Nejprve musíš dokončit bludiště 'Obrana lodi'.
+1754	Již jsi dosáhl úrovně Šampióna.
+1755	[Osobní prémiový obchod] Tento předmět během otevírání Osobního prémiového obchodu nemůžeš použít.
+1756	[Osobní prémiový obchod] Toto nemůžeš během správy předmětů dělat.
+1757	[Osobní prémiový obchod] Osobní prémiový obchod nemůžeš použít, když máš otevřené jiné okno.
+1758	[Osobní prémiový obchod] Toto nemůžeš během správy předmětů dělat.
+1759	You have used {} Dragon gate points.
+1760	[Bonus relikvie] Tato akce není možná pokud je otevřené okno Relikvie duše.
+1761	{} členů skupiny opustilo bitvu.
+1762	Zbývá ti {} minut.
+1763	[Osobní prémiový obchod] Zde nemůžeš bojovat.
+1764	[Osobní prémiový obchod] Peníze, které lze sebrat, nebudou během správy předmětů aktualizovány.
+1765	Nejvyšší boss Hadího chrámu se objevil.
+1766	[Osobní prémiový obchod] Zde již byl obchod otevřen. Najdi si jiné místo, kde si obchod otevřeš.
+1767	Toto nemůžeš vylepšit, když máš přivolané vyvíjejícího se mazlíka.
+1768	<Hlubiny Northwind> Zbývá ti {} minut.
+1769	<Hlubiny Northwind> Pokud nezahájíš bitvu do 3 minut, bude instance ukončena.
+1770	<Hlubiny Northwind> Je čas. Budeš teleportován z bludiště.
+1771	It is available after you complete Dragon gate learning quest.
+1772	<Hlubiny Northwind> Pro Útočiště Northwind byla vygenerována instance.
+1773	HP
+1774	Defense
+1775	Leader
+1776	Tugyi
+1777	EXP
+1778	Resistance(Fire)
+1779	Resistance(Ice)
+1780	Resistance(Electric)
+1781	Resistance(Wind)
+1782	Resistance(Earth)
+1783	Resistance(Darkness)
+1784	STR
+1785	Strength(Fire)
+1786	Strength(Ice)
+1787	Strength(Electric)
+1788	Strength(Wind)
+1789	Strength(Earth)
+1790	Strength(Darkness)
+1791	Mark
+1792	Sung ma(STR)
+1793	Sung ma(Resistance)
+1794	Sung ma(VIT)
+1795	Sung ma(INT)
+1796	<Hlubiny Northwind> Porazil jsi Alastora! Budeš teleportován z bludiště za 20 vteřin.
+1797	<Hlubiny Northwind> Alastor brzy ukáže svůj ledový hněv!
+1798	<Hlubiny Northwind> Alastor ukáže svůj ledový hněv na úrovni {}!
+1799	<Hlubiny Northwind> Podařilo se ti odrazit Alastorův ledový hněv.
+1800	<Hlubiny Northwind> Pokud nezničíš vejce bílého draka do {} vteřin, zasáhne úkryt Alastorův smrtící mráz!
+1801	Toto zde není dostupné.
+1802	Toto bude dostupné až po začátku bitvy.
+1803	<Hlubiny Northwind> Instance byla ukončena, protože jsi nezahájil bitvu v určeném časovém limitu.
+1804	It is not available while Dragon gate is opened.
+1807	You cannot use Dragon gate system.
+1808	Získal jsi {} bodů zkušeností úrovně Šampióna.
+1809	Získal jsi {} bodů zkušeností.
+1810	Ztratil jsi {} bodů zkušeností.
+1811	Ztratil jsi {} bodů zkušeností úrovně Šampióna.
+1812	Toto nemůžeš udělat během obchodování.
+1813	Událost Horečka Metin byla zahájena!
+1814	Dokonči úkoly na seznamu úkolů, znič Kameny Metin a seber si své odměny.
+1815	Událost Horečka Metin není momentálně aktivní.
+1816	[Dračí chrám] Vygeneroval jsi instanci Dračího chrámu.
+1817	[Dračí chrám] Pokud nezahájíš bitvu do 3 minut, bude instance ukončena.
+1818	[Dračí chrám] Beran-Setaou byl poražen. Budeš teleportován z bludiště za {} vteřin.
+1819	[Dračí chrám] Zbývá ti {} minut.
+1820	[Dračí chrám] Instance byla ukončena, protože bitva nebyla zahájena.
+1821	[Dračí chrám] Čas vypršel. Všichni budou teleportováni z bludiště.
+1822	[Dračí chrám] Vygeneroval jsi instanci Dračího chrámu.
+1823	[Dračí chrám] Pokud nezahájíš bitvu do 3 minut, bude instance ukončena.
+1824	[Dračí chrám] Instance byla zahájena.
+1825	[Dračí chrám] Vzdal jsi to a instance byla ukončena.
+1829	[Dračí chrám] Bludiště bude uzavřeno, pokud do něj nikdo nevstoupí do {} vteřin.
+1830	[Dračí chrám] Bludiště bylo uzavřeno, protože do něj nikdo v požadovaném čase nevstoupil.
+1838	Nemůžeš zablokovat sám sebe.
+1839	Nemůžeš přidat sám sebe.
+1840	Byla povolena akce {}.
+1844	Nakrmil jsi koně: {} krmiva. Získal {} zkušeností.
+1845	Nedostatek Gaya nebo Yangů.
+1846	Tuto jezdeckou schopnost se nemůžeš naučit.
+1847	[Chrám Enigmy] Pouze velitel skupiny může použít tento pergamen.
+1848	[Chrám Enigmy] Pouze velitel skupiny může použít tento pergamen.
+1849	[Chrám Enigmy] {} není v dosahu.
+1850	[Chrám Enigmy] Tento pergamen nemůžeš použít na své úrovni.
+1851	[Chrám Enigmy] {} potřebuje vyšší úroveň pro vstup.
+1852	[Chrám Enigmy] {} odmítl vstoupit.
+1853	[Chrám Enigmy] Bludiště se uzavře do 1 minuty, pokud nezahájíš bitvu.
+1854	[Chrám Enigmy] Portál do Chrámu Enigmy byl vytvořen.
+1855	[Chrám Enigmy] Znič skutečný Kámen Metin.
+1856	[Chrám Enigmy] Toto je falešný kámen Metin. Najdi skutečný kámen Metin!
+1857	[Chrám Enigmy] Z kamene Metin jsi získal pokladnici.
+1858	[Chrám Enigmy] Musíš ještě najít skutečný kámen Metin. Použij portál a zkus to znovu.
+1859	[Chrám Enigmy] Úkol dokončen. Najdi tajnou místnost.
+1860	[Chrám Enigmy] Najdi skutečnou příšeru a poraz ji! Nenech se zmást iluzemi.
+1861	[Chrám Enigmy] Nenašel jsi skutečnou příšeru. Použij portál a zkus to znovu.
+1862	[Chrám Enigmy] Podívej se do pokladnice.
+1863	[Chrám Enigmy] Vítej v tajné místnosti.
+1864	[Chrám Enigmy] Tvůj čas vypršel! Všichni budou teleportováni z bludiště.
+1865	[Chrám Enigmy] Jako odměnu jsi obdržel Požehnání chrámu Enigmy.
+1866	[Chrám Enigmy] Nezískal jsi odměnu. Čas do další odměny: {} hodin a {} minut
+1867	Odměna Chrámu Enigmy
+1868	[Chrám Enigmy] Chrám Enigmy zmizel, protože čas vypršel.
+1869	[Chrám Enigmy] Máš 4 minuty na zahájení bitvy pomocí Portálu Enigmy.
+1870	[Chrám Enigmy] Požehnání chrámu Enigmy ti garantuje další pokladnici.
+1871	[Chrám Enigmy] Získal jsi Odměnu Engimy. Pro přijetí se podívej do poštovní schránky.
+1872	{} was removed.
+1873	You acquired {} skill. You can check it in the skill tap.
+1874	Nedostatek Gaya
+1876	Zkus to později.
+1878	Čas vypršel. Brzy budeš přenesen do města.
+1879	Již se nemůžeš oživit.
+1880	Úspěšně jsi splnil úlohu a budeš teleportován ven za {} minut.
+1881	Porazil jsi všechny posly. Jdi ke Strážci Hae-Tae pro vstup do Prokletí.
+1882	Nemůžeš použít více, než je maximální množství předmětů.
+1883	Cesta do Jiného světa je ukončena a ty již žádné další Plameny smrti najít nemůžeš.
+1884	Cesta do Jiného světa začala. Plameny smrti najdeš při zabíjení příšer.
+1885	Cesta do Jiného světa skončila.
+1886	Cesta do Jiného světa začala. Nyní můžeš použít portál do Jiného světa v Zálivu dračího ohně.
+1887	Použil jsi {}x Vodu života. Zbývá ti {}x Vod života.
+1888	Obdržíš {} Plamenů smrti.
+1895	Porazil jsi Posla Země.
+1896	Porazil jsi Posla noci.
+1897	Porazil jsi Posla bouře.
+1898	Porazil jsi Posla vzduchu.
+1899	Bludiště se uzavře za {} minut.
+1900	Pro další Plameny smrti nemáš dostatek místa.
+1901	Před dalším pokusem můsíš chvíli počkat. Zbývající čas: {} hodin a {} minut
+1902	Jakmile jsi vstoupil do Dračího chrámu, už nemůžeš změnit skupinu.
+1903	Nemůžeš mít více žoldáků.
+1904	Vytrvalost překročena
+1905	[Chrám Enigmy] Znič Metin Enigmy, aby ses dostal na další úroveň.
+1916	Tuto schopnost ses již naučil.
+1917	Tuto schopnost se nemůžeš naučit, dokud kůň nemá úroveň 31.
+1918	Tuto schopnost již nemůžeš získat.
+1919	Tuto schopnost se nemůžeš naučit, dokud kůň nemá úroveň 21.
+1921	<Secret Dungeon> You cannot enter the dungeon. Level requirement is not met.

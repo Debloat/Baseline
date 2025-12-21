@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="AttributeData.cpp" />
+    <ClCompile Include="AttributeInstance.cpp" />
+    <ClCompile Include="BlockTexture.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CollisionData.cpp" />
+    <ClCompile Include="CullingManager.cpp" />
+    <ClCompile Include="DibBar.cpp" />
+    <ClCompile Include="FileLoaderThread.cpp" />
+    <ClCompile Include="GrpBase.cpp" />
+    <ClCompile Include="GrpCollisionObject.cpp" />
+    <ClCompile Include="GrpColor.cpp" />
+    <ClCompile Include="GrpColorInstance.cpp" />
+    <ClCompile Include="GrpD3DXBuffer.cpp" />
+    <ClCompile Include="GrpDetector.cpp" />
+    <ClCompile Include="GrpDevice.cpp" />
+    <ClCompile Include="GrpDIB.cpp" />
+    <ClCompile Include="GrpExpandedImageInstance.cpp" />
+    <ClCompile Include="GrpFontTexture.cpp" />
+    <ClCompile Include="GrpImage.cpp" />
+    <ClCompile Include="GrpImageInstance.cpp" />
+    <ClCompile Include="GrpImageTexture.cpp" />
+    <ClCompile Include="GrpIndexBuffer.cpp" />
+    <ClCompile Include="GrpLightManager.cpp" />
+    <ClCompile Include="GrpMarkInstance.cpp" />
+    <ClCompile Include="GrpMath.cpp" />
+    <ClCompile Include="GrpObjectInstance.cpp" />
+    <ClCompile Include="GrpScreen.cpp" />
+    <ClCompile Include="GrpSubImage.cpp" />
+    <ClCompile Include="GrpText.cpp" />
+    <ClCompile Include="GrpTextInstance.cpp" />
+    <ClCompile Include="GrpTexture.cpp" />
+    <ClCompile Include="GrpVertexBuffer.cpp" />
+    <ClCompile Include="IME.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="JpegFile.cpp" />
+    <ClCompile Include="LensFlare.cpp" />
+    <ClCompile Include="lineintersect_utils.cpp" />
+    <ClCompile Include="MSApplication.cpp" />
+    <ClCompile Include="MSWindow.cpp" />
+    <ClCompile Include="Mutex.cpp" />
+    <ClCompile Include="NetAddress.cpp" />
+    <ClCompile Include="NetDevice.cpp" />
+    <ClCompile Include="NetPacketHeaderMap.cpp" />
+    <ClCompile Include="NetStream.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="PathStack.cpp" />
+    <ClCompile Include="ReferenceObject.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="ScreenFilter.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="TargaResource.cpp" />
+    <ClCompile Include="TextBar.cpp" />
+    <ClCompile Include="TextFileLoader.cpp" />
+    <ClCompile Include="TextTag.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx9.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ShaderVertexDeclarations.cpp" />
+    <ClCompile Include="ShaderWindEngine.cpp" />
+    <ClCompile Include="ShaderProvider.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AttributeData.h" />
+    <ClInclude Include="AttributeInstance.h" />
+    <ClInclude Include="BlockTexture.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CollisionData.h" />
+    <ClInclude Include="CullingManager.h" />
+    <ClInclude Include="DibBar.h" />
+    <ClInclude Include="Dynamic.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="FileLoaderThread.h" />
+    <ClInclude Include="FuncObject.h" />
+    <ClInclude Include="GrpBase.h" />
+    <ClInclude Include="GrpCollisionObject.h" />
+    <ClInclude Include="GrpColor.h" />
+    <ClInclude Include="GrpColorInstance.h" />
+    <ClInclude Include="GrpD3DXBuffer.h" />
+    <ClInclude Include="GrpDetector.h" />
+    <ClInclude Include="GrpDevice.h" />
+    <ClInclude Include="GrpDIB.h" />
+    <ClInclude Include="GrpExpandedImageInstance.h" />
+    <ClInclude Include="GrpFontTexture.h" />
+    <ClInclude Include="GrpImage.h" />
+    <ClInclude Include="GrpImageInstance.h" />
+    <ClInclude Include="GrpImageTexture.h" />
+    <ClInclude Include="GrpIndexBuffer.h" />
+    <ClInclude Include="GrpLightManager.h" />
+    <ClInclude Include="GrpMarkInstance.h" />
+    <ClInclude Include="GrpMath.h" />
+    <ClInclude Include="GrpObjectInstance.h" />
+    <ClInclude Include="GrpScreen.h" />
+    <ClInclude Include="GrpSubImage.h" />
+    <ClInclude Include="GrpText.h" />
+    <ClInclude Include="GrpTextInstance.h" />
+    <ClInclude Include="GrpTexture.h" />
+    <ClInclude Include="GrpVertexBuffer.h" />
+    <ClInclude Include="IME.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="JpegFile.h" />
+    <ClInclude Include="LensFlare.h" />
+    <ClInclude Include="lineintersect_utils.h" />
+    <ClInclude Include="MSApplication.h" />
+    <ClInclude Include="MSWindow.h" />
+    <ClInclude Include="Mutex.h" />
+    <ClInclude Include="NetAddress.h" />
+    <ClInclude Include="NetDevice.h" />
+    <ClInclude Include="NetPacketHeaderMap.h" />
+    <ClInclude Include="NetStream.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="PathStack.h" />
+    <ClInclude Include="Pool.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="Ref.h" />
+    <ClInclude Include="ReferenceObject.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ScreenFilter.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="StateManager.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TargaResource.h" />
+    <ClInclude Include="TextBar.h" />
+    <ClInclude Include="TextFileLoader.h" />
+    <ClInclude Include="TextTag.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx9.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="ShaderVertexDeclarations.h" />
+    <ClInclude Include="ShaderParameters.h" />
+    <ClInclude Include="ShaderKeys.h" />
+    <ClInclude Include="ShaderProvider.h" />
+    <ClInclude Include="ShaderParametersDefaults.h" />
+    <ClInclude Include="ShaderWindEngine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{dfcea4a7-32e8-40a8-8962-d10dbd6b7d41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

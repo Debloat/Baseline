@@ -1,0 +1,90 @@
+/*
+By Kaptan Yosun @ mmotutkunlari.com
+
+This header is used to store various values for debugging purposes.
+*/
+
+#pragma once
+
+#include <cstdint>
+
+namespace YosunControlDefaults
+{
+    namespace TextMetrics
+    {
+        constexpr uint64_t TotalChars         = 0;
+        constexpr uint64_t TotalDrawCalls     = 0;
+        constexpr uint64_t TotalTextInstances = 0;
+        constexpr uint64_t PeakChars          = 0;
+        constexpr uint64_t PeakDrawCalls      = 0;
+        constexpr uint64_t PeakTextInstances  = 0;
+        constexpr bool ForceDisableOutline = false;
+    }
+
+    namespace WorldEditor
+    {
+        namespace Terrain
+        {
+            constexpr bool DrawTerrainWireFrame = false;
+            constexpr bool DrawWaterWireFrame   = false;
+            constexpr bool DrawPatchGrid        = false;
+        }
+
+        namespace SpeedTree
+        {
+            constexpr float WindStrength         = 40.0f;
+            constexpr float WindOscillationSpeed = 20.0f;
+        }
+
+        namespace Anisotropy
+        {
+            constexpr uint8_t Level  = 0;
+            constexpr bool Interface = false;
+        }
+    }
+
+}
+
+struct YosunControlSettings
+{
+    struct TextMetrics
+    {
+        uint64_t totalChars         = YosunControlDefaults::TextMetrics::TotalChars;
+        uint64_t totalDrawCalls     = YosunControlDefaults::TextMetrics::TotalDrawCalls;
+        uint64_t totalTextInstances = YosunControlDefaults::TextMetrics::TotalTextInstances;
+        uint64_t peakChars          = YosunControlDefaults::TextMetrics::PeakChars;
+        uint64_t peakDrawCalls      = YosunControlDefaults::TextMetrics::PeakDrawCalls;
+        uint64_t peakTextInstances  = YosunControlDefaults::TextMetrics::PeakTextInstances;
+        bool forceDisableOutline    = YosunControlDefaults::TextMetrics::ForceDisableOutline;
+    } textMetrics;
+
+    struct WorldEditor
+    {
+        struct Terrain
+        {
+            bool drawTerrainWireFrame  = YosunControlDefaults::WorldEditor::Terrain::DrawTerrainWireFrame;
+            bool drawWaterWireFrame    = YosunControlDefaults::WorldEditor::Terrain::DrawWaterWireFrame;
+            bool drawPatchGrid         = YosunControlDefaults::WorldEditor::Terrain::DrawPatchGrid;
+        } terrain;
+
+        struct SpeedTree
+        {
+            float windStrength         = YosunControlDefaults::WorldEditor::SpeedTree::WindStrength;
+            float windOscillationSpeed = YosunControlDefaults::WorldEditor::SpeedTree::WindOscillationSpeed;
+        } speedTree;
+
+        struct Anisotropy
+        {
+            uint8_t level              = YosunControlDefaults::WorldEditor::Anisotropy::Level;
+            bool interfaceAnisotropy   = YosunControlDefaults::WorldEditor::Anisotropy::Interface;
+        } anisotropy;
+
+    } worldEditor;
+};
+
+inline YosunControlSettings& GetYosunControlSettings()
+{
+    static YosunControlSettings s_settings;
+    return s_settings;
+}
+

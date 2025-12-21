@@ -1,0 +1,8 @@
+id = "admin"
+pwd = "1"
+addr = "38.60.200.85"
+port = 13910
+account_port = 11900
+slot = 0
+autoLogin = 1
+autoSelect = 1

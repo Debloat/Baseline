@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\LibRandom_Source\ExtendedReal.cpp" />
+    <ClCompile Include="src\LibRandom_Source\IdvRandom.cpp" />
+    <ClCompile Include="src\LibRandom_Source\RobertDavies_Random.cpp" />
+    <ClCompile Include="src\LibSpline_Source\IdvSpline.cpp" />
+    <ClCompile Include="src\LibVector_Source\Region.cpp" />
+    <ClCompile Include="src\LibVector_Source\RotTransform.cpp" />
+    <ClCompile Include="src\LibVector_Source\Transform.cpp" />
+    <ClCompile Include="src\LibVector_Source\Vec.cpp" />
+    <ClCompile Include="src\LibVector_Source\Vec3.cpp" />
+    <ClCompile Include="src\BillboardLeaf.cpp" />
+    <ClCompile Include="src\Branch.cpp" />
+    <ClCompile Include="src\BranchGeometry.cpp" />
+    <ClCompile Include="src\BranchInfo.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\FileAccess.cpp" />
+    <ClCompile Include="src\FrondEngine.cpp" />
+    <ClCompile Include="src\IndexedGeometry.cpp" />
+    <ClCompile Include="src\LeafGeometry.cpp" />
+    <ClCompile Include="src\LeafInfo.cpp" />
+    <ClCompile Include="src\LeafLod.cpp" />
+    <ClCompile Include="src\LightingEngine.cpp" />
+    <ClCompile Include="src\ProjectedShadow.cpp" />
+    <ClCompile Include="src\SimpleBillboard.cpp" />
+    <ClCompile Include="src\SpeedTreeRT.cpp" />
+    <ClCompile Include="src\TreeEngine.cpp" />
+    <ClCompile Include="src\TreeInfo.cpp" />
+    <ClCompile Include="src\WindEngine.cpp" />
+    <ClCompile Include="src\WindInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BCA237C7-B456-3EB8-A274-9AF802BBE841}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
