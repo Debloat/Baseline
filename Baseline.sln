@@ -1,0 +1,1128 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CWebBrowser", "Client\Source\CWebBrowser\CWebBrowser.vcxproj", "{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EffectLib", "Client\Source\EffectLib\EffectLib.vcxproj", "{7F1EC9EC-35DA-4332-A339-B68E3C95976F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterBase", "Client\Source\EterBase\EterBase.vcxproj", "{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterGrnLib", "Client\Source\EterGrnLib\EterGrnLib.vcxproj", "{935F7B65-3574-41C4-B4F9-1C2EC950463A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterImageLib", "Client\Source\EterImageLib\EterImageLib.vcxproj", "{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterLib", "Client\Source\EterLib\EterLib.vcxproj", "{634437B1-4B3B-48C5-9220-619FB4D8F99B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterLocale", "Client\Source\EterLocale\EterLocale.vcxproj", "{08E76C01-D25C-4684-911C-876A33F27CE1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterPack", "Client\Source\EterPack\EterPack.vcxproj", "{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EterPythonLib", "Client\Source\EterPythonLib\EterPythonLib.vcxproj", "{396764A4-9226-4F33-930F-E577A3BF51D4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameLib", "Client\Source\GameLib\GameLib.vcxproj", "{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MilesLib", "Client\Source\MilesLib\MilesLib.vcxproj", "{FE2F4549-76C4-4448-88D7-67D8CAF477D2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TerrainLib", "Client\Source\TerrainLib\TerrainLib.vcxproj", "{A1ED61AC-6324-43B1-BC9B-548208D625CF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScriptLib", "Client\Source\ScriptLib\ScriptLib.vcxproj", "{2084D43E-5FEE-4540-8EC9-8B159AD9D765}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpeedTreeLib", "Client\Source\SpeedTreeLib\SpeedTreeLib.vcxproj", "{602EF21F-918B-4678-85AE-44CCF1561DB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SphereLib", "Client\Source\SphereLib\SphereLib.vcxproj", "{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UserInterface", "Client\Source\UserInterface\UserInterface.vcxproj", "{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Discord", "Client\Source\Discord\Discord.vcxproj", "{034F4297-9DF7-47E8-83C3-89DF19A09E4A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PackMaker", "Client\Source\PackMaker\Metin2PackMaker.vcxproj", "{B7867A3F-5825-4490-8E41-D7586EF505E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{9ECA0564-DC0A-4722-B14B-28DB1909B9C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libgame", "Server\Source\libgame\libgame.2008.vcxproj", "{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblua", "Server\Source\liblua\liblua.2008.vcxproj", "{EC666345-5F4E-4A4E-8C66-C7A6326F8235}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpoly", "Server\Source\libpoly\libpoly.2008.vcxproj", "{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsql", "Server\Source\libsql\libsql.2008.vcxproj", "{3967853D-4E19-4548-AC3A-F6012B78E384}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libthecore", "Server\Source\libthecore\libthecore.2008.vcxproj", "{5C8620C9-5D1F-419D-8267-48D2863C3D13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{3B9EC3C8-86D1-49AB-8D90-EDC19D223F6B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "db", "Server\Source\db\db.2008.vcxproj", "{ADC2E26A-C39B-4817-A24C-A99827B74EB2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "Server\Source\game\game.2008.vcxproj", "{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{3727CE8D-9C68-4EAC-89AB-DAA16856D2E4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qc", "Server\Source\game\quest\qc.2008.vcxproj", "{3783243F-5E36-4B96-9A13-7BFF00F15B34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BFE027F5-55F5-4EDA-B779-5BE9DF087C26}"
+	ProjectSection(SolutionItems) = preProject
+		Server\Source\common\billing.h = Server\Source\common\billing.h
+		Server\Source\common\building.h = Server\Source\common\building.h
+		Server\Source\common\cache.h = Server\Source\common\cache.h
+		Server\Source\common\d3dtype.h = Server\Source\common\d3dtype.h
+		Server\Source\common\item_length.h = Server\Source\common\item_length.h
+		Server\Source\common\length.h = Server\Source\common\length.h
+		Server\Source\common\noncopyable.h = Server\Source\common\noncopyable.h
+		Server\Source\common\pool.h = Server\Source\common\pool.h
+		Server\Source\common\service.h = Server\Source\common\service.h
+		Server\Source\common\singleton.h = Server\Source\common\singleton.h
+		Server\Source\common\stl.h = Server\Source\common\stl.h
+		Server\Source\common\tables.h = Server\Source\common\tables.h
+		Server\Source\common\utils.h = Server\Source\common\utils.h
+		Server\Source\common\VnumHelper.h = Server\Source\common\VnumHelper.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DumpProto", "DumpProto", "{FF78E146-D1DC-409A-8F14-55F50D28E496}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump_proto", "Tools\DumpProto\dump_proto\dump_proto.vcxproj", "{DBCC99BC-1D68-4271-AC99-62EBBE37890F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pack", "Pack", "{24D8EF46-B35F-4337-89E6-ADD9252A3599}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{7F21DD43-D923-493B-B477-A750E7E2AD38}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\root\colorinfo.py = Client\Binary\pack\root\colorinfo.py
+		Client\Binary\pack\root\consolemodule.py = Client\Binary\pack\root\consolemodule.py
+		Client\Binary\pack\root\constinfo.py = Client\Binary\pack\root\constinfo.py
+		Client\Binary\pack\root\debuginfo.py = Client\Binary\pack\root\debuginfo.py
+		Client\Binary\pack\root\dragon_soul_refine_settings.py = Client\Binary\pack\root\dragon_soul_refine_settings.py
+		Client\Binary\pack\root\emotion.py = Client\Binary\pack\root\emotion.py
+		Client\Binary\pack\root\exception.py = Client\Binary\pack\root\exception.py
+		Client\Binary\pack\root\game.py = Client\Binary\pack\root\game.py
+		Client\Binary\pack\root\interfacemodule.py = Client\Binary\pack\root\interfacemodule.py
+		Client\Binary\pack\root\introcreate.py = Client\Binary\pack\root\introcreate.py
+		Client\Binary\pack\root\introempire.py = Client\Binary\pack\root\introempire.py
+		Client\Binary\pack\root\introloading.py = Client\Binary\pack\root\introloading.py
+		Client\Binary\pack\root\intrologin.py = Client\Binary\pack\root\intrologin.py
+		Client\Binary\pack\root\intrologo.py = Client\Binary\pack\root\intrologo.py
+		Client\Binary\pack\root\introselect.py = Client\Binary\pack\root\introselect.py
+		Client\Binary\pack\root\localeinfo.py = Client\Binary\pack\root\localeinfo.py
+		Client\Binary\pack\root\mousemodule.py = Client\Binary\pack\root\mousemodule.py
+		Client\Binary\pack\root\musicinfo.py = Client\Binary\pack\root\musicinfo.py
+		Client\Binary\pack\root\networkmodule.py = Client\Binary\pack\root\networkmodule.py
+		Client\Binary\pack\root\playersettingmodule.py = Client\Binary\pack\root\playersettingmodule.py
+		Client\Binary\pack\root\prototype.py = Client\Binary\pack\root\prototype.py
+		Client\Binary\pack\root\rootlibcythonizer.py = Client\Binary\pack\root\rootlibcythonizer.py
+		Client\Binary\pack\root\servercommandparser.py = Client\Binary\pack\root\servercommandparser.py
+		Client\Binary\pack\root\serverinfo.py = Client\Binary\pack\root\serverinfo.py
+		Client\Binary\pack\root\stringcommander.py = Client\Binary\pack\root\stringcommander.py
+		Client\Binary\pack\root\system.py = Client\Binary\pack\root\system.py
+		Client\Binary\pack\root\test_affect.py = Client\Binary\pack\root\test_affect.py
+		Client\Binary\pack\root\ui.py = Client\Binary\pack\root\ui.py
+		Client\Binary\pack\root\uiaffectshower.py = Client\Binary\pack\root\uiaffectshower.py
+		Client\Binary\pack\root\uiattachmetin.py = Client\Binary\pack\root\uiattachmetin.py
+		Client\Binary\pack\root\uiautoban.py = Client\Binary\pack\root\uiautoban.py
+		Client\Binary\pack\root\uicandidate.py = Client\Binary\pack\root\uicandidate.py
+		Client\Binary\pack\root\uicharacter.py = Client\Binary\pack\root\uicharacter.py
+		Client\Binary\pack\root\uichat.py = Client\Binary\pack\root\uichat.py
+		Client\Binary\pack\root\uicommon.py = Client\Binary\pack\root\uicommon.py
+		Client\Binary\pack\root\uicube.py = Client\Binary\pack\root\uicube.py
+		Client\Binary\pack\root\uidragonsoul.py = Client\Binary\pack\root\uidragonsoul.py
+		Client\Binary\pack\root\uiequipmentdialog.py = Client\Binary\pack\root\uiequipmentdialog.py
+		Client\Binary\pack\root\uiex.py = Client\Binary\pack\root\uiex.py
+		Client\Binary\pack\root\uiexchange.py = Client\Binary\pack\root\uiexchange.py
+		Client\Binary\pack\root\uigamebutton.py = Client\Binary\pack\root\uigamebutton.py
+		Client\Binary\pack\root\uigameoption.py = Client\Binary\pack\root\uigameoption.py
+		Client\Binary\pack\root\uiguild.py = Client\Binary\pack\root\uiguild.py
+		Client\Binary\pack\root\uihelp.py = Client\Binary\pack\root\uihelp.py
+		Client\Binary\pack\root\uiinventory.py = Client\Binary\pack\root\uiinventory.py
+		Client\Binary\pack\root\uimapnameshower.py = Client\Binary\pack\root\uimapnameshower.py
+		Client\Binary\pack\root\uimessenger.py = Client\Binary\pack\root\uimessenger.py
+		Client\Binary\pack\root\uiminimap.py = Client\Binary\pack\root\uiminimap.py
+		Client\Binary\pack\root\uioption.py = Client\Binary\pack\root\uioption.py
+		Client\Binary\pack\root\uiparty.py = Client\Binary\pack\root\uiparty.py
+		Client\Binary\pack\root\uiphasecurtain.py = Client\Binary\pack\root\uiphasecurtain.py
+		Client\Binary\pack\root\uipickmoney.py = Client\Binary\pack\root\uipickmoney.py
+		Client\Binary\pack\root\uiplayergauge.py = Client\Binary\pack\root\uiplayergauge.py
+		Client\Binary\pack\root\uipointreset.py = Client\Binary\pack\root\uipointreset.py
+		Client\Binary\pack\root\uiprivateshopbuilder.py = Client\Binary\pack\root\uiprivateshopbuilder.py
+		Client\Binary\pack\root\uiquest.py = Client\Binary\pack\root\uiquest.py
+		Client\Binary\pack\root\uirefine.py = Client\Binary\pack\root\uirefine.py
+		Client\Binary\pack\root\uirestart.py = Client\Binary\pack\root\uirestart.py
+		Client\Binary\pack\root\uisafebox.py = Client\Binary\pack\root\uisafebox.py
+		Client\Binary\pack\root\uiscriptlocale.py = Client\Binary\pack\root\uiscriptlocale.py
+		Client\Binary\pack\root\uiselectitem.py = Client\Binary\pack\root\uiselectitem.py
+		Client\Binary\pack\root\uiselectmusic.py = Client\Binary\pack\root\uiselectmusic.py
+		Client\Binary\pack\root\uishop.py = Client\Binary\pack\root\uishop.py
+		Client\Binary\pack\root\uisystem.py = Client\Binary\pack\root\uisystem.py
+		Client\Binary\pack\root\uisystemoption.py = Client\Binary\pack\root\uisystemoption.py
+		Client\Binary\pack\root\uitarget.py = Client\Binary\pack\root\uitarget.py
+		Client\Binary\pack\root\uitaskbar.py = Client\Binary\pack\root\uitaskbar.py
+		Client\Binary\pack\root\uitip.py = Client\Binary\pack\root\uitip.py
+		Client\Binary\pack\root\uitooltip.py = Client\Binary\pack\root\uitooltip.py
+		Client\Binary\pack\root\uiuploadmark.py = Client\Binary\pack\root\uiuploadmark.py
+		Client\Binary\pack\root\uiweb.py = Client\Binary\pack\root\uiweb.py
+		Client\Binary\pack\root\uiwhisper.py = Client\Binary\pack\root\uiwhisper.py
+		Client\Binary\pack\root\utils.py = Client\Binary\pack\root\utils.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIScript", "UIScript", "{D3AA1FD8-523A-4327-86C3-04FD2FC9534E}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\root\uiscript\acceptguildwardialog.py = Client\Binary\pack\root\uiscript\acceptguildwardialog.py
+		Client\Binary\pack\root\uiscript\atlaswindow.py = Client\Binary\pack\root\uiscript\atlaswindow.py
+		Client\Binary\pack\root\uiscript\attachstonedialog.py = Client\Binary\pack\root\uiscript\attachstonedialog.py
+		Client\Binary\pack\root\uiscript\beltinventorywindow.py = Client\Binary\pack\root\uiscript\beltinventorywindow.py
+		Client\Binary\pack\root\uiscript\buildguildbuildingwindow.py = Client\Binary\pack\root\uiscript\buildguildbuildingwindow.py
+		Client\Binary\pack\root\uiscript\changegradenamedialog.py = Client\Binary\pack\root\uiscript\changegradenamedialog.py
+		Client\Binary\pack\root\uiscript\changepassworddialog.py = Client\Binary\pack\root\uiscript\changepassworddialog.py
+		Client\Binary\pack\root\uiscript\characterwindow.py = Client\Binary\pack\root\uiscript\characterwindow.py
+		Client\Binary\pack\root\uiscript\connectingdialog.py = Client\Binary\pack\root\uiscript\connectingdialog.py
+		Client\Binary\pack\root\uiscript\costumewindow.py = Client\Binary\pack\root\uiscript\costumewindow.py
+		Client\Binary\pack\root\uiscript\createcharacterwindow.py = Client\Binary\pack\root\uiscript\createcharacterwindow.py
+		Client\Binary\pack\root\uiscript\cuberesultwindow.py = Client\Binary\pack\root\uiscript\cuberesultwindow.py
+		Client\Binary\pack\root\uiscript\cubewindow.py = Client\Binary\pack\root\uiscript\cubewindow.py
+		Client\Binary\pack\root\uiscript\declareguildwardialog.py = Client\Binary\pack\root\uiscript\declareguildwardialog.py
+		Client\Binary\pack\root\uiscript\dragonsoulrefinewindow.py = Client\Binary\pack\root\uiscript\dragonsoulrefinewindow.py
+		Client\Binary\pack\root\uiscript\dragonsoulwindow.py = Client\Binary\pack\root\uiscript\dragonsoulwindow.py
+		Client\Binary\pack\root\uiscript\energybar.py = Client\Binary\pack\root\uiscript\energybar.py
+		Client\Binary\pack\root\uiscript\equipmentdialog.py = Client\Binary\pack\root\uiscript\equipmentdialog.py
+		Client\Binary\pack\root\uiscript\exchangedialog.py = Client\Binary\pack\root\uiscript\exchangedialog.py
+		Client\Binary\pack\root\uiscript\expandedtaskbar.py = Client\Binary\pack\root\uiscript\expandedtaskbar.py
+		Client\Binary\pack\root\uiscript\fishingwindow.py = Client\Binary\pack\root\uiscript\fishingwindow.py
+		Client\Binary\pack\root\uiscript\gameoptiondialog.py = Client\Binary\pack\root\uiscript\gameoptiondialog.py
+		Client\Binary\pack\root\uiscript\gamewindow.py = Client\Binary\pack\root\uiscript\gamewindow.py
+		Client\Binary\pack\root\uiscript\giftbox.py = Client\Binary\pack\root\uiscript\giftbox.py
+		Client\Binary\pack\root\uiscript\guildwindow.py = Client\Binary\pack\root\uiscript\guildwindow.py
+		Client\Binary\pack\root\uiscript\guildwindow_baseinfopage.py = Client\Binary\pack\root\uiscript\guildwindow_baseinfopage.py
+		Client\Binary\pack\root\uiscript\guildwindow_boardpage.py = Client\Binary\pack\root\uiscript\guildwindow_boardpage.py
+		Client\Binary\pack\root\uiscript\guildwindow_gradepage.py = Client\Binary\pack\root\uiscript\guildwindow_gradepage.py
+		Client\Binary\pack\root\uiscript\guildwindow_guildinfopage.py = Client\Binary\pack\root\uiscript\guildwindow_guildinfopage.py
+		Client\Binary\pack\root\uiscript\guildwindow_guildinfopage_eu.py = Client\Binary\pack\root\uiscript\guildwindow_guildinfopage_eu.py
+		Client\Binary\pack\root\uiscript\guildwindow_guildskillpage.py = Client\Binary\pack\root\uiscript\guildwindow_guildskillpage.py
+		Client\Binary\pack\root\uiscript\guildwindow_memberpage.py = Client\Binary\pack\root\uiscript\guildwindow_memberpage.py
+		Client\Binary\pack\root\uiscript\helpwindow.py = Client\Binary\pack\root\uiscript\helpwindow.py
+		Client\Binary\pack\root\uiscript\helpwindow2.py = Client\Binary\pack\root\uiscript\helpwindow2.py
+		Client\Binary\pack\root\uiscript\imekor.py = Client\Binary\pack\root\uiscript\imekor.py
+		Client\Binary\pack\root\uiscript\inputdialog.py = Client\Binary\pack\root\uiscript\inputdialog.py
+		Client\Binary\pack\root\uiscript\inputdialogwithdescription.py = Client\Binary\pack\root\uiscript\inputdialogwithdescription.py
+		Client\Binary\pack\root\uiscript\inputdialogwithdescription2.py = Client\Binary\pack\root\uiscript\inputdialogwithdescription2.py
+		Client\Binary\pack\root\uiscript\inventorywindow.py = Client\Binary\pack\root\uiscript\inventorywindow.py
+		Client\Binary\pack\root\uiscript\loadingwindow.py = Client\Binary\pack\root\uiscript\loadingwindow.py
+		Client\Binary\pack\root\uiscript\loginwindow.py = Client\Binary\pack\root\uiscript\loginwindow.py
+		Client\Binary\pack\root\uiscript\mallwindow.py = Client\Binary\pack\root\uiscript\mallwindow.py
+		Client\Binary\pack\root\uiscript\marklistwindow.py = Client\Binary\pack\root\uiscript\marklistwindow.py
+		Client\Binary\pack\root\uiscript\messengerwindow.py = Client\Binary\pack\root\uiscript\messengerwindow.py
+		Client\Binary\pack\root\uiscript\minimap.py = Client\Binary\pack\root\uiscript\minimap.py
+		Client\Binary\pack\root\uiscript\moneyinputdialog.py = Client\Binary\pack\root\uiscript\moneyinputdialog.py
+		Client\Binary\pack\root\uiscript\mousebuttonwindow.py = Client\Binary\pack\root\uiscript\mousebuttonwindow.py
+		Client\Binary\pack\root\uiscript\musiclistwindow.py = Client\Binary\pack\root\uiscript\musiclistwindow.py
+		Client\Binary\pack\root\uiscript\partymemberinfoboard.py = Client\Binary\pack\root\uiscript\partymemberinfoboard.py
+		Client\Binary\pack\root\uiscript\passworddialog.py = Client\Binary\pack\root\uiscript\passworddialog.py
+		Client\Binary\pack\root\uiscript\pickmoneydialog.py = Client\Binary\pack\root\uiscript\pickmoneydialog.py
+		Client\Binary\pack\root\uiscript\popupdialog.py = Client\Binary\pack\root\uiscript\popupdialog.py
+		Client\Binary\pack\root\uiscript\privateshopbuilder.py = Client\Binary\pack\root\uiscript\privateshopbuilder.py
+		Client\Binary\pack\root\uiscript\questdialog.py = Client\Binary\pack\root\uiscript\questdialog.py
+		Client\Binary\pack\root\uiscript\questiondialog.py = Client\Binary\pack\root\uiscript\questiondialog.py
+		Client\Binary\pack\root\uiscript\questiondialog2.py = Client\Binary\pack\root\uiscript\questiondialog2.py
+		Client\Binary\pack\root\uiscript\refinedialog.py = Client\Binary\pack\root\uiscript\refinedialog.py
+		Client\Binary\pack\root\uiscript\restartdialog.py = Client\Binary\pack\root\uiscript\restartdialog.py
+		Client\Binary\pack\root\uiscript\rightmousebuttonwindow.py = Client\Binary\pack\root\uiscript\rightmousebuttonwindow.py
+		Client\Binary\pack\root\uiscript\safeboxwindow.py = Client\Binary\pack\root\uiscript\safeboxwindow.py
+		Client\Binary\pack\root\uiscript\selectcharacterwindow.py = Client\Binary\pack\root\uiscript\selectcharacterwindow.py
+		Client\Binary\pack\root\uiscript\selectempirewindow.py = Client\Binary\pack\root\uiscript\selectempirewindow.py
+		Client\Binary\pack\root\uiscript\selectitemwindow.py = Client\Binary\pack\root\uiscript\selectitemwindow.py
+		Client\Binary\pack\root\uiscript\shopdialog.py = Client\Binary\pack\root\uiscript\shopdialog.py
+		Client\Binary\pack\root\uiscript\skillpointresetdialog.py = Client\Binary\pack\root\uiscript\skillpointresetdialog.py
+		Client\Binary\pack\root\uiscript\systemdialog.py = Client\Binary\pack\root\uiscript\systemdialog.py
+		Client\Binary\pack\root\uiscript\systemdialog_formall.py = Client\Binary\pack\root\uiscript\systemdialog_formall.py
+		Client\Binary\pack\root\uiscript\systemdialog_forportal.py = Client\Binary\pack\root\uiscript\systemdialog_forportal.py
+		Client\Binary\pack\root\uiscript\systemoptiondialog.py = Client\Binary\pack\root\uiscript\systemoptiondialog.py
+		Client\Binary\pack\root\uiscript\taskbar.py = Client\Binary\pack\root\uiscript\taskbar.py
+		Client\Binary\pack\root\uiscript\webwindow.py = Client\Binary\pack\root\uiscript\webwindow.py
+		Client\Binary\pack\root\uiscript\whisperdialog.py = Client\Binary\pack\root\uiscript\whisperdialog.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locale", "Locale", "{17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tr", "tr", "{012843EE-8981-45D0-9E67-EBF2D0790822}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\tr\itemdesc.txt = Client\Binary\pack\locale\locale\tr\itemdesc.txt
+		Client\Binary\pack\locale\locale\tr\locale_game.txt = Client\Binary\pack\locale\locale\tr\locale_game.txt
+		Client\Binary\pack\locale\locale\tr\locale_interface.txt = Client\Binary\pack\locale\locale\tr\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{8684C2F6-3E21-4710-9F14-0DAAA0193EC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "en", "en", "{D362969F-993C-427B-B53A-77961E263D0A}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\en\itemdesc.txt = Client\Binary\pack\locale\locale\en\itemdesc.txt
+		Client\Binary\pack\locale\locale\en\locale_game.txt = Client\Binary\pack\locale\locale\en\locale_game.txt
+		Client\Binary\pack\locale\locale\en\locale_interface.txt = Client\Binary\pack\locale\locale\en\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{A353CFE4-523B-4B35-91EA-CC232AF95AD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cz", "cz", "{E7FD3554-9CE2-473B-B9E0-5ADBCB04490A}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\cz\insult.txt = Client\Binary\pack\locale\locale\cz\insult.txt
+		Client\Binary\pack\locale\locale\cz\locale_game.txt = Client\Binary\pack\locale\locale\cz\locale_game.txt
+		Client\Binary\pack\locale\locale\cz\locale_interface.txt = Client\Binary\pack\locale\locale\cz\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{03AA54D0-47D8-494D-8C79-0354458FB7DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "de", "de", "{D27A86AA-CCB4-42AF-BC37-49B9F469AD4C}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\de\itemdesc.txt = Client\Binary\pack\locale\locale\de\itemdesc.txt
+		Client\Binary\pack\locale\locale\de\locale_game.txt = Client\Binary\pack\locale\locale\de\locale_game.txt
+		Client\Binary\pack\locale\locale\de\locale_interface.txt = Client\Binary\pack\locale\locale\de\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{1AACDEE8-3052-4AB3-8157-53DBAC2243E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dk", "dk", "{3F7DA052-979A-423F-B7F4-0AE56C7AFEFD}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\dk\itemdesc.txt = Client\Binary\pack\locale\locale\dk\itemdesc.txt
+		Client\Binary\pack\locale\locale\dk\locale_game.txt = Client\Binary\pack\locale\locale\dk\locale_game.txt
+		Client\Binary\pack\locale\locale\dk\locale_interface.txt = Client\Binary\pack\locale\locale\dk\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{5D70424D-587B-4D06-8ECE-BF0E856156D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "es", "es", "{CDE8768E-D1CF-46DB-AEA7-8581FD502731}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\es\itemdesc.txt = Client\Binary\pack\locale\locale\es\itemdesc.txt
+		Client\Binary\pack\locale\locale\es\locale_game.txt = Client\Binary\pack\locale\locale\es\locale_game.txt
+		Client\Binary\pack\locale\locale\es\locale_interface.txt = Client\Binary\pack\locale\locale\es\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{9C7CB4CC-1624-420A-BC92-5BD5AAE6C563}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fr", "fr", "{2F94F1EF-036A-49B4-A9A1-637652312AB8}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\fr\itemdesc.txt = Client\Binary\pack\locale\locale\fr\itemdesc.txt
+		Client\Binary\pack\locale\locale\fr\locale_game.txt = Client\Binary\pack\locale\locale\fr\locale_game.txt
+		Client\Binary\pack\locale\locale\fr\locale_interface.txt = Client\Binary\pack\locale\locale\fr\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{3A82B0A4-B398-4D94-827F-B8D54E17B2B8}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\fr\ui\intrologowindow.py = Client\Binary\pack\locale\locale\fr\ui\intrologowindow.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nl", "nl", "{ACAF1EE5-BA4C-4729-A41F-C9542C711CA4}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\nl\itemdesc.txt = Client\Binary\pack\locale\locale\nl\itemdesc.txt
+		Client\Binary\pack\locale\locale\nl\locale_game.txt = Client\Binary\pack\locale\locale\nl\locale_game.txt
+		Client\Binary\pack\locale\locale\nl\locale_interface.txt = Client\Binary\pack\locale\locale\nl\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{1571D6DA-BF92-4295-BC1E-FDDD70CB5E5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gr", "gr", "{5A9C7039-7266-4A86-875A-5BC92086929C}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\gr\itemdesc.txt = Client\Binary\pack\locale\locale\gr\itemdesc.txt
+		Client\Binary\pack\locale\locale\gr\locale_game.txt = Client\Binary\pack\locale\locale\gr\locale_game.txt
+		Client\Binary\pack\locale\locale\gr\locale_interface.txt = Client\Binary\pack\locale\locale\gr\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{95FDC055-6B00-40CD-8CD1-114476327DEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hu", "hu", "{E2651701-43C2-4C58-82C5-68A753CBCDEA}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\hu\itemdesc.txt = Client\Binary\pack\locale\locale\hu\itemdesc.txt
+		Client\Binary\pack\locale\locale\hu\locale_game.txt = Client\Binary\pack\locale\locale\hu\locale_game.txt
+		Client\Binary\pack\locale\locale\hu\locale_interface.txt = Client\Binary\pack\locale\locale\hu\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{0FA01552-AB27-4F6A-883D-FF96A7E6909B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "it", "it", "{2A328048-F5AC-48CC-9817-4ABAEDB30DD4}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\it\itemdesc.txt = Client\Binary\pack\locale\locale\it\itemdesc.txt
+		Client\Binary\pack\locale\locale\it\locale_game.txt = Client\Binary\pack\locale\locale\it\locale_game.txt
+		Client\Binary\pack\locale\locale\it\locale_interface.txt = Client\Binary\pack\locale\locale\it\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{2C0F75FA-CBAB-41A3-A646-48BC31C5D9D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pl", "pl", "{11E38A48-AAAD-4C35-B96A-7D5A9994022A}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\pl\itemdesc.txt = Client\Binary\pack\locale\locale\pl\itemdesc.txt
+		Client\Binary\pack\locale\locale\pl\locale_game.txt = Client\Binary\pack\locale\locale\pl\locale_game.txt
+		Client\Binary\pack\locale\locale\pl\locale_interface.txt = Client\Binary\pack\locale\locale\pl\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{A31E2137-53DE-4676-B3FE-8D18433C3FCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pt", "pt", "{29251998-D4CA-495B-B179-3D85EBBCC7C0}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\pt\itemdesc.txt = Client\Binary\pack\locale\locale\pt\itemdesc.txt
+		Client\Binary\pack\locale\locale\pt\locale_game.txt = Client\Binary\pack\locale\locale\pt\locale_game.txt
+		Client\Binary\pack\locale\locale\pt\locale_interface.txt = Client\Binary\pack\locale\locale\pt\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{08736440-8718-467C-AEA0-2274B7F53C4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ro", "ro", "{824C8B79-44D0-421D-8F47-FF76C47655FC}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\ro\itemdesc.txt = Client\Binary\pack\locale\locale\ro\itemdesc.txt
+		Client\Binary\pack\locale\locale\ro\locale_game.txt = Client\Binary\pack\locale\locale\ro\locale_game.txt
+		Client\Binary\pack\locale\locale\ro\locale_interface.txt = Client\Binary\pack\locale\locale\ro\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{196AEE40-DD22-4CCB-BAB8-BDFE048B9AF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ru", "ru", "{846D7FE6-3425-4272-947C-6763EA38984A}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\ru\itemdesc.txt = Client\Binary\pack\locale\locale\ru\itemdesc.txt
+		Client\Binary\pack\locale\locale\ru\locale_game.txt = Client\Binary\pack\locale\locale\ru\locale_game.txt
+		Client\Binary\pack\locale\locale\ru\locale_interface.txt = Client\Binary\pack\locale\locale\ru\locale_interface.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{E3B421B7-9217-41FC-89C3-99C7225FF20B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLs", "SQLs", "{4C8AF544-BB6B-4572-A6AA-52A4B5FD7350}"
+	ProjectSection(SolutionItems) = preProject
+		Server\Databases\account.sql = Server\Databases\account.sql
+		Server\Databases\common.sql = Server\Databases\common.sql
+		Server\Databases\log.sql = Server\Databases\log.sql
+		Server\Databases\player.sql = Server\Databases\player.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{29335190-C8D8-41DB-ABCE-281667CC2422}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\item_proto.txt = Proto\item_proto.txt
+		Proto\mob_proto.txt = Proto\mob_proto.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cz", "cz", "{FF39551A-7E5D-49FD-86BF-51314E5D308D}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\cz\item_names.txt = Proto\cz\item_names.txt
+		Proto\cz\mob_names.txt = Proto\cz\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "de", "de", "{481C3DE9-1B69-4662-841F-91D3DDD21251}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\de\item_names.txt = Proto\de\item_names.txt
+		Proto\de\mob_names.txt = Proto\de\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dk", "dk", "{E3C13922-D7A6-413F-A4B6-ADA16A8E5D39}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\dk\item_names.txt = Proto\dk\item_names.txt
+		Proto\dk\mob_names.txt = Proto\dk\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "en", "en", "{385D09A0-D7A1-42CB-9BDE-11CDE4AB6AAC}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\en\item_names.txt = Proto\en\item_names.txt
+		Proto\en\mob_names.txt = Proto\en\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "es", "es", "{0F003223-00C3-4AE4-AF60-C8193ED14C89}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\es\item_names.txt = Proto\es\item_names.txt
+		Proto\es\mob_names.txt = Proto\es\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tr", "tr", "{1F70C34B-6E70-4715-9B65-8728A0907077}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\tr\item_names.txt = Proto\tr\item_names.txt
+		Proto\tr\mob_names.txt = Proto\tr\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fr", "fr", "{64E6859E-858D-4A92-A3AF-6456904CD2C7}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\fr\item_names.txt = Proto\fr\item_names.txt
+		Proto\fr\mob_names.txt = Proto\fr\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gr", "gr", "{FE54B233-8073-401A-904A-B042352EDDCC}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\gr\item_names.txt = Proto\gr\item_names.txt
+		Proto\gr\mob_names.txt = Proto\gr\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hu", "hu", "{E19A13D4-04BE-44E4-AB1B-E0EB931F5132}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\hu\item_names.txt = Proto\hu\item_names.txt
+		Proto\hu\mob_names.txt = Proto\hu\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "it", "it", "{75B9B124-B22C-419A-9967-A8F92EC1A5AC}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\it\item_names.txt = Proto\it\item_names.txt
+		Proto\it\mob_names.txt = Proto\it\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nl", "nl", "{3C7D9B6C-6642-4F34-AE14-27528F70E1AB}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\nl\item_names.txt = Proto\nl\item_names.txt
+		Proto\nl\mob_names.txt = Proto\nl\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pl", "pl", "{FE422BA8-BBCD-466C-A9FA-D37FFE749B4B}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\pl\item_names.txt = Proto\pl\item_names.txt
+		Proto\pl\mob_names.txt = Proto\pl\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pt", "pt", "{B03A7793-913A-48BB-96DD-00B710788EAC}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\pt\item_names.txt = Proto\pt\item_names.txt
+		Proto\pt\mob_names.txt = Proto\pt\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ro", "ro", "{79BF1D5C-6B83-457D-AD7B-51F369320E06}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\ro\item_names.txt = Proto\ro\item_names.txt
+		Proto\ro\mob_names.txt = Proto\ro\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ru", "ru", "{4B4C7E1A-5531-4241-809F-6DA54EDF6963}"
+	ProjectSection(SolutionItems) = preProject
+		Proto\ru\item_names.txt = Proto\ru\item_names.txt
+		Proto\ru\mob_names.txt = Proto\ru\mob_names.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locale", "Locale", "{FC67243B-6E11-4909-8DAB-A21F5DD85FE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quests", "Quests", "{6A0FD6BD-8DFE-4A7E-A28B-5AC458BE6CB3}"
+	ProjectSection(SolutionItems) = preProject
+		Server\Binary\share\locale\english\quest\arena_manager.quest = Server\Binary\share\locale\english\quest\arena_manager.quest
+		Server\Binary\share\locale\english\quest\arne_test1.quest = Server\Binary\share\locale\english\quest\arne_test1.quest
+		Server\Binary\share\locale\english\quest\arne_test2.quest = Server\Binary\share\locale\english\quest\arne_test2.quest
+		Server\Binary\share\locale\english\quest\assassin_shop_box.quest = Server\Binary\share\locale\english\quest\assassin_shop_box.quest
+		Server\Binary\share\locale\english\quest\blacksmith.quest = Server\Binary\share\locale\english\quest\blacksmith.quest
+		Server\Binary\share\locale\english\quest\buy_fishrod.quest = Server\Binary\share\locale\english\quest\buy_fishrod.quest
+		Server\Binary\share\locale\english\quest\change_empire.quest = Server\Binary\share\locale\english\quest\change_empire.quest
+		Server\Binary\share\locale\english\quest\change_guild_master.quest = Server\Binary\share\locale\english\quest\change_guild_master.quest
+		Server\Binary\share\locale\english\quest\change_name.quest = Server\Binary\share\locale\english\quest\change_name.quest
+		Server\Binary\share\locale\english\quest\charge_cash_by_voucher.quest = Server\Binary\share\locale\english\quest\charge_cash_by_voucher.quest
+		Server\Binary\share\locale\english\quest\check_collect_reward.quest = Server\Binary\share\locale\english\quest\check_collect_reward.quest
+		Server\Binary\share\locale\english\quest\check_trans_ticket.quest = Server\Binary\share\locale\english\quest\check_trans_ticket.quest
+		Server\Binary\share\locale\english\quest\christmas_costume_shop_box.quest = Server\Binary\share\locale\english\quest\christmas_costume_shop_box.quest
+		Server\Binary\share\locale\english\quest\christmas_santa.quest = Server\Binary\share\locale\english\quest\christmas_santa.quest
+		Server\Binary\share\locale\english\quest\christmas_tree.quest = Server\Binary\share\locale\english\quest\christmas_tree.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv10.quest = Server\Binary\share\locale\english\quest\collect_herb_lv10.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv15.quest = Server\Binary\share\locale\english\quest\collect_herb_lv15.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv20.quest = Server\Binary\share\locale\english\quest\collect_herb_lv20.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv25.quest = Server\Binary\share\locale\english\quest\collect_herb_lv25.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv4.quest = Server\Binary\share\locale\english\quest\collect_herb_lv4.quest
+		Server\Binary\share\locale\english\quest\collect_herb_lv7.quest = Server\Binary\share\locale\english\quest\collect_herb_lv7.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv30.quest = Server\Binary\share\locale\english\quest\collect_quest_lv30.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv40.quest = Server\Binary\share\locale\english\quest\collect_quest_lv40.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv50.quest = Server\Binary\share\locale\english\quest\collect_quest_lv50.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv60.quest = Server\Binary\share\locale\english\quest\collect_quest_lv60.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv70.quest = Server\Binary\share\locale\english\quest\collect_quest_lv70.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv80.quest = Server\Binary\share\locale\english\quest\collect_quest_lv80.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv85.quest = Server\Binary\share\locale\english\quest\collect_quest_lv85.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv90.quest = Server\Binary\share\locale\english\quest\collect_quest_lv90.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv92.quest = Server\Binary\share\locale\english\quest\collect_quest_lv92.quest
+		Server\Binary\share\locale\english\quest\collect_quest_lv94.quest = Server\Binary\share\locale\english\quest\collect_quest_lv94.quest
+		Server\Binary\share\locale\english\quest\collect_quest_reset.quest = Server\Binary\share\locale\english\quest\collect_quest_reset.quest
+		Server\Binary\share\locale\english\quest\couple_ring.quest = Server\Binary\share\locale\english\quest\couple_ring.quest
+		Server\Binary\share\locale\english\quest\cube.quest = Server\Binary\share\locale\english\quest\cube.quest
+		Server\Binary\share\locale\english\quest\cube_opener_list.quest = Server\Binary\share\locale\english\quest\cube_opener_list.quest
+		Server\Binary\share\locale\english\quest\devilcatacomb_zone.quest = Server\Binary\share\locale\english\quest\devilcatacomb_zone.quest
+		Server\Binary\share\locale\english\quest\deviltower_2.quest = Server\Binary\share\locale\english\quest\deviltower_2.quest
+		Server\Binary\share\locale\english\quest\deviltower_zone.quest = Server\Binary\share\locale\english\quest\deviltower_zone.quest
+		Server\Binary\share\locale\english\quest\dragon_lair.quest = Server\Binary\share\locale\english\quest\dragon_lair.quest
+		Server\Binary\share\locale\english\quest\dragon_lair_access.quest = Server\Binary\share\locale\english\quest\dragon_lair_access.quest
+		Server\Binary\share\locale\english\quest\dragon_lair_weekly.quest = Server\Binary\share\locale\english\quest\dragon_lair_weekly.quest
+		Server\Binary\share\locale\english\quest\dragon_soul.quest = Server\Binary\share\locale\english\quest\dragon_soul.quest
+		Server\Binary\share\locale\english\quest\dragon_soul_daily_gift.quest = Server\Binary\share\locale\english\quest\dragon_soul_daily_gift.quest
+		Server\Binary\share\locale\english\quest\dragon_soul_daily_gift_mgr.quest = Server\Binary\share\locale\english\quest\dragon_soul_daily_gift_mgr.quest
+		Server\Binary\share\locale\english\quest\dragon_soul_refine.quest = Server\Binary\share\locale\english\quest\dragon_soul_refine.quest
+		Server\Binary\share\locale\english\quest\dragon_soul_shop.quest = Server\Binary\share\locale\english\quest\dragon_soul_shop.quest
+		Server\Binary\share\locale\english\quest\energy_system.quest = Server\Binary\share\locale\english\quest\energy_system.quest
+		Server\Binary\share\locale\english\quest\entry_event_map.quest = Server\Binary\share\locale\english\quest\entry_event_map.quest
+		Server\Binary\share\locale\english\quest\event_easter.quest = Server\Binary\share\locale\english\quest\event_easter.quest
+		Server\Binary\share\locale\english\quest\event_easter_2012.quest = Server\Binary\share\locale\english\quest\event_easter_2012.quest
+		Server\Binary\share\locale\english\quest\event_easter_2013.quest = Server\Binary\share\locale\english\quest\event_easter_2013.quest
+		Server\Binary\share\locale\english\quest\event_flame_dungeon_open.quest = Server\Binary\share\locale\english\quest\event_flame_dungeon_open.quest
+		Server\Binary\share\locale\english\quest\event_halloween_hair.quest = Server\Binary\share\locale\english\quest\event_halloween_hair.quest
+		Server\Binary\share\locale\english\quest\event_mob_invasion.quest = Server\Binary\share\locale\english\quest\event_mob_invasion.quest
+		Server\Binary\share\locale\english\quest\event_mystery_box.quest = Server\Binary\share\locale\english\quest\event_mystery_box.quest
+		Server\Binary\share\locale\english\quest\event_ramadan.quest = Server\Binary\share\locale\english\quest\event_ramadan.quest
+		Server\Binary\share\locale\english\quest\extractKeys.sh = Server\Binary\share\locale\english\quest\extractKeys.sh
+		Server\Binary\share\locale\english\quest\find_brother_article.quest = Server\Binary\share\locale\english\quest\find_brother_article.quest
+		Server\Binary\share\locale\english\quest\find_senior_soldier.quest = Server\Binary\share\locale\english\quest\find_senior_soldier.quest
+		Server\Binary\share\locale\english\quest\find_squareguard.quest = Server\Binary\share\locale\english\quest\find_squareguard.quest
+		Server\Binary\share\locale\english\quest\fisher.quest = Server\Binary\share\locale\english\quest\fisher.quest
+		Server\Binary\share\locale\english\quest\flame_dungeon.quest = Server\Binary\share\locale\english\quest\flame_dungeon.quest
+		Server\Binary\share\locale\english\quest\fortune_telling.quest = Server\Binary\share\locale\english\quest\fortune_telling.quest
+		Server\Binary\share\locale\english\quest\game_option.quest = Server\Binary\share\locale\english\quest\game_option.quest
+		Server\Binary\share\locale\english\quest\GFquestlib.lua = Server\Binary\share\locale\english\quest\GFquestlib.lua
+		Server\Binary\share\locale\english\quest\ghost_story.quest = Server\Binary\share\locale\english\quest\ghost_story.quest
+		Server\Binary\share\locale\english\quest\give_basic_weapon.quest = Server\Binary\share\locale\english\quest\give_basic_weapon.quest
+		Server\Binary\share\locale\english\quest\give_basic_weapon_new.quest = Server\Binary\share\locale\english\quest\give_basic_weapon_new.quest
+		Server\Binary\share\locale\english\quest\goldbar.quest = Server\Binary\share\locale\english\quest\goldbar.quest
+		Server\Binary\share\locale\english\quest\goto_empire_castle.quest = Server\Binary\share\locale\english\quest\goto_empire_castle.quest
+		Server\Binary\share\locale\english\quest\guild_building.quest = Server\Binary\share\locale\english\quest\guild_building.quest
+		Server\Binary\share\locale\english\quest\guild_building_alter_of_power.quest = Server\Binary\share\locale\english\quest\guild_building_alter_of_power.quest
+		Server\Binary\share\locale\english\quest\guild_building_melt.quest = Server\Binary\share\locale\english\quest\guild_building_melt.quest
+		Server\Binary\share\locale\english\quest\guild_building_npc.quest = Server\Binary\share\locale\english\quest\guild_building_npc.quest
+		Server\Binary\share\locale\english\quest\guild_create.quest = Server\Binary\share\locale\english\quest\guild_create.quest
+		Server\Binary\share\locale\english\quest\guild_manage.quest = Server\Binary\share\locale\english\quest\guild_manage.quest
+		Server\Binary\share\locale\english\quest\guild_ranking.quest = Server\Binary\share\locale\english\quest\guild_ranking.quest
+		Server\Binary\share\locale\english\quest\guild_war_bet.quest = Server\Binary\share\locale\english\quest\guild_war_bet.quest
+		Server\Binary\share\locale\english\quest\guild_war_join.quest = Server\Binary\share\locale\english\quest\guild_war_join.quest
+		Server\Binary\share\locale\english\quest\guild_war_observer.quest = Server\Binary\share\locale\english\quest\guild_war_observer.quest
+		Server\Binary\share\locale\english\quest\hair.quest = Server\Binary\share\locale\english\quest\hair.quest
+		Server\Binary\share\locale\english\quest\hair_shop.quest = Server\Binary\share\locale\english\quest\hair_shop.quest
+		Server\Binary\share\locale\english\quest\harvest_festival.quest = Server\Binary\share\locale\english\quest\harvest_festival.quest
+		Server\Binary\share\locale\english\quest\harvest_festival.quest.1 = Server\Binary\share\locale\english\quest\harvest_festival.quest.1
+		Server\Binary\share\locale\english\quest\harvest_festival.quest.2 = Server\Binary\share\locale\english\quest\harvest_festival.quest.2
+		Server\Binary\share\locale\english\quest\heavens_cave_escape.quest = Server\Binary\share\locale\english\quest\heavens_cave_escape.quest
+		Server\Binary\share\locale\english\quest\heavens_cave_keyquest.quest = Server\Binary\share\locale\english\quest\heavens_cave_keyquest.quest
+		Server\Binary\share\locale\english\quest\horse_exchange_ticket.quest = Server\Binary\share\locale\english\quest\horse_exchange_ticket.quest
+		Server\Binary\share\locale\english\quest\horse_guard.quest = Server\Binary\share\locale\english\quest\horse_guard.quest
+		Server\Binary\share\locale\english\quest\horse_levelup.quest = Server\Binary\share\locale\english\quest\horse_levelup.quest
+		Server\Binary\share\locale\english\quest\horse_menu.quest = Server\Binary\share\locale\english\quest\horse_menu.quest
+		Server\Binary\share\locale\english\quest\horse_revive.quest = Server\Binary\share\locale\english\quest\horse_revive.quest
+		Server\Binary\share\locale\english\quest\horse_ride.quest = Server\Binary\share\locale\english\quest\horse_ride.quest
+		Server\Binary\share\locale\english\quest\horse_summon.quest = Server\Binary\share\locale\english\quest\horse_summon.quest
+		Server\Binary\share\locale\english\quest\horse_upgrade.quest = Server\Binary\share\locale\english\quest\horse_upgrade.quest
+		Server\Binary\share\locale\english\quest\horse_upgrade2.quest = Server\Binary\share\locale\english\quest\horse_upgrade2.quest
+		Server\Binary\share\locale\english\quest\ingame_message.quest = Server\Binary\share\locale\english\quest\ingame_message.quest
+		Server\Binary\share\locale\english\quest\is_yang.quest = Server\Binary\share\locale\english\quest\is_yang.quest
+		Server\Binary\share\locale\english\quest\ItemInformer.quest = Server\Binary\share\locale\english\quest\ItemInformer.quest
+		Server\Binary\share\locale\english\quest\item_change_sex.quest = Server\Binary\share\locale\english\quest\item_change_sex.quest
+		Server\Binary\share\locale\english\quest\item_delete.quest = Server\Binary\share\locale\english\quest\item_delete.quest
+		Server\Binary\share\locale\english\quest\item_mall.quest = Server\Binary\share\locale\english\quest\item_mall.quest
+		Server\Binary\share\locale\english\quest\knut_shop_box.quest = Server\Binary\share\locale\english\quest\knut_shop_box.quest
+		Server\Binary\share\locale\english\quest\levelup.quest = Server\Binary\share\locale\english\quest\levelup.quest
+		Server\Binary\share\locale\english\quest\locale.lua = Server\Binary\share\locale\english\quest\locale.lua
+		Server\Binary\share\locale\english\quest\locale_list = Server\Binary\share\locale\english\quest\locale_list
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv100.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv100.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv101.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv101.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv102.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv102.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv103.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv103.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv104.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv104.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv105.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv105.quest
+		Server\Binary\share\locale\english\quest\main_quest_flame_lv99.quest = Server\Binary\share\locale\english\quest\main_quest_flame_lv99.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv1.quest = Server\Binary\share\locale\english\quest\main_quest_lv1.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv10.quest = Server\Binary\share\locale\english\quest\main_quest_lv10.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv12.quest = Server\Binary\share\locale\english\quest\main_quest_lv12.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv14.quest = Server\Binary\share\locale\english\quest\main_quest_lv14.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv15.quest = Server\Binary\share\locale\english\quest\main_quest_lv15.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv16.quest = Server\Binary\share\locale\english\quest\main_quest_lv16.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv2.quest = Server\Binary\share\locale\english\quest\main_quest_lv2.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv27.quest = Server\Binary\share\locale\english\quest\main_quest_lv27.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv3.quest = Server\Binary\share\locale\english\quest\main_quest_lv3.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv30.quest = Server\Binary\share\locale\english\quest\main_quest_lv30.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv32.quest = Server\Binary\share\locale\english\quest\main_quest_lv32.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv40.quest = Server\Binary\share\locale\english\quest\main_quest_lv40.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv47.quest = Server\Binary\share\locale\english\quest\main_quest_lv47.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv50.quest = Server\Binary\share\locale\english\quest\main_quest_lv50.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv55.quest = Server\Binary\share\locale\english\quest\main_quest_lv55.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv6.quest = Server\Binary\share\locale\english\quest\main_quest_lv6.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv60.quest = Server\Binary\share\locale\english\quest\main_quest_lv60.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv66.quest = Server\Binary\share\locale\english\quest\main_quest_lv66.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv7.quest = Server\Binary\share\locale\english\quest\main_quest_lv7.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv72.quest = Server\Binary\share\locale\english\quest\main_quest_lv72.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv78.quest = Server\Binary\share\locale\english\quest\main_quest_lv78.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv84.quest = Server\Binary\share\locale\english\quest\main_quest_lv84.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv9.quest = Server\Binary\share\locale\english\quest\main_quest_lv9.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv90.quest = Server\Binary\share\locale\english\quest\main_quest_lv90.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv91.quest = Server\Binary\share\locale\english\quest\main_quest_lv91.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv92.quest = Server\Binary\share\locale\english\quest\main_quest_lv92.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv93.quest = Server\Binary\share\locale\english\quest\main_quest_lv93.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv94.quest = Server\Binary\share\locale\english\quest\main_quest_lv94.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv95.quest = Server\Binary\share\locale\english\quest\main_quest_lv95.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv96.quest = Server\Binary\share\locale\english\quest\main_quest_lv96.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv97.quest = Server\Binary\share\locale\english\quest\main_quest_lv97.quest
+		Server\Binary\share\locale\english\quest\main_quest_lv98.quest = Server\Binary\share\locale\english\quest\main_quest_lv98.quest
+		Server\Binary\share\locale\english\quest\make.py = Server\Binary\share\locale\english\quest\make.py
+		Server\Binary\share\locale\english\quest\make_wonso.quest = Server\Binary\share\locale\english\quest\make_wonso.quest
+		Server\Binary\share\locale\english\quest\manwoo.quest = Server\Binary\share\locale\english\quest\manwoo.quest
+		Server\Binary\share\locale\english\quest\map_warp.quest = Server\Binary\share\locale\english\quest\map_warp.quest
+		Server\Binary\share\locale\english\quest\marriage_manage.quest = Server\Binary\share\locale\english\quest\marriage_manage.quest
+		Server\Binary\share\locale\english\quest\mining.quest = Server\Binary\share\locale\english\quest\mining.quest
+		Server\Binary\share\locale\english\quest\mount_catcher.quest = Server\Binary\share\locale\english\quest\mount_catcher.quest
+		Server\Binary\share\locale\english\quest\mount_prolongation.quest = Server\Binary\share\locale\english\quest\mount_prolongation.quest
+		Server\Binary\share\locale\english\quest\mystery_key.quest = Server\Binary\share\locale\english\quest\mystery_key.quest
+		Server\Binary\share\locale\english\quest\neutral_warp.quest = Server\Binary\share\locale\english\quest\neutral_warp.quest
+		Server\Binary\share\locale\english\quest\new_christmas.quest = Server\Binary\share\locale\english\quest\new_christmas.quest
+		Server\Binary\share\locale\english\quest\new_christmas_2012.quest = Server\Binary\share\locale\english\quest\new_christmas_2012.quest
+		Server\Binary\share\locale\english\quest\new_christmas_2012_gift_box.quest = Server\Binary\share\locale\english\quest\new_christmas_2012_gift_box.quest
+		Server\Binary\share\locale\english\quest\new_christmas_2012_nog.quest = Server\Binary\share\locale\english\quest\new_christmas_2012_nog.quest
+		Server\Binary\share\locale\english\quest\new_christmas_2012_sock.quest = Server\Binary\share\locale\english\quest\new_christmas_2012_sock.quest
+		Server\Binary\share\locale\english\quest\new_christmas_gift_box.quest = Server\Binary\share\locale\english\quest\new_christmas_gift_box.quest
+		Server\Binary\share\locale\english\quest\new_christmas_nog.quest = Server\Binary\share\locale\english\quest\new_christmas_nog.quest
+		Server\Binary\share\locale\english\quest\new_christmas_sock.quest = Server\Binary\share\locale\english\quest\new_christmas_sock.quest
+		Server\Binary\share\locale\english\quest\new_easter_gift_box.quest = Server\Binary\share\locale\english\quest\new_easter_gift_box.quest
+		Server\Binary\share\locale\english\quest\new_easter_gift_box_gf.quest = Server\Binary\share\locale\english\quest\new_easter_gift_box_gf.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv17.quest = Server\Binary\share\locale\english\quest\new_quest_lv17.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv22.quest = Server\Binary\share\locale\english\quest\new_quest_lv22.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv26.quest = Server\Binary\share\locale\english\quest\new_quest_lv26.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv28.quest = Server\Binary\share\locale\english\quest\new_quest_lv28.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv29.quest = Server\Binary\share\locale\english\quest\new_quest_lv29.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv42.quest = Server\Binary\share\locale\english\quest\new_quest_lv42.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv43.quest = Server\Binary\share\locale\english\quest\new_quest_lv43.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv52.quest = Server\Binary\share\locale\english\quest\new_quest_lv52.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv54.quest = Server\Binary\share\locale\english\quest\new_quest_lv54.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv7.quest = Server\Binary\share\locale\english\quest\new_quest_lv7.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv75.quest = Server\Binary\share\locale\english\quest\new_quest_lv75.quest
+		Server\Binary\share\locale\english\quest\new_quest_lv80.quest = Server\Binary\share\locale\english\quest\new_quest_lv80.quest
+		Server\Binary\share\locale\english\quest\new_quest_premium_lv4.quest = Server\Binary\share\locale\english\quest\new_quest_premium_lv4.quest
+		Server\Binary\share\locale\english\quest\new_valentine_day_gift_box.quest = Server\Binary\share\locale\english\quest\new_valentine_day_gift_box.quest
+		Server\Binary\share\locale\english\quest\notify_test_server.quest = Server\Binary\share\locale\english\quest\notify_test_server.quest
+		Server\Binary\share\locale\english\quest\npc_talk.quest = Server\Binary\share\locale\english\quest\npc_talk.quest
+		Server\Binary\share\locale\english\quest\olympic_badge.quest = Server\Binary\share\locale\english\quest\olympic_badge.quest
+		Server\Binary\share\locale\english\quest\olympic_event_box.quest = Server\Binary\share\locale\english\quest\olympic_event_box.quest
+		Server\Binary\share\locale\english\quest\oxevent.quest = Server\Binary\share\locale\english\quest\oxevent.quest
+		Server\Binary\share\locale\english\quest\patrol_townaround.quest = Server\Binary\share\locale\english\quest\patrol_townaround.quest
+		Server\Binary\share\locale\english\quest\penetration.quest = Server\Binary\share\locale\english\quest\penetration.quest
+		Server\Binary\share\locale\english\quest\pet_system.quest = Server\Binary\share\locale\english\quest\pet_system.quest
+		Server\Binary\share\locale\english\quest\polymarble_test.quest = Server\Binary\share\locale\english\quest\polymarble_test.quest
+		Server\Binary\share\locale\english\quest\pony_buy.quest = Server\Binary\share\locale\english\quest\pony_buy.quest
+		Server\Binary\share\locale\english\quest\pony_levelup.quest = Server\Binary\share\locale\english\quest\pony_levelup.quest
+		Server\Binary\share\locale\english\quest\pre_event_heavens_cave.quest = Server\Binary\share\locale\english\quest\pre_event_heavens_cave.quest
+		Server\Binary\share\locale\english\quest\pre_qc.py = Server\Binary\share\locale\english\quest\pre_qc.py
+		Server\Binary\share\locale\english\quest\pricing_lv12.quest = Server\Binary\share\locale\english\quest\pricing_lv12.quest
+		Server\Binary\share\locale\english\quest\pricing_lv3.quest = Server\Binary\share\locale\english\quest\pricing_lv3.quest
+		Server\Binary\share\locale\english\quest\pricing_lv40.quest = Server\Binary\share\locale\english\quest\pricing_lv40.quest
+		Server\Binary\share\locale\english\quest\pricing_lv9.quest = Server\Binary\share\locale\english\quest\pricing_lv9.quest
+		Server\Binary\share\locale\english\quest\priv_empire.quest = Server\Binary\share\locale\english\quest\priv_empire.quest
+		Server\Binary\share\locale\english\quest\prototype_challenge.quest = Server\Binary\share\locale\english\quest\prototype_challenge.quest
+		Server\Binary\share\locale\english\quest\prototype_training_fight.quest = Server\Binary\share\locale\english\quest\prototype_training_fight.quest
+		Server\Binary\share\locale\english\quest\purge_test.quest = Server\Binary\share\locale\english\quest\purge_test.quest
+		Server\Binary\share\locale\english\quest\questing.lua = Server\Binary\share\locale\english\quest\questing.lua
+		Server\Binary\share\locale\english\quest\questlib.lua = Server\Binary\share\locale\english\quest\questlib.lua
+		Server\Binary\share\locale\english\quest\questnpc.txt = Server\Binary\share\locale\english\quest\questnpc.txt
+		Server\Binary\share\locale\english\quest\questscroll1.quest = Server\Binary\share\locale\english\quest\questscroll1.quest
+		Server\Binary\share\locale\english\quest\questscroll2.quest = Server\Binary\share\locale\english\quest\questscroll2.quest
+		Server\Binary\share\locale\english\quest\questscroll3.quest = Server\Binary\share\locale\english\quest\questscroll3.quest
+		Server\Binary\share\locale\english\quest\questscroll4.quest = Server\Binary\share\locale\english\quest\questscroll4.quest
+		Server\Binary\share\locale\english\quest\questscroll5.quest = Server\Binary\share\locale\english\quest\questscroll5.quest
+		Server\Binary\share\locale\english\quest\quest_functions = Server\Binary\share\locale\english\quest\quest_functions
+		Server\Binary\share\locale\english\quest\reset_scroll.quest = Server\Binary\share\locale\english\quest\reset_scroll.quest
+		Server\Binary\share\locale\english\quest\reset_status.quest = Server\Binary\share\locale\english\quest\reset_status.quest
+		Server\Binary\share\locale\english\quest\ride.quest = Server\Binary\share\locale\english\quest\ride.quest
+		Server\Binary\share\locale\english\quest\ride_halloween.quest = Server\Binary\share\locale\english\quest\ride_halloween.quest
+		Server\Binary\share\locale\english\quest\ride_mount_change.quest = Server\Binary\share\locale\english\quest\ride_mount_change.quest
+		Server\Binary\share\locale\english\quest\ride_mystery_boxes.quest = Server\Binary\share\locale\english\quest\ride_mystery_boxes.quest
+		Server\Binary\share\locale\english\quest\ride_ramadan.quest = Server\Binary\share\locale\english\quest\ride_ramadan.quest
+		Server\Binary\share\locale\english\quest\ride_ticket_change.quest = Server\Binary\share\locale\english\quest\ride_ticket_change.quest
+		Server\Binary\share\locale\english\quest\ride_upgradable.quest = Server\Binary\share\locale\english\quest\ride_upgradable.quest
+		Server\Binary\share\locale\english\quest\ride_xmas.quest = Server\Binary\share\locale\english\quest\ride_xmas.quest
+		Server\Binary\share\locale\english\quest\ring_warp.quest = Server\Binary\share\locale\english\quest\ring_warp.quest
+		Server\Binary\share\locale\english\quest\setstate_test.quest = Server\Binary\share\locale\english\quest\setstate_test.quest
+		Server\Binary\share\locale\english\quest\shop_reminder.quest = Server\Binary\share\locale\english\quest\shop_reminder.quest
+		Server\Binary\share\locale\english\quest\shop_ride.quest = Server\Binary\share\locale\english\quest\shop_ride.quest
+		Server\Binary\share\locale\english\quest\skill_group.quest = Server\Binary\share\locale\english\quest\skill_group.quest
+		Server\Binary\share\locale\english\quest\skill_reset2.quest = Server\Binary\share\locale\english\quest\skill_reset2.quest
+		Server\Binary\share\locale\english\quest\spider_dungeon_2floor.quest = Server\Binary\share\locale\english\quest\spider_dungeon_2floor.quest
+		Server\Binary\share\locale\english\quest\spider_dungeon_3floor_boss.quest = Server\Binary\share\locale\english\quest\spider_dungeon_3floor_boss.quest
+		Server\Binary\share\locale\english\quest\spider_dungeon_3floor_boss.quest.lua = Server\Binary\share\locale\english\quest\spider_dungeon_3floor_boss.quest.lua
+		Server\Binary\share\locale\english\quest\subquest_01.quest = Server\Binary\share\locale\english\quest\subquest_01.quest
+		Server\Binary\share\locale\english\quest\subquest_02.quest = Server\Binary\share\locale\english\quest\subquest_02.quest
+		Server\Binary\share\locale\english\quest\subquest_03.quest = Server\Binary\share\locale\english\quest\subquest_03.quest
+		Server\Binary\share\locale\english\quest\subquest_04.quest = Server\Binary\share\locale\english\quest\subquest_04.quest
+		Server\Binary\share\locale\english\quest\subquest_05.quest = Server\Binary\share\locale\english\quest\subquest_05.quest
+		Server\Binary\share\locale\english\quest\subquest_06.quest = Server\Binary\share\locale\english\quest\subquest_06.quest
+		Server\Binary\share\locale\english\quest\subquest_07.quest = Server\Binary\share\locale\english\quest\subquest_07.quest
+		Server\Binary\share\locale\english\quest\subquest_08.quest = Server\Binary\share\locale\english\quest\subquest_08.quest
+		Server\Binary\share\locale\english\quest\subquest_09.quest = Server\Binary\share\locale\english\quest\subquest_09.quest
+		Server\Binary\share\locale\english\quest\subquest_10.quest = Server\Binary\share\locale\english\quest\subquest_10.quest
+		Server\Binary\share\locale\english\quest\subquest_11.quest = Server\Binary\share\locale\english\quest\subquest_11.quest
+		Server\Binary\share\locale\english\quest\subquest_12.quest = Server\Binary\share\locale\english\quest\subquest_12.quest
+		Server\Binary\share\locale\english\quest\subquest_13.quest = Server\Binary\share\locale\english\quest\subquest_13.quest
+		Server\Binary\share\locale\english\quest\subquest_15.quest = Server\Binary\share\locale\english\quest\subquest_15.quest
+		Server\Binary\share\locale\english\quest\subquest_16.quest = Server\Binary\share\locale\english\quest\subquest_16.quest
+		Server\Binary\share\locale\english\quest\subquest_17.quest = Server\Binary\share\locale\english\quest\subquest_17.quest
+		Server\Binary\share\locale\english\quest\subquest_18.quest = Server\Binary\share\locale\english\quest\subquest_18.quest
+		Server\Binary\share\locale\english\quest\subquest_19.quest = Server\Binary\share\locale\english\quest\subquest_19.quest
+		Server\Binary\share\locale\english\quest\subquest_20.quest = Server\Binary\share\locale\english\quest\subquest_20.quest
+		Server\Binary\share\locale\english\quest\subquest_21.quest = Server\Binary\share\locale\english\quest\subquest_21.quest
+		Server\Binary\share\locale\english\quest\subquest_22.quest = Server\Binary\share\locale\english\quest\subquest_22.quest
+		Server\Binary\share\locale\english\quest\subquest_23.quest = Server\Binary\share\locale\english\quest\subquest_23.quest
+		Server\Binary\share\locale\english\quest\subquest_24.quest = Server\Binary\share\locale\english\quest\subquest_24.quest
+		Server\Binary\share\locale\english\quest\subquest_25.quest = Server\Binary\share\locale\english\quest\subquest_25.quest
+		Server\Binary\share\locale\english\quest\subquest_26.quest = Server\Binary\share\locale\english\quest\subquest_26.quest
+		Server\Binary\share\locale\english\quest\subquest_27.quest = Server\Binary\share\locale\english\quest\subquest_27.quest
+		Server\Binary\share\locale\english\quest\subquest_30.quest = Server\Binary\share\locale\english\quest\subquest_30.quest
+		Server\Binary\share\locale\english\quest\subquest_31.quest = Server\Binary\share\locale\english\quest\subquest_31.quest
+		Server\Binary\share\locale\english\quest\subquest_32.quest = Server\Binary\share\locale\english\quest\subquest_32.quest
+		Server\Binary\share\locale\english\quest\subquest_33.quest = Server\Binary\share\locale\english\quest\subquest_33.quest
+		Server\Binary\share\locale\english\quest\subquest_34.quest = Server\Binary\share\locale\english\quest\subquest_34.quest
+		Server\Binary\share\locale\english\quest\subquest_36.quest = Server\Binary\share\locale\english\quest\subquest_36.quest
+		Server\Binary\share\locale\english\quest\subquest_37.quest = Server\Binary\share\locale\english\quest\subquest_37.quest
+		Server\Binary\share\locale\english\quest\subquest_38.quest = Server\Binary\share\locale\english\quest\subquest_38.quest
+		Server\Binary\share\locale\english\quest\subquest_39.quest = Server\Binary\share\locale\english\quest\subquest_39.quest
+		Server\Binary\share\locale\english\quest\subquest_40.quest = Server\Binary\share\locale\english\quest\subquest_40.quest
+		Server\Binary\share\locale\english\quest\subquest_41.quest = Server\Binary\share\locale\english\quest\subquest_41.quest
+		Server\Binary\share\locale\english\quest\subquest_42.quest = Server\Binary\share\locale\english\quest\subquest_42.quest
+		Server\Binary\share\locale\english\quest\subquest_44.quest = Server\Binary\share\locale\english\quest\subquest_44.quest
+		Server\Binary\share\locale\english\quest\subquest_45.quest = Server\Binary\share\locale\english\quest\subquest_45.quest
+		Server\Binary\share\locale\english\quest\subquest_46.quest = Server\Binary\share\locale\english\quest\subquest_46.quest
+		Server\Binary\share\locale\english\quest\subquest_47.quest = Server\Binary\share\locale\english\quest\subquest_47.quest
+		Server\Binary\share\locale\english\quest\subquest_48.quest = Server\Binary\share\locale\english\quest\subquest_48.quest
+		Server\Binary\share\locale\english\quest\subquest_49.quest = Server\Binary\share\locale\english\quest\subquest_49.quest
+		Server\Binary\share\locale\english\quest\test.py = Server\Binary\share\locale\english\quest\test.py
+		Server\Binary\share\locale\english\quest\test.quest = Server\Binary\share\locale\english\quest\test.quest
+		Server\Binary\share\locale\english\quest\test_att_resist.quest = Server\Binary\share\locale\english\quest\test_att_resist.quest
+		Server\Binary\share\locale\english\quest\training_grandmaster_skill.quest = Server\Binary\share\locale\english\quest\training_grandmaster_skill.quest
+		Server\Binary\share\locale\english\quest\training_mount.quest = Server\Binary\share\locale\english\quest\training_mount.quest
+		Server\Binary\share\locale\english\quest\training_mount_v2.quest = Server\Binary\share\locale\english\quest\training_mount_v2.quest
+		Server\Binary\share\locale\english\quest\upgrade_mount.quest = Server\Binary\share\locale\english\quest\upgrade_mount.quest
+		Server\Binary\share\locale\english\quest\upgrade_refine_scroll.quest = Server\Binary\share\locale\english\quest\upgrade_refine_scroll.quest
+		Server\Binary\share\locale\english\quest\user_tracking.quest = Server\Binary\share\locale\english\quest\user_tracking.quest
+		Server\Binary\share\locale\english\quest\warehouse.quest = Server\Binary\share\locale\english\quest\warehouse.quest
+		Server\Binary\share\locale\english\quest\xxx_collect_quest_lv85.quest = Server\Binary\share\locale\english\quest\xxx_collect_quest_lv85.quest
+		Server\Binary\share\locale\english\quest\xxx_collect_quest_lv90.quest = Server\Binary\share\locale\english\quest\xxx_collect_quest_lv90.quest
+		Server\Binary\share\locale\english\quest\xxx_huanso_deliverdrag.quest = Server\Binary\share\locale\english\quest\xxx_huanso_deliverdrag.quest
+		Server\Binary\share\locale\english\quest\xxx_japan_invader_kill.quest = Server\Binary\share\locale\english\quest\xxx_japan_invader_kill.quest
+		Server\Binary\share\locale\english\quest\xxx_kids_day_quiz.quest = Server\Binary\share\locale\english\quest\xxx_kids_day_quiz.quest
+		Server\Binary\share\locale\english\quest\xxx_kill_straydog.quest = Server\Binary\share\locale\english\quest\xxx_kill_straydog.quest
+		Server\Binary\share\locale\english\quest\xxx_larbor_day.quest = Server\Binary\share\locale\english\quest\xxx_larbor_day.quest
+		Server\Binary\share\locale\english\quest\xxx_main_quest_mgr.quest = Server\Binary\share\locale\english\quest\xxx_main_quest_mgr.quest
+		Server\Binary\share\locale\english\quest\xxx_monkey_dungeon.quest = Server\Binary\share\locale\english\quest\xxx_monkey_dungeon.quest
+		Server\Binary\share\locale\english\quest\xxx_notify_shopmeeting.quest = Server\Binary\share\locale\english\quest\xxx_notify_shopmeeting.quest
+		Server\Binary\share\locale\english\quest\xxx_priv_guild.quest = Server\Binary\share\locale\english\quest\xxx_priv_guild.quest
+		Server\Binary\share\locale\english\quest\xxx_rice_cake_tiger.quest = Server\Binary\share\locale\english\quest\xxx_rice_cake_tiger.quest
+		Server\Binary\share\locale\english\quest\xxx_years_greetings.quest = Server\Binary\share\locale\english\quest\xxx_years_greetings.quest
+		Server\Binary\share\locale\english\quest\x_bernhard.quest = Server\Binary\share\locale\english\quest\x_bernhard.quest
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{E397DB44-3F96-4656-9AD4-ABC027D90C33}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\common\item_list.txt = Client\Binary\pack\locale\locale\common\item_list.txt
+		Client\Binary\pack\locale\locale\common\skilltable.txt = Client\Binary\pack\locale\locale\common\skilltable.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{D72AC9D9-E158-4B53-8EDE-784E0F056818}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\locale\locale\common\ui\inventorywindow.py = Client\Binary\pack\locale\locale\common\ui\inventorywindow.py
+		Client\Binary\pack\locale\locale\common\ui\systemdialog.py = Client\Binary\pack\locale\locale\common\ui\systemdialog.py
+		Client\Binary\pack\locale\locale\common\ui\taskbar.py = Client\Binary\pack\locale\locale\common\ui\taskbar.py
+		Client\Binary\pack\locale\locale\common\ui\taskbar_easter.py = Client\Binary\pack\locale\locale\common\ui\taskbar_easter.py
+		Client\Binary\pack\locale\locale\common\ui\taskbar_haloween.py = Client\Binary\pack\locale\locale\common\ui\taskbar_haloween.py
+		Client\Binary\pack\locale\locale\common\ui\taskbar_valentine.py = Client\Binary\pack\locale\locale\common\ui\taskbar_valentine.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CL-Debug|Win32 = CL-Debug|Win32
+		CL-Release|Win32 = CL-Release|Win32
+		DP-Debug|Win32 = DP-Debug|Win32
+		DP-Release|Win32 = DP-Release|Win32
+		SV-Debug|Win32 = SV-Debug|Win32
+		SV-Release|Win32 = SV-Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.CL-Release|Win32.Build.0 = Release|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.CL-Release|Win32.Build.0 = Release|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.CL-Release|Win32.Build.0 = Release|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.CL-Release|Win32.Build.0 = Release|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.CL-Release|Win32.Build.0 = Release|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.CL-Release|Win32.Build.0 = Release|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.CL-Release|Win32.Build.0 = Release|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{08E76C01-D25C-4684-911C-876A33F27CE1}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.CL-Release|Win32.Build.0 = Release|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.CL-Release|Win32.Build.0 = Release|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{396764A4-9226-4F33-930F-E577A3BF51D4}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.CL-Release|Win32.Build.0 = Release|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.CL-Release|Win32.Build.0 = Release|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.CL-Release|Win32.Build.0 = Release|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.CL-Release|Win32.Build.0 = Release|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.CL-Release|Win32.Build.0 = Release|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{602EF21F-918B-4678-85AE-44CCF1561DB8}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.CL-Release|Win32.Build.0 = Release|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.CL-Release|Win32.Build.0 = Release|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.CL-Release|Win32.Build.0 = Release|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.CL-Debug|Win32.Build.0 = Debug|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.CL-Release|Win32.Build.0 = Release|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{B7867A3F-5825-4490-8E41-D7586EF505E1}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218}.SV-Release|Win32.Build.0 = Release|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235}.SV-Release|Win32.Build.0 = Release|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB}.SV-Release|Win32.Build.0 = Release|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{3967853D-4E19-4548-AC3A-F6012B78E384}.SV-Release|Win32.Build.0 = Release|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13}.SV-Release|Win32.Build.0 = Release|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2}.SV-Release|Win32.Build.0 = Release|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA}.SV-Release|Win32.Build.0 = Release|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.CL-Debug|Win32.ActiveCfg = Debug|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.SV-Debug|Win32.Build.0 = Debug|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.SV-Release|Win32.ActiveCfg = Release|Win32
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34}.SV-Release|Win32.Build.0 = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.CL-Debug|Win32.ActiveCfg = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.CL-Debug|Win32.Build.0 = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.CL-Release|Win32.ActiveCfg = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.CL-Release|Win32.Build.0 = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.DP-Debug|Win32.ActiveCfg = Debug|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.DP-Debug|Win32.Build.0 = Debug|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.DP-Release|Win32.ActiveCfg = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.DP-Release|Win32.Build.0 = Release|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.SV-Debug|Win32.ActiveCfg = Debug|Win32
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F}.SV-Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E953487-E73A-4C43-A9B6-174AB7B9A7E2} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{7F1EC9EC-35DA-4332-A339-B68E3C95976F} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{D8C71073-CDC3-4AB1-A84A-5829F28BFF56} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{935F7B65-3574-41C4-B4F9-1C2EC950463A} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{3AA4BFA3-DF0E-42B9-A82C-E1BE16139AF3} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{634437B1-4B3B-48C5-9220-619FB4D8F99B} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{08E76C01-D25C-4684-911C-876A33F27CE1} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{EEAB8CB2-0891-4579-905E-B37A5F04F1D1} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{396764A4-9226-4F33-930F-E577A3BF51D4} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{0C8DEF2C-F22D-4AD8-9D59-3147604C6B22} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{FE2F4549-76C4-4448-88D7-67D8CAF477D2} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{A1ED61AC-6324-43B1-BC9B-548208D625CF} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{2084D43E-5FEE-4540-8EC9-8B159AD9D765} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{602EF21F-918B-4678-85AE-44CCF1561DB8} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{B1F24BAE-61E8-41E9-B2BB-A6905E5D64FD} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{E0DC3917-08C3-4F15-A7E7-6CB395EC83F0} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{034F4297-9DF7-47E8-83C3-89DF19A09E4A} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{B7867A3F-5825-4490-8E41-D7586EF505E1} = {9ECA0564-DC0A-4722-B14B-28DB1909B9C5}
+		{3094D13B-D3CC-4563-9DEC-F6D3BA8BE848} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{2AB4A5A4-3EAA-4486-B93C-38E8D39BF218} = {3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}
+		{EC666345-5F4E-4A4E-8C66-C7A6326F8235} = {3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}
+		{BD8E86DD-07BA-49B0-BF04-3282DA8377EB} = {3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}
+		{3967853D-4E19-4548-AC3A-F6012B78E384} = {3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}
+		{5C8620C9-5D1F-419D-8267-48D2863C3D13} = {3094D13B-D3CC-4563-9DEC-F6D3BA8BE848}
+		{3B9EC3C8-86D1-49AB-8D90-EDC19D223F6B} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{ADC2E26A-C39B-4817-A24C-A99827B74EB2} = {3B9EC3C8-86D1-49AB-8D90-EDC19D223F6B}
+		{146DE22F-4DD4-4E6F-B2FD-98AE163BEBBA} = {3B9EC3C8-86D1-49AB-8D90-EDC19D223F6B}
+		{3727CE8D-9C68-4EAC-89AB-DAA16856D2E4} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{3783243F-5E36-4B96-9A13-7BFF00F15B34} = {3727CE8D-9C68-4EAC-89AB-DAA16856D2E4}
+		{BFE027F5-55F5-4EDA-B779-5BE9DF087C26} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{DBCC99BC-1D68-4271-AC99-62EBBE37890F} = {FF78E146-D1DC-409A-8F14-55F50D28E496}
+		{7F21DD43-D923-493B-B477-A750E7E2AD38} = {24D8EF46-B35F-4337-89E6-ADD9252A3599}
+		{D3AA1FD8-523A-4327-86C3-04FD2FC9534E} = {24D8EF46-B35F-4337-89E6-ADD9252A3599}
+		{17EF80B9-ACED-4DFE-8712-C8EFB5BC3251} = {24D8EF46-B35F-4337-89E6-ADD9252A3599}
+		{012843EE-8981-45D0-9E67-EBF2D0790822} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{8684C2F6-3E21-4710-9F14-0DAAA0193EC3} = {012843EE-8981-45D0-9E67-EBF2D0790822}
+		{D362969F-993C-427B-B53A-77961E263D0A} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{A353CFE4-523B-4B35-91EA-CC232AF95AD4} = {D362969F-993C-427B-B53A-77961E263D0A}
+		{E7FD3554-9CE2-473B-B9E0-5ADBCB04490A} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{03AA54D0-47D8-494D-8C79-0354458FB7DE} = {E7FD3554-9CE2-473B-B9E0-5ADBCB04490A}
+		{D27A86AA-CCB4-42AF-BC37-49B9F469AD4C} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{1AACDEE8-3052-4AB3-8157-53DBAC2243E1} = {D27A86AA-CCB4-42AF-BC37-49B9F469AD4C}
+		{3F7DA052-979A-423F-B7F4-0AE56C7AFEFD} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{5D70424D-587B-4D06-8ECE-BF0E856156D1} = {3F7DA052-979A-423F-B7F4-0AE56C7AFEFD}
+		{CDE8768E-D1CF-46DB-AEA7-8581FD502731} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{9C7CB4CC-1624-420A-BC92-5BD5AAE6C563} = {CDE8768E-D1CF-46DB-AEA7-8581FD502731}
+		{2F94F1EF-036A-49B4-A9A1-637652312AB8} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{3A82B0A4-B398-4D94-827F-B8D54E17B2B8} = {2F94F1EF-036A-49B4-A9A1-637652312AB8}
+		{ACAF1EE5-BA4C-4729-A41F-C9542C711CA4} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{1571D6DA-BF92-4295-BC1E-FDDD70CB5E5B} = {ACAF1EE5-BA4C-4729-A41F-C9542C711CA4}
+		{5A9C7039-7266-4A86-875A-5BC92086929C} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{95FDC055-6B00-40CD-8CD1-114476327DEF} = {5A9C7039-7266-4A86-875A-5BC92086929C}
+		{E2651701-43C2-4C58-82C5-68A753CBCDEA} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{0FA01552-AB27-4F6A-883D-FF96A7E6909B} = {E2651701-43C2-4C58-82C5-68A753CBCDEA}
+		{2A328048-F5AC-48CC-9817-4ABAEDB30DD4} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{2C0F75FA-CBAB-41A3-A646-48BC31C5D9D4} = {2A328048-F5AC-48CC-9817-4ABAEDB30DD4}
+		{11E38A48-AAAD-4C35-B96A-7D5A9994022A} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{A31E2137-53DE-4676-B3FE-8D18433C3FCF} = {11E38A48-AAAD-4C35-B96A-7D5A9994022A}
+		{29251998-D4CA-495B-B179-3D85EBBCC7C0} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{08736440-8718-467C-AEA0-2274B7F53C4A} = {29251998-D4CA-495B-B179-3D85EBBCC7C0}
+		{824C8B79-44D0-421D-8F47-FF76C47655FC} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{196AEE40-DD22-4CCB-BAB8-BDFE048B9AF9} = {824C8B79-44D0-421D-8F47-FF76C47655FC}
+		{846D7FE6-3425-4272-947C-6763EA38984A} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{E3B421B7-9217-41FC-89C3-99C7225FF20B} = {846D7FE6-3425-4272-947C-6763EA38984A}
+		{4C8AF544-BB6B-4572-A6AA-52A4B5FD7350} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{FF39551A-7E5D-49FD-86BF-51314E5D308D} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{481C3DE9-1B69-4662-841F-91D3DDD21251} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{E3C13922-D7A6-413F-A4B6-ADA16A8E5D39} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{385D09A0-D7A1-42CB-9BDE-11CDE4AB6AAC} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{0F003223-00C3-4AE4-AF60-C8193ED14C89} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{1F70C34B-6E70-4715-9B65-8728A0907077} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{64E6859E-858D-4A92-A3AF-6456904CD2C7} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{FE54B233-8073-401A-904A-B042352EDDCC} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{E19A13D4-04BE-44E4-AB1B-E0EB931F5132} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{75B9B124-B22C-419A-9967-A8F92EC1A5AC} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{3C7D9B6C-6642-4F34-AE14-27528F70E1AB} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{FE422BA8-BBCD-466C-A9FA-D37FFE749B4B} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{B03A7793-913A-48BB-96DD-00B710788EAC} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{79BF1D5C-6B83-457D-AD7B-51F369320E06} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{4B4C7E1A-5531-4241-809F-6DA54EDF6963} = {29335190-C8D8-41DB-ABCE-281667CC2422}
+		{FC67243B-6E11-4909-8DAB-A21F5DD85FE0} = {A238C59F-BD11-4A8A-96E1-8F8F15BD3E27}
+		{6A0FD6BD-8DFE-4A7E-A28B-5AC458BE6CB3} = {FC67243B-6E11-4909-8DAB-A21F5DD85FE0}
+		{E397DB44-3F96-4656-9AD4-ABC027D90C33} = {17EF80B9-ACED-4DFE-8712-C8EFB5BC3251}
+		{D72AC9D9-E158-4B53-8EDE-784E0F056818} = {E397DB44-3F96-4656-9AD4-ABC027D90C33}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F46A540A-7868-41C7-AA54-AC5713509850}
+	EndGlobalSection
+EndGlobal

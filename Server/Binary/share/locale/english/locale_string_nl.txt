@@ -1,0 +1,2285 @@
+"Àá½ÃÈÄ ÇØ´ç ¸¶À»Àº  ¸¶À»·Î ÀÌµ¿µË´Ï´Ù.";
+"Iedereen zal spoedig naar de stad geteleporteerd worden.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌÅÛ ÀÔ´Ï´Ù";
+"Dit voorwerp bestaat niet.";
+
+"»óÀÚ°¡ °©ÀÚ±â Æø¹ßÇÏ¿´½À´Ï´Ù! »ı¸í·ÂÀÌ °¨¼ÒÇß½À´Ï´Ù.";
+"The doos explodeert plotseling! Je hebt Levenspunten (LP) verloren.";
+
+"»óÀÚ¿¡¼­ ³ª¿Â ³ì»ö ¿¬±â¸¦ µéÀÌ¸¶½ÃÀÚ µ¶ÀÌ ¿Â¸öÀ¸·Î ÆÛÁı´Ï´Ù!";
+"Wanneer je de groene rook die zich vanuit de box verspreidt inademt, zal het gif zich verspreiden door je lichaam!";
+
+"%s ¾ÆÀÌÅÛ À» È¹µæÇÏ¼Ì½À´Ï´Ù";
+"Je hebt %s, %d eenheden ontvangen.";
+
+"»óÀÚ¿¡¼­ %s °¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit %s in de doos.";
+
+"¿­¼è°¡ ¸ÂÁö ¾Ê´Â °Í °°´Ù.";
+"Deze sleutel past niet op het slot.";
+
+"¾Æ¹«°Íµµ ¾òÀ» ¼ö ¾ø¾ú½À´Ï´Ù.";
+"Je hebt niets ontvangen.";
+
+"°³·®À» ÇÏ±â À§ÇÑ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Je hebt niet genoeg Yang om dit voorwerp te gebruiken.";
+
+"¼ÒÁö±İÀÌ ºÎÁ·ÇÏ¿© ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je hebt niet genoeg Yang om dit voorwerp te gebruiken.";
+
+"½ºÅ³ ·¹º§À» ³»¸®´Âµ¥ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Je hebt je vaardigheid niveau verlaagd.";
+
+"½ºÅ³ ·¹º§À» ³»¸± ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt je vaardigheids niveau niet verlagen.";
+
+"ÀÌ¹Ì È¿°ú°¡ °É·Á ÀÖ½À´Ï´Ù.";
+"Dit effect is al geactiveerd.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº PC¹æ¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Dit voorwerp kan alleen gebruikt worden in een Internet Café.";
+
+"»ç¿ë Á¦ÇÑ·®À» ÃÊ°úÇÏ¿´½À´Ï´Ù.";
+"Dat is over het limiet heen.";
+
+"»óÇ°À» ¹ŞÀ» ÀÎº¥Åä¸®°¡ ºÎÁ·ÇÕ´Ï´Ù. ÀÎº¥Åä¸®¸¦ ºñ¿öÁÖ¼¼¿ä!";
+"Helaas, je hebt niet genoeg ruimte in je inventaris.";
+
+"¿ùº´ ¶Ç´Â Á¾ÀÚ ¸¦ »ç¿ëÇÏ¿´½À´Ï´Ù";
+"Gebruik Maan Taart of Zaad.";
+
+"°áÈ¥ »óÅÂ°¡ ¾Æ´Ï¸é °áÈ¥¹İÁö¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Trouw Ring dragen als je niet getrouwd bent.";
+
+"ÀÌ °÷¿¡¼± ÀÌº¥Æ®¿ë °¨Áö±â°¡ µ¿ÀÛÇÏÁö ¾Ê´Â°Í °°½À´Ï´Ù.";
+"Je kunt de Gebeurtenis Detector niet gebruiken vanuit deze positie.";
+
+"ÀÌ °³·®¼­·Î °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Dit item kan niet geabsorbeerd worden.";
+
+"ÀÌº¥Æ®¿ë °¨Áö±â°¡ ½Åºñ·Î¿î ºûÀ» ³»¸ç »ç¶óÁı´Ï´Ù.";
+"De Gebeurtenis Detector is met een mysterieus licht verdwenen.";
+
+"ÀÌº¥Æ®¿ë °¨Áö±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"De Gebeurtenis Detector is verdwenen.";
+
+"ÀÌ °÷¿¡¼­ ¿µ¼® °¨Áö±â°¡ µ¿ÀÛÇÏÁö ¾Ê´Â°Í °°½À´Ï´Ù.";
+"De Metin Steen Kompas kan niet gebruikt worden in kerkers.";
+
+"¿µ¼® °¨Áö±â°¡ ½Åºñ·Î¿î ºûÀ» ³»¸ç »ç¶óÁı´Ï´Ù.";
+"De Metin Steen Kompas is in het mysterieuze licht verdwenen.";
+
+"»óÀÚ¿¡¼­ %s °¡ %d °³ ³ª¿Ô½À´Ï´Ù.";
+"Ontvang: %s - %d";
+
+"¿µ¼® °¨Áö±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"De Metin Steen Kompas is verdwenen.";
+
+"Á¶°³¿¡¼­ µ¹Á¶°¢ÀÌ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een stuk steen in de  schelp.";
+
+"Á¶°³°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"De schelp is verdwenen.";
+
+"Á¶°³¿¡¼­ ¹éÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een Witte Parel in de schelp.";
+
+"Á¶°³¿¡¼­ Ã»ÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een Blauwe Parel in de schelp.";
+
+"Á¶°³¿¡¼­ ÇÇÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een bloedrode parel in de schelp.";
+
+"ÀÌ Ã¥Àº ³Ê¹« ¾î·Á¿ö ÀÌÇØÇÏ±â°¡ Èûµì´Ï´Ù.";
+"Het is niet gemakkelijk om dit boek te begrijpen.";
+
+"ÀÌ Ã¥Àº ¾Æ¹«¸® ºÁµµ µµ¿òÀÌ µÉ °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Dit boek zal je niet helpen.";
+
+"·¹º§ 30ÀÌ µÇ±â Àü¿¡´Â ½ÀµæÇÒ ¼ö ÀÖÀ» °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Je moet tenminste Level 30 zijn om dit boek te begrijpen.";
+
+"·¹º§ 50ÀÌ µÇ±â Àü¿¡´Â ½ÀµæÇÒ ¼ö ÀÖÀ» °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Je moet tenminste Level 50 zijn om dit boek te begrijpen.";
+
+"¿¬°è±â´Â ´õÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Combo's meer trainen.";
+
+"%s ±æµåÀÇ ±ê¹ßÀ» %s ´ÔÀÌ È¹µæÇÏ¿´½À´Ï´Ù.";
+"%s veroverde de vlag van %s !";
+
+"ÀÌ¹Ì ¿Ïº®ÇÏ°Ô ¾Ë¾ÆµéÀ» ¼ö ÀÖ´Â ¾ğ¾îÀÌ´Ù.";
+"Je verstaat deze taal al.";
+
+"ÀÌ Ã¥À» ÀĞÀ¸·Á¸é ·¹º§À» ´õ ¿Ã·Á¾ß ÇÕ´Ï´Ù.";
+"Je moet je level verhogen om dit Boek te begrijpen.";
+
+"ÀÌ Ã¥Àº ³Ê¹« ¾î·Á¿ö¼­ ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Met dit boek kun je moeilijk oefenen";
+
+"ÀÌ Ã¥À¸·Î´Â ´õ ÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet verder trainen met dit boek.";
+
+"¼¼±İÀÌ %d %·Î ¼³Á¤µÇ¾ú½À´Ï´Ù";
+"Belastingen zijn ingesteld op %d %%.";
+
+"¾ÆÁ÷ ½Â¸¶ ½ºÅ³À» ¼ö·ÃÇÒ ¼ö ÀÖ´Â ·¹º§ÀÌ ¾Æ´Õ´Ï´Ù.";
+"Je hebt voor ruiter training een minimum level van 50 of hoger nodig.";
+
+"ÁÖ¾È¼ú¼­¸¦ ÅëÇØ ÁÖÈ­ÀÔ¸¶¿¡¼­ ºüÁ®³ª¿Ô½À´Ï´Ù.";
+"Je hebt de boze geest vloek ontweken met de hulp van het Exorcisme Geschrift.";
+
+"´õ ÀÌ»ó ½Â¸¶ ¼ö·Ã¼­¸¦ ÀĞÀ» ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet meer Ruiter Handleidingen lezen.";
+
+"½Â¸¶ ¼ö·Ã¼­¸¦ ÀĞ¾î ½Â¸¶ ½ºÅ³ Æ÷ÀÎÆ®¸¦ ¾ò¾ú½À´Ï´Ù.";
+"Je hebt de Ruiter Handleiding gelezen en een Ruiter Punt ontvangen.";
+
+"¾òÀº Æ÷ÀÎÆ®·Î´Â ½Â¸¶ ½ºÅ³ÀÇ ·¹º§À» ¿Ã¸± ¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt dit punt gebruiken om je ruiter vaardigheden te verhogen!";
+
+"%s ±æµå°¡ %s ±æµåÀÇ ±ê¹ßÀ» »©¾Ñ¾Ò½À´Ï´Ù!";
+"De Gilde %s's vlag was veroverd door %s.";
+
+"½Â¸¶ ¼ö·Ã¼­ ÀÌÇØ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Je hebt de Ruiter Handleiding niet begrepen.";
+
+"¸¶À½ÀÌ ¸¼¾ÆÁö´Â±º. °¡½¿À» Áş´©¸£´ø ¹«¾ğ°¡°¡ Á» °¡º­¿öÁø ´À³¦ÀÌ¾ß.";
+"Je verstand is helder. Je kunt je nu goed concentreren.";
+
+"¼±¾ÇÄ¡°¡ %d Áõ°¡ÇÏ¿´½À´Ï´Ù.";
+"Je Rank is verhoogt met %d punten.";
+
+"ÇöÀç Çì¾î½ºÅ¸ÀÏ¿¡¼­´Â ¿°»ö°ú Å»»öÀÌ ºÒ°¡´ÉÇÕ´Ï´Ù.";
+"Je kunt je huidige Kapsel niet verven of bleken.";
+
+"%d ·¹º§ÀÌ µÇ¾î¾ß ´Ù½Ã ¿°»öÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.";
+"Je hebt Level %d nodig om je haar weer te verven.";
+
+"¼ºº°ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"Dit Voorwerp kan alleen door het andere Geslacht geopend worden.";
+
+"ÇöÀç À§Ä¡¿¡¼­ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit niet gebruiken vanuit je huidige positie.";
+
+"ÀÌµ¿ÇÒ ÁØºñ°¡ µÇ¾îÀÖÀ½À¸·Î ±ÍÈ¯ºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù";
+"Je bent gereed om te teleporteren, dus je kunt het Terugkeer Geschrift niet gebruiken.";
+
+"¿ø·¡ À§Ä¡·Î º¹±Í";
+"Je bent terug gebracht naar de plek van herkomst.";
+
+"´øÀü ¾È¿¡¼­´Â %s%s »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"%s%s kan niet gebruikt worden in een kerker.";
+
+"<Äù½ºÆ®> ÀÌÀü¿¡ °°Àº º¸»óÀ» ¹ŞÀº ÀûÀÌ ÀÖ¾î ´Ù½Ã ¹ŞÁö ¾Ê½À´Ï´Ù.";
+"[Quest] Je hebt je beloning al ontvangen.";
+
+"À»";
+"den";
+
+"¸¦";
+"de";
+
+"Ã»¼ÒÇÒ ¼®ÀÌ ¹ÚÇôÀÖÁö ¾Ê½À´Ï´Ù.";
+"Er zijn geen gebroken stenen aanwezig die verwijderd moeten worden.";
+
+"¼Ó¼ºÀ» º¯°æÇÒ ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Je kunt de upgrade van dit voorwerp niet veranderen.";
+
+"º¯°æÇÒ ¼Ó¼ºÀÌ ¾ø½À´Ï´Ù.";
+"Je hebt geen upgrade die je kan veranden.";
+
+"¼Ó¼ºÀ» ¹Ù²ÛÁö %dºĞ ÀÌ³»¿¡´Â ´Ù½Ã º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.(%d ºĞ ³²À½)";
+"Je kunt dit alleen %d minuten na een upgrade doen. (%d minuten over)";
+
+"¼Ó¼ºÀ» º¯°æÇÏ¿´½À´Ï´Ù.";
+"Je hebt de upgrade veranderd.";
+
+"¼Ó¼º Ãß°¡¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Upgrade is succesvol toegevoegd.";
+
+"¼Ó¼º Ãß°¡¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Geen upgrade toegevoegd.";
+
+"´õÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ» ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je moet een Gezegend bol gebruiken om een nieuwe bonus toe te voegen aan dit voorwerp.";
+
+"´ë·ÃÀå¿¡¼­ »ç¿ëÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit niet in de arena gebruiken.";
+
+"´õ ÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ» ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Dit voorwerp kan niet nog meer verbeterd worden. Het maximum aantal bonussen is bereikt.";
+
+"¸ÕÀú Àç°¡ºñ¼­¸¦ ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡½ÃÄÑ ÁÖ¼¼¿ä.";
+"Je kunt een Gezegend Bol alleen gebruiken met een voorwerp dat al 4 bonussen heeft.";
+
+"¼ÒÄÏÀÌ ¼º°øÀûÀ¸·Î Ãß°¡µÇ¾ú½À´Ï´Ù.";
+"Fitting successvol toegevoegd.";
+
+"¼ÒÄÏ Ãß°¡¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Fitting kon niet toegevoegd worden.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó ¼ÒÄÏÀ» Ãß°¡ÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"Je kon aan dit voorwerp geen fittingen meer toevoegen.";
+
+"ÀÌ ¾ÆÀÌÅÛÀ¸·Î ¼ÒÄÏÀ» Ãß°¡ÇÒ ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Je kunt geen Fitting toevoegen aan dit Voorwerp.";
+
+"ÀåÂø¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Uitrusting successvol.";
+
+"ÀåÂø¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Uitrusting gefaald.";
+
+"¸ÕÀú ´ÙÀÌ¾Æ¸óµå·Î ¾Ç¼¼¼­¸®¿¡ ¼ÒÄÏÀ» Ãß°¡ÇØ¾ßÇÕ´Ï´Ù.";
+"Je moet eerst een fitting toevoegen. Gebruik hiervoor een diamant.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó ÀåÂøÇÒ ¼ÒÄÏÀÌ ¾ø½À´Ï´Ù.";
+"Er zijn geen Fittingen omuit te rusten met Edelstenen.";
+
+"¿­Á¤ÀÇ °¡¸éÀ» Âø¿ë½Ã¿¡¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt dit doen wanneer je een Emotiemasker draagt.";
+
+"´ÙÀÌ¾Æ¸óµå·Î ¼ÒÄÏÀ» Ãß°¡ÇØ¾ßÇÕ´Ï´Ù.";
+"Je moet een Fitting toevoegen als je een Diamant wilt gebruiken.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó º¸¼®À» ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Er kunnen niet meer Edelstenen toegevoegd worden.";
+
+"ÀÌ ¾ÆÀÌÅÛÀ» ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Deze voorwerpen kunnen niet samen gebruikt worden.";
+
+"³¬½Ã Áß¿¡ ¹Ì³¢¸¦ °¥¾Æ³¢¿ï ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet van Aas wisselen tijdens het vissen.";
+
+"ÀÌ¹Ì ²ÈÇôÀÖ´ø ¹Ì³¢¸¦ »©°í %s¸¦ ³¢¿ó´Ï´Ù.";
+"Je hebt het huidige Aas vervangen met %s.";
+
+"³¬½Ã´ë¿¡ %s¸¦ ¹Ì³¢·Î ³¢¿ó´Ï´Ù.";
+"Je hebt %s aan de haak gedaan als aas.";
+
+"¹°¾à Á¶ÇÕÀ» À§ÇÑ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Je hebt niet alle materialen om het brouwsel te maken.";
+
+"Àç·á(%s)°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Je hebt niet genoeg materiaal (%s).";
+
+"ºó º´ÀÌ ¸ğÀÚ¸¨´Ï´Ù.";
+"Je hebt niet genoeg lege flessen.";
+
+"¹°¾à Á¦Á¶¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Het brouwsel maken is niet geslaagd.";
+
+"¿©ÀÚ¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Alleen vrouwen kunnen dit doen.";
+
+"°°Àº Á¾·ùÀÇ ¸ŞÆ¾¼®Àº ¿©·¯°³ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet meerdere zielenstenen van het zelfde type toevoegen.";
+
+"ÀÌ ¸ŞÆ¾¼®Àº Àåºñ¿¡ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt deze Geestensteen niet toevoegen in dit soort voorwerp.";
+
+"ÀÌ ¸ŞÆ¾¼®Àº ¹«±â¿¡ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt deze Geestensteen niet toevoegen aan een wapen.";
+
+"¸ŞÆ¾¼® ºÎÂø¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Je hebt de Geestensteen succesvol toegevoegd.";
+
+"¸ŞÆ¾¼® ºÎÂø¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"De Geestensteen is gebroken tijdens het aanbrengen.";
+
+"ºÎÂøÇÒ ¼ö ÀÖ´Â ½½·ÔÀÌ ¾ø½À´Ï´Ù.";
+"Geen vrije Opening.";
+
+"»ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je bent niet in staat om je partner te teleporteren op dit moment.";
+
+"»ï°Å¸® ÀüÅõ Âü°¡Áß¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Terugkeer Geschrift gebruiken tijdens een keizerrijk gevecht.";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Terugkeer Geschrift gebruiken gedurende %d seconden na het openen van een Warenhuis.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Terugkeer Geschrift gebruiken zolang er een ander venster open is.";
+
+"±×·± »ç¶÷ÀÌ ¾ø½À´Ï´Ù.";
+"Dit persoon bestaat niet.";
+
+"¾ÆÀÌÅÛ °³·®ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Na een handel kun je een geschrift %d seconden niet gebruiken.";
+
+"°³ÀÎ»óÁ¡ »ç¿ëÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Na openen van een Warenhuis kun je een Terugkeer Geschrift gebruiken gedurende %d seconden.";
+
+"ÀÌµ¿ µÇ¾îÁú À§Ä¡¿Í ³Ê¹« °¡±î¿ö ±ÍÈ¯ºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Terugkeer Geschrift gebruiken omdat de afstand te klein is.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎµîÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Na een handel kun je een Terugkeer Geschrift gedurende %d seconden niet gebruiken.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â º¸µû¸®,ºñ´Üº¸µû¸®¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen opslag openen als een andere Venster al open is.";
+
+"¹ö¸± ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Je kunt dit Voorwerp niet laten vallen.";
+
+"¶³¾îÁø ¾ÆÀÌÅÛÀº 3ºĞ ÈÄ »ç¶óÁı´Ï´Ù.";
+"Het gevallen item zal over 5 minuten verdwijnen.";
+
+"¾ÆÀÌÅÛ È¹µæ: %s";
+"%s ontvangen.";
+
+"¼ÒÁöÇÏ°í ÀÖ´Â ¾ÆÀÌÅÛÀÌ ³Ê¹« ¸¹½À´Ï´Ù.";
+"Je hebt teveel Voorwerpen in je Inventory.";
+
+"¾ÆÀÌÅÛ È¹µæ: %s ´ÔÀ¸·ÎºÎÅÍ %s";
+"%s ontvangt %s.";
+
+"Àá½ÃÈÄ ¸ğµÎ ¸¶À»·Î ÀÌµ¿µË´Ï´Ù.";
+"Alle mensen zullen geteleporteerd worden naar een gekozen stad over een korte tijd.";
+
+"³Ê¹« °¡±îÀÌ ÀÖ½À´Ï´Ù.";
+"Je bent te vlakbij.";
+
+"¾ÆÀÌÅÛ Àü´Ş: %s ´Ô¿¡°Ô %s";
+"Voorwerp Handel: %s, %s";
+
+"µĞ°© Áß¿¡´Â Âø¿ëÁßÀÎ Àåºñ¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt gedragen voorwerpen niet veranderen terwijl je getransformeerd bent.";
+
+"°¡¸¸È÷ ÀÖÀ» ¶§¸¸ Âø¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Je moet stilstaan om het Voorwerp te dragen.";
+
+"Á×Áö ¾ÊÀº ¸»¿¡°Ô ¼±ÃÊ¸¦ ¸ÔÀÏ ¼ö ¾ø½À´Ï´Ù.";
+"Apen kruiden kunnen niet gevoerd worden aan levende paarden. Het is nodig om dode paarden weer levend te maken.";
+
+"Á×Àº ¸»¿¡°Ô »ç·á¸¦ ¸ÔÀÏ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt een dood Paard niet voeren.";
+
+"¸»¿¡°Ô ¼±ÃÊ¸¦ ÁÖ¾ú½À´Ï´Ù.";
+"Je hebt het Paard Kruiden gevoerd.";
+
+"¸»¿¡°Ô »ç·á¸¦ ÁÖ¾ú½À´Ï´Ù.";
+"Je hebt het Paard gevoerd.";
+
+"¾ÆÁ÷ ÀÌ ¸Ó¸®¸¦ »ç¿ëÇÒ ¼ö ¾ø´Â ·¹º§ÀÔ´Ï´Ù.";
+"Je Level is te laag om dit Kapsel te dragen.";
+
+"µ¿ÀÏÇÑ ¸Ó¸® ½ºÅ¸ÀÏ·Î´Â ±³Ã¼ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je hebt dit Kapsel al.";
+
+"ÀÌ¹Ì µĞ°©ÁßÀÎ »óÅÂÀÔ´Ï´Ù.";
+"Je bent al getransformeerd.";
+
+"³Ê¹« ¸Ö¸® ÀÖ½À´Ï´Ù";
+"Je bent te ver weg.";
+
+"Àß¸øµÈ µĞ°© ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Dat is de verkeerde handels Voorwerp.";
+
+"³ªº¸´Ù ³Ê¹« ³ôÀº ·¹º§ÀÇ ¸ó½ºÅÍ·Î´Â º¯½Å ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet in een monster transformeren die een hoger Level heeft dan jij.";
+
+"·¹º§ÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je level is te laag om dit voorwerp te kunnen dragen.";
+
+"±Ù·ÂÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je bent niet sterk genoeg om dit voorwerp te dragen.";
+
+"Áö´ÉÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je intelligentie is te laag om dit voorwerp te kunnen dragen.";
+
+"¹ÎÃ¸ÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je behendigheid is te laag om dit te kunnen dragen.";
+
+"Ã¼·ÂÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je vitaliteit is te laag om dit voorwerp te kunnen dragen.";
+
+"°áÈ¥ÇÏÁö ¾ÊÀº »óÅÂ¿¡¼­ ¿¹¹°À» Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit voorwerp niet dragen als je niet getrouwd bent.";
+
+"°°Àº Á¾·ùÀÇ À¯´ÏÅ© ¾ÆÀÌÅÛ µÎ °³¸¦ µ¿½Ã¿¡ ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit Voorwerp niet twee keer dragen.";
+
+"%s ¿¡¼­ ¼ÒÄÏ ºüÁú¶§±îÁö ³²Àº ½Ã°£ %d";
+"%s tijd over totdat Fitting weggehaald word: %d.";
+
+"ÀÌ¼º°£¿¡¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Deze actie kan alleen gedaan worden met het andere geslacht.";
+
+"%s¿¡ ¹ÚÇôÀÖ´ø º¸¼®ÀÌ »ç¶óÁı´Ï´Ù.";
+"Een edelsteen ingelegd in de %s is verdwenen.";
+
+"<±æµå> ±æµå ÀÌ¸§ÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù.";
+"[Gilde] De Gilde naam is ongeldig.";
+
+"<±æµå> ÀÌ¹Ì °°Àº ÀÌ¸§ÀÇ ±æµå°¡ ÀÖ½À´Ï´Ù.";
+"[Gilde] Deze Gilde naam is al bezet.";
+
+"<±æµå> ±æµå¸¦ »ı¼ºÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt geen Gilde starten.";
+
+"%s ±æµå°¡ %s ±æµå¿¡ ¼±ÀüÆ÷°í¸¦ ÇÏ¿´½À´Ï´Ù!";
+"De %s Gilde heeft oorlog verklaard aan %s";
+
+"<±æµå> %s ±æµå°¡ ±æµåÀüÀ» °ÅºÎÇÏ¿´½À´Ï´Ù.";
+"[Gilde] %s heeft  de Gilde oorlog afgeslagen.";
+
+"%s ±æµå¿Í %s ±æµå°¡ Àá½Ã ÈÄ ÀüÀïÀ» ½ÃÀÛÇÕ´Ï´Ù!";
+"De gildeoorlog tussen %s en %s begint over een paar seconden!";
+
+"%s ±æµå¿Í %s ±æµå°¡ ÀüÀïÀ» ½ÃÀÛÇÏ¿´½À´Ï´Ù!";
+"De Oorlog tussen %s en %s is begonnen!";
+
+"%s ±æµå¿Í %s ±æµå »çÀÌÀÇ ÀüÀïÀÌ ¹«½ÂºÎ·Î ³¡³µ½À´Ï´Ù.";
+"De Oorlog tussen %s en %s is geïndigd in een gelijkstand.";
+
+"%s ±æµå°¡ %s ±æµå¿ÍÀÇ ÀüÀï¿¡¼­ ½Â¸® Çß½À´Ï´Ù.";
+"%s heeft de gilde oorlog tegen %s gewonnen!";
+
+"ÀÌ Çàµ¿Àº »óÈ£µ¿ÀÇ ÇÏ¿¡ °¡´É ÇÕ´Ï´Ù.";
+"Je hebt toestemming van je partner nodig voor dit.";
+
+"<±æµå> ±æµåÀüÀÌ Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"[Gilde] De Gilde oorlog is geannuleerd.";
+
+"%s ±æµå¿Í %s ±æµå »çÀÌÀÇ ÀüÀïÀÌ Ãë¼ÒµÇ¾ú½À´Ï´Ù.";
+"De gilde oorlog tussen %s en %s is geannuleerd.";
+
+"´İ±â";
+"Sluit";
+
+"ÀüÅõ°¡ ½ÃÀÛ µÇ¾î Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"Actie geannuleerd. Je bent het gevecht binnengegaan.";
+
+"´Ù¸¥ ÄÄÇ»ÅÍ¿¡¼­ ·Î±×ÀÎ ÇÏ¿© Á¢¼ÓÀ» Á¾·á ÇÕ´Ï´Ù.";
+"Iemand heeft ingelogd met jouw account. De verbinding wordt verbroken.";
+
+"³ª¹«¿¡¼­ ºÎÅÍ ½ÅºñÇÑ ºûÀÌ ³ª¿É´Ï´Ù.";
+"Een mysterieus licht komt van de boom af.";
+
+"%dºĞÀÇ °áÁ¦½Ã°£ÀÌ Ãß°¡ µÇ¾ú½À´Ï´Ù. (°áÁ¦¹øÈ£ %d)";
+"%d Speeltijd toegevoegd aan je account. (Betalings nummer %d)";
+
+"°üÀü ¸ğµå·Î ±æµåÀü¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"Je kunt mee doen met het Gilde Gevecht in Toeschouwer Modus.";
+
+"ÀÚ½ÅÀ» ¼±ÅÃÇÏ½Ã¸é ¹ÛÀ¸·Î ³ª°¥ ¼ö ÀÖ´Â <°ü¶÷ Á¾·á> ¹öÆ°ÀÌ ³ª¿É´Ï´Ù.";
+"Tijdens het kiezen van een karakter <kijken afronden> verschijnt een icoon.";
+
+"±æµåÀü¿¡ Âü°¡ÇÑ »ó´ë¹æ ±æµå¿øÀÌ ¾Æ¹«µµ ¾ø½À´Ï´Ù.";
+"Er zijn geen vijanden.";
+
+"%s´Ô°úÀÇ ´ë°á ½ÃÀÛ!";
+"Het Gevecht met %s is begonnen!";
+
+"1ºĞ ÀÌ³»¿¡ ¾Æ¹«µµ Á¢¼ÓÇÏÁö ¾ÊÀ¸¸é ±æµåÀüÀÌ ÀÚµ¿ Á¾·áµË´Ï´Ù.";
+"Als er geen Vijand gevonden kan worden zal de Gilde Oorlog automatisch beëindigd worden.";
+
+"±æµåÀüÀÌ ÀÏÂï Á¾·áµÇ¾î ¹«½ÂºÎ·Î ÆÇÁ¤ µÇ¾ú½À´Ï´Ù. (5ºĞÀÌ Áö³ªÁö ¾ÊÀ½)";
+"Omdat de gilde oorlog voortijdig is afgelopen, zal het als gelijkstand geteld worden.";
+
+"±ºÁÖ°¡ ³»¸° Ãàº¹À¸·Î ¸ğµç ¿¡³ÊÁö°¡ °¡µæ Ã¤¿öÁı´Ï´Ù";
+"De energie wordt weerkaatst door de Zegening van de  Keizer.";
+
+"%d ÃÊ ÈÄ¿¡ ±ºÁÖÀÇ Ãàº¹À» »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù";
+"Na %d seconden kun je de Zegening van de Keizer gebruiken.";
+
+"ÄğÅ¸ÀÓ Àû¿ëÁß  %d ÈÄ »ç¿ë°¡´É";
+"Na %d seconden kun je de Zegening van de Keizer gebruiken.";
+
+"±¹°í¿¡ ÀÚ±İÀÌ ¸ğÀÚ¶ø´Ï´Ù ±¹°í : %d ";
+"Niet genoeg Belasting Inkomsten: %d";
+
+"[TEST_ONLY]ÇöÀç ±¹°í : %d ";
+"[TEST_ONLY]Belasting: %d";
+
+"µĞ°©¿¡ ½ÇÆĞ ÇÏ¿´½À´Ï´Ù";
+"Fout tijdens transformeren.";
+
+"µĞ°©¼­ ¼ö·ÃÀ» ¸¶Ãº½À´Ï´Ù. ½Å¼±¿¡°Ô Ã£¾Æ°¡¼¼¿ä.";
+"Je hebt de transformatie compleet geleerd.";
+
+"¸»À» ¸ÕÀú ¼ÒÈ¯ÇØÁÖ¼¼¿ä.";
+"Roep eerst je Paard.";
+
+"¸»À» µ¹·Áº¸³Â½À´Ï´Ù.";
+"Je hebt je paard teruggestuurd.";
+
+"%s´ÔÀÌ ´ë°á½ÅÃ»À» Çß½À´Ï´Ù. ½Â³«ÇÏ·Á¸é ´ë°áµ¿ÀÇ¸¦ ÇÏ¼¼¿ä.";
+"%s heeft je uitgedaagd voor een gevecht!";
+
+"¸»¿¡¼­ ¸ÕÀú ³»·Á¾ß ÇÕ´Ï´Ù.";
+"Je moet eerst van je Paard afstijgen.";
+
+"¸»À» Åº »óÅÂ¿¡¼­´Â ¸ÔÀÌ¸¦ ÁÙ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt je Paard niet voeren als je erop zit.";
+
+"¸»¿¡°Ô %s%s ÁÖ¾ú½À´Ï´Ù.";
+"Je hebt %s%s aan het paard gevoerd.";
+
+"%s ¾ÆÀÌÅÛÀÌ ÇÊ¿äÇÕ´Ï´Ù";
+"Je hebt %s nodig.";
+
+"¼Ë´Ù¿îÀÌ %dÃÊ ³²¾Ò½À´Ï´Ù.";
+"%d Seconden tot afsluiten.";
+
+"%dÃÊ ÈÄ °ÔÀÓÀÌ ¼Ë´Ù¿î µË´Ï´Ù.";
+"Het Spel wordt na %d Seconden gesloten.";
+
+"%dÃÊ ³²¾Ò½À´Ï´Ù.";
+"%d Seconden tot afsluiten.";
+
+"Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"Het Uitloggen is geannuleerd.";
+
+"·Î±×ÀÎ È­¸éÀ¸·Î µ¹¾Æ °©´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"Terug naar Login Scherm. Even geduld aub.";
+
+"°ÔÀÓÀ» Á¾·á ÇÕ´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"De verbinding met de server is verbroken. Even geduld aub.";
+
+"%s¿¡°Ô ´ë°á½ÅÃ»À» Çß½À´Ï´Ù.";
+"Je hebt %s uitgedaagd voor een gevecht.";
+
+"Ä³¸¯ÅÍ¸¦ ÀüÈ¯ ÇÕ´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"Je bent van karakter gewisseld. Even geduld aub.";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù. (%dÃÊ ³²À½)";
+"Nog steeds geen herstart mogelijk. (%d Seconden over)";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù.(%dÃÊ ³²À½)";
+"Nog steeds geen herstart mogelijk. (%d Seconden over)";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù.(%dÃÊ ³²À½ )";
+"Nog steeds geen herstart mogelijk. (%d Seconden over)";
+
+"¾ÆÁ÷ ¸¶À»¿¡¼­ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù. (%d ÃÊ ³²À½)";
+"Nog steeds geen herstart mogelijk in de stad. (%d Seconden over)";
+
+"¼ºÁö¿¡¼­ ºÎÈ° ±âÈ¸¸¦ ¸ğµÎ ÀÒ¾ú½À´Ï´Ù! ¸¶À»·Î ÀÌµ¿ÇÕ´Ï´Ù!";
+"De wachttijd is verlopen. Je zult herrijzen in de stad.";
+
+"µĞ°© Áß¿¡´Â ´É·ÂÀ» ¿Ã¸± ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt je status niet veranderen zo lang je getransformeerd bent.";
+
+"»ó´ë¹æÀÌ ´ë·ÃÁßÀÔ´Ï´Ù.";
+"De speler is op dit moment aan het vechten.";
+
+"<±æµå> ±æµå¿¡ ¼ÓÇØÀÖÁö ¾Ê½À´Ï´Ù.";
+"[Gilde] Het behoort niet tot de Gilde.";
+
+"<±æµå> ±æµå ½ºÅ³ ·¹º§À» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kan niet het Level van Gilde Vaardigheden veranderen.";
+
+"Àß¸øµÈ ¼±ÅÃÀ» Çß½À´Ï´Ù";
+"Je keuze is verkeerd.";
+
+"<Ã¢°í> Àß¸øµÈ ¾ÏÈ£¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+"[Opslag] Je hebt een verkeerd wachtwoord ingevoerd.";
+
+"<Ã¢°í> Ã¢°í°¡ ÀÌ¹Ì ¿­·ÁÀÖ½À´Ï´Ù.";
+"[Opslag] De Opslag is al open.";
+
+"<Ã¢°í> Ã¢°í¸¦ ´İÀºÁö 10ÃÊ ¾È¿¡´Â ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"[Opslag] Je moet 10 seconden wachten om de Opslag weer te openen.";
+
+"<Ã¢°í> °Å¸®°¡ ¸Ö¾î¼­ Ã¢°í¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"[Opslag] De afstand tussen jou en de Opslag is te groot om het te openen.";
+
+"<ÆÄÆ¼> ¼­¹ö ¹®Á¦·Î ÆÄÆ¼ °ü·Ã Ã³¸®¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] De Server kan het Groeps verzoek niet uitvoeren.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼¿¡¼­ ³ª°¥ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt de Groep niet verlaten wanneer je in een Kerker bent.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿¡¼­ ³ª°¡¼Ì½À´Ï´Ù.";
+"[Groep] Je hebt de Groep verlaten.";
+
+"<±æµå> ÀÌ¹Ì ´Ù¸¥ ÀüÀï¿¡ ÂüÀü Áß ÀÔ´Ï´Ù.";
+"[Gilde] Je gilde doet al mee met een andere oorlog.";
+
+"<±æµå> ±æµåÀü¿¡ ´ëÇÑ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Niemand komt in aanmerking voor een Gilde Oorlog.";
+
+"<±æµå> ±×·± ±æµå°¡ ¾ø½À´Ï´Ù.";
+"[Gilde] Deze Gilde bestaat niet.";
+
+"ÀÌ¹Ì ÀÔÈÄº¸µÇ¾îÀÖ½À´Ï´Ù";
+"Er is al een kandidaat.";
+
+"ÀÌ¹Ì ¼±ÀüÆ÷°í ÁßÀÎ ±æµåÀÔ´Ï´Ù.";
+"[Gilde] Deze Gilde doet al mee in een Oorlog.";
+
+"<±æµå> Àüºñ°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Er is niet genoeg Yang om mee te doen met een Gilde Oorlog.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ Àüºñ°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Gilde heeft niet genoeg Yang om mee te doen aan een Gilde Oorlog.";
+
+"<±æµå> ÀÌ¹Ì ÀüÀïÀÌ ¿¹¾àµÈ ±æµå ÀÔ´Ï´Ù.";
+"[Gilde] De Gilde staat al genoteerd voor een andere Gilde Oorlog.";
+
+"<±æµå> »ó´ë¹æ ±æµå°¡ ÀÌ¹Ì ÀüÀï Áß ÀÔ´Ï´Ù.";
+"[Gilde] De Gilde doet al mee aan een andere Oorlog.";
+
+"<±æµå> ±æµåÀüÀ» ÇÏ±â À§ÇØ¼± ÃÖ¼ÒÇÑ %d¸íÀÌ ÀÖ¾î¾ß ÇÕ´Ï´Ù.";
+"[Gilde] Tenminste %d spelers moeten mee doen aan een Gilde Oorlog.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ·¹´õ Á¡¼ö°¡ ¸ğÀÚ¶ó¼­ ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Gilde heeft niet genoeg Rank Punten om mee te doen aan een Gilde Oorlog.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ±æµå¿ø ¼ö°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Gilde heeft niet genoeg leden om mee te doen aan een Gilde Oorlog.";
+
+"·¹º§ 20 ÀÌÇÏ´Â ÇÚµåÆù ¹øÈ£¸¦ µî·ÏÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je moet Level 20 of hoger zijn om een mobiele telefoon nummer te registeren.";
+
+"±ºÁÖÀÇ ÀÚ°İÀ» °¡Áö°í ÀÖÁö ¾Ê½À´Ï´Ù";
+"Heeft niet de Kwalificaties om een Keizer te zijn.";
+
+"%s ´ÔÀ¸·Î ºÎÅÍ Ä£±¸ µî·ÏÀ» °ÅºÎ ´çÇß½À´Ï´Ù.";
+"%s heeft de uitnodiging afgeslagen.";
+
+"ÀÌ¹Ì ÆÄÆ¼¿¡ ¼ÓÇØ ÀÖÀ¸¹Ç·Î °¡ÀÔ½ÅÃ»À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt de uitnodiging niet aan nemen omdat je al lid van een Groep bent.";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ë°¡´É ÇÑ ±â´ÉÀÔ´Ï´Ù";
+"Alleen de Keizer kan dit gebruiken.";
+
+"%d ÃÊ°£ ÄğÅ¸ÀÓÀÌ Àû¿ëÁßÀÔ´Ï´Ù.";
+"Cooldown tijd is ongeveer %d seconden.";
+
+"±¹°í¿¡ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù. ÇöÀç : %lu ÇÊ¿ä±İ¾× : %lu";
+"Tekort aan Belastingen. Huidig Kapitaal: %u Ontbrekend Kapitaal: %u";
+
+"»ç¿ë¹ı: warpto <character name>";
+"Order: warpto <character name>";
+
+"Å¸Á¦±¹ À¯Àú¿¡°Ô´Â ÀÌµ¿ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Je kunt niet transporteren naar een onbekende speler.";
+
+"ÇØ´ç À¯Àú´Â %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"Speler %d toevoegen in het Kanaal. (Huidig Kanaal %d)";
+
+"%s ¿¡°Ô·Î ÀÌµ¿ÇÕ´Ï´Ù";
+"Transport naar %s.";
+
+"Å¸Á¦±¹ À¯Àú´Â ¼ÒÈ¯ ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Je kunt onbekende spelers niet bellen.";
+
+"<±æµå> ±æµåÀüÁß¿¡´Â »ç³É¿¡ µû¸¥ ÀÌÀÍÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Er zijn geen ervarings punten voor hunten tijdens een Gilde Oorlog.";
+
+"±ºÁÖÀÇ Ãàº¹À¸·Î ÀÌÁö¿ª %s À¯Àú´Â HP,SP°¡ ¸ğµÎ Ã¤¿öÁı´Ï´Ù.";
+"Wanneer de Zegening van de Keizer wordt gebruikt word %s LP en TP hersteld.";
+
+"³ªÀÇ ±ºÁÖ Á¤º¸";
+"Mijn Keizer Informatie";
+
+"[%s±ºÁÖ] : %s  º¸À¯±İ¾× %lld ";
+"[%sMonarch] : %s Yang in eigendom %lld";
+
+"[%s±ºÁÖ] : %s  ";
+"[%sMonarch] : %s";
+
+"±ºÁÖ Á¤º¸";
+"Keizer Informatie";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ëÇÒ¼ö ÀÖ´Â ±â´ÉÀÔ´Ï´Ù";
+"Alleen een Keizer kan dit gebruiken.";
+
+"1-50 »çÀÌÀÇ ¼öÄ¡¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä";
+"Kies een nummer tussen 1 en 50.";
+
+"¼ÒÈ¯ÇÒ¼ö ¾ø´Â ¸ó½ºÅÍ ÀÔ´Ï´Ù. ¼ÒÈ¯°¡´ÉÇÑ ¸ó½ºÅÍ´Â È¨ÆäÀÌÁö¸¦ ÂüÁ¶ÇÏ¼¼¿ä";
+"De Monster kan niet geroepen worden. Controleer het Bende Nummer.";
+
+"ÃÖ´ë »ı¸í·Â +%d";
+"Levenspunten +%d";
+
+"ÃÖ´ë Á¤½Å·Â +%d";
+"Tover Punten +%d";
+
+"±ºÁÖÀÇ Ãàº¹À» »ç¿ëÇÏ¿´½À´Ï´Ù.";
+"De Zegening van de Keizer is actief.";
+
+"Ã¼·Â +%d";
+"Uithoudingsvermogen +%d";
+
+"Áö´É +%d";
+"Intelligentie +%d";
+
+"±Ù·Â +%d";
+"Kracht +%d";
+
+"¹ÎÃ¸ +%d";
+"Behendigheid +%d";
+
+"°ø°İ¼Óµµ +%d";
+"Aanvals Snelheid +%d";
+
+"ÀÌµ¿¼Óµµ %d";
+"Beweeg Snelheid %d";
+
+"ÄğÅ¸ÀÓ -%d";
+"Uitrust tijd -%d";
+
+"»ı¸í·Â È¸º¹ +%d";
+"Energie Herstel +%d";
+
+"Á¤½Å·Â È¸º¹ +%d";
+"Tover Punten Herstel +%d";
+
+"µ¶°ø°İ %d";
+"Gif Aanval %d";
+
+"½ºÅÏ +%d";
+"Ster +%d";
+
+"½½·Î¿ì +%d";
+"Snelheid Vermindering +%d";
+
+"%d%% È®·ü·Î Ä¡¸íÅ¸ °ø°İ";
+"Kritieke Aanval met een kans van %d%%";
+
+"%d%% È®·ü·Î °üÅë °ø°İ";
+"Kans op een Speer Aanval %d%%";
+
+"ÀÎ°£·ù ¸ó½ºÅÍ Å¸°İÄ¡ +%d%%";
+"Speler Aanvals Kracht tegen Monster +%d%%";
+
+"µ¿¹°·ù ¸ó½ºÅÍ Å¸°İÄ¡ +%d%%";
+"Paard aanvals Kracht tegen Monster +%d%%";
+
+"¿õ±ÍÁ· Å¸°İÄ¡ +%d%%";
+"Aanvals Prikkel tegen Wonggui + %d%%";
+
+"¹Ğ±³·ù Å¸°İÄ¡ +%d%%";
+"Aanvals Prikkel tegen Milgyo +%d%%";
+
+"½ÃÃ¼·ù Å¸°İÄ¡ +%d%%";
+"Aanvals prikkel tegen zombies + %d%%";
+
+"¾Ç¸¶·ù Å¸°İÄ¡ +%d%%";
+"Aanvals prikkel tegen duivels + %d%%";
+
+"±ºÁÖÀÇ »çÀÚÈÄ ¿µÇâÀ¸·Î ÀÌÁö¿ª %s À¯Àú´Â 3ºĞ°£ 10 %% ÀÇ °ø°İ·ÂÀÌ  Áõ°¡µË´Ï´Ù";
+"Door de Keizer Sa-Za-Hu krijgt de speler %s 10%% meer aanvals kracht voor 3 minuten.";
+
+"Å¸°İÄ¡ %d%% ¸¦ »ı¸í·ÂÀ¸·Î Èí¼ö";
+"Leven Absorberen %d%% tijdens aanval.";
+
+"Å¸·ÂÄ¡ %d%% ¸¦ Á¤½Å·ÂÀ¸·Î Èí¼ö";
+"Absorberen van Tover Punten %d%% tijdens aanvallen.";
+
+"%d%% È®·ü·Î Å¸°İ½Ã »ó´ë Àü½Å·Â ¼Ò¸ğ";
+"Met een kans van %d%% dat Tover Punten (TP) bij de vijand weggenomen zullen worden.";
+
+"%d%% È®·ü·Î ÇÇÇØ½Ã Á¤½Å·Â È¸º¹";
+"Tover Punten (TP) absorberen met een kans van %d%%";
+
+"¹°¸®Å¸°İ½Ã ºí·° È®·ü %d%%";
+"%d%% kans om een korte afstand aanval te blokkeren.";
+
+"È° °ø°İ È¸ÇÇ È®·ü %d%%";
+"%d%% kans om een lange afstand aanval te blokkeren.";
+
+"ÇÑ¼Õ°Ë ¹æ¾î %d%%";
+"Zwaard Verdediging %d%%";
+
+"¾ç¼Õ°Ë ¹æ¾î %d%%";
+"Twee-Handig Zwaard Verdediging %d%%";
+
+"µÎ¼Õ°Ë ¹æ¾î %d%%";
+"Twee-Handig Zwaard Verdediging %d%%";
+
+"¹æ¿ï ¹æ¾î %d%%";
+"Bel Verdediging %d%%";
+
+"±ºÁÖÀÇ ±İ°­±Ç ¿µÇâÀ¸·Î ÀÌÁö¿ª %s À¯Àú´Â 3ºĞ°£ 10 %% ÀÇ ¹æ¾î·ÂÀÌ  Áõ°¡µË´Ï´Ù";
+"Door de Keizer Geum-Gang-Gwon krijgt de speler %s 10%% meer pantser voor 3 minuten.";
+
+"ºÎÃ¤ ¹æ¾î %d%%";
+"Waaier Verdediging %d%%";
+
+"È°°ø°İ ÀúÇ× %d%%";
+"Lange Afstands Aanval Weerstand %d%%";
+
+"È­¿° ÀúÇ× %d%%";
+"Vuur Weerstand %d%%";
+
+"Àü±â ÀúÇ× %d%%";
+"Bliksem Weerstand %d%%";
+
+"¸¶¹ı ÀúÇ× %d%%";
+"Magie Weerstand %d%%";
+
+"¹Ù¶÷ ÀúÇ× %d%%";
+"Wind Weerstand %d%%";
+
+"Á÷Á¢ Å¸°İÄ¡ ¹İ»ç È®·ü : %d%%";
+"Directe Slag Weerkaatsen: %d%%";
+
+"ÀúÁÖ µÇµ¹¸®±â È®·ü %d%%";
+"Vloek Weerkaatsen: %d%%";
+
+"µ¶ ÀúÇ× %d%%";
+"Gif Weerstand %d%%";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã Á¤½Å·Â È¸º¹";
+"Tover Punten (TP) zal verhoogd tot %d%% worden als je wint.";
+
+"OX ÀÌº¥Æ®°¡ ÀÌ¹Ì ÁøÇàÁßÀÔ´Ï´Ù(flag: %d)";
+"De Gebeurtenis is al bezig. (Flag: %d)";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã °æÇèÄ¡ Ãß°¡ »ó½Â";
+"Ervaring verhoogt naar %d%% als je wint.";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã µ· 2¹è µå·Ó";
+"Verhoging van Yang tot %d%% als je wint.";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã ¾ÆÀÌÅÛ 2¹è µå·Ó";
+"Verhoging van ontvangen Voorwerpen tot %d%% als je wint.";
+
+"¹°¾à »ç¿ë½Ã %d%% ¼º´É Áõ°¡";
+"Verhoging van Kracht tot %d%% wanneer je een Brouwsel neemt.";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã »ı¸í·Â È¸º¹";
+"%d%% kans om levenspunten te vullen nadat je wint.";
+
+"±âÀıÇÏÁö ¾ÊÀ½ %d%%";
+"Geen duizeligheid %d%%";
+
+"´À·ÁÁöÁö ¾ÊÀ½ %d%%";
+"Geen Langzaam worden %d%%";
+
+"³Ñ¾îÁöÁö ¾ÊÀ½ %d%%";
+"Geen Neervallen %d%%";
+
+"°ø°İ·Â +%d";
+"Aanvals Kracht + %d";
+
+"¹æ¾î·Â +%d";
+"Pantser + %d";
+
+"OX ¹®Á¦ ½ºÅ©¸³Æ® ·Îµù ½ÇÆĞ";
+"OX Quiz Script kon niet geladen worden.";
+
+"¸¶¹ı °ø°İ·Â +%d";
+"Magische Aanval + %d";
+
+"¸¶¹ı ¹æ¾î·Â +%d";
+"Magische Verdediging + %d";
+
+"ÃÖ´ë Áö±¸·Â +%d";
+"Maximale Uithoudingsvermogen + %d";
+
+"¹«»ç¿¡°Ô °­ÇÔ +%d%%";
+"Sterk tegen Krijgers + %d%%";
+
+"ÀÚ°´¿¡°Ô °­ÇÔ +%d%%";
+"Sterk tegen Ninja + %d%%";
+
+"¼ö¶ó¿¡°Ô °­ÇÔ +%d%%";
+"Sterk tegen Sura + %d%%";
+
+"¹«´ç¿¡°Ô °­ÇÔ +%d%%";
+"Sterk tegen Sjamaan + %d%%";
+
+"¸ó½ºÅÍ¿¡°Ô °­ÇÔ +%d%%";
+"Sterk tegen Monster + %d%%";
+
+"°ø°İ·Â +%d%%";
+"Aanval + %d%%";
+
+"¹æ¾î·Â +%d%%";
+"Verdediging + %d%%";
+
+"OX ¹®Á¦ ½ºÅ©¸³Æ® ·Îµù ¼º°ø";
+"OX Quiz Script geladen.";
+
+"°æÇèÄ¡ %d%%";
+"Ervaring %d%%";
+
+"¾ÆÀÌÅÛ µå·ÓÀ² %.1f¹è";
+"Kans om een Voorwerp te vinden %. 1f";
+
+"µ· µå·ÓÀ² %.1f¹è";
+"Kans om Yang te vinden %. 1f";
+
+"ÃÖ´ë »ı¸í·Â +%d%%";
+"Energie Bovenste Limiet +%d%%";
+
+"ÃÖ´ë Á¤½Å·Â +%d%%";
+"Energie Bovenste Limiet +%d%%";
+
+"½ºÅ³ µ¥¹ÌÁö %d%%";
+"Vaardigheden Schade %d%%";
+
+"ÆòÅ¸ µ¥¹ÌÁö %d%%";
+"Slag Schade %d%%";
+
+"½ºÅ³ µ¥¹ÌÁö ÀúÇ× %d%%";
+"Weerstand tegen Vaardigheden Schade %d%%";
+
+"ÆòÅ¸ µ¥¹ÌÁö ÀúÇ× %d%%";
+"Weerstand tegen Slagen %d%%";
+
+"¹«»ç°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% Weerstand tegen Krijger Aanvallen";
+
+"¾È³çÇÏ¼¼¿ä. ¸ŞÆ¾2 ÀÔ´Ï´Ù.";
+"Welkom bij Metin2.";
+
+"ÀÚ°´°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% Weerstand tegen Ninja Aanvallen";
+
+"¼ö¶ó°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% Weerstand tegen Sura Aanvallen";
+
+"¹«´ç°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% Weerstand tegen Sjamaan Aanvallen";
+
+" (¸¸·áÀÏ : %d³â %d¿ù %dÀÏ)";
+"(Procedure: %d y- %d m - %d d)";
+
+"Ã¤ÆÃ ±İÁö »óÅÂÀÔ´Ï´Ù.";
+"Je Chat is geblokkeerd.";
+
+"¿ÜÄ¡±â´Â À¯·áÈ¸¿ø¸¸ »ç¿ëÇÒ¼ö ÀÖ½À´Ï´Ù";
+"Je hebt een hoger level nodig om te kunnen roepen.";
+
+"¿ÜÄ¡±â´Â ·¹º§ %d ÀÌ»ó¸¸ »ç¿ë °¡´É ÇÕ´Ï´Ù.";
+"Je hebt level %d nodig om te kunnen roepen.";
+
+"ÆÄÆ¼ ÁßÀÌ ¾Æ´Õ´Ï´Ù.";
+"Je zit niet in deze Groep.";
+
+"±æµå¿¡ °¡ÀÔÇÏÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Je bent niet aangesloten bij deze Gilde.";
+
+"»ó´ë¹æÀÌ ¸Ş½ÅÁ® Ãß°¡ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"De speler wijst toegevoegd te worden aan je vriendenlijst af.";
+
+"OX ÀÌº¥Æ®°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù.";
+"Ox Gebeurtenis is gestart.";
+
+"<¸Ş½ÅÁ®> ¿î¿µÀÚ´Â ¸Ş½ÅÁ®¿¡ Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Vrienden] Je kunt een GM niet aan je vriendenlijst toevoegen.";
+
+"%s ´ÔÀº Á¢¼ÓµÇ ÀÖÁö ¾Ê½À´Ï´Ù.";
+"%s is niet in het spel.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡ Ã¢°í¸¦ ¿­¼ö ¾ø½À´Ï´Ù.";
+"Nadat je hebt gehandeld kun je een Warenhuis openen na %d seconden.";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt na %d seconden weer handelen.";
+
+"¾×¼ö°¡ 20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© °Å·¡¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù..";
+"Je hebt meer dan 2 miljard Yang. Je kunt niet handelen.";
+
+"´Ù¸¥ °Å·¡ÁßÀÏ°æ¿ì °³ÀÎ»óÁ¡À» ¿­¼ö°¡ ¾ø½À´Ï´Ù.";
+"Je kunt geen Privé Warenhuis openen als er een ander venster geopend is.";
+
+"»ó´ë¹æÀÇ ÃÑ±İ¾×ÀÌ 20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© °Å·¡¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù..";
+"De Speler heeft meer dan 2 miljard Yang. Je kunt niet met hem handelen.";
+
+"<Ã¢°í> ¿Å±æ ¼ö ¾ø´Â À§Ä¡ÀÔ´Ï´Ù.";
+"[Opslag] Geen Bewegingen mogelijk.";
+
+"<Ã¢°í> ÀÌ ¾ÆÀÌÅÛÀº ³ÖÀ» ¼ö ¾ø½À´Ï´Ù.";
+"[Opslag] Voorwerp kan niet opgeslagen worden.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿äÃ»À» ÇÑ Ä³¸¯ÅÍ¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù.";
+"[Groep] De Speler die uitgenodigd is is niet online.";
+
+"À»µÎÁö¸¦ ÅëÇÏ¿© ÀÔÀå °¡´ÉÇÕ´Ï´Ù.";
+"Door Uriel's toestemming is toegang verleend.";
+
+"<ÆÄÆ¼> ¸®´õ¸¸ º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Groep] Alleen de Groepsleider kan dit veranderen.";
+
+"<ÆÄÆ¼> »óÅÂ¸¦ º¯°æÇÏ·Á´Â »ç¶÷ÀÌ ÆÄÆ¼¿øÀÌ ¾Æ´Õ´Ï´Ù.";
+"[Groep] Het doelwit is niet een lid van je Groep.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼¿¡¼­ Ãß¹æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt niet een speler eruit gooien terwijl je in een Kerker zit.";
+
+"<ÆÄÆ¼> ´øÁ¯³»¿¡¼­´Â ÆÄÆ¼¿øÀ» Ãß¹æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt niet een speler eruit gooien wanneer je in een Kerker bent.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿¡¼­ Ãß¹æ´çÇÏ¼Ì½À´Ï´Ù.";
+"[Groep] Je bent uit de Groep gegooid.";
+
+"<ÆÄÆ¼> ´øÁ¯³»¿¡¼­´Â ÆÄÆ¼¸¦ ³ª°¥ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt de Groep niet verlaten wanneer je in een Kerker bent.";
+
+"<ÆÄÆ¼> ´Ù¸¥ ÆÄÆ¼¿øÀ» Å»Åğ½ÃÅ³ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt Groepsleden niet eruit gooien.";
+
+"<±æµå> ÇØ»êÇÑ ÈÄ %dÀÏ ÀÌ³»¿¡´Â ±æµå¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Nadat je een Gilde hebt verwijderd, kun je geen nieuwe starten voor %d dagen.";
+
+"<±æµå> Å»ÅğÇÑ ÈÄ %dÀÏ ÀÌ³»¿¡´Â ±æµå¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Nadat je een Gilde hebt verlaten, kun je geen nieuwe starten voor %d dagen.";
+
+"ÀûÇÕÇÏÁö ¾ÊÀº ±æµå ÀÌ¸§ ÀÔ´Ï´Ù.";
+"Deze Gilde Naam is ongeldig.";
+
+"¸¹Àº Âü¿© ºÎÅ¹µå¸³´Ï´Ù.";
+"We vragen de medewerking van vele spelers.";
+
+"<±æµå> [%s] ±æµå°¡ »ı¼ºµÇ¾ú½À´Ï´Ù.";
+"[Gilde] [%s] Guilde is aangemaakt.";
+
+"<±æµå> ±æµå »ı¼º¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Gilde] Aanmaken van Gilde gefaald.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ ±â¼úÀº ÆÄÆ¼Àå¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Groep] Alleen de Groepsleider kan de Groeps Vaardigheden gebruiken.";
+
+"<ÆÄÆ¼> ¼ÒÈ¯ÇÏ·Á´Â ´ë»óÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Het doelwit is niet gevonden.";
+
+"<±æµå> Àß¸øµÈ ±İ¾×ÀÔ´Ï´Ù.";
+"[Gilde] Dat is niet het correcte som Yang.";
+
+"<±æµå> °¡Áö°í ÀÖ´Â µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"[Gilde] Je hebt niet genoeg Yang.";
+
+"<±æµå> ±×·¯ÇÑ »ç¶÷À» Ã£À» ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De gezochte persoon kan niet gevonden worden.";
+
+"<±æµå> »ó´ë¹æÀÌ °°Àº ±æµå°¡ ¾Æ´Õ´Ï´Ù.";
+"[Gilde] Dit persoon zit niet in dezelfde Gilde.";
+
+"<±æµå> ±æµå¿øÀ» °­Á¦ Å»Åğ ½ÃÅ³ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt geen Gilde Leden eruit gooien.";
+
+"<±æµå> ±æµå¿ø %s ´ÔÀ» °­Á¦ Å»Åğ ½ÃÄ×½À´Ï´Ù.";
+"[Gilde] Het Gilde Lid %s is uit de Gilde gegooid.";
+
+"OXÀÌº¥Æ®°¡ ´İÈ÷Áö ¾Ê¾Ò°Å³ª, ÄûÁî ÃâÁ¦ÁßÀÔ´Ï´Ù.(flag: %d)";
+"OX event is not niet geëindigd. Een error heeft plaats gevonden. (Flag: %d)";
+
+"<±æµå> ±æµå¿øÀ» °­Á¦ Å»Åğ ½ÃÄ×½À´Ï´Ù.";
+"[Gilde] Je hebt een Gilde Lid eruit gegooid.";
+
+"<±æµå> Á÷À§ ÀÌ¸§À» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt niet je Rang naam veranderen.";
+
+"<±æµå> ±æµåÀåÀÇ Á÷À§ ÀÌ¸§Àº º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Rechten van de Gildeleider kan niet veranderd worden.";
+
+"<±æµå> ÀûÇÕÇÏÁö ¾ÊÀº Á÷À§ ÀÌ¸§ ÀÔ´Ï´Ù.";
+"[Gilde] Deze Rank Naam is ongeldig.";
+
+"<±æµå> Á÷À§ ±ÇÇÑÀ» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt je positie niet veranderen.";
+
+"<±æµå> ±æµåÀåÀÇ ±ÇÇÑÀº º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Rechten van de Gildeleider kan niet veranderd worden.";
+
+"<±æµå> %uÀÇ °æÇèÄ¡¸¦ ÅõÀÚÇÏ¿´½À´Ï´Ù.";
+"[Gilde] %u  Ervaring gegeven.";
+
+"<±æµå> °æÇèÄ¡ ÅõÀÚ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Gilde] Ervarings gebruik gefaald.";
+
+"<±æµå> µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"[Gilde] Onvoldoende Yang in de gildeschatkamer.";
+
+"<±æµå> ¿ë½Å·Â È¸º¹¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Gilde] Drakengeest werd niet hersteld.";
+
+"Àá½Ã ÈÄ OX ÀÌº¥Æ®¸¦ ´Ù½Ã ½ÃÀÛÇÏ°Ú½À´Ï´Ù.";
+"De OX Gebeurtenis zal binnenkort hersteld worden.";
+
+"<±æµå> °øÁö±ÛÀ» ÀÛ¼ºÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt geen Aankondiging maken.";
+
+"<±æµå> Á÷À§¸¦ º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt de positie niet veranderen.";
+
+"<±æµå> ±æµåÀåÀÇ Á÷À§´Â º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De Positie van de  Gildeleider kan niet veranderd worden.";
+
+"<±æµå> ±æµåÀåÀ¸·Î Á÷À§¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt jezelf niet Gilde Leider maken.";
+
+"<±æµå> Àå±ºÀ» ÁöÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je hebt niet genoeg rechten om de Gildeleider te kiezen.";
+
+"<±æµå> ´õÀÌ»ó Àå¼ö¸¦ ÁöÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt niet méér Gildeleiders kiezen.";
+
+"¾ÆÀÌÅÛÀ» °Ç³×ÁÙ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit Voorwerp niet verhandelen.";
+
+"ºÒ¹ı ÇÁ·Î±×·¥ÀÌ °¨Áö µÇ¾î °ÔÀÓÀÌ Á¾·á µË´Ï´Ù.";
+"Illegale software gedetecteerd. Het Spel word afgesloten.";
+
+"¼ÒÀ¯ µ·ÀÌ 20¾ï³ÉÀ» ³Ñ¾î °Å·¡¸¦ ÇÛ¼ö°¡ ¾ø½À´Ï´Ù.";
+"Je hebt meer dan 2 miljard Yang. Je kunt niet handelen.";
+
+"±İ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Ongeldige Yang.";
+
+"ÇöÀç ÀÌº¥Æ® Âü°¡ÀÚ ºĞµéÀº ¸¶À»·Î ÀÌµ¿ µÇ°Ú½À´Ï´Ù.";
+"Het Huidige Gebeurtenis is gelimiteerd naar één gebied.";
+
+"¾ÆÀÌÅÛ ·ê·¿ ½ÃÀÛ.";
+"Start Voorwerpen Roulette.";
+
+"¸Ó´Ï  ·ê·¿ ½ÃÀÛ.";
+"Start Yang Roulette.";
+
+"ÇöÀç ¿Â¶óÀÎ »óÅÂ ÀÔ´Ï´Ù. ±Ó¸»À» ÀÌ¿ëÇÏ¼¼¿ä.";
+"De Speler is online. Gebruik fluisteren om te chatten.";
+
+"ÇÚµåÆù ¹øÈ£°¡ µî·ÏµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Het Mobiele nummer is niet geregistreerd.";
+
+"¹®ÀÚ ¸Ş¼¼Áö Àü¼ÛÀº ·¹º§ 20ºÎÅÍ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Je moet tenminste level 20 zijn om smsjes te versturen.";
+
+"¹®ÀÚ ¸Ş¼¼Áö Àü¼Û¿¡´Â 2000¿øÀÌ ÇÊ¿ä ÇÕ´Ï´Ù.";
+"Je hebt 2000 Yang nodig om een sms te versturen.";
+
+"¹®ÀÚ ¸Ş¼¼Áö¸¦ Àü¼Û Çß½À´Ï´Ù.";
+"Je sms is verstuurd.";
+
+"%s ±æµåÀÇ %sÀÌ %d%% Áõ°¡Çß½À´Ï´Ù!";
+"%s van de Gilde %s verhoogt tot %d%%!";
+
+"%s ±æµåÀÇ %sÀÌ Á¤»óÀ¸·Î µ¹¾Æ¿Ô½À´Ï´Ù.";
+"%s van de Gilde %s is weer normaal.";
+
+"%sÀÇ %sÀÌ %d%% Áõ°¡Çß½À´Ï´Ù!";
+"%s: %s is verhoogd met %d%%!";
+
+"%sÀÇ %sÀÌ Á¤»óÀ¸·Î µ¹¾Æ¿Ô½À´Ï´Ù.";
+"%s 's %s is weer normaal.";
+
+"°î±ªÀÌ ¼ö·Ãµµ°¡ ÃÖ´ë(%d)°¡ µÇ¾ú½À´Ï´Ù.";
+"Je mijnbouw punten hebben het maximum behaald. (%d)";
+
+"°î±ªÀÌ°¡ ÃÖ´ë ¼ö·Ãµµ¿¡ µµ´ŞÇÏ¿´½À´Ï´Ù.";
+"Je Mijnbouw Punten zijn verhoogd  tot de hoogste Level.";
+
+"³ª¹«²Û¸¦ ÅëÇØ ´ÙÀ½ ·¹º§ÀÇ °î±ªÀÌ·Î ¾÷±×·¹ÀÌµå ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt je pikhouweel upgraden bij Deokbae.";
+
+"°î±ªÀÌÀÇ ¼ö·Ãµµ°¡ Áõ°¡ÇÏ¿´½À´Ï´Ù! (%d/%d)";
+"Je Mijnbouw Punten zijn verhoogd! (%d/%d)";
+
+"°î±ªÀÌ¸¦ µé°í ÀÖÁö ¾Ê¾Æ¼­ Ä¶ ¼ö ¾ø½À´Ï´Ù.";
+"Zonder een Pikhouweel kun je niet mijnen.";
+
+"´õÀÌ»ó Ä³³¾ ¼ö ¾ø½À´Ï´Ù.";
+"Niets om te mijnen hier.";
+
+"Ã¤±¤¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Het mijnen was succesvol";
+
+"Ã¤±¤¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Het mijnen heeft gefaald.";
+
+"<¸Ş½ÅÁ®> %s ´ÔÀ» Ä£±¸·Î Ãß°¡ÇÏ¿´½À´Ï´Ù.";
+"[Vrienden] Je hebt %s toegevoegd als vriend.";
+
+"Àá½Ã ÈÄ ¸¶À»·Î ÀÌµ¿µÇ°Ú½À´Ï´Ù.";
+"De Speler zal binnenkort naar de stad geteleporteerd worden.";
+
+"<¸Ş½ÅÁ®> %s ´ÔÀ» ¸Ş½ÅÀú¿¡¼­ »èÁ¦ÇÏ¿´½À´Ï´Ù.";
+"[Vrienden] Je hebt %s verwijderd van je lijst.";
+
+"¼­¹ö¿¡ Ä¡¸íÀûÀÎ ¿À·ù°¡ ¹ß»ıÇÏ¿© ÀÚµ¿À¸·Î ÀçºÎÆÃµË´Ï´Ù.";
+"Kritieke server error. De server zal automatisch herstarten.";
+
+"10ÃÊÈÄ ÀÚµ¿À¸·Î Á¢¼ÓÀÌ Á¾·áµÇ¸ç,";
+"Je verbinding wordt verbroken in 10 seconden.";
+
+"5ºĞ ÈÄ¿¡ Á¤»óÀûÀ¸·Î Á¢¼ÓÇÏ½Ç¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt verbinding maken na 5 minuten.";
+
+"(%s) ±æµå°¡ »ı¼ºµÇ¾ú½À´Ï´Ù. [ÀÓ½Ã]";
+"(%s) Gilde aangemaakt. [Tijdelijk]";
+
+"ÇöÀç ÀüÀïÁßÀÎ ±æµå ÀÔ´Ï´Ù";
+"Deze Gilde is Oorlog aan het voeren.";
+
+"%s: Á¸ÀçÇÏÁö ¾Ê´Â ±æµå ÀÔ´Ï´Ù.";
+"%s: Gilde bestaat niet.";
+
+"±×·± ÀÌ¸§ ¶Ç´Â ¹øÈ£ÀÇ ±æµå°¡ ¾ø½À´Ï´Ù.";
+"Een Gilde met deze naam of nummer bestaat niet.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â °Ç¹°ÀÔ´Ï´Ù.";
+"Gebouw bestaat niet.";
+
+"°°ÀÌ ÁöÀ» ¼ö ¾ø´Â Á¾·ùÀÇ °Ç¹°ÀÌ Áö¾îÁ® ÀÖ½À´Ï´Ù.";
+"Dit soort Gebouw kan maar één keer gebouwd worden.";
+
+"OXÀÌº¥Æ® ¸ÊÀ» ¸ÕÀú ´İ¾Æ ÁÖ¼¼¿ä.(Flag: %d)";
+"Sluit eerst de Ox event Map. (Flag: %d)";
+
+"°Ç¼³¿¡ ÇÊ¿äÇÑ °Ç¹°ÀÌ Áö¾îÁ® ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Het Basis Gebouw moet eerst gebouwd worden.";
+
+"°Ç¹° ºñ¿ë Á¤º¸ ÀÌ»óÀ¸·Î °Ç¼³ ÀÛ¾÷¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Gebouw is niet gebouwd door incorrecte prijzen.";
+
+"°Ç¼³ ºñ¿ëÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Je gilde heeft niet genoeg Yang om dit gebouw te plaatsen.";
+
+"ÀÚÀç°¡ ºÎÁ·ÇÏ¿© °Ç¼³ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je hebt niet genoeg grondstoffen voor dit Gebouw.";
+
+"°Ç¹°À» ÁöÀ» ¼ö ¾ø´Â À§Ä¡ÀÔ´Ï´Ù.";
+"Je kunt hier geen Gebouw bouwen.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â Ä³¸¯ÅÍ ÀÔ´Ï´Ù.";
+"Dit karakter bestaat niet.";
+
+"´ë·Ã °­Á¦ Á¾·á ½ÇÆĞ";
+"Duel niet geannuleerd.";
+
+"´ë·Ã °­Á¦ Á¾·á ¼º°ø";
+"Duel succesvol geannuleerd.";
+
+"´ë·ÃÀÌ ¼º°øÀûÀ¸·Î ½ÃÀÛ µÇ¾ú½À´Ï´Ù.";
+"Het Duel is succesvol begonnen.";
+
+"´ë·Ã ½ÃÀÛ¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.";
+"Er is een probleem met het beginnen van het duel.";
+
+"¹®Á¦¸¦ ÃâÁ¦ÇÏÁö ¸øÇß½À´Ï´Ù.";
+"Geen errors hebben zich voorgedaan.";
+
+"´ë·ÃÀÚ°¡ ¾ø½À´Ï´Ù.";
+"Geen Tegenstanders hier.";
+
+"³²Àº ½ºÅÈ Æ÷ÀÎÆ®°¡ ¾ø½À´Ï´Ù.";
+"Geen Staat Punten over.";
+
+"³²Àº ½ºÅÈ Æ÷ÀÎÆ®°¡ Àû½À´Ï´Ù.";
+"Overige Staat Punten zijn te laag.";
+
+"°ªÀ» Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.";
+"Je hebt een incorrecte waarde ingevoerd.";
+
+"¸í·É¾îÀÇ ¼­ºê Ä¿¸Çµå°¡ Àß¸ø µÇ¾ú½À´Ï´Ù.";
+"Subbevel van het Bevel  is incorrect.";
+
+"ÇÃ·¹ÀÌ¾î %d ¿Í ÇÃ·¹ÀÌ¾î  %d¸¦ ÆÄÈ¥½ÃÅµ´Ï´Ù..";
+"Contract tussen Speler %d en Speler %d verbroken.";
+
+"·í·¿À» µ¹¸³´Ï´Ù. ±İ¾× %d";
+"Draai de Roulette voor %d Yang.";
+
+"¾ÆÀÌÅÛ·Î±×°¡ syslog ¿¡ ³²¾Ò½À´Ï´Ù";
+"De Voorwerp log is geplaatst in de syslog.";
+
+"°¢Á¦±¹ ÁøÇà Á¤º¸";
+"Informatie over de Koninkrijken.";
+
+"¼±ÅÃ ¸Ê Á¤º¸ ¼ºÁö %d Åë·Î %d %d %d";
+"Kies de Map Informatie van het Heilig Land %d Toegang %d %d %d";
+
+"¹®Á¦¸¦ ÃâÁ¦ÇÏ¿´½À´Ï´Ù.";
+"Een fout heeft zich voorgedaan.";
+
+"%s killcount %d mobkillcount %d bosskillcount %d ¼ºÁö ÁøÀÔ¼ö %d";
+"%s killcount %d mobkillcount %d bosskillcount %d Number Holy Land %d";
+
+"³ªÀÇ »ï°Å¸® ÁøÇàÁ¤º¸";
+"Informatie over het Keizerrijk Gevecht";
+
+"Äù½ºÆ®¸¦ ·ÎµåÇÏ´Â ÁßÀÔ´Ï´Ù. Àá½Ã¸¸ ±â´Ù·Á ÁÖ½Ê½Ã¿À.";
+"Je verzoek is aan het laden. Even geduld aub.";
+
+"´Ù¸¥°Å·¡Ã¢ÀÌ ¿­¸°»óÅÂ¿¡¼­´Â Ã¢°í¸¦ ¿­¼ö°¡ ¾ø½À´Ï´Ù.";
+"Je kunt geen Opslag openen als er een ander venster geopend is.";
+
+"<Ã¢°í> Ã¢°í ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù.";
+"[Opslag] Opslag wachtwoord is veranderd.";
+
+"<Ã¢°í> ±âÁ¸ ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù.";
+"[Opslag] Je hebt een verkeerd wachtwoord ingevoerd.";
+
+"°áÀç±â°£ÀÌ %dºĞ ÈÄ ¸¸·á µË´Ï´Ù.";
+"Je Speeltijd is voorbij in %d Minuten.";
+
+"Á¤»óÀûÀ¸·Î ÅõÇ¥¸¦ÇÏ¿´½À´Ï´Ù.";
+"Regelmatig gestemd.";
+
+"ÀÌ¹ÌÅõÇ¥¸¦ ÇßÀ½";
+"Reeds gestemd.";
+
+"%s ´ÔÀº Á¤»óÀûÀ¸·Î Ãâ¸¶¸¦ ÇÏ¿´½À´Ï´Ù.";
+"Speler %s zit al in de stemming";
+
+"OXÀÌº¥Æ®°¡ ¿­·Á ÀÖÁö ¾Ê°Å³ª ¹®Á¦ ÃâÁ¦ÁßÀÔ´Ï´Ù.(Flag: %d)";
+"OX event is afgelopen, geen fouten hebben zich voorgedaan. (Flag: %d)";
+
+"Ãâ¸¶¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù";
+"Kan niet gestemd worden.";
+
+"ÇöÀç %s ±¹°í¿¡´Â %lu ÀÇ µ·ÀÌ ÀÖ½À´Ï´Ù";
+"%s heeft nog %u Yang.";
+
+"ÇöÀç %s ±¹°í¿¡´Â %d ÀÇ µ·ÀÌ ÀÖ½À´Ï´Ù";
+"%s heeft nog %d Yang.";
+
+"±¹°í¿¡ µ·ÀÌ ºÎÁ·ÇÏ°Å³ª µ·À» °¡Á®¿Ã¼ö ¾ø´Â »óÈ²ÀÔ´Ï´Ù";
+"Je hebt niet genoeg Yang.";
+
+" %s ±ºÁÖ ÈÄº¸¿¡¼­ »èÁ¦ÇÏ¿´½À´Ï´Ù";
+"%s is verwijderd als Keizer Kandidaat.";
+
+" %s ´Â ±ºÁÖ ÈÄº¸°¡ ¾Æ´Õ´Ï´Ù.";
+"%s is niet een Kandidaat om Keizer te worden.";
+
+" %s ±ºÁÖ·Î ÀÔ¸í Çß½À´Ï´Ù.";
+"%s is genomineerd als Keizer.";
+
+" %s ´Â ±ºÁÖ·Î ÀÔ¸íÇÒ¼ö ¾ø½À´Ï´Ù .";
+"%s kan niet genomineerd worden als Keizer.";
+
+" %s ±ºÁÖ¸£ Á¦°Å ÇÏ¿´½À´Ï´Ù..";
+"De %s Keizer word uitgezet.";
+
+" %s ±ºÁÖ¸¦ Á¦°Å ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"De %s Keizer kan niet uitgezet worden.";
+
+"´õ ÀÌ»ó OXÀÌº¥Æ® Âü°¡ÀÚ¸¦ ¹ŞÁö ¾Ê½À´Ï´Ù.";
+"OX Gebeurtenis accepteert  geen spelers meer.";
+
+"½Å¼ö±¹";
+"Shinsoo Koninkrijk";
+
+"ÃµÁ¶±¹";
+"Chunjo Koninkrijk";
+
+"Áø³ë±¹";
+"Jinno Koninkrijk";
+
+"³¬½Ã´ëÀÇ ¼ö·Ãµµ°¡ Áõ°¡ÇÏ¿´½À´Ï´Ù! (%d/%d)";
+"Je Vis Punten zijn verhoogd! (%d/%d)";
+
+"³¬½Ã´ë°¡ ÃÖ´ë ¼ö·Ãµµ¿¡ µµ´ŞÇÏ¿´½À´Ï´Ù.";
+"Je hebt het maximum aan vis punten bereikt.";
+
+"¾îºÎ¸¦ ÅëÇØ ´ÙÀ½ ·¹º§ÀÇ ³¬½Ã´ë·Î ¾÷±×·¹ÀÌµå ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Ga naar de Visser en laat je hengel upgraden.";
+
+"°í±â°¡ ¹Ì³¢¸¸ »©¸Ô°í Àì½Î°Ô µµ¸ÁÄ¨´Ï´Ù.";
+"Je hebt je Aas verloren aan de vis.";
+
+"°í±â°¡ ÀâÇû½À´Ï´Ù! (%s)";
+"Je hebt een Vis gevangen! (%s)";
+
+"ÀÌ¹ø¿¡ ÀâÀº ¹°°í±âÀÇ ±æÀÌ´Â %.2fcm";
+"De lengte van de gevangen Vis is %.2fcm.";
+
+"³¬½ÃÀÌº¥Æ®¿ùÃ´ºØ¾î";
+"Vis Gebeurtenis 'Grote Snoekbaars'";
+
+"OXÀÌº¥Æ®ÀÇ ³ª¸ÓÁö ÀÎ¿øÀ» ±â·ÏÇÏ¿´½À´Ï´Ù.";
+"OX De andere deelnemers in de Gebeurtenis staan genoteerd.";
+
+"³¬½ÃÀÌº¥Æ®À×¾î";
+"Vis Gebeurtenis 'Karper'";
+
+"%s : %d ¸¶¸®";
+"%s: %d";
+
+"%d Á¾·ù %d ¸¶¸® ³¬À½";
+"Je hebt %d van %d gevangen.";
+
+"°í±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"De Vis is in diep water verdwenen.";
+
+"¹è ¼Ó¿¡¼­ Á¶°³°¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een Schelp in de Vis.";
+
+"¹è ¼Ó¿¡¼­ Áö··ÀÌ°¡ ³ª¿Ô½À´Ï´Ù.";
+"Er zit een Worm in de Vis.";
+
+"%s¸¦ ±¸¿ü½À´Ï´Ù.";
+"Je bent %s aan het roosteren boven het vuur.";
+
+"20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© »óÁ¡À» ¿­¼ö°¡ ¾ø½À´Ï´Ù";
+"Je kunt niet handelen want je hebt meer dan 2 miljard Yang.";
+
+"ºñ¼Ó¾î³ª Àº¾î°¡ Æ÷ÇÔµÈ »óÁ¡ ÀÌ¸§À¸·Î »óÁ¡À» ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"Je kun je Warenhuis geen individuele naam geven.";
+
+"À¯·áÈ­ ¾ÆÀÌÅÛÀº °³ÀÎ»óÁ¡¿¡¼­ ÆÇ¸ÅÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Voorwerpen-Winkel Voorwerpen in een privé Warenhuis verkopen.";
+
+"OXÀÌº¥Æ®ÀÇ ³ª¸ÓÁö ÀÎ¿ø ±â·ÏÀ» ½ÇÆĞÇß½À´Ï´Ù.";
+"OX De andere deelnemers in de Gebeurtenis staan niet genoteerd.";
+
+"Ã¤±¤À» Áß´ÜÇÏ¿´½À´Ï´Ù.";
+"Mijnen klaar.";
+
+"°î±ªÀÌ¸¦ ÀåÂøÇÏ¼¼¿ä.";
+"Je hebt een Pikhouweel nodig om erts te mijnen!";
+
+"³¬½Ã´ë¸¦ ÀåÂø ÇÏ¼¼¿ä.";
+"Kies een Hengel.";
+
+"¹Ì³¢¸¦ ³¢°í ´øÁ® ÁÖ¼¼¿ä.";
+"Plaats eerst Aas op de Haak.";
+
+"³¬½Ã´ë°¡ ¾Æ´Ñ ¹°°ÇÀ¸·Î ³¬½Ã¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù!";
+"Je kunt niet gaan vissen zonder een Hengel!";
+
+"ÆÄÆ¼ÀåÀÌ Á¢¼Ó »óÅÂ°¡ ¾Æ´Ï¶ó¼­ ¿äÃ»À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen verzoek maken omdat de  Groeps Leider niet online is.";
+
+"<ÆÄÆ¼> ´Ù¸¥ Á¦±¹°ú ÆÄÆ¼¸¦ ÀÌ·ê ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen Groep vormen met Spelers uit een andere Keizerrijk.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼ ÃÊ´ë¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen Spelers uitnodigen wanneer je in een Kerker bent.";
+
+"<ÆÄÆ¼> °üÀü ¸ğµå¿¡¼± ÆÄÆ¼ ÃÊ´ë¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen Speler uitnodigen wanneer je in Observatie Mode bent.";
+
+"<ÆÄÆ¼> -30 ~ +30 ·¹º§ ÀÌ³»ÀÇ »ó´ë¹æ¸¸ ÃÊ´ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Groep] Alleen Spelers met een Level verschil van -30 naar +30 kunnen uitgenodigd worden.";
+
+"ÇöÀç ³²Àº Âü°¡ÀÚ¼ö : %d";
+"Andere deelnemers: %d";
+
+"<ÆÄÆ¼> ÆÄÆ¼³» ÃÖ°í ·¹º§ º¸´Ù 30·¹º§ÀÌ ³·¾Æ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt deze Speler niet uitnodigen, hun Level is the laag.";
+
+"<ÆÄÆ¼> ÆÄÆ¼³» ÃÖÀú ·¹º§ º¸´Ù 30·¹º§ÀÌ ³ô¾Æ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt deze Speler niet uitnodigen, hun Level is te hoog.";
+
+"<ÆÄÆ¼> ´õ ÀÌ»ó ÆÄÆ¼¿øÀ» ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen Spelers meer uitnodigen voor je Groep.";
+
+"%s ´Ô¿¡°Ô ÆÄÆ¼°¡ÀÔ ½ÅÃ»À» Çß½À´Ï´Ù.";
+"Wil je bij de Groep van %s aansluiten?";
+
+"»ó´ë¹æÀÌ ÆÄÆ¼¿¡ ¼ÓÇØÀÖÁö ¾Ê½À´Ï´Ù.";
+"De Speler zit niet in deze Groep.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ÀÇ ÀÎ¿øÁ¦ÇÑÀÌ ÃÊ°úÇÏ¿© ÆÄÆ¼¿¡ Âü°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt je niet bij deze Groep aansluiten want die is vol.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿øÀ» ÃÊ´ëÇÒ ¼ö ÀÖ´Â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Groep] Je hebt geen rechten om iemand uit te nodigen.";
+
+"<ÆÄÆ¼> %s ´ÔÀÌ ÆÄÆ¼ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"[Groep] %s slaat de uitnodiging voor jouw Groep af.";
+
+"<ÆÄÆ¼> ÀÌ¹Ì %s´ÔÀº ÆÄÆ¼¿¡ ¼ÓÇØ ÀÖ½À´Ï´Ù.";
+"[Groep] %s zit al in de Groep.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼ ÃÊ´ë¿¡ ÀÀÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen uitnodiging accepteren in een Kerker.";
+
+"OX ÀÌº¥Æ®¸¦ ¸¶Ä¡°Ù½À´Ï´Ù.";
+"OX Gebeurtenis afgelopen.";
+
+"OXÀÌº¥Æ®¸¦ °­Á¦ Á¾·á ½ÃÅµ´Ï´Ù.";
+"OX Gebeurtenis afgelopen.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ ÃÊ´ë¿¡ ÀÀÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt de uitnodiging niet accepteren.";
+
+"<ÆÄÆ¼> %s´ÔÀÌ ÆÄÆ¼ ÃÊ´ë¸¦ °ÅÀıÇÏ¼Ì½À´Ï´Ù.";
+"[Groep] %s heeft je uitnodiging afgeslagen.";
+
+"<ÆÄÆ¼> %s´ÔÀÌ ÆÄÆ¼¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"[Groep] %s heeft zich bij je Groep aangesloten.";
+
+"<ÆÄÆ¼> %s´ÔÀÇ ÆÄÆ¼¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"[Groep] %s heeft zich bij je Groep aangesloten.";
+
+"´Ù¸¥ °Å·¡Áß(Ã¢°í,±³È¯,»óÁ¡)¿¡´Â °³ÀÎ»óÁ¡À» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt nu geen privé Warenhuis gebruiken.";
+
+"»ó´ë¹æÀÌ ´Ù¸¥ °Å·¡¸¦ ÇÏ°í ÀÖ´Â ÁßÀÔ´Ï´Ù.";
+"Deze Speler is al aan het handelen met een andere Speler.";
+
+"¸ŞÆ¾2ÀÎÁõ¹øÈ£: %s";
+"Metin2 Confirmatie Nummer: %s";
+
+"ÀÎÁõ¹øÈ£°¡ Æ²·È½À´Ï´Ù. ´Ù½Ã ½ÃµµÇÏ¼¼¿ä.";
+"Je Confirmatie Nummer is niet correct. Probeer opnieuw.";
+
+"ÇÚµåÆù ¹øÈ£°¡ µî·Ï µÇ¾ú½À´Ï´Ù.";
+"De Mobiele Nummer is geregistreerd.";
+
+"»ó´ë¹æÀÌ ÀÖ´Â °÷À¸·Î ¿öÇÁÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt de Speler niet teleporteren.";
+
+"OX »óÇ°À» Áö±ŞÇÏ¿´½À´Ï´Ù. ID: %d ¼ö·®: %d";
+"OX De Prijs is weggegeven. Id: %d Hoeveelheid: %d";
+
+"»ó´ë¹æÀÌ ¿Â¶óÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.";
+"De Speler is niet online.";
+
+"»ó´ë¹æÀÌ %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"De Speler is in kanaal %d. (Jij bent in kanaal %d.)";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â ´Ù¸¥°÷À¸·Î ÀÌµ¿ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet ergens anders heen gaan voor %d seconden nadat je een Warenhuis hebt geopend.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â ´Ù¸¥°÷À¸·Î ÀÌµ¿,Á¾·á ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Je kunt niet ergens anders heen gaan voor een tijdje na het handelen.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡´Â ´Ù¸¥Áö¿ªÀ¸·Î ÀÌµ¿ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet ergens anders heen gaan voor %d seconden na handelen.";
+
+"´ë·Ã »ó´ë°¡ »ç¶óÁ® ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Duel afgelopen, je tegenstander is verdwenen.";
+
+"¹°¾à Á¦ÇÑÀÌ ¾ø½À´Ï´Ù.";
+"Er is geen limiet voor Brouwsels.";
+
+"¹°¾àÀ» %d °³ ±îÁö »ç¿ë °¡´ÉÇÕ´Ï´Ù.";
+"Je kunt tot %d Brouwsels gebruiken.";
+
+"10ÃÊµÚ ´ë·ÃÀÌ ½ÃÀÛµË´Ï´Ù.";
+"Het gevecht begint in 10 seconden.";
+
+"´ë·ÃÀÌ ½ÃÀÛµÇ¾ú½À´Ï´Ù.";
+"Het duel is begonnen.";
+
+"Âü";
+"TRUE";
+
+"´ë·ÃÀå ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Het duel is beëindigd omdat er een probleem is met de arena.";
+
+"´ë·Ã ½Ã°£ ÃÊ°ú·Î ´ë·ÃÀ» Áß´ÜÇÕ´Ï´Ù.";
+"Het duel is beëindigd vanwege de timeout.";
+
+"10ÃÊµÚ ¸¶À»·Î ÀÌµ¿ÇÕ´Ï´Ù.";
+"Over 10 seconden word je verplaatst naar de stad.";
+
+"´ë·ÃÀÚ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Áß´ÜÇÕ´Ï´Ù.";
+"Het duel is beëindigd omdat er een probleem is met de arena.";
+
+"»ó´ë¹æ Ä³¸¯ÅÍÀÇ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Je Tegenstander heeft problemen. Het duel is beëindigd.";
+
+"´ë·ÃÀÚ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Het duel is beëindigd omdat er een probleem is met de Tegenstander.";
+
+"%s ´ÔÀÌ ´ë·Ã¿¡¼­ ½Â¸®ÇÏ¿´½À´Ï´Ù.";
+"%s heeft het duel gewonnen.";
+
+"%s ´ÔÀÌ ½Â¸®ÇÏ¿´½À´Ï´Ù.";
+"%s heeft gewonnen.";
+
+"10ÃÊµÚ ¸¶À»·Î µÇµ¹¾Æ°©´Ï´Ù.";
+"Je wordt over 10 seconden naar de Stad geteleporteerd.";
+
+"10ÃÊµÚ ´ÙÀ½ ÆÇÀ» ½ÃÀÛÇÕ´Ï´Ù.";
+"De volgende ronde begint over 10 seconden.";
+
+"°ÅÁş";
+"FALSE";
+
+"»ó´ë¹æ Ä³¸¯ÅÍ°¡ Á¢¼ÓÀ» Á¾·áÇÏ¿© ´ë·ÃÀ» ÁßÁöÇÕ´Ï´Ù.";
+"De Tegenstanders werden opgesplits. Het duel is beëindigd.";
+
+"¾ÆÀÌÅÛ µå·Ó·ü  %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"De Quota van Gevallen Voorwerpen is op het moment plus %d%%";
+
+"°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"De Quota van Gevallen Yang is op dit moment plus %d%%";
+
+"´ë¹Ú°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"De drop-kans voor Yangregen is momenteel %d%% hoger.";
+
+"°æÇèÄ¡ %d%% Ãß°¡ È¹µæ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"De Ervaringsbonus is op dit moment een extra %d%%.";
+
+"Å¬¶óÀÌ¾ğÆ® ¹öÀüÀÌ Æ²·Á ·Î±×¾Æ¿ô µË´Ï´Ù. Á¤»óÀûÀ¸·Î ÆĞÄ¡ ÈÄ Á¢¼ÓÇÏ¼¼¿ä.";
+"Je client versie is niet geldig. Installeer de normale patch aub.";
+
+"´Ù¸¥ °Å·¡Ã¢ÀÌ ¿­¸°»óÅÂ¿¡¼­´Â »óÁ¡°Å·¡¸¦ ÇÒ¼ö °¡ ¾ø½À´Ï´Ù.";
+"Je kunt niet handelen in de shop als er een ander venster geopend is.";
+
+"»óÁ¡°úÀÇ °Å¸®°¡ ³Ê¹« ¸Ö¾î ¹°°ÇÀ» »ì ¼ö ¾ø½À´Ï´Ù.";
+"Je bent te ver van het Warenhuis af om te kunnen kopen.";
+
+"»óÁ¡°úÀÇ °Å¸®°¡ ³Ê¹« ¸Ö¾î ¹°°ÇÀ» ÆÈ ¼ö ¾ø½À´Ï´Ù.";
+"Je bent te ver van het Warenhuis af om te kunnen verkopen.";
+
+"20¾ï³ÉÀÌ ÃÊ°úÇÏ¿© ¹°Ç°À» ÆÈ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet handelen want je hebt meer dan 2 miljard Yang.";
+
+"ÃÑ ÄûÁî ¼ö: %d";
+"Totale nummer vande Quiz: %d";
+
+"ÆÇ¸Å±İ¾×ÀÇ %d %% °¡ ¼¼±İÀ¸·Î ³ª°¡°ÔµË´Ï´Ù";
+"De Verkoop wordt belast met %d%% belasting.";
+
+"º¯½Å »óÅÂ¿¡¼­´Â ¸»¿¡ Å» ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Paard rijden zolang je getransformeerd bent.";
+
+"¿¹º¹À» ÀÔÀº »óÅÂ¿¡¼­ ¸»À» Å» ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Paard rijden wanneer je een Trouwjurk of Smoking draagt.";
+
+"¸»À» ¼ÒÀ¯ÇÏ°í ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Je hebt geen Paard.";
+
+"¸»ÀÌ Á×¾îÀÖ´Â »óÅÂ ÀÔ´Ï´Ù.";
+"Je Paard is dood.";
+
+"¸»ÀÇ ½ºÅ×¹Ì³Ê°¡ ºÎÁ·ÇÏ¿© ¸»À» Å» ¼ö ¾ø½À´Ï´Ù.";
+"De Uithoudingsvermogen van je Paard is te laag.";
+
+"¸» ¼ÒÈ¯¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Een Paard roepen heeft gefaald.";
+
+"´ÔÀÇ ¸»";
+"Paard";
+
+"°áÈ¥½ÄÀÌ Á¾·áµË´Ï´Ù.";
+"De Bruiloft zal spoedig afgelopen zijn.";
+
+"ÀÚµ¿À¸·Î ³ª°¡°ÔµË´Ï´Ù.";
+"Zal automatisch verlaten worden.";
+
+"ÀÌ¹Ì ÀüÀïÀÌ ³¡³µ½À´Ï´Ù.";
+"De Oorlog is reeds over.";
+
+"10ÃÊµÚ ÆÇÁ¤ÇÏ°Ú½À´Ï´Ù.";
+"Het resultaat volgt in 10 seconden.";
+
+"°üÀü »óÅÂ¿¡¼­´Â ±³È¯À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet handelen terwijl je observeert.";
+
+"´Ù¸¥ °Å·¡Ã¢ÀÌ ¿­·ÁÀÖÀ»°æ¿ì °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Als het venster geopend is kun je niet handelen met anderen.";
+
+"»ó´ë¹æÀÌ ´Ù¸¥ °Å·¡ÁßÀÌ¶ó °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"De andere spelers is momenteel bezet, dus kun je momenteel niet handelen.";
+
+"»ó´ë¹æÀÌ ±³È¯ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"De andere Speler heeft het handelen geannuleerd.";
+
+"µ·ÀÌ ºÎÁ·ÇÏ°Å³ª ¾ÆÀÌÅÛÀÌ Á¦ÀÚ¸®¿¡ ¾ø½À´Ï´Ù.";
+"Niet genoeg Yang of er is geen plaats in de Inventaris.";
+
+"»ó´ë¹æÀÇ µ·ÀÌ ºÎÁ·ÇÏ°Å³ª ¾ÆÀÌÅÛÀÌ Á¦ÀÚ¸®¿¡ ¾ø½À´Ï´Ù.";
+"De andere Speler heeft niet genoeg Yang of er is geen plek in hun Inventaris.";
+
+"»ó´ë¹æÀÇ ¼ÒÁöÇ°¿¡ ºó °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"De andere Speler heeft geen plek in hun Inventaris.";
+
+"%s ´Ô°úÀÇ ±³È¯ÀÌ ¼º»ç µÇ¾ú½À´Ï´Ù.";
+"De Handel met %s was succesvol.";
+
+"¿ë½ÅÀÇ °¡È£·Î °æÇèÄ¡°¡ ¶³¾îÁöÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Je hebt geen Ervaring verloren door de Zegening van de Draken God.";
+
+"ÇöÀç ½ºÄÚ¾î ½Å¼ö±¹:%d ÃµÁ¶±¹:%d Áø³ë±¹:%d";
+"Huidige Score: Shinsoo %d, Chunjo %d, Jinno %d";
+
+"Á¤´äÀº";
+"Het juiste antwoord was:";
+
+"Á×Àº Á¤º¸ %s deadcount %d Empire %d killcount %d(Purpose %d) killmobcount %d, RegenFlag %d";
+"%s deadcount %d Empire %d killcount %d(Purpose %d) killmobcount %d, RegenFlag %d";
+
+"¼ºÁöÀÇ ¸¶¿Õ: ³ÊÈñ ";
+"De Duivel van de Heilige Plaats: [ENTER][ENTER]";
+
+"³à¼®µéÀº ÀÌ°÷ ¼ºÁö¿¡ ÀÖÀ» ÀÚ°İÀ» ÀÒ¾ú´Ù. ¸ğµÎ ¼ºÁö¿¡¼­ ¹°·¯³ª°Å¶ó~~[ENTER][ENTER] 10ÃÊ ÈÄ¿¡ ¸ğµÎ ¸¶À»·Î ÀÌµ¿ÇÏ°Ô µË´Ï´Ù. ";
+", je hebt geen recht om hier te zijn! De leden van je koninkrijk zullen deze heilige grond over 10 seconden verlaten.";
+
+"»ï°Å¸® ÀüÅõ¿¡¼­ %s ±¹°¡°¡ °¡Àå¸ÕÀú Å»¶ôÀ» ÇÏ¿´½À´Ï´Ù";
+"%sis verslagen en verlaat het Koninkrijk Gevecht.";
+
+"»ï°Å¸® ¸÷ ¸®Á¨";
+"Aantal Monsters in het Keizerrijk Gevecht:";
+
+". ³ÊÈñ°¡ ¼ºÁöÀÇ ¼öÈ£ÀÚ¸¦ Àâ°Ô µÈ´Ù¸é ³ÊÈñ´Â ¼ºÁöÀÇ ÁÖÀÎÀÌ µÈ´Ù.[ENTER][ENTER] ";
+"Als je de Wachter van de Heilige Plaats verslaat word je de eigenaar.";
+
+"¿ë½ÅÀÇ º¸È£·Î ¾ÆÀÌÅÛÀÌ ¶³¾îÁöÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Je hebt geen Voorwerpen laten vallen omdat je beschermd bent door de Draken God.";
+
+"°üÅë Ãß°¡ µ¥¹ÌÁö %d";
+"Toegevoegde Stoot Schade %d";
+
+"%s ºí·°! (%ld%%)";
+"%s blokkeert! (%d%%)";
+
+"%s È¸ÇÇ! (%ld%%)";
+"%s ontwijkt! (%d%%)";
+
+"O ÀÔ´Ï´Ù";
+"Ja (O)";
+
+"%s[%ld]°¡ °ø°İ À§Ä¡: %d %d";
+"%s[%d]s Aanvals Positie: %d %d";
+
+"¸í·É¾î¸¦ ¸ğµÎ ÀÔ·ÂÇÏ¼¼¿ä.";
+"Voer het Bevel volledig in.";
+
+"Åº »óÅÂ¿¡¼­´Â ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit niet doen terwijl je op een Paard zit.";
+
+"¾²·¯Áø »óÅÂ¿¡¼­´Â ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit niet doen terwijl je op de grond ligt.";
+
+"²Ş¼Ó¿¡¼­ ¾î¶»°Ô¿ä?";
+"In mijn Dromen? Wat?";
+
+"¸ÕÀú ÀÏ¾î ³ª¼¼¿ä.";
+"Sta eerst op.";
+
+"±×·± ¸í·É¾î´Â ¾ø½À´Ï´Ù";
+"Dit Bevel bestaat niet.";
+
+"<ÆÄÆ¼> ÆÄÆ¼°¡ ÇØ»ê µÇ¾ú½À´Ï´Ù.";
+"[Groep] Groep is verwijderd.";
+
+"<ÆÄÆ¼> ´ë»óÀ» ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kan het doelwit niet roepen.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿øÀ» ÇöÀç À§Ä¡·Î ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Groep] Je kunt geen Groeps Leden naar je huidige positie roepen.";
+
+"X ÀÔ´Ï´Ù";
+"Nee (X)";
+
+"ÆÄÆ¼ÀÇ Çùµ¿·ÂÀÌ ³ô¾ÆÁ® Áö±İºÎÅÍ Ãß°¡ °æÇèÄ¡ º¸³Ê½º¸¦ ¹Ş½À´Ï´Ù.";
+"Jouw groep werkt goed samen en groepsleden die in de buurt zijn van de groepsleider zullen een ervaringsbonus ontvangen.";
+
+"±æµåÀå";
+"Leider";
+
+"±æµå¿ø";
+"Lid";
+
+"<±æµå> Á¦°øÇÏ°íÀÚ ÇÏ´Â °æÇèÄ¡°¡ ³²Àº °æÇèÄ¡º¸´Ù ¸¹½À´Ï´Ù.";
+"[Gilde] Aangeboden Ervaring is groter dan de overgebleven Ervaring.";
+
+"<±æµå> »èÁ¦ÇÒ ¼ö ¾ø´Â ±ÛÀÔ´Ï´Ù.";
+"[Gilde] Het Bericht kan niet verwijderd worden.";
+
+"<±æµå> ¿ë½Å·ÂÀÌ ºÎÁ·ÇÕ´Ï´Ù. (%d, %d)";
+"[Gilde] Niet genoeg Drakengeest. (%d, %d)";
+
+"<±æµå> ÄğÅ¸ÀÓÀÌ ³¡³ªÁö ¾Ê¾Æ ±æµå ½ºÅ³À» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt geen Gilde Vaardigheden gebruiken.";
+
+"<±æµå> %d ½ºÅ³À» »ç¿ëÇÔ (%d, %d) to %lu";
+"[Gilde] %d Vaardigheden gebruikt (%d, %d) op %u.";
+
+"<±æµå> »ó´ë°¡ %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"[Gilde] De Speler is in kanaal %d. (Huidig kanaal: %d)";
+
+"<±æµå> »ó´ë°¡ ¿Â¶óÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.";
+"[Gilde] De Speler is niet online";
+
+"5ÃÊ µÚ Æ²¸®½Å ºĞµéÀ» ¹Ù±ùÀ¸·Î ÀÌµ¿ ½ÃÅ°°Ú½À´Ï´Ù.";
+"Ieder die een fout antwoord heeft gegeven wordt na 5 sec. verwijderd.";
+
+"<±æµå> ±æµå ½ºÅ³Àº ±æµåÀü Áß¿¡¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Gilde] Deze Gilde Vaardigheid kan alleen tijdens Oorlog gebruikt worden.";
+
+"<±æµå> %luÀÇ ¿ë½Å·ÂÀ» È¸º¹ÇÏ¿´½À´Ï´Ù.";
+"[Gilde] %u Drakengeest punten zijn hersteld.";
+
+"<±æµå> ±æµå ±İ°í¿¡¼± ±æµåÀå¸¸ Ãâ±İÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Gilde] Alleen de Gildeleider kan Yang eruit halen.";
+
+"<±æµå> »ó´ë¹æÀÌ ±æµå ÃÊ´ë °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"[Gilde] De Speler slaat de Gilde uitnodiging af.";
+
+"<±æµå> ±æµå¿øÀ» ÃÊ´ëÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt niet iemand uitnodigen voor de Gilde.";
+
+"<±æµå> ´Ù¸¥ Á¦±¹ »ç¶÷À» ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Je kunt geen Spelers van een andere Koninkrijk uitnodigen voor de Gilde.";
+
+"<±æµå> Å»ÅğÇÑ ÈÄ %dÀÏÀÌ Áö³ªÁö ¾ÊÀº »ç¶÷Àº ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Deze speler kan opnieuw uitgenodigd worden na %d dag(en).";
+
+"<±æµå> ±æµå¸¦ ÇØ»êÇÑ Áö %dÀÏÀÌ Áö³ªÁö ¾ÊÀº »ç¶÷Àº ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Na de herindeling kun je leden uitnodigen na %d dagen.";
+
+"<±æµå> »ó´ë¹æÀÌ ÀÌ¹Ì ´Ù¸¥ ±æµå¿¡ ¼ÓÇØÀÖ½À´Ï´Ù.";
+"[Gilde] Deze Speler is al lid van een andere Gilde.";
+
+"<±æµå> ÃÖ´ë ±æµå¿ø ¼ö¸¦ ÃÊ°úÇß½À´Ï´Ù.";
+"[Gilde] De Gilde capaciteit heeft zijn bovenste limiet bereikt.";
+
+"´ÙÀ½ ¹®Á¦ ÁØºñÇØÁÖ¼¼¿ä.";
+"Klaar voor de volgende vraag?";
+
+"¼ö·ÃÇÒ ¼ö ¾ø´Â ½ºÅ³ÀÔ´Ï´Ù.";
+"Je kunt deze Vaardigheid niet trainen.";
+
+"´õ ÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt deze Vaardigheid niet trainen.";
+
+"±×·£µå ¸¶½ºÅÍ ¼ö·ÃÀ» ÇÒ ¼ö ¾ø´Â ½ºÅ³ÀÔ´Ï´Ù.";
+"Je kunt deze Vaardigheid niet trainen tot grootmeester.";
+
+"ÆÛÆåÆ® ¸¶½ºÅÍµÈ ½ºÅ³ÀÔ´Ï´Ù. ´õ ÀÌ»ó ¼ö·Ã ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je bent al een Meester in deze Vaardigheid. Je kunt het niet trainen.";
+
+"ÀÌ ½ºÅ³Àº ¾ÆÁ÷ ±×·£µå ¸¶½ºÅÍ ¼ö·ÃÀ» ÇÒ °æÁö¿¡ ÀÌ¸£Áö ¾Ê¾Ò½À´Ï´Ù.";
+"Je Vaardigheid is niet hoog genoeg om een grootmeester te worden.";
+
+"Å©À¹, ±â°¡ ¿ª·ùÇÏ°í ÀÖ¾î! ÀÌ°Å ¼³¸¶ ÁÖÈ­ÀÔ¸¶ÀÎ°¡!? Á¨Àå!";
+"Het heeft niet gewerkt! Verdikkeme!";
+
+"¼ö·ÃÀÌ ½ÇÆĞ·Î ³¡³µ½À´Ï´Ù. ´Ù½Ã µµÀüÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.";
+"Training gefaald. Probeer het later opnieuw.";
+
+"¸ö¿¡¼­ ¹º°¡ ÈûÀÌ ÅÍÁ® ³ª¿À´Â ±âºĞÀÌ¾ß!";
+"Mijn lichaam is vol met kracht!";
+
+"¶ß°Å¿î ¹«¾ùÀÌ °è¼Ó ¿ë¼ÚÀ½Ä¡°í ÀÖ¾î! ÀÌ°Ç, ÀÌ°ÍÀº!";
+"De training schijnt al te werken...";
+
+"´õ ³ôÀº °æÁöÀÇ ¼ö·ÃÀ» ¼º°øÀûÀ¸·Î ³¡³»¼Ì½À´Ï´Ù.";
+"Je hebt je training met het Boek succesvol afgerond.";
+
+"°æÇèÄ¡°¡ ºÎÁ·ÇÏ¿© Ã¥À» ÀĞÀ» ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt dit niet lezen want je hebt niet genoeg Ervaring.";
+
+"Pregunta.";
+"Vraag.";
+
+"ÀÌ ½ºÅ³Àº Ã¥À¸·Î ´õÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt deze Vaardigheid niet trainen met een Boek.";
+
+"ÀÌ ½ºÅ³Àº ¾ÆÁ÷ Ã¥À¸·Î ¼ö·ÃÇÒ °æÁö¿¡ ÀÌ¸£Áö ¾Ê¾Ò½À´Ï´Ù.";
+"Deze Vaardigheid is niet hoog genoeg om getrained te kunnen worden met een Boek.";
+
+"¾î´ÀÁ¤µµ ÀÌ ±â¼ú¿¡ ´ëÇØ ÀÌÇØ°¡ µÇ¾úÁö¸¸ Á¶±İ ºÎÁ·ÇÑµí ÇÑµ¥..";
+"Ik maak vooruitgang, maar ik heb nog steeds niet alles begrepen.";
+
+"µåµğ¾î ³¡ÀÌ º¸ÀÌ´Â °Ç°¡...  ÀÌ ±â¼úÀº ÀÌÇØÇÏ±â°¡ ³Ê¹« Èûµé¾î..";
+"Deze instructies zijn moeilijk om te begrijpen. Ik moet blijven studeren.";
+
+"¿­½ÉÈ÷ ÇÏ´Â ¹è¿òÀ» °¡Áö´Â °Í¸¸ÀÌ ±â¼úÀ» ¹è¿ï¼ö ÀÖ´Â À¯ÀÏÇÑ ±æÀÌ´Ù..";
+"Ik begrijp dit hoofdstuk. Maar ik moet door blijven gaan met hard werken.";
+
+"Ã¥À¸·Î ´õ ³ôÀº °æÁöÀÇ ¼ö·ÃÀ» ¼º°øÀûÀ¸·Î ³¡³»¼Ì½À´Ï´Ù.";
+"Je hebt je training met het Boek succesvol afgerond.";
+
+"±ÍÈ¯¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Teleportatie gefaald.";
+
+"¸»ÀÌ ¾ø½À´Ï´Ù. ¸¶±Â°£ °æºñº´À» Ã£¾Æ°¡¼¼¿ä.";
+"Geen Paard hier. Vraag aan de Jongen.";
+
+"¸» ¼ÒÈ¯ ¾ÆÀÌÅÛÀ» »ç¿ëÇÏ¼¼¿ä.";
+"Gebruik een Voorwerp om een Paard te roepen.";
+
+"%s SP¼Ò¸ğ: %d";
+"%s FP Gebruik: %d";
+
+"¸ÂÀ¸¸é O, Æ²¸®¸é X·Î ÀÌµ¿ÇØÁÖ¼¼¿ä";
+"Als het juist is, ga dan naar O, als het verkeerd is, ga dan naar X.";
+
+"¸ö ¼ÓÀÌ ¶ß°Ì±º. ÇÏÁö¸¸ ¾ÆÁÖ Æí¾ÈÇØ. ÀÌ´ë·Î ±â¸¦ ¾ÈÁ¤½ÃÅ°ÀÚ.";
+"Ik brand van binnen maar het kalmeert mijn lichaam.";
+
+"±×·¡, ÃµÃµÈ÷. Á»´õ ÃµÃµÈ÷, ±×·¯³ª ¸·Èû ¾øÀÌ ºü¸£°Ô!";
+"Langzaam, maar gestaag... zonder te stoppen.";
+
+"±×·¡, ÀÌ ´À³¦ÀÌ¾ß. Ã¼³»¿¡ ±â°¡ ¾ÆÁÖ Ãæ¸¸ÇØ.";
+"Ja dat voelt goed. Mijn lichaam zit vol Chi.";
+
+"´Ù ÀĞ¾ú´Ù! ÀÌÁ¦ ºñ±Ş¿¡ ÀûÇôÀÖ´Â ´ë·Î Àü½Å¿¡ ±â¸¦ µ¹¸®±â¸¸ ÇÏ¸é,";
+"Ik heb het gelezen! Nu moet de Chi door mijn lichaam vloeien.";
+
+"±×°ÍÀ¸·Î ¼ö·ÃÀº ³¡³­ °Å¾ß!";
+"De training is afgelopen.";
+
+"ÀÌÁ¦ Ã¥ÀÇ ¸¶Áö¸· ÀåÀÌ¾ß! ¼ö·ÃÀÇ ³¡ÀÌ ´«¿¡ º¸ÀÌ°í ÀÖ¾î!";
+"Ik ben op de laatste pagina! De training is bijna klaar!";
+
+"¾ó¸¶ ¾È ³²¾Ò¾î! Á¶±İ¸¸ ´õ!";
+"Bijna klaar! Nog maar een klein beetje!";
+
+"ÁÁ¾Ò¾î! Á¶±İ¸¸ ´õ ÀĞÀ¸¸é ³¡ÀÌ´Ù!";
+"Ik ben verlicht! Ik heb het bijna helemaal gelezen!";
+
+"Ã¥Àåµµ ÀÌÁ¦ ¾ó¸¶ ³²Áö ¾Ê¾Ò±º.";
+"Nog maar een paar pagina's en dan heb ik alles gelezen.";
+
+"¹º°¡ ¸ö ¾È¿¡ ÈûÀÌ »ı±â´Â ±âºĞÀÎ °É.";
+"Ik voel me verfrist.";
+
+"Á¤´äÀÔ´Ï´Ù!";
+"Correct!";
+
+"ÀÌÁ¦ Á» ½½½½ °¡´ÚÀÌ ÀâÈ÷´Â °Í °°Àºµ¥.";
+"Nu begrijp ik het!";
+
+"ÁÁ¾Æ, ÀÌ ±â¼¼·Î °è¼Ó ³ª°£´Ù!";
+"Okee, ik moet geconcentreerd blijven!";
+
+"¾Æ´Ï ¾î¶»°Ô µÈ °Ô Á¾ÀÏ ÀĞ¾îµµ ¸Ó¸®¿¡ ¾È µé¾î¿À³Ä.";
+"Ik heb dezelfde zin steeds opnieuw gelezen.";
+
+"°øºÎÇÏ±â ½È¾îÁö³×.";
+"Ik wil niet meer leren.";
+
+"»ı°¢¸¸Å­ ÀĞ±â°¡ ½±Áö°¡ ¾Ê±º. ÀÌÇØµµ ¾î·Æ°í ³»¿ëµµ ³­ÇØÇØ.";
+"Dit is veel moeilijker dan ik dacht.";
+
+"ÀÌ·¡¼­¾ß °øºÎ°¡ ¾ÈµÈ´Ù±¸.";
+"Ik kan me moeilijk concentreren. Ik zou een pauze moeten nemen.";
+
+"¿î¿µÀÚ Á¦Á¦·Î Ã¤ÆÃÀÌ ±İÁö µÇ¾ú½À´Ï´Ù.";
+"Je chat is geblokkeerd door een GM.";
+
+"Ã¤ÆÃ ±İÁö°¡ Ç®·È½À´Ï´Ù.";
+"Je chat block is opgeheven.";
+
+"ÀÌ¹Ì Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖ½À´Ï´Ù.";
+"Het Bouw Venster is al geopened.";
+
+"´Ù¸¥ °Å·¡Áß(Ã¢°í,±³È¯,»óÁ¡)¿¡´Â »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet iets bouwen wanneer er een andere Handel / Opslag Venster geopend is.";
+
+"´õ ÀÌ»ó °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Geen verdere verbeteringen mogelijk.";
+
+"Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖÁö ¾Ê½À´Ï´Ù";
+"Het Bouw Venster is niet open.";
+
+"Á¦Á¶ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù";
+"Je hebt niet de juiste materiaal.";
+
+"<±æµå> Àá½ÃÈÄ¿¡ ÀÌ¿ëÇØÁÖ½Ê½Ã¿À";
+"[Gilde] Probeer het later opnieuw.";
+
+"%d ±ÇÀ» ´õ ÀĞ¾î¾ß ¼ö·ÃÀ» ¿Ï·á ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Je moet %d verder Vaardigh. Boeken lezen, om deze Vaard. te verbeteren";
+
+"<±æµå> Àá½ÃÈÄ¿¡ ÀÌ¿ëÇØÁÖ½Ê½Ã¿À.";
+"[Gilde] Probeer het later opnieuw.";
+
+"¼º¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Â ±â´ÉÀÔ´Ï´Ù.";
+"Je kunt deze functie alleen gebruiken wanneer je bij het kasteel bent.";
+
+"TEST : È²±İµÎ²¨ºñ°¡ ±¹°í·Î È¯¿øµÇ¾ú½À´Ï´Ù.";
+"TEST: De Goudstaven zijn terugbetaald aan de kluis van je Koninkrijk.";
+
+"TEST : ÇöÀç ±¹°í : %d";
+"TEST: In de kluis van je Koninkrijk zijn er: %d";
+
+"TEST : È²±İµÎ²¨ºñ¸¦ ±¹°í·Î È¯¿øÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"TEST: Je bent niet in staat om de goudstaven terug te betalen aan de kluis van je Koninkrijk.";
+
+"<±æµå> ·¡´õ Á¡¼ö°¡ %d Á¡ÀÌ µÇ¾ú½À´Ï´Ù";
+"[Gilde]Gilde heeft %d Punten bereikt.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Dit Voorwerp kan niet beter gemaakt worden.";
+
+"¹«·á °³·® ±âÈ¸´Â 20 ÀÌÇÏÀÇ ¹«±â¸¸ °¡´ÉÇÕ´Ï´Ù";
+"De gratis wapen toevoegingen kan alleen gebruikt worden bij wapens tot Level 20.";
+
+"±ºÁ÷ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je bent niet in staat om dit Voorwerp te gebruiken omdat je niet alle kwalificaties hebt.";
+
+"¼ºº°ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je bent niet in staat om dit Voorwerp te gebruiken omdat je het verkeerde geslacht hebt.";
+
+"»ç¿ë¹ı: transfer <name>";
+"Gebruik: transfer <name>";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ë °¡´ÉÇÑ ±â´ÉÀÔ´Ï´Ù";
+"Deze functie kan alleen gebruikt worden door de Keizer.";
+
+"´Ù¸¥ Á¦±¹ À¯Àú´Â ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen Spelers van een ander Koninkrijk recruteren.";
+
+"%s ´ÔÀº %d Ã¤³Î¿¡ Á¢¼Ó Áß ÀÔ´Ï´Ù. (ÇöÀç Ã¤³Î: %d)";
+"De Speler %s is op het Kanaal %d op dit moment. (Jouw Kanaal: %d)";
+
+"%s ´ÔÀ» ¼ÒÈ¯ÇÏ¿´½À´Ï´Ù.";
+"Je hebt %s spelers gerecruteerd.";
+
+"ÀÔ·ÂÇÏ½Å ÀÌ¸§À» °¡Áø »ç¿ëÀÚ°¡ ¾ø½À´Ï´Ù.";
+"Er is geen gebruiker met deze naam.";
+
+"ÀÚ½ÅÀ» ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet jezelf recruteren.";
+
+"¾ÆÀÌÅÛÀÇ ·¹º§ Á¦ÇÑº¸´Ù ·¹º§ÀÌ ³·½À´Ï´Ù.";
+"Je Level is lager dan het Level van het Voorwerp na de verbetering.";
+
+"Ã¢°í,°Å·¡Ã¢µîÀÌ ¿­¸° »óÅÂ¿¡¼­´Â °³·®À» ÇÒ¼ö°¡ ¾ø½À´Ï´Ù";
+"Je kunt niets verbeteren als er nog een ander venster geopend is.";
+
+"%sÀÇ ±ºÁÖ°¡ %s ´ÔÀ¸·Î ±³Ã¼µÇ¾ú½À´Ï´Ù.";
+"De Keizer van %s is veranderd naar %s.";
+
+"%s¿¡¼­ ºÀÈ­¸¦ µÑ·¯½Î°í ÀüÅõ°¡ ÁøÇàÁßÀÔ´Ï´Ù.";
+"Er zijn %s oorlogen om te kampvuren te laten branden.";
+
+"%sÀÌ ¼ö¼º¿¡ ¼º°øÇß½À´Ï´Ù.";
+"%s heeft succesvol verdedigd.";
+
+"Áö±İºÎÅÍ %sÀº 30ºĞ°£ ºÀÈ­¸¦ ÆÄ±«ÇÏ¿© º¸»óÀ» È¹µæ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Speler %s kan tot 30 minuten van nu een beloning krijgen omdat hij/zij de kampvuren heeft vernietigd.";
+
+"30ºĞÀÌ °æ°úÇß½À´Ï´Ù.. ºÀÈ­°¡ »ç¶óÁı´Ï´Ù.";
+"30 minuten zijn voorbij. De kampvuren zijn verdwenen.";
+
+"%s¿¡ ÀüÀïÀÇ ½ÃÀÛÀ» ¾Ë¸®´Â ºÀÈ­°¡ ³ªÅ¸³µ½À´Ï´Ù.";
+"Een kampvuur was in brand gezet voor %s om te waarschuwen voor een gevecht.";
+
+"%sÀÌ ºÀÈ­¸¦ ÆÄ±«Çß½À´Ï´Ù.";
+"%s heeft het kampvuur vernietigd.";
+
+"%sÀÌ ¼ö¼º¿¡ ½ÇÆĞÇÏ¿© ÀüÀï¿¡ ÆĞ¹èÇÏ¿´½À´Ï´Ù..";
+"%s heeft de oorlog verloren omdat ze het kasteel niet konden verdedigen.";
+
+"%sÀÌ ¸ğµç ºÀÈ­¸¦ ÆÄ±«ÇÏ¿´½À´Ï´Ù.";
+"%s heeft het kampvuur vernietigd.";
+
+"°©¿ÊÀ» ¹ş¾î¾ß °³ÀÎ »óÁ¡À» ¿­ ¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt alleen een winkel openen wanneer je jezelf uitkleedt.";
+
+"%d ½Ã°£ %d ºĞ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d uren %d minutesn %d seconden over voor je chatblok.";
+
+"%d ½Ã°£ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d uren %d seconden over op je chatblock";
+
+"%d ºĞ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d minuten %d seconden over op je chatblok";
+
+"µ· ´ë¹ÚÀÌ ³ª¿Ã È®·ü";
+"Drop-kans voor Yangregen";
+
+"°³·®À» ÇÏ±â À§ÇÑ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Niet genoeg materiaal voor een verbetering.";
+
+"ÀüÁ¦±¹";
+"Alle rijken";
+
+"¾ÆÀÌÅÛÀÌ ³ª¿Ã È®·ü";
+"Voorwerp val percentage";
+
+"µ·ÀÌ ³ª¿Ã È®·ü";
+"Yang val percentage";
+
+"°æÇèÄ¡ ¹èÀ²";
+"Ervaring percentage";
+
+"%d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d seconden over op je chatblock";
+
+"¸»À» Åº »óÅÂ¿¡¼­ °¨Á¤Ç¥ÇöÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen emoties tonen wanneer je een paard rijdt.";
+
+"¸»À» Åº »ó´ë¿Í °¨Á¤Ç¥ÇöÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen emoties tonen aan een speler die paard rijdt.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ±æµåÀåÀÌ Á¢¼ÓÁßÀÌ ¾Æ´Õ´Ï´Ù.";
+"[Gilde] De tegenstanders gildeleider is offline";
+
+"ÀüÀï ¼­¹ö°¡ ¿­·ÁÀÖÁö ¾Ê¾Æ ±æµåÀüÀ» ½ÃÀÛÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] De tegenstanders gildeleider is offline";
+
+"<±æµå> ÀÌ¹Ì ÀüÀï ÁßÀÎ ±æµåÀÔ´Ï´Ù.";
+"[Gilde] Deze gilde neem deel aan een gevecht op dit moment";
+
+"ÀÌ¹Ì Å»°ÍÀ» ÀÌ¿ëÁßÀÔ´Ï´Ù.";
+"Je bent al aan het rijden. Stijg eerst af.";
+
+"ÀÌ °³·®¼­·Î ´õ ÀÌ»ó °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet verbeteren met dit Geschrift.";
+
+"»ç±Í Å¸¿ö ¿Ï·á º¸»óÀº ÇÑ¹ø±îÁö »ç¿ë°¡´ÉÇÕ´Ï´Ù.";
+"Je kunt maar één keer beloond worden voor de Demonen Toren Quest.";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Drakensteen is verwijderd.";
+
+"°­È­Ã¢À» ¿¬ »óÅÂ¿¡¼­´Â ¾ÆÀÌÅÛÀ» ¿Å±æ ¼ö ¾ø½À´Ï´Ù.";
+"Je kan het voorwerp niet uit het verbeteringsvenster slepen.";
+
+"¿ë½É ÃßÃâ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Drakensteen overgebleven tijd is onttrokken.";
+
+"¿ë½É ÃßÃâ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Onttrekken van overgebleven tijd is mislukt.";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ½ÇÆĞÇÏ¿© %s¸¦ ¾ò¾ú½À´Ï´Ù.";
+"Verwijderen van de Drakensteen is mislukt. Maar je hebt het volgende ontvangen: %s";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Verwijderen van de Drakensteen mislukt.";
+
+"µî±Ş °³·®¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Dit voorwerp is niet noodzakelijk voor het verbeteren van de kwaliteit.";
+
+"°­È­¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Dit voorwerp is niet noodzakelijk voor het verbeteren van de kwaliteit.";
+
+"µî±Ş °³·®ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Dit Voorwerp kan zo niet verbeterd worden.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº ÀÌ ¹æ½ÄÀ¸·Î´Â °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Dit Voorwerp kan zo niet verbeterd worden.";
+
+"´Ü°è °³·®¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Verbeteren van kwaliteit gelukt.";
+
+"µî±Ş °³·®¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Verbetering van 1 level mislukt.";
+
+"´Ü°è °³·®ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Dit voorwerp is niet noodzakelijk voor verbetering.";
+
+"µî±Ş °³·®¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Verbetering van 1 level is gelukt.";
+
+"´Ü°è °³·®¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Verbeteren van kwaliteit mislukt.";
+
+"´Ü°è °³·®¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Je hebt niet de materialen die nodig zijn voor het versterken van de Drakensteen.";
+
+"°­È­ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Deze Drakensteen kan niet gebruikt worden voor het verbeteren.";
+
+"°­È­¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Versterken is gelukt.";
+
+"°­È­¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Versterken mislukt.";
+
+"ÀÌ¹Ì °°Àº Á¾·ùÀÇ ¿ëÈ¥¼®À» Âø¿ëÇÏ°í ÀÖ½À´Ï´Ù.";
+"Je draagt al een Drakensteen van dit type.";
+
+"Âø¿ë ÁßÀÎ ¿ëÈ¥¼®Àº ÃßÃâÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"De Drakensteen kan niet worden verwijderd.";
+
+"ÀÌ¹Ì Àåºñ¸¦ Âø¿ëÇÏ°í ÀÖ½À´Ï´Ù.";
+"Je bent al uitgerust met een Drakensteen van dit soort.";
+
+"ÀÎº¥ÀÌ È°¼ºÈ­ µÇÁö ¾ÊÀ½.";
+"Voor je de Cor Draconis kan openen, moet je de Dragensteen missie hebben voltooid en de Drakensteen Alchemie worden geactiveerd.";
+
+"¸ÕÀú ¿ëÈ¥¼® Äù½ºÆ®¸¦ ¿Ï·áÇÏ¼Å¾ß ÇÕ´Ï´Ù.";
+"Voor je de Cor Draconis kan openen, moet je de Dragensteen missie hebben voltooid en de Drakensteen Alchemie worden geactiveerd.";
+
+"º§Æ® ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛÀÌ Á¸ÀçÇÏ¸é ÇØÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kan alleen de riem weg doen als er niets meer in zijn inventaris zit.";
+
+"Ãàº¹ÀÇ ¼­¿Í ÇöÃ¶À» ÇÕÄ¥ ¼ö ÀÖ½À´Ï´Ù.";
+"Je kunt het zegenings geschrift combineren met de magische ijzererts.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº º§Æ® ÀÎº¥Åä¸®·Î ¿Å±æ ¼ö ¾ø½À´Ï´Ù.";
+"Je kan dit voorwerp niet in de inventaris van je riem doen.";
+
+"°°Àº °³·®¼­¸¦ ÇÕÄ¥ ¼ö´Â ¾ø½À´Ï´Ù.";
+"[1106-??]No puedes unir esto.";
+
+"%d ³ÉÀ» ÅõÀÚÇÏ¼Ì½À´Ï´Ù.";
+"Je hebt %d Yang geinvesteerd.";
+
+"»©³¾ ¼ö ÀÖ´Â ¸ŞÆ¾¼®ÀÌ ¾ø½À´Ï´Ù.";
+"Er is geen Steen om uitgehaald te worden.";
+
+"±â¾ïÇØ µÑ ¼ö ¾ø´Â À§Ä¡ ÀÔ´Ï´Ù.";
+"Je kunt deze positie niet bewaren.";
+
+"¼ÒÁöÇ°¿¡ ºó °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"Er is niet genoeg ruimte in je Inventaris.";
+
+"±â¾ïµÈ À§Ä¡°¡ Å¸Á¦±¹¿¡ ¼ÓÇØ ÀÖ¾î¼­ ±ÍÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt niet teleporteren naar een veilige positie in een andere Koninkrijk.";
+
+"³²Àº »ı¸í·Â ¾çÀÌ ¸ğÀÚ¶ó »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je hebt niet genoeg LP.";
+
+"³²Àº Á¤½Å·Â ¾çÀÌ ¸ğÀÚ¶ó »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Je hebt niet  genoeg Tover Punten (TP) om dit te gebruiken.";
+
+"%d ÃÊÈÄ ¸ñÀûÁö·Î ÀÌµ¿µË´Ï´Ù.";
+"Je zult je bestemming in %d seconden bereiken.";
+
+"°³·®µÈ ÈÄ ¾ÆÀÌÅÛÀÇ ·¹º§ Á¦ÇÑº¸´Ù ·¹º§ÀÌ ³·½À´Ï´Ù.";
+"Je Level is lager dan het Level van het Voorwerp na de verbetering.";
+
+"¿ùº´,Á¾ÀÚ »ç¿ëÈÄ 5ÃÊµ¿¾È »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù. ";
+"Je kunt een Maan Taart slechts elke 5 seconden gebruiken.";
+
+"´ë·Ã Áß¿¡´Â ÀÌ¿ëÇÒ ¼ö ¾ø´Â ¹°Ç°ÀÔ´Ï´Ù.";
+"Je kunt dit Voorwerp niet in een Duel gebruiken.";
+
+"%d ³ÉÀ» È¹µæÇÏ¼Ì½À´Ï´Ù.";
+"Je hebt %d Yang gewonnen.";
+
+"¸ğ´ÚºÒÀ» ÇÇ¿ï ¼ö ¾ø´Â ÁöÁ¡ÀÔ´Ï´Ù.";
+"Je kunt hier geen kampvuur maken.";
+
+"¹° ¼Ó¿¡ ¸ğ´ÚºÒÀ» ÇÇ¿ï ¼ö ¾ø½À´Ï´Ù.";
+"Je kunt geen kampvuur onder water maken.";
+
+"¿­¼è·Î Àá°Ü ÀÖ¾î¼­ ¿­¸®Áö ¾Ê´Â°Í °°´Ù. ¿­¼è¸¦ ±¸ÇØº¸ÀÚ.";
+"Gesloten. Je zou naar een Sleutel moeten zoeken.";
+
+"¿­¼è·Î ¿©´Â ¹°°ÇÀÌ ¾Æ´Ñ°Í °°´Ù.";
+"Dit Voorwerp kan niet geopenend worden met een Sleutel.";
+
+"¿­¼è´Â ¸ÂÀ¸³ª ¾ÆÀÌÅÛ ÁÖ´Â ºÎºĞ ±¸ÇöÀÌ ¾ÈµÇ¾ú½À´Ï´Ù.";
+"Dit is de juiste Sleutel.";
+
+"µ· %d ³ÉÀ» È¹µæÇß½À´Ï´Ù.";
+"Je hebt %d Yang ontvangen.";
+
+"»óÀÚ¿¡¼­ ºÎÅÍ ½ÅºñÇÑ ºûÀÌ ³ª¿É´Ï´Ù.";
+"Een mysterieus licht komt uit de doos.";
+
+"%dÀÇ °æÇèÄ¡¸¦ È¹µæÇß½À´Ï´Ù.";
+"Je hebt %d Ervarings Punten ontvangen.";
+
+"»óÀÚ¿¡¼­ ¸ó½ºÅÍ°¡ ³ªÅ¸³µ½À´Ï´Ù!";
+"Kijk wat er uit de doos komt!";
+
+"<±æµå> ·¹´õ Á¡¼ö°¡ ¸ğÀÚ¶ó¼­ ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gilde] Het gildelevel is te laag.";
+
+"»óÀÚ¿¡¼­ ³ª¿Â »¡°£ ¿¬±â¸¦ µéÀÌ¸¶½ÃÀÚ ¿òÁ÷ÀÌ´Â ¼Óµµ°¡ ´À·ÁÁ³½À´Ï´Ù!";
+"Als je de rode rook inhaleert die uit de doos komt, ben je sneller!";
+
+"´õ ÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ¸·Î ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù";
+"You cannot add more bonus.";
+
+"¼º°øÀûÀ¸·Î ¼Ó¼ºÀÌ Ãß°¡ µÇ¾ú½À´Ï´Ù";
+"New bonus added successfully.";
+
+"º¯°æ ½ÃÅ³ ¼Ó¼ºÀÌ ¾ø½À´Ï´Ù";
+"You cannot change the bonuses.";
+
+"%sÀÌ ÇÊ¿äÇÕ´Ï´Ù.";
+"%s needed.";
+
+"¹®Á¦ ÀÔ´Ï´Ù.";
+"OX-Question: ";

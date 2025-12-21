@@ -1,0 +1,2285 @@
+"Àá½ÃÈÄ ÇØ´ç ¸¶À»Àº  ¸¶À»·Î ÀÌµ¿µË´Ï´Ù.";
+"Snart vil alle blive teleporteret til byen.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌÅÛ ÀÔ´Ï´Ù";
+"Denne genstand findes ikke.";
+
+"»óÀÚ°¡ °©ÀÚ±â Æø¹ßÇÏ¿´½À´Ï´Ù! »ı¸í·ÂÀÌ °¨¼ÒÇß½À´Ï´Ù.";
+"Kisten er eksploderet! Dine HP blev formindsket.";
+
+"»óÀÚ¿¡¼­ ³ª¿Â ³ì»ö ¿¬±â¸¦ µéÀÌ¸¶½ÃÀÚ µ¶ÀÌ ¿Â¸öÀ¸·Î ÆÛÁı´Ï´Ù!";
+"Hvis du indånder grøn røg fra kisten, fordeler giften sig i din krop!";
+
+"%s ¾ÆÀÌÅÛ À» È¹µæÇÏ¼Ì½À´Ï´Ù";
+"Du får %s og der er %d styk.";
+
+"»óÀÚ¿¡¼­ %s °¡ ³ª¿Ô½À´Ï´Ù.";
+"Der er %s i kisten.";
+
+"¿­¼è°¡ ¸ÂÁö ¾Ê´Â °Í °°´Ù.";
+"Denne nøgle passer ikke.";
+
+"¾Æ¹«°Íµµ ¾òÀ» ¼ö ¾ø¾ú½À´Ï´Ù.";
+"Du har ikke modtaget noget.";
+
+"°³·®À» ÇÏ±â À§ÇÑ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Du har ikke nok Yang til at kunne bruge genstanden.";
+
+"¼ÒÁö±İÀÌ ºÎÁ·ÇÏ¿© ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du har ikke nok Yang til at kunne bruge genstanden.";
+
+"½ºÅ³ ·¹º§À» ³»¸®´Âµ¥ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Du har mindsket din færdigheds-level.";
+
+"½ºÅ³ ·¹º§À» ³»¸± ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke mindske din færdigheds-level.";
+
+"ÀÌ¹Ì È¿°ú°¡ °É·Á ÀÖ½À´Ï´Ù.";
+"Denne effekt er allerede aktiveret.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº PC¹æ¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Denne genstand kan kun bruges fra en InternetCafe.";
+
+"»ç¿ë Á¦ÇÑ·®À» ÃÊ°úÇÏ¿´½À´Ï´Ù.";
+"Det er over grænsen.";
+
+"»óÇ°À» ¹ŞÀ» ÀÎº¥Åä¸®°¡ ºÎÁ·ÇÕ´Ï´Ù. ÀÎº¥Åä¸®¸¦ ºñ¿öÁÖ¼¼¿ä!";
+"Desværre har du ikke nok plads i dit inventar.";
+
+"¿ùº´ ¶Ç´Â Á¾ÀÚ ¸¦ »ç¿ëÇÏ¿´½À´Ï´Ù";
+"Brugt månekage eller frø.";
+
+"°áÈ¥ »óÅÂ°¡ ¾Æ´Ï¸é °áÈ¥¹İÁö¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bære en vielsesring når du ikke er gift.";
+
+"ÀÌ °÷¿¡¼± ÀÌº¥Æ®¿ë °¨Áö±â°¡ µ¿ÀÛÇÏÁö ¾Ê´Â°Í °°½À´Ï´Ù.";
+"Begivenheds-detektoren kan ikke bruges her.";
+
+"ÀÌ °³·®¼­·Î °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne genstand kan ikke blive absorberet.";
+
+"ÀÌº¥Æ®¿ë °¨Áö±â°¡ ½Åºñ·Î¿î ºûÀ» ³»¸ç »ç¶óÁı´Ï´Ù.";
+"Begivenheds-detektor er forsvundet i det mysteriøse lys.";
+
+"ÀÌº¥Æ®¿ë °¨Áö±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"Begivenheds-detektor er forsvundet.";
+
+"ÀÌ °÷¿¡¼­ ¿µ¼® °¨Áö±â°¡ µ¿ÀÛÇÏÁö ¾Ê´Â°Í °°½À´Ï´Ù.";
+"Metinstenens kompas kan ikke bruges her.";
+
+"¿µ¼® °¨Áö±â°¡ ½Åºñ·Î¿î ºûÀ» ³»¸ç »ç¶óÁı´Ï´Ù.";
+"Metinstenens kompas er forsvundet i det mystiske lys.";
+
+"»óÀÚ¿¡¼­ %s °¡ %d °³ ³ª¿Ô½À´Ï´Ù.";
+"Modtag: %s - %d";
+
+"¿µ¼® °¨Áö±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"Metinstenens kompas er forsvundet.";
+
+"Á¶°³¿¡¼­ µ¹Á¶°¢ÀÌ ³ª¿Ô½À´Ï´Ù.";
+"I muslingen ligger der et stykke af en sten.";
+
+"Á¶°³°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"En musling er forsvundet.";
+
+"Á¶°³¿¡¼­ ¹éÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"I muslingen ligger der en hvid perle.";
+
+"Á¶°³¿¡¼­ Ã»ÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"I muslingen ligger der en blå perle.";
+
+"Á¶°³¿¡¼­ ÇÇÁøÁÖ°¡ ³ª¿Ô½À´Ï´Ù.";
+"I muslingen ligger der en blodrød perle.";
+
+"ÀÌ Ã¥Àº ³Ê¹« ¾î·Á¿ö ÀÌÇØÇÏ±â°¡ Èûµì´Ï´Ù.";
+"Denne bog er for svær til at forstå.";
+
+"ÀÌ Ã¥Àº ¾Æ¹«¸® ºÁµµ µµ¿òÀÌ µÉ °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Denne bog hjælper dig ikke.";
+
+"·¹º§ 30ÀÌ µÇ±â Àü¿¡´Â ½ÀµæÇÒ ¼ö ÀÖÀ» °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Du skal være mindst level 30 for at læse denne bog.";
+
+"·¹º§ 50ÀÌ µÇ±â Àü¿¡´Â ½ÀµæÇÒ ¼ö ÀÖÀ» °Í °°Áö ¾Ê½À´Ï´Ù.";
+"Du skal være mindst level 50 for at forstå denne bog.";
+
+"¿¬°è±â´Â ´õÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke lære yderligere kombos.";
+
+"%s ±æµåÀÇ ±ê¹ßÀ» %s ´ÔÀÌ È¹µæÇÏ¿´½À´Ï´Ù.";
+"%s har erobret flaget fra %s!";
+
+"ÀÌ¹Ì ¿Ïº®ÇÏ°Ô ¾Ë¾ÆµéÀ» ¼ö ÀÖ´Â ¾ğ¾îÀÌ´Ù.";
+"Du forstår allerede sproget!";
+
+"ÀÌ Ã¥À» ÀĞÀ¸·Á¸é ·¹º§À» ´õ ¿Ã·Á¾ß ÇÕ´Ï´Ù.";
+"Du skal stige i level for at kunne læse denne bog.";
+
+"ÀÌ Ã¥Àº ³Ê¹« ¾î·Á¿ö¼­ ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne bog er for svær til at øve sig.";
+
+"ÀÌ Ã¥À¸·Î´Â ´õ ÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Med denne bog kan du ikke fortsætte din træning.";
+
+"¼¼±İÀÌ %d %·Î ¼³Á¤µÇ¾ú½À´Ï´Ù";
+"Skatten er sat til %d%%.";
+
+"¾ÆÁ÷ ½Â¸¶ ½ºÅ³À» ¼ö·ÃÇÒ ¼ö ÀÖ´Â ·¹º§ÀÌ ¾Æ´Õ´Ï´Ù.";
+"Du skal være level 50 for at få ride-træning.";
+
+"ÁÖ¾È¼ú¼­¸¦ ÅëÇØ ÁÖÈ­ÀÔ¸¶¿¡¼­ ºüÁ®³ª¿Ô½À´Ï´Ù.";
+"Du er flygtet fra den ond-ånde-forbandelse vha. eksorcisme-dokumentet.";
+
+"´õ ÀÌ»ó ½Â¸¶ ¼ö·Ã¼­¸¦ ÀĞÀ» ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke læse yderligere ride-bøger.";
+
+"½Â¸¶ ¼ö·Ã¼­¸¦ ÀĞ¾î ½Â¸¶ ½ºÅ³ Æ÷ÀÎÆ®¸¦ ¾ò¾ú½À´Ï´Ù.";
+"Du har læst Hesteridningsmanualen og har modtaget et ride-points.";
+
+"¾òÀº Æ÷ÀÎÆ®·Î´Â ½Â¸¶ ½ºÅ³ÀÇ ·¹º§À» ¿Ã¸± ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan øge din ridefærdigheds-lvl, idet du investerer de nye points.";
+
+"%s ±æµå°¡ %s ±æµåÀÇ ±ê¹ßÀ» »©¾Ñ¾Ò½À´Ï´Ù!";
+"Ordenen %s`s flag er blevet stjålet af spiller %s.";
+
+"½Â¸¶ ¼ö·Ã¼­ ÀÌÇØ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Du har ikke forstået ride-vejledningen.";
+
+"¸¶À½ÀÌ ¸¼¾ÆÁö´Â±º. °¡½¿À» Áş´©¸£´ø ¹«¾ğ°¡°¡ Á» °¡º­¿öÁø ´À³¦ÀÌ¾ß.";
+"Dine forstand er styrket. Du kan nu koncentere dig.";
+
+"¼±¾ÇÄ¡°¡ %d Áõ°¡ÇÏ¿´½À´Ï´Ù.";
+"Din rang er steget med %d.";
+
+"ÇöÀç Çì¾î½ºÅ¸ÀÏ¿¡¼­´Â ¿°»ö°ú Å»»öÀÌ ºÒ°¡´ÉÇÕ´Ï´Ù.";
+"Din aktuelle frisure kan du hverken farvelægge eller blege.";
+
+"%d ·¹º§ÀÌ µÇ¾î¾ß ´Ù½Ã ¿°»öÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.";
+"Du bliver nødtil at opnå level %d for at farvelægge dit hår.";
+
+"¼ºº°ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"Denne genstand kan kun åbnes af det andet køn.";
+
+"ÇöÀç À§Ä¡¿¡¼­ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke benytte det fra din aktuelle position.";
+
+"ÀÌµ¿ÇÒ ÁØºñ°¡ µÇ¾îÀÖÀ½À¸·Î ±ÍÈ¯ºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù";
+"Du er klar til at blive teleportret, derfor kan du ikke bruge omegns dokument.";
+
+"¿ø·¡ À§Ä¡·Î º¹±Í";
+"Du bliver teleporteret tilbage til dit forrige sted.";
+
+"´øÀü ¾È¿¡¼­´Â %s%s »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"%s%s kan ikke benyttes i en grotte.";
+
+"<Äù½ºÆ®> ÀÌÀü¿¡ °°Àº º¸»óÀ» ¹ŞÀº ÀûÀÌ ÀÖ¾î ´Ù½Ã ¹ŞÁö ¾Ê½À´Ï´Ù.";
+"[Quest] Du har allerede modtaget din belønning.";
+
+"À»";
+"den";
+
+"¸¦";
+"det";
+
+"Ã»¼ÒÇÒ ¼®ÀÌ ¹ÚÇôÀÖÁö ¾Ê½À´Ï´Ù.";
+"Der er ingen stenstykker tilstede der kan renses.";
+
+"¼Ó¼ºÀ» º¯°æÇÒ ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Du kan ikke ændre forbedringen af denne genstand.";
+
+"º¯°æÇÒ ¼Ó¼ºÀÌ ¾ø½À´Ï´Ù.";
+"Du har ingen forbedringer, der kan ændres.";
+
+"¼Ó¼ºÀ» ¹Ù²ÛÁö %dºĞ ÀÌ³»¿¡´Â ´Ù½Ã º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.(%d ºĞ ³²À½)";
+"Det kan du først gøre %d minutter efter en forbedring. (%d minutter tilbage)";
+
+"¼Ó¼ºÀ» º¯°æÇÏ¿´½À´Ï´Ù.";
+"Du har ændret forbedringen.";
+
+"¼Ó¼º Ãß°¡¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Forbedringen blev tilføjet.";
+
+"¼Ó¼º Ãß°¡¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Forbedringen blev ikke tilføjet.";
+
+"´õÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ» ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du skal bruge en velsignelseskugle for at tilføje en yderligere bonus til denne genstand.";
+
+"´ë·ÃÀå¿¡¼­ »ç¿ëÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.";
+"Dette kan du ikke benytte i duel-arenaen.";
+
+"´õ ÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ» ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne genstand kan ikke forbedres længere. Det maksimale antal af bonusser er nået.";
+
+"¸ÕÀú Àç°¡ºñ¼­¸¦ ÀÌ¿ëÇÏ¿© ¼Ó¼ºÀ» Ãß°¡½ÃÄÑ ÁÖ¼¼¿ä.";
+"Du kan kun bruge velsignelseskuglen på en genstand der allerede har 4 bonusser.";
+
+"¼ÒÄÏÀÌ ¼º°øÀûÀ¸·Î Ãß°¡µÇ¾ú½À´Ï´Ù.";
+"Indfatning blev tilføjet.";
+
+"¼ÒÄÏ Ãß°¡¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Indfatning blev ikke tilføjet.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó ¼ÒÄÏÀ» Ãß°¡ÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"I dette tilbehør kan der ikke tilføjes yderligere indfatninger.";
+
+"ÀÌ ¾ÆÀÌÅÛÀ¸·Î ¼ÒÄÏÀ» Ãß°¡ÇÒ ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Denne genstand kan ikke få indfatninger.";
+
+"ÀåÂø¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Udrustning lykket.";
+
+"ÀåÂø¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Udrustning mislykket.";
+
+"¸ÕÀú ´ÙÀÌ¾Æ¸óµå·Î ¾Ç¼¼¼­¸®¿¡ ¼ÒÄÏÀ» Ãß°¡ÇØ¾ßÇÕ´Ï´Ù.";
+"Du bliver nødt til at bruge en diamant først, for at tilføje en indfatning til tilbehøret.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó ÀåÂøÇÒ ¼ÒÄÏÀÌ ¾ø½À´Ï´Ù.";
+"I dette tilbehør findes ingen indfatning for udrustning med ædelsten.";
+
+"¿­Á¤ÀÇ °¡¸éÀ» Âø¿ë½Ã¿¡¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan kun vise emotioner når du bærer en følelsesmaske.";
+
+"´ÙÀÌ¾Æ¸óµå·Î ¼ÒÄÏÀ» Ãß°¡ÇØ¾ßÇÕ´Ï´Ù.";
+"Du bliver nød til at tilføje en indfatning, hvis du vil bruge en diamant.";
+
+"ÀÌ ¾×¼¼¼­¸®¿¡´Â ´õÀÌ»ó º¸¼®À» ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke tilføje yderligere ædelsten.";
+
+"ÀÌ ¾ÆÀÌÅÛÀ» ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Disse genstande kan ikke bruges sammen.";
+
+"³¬½Ã Áß¿¡ ¹Ì³¢¸¦ °¥¾Æ³¢¿ï ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke skifte agn mens du fisker.";
+
+"ÀÌ¹Ì ²ÈÇôÀÖ´ø ¹Ì³¢¸¦ »©°í %s¸¦ ³¢¿ó´Ï´Ù.";
+"Du skifter den aktuelle agn med %s.";
+
+"³¬½Ã´ë¿¡ %s¸¦ ¹Ì³¢·Î ³¢¿ó´Ï´Ù.";
+"Sætter %s maddingen på krogen.";
+
+"¹°¾à Á¶ÇÕÀ» À§ÇÑ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Du mangler nogle ingredienser til denne eliksir.";
+
+"Àç·á(%s)°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Du har ikke nok mineraler (%s).";
+
+"ºó º´ÀÌ ¸ğÀÚ¸¨´Ï´Ù.";
+"Du har ikke nok tomme flasker.";
+
+"¹°¾à Á¦Á¶¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Blandingen mislykkes.";
+
+"¿©ÀÚ¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Det kan kun kvinder gøre.";
+
+"°°Àº Á¾·ùÀÇ ¸ŞÆ¾¼®Àº ¿©·¯°³ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke tilføje yderligere sten af samme type.";
+
+"ÀÌ ¸ŞÆ¾¼®Àº Àåºñ¿¡ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke tilføje denne sten på dette udstyr.";
+
+"ÀÌ ¸ŞÆ¾¼®Àº ¹«±â¿¡ ºÎÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke tilføje denne sten i dit våben.";
+
+"¸ŞÆ¾¼® ºÎÂø¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Du har tilføjet stenen.";
+
+"¸ŞÆ¾¼® ºÎÂø¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Du har ikke tilføjet stenen.";
+
+"ºÎÂøÇÒ ¼ö ÀÖ´Â ½½·ÔÀÌ ¾ø½À´Ï´Ù.";
+"Der er ingen plads.";
+
+"»ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Denne funktion er ikke mulig lige nu.";
+
+"»ï°Å¸® ÀüÅõ Âü°¡Áß¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge omegns dokument når du tager del i nations krigen.";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Efter du har åbnet dit lager, kan du ikke bruge omegns dokument i %d sekunder.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge omegns dokument mens du har andre vinduer åbne.";
+
+"±×·± »ç¶÷ÀÌ ¾ø½À´Ï´Ù.";
+"Denne person findes ikke.";
+
+"¾ÆÀÌÅÛ °³·®ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge dokumenter i %d sek. efter en handel.";
+
+"°³ÀÎ»óÁ¡ »ç¿ëÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎ¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Efter du åbner dit lager kan du ikke bruge omegns dokument i %d sekunder.";
+
+"ÀÌµ¿ µÇ¾îÁú À§Ä¡¿Í ³Ê¹« °¡±î¿ö ±ÍÈ¯ºÎ¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge omegns dokument, da afstanden er for lille.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡´Â ±ÍÈ¯ºÎ,±ÍÈ¯±â¾ïºÎµîÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Efter en handel kan du ikke bruge omegns dokument i %d sekunder.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â º¸µû¸®,ºñ´Üº¸µû¸®¸¦ »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke åbne lageret, mens du har andre vinduer åbne.";
+
+"¹ö¸± ¼ö ¾ø´Â ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Du kan ikke smide denne genstand væk.";
+
+"¶³¾îÁø ¾ÆÀÌÅÛÀº 3ºĞ ÈÄ »ç¶óÁı´Ï´Ù.";
+"Den tabte genstand vil blive fjernet om 5 minutter.";
+
+"¾ÆÀÌÅÛ È¹µæ: %s";
+"%s modtaget";
+
+"¼ÒÁöÇÏ°í ÀÖ´Â ¾ÆÀÌÅÛÀÌ ³Ê¹« ¸¹½À´Ï´Ù.";
+"Du bærer rundt på for mange genstande.";
+
+"¾ÆÀÌÅÛ È¹µæ: %s ´ÔÀ¸·ÎºÎÅÍ %s";
+"%s modtager %s.";
+
+"Àá½ÃÈÄ ¸ğµÎ ¸¶À»·Î ÀÌµ¿µË´Ï´Ù.";
+"Snart vil alle blive teleporteret til byen.";
+
+"³Ê¹« °¡±îÀÌ ÀÖ½À´Ï´Ù.";
+"Du er for tæt på.";
+
+"¾ÆÀÌÅÛ Àü´Ş: %s ´Ô¿¡°Ô %s";
+"Genstandshandel: %s, %s";
+
+"µĞ°© Áß¿¡´Â Âø¿ëÁßÀÎ Àåºñ¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"I den tid du er forvandlet kan du ikke ændre genstande der er i brug.";
+
+"°¡¸¸È÷ ÀÖÀ» ¶§¸¸ Âø¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du skal stå stille for at skifte genstande. som er i brug.";
+
+"Á×Áö ¾ÊÀº ¸»¿¡°Ô ¼±ÃÊ¸¦ ¸ÔÀÏ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke fodre en levende hest med urter. De bliver brugt til at genoplive døde heste.";
+
+"Á×Àº ¸»¿¡°Ô »ç·á¸¦ ¸ÔÀÏ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke fodre en død hest.";
+
+"¸»¿¡°Ô ¼±ÃÊ¸¦ ÁÖ¾ú½À´Ï´Ù.";
+"Du har fodret hesten med urter.";
+
+"¸»¿¡°Ô »ç·á¸¦ ÁÖ¾ú½À´Ï´Ù.";
+"Du har fodret hesten.";
+
+"¾ÆÁ÷ ÀÌ ¸Ó¸®¸¦ »ç¿ëÇÒ ¼ö ¾ø´Â ·¹º§ÀÔ´Ï´Ù.";
+"Din level er for lav til at kunne bære denne frisure.";
+
+"µ¿ÀÏÇÑ ¸Ó¸® ½ºÅ¸ÀÏ·Î´Â ±³Ã¼ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du har allerede den frisure.";
+
+"ÀÌ¹Ì µĞ°©ÁßÀÎ »óÅÂÀÔ´Ï´Ù.";
+"Du har allerede forvandlet dig.";
+
+"³Ê¹« ¸Ö¸® ÀÖ½À´Ï´Ù";
+"Du er for langt væk.";
+
+"Àß¸øµÈ µĞ°© ¾ÆÀÌÅÛÀÔ´Ï´Ù.";
+"Det er den forkerte forvandlingsgenstand.";
+
+"³ªº¸´Ù ³Ê¹« ³ôÀº ·¹º§ÀÇ ¸ó½ºÅÍ·Î´Â º¯½Å ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke forvandle dig til et monster der har et højere level end du selv har.";
+
+"·¹º§ÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Din level er for lavt til at bruge det.";
+
+"±Ù·ÂÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du er ikke stærk nok til at kunne bruge det.";
+
+"Áö´ÉÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Din intelligens er for lav til at kunne bruge det.";
+
+"¹ÎÃ¸ÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Din smidighed er for lav til at kunne bruge det.";
+
+"Ã¼·ÂÀÌ ³·¾Æ Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Din vitalitet er for lav til at kunne udruste dig selv med denne genstand.";
+
+"°áÈ¥ÇÏÁö ¾ÊÀº »óÅÂ¿¡¼­ ¿¹¹°À» Âø¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge denne genstand, da du ikke er gift.";
+
+"°°Àº Á¾·ùÀÇ À¯´ÏÅ© ¾ÆÀÌÅÛ µÎ °³¸¦ µ¿½Ã¿¡ ÀåÂøÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke udruste denne genstand to gange.";
+
+"%s ¿¡¼­ ¼ÒÄÏ ºüÁú¶§±îÁö ³²Àº ½Ã°£ %d";
+"Tid tilbage inden fjernelse af indfatningen fra %s: %d";
+
+"ÀÌ¼º°£¿¡¸¸ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Denne aktion kan kun gennemføres af et andet køn.";
+
+"%s¿¡ ¹ÚÇôÀÖ´ø º¸¼®ÀÌ »ç¶óÁı´Ï´Ù.";
+"En perle indfattet i %s er forsvundet.";
+
+"<±æµå> ±æµå ÀÌ¸§ÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù.";
+"[Orden] Dette navn er ikke tilladt.";
+
+"<±æµå> ÀÌ¹Ì °°Àº ÀÌ¸§ÀÇ ±æµå°¡ ÀÖ½À´Ï´Ù.";
+"[Orden] Dette Ordensnavn findes allerede.";
+
+"<±æµå> ±æµå¸¦ »ı¼ºÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du kan ikke oprette en Orden.";
+
+"%s ±æµå°¡ %s ±æµå¿¡ ¼±ÀüÆ÷°í¸¦ ÇÏ¿´½À´Ï´Ù!";
+"%s har erklæret krig mod %s!";
+
+"<±æµå> %s ±æµå°¡ ±æµåÀüÀ» °ÅºÎÇÏ¿´½À´Ï´Ù.";
+"[Orden] %s har afvist Ordens-krigserklæringen.";
+
+"%s ±æµå¿Í %s ±æµå°¡ Àá½Ã ÈÄ ÀüÀïÀ» ½ÃÀÛÇÕ´Ï´Ù!";
+"Ordenskrigen mellem %s og %s starter om få minutter!";
+
+"%s ±æµå¿Í %s ±æµå°¡ ÀüÀïÀ» ½ÃÀÛÇÏ¿´½À´Ï´Ù!";
+"Krigen mellem %s og %s er startet!";
+
+"%s ±æµå¿Í %s ±æµå »çÀÌÀÇ ÀüÀïÀÌ ¹«½ÂºÎ·Î ³¡³µ½À´Ï´Ù.";
+"Krigen mellem %s og %s er uafgjort.";
+
+"%s ±æµå°¡ %s ±æµå¿ÍÀÇ ÀüÀï¿¡¼­ ½Â¸® Çß½À´Ï´Ù.";
+"%s har vundet krigen mod %s.";
+
+"ÀÌ Çàµ¿Àº »óÈ£µ¿ÀÇ ÇÏ¿¡ °¡´É ÇÕ´Ï´Ù.";
+"Medspilleren skal godkende denne aktion.";
+
+"<±æµå> ±æµåÀüÀÌ Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"[Orden] Ordens-krigen blev afbrudt.";
+
+"%s ±æµå¿Í %s ±æµå »çÀÌÀÇ ÀüÀïÀÌ Ãë¼ÒµÇ¾ú½À´Ï´Ù.";
+"Krigen mellem %s og %s blev afbrudt.";
+
+"´İ±â";
+"Luk";
+
+"ÀüÅõ°¡ ½ÃÀÛ µÇ¾î Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"Afbrudt. Du er kommet i kamp.";
+
+"´Ù¸¥ ÄÄÇ»ÅÍ¿¡¼­ ·Î±×ÀÎ ÇÏ¿© Á¢¼ÓÀ» Á¾·á ÇÕ´Ï´Ù.";
+"En anden person har logget på din account. Din forbindelse med serveren blev afbrudt.";
+
+"³ª¹«¿¡¼­ ºÎÅÍ ½ÅºñÇÑ ºûÀÌ ³ª¿É´Ï´Ù.";
+"Et mysterisk lys kommer fra træet.";
+
+"%dºĞÀÇ °áÁ¦½Ã°£ÀÌ Ãß°¡ µÇ¾ú½À´Ï´Ù. (°áÁ¦¹øÈ£ %d)";
+"Der tilføjes %d spilletid til dit konto. (Betalings nr.: %d)";
+
+"°üÀü ¸ğµå·Î ±æµåÀü¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"Du kan deltage i Ordens-kampen som tilskuer.";
+
+"ÀÚ½ÅÀ» ¼±ÅÃÇÏ½Ã¸é ¹ÛÀ¸·Î ³ª°¥ ¼ö ÀÖ´Â <°ü¶÷ Á¾·á> ¹öÆ°ÀÌ ³ª¿É´Ï´Ù.";
+"Når du vælger en karakter, vises der et ikon.";
+
+"±æµåÀü¿¡ Âü°¡ÇÑ »ó´ë¹æ ±æµå¿øÀÌ ¾Æ¹«µµ ¾ø½À´Ï´Ù.";
+"Der findes ingen modstander.";
+
+"%s´Ô°úÀÇ ´ë°á ½ÃÀÛ!";
+"Kampen mod %s er begyndt!";
+
+"1ºĞ ÀÌ³»¿¡ ¾Æ¹«µµ Á¢¼ÓÇÏÁö ¾ÊÀ¸¸é ±æµåÀüÀÌ ÀÚµ¿ Á¾·áµË´Ï´Ù.";
+"Hvis der ikke findes nogle modstander vil Ordens-krigen automatisk blive afsluttet.";
+
+"±æµåÀüÀÌ ÀÏÂï Á¾·áµÇ¾î ¹«½ÂºÎ·Î ÆÇÁ¤ µÇ¾ú½À´Ï´Ù. (5ºĞÀÌ Áö³ªÁö ¾ÊÀ½)";
+"Da Ordens-krigen blev afsluttet tidligere tæller den som uafgjort.";
+
+"±ºÁÖ°¡ ³»¸° Ãàº¹À¸·Î ¸ğµç ¿¡³ÊÁö°¡ °¡µæ Ã¤¿öÁı´Ï´Ù";
+"Pga. Kejserens velsignelse, bliver energien reflekteret.";
+
+"%d ÃÊ ÈÄ¿¡ ±ºÁÖÀÇ Ãàº¹À» »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù";
+"Efter %d sek. kan Kejserens velsignelse aktiveres.";
+
+"ÄğÅ¸ÀÓ Àû¿ëÁß  %d ÈÄ »ç¿ë°¡´É";
+"Efter %d sek. kan Kejserens velsignelse aktiveres.";
+
+"±¹°í¿¡ ÀÚ±İÀÌ ¸ğÀÚ¶ø´Ï´Ù ±¹°í : %d ";
+"Ikke nok skatteindtægt: %d";
+
+"[TEST_ONLY]ÇöÀç ±¹°í : %d ";
+"[TEST_ONLY]Skat: %d";
+
+"µĞ°©¿¡ ½ÇÆĞ ÇÏ¿´½À´Ï´Ù";
+"Fejl ved forvandlingen";
+
+"µĞ°©¼­ ¼ö·ÃÀ» ¸¶Ãº½À´Ï´Ù. ½Å¼±¿¡°Ô Ã£¾Æ°¡¼¼¿ä.";
+"Du har lært alt om forvandling.";
+
+"¸»À» ¸ÕÀú ¼ÒÈ¯ÇØÁÖ¼¼¿ä.";
+"Tilkald først din hest.";
+
+"¸»À» µ¹·Áº¸³Â½À´Ï´Ù.";
+"Du har sendt din hest tilbage.";
+
+"%s´ÔÀÌ ´ë°á½ÅÃ»À» Çß½À´Ï´Ù. ½Â³«ÇÏ·Á¸é ´ë°áµ¿ÀÇ¸¦ ÇÏ¼¼¿ä.";
+"%s har udfordret dig til kamp!";
+
+"¸»¿¡¼­ ¸ÕÀú ³»·Á¾ß ÇÕ´Ï´Ù.";
+"Du skal først stige af hesten.";
+
+"¸»À» Åº »óÅÂ¿¡¼­´Â ¸ÔÀÌ¸¦ ÁÙ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke fodre din hest mens du ridder.";
+
+"¸»¿¡°Ô %s%s ÁÖ¾ú½À´Ï´Ù.";
+"Du har fodret din hest med %s%s.";
+
+"%s ¾ÆÀÌÅÛÀÌ ÇÊ¿äÇÕ´Ï´Ù";
+"Du har brug for %s.";
+
+"¼Ë´Ù¿îÀÌ %dÃÊ ³²¾Ò½À´Ï´Ù.";
+"%d sekunder indtil afslutningen.";
+
+"%dÃÊ ÈÄ °ÔÀÓÀÌ ¼Ë´Ù¿î µË´Ï´Ù.";
+"Efter %d sekunder bliver spillet lukket.";
+
+"%dÃÊ ³²¾Ò½À´Ï´Ù.";
+"%d sekunder indtil afslutning.";
+
+"Ãë¼Ò µÇ¾ú½À´Ï´Ù.";
+"Logout blev afbrudt.";
+
+"·Î±×ÀÎ È­¸éÀ¸·Î µ¹¾Æ °©´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"Tilbage til login-vindue. Vent venligst.";
+
+"°ÔÀÓÀ» Á¾·á ÇÕ´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"Din forbindelse til serveren bliver afbrudt. Vent venligst.";
+
+"%s¿¡°Ô ´ë°á½ÅÃ»À» Çß½À´Ï´Ù.";
+"Du har udfordret %s.";
+
+"Ä³¸¯ÅÍ¸¦ ÀüÈ¯ ÇÕ´Ï´Ù. Àá½Ã¸¸ ±â´Ù¸®¼¼¿ä.";
+"Du skifter karakter. Vent venligst.";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù. (%dÃÊ ³²À½)";
+"En ny start er ikke muligt på nuværende tidspunkt. Vent venligst %d sek.";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù.(%dÃÊ ³²À½)";
+"Du kan ikke genstarte endnu. Vent venligst %d sek.";
+
+"¾ÆÁ÷ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù.(%dÃÊ ³²À½ )";
+"Du kan ikke genstarte endnu. Vent venligst %d sek.";
+
+"¾ÆÁ÷ ¸¶À»¿¡¼­ Àç½ÃÀÛ ÇÒ ¼ö ¾ø½À´Ï´Ù. (%d ÃÊ ³²À½)";
+"Du kan ikke genstarte i byen endnu. Vent venligst %d sek.";
+
+"¼ºÁö¿¡¼­ ºÎÈ° ±âÈ¸¸¦ ¸ğµÎ ÀÒ¾ú½À´Ï´Ù! ¸¶À»·Î ÀÌµ¿ÇÕ´Ï´Ù!";
+"Ventetiden er udløbet. Du vil blive genoplivet i byen.";
+
+"µĞ°© Áß¿¡´Â ´É·ÂÀ» ¿Ã¸± ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke ændre din status, mens du er forvandlet.";
+
+"»ó´ë¹æÀÌ ´ë·ÃÁßÀÔ´Ï´Ù.";
+"Denne spiller er allerede i en duel.";
+
+"<±æµå> ±æµå¿¡ ¼ÓÇØÀÖÁö ¾Ê½À´Ï´Ù.";
+"[Orden] Dette ejes ikke af Ordenen.";
+
+"<±æµå> ±æµå ½ºÅ³ ·¹º§À» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke rettighederne til at redigere i Ordens-færdighedernes level.";
+
+"Àß¸øµÈ ¼±ÅÃÀ» Çß½À´Ï´Ù";
+"Udvalget er forkert.";
+
+"<Ã¢°í> Àß¸øµÈ ¾ÏÈ£¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+"[Lager] Du har indtastet et forkert kodeord.";
+
+"<Ã¢°í> Ã¢°í°¡ ÀÌ¹Ì ¿­·ÁÀÖ½À´Ï´Ù.";
+"[Lager] Lageret er allerede åbnet.";
+
+"<Ã¢°í> Ã¢°í¸¦ ´İÀºÁö 10ÃÊ ¾È¿¡´Â ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"[Lager] Du skal vente 10 Sekunder inden du kan åbne lageret igen.";
+
+"<Ã¢°í> °Å¸®°¡ ¸Ö¾î¼­ Ã¢°í¸¦ ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"[Lager] Du er for langt væk til at åbne lageret.";
+
+"<ÆÄÆ¼> ¼­¹ö ¹®Á¦·Î ÆÄÆ¼ °ü·Ã Ã³¸®¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Serveren kan ikke bearbejde gruppeopgaven.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼¿¡¼­ ³ª°¥ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke forlade en gruppe mens du er i en grotte.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿¡¼­ ³ª°¡¼Ì½À´Ï´Ù.";
+"[Gruppe] Du har forladt gruppen.";
+
+"<±æµå> ÀÌ¹Ì ´Ù¸¥ ÀüÀï¿¡ ÂüÀü Áß ÀÔ´Ï´Ù.";
+"[Orden] Din Orden deltager allerede i en anden krig.";
+
+"<±æµå> ±æµåÀü¿¡ ´ëÇÑ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke krav på en Ordens-krig.";
+
+"<±æµå> ±×·± ±æµå°¡ ¾ø½À´Ï´Ù.";
+"[Orden] Denne Orden findes ikke.";
+
+"ÀÌ¹Ì ÀÔÈÄº¸µÇ¾îÀÖ½À´Ï´Ù";
+"Der er allerede en kandidat.";
+
+"ÀÌ¹Ì ¼±ÀüÆ÷°í ÁßÀÎ ±æµåÀÔ´Ï´Ù.";
+"[Orden] Den Orden er allerede i krig.";
+
+"<±æµå> Àüºñ°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ikke nok Yang for at deltage i en Ordens-krig.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ Àüºñ°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenen har ikke nok Yang for at deltage i en Ordens-krig.";
+
+"<±æµå> ÀÌ¹Ì ÀüÀïÀÌ ¿¹¾àµÈ ±æµå ÀÔ´Ï´Ù.";
+"[Orden] Denne Orden har allerede planlagt endnu en Ordens-krig.";
+
+"<±æµå> »ó´ë¹æ ±æµå°¡ ÀÌ¹Ì ÀüÀï Áß ÀÔ´Ï´Ù.";
+"[Orden] Denne Orden er allerede i krig.";
+
+"<±æµå> ±æµåÀüÀ» ÇÏ±â À§ÇØ¼± ÃÖ¼ÒÇÑ %d¸íÀÌ ÀÖ¾î¾ß ÇÕ´Ï´Ù.";
+"[Orden] Mindst %d spiller skal deltage i en Ordens-krig.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ·¹´õ Á¡¼ö°¡ ¸ğÀÚ¶ó¼­ ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenen har ikke nok points for at deltage i en Ordens-krig.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ±æµå¿ø ¼ö°¡ ºÎÁ·ÇÏ¿© ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenen har ikke nok medlemmer til at deltage i en Ordens-krig.";
+
+"·¹º§ 20 ÀÌÇÏ´Â ÇÚµåÆù ¹øÈ£¸¦ µî·ÏÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Din level skal være højere end 20 for at registrere et mobilnr.";
+
+"±ºÁÖÀÇ ÀÚ°İÀ» °¡Áö°í ÀÖÁö ¾Ê½À´Ï´Ù";
+"Du har ikke kvalifikationerne til at blive Kejser.";
+
+"%s ´ÔÀ¸·Î ºÎÅÍ Ä£±¸ µî·ÏÀ» °ÅºÎ ´çÇß½À´Ï´Ù.";
+"%s har afvist invitationen.";
+
+"ÀÌ¹Ì ÆÄÆ¼¿¡ ¼ÓÇØ ÀÖÀ¸¹Ç·Î °¡ÀÔ½ÅÃ»À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke tage imod invitationen, da du allerede er i en anden gruppe.";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ë°¡´É ÇÑ ±â´ÉÀÔ´Ï´Ù";
+"Kun Kejseren kan bruge det.";
+
+"%d ÃÊ°£ ÄğÅ¸ÀÓÀÌ Àû¿ëÁßÀÔ´Ï´Ù.";
+"Opladningstid er ca. %d sekunder";
+
+"±¹°í¿¡ µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù. ÇöÀç : %lu ÇÊ¿ä±İ¾× : %lu";
+"Manglende skattepenge. Kapital: %u - der mangler: %u";
+
+"»ç¿ë¹ı: warpto <character name>";
+"Kommando: warpto <character name>";
+
+"Å¸Á¦±¹ À¯Àú¿¡°Ô´Â ÀÌµ¿ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Du kan ikke teleportere til en spiller fra et andet Rige.";
+
+"ÇØ´ç À¯Àú´Â %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"Tilføjer spiller %d i denne channel. (Aktuel channel %d)";
+
+"%s ¿¡°Ô·Î ÀÌµ¿ÇÕ´Ï´Ù";
+"Teleporter til spiller %s.";
+
+"Å¸Á¦±¹ À¯Àú´Â ¼ÒÈ¯ ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Du kan ikke tilkalde spiller af andre Riger.";
+
+"<±æµå> ±æµåÀüÁß¿¡´Â »ç³É¿¡ µû¸¥ ÀÌÀÍÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Mens du er i en Ordens-krig er der ingen jagt-fordel.";
+
+"±ºÁÖÀÇ Ãàº¹À¸·Î ÀÌÁö¿ª %s À¯Àú´Â HP,SP°¡ ¸ğµÎ Ã¤¿öÁı´Ï´Ù.";
+"Når Kejseren %s´ velsignelse gennemføres, gendannes HP og MP.";
+
+"³ªÀÇ ±ºÁÖ Á¤º¸";
+"Mine Kejser-informationer";
+
+"[%s±ºÁÖ] : %s  º¸À¯±İ¾× %lld ";
+"[%s Monark]: %s Yang i besiddelse %lld";
+
+"[%s±ºÁÖ] : %s  ";
+"[%s Monark]: %s";
+
+"±ºÁÖ Á¤º¸";
+"Kejser-informationer";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ëÇÒ¼ö ÀÖ´Â ±â´ÉÀÔ´Ï´Ù";
+"Kun en Kejser kan bruge det.";
+
+"1-50 »çÀÌÀÇ ¼öÄ¡¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä";
+"Vælg et tal mellem 1 og 50.";
+
+"¼ÒÈ¯ÇÒ¼ö ¾ø´Â ¸ó½ºÅÍ ÀÔ´Ï´Ù. ¼ÒÈ¯°¡´ÉÇÑ ¸ó½ºÅÍ´Â È¨ÆäÀÌÁö¸¦ ÂüÁ¶ÇÏ¼¼¿ä";
+"Dette monster kan ikke tilkaldes, check Mob-nr.";
+
+"ÃÖ´ë »ı¸í·Â +%d";
+"Livspoints +%d";
+
+"ÃÖ´ë Á¤½Å·Â +%d";
+"Manapoints +%d";
+
+"±ºÁÖÀÇ Ãàº¹À» »ç¿ëÇÏ¿´½À´Ï´Ù.";
+"Kejserens velsignelse er aktiv.";
+
+"Ã¼·Â +%d";
+"Udholdenhed +%d";
+
+"Áö´É +%d";
+"Intelligens +%d";
+
+"±Ù·Â +%d";
+"Styrke +%d";
+
+"¹ÎÃ¸ +%d";
+"Smidighed +%d";
+
+"°ø°İ¼Óµµ +%d";
+"Angrebshastighed +%d";
+
+"ÀÌµ¿¼Óµµ %d";
+"Bevægelseshastighed %d";
+
+"ÄğÅ¸ÀÓ -%d";
+"Klargørings tid -%d";
+
+"»ı¸í·Â È¸º¹ +%d";
+"Livsgendannelse +%d";
+
+"Á¤½Å·Â È¸º¹ +%d";
+"Mana-gendannelse +%d";
+
+"µ¶°ø°İ %d";
+"Giftangreb %d";
+
+"½ºÅÏ +%d";
+"Stjerne +%d";
+
+"½½·Î¿ì +%d";
+"Hastighedsreducering +%d";
+
+"%d%% È®·ü·Î Ä¡¸íÅ¸ °ø°İ";
+"Kritisk angreb med en sandsynlighed på %d%%";
+
+"%d%% È®·ü·Î °üÅë °ø°İ";
+"Gennemslående hit med en sandsynlighed på %d%%";
+
+"ÀÎ°£·ù ¸ó½ºÅÍ Å¸°İÄ¡ +%d%%";
+"Spillerangrebskraft mod monstre +%d%%";
+
+"µ¿¹°·ù ¸ó½ºÅÍ Å¸°İÄ¡ +%d%%";
+"Hesteangrebsstyrke mod monstre +%d%%";
+
+"¿õ±ÍÁ· Å¸°İÄ¡ +%d%%";
+"Angrebsforstærkning mod Wonggui +%d%%";
+
+"¹Ğ±³·ù Å¸°İÄ¡ +%d%%";
+"Angrebsforstærkning mod Milgyo +%d%%";
+
+"½ÃÃ¼·ù Å¸°İÄ¡ +%d%%";
+"Angrebs-boost mod zombier + %d%%";
+
+"¾Ç¸¶·ù Å¸°İÄ¡ +%d%%";
+"Angrebsforstærkning mod djævle +%d%%";
+
+"±ºÁÖÀÇ »çÀÚÈÄ ¿µÇâÀ¸·Î ÀÌÁö¿ª %s À¯Àú´Â 3ºĞ°£ 10 %% ÀÇ °ø°İ·ÂÀÌ  Áõ°¡µË´Ï´Ù";
+"Herskeren Sa-Zu-Ha vil øge spilleren %s i denne omegn, i 3 minutter 10 %% af sin angrebsstyrke.";
+
+"Å¸°İÄ¡ %d%% ¸¦ »ı¸í·ÂÀ¸·Î Èí¼ö";
+"Livspoint-absorpation på %d%% ved angreb.";
+
+"Å¸·ÂÄ¡ %d%% ¸¦ Á¤½Å·ÂÀ¸·Î Èí¼ö";
+"Manapoint-absorpation på %d%% ved angreb.";
+
+"%d%% È®·ü·Î Å¸°İ½Ã »ó´ë Àü½Å·Â ¼Ò¸ğ";
+"Med en sandsynlighed på %d%% trækkes fjendens manapoints.";
+
+"%d%% È®·ü·Î ÇÇÇØ½Ã Á¤½Å·Â È¸º¹";
+"Absorberer med en sandsynlighed på %d%% manapoints.";
+
+"¹°¸®Å¸°İ½Ã ºí·° È®·ü %d%%";
+"%d%% sandsynligheden for at blokere pile-angreb.";
+
+"È° °ø°İ È¸ÇÇ È®·ü %d%%";
+"%d%% sandsynligheden for at blokere et pile-angreb.";
+
+"ÇÑ¼Õ°Ë ¹æ¾î %d%%";
+"Enhåndsværds-forsvar %d%%";
+
+"¾ç¼Õ°Ë ¹æ¾î %d%%";
+"Tohåndsværds-forsvar %d%%";
+
+"µÎ¼Õ°Ë ¹æ¾î %d%%";
+"Tohåndsværds-forsvar %d%%";
+
+"¹æ¿ï ¹æ¾î %d%%";
+"Klokke-forsvar %d%%";
+
+"±ºÁÖÀÇ ±İ°­±Ç ¿µÇâÀ¸·Î ÀÌÁö¿ª %s À¯Àú´Â 3ºĞ°£ 10 %% ÀÇ ¹æ¾î·ÂÀÌ  Áõ°¡µË´Ï´Ù";
+"Herskeren Geum-Gang-Gwon vil øge spiller %s i denne omegn for 3 minutter 10 %% på hans rustning.";
+
+"ºÎÃ¤ ¹æ¾î %d%%";
+"Vifter-forsvar %d%%";
+
+"È°°ø°İ ÀúÇ× %d%%";
+"Distance-modstand %d%%";
+
+"È­¿° ÀúÇ× %d%%";
+"Ild-modstand %d%%";
+
+"Àü±â ÀúÇ× %d%%";
+"Elektricitets-modstand %d%%";
+
+"¸¶¹ı ÀúÇ× %d%%";
+"Magi-modstand %d%%";
+
+"¹Ù¶÷ ÀúÇ× %d%%";
+"Vind-modstand %d%%";
+
+"Á÷Á¢ Å¸°İÄ¡ ¹İ»ç È®·ü : %d%%";
+"Reflektere direkte angrebet: %d%%";
+
+"ÀúÁÖ µÇµ¹¸®±â È®·ü %d%%";
+"Reflektere forbandelse: %d%%";
+
+"µ¶ ÀúÇ× %d%%";
+"Gift-modstand %d%%";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã Á¤½Å·Â È¸º¹";
+"Mana-point vil øges med %d%% hvis du vinder.";
+
+"OX ÀÌº¥Æ®°¡ ÀÌ¹Ì ÁøÇàÁßÀÔ´Ï´Ù(flag: %d)";
+"Dette event er allerede i gang (Flag: %d)";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã °æÇèÄ¡ Ãß°¡ »ó½Â";
+"Erfaringen forøges med %d%% hvis du vinder over fjenden.";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã µ· 2¹è µå·Ó";
+"Yang-byttet af monstre forøges med %d%% hvis du vinder over fjenden.";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã ¾ÆÀÌÅÛ 2¹è µå·Ó";
+"Sandsynlighed for at genstande findes, forøges med %d%% hvis du vinder over fjenden.";
+
+"¹°¾à »ç¿ë½Ã %d%% ¼º´É Áõ°¡";
+"Øger eliksirens virkning med %d%%";
+
+"%d%% È®·ü·Î ÀûÅğÄ¡½Ã »ı¸í·Â È¸º¹";
+"%d%% sandsynlighed for at fylde livspoint op hvis du vinder over fjenden";
+
+"±âÀıÇÏÁö ¾ÊÀ½ %d%%";
+"Ingen besvimmelse %d%%";
+
+"´À·ÁÁöÁö ¾ÊÀ½ %d%%";
+"Ingen sløvelse %d%%";
+
+"³Ñ¾îÁöÁö ¾ÊÀ½ %d%%";
+"Ingen væltning %d%%";
+
+"°ø°İ·Â +%d";
+"Angrebsstyrke + %d";
+
+"¹æ¾î·Â +%d";
+"Rustning + %d";
+
+"OX ¹®Á¦ ½ºÅ©¸³Æ® ·Îµù ½ÇÆĞ";
+"OX Quiz-Script kunne ikke startes.";
+
+"¸¶¹ı °ø°İ·Â +%d";
+"Magisk angreb + %d";
+
+"¸¶¹ı ¹æ¾î·Â +%d";
+"Magisk forsvar + %d";
+
+"ÃÖ´ë Áö±¸·Â +%d";
+"Maksimal udholdenhed + %d";
+
+"¹«»ç¿¡°Ô °­ÇÔ +%d%%";
+"Fordel mod kriger + %d%%";
+
+"ÀÚ°´¿¡°Ô °­ÇÔ +%d%%";
+"Fordel mod ninja + %d%%";
+
+"¼ö¶ó¿¡°Ô °­ÇÔ +%d%%";
+"Fordel mod sura + %d%%";
+
+"¹«´ç¿¡°Ô °­ÇÔ +%d%%";
+"Fordel mod shamaner + %d%%";
+
+"¸ó½ºÅÍ¿¡°Ô °­ÇÔ +%d%%";
+"Stærk mod monstre + %d%%";
+
+"°ø°İ·Â +%d%%";
+"Angreb + %d%%";
+
+"¹æ¾î·Â +%d%%";
+"Forsvar + %d%%";
+
+"OX ¹®Á¦ ½ºÅ©¸³Æ® ·Îµù ¼º°ø";
+"OX Quiz-Script blev startet.";
+
+"°æÇèÄ¡ %d%%";
+"Erfaring %d%%";
+
+"¾ÆÀÌÅÛ µå·ÓÀ² %.1f¹è";
+"Sandsynlighed for at finde en genstand %. 1f";
+
+"µ· µå·ÓÀ² %.1f¹è";
+"Sandsynlighed for at finde Yang %. 1f";
+
+"ÃÖ´ë »ı¸í·Â +%d%%";
+"Maksimalt liv +%d%%";
+
+"ÃÖ´ë Á¤½Å·Â +%d%%";
+"Maksimalt liv +%d%%";
+
+"½ºÅ³ µ¥¹ÌÁö %d%%";
+"Færdighedsskade %d%%";
+
+"ÆòÅ¸ µ¥¹ÌÁö %d%%";
+"Slå-skade %d%%";
+
+"½ºÅ³ µ¥¹ÌÁö ÀúÇ× %d%%";
+"Modstand mod færdighedsskade %d%%";
+
+"ÆòÅ¸ µ¥¹ÌÁö ÀúÇ× %d%%";
+"Modstand mod hits %d%%";
+
+"¹«»ç°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% modstand mod kriger-angreb";
+
+"¾È³çÇÏ¼¼¿ä. ¸ŞÆ¾2 ÀÔ´Ï´Ù.";
+"Velkommen til Metin2.";
+
+"ÀÚ°´°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% modstand mod ninja-angreb";
+
+"¼ö¶ó°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% modstand mod sura-angreb";
+
+"¹«´ç°ø°İ¿¡ %d%% ÀúÇ×";
+"%d%% modstand mod shamaner-angreb";
+
+" (¸¸·áÀÏ : %d³â %d¿ù %dÀÏ)";
+"(Udløber: %d y- %d m - %d d)";
+
+"Ã¤ÆÃ ±İÁö »óÅÂÀÔ´Ï´Ù.";
+"Din chat blev spærret.";
+
+"¿ÜÄ¡±â´Â À¯·áÈ¸¿ø¸¸ »ç¿ëÇÒ¼ö ÀÖ½À´Ï´Ù";
+"Der kræves et højere level for at kunne råbe.";
+
+"¿ÜÄ¡±â´Â ·¹º§ %d ÀÌ»ó¸¸ »ç¿ë °¡´É ÇÕ´Ï´Ù.";
+"Du skal være level %d for at kunne råbe.";
+
+"ÆÄÆ¼ ÁßÀÌ ¾Æ´Õ´Ï´Ù.";
+"Du er ikke medlem i en gruppe.";
+
+"±æµå¿¡ °¡ÀÔÇÏÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Du er ikke blevet medlem af denne Orden.";
+
+"»ó´ë¹æÀÌ ¸Ş½ÅÁ® Ãß°¡ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"Spilleren har afvist din anmodning om at tilføje ham til din venneliste.";
+
+"OX ÀÌº¥Æ®°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù.";
+"OX Event er startet.";
+
+"<¸Ş½ÅÁ®> ¿î¿µÀÚ´Â ¸Ş½ÅÁ®¿¡ Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Venner] Du kan ikke tilføje en GM til din venneliste.";
+
+"%s ´ÔÀº Á¢¼ÓµÇ ÀÖÁö ¾Ê½À´Ï´Ù.";
+"%s er ikke online.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡ Ã¢°í¸¦ ¿­¼ö ¾ø½À´Ï´Ù.";
+"Efter at have handlet, kan du først åbne en butik om %d sek.";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Du kan først handle om %d sekunder.";
+
+"¾×¼ö°¡ 20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© °Å·¡¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù..";
+"Du har mere end 2 Milliarder Yang. Du kan ikke handle.";
+
+"´Ù¸¥ °Å·¡ÁßÀÏ°æ¿ì °³ÀÎ»óÁ¡À» ¿­¼ö°¡ ¾ø½À´Ï´Ù.";
+"Du kan ikke åbne en privat butik mens et andet vindue er åbent.";
+
+"»ó´ë¹æÀÇ ÃÑ±İ¾×ÀÌ 20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© °Å·¡¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù..";
+"Denne spiller har mere end 2 Mrd. Yang. Du kan ikke handle med ham.";
+
+"<Ã¢°í> ¿Å±æ ¼ö ¾ø´Â À§Ä¡ÀÔ´Ï´Ù.";
+"[Lager] Det er ikke muligt at bevæge sig imens.";
+
+"<Ã¢°í> ÀÌ ¾ÆÀÌÅÛÀº ³ÖÀ» ¼ö ¾ø½À´Ï´Ù.";
+"[Lager] Denne genstand kan ikke lagres.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿äÃ»À» ÇÑ Ä³¸¯ÅÍ¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Spilleren der har sendt invitationen er ikke online længere.";
+
+"À»µÎÁö¸¦ ÅëÇÏ¿© ÀÔÀå °¡´ÉÇÕ´Ï´Ù.";
+"Med Uriel´s tilladelse er indgangen åben.";
+
+"<ÆÄÆ¼> ¸®´õ¸¸ º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Gruppe] Kun gruppelederen kan redigere det.";
+
+"<ÆÄÆ¼> »óÅÂ¸¦ º¯°æÇÏ·Á´Â »ç¶÷ÀÌ ÆÄÆ¼¿øÀÌ ¾Æ´Õ´Ï´Ù.";
+"[Gruppe] Målet er ikke medlem af din gruppe.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼¿¡¼­ Ãß¹æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke udelukke en spiller mens I er i grotten.";
+
+"<ÆÄÆ¼> ´øÁ¯³»¿¡¼­´Â ÆÄÆ¼¿øÀ» Ãß¹æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke udelukke en spiller mens I er i grotten.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿¡¼­ Ãß¹æ´çÇÏ¼Ì½À´Ï´Ù.";
+"[Gruppe] Du blev udelukket af gruppen.";
+
+"<ÆÄÆ¼> ´øÁ¯³»¿¡¼­´Â ÆÄÆ¼¸¦ ³ª°¥ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke forlade en gruppe mens du er i en grotte.";
+
+"<ÆÄÆ¼> ´Ù¸¥ ÆÄÆ¼¿øÀ» Å»Åğ½ÃÅ³ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke udelukke gruppemedlemmerne.";
+
+"<±æµå> ÇØ»êÇÑ ÈÄ %dÀÏ ÀÌ³»¿¡´Â ±æµå¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du har først lige opløst en Orden - derfor skal du vente %d dage inden du kan oprette en ny Orden.";
+
+"<±æµå> Å»ÅğÇÑ ÈÄ %dÀÏ ÀÌ³»¿¡´Â ±æµå¸¦ ¸¸µé ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du er først lige gået ud af en Orden - derfor skal du vente %d dage inden du kan oprette en ny Orden.";
+
+"ÀûÇÕÇÏÁö ¾ÊÀº ±æµå ÀÌ¸§ ÀÔ´Ï´Ù.";
+"Ordensnavnet er ikke tilladt.";
+
+"¸¹Àº Âü¿© ºÎÅ¹µå¸³´Ï´Ù.";
+"Vi beder om deltagelsen fra mange spillere";
+
+"<±æµå> [%s] ±æµå°¡ »ı¼ºµÇ¾ú½À´Ï´Ù.";
+"[Orden] [%s] blev oprettet.";
+
+"<±æµå> ±æµå »ı¼º¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Orden] Oprettelsen mislykket.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ ±â¼úÀº ÆÄÆ¼Àå¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Gruppe] Gruppefærdigheder kan kun bruges af gruppelederen.";
+
+"<ÆÄÆ¼> ¼ÒÈ¯ÇÏ·Á´Â ´ë»óÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Målet blev ikke fundet.";
+
+"<±æµå> Àß¸øµÈ ±İ¾×ÀÔ´Ï´Ù.";
+"[Orden] Yang-bidraget er ikke korrekt.";
+
+"<±æµå> °¡Áö°í ÀÖ´Â µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"[Orden] Du har ikke nok Yang.";
+
+"<±æµå> ±×·¯ÇÑ »ç¶÷À» Ã£À» ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Den søgte person kunne ikke findes.";
+
+"<±æµå> »ó´ë¹æÀÌ °°Àº ±æµå°¡ ¾Æ´Õ´Ï´Ù.";
+"[Orden] Denne person er ikke medlem af samme Orden.";
+
+"<±æµå> ±æµå¿øÀ» °­Á¦ Å»Åğ ½ÃÅ³ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ingen rettigheder til at udelukke Ordensmedlemmer.";
+
+"<±æµå> ±æµå¿ø %s ´ÔÀ» °­Á¦ Å»Åğ ½ÃÄ×½À´Ï´Ù.";
+"[Orden] Ordensmedlem %s blev udelukket af Ordenen.";
+
+"OXÀÌº¥Æ®°¡ ´İÈ÷Áö ¾Ê¾Ò°Å³ª, ÄûÁî ÃâÁ¦ÁßÀÔ´Ï´Ù.(flag: %d)";
+"OX Eventet blev ikke afsluttet, der opstod en fejl. (flag: %d)";
+
+"<±æµå> ±æµå¿øÀ» °­Á¦ Å»Åğ ½ÃÄ×½À´Ï´Ù.";
+"[Orden] Du har udelukket et Ordensmedlem.";
+
+"<±æµå> Á÷À§ ÀÌ¸§À» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke rettighederne til at redigere dit egen rangnavn.";
+
+"<±æµå> ±æµåÀåÀÇ Á÷À§ ÀÌ¸§Àº º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenslederen`s position kan ikke ændres.";
+
+"<±æµå> ÀûÇÕÇÏÁö ¾ÊÀº Á÷À§ ÀÌ¸§ ÀÔ´Ï´Ù.";
+"[Orden] Rangnavn er ikke tilladt.";
+
+"<±æµå> Á÷À§ ±ÇÇÑÀ» º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke rettighederne til at redigere din position.";
+
+"<±æµå> ±æµåÀåÀÇ ±ÇÇÑÀº º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenslederen`s position kan ikke ændres.";
+
+"<±æµå> %uÀÇ °æÇèÄ¡¸¦ ÅõÀÚÇÏ¿´½À´Ï´Ù.";
+"[Orden] %u erfaringspoint indsat.";
+
+"<±æµå> °æÇèÄ¡ ÅõÀÚ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Orden] Erfaringsindsats mislykket.";
+
+"<±æµå> µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"[Orden] Ikke nok Yang i ordens skatkammeret.";
+
+"<±æµå> ¿ë½Å·Â È¸º¹¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"[Orden] Drage-ånden kunne ikke gendannes.";
+
+"Àá½Ã ÈÄ OX ÀÌº¥Æ®¸¦ ´Ù½Ã ½ÃÀÛÇÏ°Ú½À´Ï´Ù.";
+"Snart vil vores OX Event starte på ny.";
+
+"<±æµå> °øÁö±ÛÀ» ÀÛ¼ºÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke ret til at skrive meddelelser.";
+
+"<±æµå> Á÷À§¸¦ º¯°æÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke tilladelse til at redigere positionen.";
+
+"<±æµå> ±æµåÀåÀÇ Á÷À§´Â º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenslederen`s position kan ikke ændres.";
+
+"<±æµå> ±æµåÀåÀ¸·Î Á÷À§¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du kan ikke skifte Ordensmesters position.";
+
+"<±æµå> Àå±ºÀ» ÁöÁ¤ÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ikke rettighederne til at vælge Ordenslederen.";
+
+"<±æµå> ´õÀÌ»ó Àå¼ö¸¦ ÁöÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du kan ikke vælge yderligere Ordensledere.";
+
+"¾ÆÀÌÅÛÀ» °Ç³×ÁÙ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke give denne genstand bort.";
+
+"ºÒ¹ı ÇÁ·Î±×·¥ÀÌ °¨Áö µÇ¾î °ÔÀÓÀÌ Á¾·á µË´Ï´Ù.";
+"Illegal software blev fundet! Spillet lukkes ned.";
+
+"¼ÒÀ¯ µ·ÀÌ 20¾ï³ÉÀ» ³Ñ¾î °Å·¡¸¦ ÇÛ¼ö°¡ ¾ø½À´Ï´Ù.";
+"Du har mere end 2 Mrd. Yang. Du kan ikke handle.";
+
+"±İ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Ikke nok Yang.";
+
+"ÇöÀç ÀÌº¥Æ® Âü°¡ÀÚ ºĞµéÀº ¸¶À»·Î ÀÌµ¿ µÇ°Ú½À´Ï´Ù.";
+"Gave-Event er begrænset på denne egn.";
+
+"¾ÆÀÌÅÛ ·ê·¿ ½ÃÀÛ.";
+"Genstands-Roulette er startet.";
+
+"¸Ó´Ï  ·ê·¿ ½ÃÀÛ.";
+"Genstands-Yang-Roulette er startet.";
+
+"ÇöÀç ¿Â¶óÀÎ »óÅÂ ÀÔ´Ï´Ù. ±Ó¸»À» ÀÌ¿ëÇÏ¼¼¿ä.";
+"Han/hun er online. Vær venlig at bruge hviske-funktionen.";
+
+"ÇÚµåÆù ¹øÈ£°¡ µî·ÏµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Dit mobilnr. er ikke registreret.";
+
+"¹®ÀÚ ¸Ş¼¼Áö Àü¼ÛÀº ·¹º§ 20ºÎÅÍ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du skal mindst være på level 20 for at sende SMS.";
+
+"¹®ÀÚ ¸Ş¼¼Áö Àü¼Û¿¡´Â 2000¿øÀÌ ÇÊ¿ä ÇÕ´Ï´Ù.";
+"Du har brug for 2000 DT for at sende en SMS.";
+
+"¹®ÀÚ ¸Ş¼¼Áö¸¦ Àü¼Û Çß½À´Ï´Ù.";
+"Din SMS blev sendt.";
+
+"%s ±æµåÀÇ %sÀÌ %d%% Áõ°¡Çß½À´Ï´Ù!";
+"%s af Ordenen %s er steget med %d%%!";
+
+"%s ±æµåÀÇ %sÀÌ Á¤»óÀ¸·Î µ¹¾Æ¿Ô½À´Ï´Ù.";
+"%s af Ordenen %s er normale igen.";
+
+"%sÀÇ %sÀÌ %d%% Áõ°¡Çß½À´Ï´Ù!";
+"%s: %s er steget med %d%%!";
+
+"%sÀÇ %sÀÌ Á¤»óÀ¸·Î µ¹¾Æ¿Ô½À´Ï´Ù.";
+"%s `s %s er normalt igen.";
+
+"°î±ªÀÌ ¼ö·Ãµµ°¡ ÃÖ´ë(%d)°¡ µÇ¾ú½À´Ï´Ù.";
+"Dine udvindings-points er steget til det maksimale (%d).";
+
+"°î±ªÀÌ°¡ ÃÖ´ë ¼ö·Ãµµ¿¡ µµ´ŞÇÏ¿´½À´Ï´Ù.";
+"Dine udvindings-points er steget til det maksimale.";
+
+"³ª¹«²Û¸¦ ÅëÇØ ´ÙÀ½ ·¹º§ÀÇ °î±ªÀÌ·Î ¾÷±×·¹ÀÌµå ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan forbedre din Spidshakke hos brændehuggeren Deokbae.";
+
+"°î±ªÀÌÀÇ ¼ö·Ãµµ°¡ Áõ°¡ÇÏ¿´½À´Ï´Ù! (%d/%d)";
+"Dine udvindings-points er steget! (%d/%d)";
+
+"°î±ªÀÌ¸¦ µé°í ÀÖÁö ¾Ê¾Æ¼­ Ä¶ ¼ö ¾ø½À´Ï´Ù.";
+"Uden spidshakke kan du ikke udvinde noget.";
+
+"´õÀÌ»ó Ä³³¾ ¼ö ¾ø½À´Ï´Ù.";
+"Der er intet der kan udvindes.";
+
+"Ã¤±¤¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Udvindelsen var succesfuld.";
+
+"Ã¤±¤¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Udvindelsen er mislykket.";
+
+"<¸Ş½ÅÁ®> %s ´ÔÀ» Ä£±¸·Î Ãß°¡ÇÏ¿´½À´Ï´Ù.";
+"[Venner] Du har tilføjet %s som ven.";
+
+"Àá½Ã ÈÄ ¸¶À»·Î ÀÌµ¿µÇ°Ú½À´Ï´Ù.";
+"Spilleren vil snart blive teleporteret til byen.";
+
+"<¸Ş½ÅÁ®> %s ´ÔÀ» ¸Ş½ÅÀú¿¡¼­ »èÁ¦ÇÏ¿´½À´Ï´Ù.";
+"[Venner] Du har fjernet %s fra listen.";
+
+"¼­¹ö¿¡ Ä¡¸íÀûÀÎ ¿À·ù°¡ ¹ß»ıÇÏ¿© ÀÚµ¿À¸·Î ÀçºÎÆÃµË´Ï´Ù.";
+"En kritisk server-fejl opstod! Serveren bliver automatisk genstartet.";
+
+"10ÃÊÈÄ ÀÚµ¿À¸·Î Á¢¼ÓÀÌ Á¾·áµÇ¸ç,";
+"Om 10 sekunder bliver forbindelsen automatisk afbrudt.";
+
+"5ºĞ ÈÄ¿¡ Á¤»óÀûÀ¸·Î Á¢¼ÓÇÏ½Ç¼ö ÀÖ½À´Ï´Ù.";
+"Du kan logge på igen om 5 minutter.";
+
+"(%s) ±æµå°¡ »ı¼ºµÇ¾ú½À´Ï´Ù. [ÀÓ½Ã]";
+"(%s) blev oprettet. [temporær]";
+
+"ÇöÀç ÀüÀïÁßÀÎ ±æµå ÀÔ´Ï´Ù";
+"Denne Orden er i krig.";
+
+"%s: Á¸ÀçÇÏÁö ¾Ê´Â ±æµå ÀÔ´Ï´Ù.";
+"%s: Denne Orden findes ikke.";
+
+"±×·± ÀÌ¸§ ¶Ç´Â ¹øÈ£ÀÇ ±æµå°¡ ¾ø½À´Ï´Ù.";
+"En Orden med det navn eller nr. findes ikke.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â °Ç¹°ÀÔ´Ï´Ù.";
+"Denne bygning findes ikke.";
+
+"°°ÀÌ ÁöÀ» ¼ö ¾ø´Â Á¾·ùÀÇ °Ç¹°ÀÌ Áö¾îÁ® ÀÖ½À´Ï´Ù.";
+"Denne bygningstype kan kun oprettes en gang.";
+
+"OXÀÌº¥Æ® ¸ÊÀ» ¸ÕÀú ´İ¾Æ ÁÖ¼¼¿ä.(Flag: %d)";
+"Luk først OX eventkortet. (Flag: %d)";
+
+"°Ç¼³¿¡ ÇÊ¿äÇÑ °Ç¹°ÀÌ Áö¾îÁ® ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Først skal hovedbygningen oprettes.";
+
+"°Ç¹° ºñ¿ë Á¤º¸ ÀÌ»óÀ¸·Î °Ç¼³ ÀÛ¾÷¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Bygning, pga. forkerte omkostninger mislykket.";
+
+"°Ç¼³ ºñ¿ëÀÌ ºÎÁ·ÇÕ´Ï´Ù.";
+"Din orden har ikke nok Yang til at opføre denne bygning.";
+
+"ÀÚÀç°¡ ºÎÁ·ÇÏ¿© °Ç¼³ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du har ikke nok materialer.";
+
+"°Ç¹°À» ÁöÀ» ¼ö ¾ø´Â À§Ä¡ÀÔ´Ï´Ù.";
+"Du kan ikke oprette en bygning på denne egn.";
+
+"Á¸ÀçÇÏÁö ¾Ê´Â Ä³¸¯ÅÍ ÀÔ´Ï´Ù.";
+"Denne karakter findes ikke.";
+
+"´ë·Ã °­Á¦ Á¾·á ½ÇÆĞ";
+"Duel blev ikke afbrudt.";
+
+"´ë·Ã °­Á¦ Á¾·á ¼º°ø";
+"Duel blev afbrudt.";
+
+"´ë·ÃÀÌ ¼º°øÀûÀ¸·Î ½ÃÀÛ µÇ¾ú½À´Ï´Ù.";
+"Duel-start!";
+
+"´ë·Ã ½ÃÀÛ¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.";
+"Der opstod en fejl ved duel-starten.";
+
+"¹®Á¦¸¦ ÃâÁ¦ÇÏÁö ¸øÇß½À´Ï´Ù.";
+"Der er ikke opstået nogen fejl.";
+
+"´ë·ÃÀÚ°¡ ¾ø½À´Ï´Ù.";
+"Der er ingen du kan duelere mod.";
+
+"³²Àº ½ºÅÈ Æ÷ÀÎÆ®°¡ ¾ø½À´Ï´Ù.";
+"Ingen statuspoints tilovers.";
+
+"³²Àº ½ºÅÈ Æ÷ÀÎÆ®°¡ Àû½À´Ï´Ù.";
+"Resterende status point er for lave.";
+
+"°ªÀ» Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.";
+"Du har indtastet en forkert værdi.";
+
+"¸í·É¾îÀÇ ¼­ºê Ä¿¸Çµå°¡ Àß¸ø µÇ¾ú½À´Ï´Ù.";
+"Underkommando af kommandoen er forkert.";
+
+"ÇÃ·¹ÀÌ¾î %d ¿Í ÇÃ·¹ÀÌ¾î  %d¸¦ ÆÄÈ¥½ÃÅµ´Ï´Ù..";
+"Kontraktbrud mellem spiller %d og %d.";
+
+"·í·¿À» µ¹¸³´Ï´Ù. ±İ¾× %d";
+"Start Rouletten, med en indsats på %d Yang.";
+
+"¾ÆÀÌÅÛ·Î±×°¡ syslog ¿¡ ³²¾Ò½À´Ï´Ù";
+"Itemlog blev gemt i syslog.";
+
+"°¢Á¦±¹ ÁøÇà Á¤º¸";
+"Succes-informationer af Rigene.";
+
+"¼±ÅÃ ¸Ê Á¤º¸ ¼ºÁö %d Åë·Î %d %d %d";
+"Vælg kort-informationen af det hellige land %d Adgang %d %d %d";
+
+"¹®Á¦¸¦ ÃâÁ¦ÇÏ¿´½À´Ï´Ù.";
+"Der opstod en fejl.";
+
+"%s killcount %d mobkillcount %d bosskillcount %d ¼ºÁö ÁøÀÔ¼ö %d";
+"%s killcount %d mobkillcount %d bosskillcount %d Antal helligt land %d";
+
+"³ªÀÇ »ï°Å¸® ÁøÇàÁ¤º¸";
+"Informationer: Rigsslag-stand.";
+
+"Äù½ºÆ®¸¦ ·ÎµåÇÏ´Â ÁßÀÔ´Ï´Ù. Àá½Ã¸¸ ±â´Ù·Á ÁÖ½Ê½Ã¿À.";
+"Din ansøgning blev sendt. vent venligst.";
+
+"´Ù¸¥°Å·¡Ã¢ÀÌ ¿­¸°»óÅÂ¿¡¼­´Â Ã¢°í¸¦ ¿­¼ö°¡ ¾ø½À´Ï´Ù.";
+"Du kan ikke åbne et Lagerrum mens et andet vindue er åbent.";
+
+"<Ã¢°í> Ã¢°í ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù.";
+"[Lager] Kodeordet blev redigeret.";
+
+"<Ã¢°í> ±âÁ¸ ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù.";
+"[Lager] Du har indtastet et forkert kodeord.";
+
+"°áÀç±â°£ÀÌ %dºĞ ÈÄ ¸¸·á µË´Ï´Ù.";
+"Din spilletid er forbi om %d minutter.";
+
+"Á¤»óÀûÀ¸·Î ÅõÇ¥¸¦ÇÏ¿´½À´Ï´Ù.";
+"Lovligt valgt.";
+
+"ÀÌ¹ÌÅõÇ¥¸¦ ÇßÀ½";
+"Er allerede valgt";
+
+"%s ´ÔÀº Á¤»óÀûÀ¸·Î Ãâ¸¶¸¦ ÇÏ¿´½À´Ï´Ù.";
+"%s spiller er allerede med i valget.";
+
+"OXÀÌº¥Æ®°¡ ¿­·Á ÀÖÁö ¾Ê°Å³ª ¹®Á¦ ÃâÁ¦ÁßÀÔ´Ï´Ù.(Flag: %d)";
+"OX event afsluttet. Ingen fejl opstod. (Flag: %d)";
+
+"Ãâ¸¶¸¦ ÇÒ¼ö°¡ ¾ø½À´Ï´Ù";
+"Kan ikke stilles op til valg.";
+
+"ÇöÀç %s ±¹°í¿¡´Â %lu ÀÇ µ·ÀÌ ÀÖ½À´Ï´Ù";
+"%s har stadig %u Yang tilovers.";
+
+"ÇöÀç %s ±¹°í¿¡´Â %d ÀÇ µ·ÀÌ ÀÖ½À´Ï´Ù";
+"%s har stadig %d Yang tilovers.";
+
+"±¹°í¿¡ µ·ÀÌ ºÎÁ·ÇÏ°Å³ª µ·À» °¡Á®¿Ã¼ö ¾ø´Â »óÈ²ÀÔ´Ï´Ù";
+"Du har ikke nok Yang.";
+
+" %s ±ºÁÖ ÈÄº¸¿¡¼­ »èÁ¦ÇÏ¿´½À´Ï´Ù";
+"%s er slettet som Kejserkandidat.";
+
+" %s ´Â ±ºÁÖ ÈÄº¸°¡ ¾Æ´Õ´Ï´Ù.";
+"%s er ikke Kejserkandidat.";
+
+" %s ±ºÁÖ·Î ÀÔ¸í Çß½À´Ï´Ù.";
+"%s er nomineret som Kejser.";
+
+" %s ´Â ±ºÁÖ·Î ÀÔ¸íÇÒ¼ö ¾ø½À´Ï´Ù .";
+"%s kan ikke blive nomineret som Kejser.";
+
+" %s ±ºÁÖ¸£ Á¦°Å ÇÏ¿´½À´Ï´Ù..";
+"Kejseren %s bliver fjernet.";
+
+" %s ±ºÁÖ¸¦ Á¦°Å ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Kejseren %s kan ikke blive fjernet.";
+
+"´õ ÀÌ»ó OXÀÌº¥Æ® Âü°¡ÀÚ¸¦ ¹ŞÁö ¾Ê½À´Ï´Ù.";
+"OX Event accepterer ikke yderligere deltagere.";
+
+"½Å¼ö±¹";
+"Shinsoo Riget";
+
+"ÃµÁ¶±¹";
+"Chunjo Riget";
+
+"Áø³ë±¹";
+"Jinno Riget";
+
+"³¬½Ã´ëÀÇ ¼ö·Ãµµ°¡ Áõ°¡ÇÏ¿´½À´Ï´Ù! (%d/%d)";
+"Dine fiskeri-points er steget! (%d/%d)";
+
+"³¬½Ã´ë°¡ ÃÖ´ë ¼ö·Ãµµ¿¡ µµ´ŞÇÏ¿´½À´Ï´Ù.";
+"Du kan ikke forbedre din fiskestang yderligere.";
+
+"¾îºÎ¸¦ ÅëÇØ ´ÙÀ½ ·¹º§ÀÇ ³¬½Ã´ë·Î ¾÷±×·¹ÀÌµå ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan forbedre din fiskestang ved fiskeren.";
+
+"°í±â°¡ ¹Ì³¢¸¸ »©¸Ô°í Àì½Î°Ô µµ¸ÁÄ¨´Ï´Ù.";
+"Fisken har spist din agn.";
+
+"°í±â°¡ ÀâÇû½À´Ï´Ù! (%s)";
+"Du har fanget en fisk! (%s)";
+
+"ÀÌ¹ø¿¡ ÀâÀº ¹°°í±âÀÇ ±æÀÌ´Â %.2fcm";
+"Den fangede fisk har en længde på %.2cm";
+
+"³¬½ÃÀÌº¥Æ®¿ùÃ´ºØ¾î";
+"Fiskeri-stævne 'Den bedste fisker'";
+
+"OXÀÌº¥Æ®ÀÇ ³ª¸ÓÁö ÀÎ¿øÀ» ±â·ÏÇÏ¿´½À´Ï´Ù.";
+"OX de resterende eventdeltagere bliver noteret.";
+
+"³¬½ÃÀÌº¥Æ®À×¾î";
+"Fiskeri-stævne 'Karpe'";
+
+"%s : %d ¸¶¸®";
+"%s: %d";
+
+"%d Á¾·ù %d ¸¶¸® ³¬À½";
+"Du har fanget %d %d.";
+
+"°í±â°¡ ÈçÀûµµ ¾øÀÌ »ç¶óÁı´Ï´Ù.";
+"Fisken er forsvundet i vandets dybde.";
+
+"¹è ¼Ó¿¡¼­ Á¶°³°¡ ³ª¿Ô½À´Ï´Ù.";
+"I fisken er en musling.";
+
+"¹è ¼Ó¿¡¼­ Áö··ÀÌ°¡ ³ª¿Ô½À´Ï´Ù.";
+"I fisken er en orm.";
+
+"%s¸¦ ±¸¿ü½À´Ï´Ù.";
+"Du rister %s over ilden.";
+
+"20¾ï ³ÉÀ» ÃÊ°úÇÏ¿© »óÁ¡À» ¿­¼ö°¡ ¾ø½À´Ï´Ù";
+"Du kan ikke handle da du bære mere end 2 milliarder Yang.";
+
+"ºñ¼Ó¾î³ª Àº¾î°¡ Æ÷ÇÔµÈ »óÁ¡ ÀÌ¸§À¸·Î »óÁ¡À» ¿­ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke give din butik et ugyldigt navn.";
+
+"À¯·áÈ­ ¾ÆÀÌÅÛÀº °³ÀÎ»óÁ¡¿¡¼­ ÆÇ¸ÅÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke sælge en Item-Shop genstand i private butikker.";
+
+"OXÀÌº¥Æ®ÀÇ ³ª¸ÓÁö ÀÎ¿ø ±â·ÏÀ» ½ÇÆĞÇß½À´Ï´Ù.";
+"OX De resterende eventdeltagere bliver ikke noteret.";
+
+"Ã¤±¤À» Áß´ÜÇÏ¿´½À´Ï´Ù.";
+"Afvindelse afsluttet.";
+
+"°î±ªÀÌ¸¦ ÀåÂøÇÏ¼¼¿ä.";
+"Udrust dig med en spidshakke.";
+
+"³¬½Ã´ë¸¦ ÀåÂø ÇÏ¼¼¿ä.";
+"Udrust dig med en fiskestang.";
+
+"¹Ì³¢¸¦ ³¢°í ´øÁ® ÁÖ¼¼¿ä.";
+"Sæt først agnen på fiskekrogen.";
+
+"³¬½Ã´ë°¡ ¾Æ´Ñ ¹°°ÇÀ¸·Î ³¬½Ã¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù!";
+"Du kan ikke fiske uden fiskestang!";
+
+"ÆÄÆ¼ÀåÀÌ Á¢¼Ó »óÅÂ°¡ ¾Æ´Ï¶ó¼­ ¿äÃ»À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke ansøge om noget, da gruppelederen ikke er online.";
+
+"<ÆÄÆ¼> ´Ù¸¥ Á¦±¹°ú ÆÄÆ¼¸¦ ÀÌ·ê ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke være i samme gruppe med medlemmer fra et andet Rige.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼ ÃÊ´ë¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke invitere andre folk til gruppen mens du er i en grotte.";
+
+"<ÆÄÆ¼> °üÀü ¸ğµå¿¡¼± ÆÄÆ¼ ÃÊ´ë¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Som tilskuer kan du ikke invitere andre folk.";
+
+"<ÆÄÆ¼> -30 ~ +30 ·¹º§ ÀÌ³»ÀÇ »ó´ë¹æ¸¸ ÃÊ´ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Gruppe] Kun spillere med en levelforskel fra -30 til +30 kan inviteres.";
+
+"ÇöÀç ³²Àº Âü°¡ÀÚ¼ö : %d";
+"Nummer af resterende medlemmer: %d";
+
+"<ÆÄÆ¼> ÆÄÆ¼³» ÃÖ°í ·¹º§ º¸´Ù 30·¹º§ÀÌ ³·¾Æ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke invitere denne spiller, da hans level er for lav.";
+
+"<ÆÄÆ¼> ÆÄÆ¼³» ÃÖÀú ·¹º§ º¸´Ù 30·¹º§ÀÌ ³ô¾Æ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke invitere den spiller, da hans level er for høj.";
+
+"<ÆÄÆ¼> ´õ ÀÌ»ó ÆÄÆ¼¿øÀ» ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke invitere yderligere spillere i din gruppe.";
+
+"%s ´Ô¿¡°Ô ÆÄÆ¼°¡ÀÔ ½ÅÃ»À» Çß½À´Ï´Ù.";
+"Du ønsker at bliver medlem i %s gruppe.";
+
+"»ó´ë¹æÀÌ ÆÄÆ¼¿¡ ¼ÓÇØÀÖÁö ¾Ê½À´Ï´Ù.";
+"Denne spiller er ikke medlem af gruppen.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ÀÇ ÀÎ¿øÁ¦ÇÑÀÌ ÃÊ°úÇÏ¿© ÆÄÆ¼¿¡ Âü°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke blive medlem i en gruppe der allerede er fuld.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿øÀ» ÃÊ´ëÇÒ ¼ö ÀÖ´Â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Gruppe] Du har ikke rettighederne til at lave en invitation.";
+
+"<ÆÄÆ¼> %s ´ÔÀÌ ÆÄÆ¼ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"[Gruppe] %s afviser invitationen.";
+
+"<ÆÄÆ¼> ÀÌ¹Ì %s´ÔÀº ÆÄÆ¼¿¡ ¼ÓÇØ ÀÖ½À´Ï´Ù.";
+"[Gruppe] %s er allerede medlem af en gruppe.";
+
+"<ÆÄÆ¼> ´øÀü ¾È¿¡¼­´Â ÆÄÆ¼ ÃÊ´ë¿¡ ÀÀÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke acceptere invitationer mens du er i en grotte.";
+
+"OX ÀÌº¥Æ®¸¦ ¸¶Ä¡°Ù½À´Ï´Ù.";
+"OX Event bliver afsluttet.";
+
+"OXÀÌº¥Æ®¸¦ °­Á¦ Á¾·á ½ÃÅµ´Ï´Ù.";
+"OX Event bliver afsluttet.";
+
+"<ÆÄÆ¼> ÆÄÆ¼ ÃÊ´ë¿¡ ÀÀÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du har ikke mulighed for at modtage invitationen.";
+
+"<ÆÄÆ¼> %s´ÔÀÌ ÆÄÆ¼ ÃÊ´ë¸¦ °ÅÀıÇÏ¼Ì½À´Ï´Ù.";
+"[Gruppe] %s afviste din invitation.";
+
+"<ÆÄÆ¼> %s´ÔÀÌ ÆÄÆ¼¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"[Gruppe] %s er blevet medlem af gruppen.";
+
+"<ÆÄÆ¼> %s´ÔÀÇ ÆÄÆ¼¿¡ Âü°¡ÇÏ¼Ì½À´Ï´Ù.";
+"[Gruppe] %s er blevet medlem af gruppen.";
+
+"´Ù¸¥ °Å·¡Áß(Ã¢°í,±³È¯,»óÁ¡)¿¡´Â °³ÀÎ»óÁ¡À» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Nu kan du ikke benytte en privat butik";
+
+"»ó´ë¹æÀÌ ´Ù¸¥ °Å·¡¸¦ ÇÏ°í ÀÖ´Â ÁßÀÔ´Ï´Ù.";
+"Denne spiller handler allerede med en anden.";
+
+"¸ŞÆ¾2ÀÎÁõ¹øÈ£: %s";
+"Metin2 bekræftigelses-Nr.: %s";
+
+"ÀÎÁõ¹øÈ£°¡ Æ²·È½À´Ï´Ù. ´Ù½Ã ½ÃµµÇÏ¼¼¿ä.";
+"Dit bekræftigelses-Nr. er forkert. Prøv venligst igen.";
+
+"ÇÚµåÆù ¹øÈ£°¡ µî·Ï µÇ¾ú½À´Ï´Ù.";
+"Dit mobilnr. er registreret.";
+
+"»ó´ë¹æÀÌ ÀÖ´Â °÷À¸·Î ¿öÇÁÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke teleportere dig til denne spiller.";
+
+"OX »óÇ°À» Áö±ŞÇÏ¿´½À´Ï´Ù. ID: %d ¼ö·®: %d";
+"OX Prisen blev uddelt. ID: %d Størrelse: %d";
+
+"»ó´ë¹æÀÌ ¿Â¶óÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.";
+"Denne spiller er ikke online.";
+
+"»ó´ë¹æÀÌ %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"Denne spiller er på kanal %d. (Du er på kanal %d.)";
+
+"Ã¢°í¸¦ ¿¬ÈÄ %dÃÊ ÀÌ³»¿¡´Â ´Ù¸¥°÷À¸·Î ÀÌµ¿ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Efter åbning af lageret skal du vente %d sekunder for at kunne gå andre steder.";
+
+"°Å·¡Ã¢,Ã¢°í µîÀ» ¿¬ »óÅÂ¿¡¼­´Â ´Ù¸¥°÷À¸·Î ÀÌµ¿,Á¾·á ÇÒ¼ö ¾ø½À´Ï´Ù";
+"Efter handelstransaktionen kan du i nogen tid ikke gå nogen steder.";
+
+"°Å·¡ ÈÄ %dÃÊ ÀÌ³»¿¡´Â ´Ù¸¥Áö¿ªÀ¸·Î ÀÌµ¿ ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Da du lige har handlet kan, du ikke gå til et andet sted før om %d sekunder.";
+
+"´ë·Ã »ó´ë°¡ »ç¶óÁ® ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Duel afsluttet, da din fjende er forsvundet.";
+
+"¹°¾à Á¦ÇÑÀÌ ¾ø½À´Ï´Ù.";
+"Der er ingen begrænsning for eliksirere.";
+
+"¹°¾àÀ» %d °³ ±îÁö »ç¿ë °¡´ÉÇÕ´Ï´Ù.";
+"Du kan bruge op til %d eliksirere.";
+
+"10ÃÊµÚ ´ë·ÃÀÌ ½ÃÀÛµË´Ï´Ù.";
+"Kampen begynder om 10 sekunder.";
+
+"´ë·ÃÀÌ ½ÃÀÛµÇ¾ú½À´Ï´Ù.";
+"Duellen er startet";
+
+"Âü";
+"TRUE";
+
+"´ë·ÃÀå ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Din duel bliver afsluttet, da der er nogle problemer med duel-arenaen.";
+
+"´ë·Ã ½Ã°£ ÃÊ°ú·Î ´ë·ÃÀ» Áß´ÜÇÕ´Ï´Ù.";
+"Din duel bliver pga. tidsoverskridelse afsluttet.";
+
+"10ÃÊµÚ ¸¶À»·Î ÀÌµ¿ÇÕ´Ï´Ù.";
+"Om 10 sekunder bliver du teleporteret til byen.";
+
+"´ë·ÃÀÚ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Áß´ÜÇÕ´Ï´Ù.";
+"Din duel bliver afsluttet, da der er nogle problemer med duel-arenaen.";
+
+"»ó´ë¹æ Ä³¸¯ÅÍÀÇ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Din duel-modstander har et problem. Duellen bliver afsluttet.";
+
+"´ë·ÃÀÚ ¹®Á¦·Î ÀÎÇÏ¿© ´ë·ÃÀ» Á¾·áÇÕ´Ï´Ù.";
+"Din duel bliver afsluttet, da der opstod et problem med modstanderen.";
+
+"%s ´ÔÀÌ ´ë·Ã¿¡¼­ ½Â¸®ÇÏ¿´½À´Ï´Ù.";
+"%s har vundet denne duel.";
+
+"%s ´ÔÀÌ ½Â¸®ÇÏ¿´½À´Ï´Ù.";
+"%s har vundet.";
+
+"10ÃÊµÚ ¸¶À»·Î µÇµ¹¾Æ°©´Ï´Ù.";
+"Om 10 sekunder bliver du teleporteret til byen.";
+
+"10ÃÊµÚ ´ÙÀ½ ÆÇÀ» ½ÃÀÛÇÕ´Ï´Ù.";
+"Næste runde starter om 10 sekunder.";
+
+"°ÅÁş";
+"FALSE";
+
+"»ó´ë¹æ Ä³¸¯ÅÍ°¡ Á¢¼ÓÀ» Á¾·áÇÏ¿© ´ë·ÃÀ» ÁßÁöÇÕ´Ï´Ù.";
+"Forbindelsen til din modstander blev afbrudt. Duellen bliver afsluttet.";
+
+"¾ÆÀÌÅÛ µå·Ó·ü  %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"Bonus-sandsynligheden for genstande er pt. %d%%";
+
+"°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"Bonus-sandsynligheden for Yang er pt. %d%%";
+
+"´ë¹Ú°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"Smednings satsen for Yang regn er i øjeblikket %d%% højere.";
+
+"°æÇèÄ¡ %d%% Ãß°¡ È¹µæ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù.";
+"Bonus erfaring er pt. %d%%";
+
+"Å¬¶óÀÌ¾ğÆ® ¹öÀüÀÌ Æ²·Á ·Î±×¾Æ¿ô µË´Ï´Ù. Á¤»óÀûÀ¸·Î ÆĞÄ¡ ÈÄ Á¢¼ÓÇÏ¼¼¿ä.";
+"Din clientversion er fejlbehæftet. Benyt den officielle patch.";
+
+"´Ù¸¥ °Å·¡Ã¢ÀÌ ¿­¸°»óÅÂ¿¡¼­´Â »óÁ¡°Å·¡¸¦ ÇÒ¼ö °¡ ¾ø½À´Ï´Ù.";
+"Du kan ikke handle i butikken mens et andet vindue er åbent.";
+
+"»óÁ¡°úÀÇ °Å¸®°¡ ³Ê¹« ¸Ö¾î ¹°°ÇÀ» »ì ¼ö ¾ø½À´Ï´Ù.";
+"Afstanden til butikken er for stor til at købe noget.";
+
+"»óÁ¡°úÀÇ °Å¸®°¡ ³Ê¹« ¸Ö¾î ¹°°ÇÀ» ÆÈ ¼ö ¾ø½À´Ï´Ù.";
+"Afstanden til butikken er for stor til at sælge noget.";
+
+"20¾ï³ÉÀÌ ÃÊ°úÇÏ¿© ¹°Ç°À» ÆÈ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke handle da du bære mere end 2 milliarder Yang.";
+
+"ÃÑ ÄûÁî ¼ö: %d";
+"Samlet quiz antal: %d";
+
+"ÆÇ¸Å±İ¾×ÀÇ %d %% °¡ ¼¼±İÀ¸·Î ³ª°¡°ÔµË´Ï´Ù";
+"Salget beskattes med %d%% .";
+
+"º¯½Å »óÅÂ¿¡¼­´Â ¸»¿¡ Å» ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke ride på hest, mens du er forvandlet.";
+
+"¿¹º¹À» ÀÔÀº »óÅÂ¿¡¼­ ¸»À» Å» ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke ride når du bærer bryllupstøj.";
+
+"¸»À» ¼ÒÀ¯ÇÏ°í ÀÖÁö ¾Ê½À´Ï´Ù.";
+"Du har ingen hest.";
+
+"¸»ÀÌ Á×¾îÀÖ´Â »óÅÂ ÀÔ´Ï´Ù.";
+"Din hest er død.";
+
+"¸»ÀÇ ½ºÅ×¹Ì³Ê°¡ ºÎÁ·ÇÏ¿© ¸»À» Å» ¼ö ¾ø½À´Ï´Ù.";
+"Din hests udholdenhed er for lav.";
+
+"¸» ¼ÒÈ¯¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Tilkaldning af hesten mislykkedes.";
+
+"´ÔÀÇ ¸»";
+"Hest";
+
+"°áÈ¥½ÄÀÌ Á¾·áµË´Ï´Ù.";
+"Brylluppet er snart forbi.";
+
+"ÀÚµ¿À¸·Î ³ª°¡°ÔµË´Ï´Ù.";
+"Bliver automatisk forladt.";
+
+"ÀÌ¹Ì ÀüÀïÀÌ ³¡³µ½À´Ï´Ù.";
+"Krigen er allerede over.";
+
+"10ÃÊµÚ ÆÇÁ¤ÇÏ°Ú½À´Ï´Ù.";
+"Resultatet vil komme om 10 sekunder.";
+
+"°üÀü »óÅÂ¿¡¼­´Â ±³È¯À» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Som tilskuer kan du ikke handle.";
+
+"´Ù¸¥ °Å·¡Ã¢ÀÌ ¿­·ÁÀÖÀ»°æ¿ì °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Hvis vinduet er åbent, kan du ikke handle med andre.";
+
+"»ó´ë¹æÀÌ ´Ù¸¥ °Å·¡ÁßÀÌ¶ó °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.";
+"Den anden person er optaget i øjeblikket, så du kan ikke handle lige nu.";
+
+"»ó´ë¹æÀÌ ±³È¯ °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"Personen har afbrudt handlen.";
+
+"µ·ÀÌ ºÎÁ·ÇÏ°Å³ª ¾ÆÀÌÅÛÀÌ Á¦ÀÚ¸®¿¡ ¾ø½À´Ï´Ù.";
+"Ikke nok Yang eller ledig plads i dit inventar.";
+
+"»ó´ë¹æÀÇ µ·ÀÌ ºÎÁ·ÇÏ°Å³ª ¾ÆÀÌÅÛÀÌ Á¦ÀÚ¸®¿¡ ¾ø½À´Ï´Ù.";
+"Din handelspartner har ikke nok Yang eller ingen ledig plads i inventar.";
+
+"»ó´ë¹æÀÇ ¼ÒÁöÇ°¿¡ ºó °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"Handelspartneren har ingen ledig plads i inventaret.";
+
+"%s ´Ô°úÀÇ ±³È¯ÀÌ ¼º»ç µÇ¾ú½À´Ï´Ù.";
+"Handlen med %s blev afsluttet.";
+
+"¿ë½ÅÀÇ °¡È£·Î °æÇèÄ¡°¡ ¶³¾îÁöÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Du har pga. dragegudens velsignelse ikke tabt nogen erfaring.";
+
+"ÇöÀç ½ºÄÚ¾î ½Å¼ö±¹:%d ÃµÁ¶±¹:%d Áø³ë±¹:%d";
+"Nuværende score: Shinsoo %d, Chunjo %d, Jinno %d";
+
+"Á¤´äÀº";
+"Det korrekte svar er:";
+
+"Á×Àº Á¤º¸ %s deadcount %d Empire %d killcount %d(Purpose %d) killmobcount %d, RegenFlag %d";
+"%s deadcount %d Empire %d killcount %d(Purpose %d) killmobcount %d, RegenFlag %d";
+
+"¼ºÁöÀÇ ¸¶¿Õ: ³ÊÈñ ";
+"Djævelen fra den hellige egn: [ENTER][ENTER]";
+
+"³à¼®µéÀº ÀÌ°÷ ¼ºÁö¿¡ ÀÖÀ» ÀÚ°İÀ» ÀÒ¾ú´Ù. ¸ğµÎ ¼ºÁö¿¡¼­ ¹°·¯³ª°Å¶ó~~[ENTER][ENTER] 10ÃÊ ÈÄ¿¡ ¸ğµÎ ¸¶À»·Î ÀÌµ¿ÇÏ°Ô µË´Ï´Ù. ";
+", du har ikke ret til at være her. Medlemmerne af dit rige vil forlade dette hellige område om 10 sekunder.";
+
+"»ï°Å¸® ÀüÅõ¿¡¼­ %s ±¹°¡°¡ °¡Àå¸ÕÀú Å»¶ôÀ» ÇÏ¿´½À´Ï´Ù";
+"%s Riget blev besejret og bliver udelukket af Rigskampen.";
+
+"»ï°Å¸® ¸÷ ¸®Á¨";
+"Monstre ved Rigsslagtningen.";
+
+". ³ÊÈñ°¡ ¼ºÁöÀÇ ¼öÈ£ÀÚ¸¦ Àâ°Ô µÈ´Ù¸é ³ÊÈñ´Â ¼ºÁöÀÇ ÁÖÀÎÀÌ µÈ´Ù.[ENTER][ENTER] ";
+"Når du besejre vagten på den hellige plads, er du den nye ejer af den hellige plads.";
+
+"¿ë½ÅÀÇ º¸È£·Î ¾ÆÀÌÅÛÀÌ ¶³¾îÁöÁö ¾Ê¾Ò½À´Ï´Ù.";
+"Du har pga. dragegudens velsignelse ikke tabt nogen erfaring.";
+
+"°üÅë Ãß°¡ µ¥¹ÌÁö %d";
+"Yderligere stikvåben skade %d";
+
+"%s ºí·°! (%ld%%)";
+"%s blokeret! (%d%%)";
+
+"%s È¸ÇÇ! (%ld%%)";
+"%s udvige! (%d%%)";
+
+"O ÀÔ´Ï´Ù";
+"Ja (O)";
+
+"%s[%ld]°¡ °ø°İ À§Ä¡: %d %d";
+"%s[%d]s angrebsposition: %d %d";
+
+"¸í·É¾î¸¦ ¸ğµÎ ÀÔ·ÂÇÏ¼¼¿ä.";
+"Vær venlig og indtaste kommandoen i fuld længde.";
+
+"Åº »óÅÂ¿¡¼­´Â ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Dette kan du ikke, mens du ridder.";
+
+"¾²·¯Áø »óÅÂ¿¡¼­´Â ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke gøre det mens du ligger på jorden.";
+
+"²Ş¼Ó¿¡¼­ ¾î¶»°Ô¿ä?";
+"I mine drømme? Hvorfor?";
+
+"¸ÕÀú ÀÏ¾î ³ª¼¼¿ä.";
+"Rejs dig op først.";
+
+"±×·± ¸í·É¾î´Â ¾ø½À´Ï´Ù";
+"Denne kommando findes ikke.";
+
+"<ÆÄÆ¼> ÆÄÆ¼°¡ ÇØ»ê µÇ¾ú½À´Ï´Ù.";
+"[Gruppe] Gruppen blev løst op.";
+
+"<ÆÄÆ¼> ´ë»óÀ» ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke hidkalde målet.";
+
+"<ÆÄÆ¼> ÆÄÆ¼¿øÀ» ÇöÀç À§Ä¡·Î ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Gruppe] Du kan ikke hidkalde gruppemedlemmer til din aktuel position.";
+
+"X ÀÔ´Ï´Ù";
+"Nej (X)";
+
+"ÆÄÆ¼ÀÇ Çùµ¿·ÂÀÌ ³ô¾ÆÁ® Áö±İºÎÅÍ Ãß°¡ °æÇèÄ¡ º¸³Ê½º¸¦ ¹Ş½À´Ï´Ù.";
+"Din gruppe arbejder fint sammen, og gruppe medlemmer tæt på gruppe lederen vil modtage en erfarings bonus.";
+
+"±æµåÀå";
+"Leder";
+
+"±æµå¿ø";
+"Medlem";
+
+"<±æµå> Á¦°øÇÏ°íÀÚ ÇÏ´Â °æÇèÄ¡°¡ ³²Àº °æÇèÄ¡º¸´Ù ¸¹½À´Ï´Ù.";
+"[Orden] Den tilbudte erfaring er større end den resterende.";
+
+"<±æµå> »èÁ¦ÇÒ ¼ö ¾ø´Â ±ÛÀÔ´Ï´Ù.";
+"[Orden] Denne meddelelse kan ikke slettes.";
+
+"<±æµå> ¿ë½Å·ÂÀÌ ºÎÁ·ÇÕ´Ï´Ù. (%d, %d)";
+"[Orden] Ikke nok drageånd. (%d, %d)";
+
+"<±æµå> ÄğÅ¸ÀÓÀÌ ³¡³ªÁö ¾Ê¾Æ ±æµå ½ºÅ³À» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du kan endnu ikke bruge Ordensfærdighederne.";
+
+"<±æµå> %d ½ºÅ³À» »ç¿ëÇÔ (%d, %d) to %lu";
+"[Orden] %d-færdighed blev aktiveret (%d, %d) på %u.";
+
+"<±æµå> »ó´ë°¡ %d Ã¤³Î¿¡ ÀÖ½À´Ï´Ù. (ÇöÀç Ã¤³Î %d)";
+"[Orden] Denne spiller er i kanal %d. (Du er på kanal %d).";
+
+"<±æµå> »ó´ë°¡ ¿Â¶óÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.";
+"[Orden] Denne spiller er ikke online.";
+
+"5ÃÊ µÚ Æ²¸®½Å ºĞµéÀ» ¹Ù±ùÀ¸·Î ÀÌµ¿ ½ÃÅ°°Ú½À´Ï´Ù.";
+"Efter 5 sekunder fjernes alle deltagere der gav et forkert svar.";
+
+"<±æµå> ±æµå ½ºÅ³Àº ±æµåÀü Áß¿¡¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Orden] Ordens-færdighederne kan kun bruges i krige.";
+
+"<±æµå> %luÀÇ ¿ë½Å·ÂÀ» È¸º¹ÇÏ¿´½À´Ï´Ù.";
+"[Orden] %u Drageånd blev gendannet.";
+
+"<±æµå> ±æµå ±İ°í¿¡¼± ±æµåÀå¸¸ Ãâ±İÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"[Orden] Kun en Ordensleder kan hæve Yang.";
+
+"<±æµå> »ó´ë¹æÀÌ ±æµå ÃÊ´ë °ÅºÎ »óÅÂÀÔ´Ï´Ù.";
+"[Orden] Denne spiller afviste Ordens-invitationen.";
+
+"<±æµå> ±æµå¿øÀ» ÃÊ´ëÇÒ ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+"[Orden] Du har ingen rettigheder til at invitere spillere i Ordenen.";
+
+"<±æµå> ´Ù¸¥ Á¦±¹ »ç¶÷À» ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Spiller fra andre Riger kan ikke blive medlem af Ordenen.";
+
+"<±æµå> Å»ÅğÇÑ ÈÄ %dÀÏÀÌ Áö³ªÁö ¾ÊÀº »ç¶÷Àº ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Denne spiller kan blive inviteret igen efter %d dag(e).";
+
+"<±æµå> ±æµå¸¦ ÇØ»êÇÑ Áö %dÀÏÀÌ Áö³ªÁö ¾ÊÀº »ç¶÷Àº ±æµå¿¡ ÃÊ´ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Du kan først invitere folk til Ordenen om %d dage.";
+
+"<±æµå> »ó´ë¹æÀÌ ÀÌ¹Ì ´Ù¸¥ ±æµå¿¡ ¼ÓÇØÀÖ½À´Ï´Ù.";
+"[Orden] Denne person er allerede medlem af en anden Orden.";
+
+"<±æµå> ÃÖ´ë ±æµå¿ø ¼ö¸¦ ÃÊ°úÇß½À´Ï´Ù.";
+"[Orden] Ordenen har opnået det maksimale antal af medlemmer.";
+
+"´ÙÀ½ ¹®Á¦ ÁØºñÇØÁÖ¼¼¿ä.";
+"Klar til næste spørgsmål?";
+
+"¼ö·ÃÇÒ ¼ö ¾ø´Â ½ºÅ³ÀÔ´Ï´Ù.";
+"Du kan ikke træne denne færdighed.";
+
+"´õ ÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke træne denne færdighed.";
+
+"±×·£µå ¸¶½ºÅÍ ¼ö·ÃÀ» ÇÒ ¼ö ¾ø´Â ½ºÅ³ÀÔ´Ï´Ù.";
+"Denne færdighed kan du ikke træne på stormester-niveau.";
+
+"ÆÛÆåÆ® ¸¶½ºÅÍµÈ ½ºÅ³ÀÔ´Ï´Ù. ´õ ÀÌ»ó ¼ö·Ã ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du er allerede mester i denne færdighed. Du kan ikke træne den yderligere.";
+
+"ÀÌ ½ºÅ³Àº ¾ÆÁ÷ ±×·£µå ¸¶½ºÅÍ ¼ö·ÃÀ» ÇÒ °æÁö¿¡ ÀÌ¸£Áö ¾Ê¾Ò½À´Ï´Ù.";
+"Din færdighed er ikke god nok til stormester-træning.";
+
+"Å©À¹, ±â°¡ ¿ª·ùÇÏ°í ÀÖ¾î! ÀÌ°Å ¼³¸¶ ÁÖÈ­ÀÔ¸¶ÀÎ°¡!? Á¨Àå!";
+"Oh, det virkede ikke! Damn..";
+
+"¼ö·ÃÀÌ ½ÇÆĞ·Î ³¡³µ½À´Ï´Ù. ´Ù½Ã µµÀüÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.";
+"Træning mislykket. Prøv igen senere.";
+
+"¸ö¿¡¼­ ¹º°¡ ÈûÀÌ ÅÍÁ® ³ª¿À´Â ±âºĞÀÌ¾ß!";
+"Din krop er fuld af styrke.";
+
+"¶ß°Å¿î ¹«¾ùÀÌ °è¼Ó ¿ë¼ÚÀ½Ä¡°í ÀÖ¾î! ÀÌ°Ç, ÀÌ°ÍÀº!";
+"Uddannelsen synes at virke allerede...";
+
+"´õ ³ôÀº °æÁöÀÇ ¼ö·ÃÀ» ¼º°øÀûÀ¸·Î ³¡³»¼Ì½À´Ï´Ù.";
+"Du har afsluttet træningen med din bog succesfuld.";
+
+"°æÇèÄ¡°¡ ºÎÁ·ÇÏ¿© Ã¥À» ÀĞÀ» ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke læse det pga. manglende erfaring.";
+
+"Pregunta.";
+"Spørgsmål.";
+
+"ÀÌ ½ºÅ³Àº Ã¥À¸·Î ´õÀÌ»ó ¼ö·ÃÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne færdighed kan ikke træneres yderligere med en bog.";
+
+"ÀÌ ½ºÅ³Àº ¾ÆÁ÷ Ã¥À¸·Î ¼ö·ÃÇÒ °æÁö¿¡ ÀÌ¸£Áö ¾Ê¾Ò½À´Ï´Ù.";
+"Denne færdighed er ikke høj nok, til at træne den med en bog.";
+
+"¾î´ÀÁ¤µµ ÀÌ ±â¼ú¿¡ ´ëÇØ ÀÌÇØ°¡ µÇ¾úÁö¸¸ Á¶±İ ºÎÁ·ÇÑµí ÇÑµ¥..";
+"Jeg gør fremskridt, men jeg har stadig ikke forstået det hele.";
+
+"µåµğ¾î ³¡ÀÌ º¸ÀÌ´Â °Ç°¡...  ÀÌ ±â¼úÀº ÀÌÇØÇÏ±â°¡ ³Ê¹« Èûµé¾î..";
+"Disse instruktioner er vanskelige at forstå. Jeg er nødt til at fortsætte studierne.";
+
+"¿­½ÉÈ÷ ÇÏ´Â ¹è¿òÀ» °¡Áö´Â °Í¸¸ÀÌ ±â¼úÀ» ¹è¿ï¼ö ÀÖ´Â À¯ÀÏÇÑ ±æÀÌ´Ù..";
+"Jeg forstår dette kapitel. Men jeg er nødt til at arbejde hårdt.";
+
+"Ã¥À¸·Î ´õ ³ôÀº °æÁöÀÇ ¼ö·ÃÀ» ¼º°øÀûÀ¸·Î ³¡³»¼Ì½À´Ï´Ù.";
+"Du har afsluttet din træning med denne bog med succes.";
+
+"±ÍÈ¯¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Teleportationen mislykkedes.";
+
+"¸»ÀÌ ¾ø½À´Ï´Ù. ¸¶±Â°£ °æºñº´À» Ã£¾Æ°¡¼¼¿ä.";
+"Ingen hest tilstede. Spørg venligt stald-knægten.";
+
+"¸» ¼ÒÈ¯ ¾ÆÀÌÅÛÀ» »ç¿ëÇÏ¼¼¿ä.";
+"Brug en genstand til at tilkalde din hest.";
+
+"%s SP¼Ò¸ğ: %d";
+"%s FP-forbrug: %d";
+
+"¸ÂÀ¸¸é O, Æ²¸®¸é X·Î ÀÌµ¿ÇØÁÖ¼¼¿ä";
+"Er det rigtigt, så gå til O. Er det forkert, så gå til X.";
+
+"¸ö ¼ÓÀÌ ¶ß°Ì±º. ÇÏÁö¸¸ ¾ÆÁÖ Æí¾ÈÇØ. ÀÌ´ë·Î ±â¸¦ ¾ÈÁ¤½ÃÅ°ÀÚ.";
+"Jeg brænder inden i, men det får min krop til at slappe af.";
+
+"±×·¡, ÃµÃµÈ÷. Á»´õ ÃµÃµÈ÷, ±×·¯³ª ¸·Èû ¾øÀÌ ºü¸£°Ô!";
+"Langsomt, men stødt.. uden at stoppe!";
+
+"±×·¡, ÀÌ ´À³¦ÀÌ¾ß. Ã¼³»¿¡ ±â°¡ ¾ÆÁÖ Ãæ¸¸ÇØ.";
+"Ja, det føles godt. Min krop er fyldt med Chi.";
+
+"´Ù ÀĞ¾ú´Ù! ÀÌÁ¦ ºñ±Ş¿¡ ÀûÇôÀÖ´Â ´ë·Î Àü½Å¿¡ ±â¸¦ µ¹¸®±â¸¸ ÇÏ¸é,";
+"Jeg har læst det! Nu skal Chi´et fordele sig i kroppen.";
+
+"±×°ÍÀ¸·Î ¼ö·ÃÀº ³¡³­ °Å¾ß!";
+"Træningen er afsluttet.";
+
+"ÀÌÁ¦ Ã¥ÀÇ ¸¶Áö¸· ÀåÀÌ¾ß! ¼ö·ÃÀÇ ³¡ÀÌ ´«¿¡ º¸ÀÌ°í ÀÖ¾î!";
+"Jeg er nået til den sidste side i bogen! Træningen er næsten afsluttet!";
+
+"¾ó¸¶ ¾È ³²¾Ò¾î! Á¶±İ¸¸ ´õ!";
+"Jeg har næsten nået det! Mangler kun en smule!";
+
+"ÁÁ¾Ò¾î! Á¶±İ¸¸ ´õ ÀĞÀ¸¸é ³¡ÀÌ´Ù!";
+"Forstået! Jeg er næsten nået helt igennem!";
+
+"Ã¥Àåµµ ÀÌÁ¦ ¾ó¸¶ ³²Áö ¾Ê¾Ò±º.";
+"Kun et par sider tilbage og så har jeg læst alt.";
+
+"¹º°¡ ¸ö ¾È¿¡ ÈûÀÌ »ı±â´Â ±âºĞÀÎ °É.";
+"jeg føler mig frisk.";
+
+"Á¤´äÀÔ´Ï´Ù!";
+"Korrekt!";
+
+"ÀÌÁ¦ Á» ½½½½ °¡´ÚÀÌ ÀâÈ÷´Â °Í °°Àºµ¥.";
+"Nu forstår jeg!";
+
+"ÁÁ¾Æ, ÀÌ ±â¼¼·Î °è¼Ó ³ª°£´Ù!";
+"Godt, jeg bliver nødtil fortsat, at være koncentreret.";
+
+"¾Æ´Ï ¾î¶»°Ô µÈ °Ô Á¾ÀÏ ÀĞ¾îµµ ¸Ó¸®¿¡ ¾È µé¾î¿À³Ä.";
+"Jeg læser den samme sætning igen og igen.";
+
+"°øºÎÇÏ±â ½È¾îÁö³×.";
+"Jeg vil ikke fortsætte med at læse.";
+
+"»ı°¢¸¸Å­ ÀĞ±â°¡ ½±Áö°¡ ¾Ê±º. ÀÌÇØµµ ¾î·Æ°í ³»¿ëµµ ³­ÇØÇØ.";
+"Det er mere kompliceret og svært end jeg havde troet.";
+
+"ÀÌ·¡¼­¾ß °øºÎ°¡ ¾ÈµÈ´Ù±¸.";
+"Det er svært for mig at koncentrere sig. Jeg skulle tage en pause.";
+
+"¿î¿µÀÚ Á¦Á¦·Î Ã¤ÆÃÀÌ ±İÁö µÇ¾ú½À´Ï´Ù.";
+"Din chat blev blokeret af en GM.";
+
+"Ã¤ÆÃ ±İÁö°¡ Ç®·È½À´Ï´Ù.";
+"Din chat-spærring blev fjernet.";
+
+"ÀÌ¹Ì Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖ½À´Ï´Ù.";
+"Fremstillings-vinduet er allerede åben.";
+
+"´Ù¸¥ °Å·¡Áß(Ã¢°í,±³È¯,»óÁ¡)¿¡´Â »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke fremstille noget, mens et andet handels-/lager-vindue er åben.";
+
+"´õ ÀÌ»ó °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Ingen yderligere forbedringer mulig.";
+
+"Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖÁö ¾Ê½À´Ï´Ù";
+"Fremstillings-vinduet er ikke åbnet.";
+
+"Á¦Á¶ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù";
+"Du har ikke det rigtige materiale.";
+
+"<±æµå> Àá½ÃÈÄ¿¡ ÀÌ¿ëÇØÁÖ½Ê½Ã¿À";
+"[Orden] Prøv igen senere.";
+
+"%d ±ÇÀ» ´õ ÀĞ¾î¾ß ¼ö·ÃÀ» ¿Ï·á ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Du skal læse yderligere %d færdighedsbøger for at forbedre din færdighed.";
+
+"<±æµå> Àá½ÃÈÄ¿¡ ÀÌ¿ëÇØÁÖ½Ê½Ã¿À.";
+"[Orden] Prøv igen senere.";
+
+"¼º¿¡¼­¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Â ±â´ÉÀÔ´Ï´Ù.";
+"Denne funktion kan kun bruges på Slottet.";
+
+"TEST : È²±İµÎ²¨ºñ°¡ ±¹°í·Î È¯¿øµÇ¾ú½À´Ï´Ù.";
+"TEST: Guldbarren er betalt tilbage til dit riges skattekammer.";
+
+"TEST : ÇöÀç ±¹°í : %d";
+"TEST: I Rigets pengeskab ligger der: %d";
+
+"TEST : È²±İµÎ²¨ºñ¸¦ ±¹°í·Î È¯¿øÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"TEST: Du kan ikke tilbagebetalt guldbarren til dit riges skattekammer.";
+
+"<±æµå> ·¡´õ Á¡¼ö°¡ %d Á¡ÀÌ µÇ¾ú½À´Ï´Ù";
+"[Orden] Ordnen har opnået %d points.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne genstand kan ikke blive forbedret.";
+
+"¹«·á °³·® ±âÈ¸´Â 20 ÀÌÇÏÀÇ ¹«±â¸¸ °¡´ÉÇÕ´Ï´Ù";
+"Gratis våben-forbedring kan kun anvendes på våben optil level 20.";
+
+"±ºÁ÷ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge denne genstand, da forudsætningerne ikke opfyldes.";
+
+"¼ºº°ÀÌ ¸ÂÁö¾Ê¾Æ ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke bruge denne genstand, da du ikke har det krævede køn.";
+
+"»ç¿ë¹ı: transfer <name>";
+"Anvend: transfer <name>";
+
+"±ºÁÖ¸¸ÀÌ »ç¿ë °¡´ÉÇÑ ±â´ÉÀÔ´Ï´Ù";
+"Denne funktion kan kun anvendes af Kejseren.";
+
+"´Ù¸¥ Á¦±¹ À¯Àú´Â ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke rekrutere spillere fra det andet Rige.";
+
+"%s ´ÔÀº %d Ã¤³Î¿¡ Á¢¼Ó Áß ÀÔ´Ï´Ù. (ÇöÀç Ã¤³Î: %d)";
+"Spilleren %s er pt. på kanal %d. (Din kanal: %d)";
+
+"%s ´ÔÀ» ¼ÒÈ¯ÇÏ¿´½À´Ï´Ù.";
+"Du har rekruteret %s.";
+
+"ÀÔ·ÂÇÏ½Å ÀÌ¸§À» °¡Áø »ç¿ëÀÚ°¡ ¾ø½À´Ï´Ù.";
+"Der findes ingen spiller med det navn.";
+
+"ÀÚ½ÅÀ» ¼ÒÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke rekrutere dig selv.";
+
+"¾ÆÀÌÅÛÀÇ ·¹º§ Á¦ÇÑº¸´Ù ·¹º§ÀÌ ³·½À´Ï´Ù.";
+"Din level er for lav til at bruge denne genstand.";
+
+"Ã¢°í,°Å·¡Ã¢µîÀÌ ¿­¸° »óÅÂ¿¡¼­´Â °³·®À» ÇÒ¼ö°¡ ¾ø½À´Ï´Ù";
+"Du kan ikke opgrader noget mens et andet vindue er åbent.";
+
+"%sÀÇ ±ºÁÖ°¡ %s ´ÔÀ¸·Î ±³Ã¼µÇ¾ú½À´Ï´Ù.";
+"Kejseren af %s er nu af %s.";
+
+"%s¿¡¼­ ºÀÈ­¸¦ µÑ·¯½Î°í ÀüÅõ°¡ ÁøÇàÁßÀÔ´Ï´Ù.";
+"I %s er der en krig om at sætte ild i fyrtårnene.";
+
+"%sÀÌ ¼ö¼º¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Forsvaret i %s er lykkes.";
+
+"Áö±İºÎÅÍ %sÀº 30ºĞ°£ ºÀÈ­¸¦ ÆÄ±«ÇÏ¿© º¸»óÀ» È¹µæ ÇÒ ¼ö ÀÖ½À´Ï´Ù.";
+"Fra nu af, kan %s få en belønning for ødelæggelsen af fyrtårnet. Tid: 30 minutter.";
+
+"30ºĞÀÌ °æ°úÇß½À´Ï´Ù.. ºÀÈ­°¡ »ç¶óÁı´Ï´Ù.";
+"30 minutter er forbi. Fyrtårnet er fjernet.";
+
+"%s¿¡ ÀüÀïÀÇ ½ÃÀÛÀ» ¾Ë¸®´Â ºÀÈ­°¡ ³ªÅ¸³µ½À´Ï´Ù.";
+"Fyrtårnet blev tændt i %s for at advare om et slag.";
+
+"%sÀÌ ºÀÈ­¸¦ ÆÄ±«Çß½À´Ï´Ù.";
+"%s har ødelagt fyrtårnet.";
+
+"%sÀÌ ¼ö¼º¿¡ ½ÇÆĞÇÏ¿© ÀüÀï¿¡ ÆĞ¹èÇÏ¿´½À´Ï´Ù..";
+"%s har tabt krigen, da de ikke kunne forsvare slottet.";
+
+"%sÀÌ ¸ğµç ºÀÈ­¸¦ ÆÄ±«ÇÏ¿´½À´Ï´Ù.";
+"%s har ødelagt alle fyrtårne.";
+
+"°©¿ÊÀ» ¹ş¾î¾ß °³ÀÎ »óÁ¡À» ¿­ ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan kun åbne butikken når du tager din rustningen af.";
+
+"%d ½Ã°£ %d ºĞ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d time %d minutter %d sekunder tilbage af din chat blokering";
+
+"%d ½Ã°£ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d timer %d sekunder tilbage af din chat blokering";
+
+"%d ºĞ %d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d minutter %d sekunder tilbage af din chat blokering";
+
+"µ· ´ë¹ÚÀÌ ³ª¿Ã È®·ü";
+"Yang regn smednings sats";
+
+"°³·®À» ÇÏ±â À§ÇÑ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù.";
+"Du har ikke de rigtige materialer til at fremstille dette.";
+
+"ÀüÁ¦±¹";
+"Alle riger";
+
+"¾ÆÀÌÅÛÀÌ ³ª¿Ã È®·ü";
+"Procent genstand sandsynlighed";
+
+"µ·ÀÌ ³ª¿Ã È®·ü";
+"Procent Yang sandsynlighed";
+
+"°æÇèÄ¡ ¹èÀ²";
+"Procenttal for erfaringspoints";
+
+"%d ÃÊ µ¿¾È Ã¤ÆÃ±İÁö »óÅÂÀÔ´Ï´Ù";
+"%d sekunder tilbage af din chat blokering";
+
+"¸»À» Åº »óÅÂ¿¡¼­ °¨Á¤Ç¥ÇöÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke lave emotioner når du sidder på hesten.";
+
+"¸»À» Åº »ó´ë¿Í °¨Á¤Ç¥ÇöÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke lave emotions med en spiller der sidder på en hest.";
+
+"<±æµå> »ó´ë¹æ ±æµåÀÇ ±æµåÀåÀÌ Á¢¼ÓÁßÀÌ ¾Æ´Õ´Ï´Ù.";
+"[Orden] Fjendens ordensleder er offline.";
+
+"ÀüÀï ¼­¹ö°¡ ¿­·ÁÀÖÁö ¾Ê¾Æ ±æµåÀüÀ» ½ÃÀÛÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Fjendens ordensleder er offline.";
+
+"<±æµå> ÀÌ¹Ì ÀüÀï ÁßÀÎ ±æµåÀÔ´Ï´Ù.";
+"[Orden] Denne orden deltager for tiden i en kamp.";
+
+"ÀÌ¹Ì Å»°ÍÀ» ÀÌ¿ëÁßÀÔ´Ï´Ù.";
+"Du rider allerede. Stig af først.";
+
+"ÀÌ °³·®¼­·Î ´õ ÀÌ»ó °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke forbedre med dette dokument.";
+
+"»ç±Í Å¸¿ö ¿Ï·á º¸»óÀº ÇÑ¹ø±îÁö »ç¿ë°¡´ÉÇÕ´Ï´Ù.";
+"Du kan kun engang få belønningen for opgaven i dæmone-tårnet.";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Drage stenen er blevet fjernet.";
+
+"°­È­Ã¢À» ¿¬ »óÅÂ¿¡¼­´Â ¾ÆÀÌÅÛÀ» ¿Å±æ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke flytte genstanden i forfinelses vinduet.";
+
+"¿ë½É ÃßÃâ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.";
+"Drage stenens resterende varighed er blevet udvundet.";
+
+"¿ë½É ÃßÃâ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Resterende varigheds udvinding mislykkedes.";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ½ÇÆĞÇÏ¿© %s¸¦ ¾ò¾ú½À´Ï´Ù.";
+"Fjernelse af drage stenen mislykkedes. Men du har modtaget følgende: %s";
+
+"¿ëÈ¥¼® ÃßÃâ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.";
+"Fjernelse af drage stenen mislykkedes.";
+
+"µî±Ş °³·®¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Denne genstand er ikke påkrævet at forbedre i dette klarheds level.";
+
+"°­È­¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Denne genstand er ikke påkrævet at forbedre i dette klarheds level.";
+
+"µî±Ş °³·®ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Denne genstand kan ikke forbedres på denne måde.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº ÀÌ ¹æ½ÄÀ¸·Î´Â °³·®ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne genstand kan ikke forbedres på denne måde.";
+
+"´Ü°è °³·®¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Forbedring af klarheds level var succesfuldt.";
+
+"µî±Ş °³·®¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Forfinelsen af en klasse op mislykkedes.";
+
+"´Ü°è °³·®ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Denne genstand er ikke påkrævet forfinelse.";
+
+"µî±Ş °³·®¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Forfinelsen af én klasse op var vellykket.";
+
+"´Ü°è °³·®¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Forbedring af klarheds level mislykkedes.";
+
+"´Ü°è °³·®¿¡ ÇÊ¿äÇÑ Àç·á°¡ ¾Æ´Õ´Ï´Ù.";
+"Du ejer ikke de nødvendige materialer til at styrke drage stenen.";
+
+"°­È­ÇÒ ¼ö ¾ø´Â ¿ëÈ¥¼®ÀÔ´Ï´Ù.";
+"Denne drage sten kan ikke bruges til styrkelse.";
+
+"°­È­¿¡ ¼º°øÇß½À´Ï´Ù.";
+"Styrkelse lykkedes.";
+
+"°­È­¿¡ ½ÇÆĞÇß½À´Ï´Ù.";
+"Styrkelse mislykkedes.";
+
+"ÀÌ¹Ì °°Àº Á¾·ùÀÇ ¿ëÈ¥¼®À» Âø¿ëÇÏ°í ÀÖ½À´Ï´Ù.";
+"Du bærer allerede rundt på en drage sten af denne type.";
+
+"Âø¿ë ÁßÀÎ ¿ëÈ¥¼®Àº ÃßÃâÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Denne drage sten kan ikke fjernes.";
+
+"ÀÌ¹Ì Àåºñ¸¦ Âø¿ëÇÏ°í ÀÖ½À´Ï´Ù.";
+"Du har allerede udstyrret denne slags drage sten.";
+
+"ÀÎº¥ÀÌ È°¼ºÈ­ µÇÁö ¾ÊÀ½.";
+"Før du kan åbne Cor Draconis, skal du have gennemført drage stens missionen og aktiveret drage stens alkymisten.";
+
+"¸ÕÀú ¿ëÈ¥¼® Äù½ºÆ®¸¦ ¿Ï·áÇÏ¼Å¾ß ÇÕ´Ï´Ù.";
+"Før du kan åbne Cor Draconis, skal du have gennemført drage stens missionen og aktiveret drage stens alkymisten.";
+
+"º§Æ® ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛÀÌ Á¸ÀçÇÏ¸é ÇØÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan kun kassere bæltet når du ikke har flere genstande i dine rum.";
+
+"Ãàº¹ÀÇ ¼­¿Í ÇöÃ¶À» ÇÕÄ¥ ¼ö ÀÖ½À´Ï´Ù.";
+"Du kan kombinere Velsignelses dokumentet med Magisk jernmalm.";
+
+"ÀÌ ¾ÆÀÌÅÛÀº º§Æ® ÀÎº¥Åä¸®·Î ¿Å±æ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke putte denne genstand i dit bælte rum.";
+
+"°°Àº °³·®¼­¸¦ ÇÕÄ¥ ¼ö´Â ¾ø½À´Ï´Ù.";
+"[1106-??]No puedes unir esto.";
+
+"%d ³ÉÀ» ÅõÀÚÇÏ¼Ì½À´Ï´Ù.";
+"Du har investeret %d Yang.";
+
+"»©³¾ ¼ö ÀÖ´Â ¸ŞÆ¾¼®ÀÌ ¾ø½À´Ï´Ù.";
+"Der er ingen sten der kan fjernes.";
+
+"±â¾ïÇØ µÑ ¼ö ¾ø´Â À§Ä¡ ÀÔ´Ï´Ù.";
+"Du kan ikke gemme denne position.";
+
+"¼ÒÁöÇ°¿¡ ºó °ø°£ÀÌ ¾ø½À´Ï´Ù.";
+"Du har ikke nok ledig plads i dit inventar.";
+
+"±â¾ïµÈ À§Ä¡°¡ Å¸Á¦±¹¿¡ ¼ÓÇØ ÀÖ¾î¼­ ±ÍÈ¯ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke teleportere dig fra et fremmed Rige til et sikkert sted.";
+
+"³²Àº »ı¸í·Â ¾çÀÌ ¸ğÀÚ¶ó »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du har ikke nok HP.";
+
+"³²Àº Á¤½Å·Â ¾çÀÌ ¸ğÀÚ¶ó »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"Du har ikke nok MP.";
+
+"%d ÃÊÈÄ ¸ñÀûÁö·Î ÀÌµ¿µË´Ï´Ù.";
+"%d sekunder efter udførelsen, når du dit mål.";
+
+"°³·®µÈ ÈÄ ¾ÆÀÌÅÛÀÇ ·¹º§ Á¦ÇÑº¸´Ù ·¹º§ÀÌ ³·½À´Ï´Ù.";
+"Din level er for lav til at bruge denne genstand.";
+
+"¿ùº´,Á¾ÀÚ »ç¿ëÈÄ 5ÃÊµ¿¾È »ç¿ëÇÒ¼ö ¾ø½À´Ï´Ù. ";
+"Månekager kan kun bruges alle 5 sekunder.";
+
+"´ë·Ã Áß¿¡´Â ÀÌ¿ëÇÒ ¼ö ¾ø´Â ¹°Ç°ÀÔ´Ï´Ù.";
+"Du kan ikke bruge denne genstand i en duel.";
+
+"%d ³ÉÀ» È¹µæÇÏ¼Ì½À´Ï´Ù.";
+"Du har vundet %d Yang.";
+
+"¸ğ´ÚºÒÀ» ÇÇ¿ï ¼ö ¾ø´Â ÁöÁ¡ÀÔ´Ï´Ù.";
+"Du kan ikke lave et lejrbål her.";
+
+"¹° ¼Ó¿¡ ¸ğ´ÚºÒÀ» ÇÇ¿ï ¼ö ¾ø½À´Ï´Ù.";
+"Du kan ikke lave et lejrbål i vandet.";
+
+"¿­¼è·Î Àá°Ü ÀÖ¾î¼­ ¿­¸®Áö ¾Ê´Â°Í °°´Ù. ¿­¼è¸¦ ±¸ÇØº¸ÀÚ.";
+"Låst. Du burde søge efter nøglen.";
+
+"¿­¼è·Î ¿©´Â ¹°°ÇÀÌ ¾Æ´Ñ°Í °°´Ù.";
+"Denne genstand kan ikke åbnes med en nøgle.";
+
+"¿­¼è´Â ¸ÂÀ¸³ª ¾ÆÀÌÅÛ ÁÖ´Â ºÎºĞ ±¸ÇöÀÌ ¾ÈµÇ¾ú½À´Ï´Ù.";
+"Det er ikke den rigtig nøgle.";
+
+"µ· %d ³ÉÀ» È¹µæÇß½À´Ï´Ù.";
+"Du har fået %d Yang.";
+
+"»óÀÚ¿¡¼­ ºÎÅÍ ½ÅºñÇÑ ºûÀÌ ³ª¿É´Ï´Ù.";
+"Mysterisk lys, skinner ud fra kisten.";
+
+"%dÀÇ °æÇèÄ¡¸¦ È¹µæÇß½À´Ï´Ù.";
+"Du har fået %d erfaring.";
+
+"»óÀÚ¿¡¼­ ¸ó½ºÅÍ°¡ ³ªÅ¸³µ½À´Ï´Ù!";
+"Se hvad der kom ud af kisten!";
+
+"<±æµå> ·¹´õ Á¡¼ö°¡ ¸ğÀÚ¶ó¼­ ±æµåÀüÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.";
+"[Orden] Ordenslevel er for lavt.";
+
+"»óÀÚ¿¡¼­ ³ª¿Â »¡°£ ¿¬±â¸¦ µéÀÌ¸¶½ÃÀÚ ¿òÁ÷ÀÌ´Â ¼Óµµ°¡ ´À·ÁÁ³½À´Ï´Ù!";
+"Hvis du indånder rød røg fra kisten, forøges din hastighed!";
+
+"´õ ÀÌ»ó ÀÌ ¾ÆÀÌÅÛÀ¸·Î ¼Ó¼ºÀ» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù";
+"You cannot add more bonus.";
+
+"¼º°øÀûÀ¸·Î ¼Ó¼ºÀÌ Ãß°¡ µÇ¾ú½À´Ï´Ù";
+"New bonus added successfully.";
+
+"º¯°æ ½ÃÅ³ ¼Ó¼ºÀÌ ¾ø½À´Ï´Ù";
+"You cannot change the bonuses.";
+
+"%sÀÌ ÇÊ¿äÇÕ´Ï´Ù.";
+"%s needed.";
+
+"¹®Á¦ ÀÔ´Ï´Ù.";
+"OX-Question: ";
