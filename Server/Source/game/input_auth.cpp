@@ -8,10 +8,6 @@
 #include "locale_service.h"
 #include "db.h"
 
-#ifndef __WIN32__
-#include "limit_time.h"
-#endif
-
 extern time_t get_global_time();
 
 // #define ENABLE_ACCOUNT_W_SPECIALCHARS

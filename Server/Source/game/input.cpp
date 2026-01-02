@@ -17,10 +17,6 @@
 #include "priv_manager.h"
 #include "dev_log.h"
 
-#ifndef __WIN32__
-#include "limit_time.h"
-#endif
-
 extern time_t get_global_time();
 
 bool IsEmptyAdminPage()
