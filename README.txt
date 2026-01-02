@@ -52,6 +52,8 @@
 | CSHybridCrypt                     | YES    | YES    | NO   |
 | Sequence                          | YES    | YES    | YES  |
 | empire_text_convert               | YES    | YES    | YES  |
+| DanceEvent                        | YES    | NO     | NO   |
+| AutoBan                           | NO     | YES    | YES  |
 +-----------------------------------+--------+--------+------+
 
 +-----------------------------------+--------+--------+------+
@@ -85,7 +87,6 @@
 | EFFECT_LEVELUP_xx_FOR_GERMANY     | YES    | YES    | YES  |
 | FullBackImage                     | NO     | NO     | YES  |
 | OLD_rtrim                         | YES    | NO     | NO   |
-| DanceEvent                        | YES    | NO     | NO   |
 +-----------------------------------+--------+--------+------+
 
 +------------------------------------------------------------+

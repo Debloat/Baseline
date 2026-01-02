@@ -296,10 +296,6 @@ enum
 #if defined(GAIDEN)
     HEADER_GC_ONTIME							= 204,
     HEADER_GC_RESET_ONTIME						= 205,
-
-    // AUTOBAN
-    HEADER_GC_AUTOBAN_QUIZ						= 206,
-    // END_OF_AUTOBAN
 #endif
 
     HEADER_GC_SPECIFIC_EFFECT					= 208,
@@ -2496,17 +2492,6 @@ typedef struct packet_state
     DWORD			dwTime;
     TPixelPosition	kPPos;
 } TPacketCCState;
-
-// AUTOBAN
-typedef struct packet_autoban_quiz
-{
-    BYTE bHeader;
-    BYTE bDuration;
-    BYTE bCaptcha[64 * 32];
-    char szQuiz[256];
-} TPacketGCAutoBanQuiz;
-
-// END_OF_AUTOBAN
 
 #ifdef _IMPROVED_PACKET_ENCRYPTION_
 struct TPacketKeyAgreement

@@ -121,7 +121,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{7F21DD43-D
 		Client\Binary\pack\root\ui.py = Client\Binary\pack\root\ui.py
 		Client\Binary\pack\root\uiaffectshower.py = Client\Binary\pack\root\uiaffectshower.py
 		Client\Binary\pack\root\uiattachmetin.py = Client\Binary\pack\root\uiattachmetin.py
-		Client\Binary\pack\root\uiautoban.py = Client\Binary\pack\root\uiautoban.py
 		Client\Binary\pack\root\uicandidate.py = Client\Binary\pack\root\uicandidate.py
 		Client\Binary\pack\root\uicharacter.py = Client\Binary\pack\root\uicharacter.py
 		Client\Binary\pack\root\uichat.py = Client\Binary\pack\root\uichat.py
