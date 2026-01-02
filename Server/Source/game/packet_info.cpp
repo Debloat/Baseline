@@ -109,7 +109,6 @@ void CPacketInfo::Log(const char* c_pszFileName)
 
 CPacketInfoCG::CPacketInfoCG()
 {
-    Set(HEADER_CG_TEXT, sizeof(TPacketCGText), "Text");
     Set(HEADER_CG_HANDSHAKE, sizeof(TPacketCGHandshake), "Handshake");
     Set(HEADER_CG_TIME_SYNC, sizeof(TPacketCGHandshake), "TimeSync");
     Set(HEADER_CG_MARK_LOGIN, sizeof(TPacketCGMarkLogin), "MarkLogin");
@@ -243,4 +242,3 @@ CPacketInfoGG::~CPacketInfoGG()
 {
     Log("p2p_packet_info.txt");
 }
-

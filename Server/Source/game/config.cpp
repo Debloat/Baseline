@@ -76,9 +76,6 @@ string g_stQuestDir = "./quest";
 string g_stDefaultQuestObjectDir = "./quest/object";
 std::set<string> g_setQuestObjectDir;
 
-std::vector<std::string>	g_stAdminPageIP;
-std::string	g_stAdminPagePassword = "SHOWMETHEMONEY";
-
 string g_stBlockDate = "30000705";
 
 extern string g_stLocale;
@@ -189,33 +186,6 @@ void map_allow_copy(long* pl, int size)
         }
     }
 }
-
-static void FN_add_adminpageIP(char* line)
-{
-    char*	last;
-    const char* delim = " \t\r\n";
-    char* v = strtok_r(line, delim, &last);
-
-    while (v)
-    {
-        g_stAdminPageIP.push_back(v);
-        v = strtok_r(NULL, delim, &last);
-    }
-}
-
-static void FN_log_adminpage()
-{
-    itertype(g_stAdminPageIP) iter = g_stAdminPageIP.begin();
-
-    while (iter != g_stAdminPageIP.end())
-    {
-        dev_log(LOG_DEB0, "ADMIN_PAGE_IP = %s", (*iter).c_str());
-        ++iter;
-    }
-
-    dev_log(LOG_DEB0, "ADMIN_PAGE_PASSWORD = %s", g_stAdminPagePassword.c_str());
-}
-
 
 bool GetIPInfo()
 {
@@ -392,35 +362,6 @@ void config_init(const string& st_localeServiceName)
         TOKEN("BLOCK_LOGIN")
         {
             g_stBlockDate = value_string;
-        }
-
-        TOKEN("adminpage_ip")
-        {
-            FN_add_adminpageIP(value_string);
-            //g_stAdminPageIP[0] = value_string;
-        }
-
-        TOKEN("adminpage_ip1")
-        {
-            FN_add_adminpageIP(value_string);
-            //g_stAdminPageIP[0] = value_string;
-        }
-
-        TOKEN("adminpage_ip2")
-        {
-            FN_add_adminpageIP(value_string);
-            //g_stAdminPageIP[1] = value_string;
-        }
-
-        TOKEN("adminpage_ip3")
-        {
-            FN_add_adminpageIP(value_string);
-            //g_stAdminPageIP[2] = value_string;
-        }
-
-        TOKEN("adminpage_password")
-        {
-            g_stAdminPagePassword = value_string;
         }
 
         TOKEN("hostname")
@@ -1148,8 +1089,6 @@ void config_init(const string& st_localeServiceName)
     LoadStateUserCount();
 
     CWarMapManager::instance().LoadWarMapInfo(NULL);
-
-    FN_log_adminpage();
 }
 
 const char* get_table_postfix()

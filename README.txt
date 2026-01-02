@@ -54,6 +54,7 @@
 | empire_text_convert               | YES    | YES    | YES  |
 | DanceEvent                        | YES    | NO     | NO   |
 | AutoBan                           | NO     | YES    | YES  |
+| AdminPage                         | YES    | NO     | NO   |
 +-----------------------------------+--------+--------+------+
 
 +-----------------------------------+--------+--------+------+

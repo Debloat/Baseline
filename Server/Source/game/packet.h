@@ -46,7 +46,6 @@ enum
     HEADER_CG_ITEM_USE_TO_ITEM			= 60,
     HEADER_CG_TARGET			 	= 61,
 
-    HEADER_CG_TEXT				= 64,	// @ 로 시작되면 텍스트를 파싱한다.
     HEADER_CG_WARP				= 65,
     HEADER_CG_SCRIPT_BUTTON			= 66,
     HEADER_CG_MESSENGER				= 67,
@@ -444,13 +443,6 @@ typedef struct SPacketGGBlockChat
     char	szName[CHARACTER_NAME_MAX_LEN + 1];
     long	lBlockDuration;
 } TPacketGGBlockChat;
-
-/* 클라이언트 측에서 보내는 패킷 */
-
-typedef struct command_text
-{
-    BYTE	bHeader;
-} TPacketCGText;
 
 /* 로그인 (1) */
 typedef struct command_handshake
