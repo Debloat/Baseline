@@ -307,9 +307,6 @@
     <ClCompile Include="questlua_building.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="questlua_danceevent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="questlua_dragonlair.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
