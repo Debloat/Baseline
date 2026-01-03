@@ -122,42 +122,6 @@ namespace std
         tv = (min > value ? min : value);
         return (max < tv) ? max : tv;
     }
-
-    /*template <class _Ty>
-    	class void_mem_fun_t : public unary_function<_Ty *, void>
-    	{
-    		public:
-    			explicit void_mem_fun_t(void (_Ty::*_Pm)()) : _Ptr(_Pm)
-    			{
-    			}
-
-    			void operator()(_Ty* p) const
-    			{
-    				((p->*_Ptr)());
-    			}
-
-    		private:
-    			void (_Ty::*_Ptr)();
-    	};
-
-    template<class _Ty> inline
-    	void_mem_fun_t<_Ty> void_mem_fun(void (_Ty::*_Pm)())
-    	{ return (void_mem_fun_t<_Ty>(_Pm)); }
-
-    template<class _Ty>
-    	class void_mem_fun_ref_t : public unary_function<_Ty, void>
-    	{
-    		public:
-    			explicit void_mem_fun_ref_t(void (_Ty::*_Pm)()) : _Ptr(_Pm) {}
-    			void operator()(_Ty& x) const
-    			{ return ((x.*_Ptr)()); }
-    		private:
-    			void (_Ty::*_Ptr)();
-    	};
-
-    template<class _Ty> inline
-    	void_mem_fun_ref_t<_Ty> void_mem_fun_ref(void (_Ty::*_Pm)())
-    	{ return (void_mem_fun_ref_t< _Ty>(_Pm)); }*/
 };
 
 #endif
