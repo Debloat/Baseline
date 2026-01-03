@@ -518,8 +518,6 @@ typedef struct command_attack
     BYTE	header;
     BYTE	bType;			// 공격 유형
     DWORD	dwVictimVID;	// 적 VID
-    BYTE	bCRCMagicCubeProcPiece;
-    BYTE	bCRCMagicCubeFilePiece;
 } TPacketCGAttack;
 
 typedef struct command_chat
@@ -970,15 +968,6 @@ typedef struct command_client_version2
     char filename[32 + 1];
     char timestamp[32 + 1];
 } TPacketCGClientVersion2;
-
-typedef struct command_crc_report
-{
-    BYTE header;
-    BYTE byPackMode;
-    DWORD dwBinaryCRC32;
-    DWORD dwProcessCRC32;
-    DWORD dwRootPackCRC32;
-} TPacketCGCRCReport;
 
 enum EPartyExpDistributionType
 {

@@ -217,8 +217,6 @@ class DESC
         void			SetLoginKey(CLoginKey * pkKey);
         DWORD			GetLoginKey();
 
-        void			AssembleCRCMagicCube(BYTE bProcPiece, BYTE bFilePiece);
-
         void			SetBillingExpireSecond(DWORD dwSec);
         DWORD			GetBillingExpireSecond();
 
@@ -295,11 +293,6 @@ class DESC
 
         CLoginKey* 		m_pkLoginKey;
         DWORD			m_dwLoginKey;
-
-        BYTE                    m_bCRCMagicCubeIdx;
-        DWORD                   m_dwProcCRC;
-        DWORD                   m_dwFileCRC;
-        bool			m_bHackCRCQuery;
 
         DWORD			m_dwBillingExpireSecond;
         std::string		m_stClientVersion;

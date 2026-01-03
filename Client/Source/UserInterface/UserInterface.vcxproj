@@ -143,7 +143,6 @@
     <ClInclude Include="MovieMan.h" />
     <ClInclude Include="NetworkActorManager.h" />
     <ClInclude Include="Packet.h" />
-    <ClInclude Include="ProcessCRC.h" />
     <ClInclude Include="ProcessScanner.h" />
     <ClInclude Include="PythonApplication.h" />
     <ClInclude Include="PythonBackground.h" />
@@ -194,7 +193,6 @@
     <ClCompile Include="MarkManager.cpp" />
     <ClCompile Include="MovieMan.cpp" />
     <ClCompile Include="NetworkActorManager.cpp" />
-    <ClCompile Include="ProcessCRC.cpp" />
     <ClCompile Include="ProcessScanner.cpp" />
     <ClCompile Include="PythonApplication.cpp" />
     <ClCompile Include="PythonApplicationCamera.cpp" />

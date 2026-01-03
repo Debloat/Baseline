@@ -66,10 +66,6 @@ extern BYTE	g_bBilling;
 
 extern BYTE	PK_PROTECT_LEVEL;
 
-extern void	LoadValidCRCList();
-extern bool	IsValidProcessCRC(DWORD dwCRC);
-extern bool	IsValidFileCRC(DWORD dwCRC);
-
 extern std::string	g_stAuthMasterIP;
 extern WORD		g_wAuthMasterPort;
 

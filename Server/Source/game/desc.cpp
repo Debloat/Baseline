@@ -83,11 +83,6 @@ void DESC::Initialize()
     memset(m_adwEncryptionKey, 0, sizeof(m_adwEncryptionKey));
 #endif
 
-    m_bCRCMagicCubeIdx = 0;
-    m_dwProcCRC = 0;
-    m_dwFileCRC = 0;
-    m_bHackCRCQuery = 0;
-
     m_dwBillingExpireSecond = 0;
 
     m_outtime = 0;
@@ -1074,32 +1069,6 @@ void DESC::SetSecurityKey(const DWORD * c_pdwKey)
 }
 
 #endif // _IMPROVED_PACKET_ENCRYPTION_
-
-void DESC::AssembleCRCMagicCube(BYTE bProcPiece, BYTE bFilePiece)
-{
-    static BYTE abXORTable[32] =
-    {
-        102,  30, 0, 0, 0, 0, 0, 0,
-        188,  44, 0, 0, 0, 0, 0, 0,
-        39, 201, 0, 0, 0, 0, 0, 0,
-        43,   5, 0, 0, 0, 0, 0, 0,
-    };
-
-    bProcPiece = (bProcPiece ^ abXORTable[m_bCRCMagicCubeIdx]);
-    bFilePiece = (bFilePiece ^ abXORTable[m_bCRCMagicCubeIdx + 1]);
-
-    m_dwProcCRC |= bProcPiece << m_bCRCMagicCubeIdx;
-    m_dwFileCRC |= bFilePiece << m_bCRCMagicCubeIdx;
-
-    m_bCRCMagicCubeIdx += 8;
-
-    if (!(m_bCRCMagicCubeIdx & 31))
-    {
-        m_dwProcCRC = 0;
-        m_dwFileCRC = 0;
-        m_bCRCMagicCubeIdx = 0;
-    }
-}
 
 void DESC::SetBillingExpireSecond(DWORD dwSec)
 {

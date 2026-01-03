@@ -64,21 +64,9 @@ class DESC_MANAGER : public singleton<DESC_MANAGER>
         LPDESC			FindByLoginKey(DWORD dwKey);
         void			ProcessExpiredLoginKey();
 
-        bool			IsDisconnectInvalidCRC()
-        {
-            return m_bDisconnectInvalidCRC;
-        }
-
-        void			SetDisconnectInvalidCRCMode(bool bMode)
-        {
-            m_bDisconnectInvalidCRC = bMode;
-        }
-
         bool			IsP2PDescExist(const char* szHost, WORD wPort);
 
     private:
-        bool				m_bDisconnectInvalidCRC;
-
         DESC_HANDLE_RANDOM_KEY_MAP	m_map_handle_random_key;
 
         CLIENT_DESC_SET		m_set_pkClientDesc;

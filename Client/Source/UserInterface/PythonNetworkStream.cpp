@@ -9,8 +9,6 @@
 #include "GuildMarkUploader.h"
 #include "MarkManager.h"
 
-#include "ProcessCRC.h"
-
 // MARK_BUG_FIX
 static DWORD gs_nextDownloadMarkTime = 0;
 // END_OF_MARK_BUG_FIX
@@ -672,8 +670,6 @@ bool CPythonNetworkStream::RecvPhasePacket()
 #if defined(ENABLE_DISCORD_RPC)
             Discord_Update(false);
 #endif
-
-            BuildProcessCRC();
 
             // MARK_BUG_FIX
             __DownloadMark();

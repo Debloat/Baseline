@@ -76,8 +76,6 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
         CPythonNetworkStream();
         virtual ~CPythonNetworkStream();
 
-        bool SendSpecial(int nLen, void* pvBuf);
-
         void StartGame();
         void Warp(LONG lGlobalX, LONG lGlobalY);
 
@@ -257,9 +255,6 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 
         // Client Version
         bool SendClientVersionPacket();
-
-        // CRC Report
-        bool __SendCRCReportPacket();
 
         // ¿ëÈ«¼® °­È­
         bool SendDragonSoulRefinePacket(BYTE bRefineType, TItemPos* pos);

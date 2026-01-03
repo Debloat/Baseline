@@ -55,6 +55,7 @@
 | DanceEvent                        | YES    | NO     | NO   |
 | AutoBan                           | NO     | YES    | YES  |
 | AdminPage                         | YES    | NO     | NO   |
+| ProcessCRC / MagicCube            | YES    | YES    | NO   |
 +-----------------------------------+--------+--------+------+
 
 +-----------------------------------+--------+--------+------+
