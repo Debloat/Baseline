@@ -88,6 +88,9 @@
 | EFFECT_LEVELUP_xx_FOR_GERMANY     | YES    | YES    | YES  |
 | FullBackImage                     | NO     | NO     | YES  |
 | OLD_rtrim                         | YES    | NO     | NO   |
+| do_mount                          | YES    | NO     | NO   |
+| malloc_allocator                  | YES    | NO     | NO   |
+| noncopyable                       | YES    | NO     | NO   |
 +-----------------------------------+--------+--------+------+
 
 +------------------------------------------------------------+

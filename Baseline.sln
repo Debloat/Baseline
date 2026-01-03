@@ -73,7 +73,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BFE027
 		Server\Source\common\d3dtype.h = Server\Source\common\d3dtype.h
 		Server\Source\common\item_length.h = Server\Source\common\item_length.h
 		Server\Source\common\length.h = Server\Source\common\length.h
-		Server\Source\common\noncopyable.h = Server\Source\common\noncopyable.h
 		Server\Source\common\pool.h = Server\Source\common\pool.h
 		Server\Source\common\service.h = Server\Source\common\service.h
 		Server\Source\common\singleton.h = Server\Source\common\singleton.h
