@@ -618,9 +618,6 @@
     <ClInclude Include="lzo_manager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="malloc_allocator.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="map_location.h">
       <Filter>Source Files</Filter>
     </ClInclude>

@@ -330,7 +330,6 @@
     <ClInclude Include="lzoconf.h" />
     <ClInclude Include="lzodefs.h" />
     <ClInclude Include="lzo_manager.h" />
-    <ClInclude Include="malloc_allocator.h" />
     <ClInclude Include="map_location.h" />
     <ClInclude Include="MarkImage.h" />
     <ClInclude Include="MarkManager.h" />
