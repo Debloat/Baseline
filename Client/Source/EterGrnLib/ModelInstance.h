@@ -59,17 +59,21 @@ class CGrannyModelInstance : public CGraphicCollisionObject
         void	DeformNoSkin(const D3DXMATRIX * c_pWorldMatrix);
         void	Deform(const D3DXMATRIX * c_pWorldMatrix);
 
-        // FIXME : 현재는 하드웨어의 한계로 2장의 텍스춰로 제한이 되어있는 상태이기에 이런
-        //         불안정한 아키텍춰가 가능하지만, 궁극적인 방향은 (모델 텍스춰 전부) + (효과용 텍스춰)
-        //         이런식의 자동 셋팅이 이뤄져야 되지 않나 생각합니다. - [levites]
-        // NOTE : 내부에 if문을 포함 시키기 보다는 조금은 번거롭지만 이렇게 함수 콜 자체를 분리
-        //        시키는 것이 퍼포먼스 적인 측면에서는 더 나은 것 같습니다. - [levites]
-        // NOTE : 건물은 무조건 OneTexture. 캐릭터는 경우에 따라 TwoTexture.
-        void	RenderWithOneTexture();
-        void	RenderWithTwoTexture();
-        void	BlendRenderWithOneTexture();
-        void	BlendRenderWithTwoTexture();
-        void	RenderWithoutTexture();
+        enum EModelRenderPass
+        {
+            MODEL_PASS_OPAQUE,    // old RenderWith*
+            MODEL_PASS_BLEND,     // old BlendRenderWith*
+            MODEL_PASS_ALL,       // used by RenderWithoutTexture (draw both types)
+        };
+
+        enum EModelTexturePath
+        {
+            MODEL_TEX_ONE,
+            MODEL_TEX_TWO,
+            MODEL_TEX_NONE,
+        };
+
+        void	__RenderModelFFP(EModelTexturePath eTexPath, EModelRenderPass ePass);
 
         // Model
         CGrannyModel* GetModel();
@@ -153,9 +157,14 @@ class CGrannyModelInstance : public CGraphicCollisionObject
         void	UpdateWorldMatrices(const D3DXMATRIX * c_pWorldMatrix);
         void	DeformPNTVertices(void* pvDest);
 
-        void	RenderMeshNodeListWithOneTexture(CGrannyMesh::EType eMeshType, CGrannyMaterial::EType eMtrlType);
-        void	RenderMeshNodeListWithTwoTexture(CGrannyMesh::EType eMeshType, CGrannyMaterial::EType eMtrlType);
-        void	RenderMeshNodeListWithoutTexture(CGrannyMesh::EType eMeshType, CGrannyMaterial::EType eMtrlType);
+        enum EMeshNodeListRenderMode
+        {
+            MESHNODELIST_ONE_TEXTURE,
+            MESHNODELIST_TWO_TEXTURE,
+            MESHNODELIST_NO_TEXTURE,
+        };
+
+        void RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGrannyMaterial::EType eMtrlType, EMeshNodeListRenderMode eMode);
 
     protected:
         // Static Data

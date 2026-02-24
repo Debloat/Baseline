@@ -4,7 +4,6 @@
 #include "../EterLib/Camera.h"
 
 extern bool PERF_CHECKER_RENDER_GAME;
-extern D3DXCOLOR g_fSpecularColor;
 extern BOOL bVisibleNotice = true;
 extern BOOL bTestServerFlag = FALSE;
 extern int TWOHANDED_WEWAPON_ATT_SPEED_DECREASE_VALUE = 0;
@@ -223,20 +222,6 @@ PyObject* appSetCameraMaxDistance(PyObject* poSelf, PyObject* poArgs)
 PyObject* appSetControlFP(PyObject* poSelf, PyObject* poArgs)
 {
     _controlfp(_PC_24, _MCW_PC);
-    return Py_BuildNone();
-}
-
-PyObject* appSetSpecularSpeed(PyObject* poSelf, PyObject* poArgs)
-{
-    float fSpeed;
-
-    if (!PyTuple_GetFloat(poArgs, 0, &fSpeed))
-    {
-        return Py_BuildException();
-    }
-
-    g_specularSpd = fSpeed;
-
     return Py_BuildNone();
 }
 
@@ -1150,46 +1135,6 @@ PyObject* appSetSightRange(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-extern int g_iAccumulationTime;
-
-PyObject* apptestGetAccumulationTime(PyObject * poSelf, PyObject * poArgs)
-{
-    return Py_BuildValue("i", g_iAccumulationTime);
-}
-
-PyObject* apptestResetAccumulationTime(PyObject * poSelf, PyObject * poArgs)
-{
-    g_iAccumulationTime = 0;
-    return Py_BuildNone();
-}
-
-PyObject* apptestSetSpecularColor(PyObject * poSelf, PyObject * poArgs)
-{
-    float fr;
-
-    if (!PyTuple_GetFloat(poArgs, 0, &fr))
-    {
-        return Py_BuildException();
-    }
-
-    float fg;
-
-    if (!PyTuple_GetFloat(poArgs, 1, &fg))
-    {
-        return Py_BuildException();
-    }
-
-    float fb;
-
-    if (!PyTuple_GetFloat(poArgs, 2, &fb))
-    {
-        return Py_BuildException();
-    }
-
-    g_fSpecularColor = D3DXCOLOR(fr, fg, fb, 1.0f);
-    return Py_BuildNone();
-}
-
 PyObject* appSetVisibleNotice(PyObject * poSelf, PyObject * poArgs)
 {
     int iFlag;
@@ -1521,11 +1466,6 @@ void initapp()
 
         { "GetDefaultCodePage",			appGetDefaultCodePage,			METH_VARARGS },
         { "SetControlFP",				appSetControlFP,				METH_VARARGS },
-        { "SetSpecularSpeed",			appSetSpecularSpeed,			METH_VARARGS },
-
-        { "testGetAccumulationTime",	apptestGetAccumulationTime,		METH_VARARGS },
-        { "testResetAccumulationTime",	apptestResetAccumulationTime,	METH_VARARGS },
-        { "testSetSpecularColor",		apptestSetSpecularColor,		METH_VARARGS },
 
         { "SetVisibleNotice",			appSetVisibleNotice,			METH_VARARGS },
         { "IsVisibleNotice",			appIsVisibleNotice,				METH_VARARGS },

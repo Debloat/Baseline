@@ -86,10 +86,8 @@ class CGraphicThingInstance : public CGraphicObjectInstance
         BYTE		GetLODLevel(DWORD dwModelInstance);
         float		GetHeight();
 
-        void		RenderWithOneTexture();
-        void		RenderWithTwoTexture();
-        void		BlendRenderWithOneTexture();
-        void		BlendRenderWithTwoTexture();
+        void __RenderLOD(CGrannyModelInstance::EModelTexturePath texPath,
+            CGrannyModelInstance::EModelRenderPass pass);
 
         DWORD		GetLODControllerCount() const;
         CGrannyLODController* GetLODControllerPointer(DWORD dwModelIndex) const;

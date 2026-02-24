@@ -45,46 +45,22 @@ class CGrannyLODController : public CGraphicBase
             }
         };
 
-        struct FRenderWithOneTexture
+        struct FRenderModel
         {
-            void operator()(CGrannyLODController * pController)
-            {
-                if (pController->isModelInstance())
-                {
-                    pController->RenderWithOneTexture();
-                }
-            }
-        };
+            CGrannyModelInstance::EModelTexturePath m_texPath;
+            CGrannyModelInstance::EModelRenderPass  m_pass;
 
-        struct FBlendRenderWithOneTexture
-        {
-            void operator()(CGrannyLODController * pController)
+            FRenderModel(CGrannyModelInstance::EModelTexturePath texPath,
+                CGrannyModelInstance::EModelRenderPass pass)
+                : m_texPath(texPath), m_pass(pass)
             {
-                if (pController->isModelInstance())
-                {
-                    pController->BlendRenderWithOneTexture();
-                }
             }
-        };
 
-        struct FRenderWithTwoTexture
-        {
-            void operator()(CGrannyLODController * pController)
+            void operator()(CGrannyLODController* pController)
             {
                 if (pController->isModelInstance())
                 {
-                    pController->RenderWithTwoTexture();
-                }
-            }
-        };
-
-        struct FBlendRenderWithTwoTexture
-        {
-            void operator()(CGrannyLODController * pController)
-            {
-                if (pController->isModelInstance())
-                {
-                    pController->BlendRenderWithTwoTexture();
+                    pController->__RenderModel(m_texPath, m_pass);
                 }
             }
         };
@@ -280,10 +256,7 @@ class CGrannyLODController : public CGraphicBase
         void	SetMaterialData(const char* c_szImageName, const SMaterialData& c_rkMaterialData);
         void	SetSpecularInfo(const char* c_szMtrlName, BOOL bEnable, float fPower);
 
-        void	RenderWithOneTexture();
-        void	RenderWithTwoTexture();
-        void	BlendRenderWithOneTexture();
-        void	BlendRenderWithTwoTexture();
+        void __RenderModel(CGrannyModelInstance::EModelTexturePath texPath, CGrannyModelInstance::EModelRenderPass pass);
 
         void	Update(float fElapsedTime, float fDistanceFromCenter, float fDistanceFromCamera);
         void	UpdateLODLevel(float fDistanceFromCenter, float fDistanceFromCamera);

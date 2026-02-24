@@ -31,7 +31,7 @@ class CGrannyMaterial : public CReferenceObject
     private:
         static D3DXMATRIX ms_matSpecular;
         static D3DXVECTOR3 ms_v3SpecularTrans;
-
+        static D3DXCOLOR ms_SpecularColor;
     public:
         CGrannyMaterial();
         virtual ~CGrannyMaterial();
@@ -41,9 +41,6 @@ class CGrannyMaterial : public CReferenceObject
         bool					IsEqual(granny_material * pgrnMaterial) const;
         bool					IsIn(const char* c_szImageName, int* iStage);
         void					SetSpecularInfo(BOOL bFlag, float fPower, BYTE uSphereMapIndex);
-
-        void					ApplyRenderState();
-        void					RestoreRenderState();
 
     protected:
         void					Initialize();
@@ -65,17 +62,44 @@ class CGrannyMaterial : public CReferenceObject
             return m_bTwoSideRender;
         }
 
+        // ------------------------------------------------------------------
+        // Specular Data Access (Renderer Use)
+        // ------------------------------------------------------------------
+        bool IsSpecularEnabled() const
+        {
+            return m_bSpecularEnable;
+        }
+
+        float GetSpecularPower() const
+        {
+            return m_fSpecularPower;
+        }
+
+        BYTE GetSphereMapIndex() const
+        {
+            return m_bSphereMapIndex;
+        }
+
+        static const D3DXMATRIX& GetSpecularMatrix()
+        {
+            return ms_matSpecular;
+        }
+
+        static CGraphicTexture* GetSphereMapTexture(BYTE index)
+        {
+            if (index >= SPHEREMAP_NUM)
+                return nullptr;
+
+            return ms_akSphereMapInstance[index].GetTexturePointer();
+        }
+
+        static const D3DXCOLOR& GetSpecularColor()
+        {
+            return ms_SpecularColor;
+        }
 
     protected:
         CGraphicImage* 			__GetImagePointer(const char* c_szFileName);
-
-        BOOL					__IsSpecularEnable() const;
-        float					__GetSpecularPower() const;
-
-        void					__ApplyDiffuseRenderState();
-        void					__RestoreDiffuseRenderState();
-        void					__ApplySpecularRenderState();
-        void					__RestoreSpecularRenderState();
 
     protected:
         granny_material* 		m_pgrnMaterial;
@@ -87,10 +111,6 @@ class CGrannyMaterial : public CReferenceObject
         bool					m_bTwoSideRender;
         DWORD					m_dwLastCullRenderStateForTwoSideRendering;
         BYTE					m_bSphereMapIndex;
-
-
-        void (CGrannyMaterial::*m_pfnApplyRenderState)();
-        void (CGrannyMaterial::*m_pfnRestoreRenderState)();
 
     private:
         enum

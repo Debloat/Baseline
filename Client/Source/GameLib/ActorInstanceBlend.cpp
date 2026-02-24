@@ -8,12 +8,26 @@ void CActorInstance::BlendAlphaValue(float fDstAlpha, float fDuration)
 
 void CActorInstance::SetBlendRenderMode()
 {
-    m_iRenderMode = RENDER_MODE_BLEND;
+    m_iAlphaMode = ALPHA_MODE_BLEND;
 }
 
 void CActorInstance::SetAlphaValue(float fAlpha)
 {
     m_fAlphaValue = fAlpha;
+
+    // Keep alpha mode sane based on alpha value when not explicitly forcing blend
+    if (!m_kBlendAlpha.m_isBlending)
+    {
+        if (m_fAlphaValue >= 1.0f)
+        {
+            if (m_iAlphaMode == ALPHA_MODE_BLEND)
+                m_iAlphaMode = ALPHA_MODE_MASK;
+        }
+        else if (m_fAlphaValue > 0.0f)
+        {
+            m_iAlphaMode = ALPHA_MODE_BLEND;
+        }
+    }
 }
 
 float CActorInstance::GetAlphaValue()
@@ -28,7 +42,8 @@ void CActorInstance::__BlendAlpha_Initialize()
     m_kBlendAlpha.m_fDuration = 0.0f;
     m_kBlendAlpha.m_fBaseAlpha = 0.0f;
     m_kBlendAlpha.m_fDstAlpha = 0.0f;
-    m_kBlendAlpha.m_iOldRenderMode = RENDER_MODE_NORMAL;
+    m_kBlendAlpha.m_iOldAlphaMode = ALPHA_MODE_MASK;
+    m_kBlendAlpha.m_iOldColorOp = COLOR_OP_NONE;
 }
 
 void CActorInstance::__BlendAlpha_Apply(float fDstAlpha, float fDuration)
@@ -38,7 +53,8 @@ void CActorInstance::__BlendAlpha_Apply(float fDstAlpha, float fDuration)
     m_kBlendAlpha.m_fBaseTime = GetLocalTime();
     m_kBlendAlpha.m_fDuration = fDuration;
     m_kBlendAlpha.m_fDstAlpha = fDstAlpha;
-    m_kBlendAlpha.m_iOldRenderMode = m_iRenderMode;
+    m_kBlendAlpha.m_iOldAlphaMode = m_iAlphaMode;
+    m_kBlendAlpha.m_iOldColorOp = m_iColorOp;
 }
 
 void CActorInstance::__BlendAlpha_Update()
@@ -66,7 +82,8 @@ void CActorInstance::__BlendAlpha_Update()
 
         else
         {
-            m_iRenderMode = m_kBlendAlpha.m_iOldRenderMode;
+            m_iAlphaMode = m_kBlendAlpha.m_iOldAlphaMode;
+            m_iColorOp = m_kBlendAlpha.m_iOldColorOp;
         }
 
         SetAlphaValue(m_kBlendAlpha.m_fDstAlpha);

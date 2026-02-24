@@ -703,7 +703,6 @@ class CInstanceBase
         void					RestoreRenderMode();
         void					SetAddRenderMode();
         void					SetModulateRenderMode();
-        void					SetRenderMode(int iRenderMode);
         void					SetAddColor(const D3DXCOLOR & c_rColor);
 
         // Position

@@ -32,51 +32,29 @@ void CActorInstance::OnRender()
     // 아니면 이런 형태로 가되 Texture & State Sorting 지원으로.. - [levites]
     STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-    switch (m_iRenderMode)
+    // --------------------------------------------------------
+    // Render intent dispatch (FFP backend)
+    // --------------------------------------------------------
+    if (m_iColorOp == COLOR_OP_ADD)
     {
-        case RENDER_MODE_NORMAL:
-            BeginDiffuseRender();
-            RenderWithOneTexture();
-            EndDiffuseRender();
-            BeginOpacityRender();
-            BlendRenderWithOneTexture();
-            EndOpacityRender();
+        __RenderTintFFP(D3DTOP_ADD);
+    }
+    else if (m_iColorOp == COLOR_OP_MODULATE)
+    {
+        __RenderTintFFP(D3DTOP_MODULATE);
+    }
+    else
+    {
+        switch (m_iAlphaMode)
+        {
+        case ALPHA_MODE_MASK:
+            __RenderMaskFFP();
             break;
 
-        case RENDER_MODE_BLEND:
-            if (m_fAlphaValue == 1.0f)
-            {
-                BeginDiffuseRender();
-                RenderWithOneTexture();
-                EndDiffuseRender();
-                BeginOpacityRender();
-                BlendRenderWithOneTexture();
-                EndOpacityRender();
-            }
-
-            else if (m_fAlphaValue > 0.0f)
-            {
-                BeginBlendRender();
-                RenderWithOneTexture();
-                BlendRenderWithOneTexture();
-                EndBlendRender();
-            }
-
+        case ALPHA_MODE_BLEND:
+            __RenderBlendFFP();
             break;
-
-        case RENDER_MODE_ADD:
-            BeginAddRender();
-            RenderWithOneTexture();
-            BlendRenderWithOneTexture();
-            EndAddRender();
-            break;
-
-        case RENDER_MODE_MODULATE:
-            BeginModulateRender();
-            RenderWithOneTexture();
-            BlendRenderWithOneTexture();
-            EndModulateRender();
-            break;
+        }
     }
 
     STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
@@ -126,119 +104,220 @@ void CActorInstance::OnRender()
     }
 }
 
-void CActorInstance::BeginDiffuseRender()
+void CActorInstance::__RenderMaskFFP()
 {
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
+    auto SetupStage0_ModulateTexDiffuse = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
 
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+        };
+
+    auto DisableStage1 = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+        };
+
+    auto RenderSubsets = [&](BOOL bAlphaTestEnable)
+        {
+            STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+            STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, bAlphaTestEnable);
+
+            if (bAlphaTestEnable)
+            {
+                STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0);
+                STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
+            }
+
+            __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
+            __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_BLEND);
+
+            if (bAlphaTestEnable)
+            {
+                STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
+                STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
+            }
+
+            STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
+            STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
+        };
+
+    SetupStage0_ModulateTexDiffuse();
+    DisableStage1();
+
+    // same behavior you had: first without alpha test, then with alpha test
+    RenderSubsets(FALSE);
+    RenderSubsets(TRUE);
 }
 
-void CActorInstance::EndDiffuseRender()
+void CActorInstance::__RenderBlendFFP()
 {
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-}
+    if (m_fAlphaValue <= 0.0f)
+        return;
 
-void CActorInstance::BeginOpacityRender()
-{
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
+    // If fully opaque -> treat as MASK path
+    if (m_fAlphaValue >= 1.0f)
+    {
+        __RenderMaskFFP();
+        return;
+    }
 
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
-}
+    auto SetupStage0_ModulateTexDiffuse = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
 
-void CActorInstance::EndOpacityRender()
-{
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
-}
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+        };
 
-void CActorInstance::BeginBlendRender()
-{
+    auto DisableStage1 = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+        };
+
+    // Stage 0: tex * diffuse
+    SetupStage0_ModulateTexDiffuse();
+
+    // Alpha comes from TFACTOR (global actor alpha)
+    STATEMANAGER.SaveRenderState(D3DRS_TEXTUREFACTOR,
+        D3DXCOLOR(1.0f, 1.0f, 1.0f, m_fAlphaValue));
+
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TFACTOR);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+
+    // Ensure stage 1 doesn't leak
+    DisableStage1();
+
+    // Enable blending
     STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
     STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, D3DXCOLOR(1.0f, 1.0f, 1.0f, m_fAlphaValue));
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2);
-}
+    // Disable alpha test in translucent mode
+    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
 
-void CActorInstance::EndBlendRender()
-{
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
+    // Render both subsets
+    __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
+    __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_BLEND);
+
+    // Restore
+    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
     STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
-}
-
-void CActorInstance::BeginAddRender()
-{
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, m_AddColor);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2,	D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_ADD);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-}
-
-void CActorInstance::EndAddRender()
-{
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
+    STATEMANAGER.RestoreRenderState(D3DRS_TEXTUREFACTOR);
+}
+
+void CActorInstance::__RenderTintFFP(D3DTEXTUREOP stage1ColorOp)
+{
+    auto SetupStage0_ModulateTexDiffuse = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
+
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+            STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+        };
+
+    auto DisableStage1 = [&]()
+        {
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
+            STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+        };
+
+    auto RenderSubsets_NoAlphaTest = [&]()
+        {
+            STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+            STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+
+            __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
+            __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_BLEND);
+
+            STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
+            STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
+        };
+
+    // TFACTOR comes from m_AddColor (used for both ADD and MODULATE modes)
+    STATEMANAGER.SaveRenderState(D3DRS_TEXTUREFACTOR, m_AddColor);
+
+    // Stage 0: tex * diffuse (color + alpha)
+    SetupStage0_ModulateTexDiffuse();
+
+    // Stage 1: CURRENT <op> TFACTOR
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_TFACTOR);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, stage1ColorOp);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+
+    RenderSubsets_NoAlphaTest();
+
+    // Hard disable stage1 so we never leak it
+    DisableStage1();
+    STATEMANAGER.RestoreRenderState(D3DRS_TEXTUREFACTOR);
 }
 
 void CActorInstance::RestoreRenderMode()
 {
-    // NOTE : This is temporary code. I wanna convert this code to that restore the mode to
-    //        model's default setting which had has as like specular or normal. - [levites]
-    m_iRenderMode = RENDER_MODE_NORMAL;
+    // Restore default state
+    m_iAlphaMode = ALPHA_MODE_MASK;
+    m_iColorOp = COLOR_OP_NONE;
 
+    // If a fade is currently running, keep the "old state" consistent with defaults
     if (m_kBlendAlpha.m_isBlending)
     {
-        m_kBlendAlpha.m_iOldRenderMode = m_iRenderMode;
+        m_kBlendAlpha.m_iOldAlphaMode = m_iAlphaMode;
+        m_kBlendAlpha.m_iOldColorOp = m_iColorOp;
     }
 }
 
-
-void CActorInstance::SetAddRenderMode()
+void CActorInstance::SetAlphaMode(int mode)
 {
-    m_iRenderMode = RENDER_MODE_ADD;
+    m_iAlphaMode = mode;
 
-    if (m_kBlendAlpha.m_isBlending)
+    if (m_iAlphaMode == ALPHA_MODE_MASK)
     {
-        m_kBlendAlpha.m_iOldRenderMode = m_iRenderMode;
+        // Mask path should behave like fully opaque unless BlendAlpha system is active
+        if (!m_kBlendAlpha.m_isBlending)
+            m_fAlphaValue = 1.0f;
     }
 }
 
-void CActorInstance::SetRenderMode(int iRenderMode)
+void CActorInstance::SetColorOp(int op)
 {
-    m_iRenderMode = iRenderMode;
+    m_iColorOp = op;
 
-    if (m_kBlendAlpha.m_isBlending)
+    // Current policy: color ops are handled via RenderColorFactorPass (opaque-style path)
+    // So force alpha mode back to MASK if a color op is enabled.
+    if (m_iColorOp != COLOR_OP_NONE)
     {
-        m_kBlendAlpha.m_iOldRenderMode = iRenderMode;
+        m_iAlphaMode = ALPHA_MODE_MASK;
+        m_fAlphaValue = 1.0f;
     }
 }
 
@@ -246,41 +325,6 @@ void CActorInstance::SetAddColor(const D3DXCOLOR & c_rColor)
 {
     m_AddColor = c_rColor;
     m_AddColor.a = 1.0f;
-}
-
-void CActorInstance::BeginModulateRender()
-{
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, m_AddColor);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2,	D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-}
-
-void CActorInstance::EndModulateRender()
-{
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-}
-
-void CActorInstance::SetModulateRenderMode()
-{
-    m_iRenderMode = RENDER_MODE_MODULATE;
-
-    if (m_kBlendAlpha.m_isBlending)
-    {
-        m_kBlendAlpha.m_iOldRenderMode = m_iRenderMode;
-    }
 }
 
 void CActorInstance::RenderCollisionData()
@@ -366,11 +410,11 @@ void CActorInstance::RenderCollisionData()
 
 void CActorInstance::RenderToShadowMap()
 {
-    if (RENDER_MODE_BLEND == m_iRenderMode)
+    if (m_iAlphaMode == ALPHA_MODE_BLEND)
+    {
         if (GetAlphaValue() < 0.5f)
-        {
             return;
-        }
+    }
 
     CGraphicThingInstance::RenderToShadowMap();
 

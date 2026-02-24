@@ -23,7 +23,7 @@ class CDungeonModelInstance : public CGrannyModelInstance
             if (lpd3dRigidPNTVtxBuf)
             {
                 STATEMANAGER.SetStreamSource(0, lpd3dRigidPNTVtxBuf, sizeof(TPNT2Vertex));
-                RenderMeshNodeListWithTwoTexture(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT);
+                RenderMeshNodeList(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT, MESHNODELIST_TWO_TEXTURE);
             }
         }
 
@@ -48,7 +48,7 @@ class CDungeonModelInstance : public CGrannyModelInstance
             if (lpd3dRigidPNTVtxBuf)
             {
                 STATEMANAGER.SetStreamSource(0, lpd3dRigidPNTVtxBuf, sizeof(TPNT2Vertex));
-                RenderMeshNodeListWithoutTexture(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT);
+                RenderMeshNodeList(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT, MESHNODELIST_NO_TEXTURE);
             }
 
             STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLORARG1);

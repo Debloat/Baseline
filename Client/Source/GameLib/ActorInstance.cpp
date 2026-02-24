@@ -28,49 +28,14 @@ void CActorInstance::INSTANCEBASE_Transform()
         m_bNeedUpdateCollision = TRUE;
     }
 
-    //DWORD t2=ELTimer_GetMSec();
     Update();
-    //DWORD t3=ELTimer_GetMSec();
     TransformProcess();
-    //DWORD t4=ELTimer_GetMSec();
     Transform();
-    //DWORD t5=ELTimer_GetMSec();
     UpdatePointInstance();
-    //DWORD t6=ELTimer_GetMSec();
     ShakeProcess();
-    //DWORD t7=ELTimer_GetMSec();
     UpdateBoundingSphere();
-    //DWORD t8=ELTimer_GetMSec();
     UpdateAttribute();
 }
-
-/*
-void CActorInstance::TEMP_Update()
-{
-	//DWORD t1=ELTimer_GetMSec();
-	OnUpdate();
-	//DWORD t2=ELTimer_GetMSec();
-	UpdateBoundingSphere();
-	//DWORD t3=ELTimer_GetMSec();
-
-#ifdef __PERFORMANCE_CHECKER__
-	{
-		static FILE* fp=fopen("perf_actor_update.txt", "w");
-
-		if (t3-t1>3)
-		{
-			fprintf(fp, "AIU.Total %d (Time %f)\n",
-				t3-t1, ELTimer_GetMSec()/1000.0f);
-			fprintf(fp, "AIU.UP %d\n", t2-t1);
-			fprintf(fp, "AIU.UBS %d\n", t3-t2);
-			fprintf(fp, "-------------------------------- \n");
-			fflush(fp);
-		}
-		fflush(fp);
-	}
-#endif
-}
-*/
 
 void CActorInstance::OnUpdate()
 {
@@ -697,20 +662,6 @@ void CActorInstance::AdjustDynamicCollisionMovement(const CActorInstance * c_pAc
     if ((uActorType == TYPE_BUILDING) || (uActorType == TYPE_OBJECT) || (uActorType == TYPE_DOOR) || (uActorType == TYPE_STONE))
     {
         BlockMovement();
-
-        //Movement√ ±‚»≠
-        /*	m_v3Movement = D3DXVECTOR3(0.f,0.f,0.f);
-
-        	TCollisionPointInstanceListIterator itMain = m_BodyPointInstanceList.begin();
-        	for (; itMain != m_BodyPointInstanceList.end(); ++itMain)
-        	{
-        		CDynamicSphereInstanceVector & c_rMainSphereVector = (*itMain).SphereInstanceVector;
-        		for (DWORD i = 0; i < c_rMainSphereVector.size(); ++i)
-        		{
-        			CDynamicSphereInstance & c_rMainSphere = c_rMainSphereVector[i];
-        			c_rMainSphere.v3Position =c_rMainSphere.v3LastPosition;
-        		}
-        	}*/
     }
 
     else
@@ -809,18 +760,6 @@ void CActorInstance::__AdjustCollisionMovement(const CGraphicObjectInstance * c_
                     c_rMainSphere.v3Position += m_v3Movement;
                 }
             }
-
-            /*if (c_pObjectInstance->CollisionDynamicSphere(c_rMainSphere))
-            {
-            	const D3DXVECTOR3 & c_rv3Position = c_pObjectInstance->GetPosition();
-            	//if (GetVector3Distance(c_rMainSphere.v3Position, c_rv3Position) <
-            	//	GetVector3Distance(c_rMainSphere.v3LastPosition, c_rv3Position))
-            	{
-            		return TRUE;
-            	}
-
-            	return FALSE;
-            }*/
         }
     }
 }
@@ -1008,7 +947,9 @@ void CActorInstance::__InitializeStateData()
     m_isHiding = FALSE;
     m_isResistFallen = FALSE;
 
-    m_iRenderMode = RENDER_MODE_NORMAL;
+    m_iAlphaMode = ALPHA_MODE_MASK;
+    m_iColorOp = COLOR_OP_NONE;
+
     m_fAlphaValue = 0.0f;
     m_AddColor = D3DXCOLOR(0.0f, 0.0f, 0.0f, 1.0f);
 

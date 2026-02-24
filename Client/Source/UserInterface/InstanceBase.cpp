@@ -2915,17 +2915,14 @@ void CInstanceBase::RestoreRenderMode()
 
 void CInstanceBase::SetAddRenderMode()
 {
-    m_GraphicThingInstance.SetAddRenderMode();
+    m_GraphicThingInstance.SetAlphaMode(CActorInstance::ALPHA_MODE_MASK);
+    m_GraphicThingInstance.SetColorOp(CActorInstance::COLOR_OP_ADD);
 }
 
 void CInstanceBase::SetModulateRenderMode()
 {
-    m_GraphicThingInstance.SetModulateRenderMode();
-}
-
-void CInstanceBase::SetRenderMode(int iRenderMode)
-{
-    m_GraphicThingInstance.SetRenderMode(iRenderMode);
+    m_GraphicThingInstance.SetAlphaMode(CActorInstance::ALPHA_MODE_MASK);
+    m_GraphicThingInstance.SetColorOp(CActorInstance::COLOR_OP_MODULATE);
 }
 
 void CInstanceBase::SetAddColor(const D3DXCOLOR & c_rColor)

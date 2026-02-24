@@ -91,12 +91,17 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
             TYPE_OBJECT, // Only For Client
         };
 
-        enum ERenderMode
+        enum EAlphaMode
         {
-            RENDER_MODE_NORMAL,
-            RENDER_MODE_BLEND,
-            RENDER_MODE_ADD,
-            RENDER_MODE_MODULATE,
+            ALPHA_MODE_MASK,     // old NORMAL
+            ALPHA_MODE_BLEND,    // old BLEND
+        };
+
+        enum EColorOp
+        {
+            COLOR_OP_NONE,
+            COLOR_OP_ADD,
+            COLOR_OP_MODULATE,
         };
 
         /////////////////////////////////////////////////////////////////////////////////////
@@ -453,13 +458,6 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
 
         void		RestoreRenderMode();
 
-        void		BeginDiffuseRender();
-        void		EndDiffuseRender();
-        void		BeginOpacityRender();
-        void		EndOpacityRender();
-
-        void		BeginBlendRender();
-        void		EndBlendRender();
         void		SetBlendRenderMode();
         void		SetAlphaValue(float fAlpha);
         float		GetAlphaValue();
@@ -467,21 +465,19 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         void		SetSpecularInfo(BOOL bEnable, int iPart, float fAlpha);
         void		SetSpecularInfoForce(BOOL bEnable, int iPart, float fAlpha);
 
-        void		BeginAddRender();
-        void		EndAddRender();
-        void		SetAddRenderMode();
         void		SetAddColor(const D3DXCOLOR & c_rColor);
 
-        void		BeginModulateRender();
-        void		EndModulateRender();
-        void		SetModulateRenderMode();
-
-        void		SetRenderMode(int iRenderMode);
+        void SetAlphaMode(int mode);
+        void SetColorOp(int op);
 
         void		RenderTrace();
         void		RenderCollisionData();
         void		RenderToShadowMap();
 
+    private:
+        void __RenderMaskFFP();
+        void __RenderBlendFFP();
+        void __RenderTintFFP(D3DTEXTUREOP stage1ColorOp);
 
     protected:
         void		__AdjustCollisionMovement(const CGraphicObjectInstance * c_pGraphicObjectInstance);
@@ -786,7 +782,8 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         float m_fOwnerBaseTime;
 
         // Rendering
-        int							m_iRenderMode;
+        int m_iAlphaMode;
+        int m_iColorOp;
         D3DXCOLOR					m_AddColor;
         float						m_fAlphaValue;
 
@@ -862,7 +859,8 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
             float m_fDuration;
             float m_fDstAlpha;
 
-            DWORD m_iOldRenderMode;
+            int m_iOldAlphaMode;
+            int m_iOldColorOp;
             bool m_isBlending;
         } m_kBlendAlpha;
 

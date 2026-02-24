@@ -860,11 +860,6 @@ void CGraphicThingInstance::UpdateLODLevel()
 
 void CGraphicThingInstance::UpdateTime()
 {
-    //granny_system_clock clockNow = GrannyGetSystemSeconds();
-    //m_fSecondElapsed = GrannyGetSecondsElapsed(&m_clockLast, &clockNow) * m_fMotionTimeSpeed;
-
-    //DWORD t1=ELTimer_GetMSec();
-
     m_fSecondElapsed = CTimer::Instance().GetElapsedSecond();
 
     if (m_fDelay > m_fSecondElapsed)
@@ -882,7 +877,6 @@ void CGraphicThingInstance::UpdateTime()
     m_fLastLocalTime = m_fLocalTime;
     m_fLocalTime += m_fSecondElapsed;
     m_fAverageSecondElapsed = m_fAverageSecondElapsed + (m_fSecondElapsed - m_fAverageSecondElapsed) / 4.0f;
-    //m_clockLast = clockNow;
 
     CGrannyLODController::FUpdateTime update;
     update.fElapsedTime = m_fSecondElapsed;
@@ -925,60 +919,22 @@ void CGraphicThingInstance::OnUpdate()
 
 void CGraphicThingInstance::OnRender()
 {
-    RenderWithOneTexture();
+    __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
 }
 
 void CGraphicThingInstance::OnBlendRender()
 {
-    BlendRenderWithOneTexture();
+    __RenderLOD(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_BLEND);
 }
 
-void CGraphicThingInstance::RenderWithOneTexture()
+void CGraphicThingInstance::__RenderLOD(CGrannyModelInstance::EModelTexturePath texPath,
+    CGrannyModelInstance::EModelRenderPass pass)
 {
-    //assert(m_bUpdated);
     if (!m_bUpdated)
-    {
         return;
-    }
 
-    CGrannyLODController::FRenderWithOneTexture render;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), render);
-}
-
-void CGraphicThingInstance::BlendRenderWithOneTexture()
-{
-    //assert(m_bUpdated);
-    if (!m_bUpdated)
-    {
-        return;
-    }
-
-    CGrannyLODController::FBlendRenderWithOneTexture blendRender;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), blendRender);
-}
-
-void CGraphicThingInstance::RenderWithTwoTexture()
-{
-    //assert(m_bUpdated);
-    if (!m_bUpdated)
-    {
-        return;
-    }
-
-    CGrannyLODController::FRenderWithTwoTexture render;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), render);
-}
-
-void CGraphicThingInstance::BlendRenderWithTwoTexture()
-{
-    //assert(m_bUpdated);
-    if (!m_bUpdated)
-    {
-        return;
-    }
-
-    CGrannyLODController::FRenderWithTwoTexture blendRender;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), blendRender);
+    CGrannyLODController::FRenderModel render(texPath, pass);
+    std::ranges::for_each(m_LODControllerVector, render);
 }
 
 void CGraphicThingInstance::OnRenderToShadowMap()
@@ -989,13 +945,13 @@ void CGraphicThingInstance::OnRenderToShadowMap()
     }
 
     CGrannyLODController::FRenderToShadowMap RenderToShadowMap;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), RenderToShadowMap);
+    std::ranges::for_each(m_LODControllerVector, RenderToShadowMap);
 }
 
 void CGraphicThingInstance::OnRenderShadow()
 {
     CGrannyLODController::FRenderShadow RenderShadow;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), RenderShadow);
+    std::ranges::for_each(m_LODControllerVector, RenderShadow);
 }
 
 DWORD CGraphicThingInstance::GetLODControllerCount() const

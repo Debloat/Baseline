@@ -447,54 +447,10 @@ void CGrannyLODController::DestroyDeviceObjects()
                   CGrannyModelInstance::FDestroyDeviceObjects());
 }
 
-void CGrannyLODController::RenderWithOneTexture()
+void CGrannyLODController::__RenderModel(CGrannyModelInstance::EModelTexturePath texPath, CGrannyModelInstance::EModelRenderPass pass)
 {
     assert(m_pCurrentModelInstance != NULL);
-
-//#define CHECK_LOD
-#ifdef CHECK_LOD
-
-    if (m_que_pkModelInst.size() > 0 && m_pCurrentModelInstance == m_que_pkModelInst[0])
-    {
-        m_pCurrentModelInstance->RenderWithoutTexture();
-    }
-
-    if (m_que_pkModelInst.size() > 1 && m_pCurrentModelInstance == m_que_pkModelInst[1])
-    {
-        m_pCurrentModelInstance->RenderWithOneTexture();
-    }
-
-    if (m_que_pkModelInst.size() > 2 && m_pCurrentModelInstance == m_que_pkModelInst[2])
-    {
-        m_pCurrentModelInstance->RenderWithOneTexture();
-    }
-
-    if (m_que_pkModelInst.size() > 3 && m_pCurrentModelInstance == m_que_pkModelInst[3])
-    {
-        m_pCurrentModelInstance->RenderWithOneTexture();
-    }
-
-#else
-    m_pCurrentModelInstance->RenderWithOneTexture();
-#endif
-}
-
-void CGrannyLODController::BlendRenderWithOneTexture()
-{
-    assert(m_pCurrentModelInstance != NULL);
-    m_pCurrentModelInstance->BlendRenderWithOneTexture();
-}
-
-void CGrannyLODController::RenderWithTwoTexture()
-{
-    assert(m_pCurrentModelInstance != NULL);
-    m_pCurrentModelInstance->RenderWithTwoTexture();
-}
-
-void CGrannyLODController::BlendRenderWithTwoTexture()
-{
-    assert(m_pCurrentModelInstance != NULL);
-    m_pCurrentModelInstance->BlendRenderWithTwoTexture();
+    m_pCurrentModelInstance->__RenderModelFFP(texPath, pass);
 }
 
 void CGrannyLODController::Update(float fElapsedTime, float fDistanceFromCenter, float fDistanceFromCamera)
@@ -696,7 +652,7 @@ void CGrannyLODController::RenderToShadowMap()
 {
     if (m_pCurrentModelInstance)
     {
-        m_pCurrentModelInstance->RenderWithoutTexture();
+        m_pCurrentModelInstance->__RenderModelFFP(CGrannyModelInstance::MODEL_TEX_NONE, CGrannyModelInstance::MODEL_PASS_ALL);
     }
 }
 
@@ -704,7 +660,7 @@ void CGrannyLODController::RenderShadow()
 {
     if (m_pCurrentModelInstance)
     {
-        m_pCurrentModelInstance->RenderWithOneTexture();
+        m_pCurrentModelInstance->__RenderModelFFP(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
     }
 }
 
