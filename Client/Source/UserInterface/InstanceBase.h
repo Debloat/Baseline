@@ -657,7 +657,6 @@ class CInstanceBase
 
         void					NEW_SetOwner(DWORD dwOwnerVID);
         void					NEW_SyncPixelPosition(long& nPPosX, long& nPPosY);
-        void					NEW_SyncCurrentPixelPosition();
 
         void					NEW_SetPixelPosition(const TPixelPosition& c_rkPPosDst);
 
@@ -744,12 +743,7 @@ class CInstanceBase
         bool					IntersectDefendingSphere();
         bool					IntersectBoundingBox();
 
-        // Part
-        //void					SetParts(const WORD * c_pParts);
         void					Refresh(DWORD dwMotIndex, bool isLoop);
-
-        //void					AttachEffectByID(DWORD dwParentPartIndex, const char * c_pszBoneName, DWORD dwEffectID, int dwLife = CActorInstance::EFFECT_LIFE_INFINITE ); // 수명은 ms단위입니다.
-        //void					AttachEffectByName(DWORD dwParentPartIndex, const char * c_pszBoneName, const char * c_pszEffectName, int dwLife = CActorInstance::EFFECT_LIFE_INFINITE ); // 수명은 ms단위입니다.
 
         float					GetDistance(CInstanceBase * pkTargetInst);
         float					GetDistance(const TPixelPosition & c_rPixelPosition);

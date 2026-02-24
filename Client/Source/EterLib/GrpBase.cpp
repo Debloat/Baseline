@@ -182,18 +182,6 @@ const D3DXMATRIX& CGraphicBase::GetProjMatrix()
     return ms_matProj;
 }
 
-void CGraphicBase::SetEyeCamera(float xEye, float yEye, float zEye,
-                                float xCenter, float yCenter, float zCenter,
-                                float xUp, float yUp, float zUp)
-{
-    D3DXVECTOR3 vectorEye(xEye, yEye, zEye);
-    D3DXVECTOR3 vectorCenter(xCenter, yCenter, zCenter);
-    D3DXVECTOR3 vectorUp(xUp, yUp, zUp);
-
-    CCameraManager::Instance().GetCurrentCamera()->SetViewParams(vectorEye, vectorCenter, vectorUp);
-    UpdateViewMatrix();
-}
-
 void CGraphicBase::SetSimpleCamera(float x, float y, float z, float pitch, float roll)
 {
     CCamera * pCamera = CCameraManager::Instance().GetCurrentCamera();
@@ -202,22 +190,6 @@ void CGraphicBase::SetSimpleCamera(float x, float y, float z, float pitch, float
     pCamera->SetViewParams(D3DXVECTOR3(0.0f, y, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 1.0f));
     pCamera->RotateEyeAroundTarget(pitch, roll);
     pCamera->Move(vectorEye);
-
-    UpdateViewMatrix();
-
-    // This is levites's virtual(?) code which you should not trust.
-    ms_lpd3dDevice->GetTransform(D3DTS_WORLD, &ms_matWorld);
-    D3DXMatrixMultiply(&ms_matWorldView, &ms_matWorld, &ms_matView);
-}
-
-void CGraphicBase::SetAroundCamera(float distance, float pitch, float roll, float lookAtZ)
-{
-    CCamera * pCamera = CCameraManager::Instance().GetCurrentCamera();
-    pCamera->SetViewParams(D3DXVECTOR3(0.0f, -distance, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 1.0f));
-    pCamera->RotateEyeAroundTarget(pitch, roll);
-    D3DXVECTOR3 v3Target = pCamera->GetTarget();
-    v3Target.z = lookAtZ;
-    pCamera->SetTarget(v3Target);
 
     UpdateViewMatrix();
 
@@ -262,12 +234,6 @@ void CGraphicBase::SetPositionCamera(float fx, float fy, float fz, float distanc
 void CGraphicBase::SetOrtho2D(float hres, float vres, float zres)
 {
     D3DXMatrixOrthoOffCenterRH(&ms_matProj, 0, hres, vres, 0, 0, zres);
-    UpdateProjMatrix();
-}
-
-void CGraphicBase::SetOrtho3D(float hres, float vres, float zmin, float zmax)
-{
-    D3DXMatrixOrthoRH(&ms_matProj, hres, vres, zmin, zmax);
     UpdateProjMatrix();
 }
 
@@ -368,11 +334,6 @@ float CGraphicBase::GetFOV()
     return ms_fFieldOfView;
 }
 
-void CGraphicBase::PushMatrix()
-{
-    ms_lpd3dMatStack->Push();
-}
-
 void CGraphicBase::Scale(float x, float y, float z)
 {
     ms_lpd3dMatStack->Scale(x, y, z);
@@ -413,11 +374,6 @@ void CGraphicBase::Translate(float x, float y, float z)
 void CGraphicBase::LoadMatrix(const D3DXMATRIX& c_rSrcMatrix)
 {
     ms_lpd3dMatStack->LoadMatrix(&c_rSrcMatrix);
-}
-
-void CGraphicBase::PopMatrix()
-{
-    ms_lpd3dMatStack->Pop();
 }
 
 DWORD CGraphicBase::GetColor(float r, float g, float b, float a)

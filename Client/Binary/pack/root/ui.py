@@ -593,12 +593,6 @@ class EditLine(TextLine):
 	def SetNumberMode(self):
 		self.numberMode = True
 
-	#def AddExceptKey(self, key):
-	#	ime.AddExceptKey(key)
-
-	#def ClearExceptKey(self):
-	#	ime.ClearExceptKey()
-
 	def SetIMEFlag(self, flag):
 		self.useIME = flag
 
@@ -765,8 +759,6 @@ class EditLine(TextLine):
 			
 		return True
 
-	#def OnMouseLeftButtonDown(self):
-	#	self.SetFocus()
 	def OnMouseLeftButtonDown(self):
 		if False == self.IsIn():
 			return False

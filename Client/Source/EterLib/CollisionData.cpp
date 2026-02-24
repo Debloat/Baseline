@@ -7,14 +7,6 @@
 #include "StateManager.h"
 const float gc_fReduceMove = 0.5f;
 
-//const float gc_fSlideMoveSpeed = 5.0f;
-/*inline D3DXVECTOR3 FitAtSpecifiedLength(const D3DXVECTOR3 & v3Vector, float length)
-{
-	D3DXVECTOR3 v;
-	D3DXVec3Normalize(&v,&v3Vector);
-	return v*length;
-}
-*/
 CDynamicPool<CSphereCollisionInstance> gs_sci;
 CDynamicPool<CCylinderCollisionInstance> gs_cci;
 CDynamicPool<CPlaneCollisionInstance> gs_pci;
@@ -261,8 +253,6 @@ bool CSphereCollisionInstance::OnMovementCollisionDynamicSphere(const CDynamicSp
 
 bool CSphereCollisionInstance::OnCollisionDynamicSphere(const CDynamicSphereInstance & s) const
 {
-    //Tracef("OnCollisionDynamicSphere\n");
-
     if (square_distance_between_linesegment_and_point(s.v3LastPosition, s.v3Position,
                                                       m_attribute.v3Position) < (m_attribute.fRadius + s.fRadius) * (m_attribute.fRadius + s.fRadius))
     {
@@ -308,20 +298,6 @@ D3DXVECTOR3 CSphereCollisionInstance::OnGetCollisionMovementAdjust(const CDynami
     {
         return (gc_fReduceMove * t2) * c;
     }
-
-    /*
-    D3DXVECTOR3 p1 = s.v3Position+t1*c;
-    D3DXVECTOR3 p2 = s.v3Position+t2*c;
-
-    if (D3DXVec3LengthSq(&(p2-s.v3Position))>D3DXVec3LengthSq(&(p1-s.v3Position)))
-    {
-    	return p1-s.v3Position;
-    }
-    else
-    {
-    	return p2-s.v3Position;
-    }
-    */
 }
 
 /////////////////////////////////////////////
@@ -412,61 +388,15 @@ D3DXVECTOR3 CPlaneCollisionInstance::OnGetCollisionMovementAdjust(const CDynamic
     const auto vv = (s.v3Position - m_attribute.v3Position);
     float t = - D3DXVec3Dot(&m_attribute.v3Normal, &vv) / d;
 
-    //D3DXVECTOR3 onplane = s.v3Position+t*advance;
-
     if (D3DXVec3Dot(&m_attribute.v3Normal, &advance) >= 0)
     {
-        //return m_attribute.v3Normal*((-s.fRadius+D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position)))*gc_fReduceMove);
         return t * advance - s.fRadius * m_attribute.v3Normal;
     }
 
     else
     {
-        //return m_attribute.v3Normal*((s.fRadius+D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position)))*gc_fReduceMove);
         return t * advance + s.fRadius * m_attribute.v3Normal;
     }
-
-
-    /*if (D3DXVec3Dot(&m_attribute.v3Normal, &advance)>=0)
-    {
-    	Tracef("%f %f\n",s.fRadius,-(D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position))));
-    	return m_attribute.v3Normal*((-s.fRadius+D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position)))*gc_fReduceMove);
-    }
-    else
-    {
-    	Tracef("%f %f\n",(s.fRadius),(D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position))));
-    	return m_attribute.v3Normal*((s.fRadius+D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position-m_attribute.v3Position)))*gc_fReduceMove);
-    }*/
-
-
-    /*
-    D3DXVECTOR3 advance = s.v3Position-s.v3LastPosition;
-    D3DXVECTOR3 slide(-advance.y,advance.x,advance.z);
-    slide = m_attribute.v3Normal;
-
-    D3DXVECTOR3 radius_adjust = advance;
-    D3DXVec3Normalize(&radius_adjust,&radius_adjust);
-    radius_adjust*=s.fRadius;
-
-    float d = D3DXVec3Dot(&m_attribute.v3Normal, &slide);
-    if (d>=-0.0001 && d<=0.0001)
-    	return D3DXVECTOR3(0.0f,0.0f,0.0f);
-
-    float t= - D3DXVec3Dot(&m_attribute.v3Normal, &(s.v3Position+radius_adjust-m_attribute.v3Position))
-    			/ d;*/
-
-    //D3DXVECTOR3 nextposition;
-    //nextposition = s.v3Position + t*slide;
-    //Tracef("$T %f",t);
-    //if (D3DXVec3Dot(&m_attribute.v3Normal, &advance)>=0)
-    //	return (t*slide - m_attribute.v3Normal * s.fRadius)/**gc_fReduceMove*/;
-    //else
-    //	return (t*slide + m_attribute.v3Normal * s.fRadius)/*gc_fReduceMove*/;
-    //if (D3DXVec3Dot(&m_attribute.v3Normal, &advance)>=0)
-    //	return (t*slide + m_attribute.v3Normal * D3DXVec3Dot(&m_attribute.v3Normal,&(s.v3LastPosition-m_attribute.v3Position))/** s.fRadius*/)*gc_fReduceMove;
-    //else
-    //	return (t*slide + m_attribute.v3Normal * D3DXVec3Dot(&m_attribute.v3Normal,&(s.v3LastPosition-m_attribute.v3Position))/*s.fRadius*/)*gc_fReduceMove;
-    //
 }
 
 void CPlaneCollisionInstance::Render(D3DFILLMODE /*d3dFillMode*/)
@@ -503,12 +433,6 @@ bool CCylinderCollisionInstance::CollideCylinderVSDynamicSphere(const TCylinderD
     {
         return false;
     }
-
-    /*D3DXVECTOR2 v2curDistance(s.v3Position.x - c_rattribute.v3Position.x, s.v3Position.y - c_rattribute.v3Position.y);
-    float fDistance = D3DXVec2Length(&v2curDistance);
-    if (fDistance <= s.fRadius + c_rattribute.fRadius)
-    	return true;
-    	*/
 
     D3DXVECTOR3 oa, ob;
     IntersectLineSegments(c_rattribute.v3Position, D3DXVECTOR3(c_rattribute.v3Position.x, c_rattribute.v3Position.y, c_rattribute.v3Position.z + c_rattribute.fHeight),
@@ -565,8 +489,6 @@ bool CCylinderCollisionInstance::OnMovementCollisionDynamicSphere(const CDynamic
 
 bool CCylinderCollisionInstance::OnCollisionDynamicSphere(const CDynamicSphereInstance & s) const
 {
-    //Tracef("OnCollisionDynamicSphere\n");
-
     return (CollideCylinderVSDynamicSphere(m_attribute, s));
 }
 
@@ -611,18 +533,6 @@ D3DXVECTOR3 CCylinderCollisionInstance::OnGetCollisionMovementAdjust(const CDyna
     {
         return (gc_fReduceMove * t2) * c;
     }
-
-    /*D3DXVECTOR3 p1 = s.v3Position+t1*c;
-    D3DXVECTOR3 p2 = s.v3Position+t2*c;
-
-    if (D3DXVec3LengthSq(&(p2-s.v3Position))>D3DXVec3LengthSq(&(p1-s.v3Position)))
-    {
-    	return p1-s.v3Position;
-    }
-    else
-    {
-    	return p2-s.v3Position;
-    }*/
 }
 
 void CCylinderCollisionInstance::Render(D3DFILLMODE d3dFillMode)
@@ -835,33 +745,6 @@ bool CAABBCollisionInstance::OnCollisionDynamicSphere(const CDynamicSphereInstan
 
 D3DXVECTOR3 CAABBCollisionInstance::OnGetCollisionMovementAdjust(const CDynamicSphereInstance & s) const
 {
-
-    //Tracef("OnGetCollisionMovementAdjust	v3Min.x = %f, v3Max.x = %f\n", m_attribute.v3Min.x, m_attribute.v3Max.x);
-    /*
-    float fARadius = D3DXVec3Length(&(m_attribute.v3Min - m_attribute.v3Max));
-    if (D3DXVec3LengthSq(&(s.v3Position-(m_attribute.v3Max + m_attribute.v3Min)))>=(s.fRadius+fARadius)*(fARadius+s.fRadius))
-    	return D3DXVECTOR3(0.0f,0.0f,0.0f);
-    D3DXVECTOR3 c;
-    D3DXVec3Cross(&c, &(s.v3Position-s.v3LastPosition), &D3DXVECTOR3(0.0f,0.0f,1.0f) );
-
-    float sum = - D3DXVec3Dot(&c,&(s.v3Position-(m_attribute.v3Max + m_attribute.v3Min)));
-    float mul = (s.fRadius+fARadius)*(s.fRadius+fARadius)-D3DXVec3LengthSq(&(s.v3Position-(m_attribute.v3Max + m_attribute.v3Min)));
-
-    if (sum*sum-4*mul<=0)
-    	return D3DXVECTOR3(0.0f,0.0f,0.0f);
-    float sq = sqrt(sum*sum-4*mul);
-    float t1=-sum-sq, t2=-sum+sq;
-    t1*=0.5f;
-    t2*=0.5f;
-
-    if (fabs(t1)<=fabs(t2))
-    {
-    	return (gc_fReduceMove*t1)*c;
-    }
-    else
-    	return (gc_fReduceMove*t2)*c;
-    */
-
     D3DXVECTOR3 v3Temp;
 
     if (s.v3Position.x + s.fRadius <= m_attribute.v3Min.x)

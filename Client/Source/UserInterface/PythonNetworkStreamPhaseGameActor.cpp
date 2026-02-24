@@ -458,49 +458,7 @@ bool CPythonNetworkStream::RecvSyncPositionPacket()
 
         __GlobalPositionToLocalPosition(kSyncPos.lX, kSyncPos.lY);
         m_rokNetActorMgr->SyncActor(kSyncPos.dwVID, kSyncPos.lX, kSyncPos.lY);
-
-        /*
-        CPythonCharacterManager & rkChrMgr = CPythonCharacterManager::Instance();
-        CInstanceBase * pkChrInst = rkChrMgr.GetInstancePtr(kSyncPos.dwVID);
-
-        if (pkChrInst)
-        {
-        	pkChrInst->NEW_SyncPixelPosition(kSyncPos.lX, kSyncPos.lY);
-        }
-        */
     }
 
     return true;
 }
-
-
-/*
-bool CPythonNetworkStream::RecvCharacterAppendPacket()
-{
-	TPacketGCCharacterAdd chrAddPacket;
-
-	if (!Recv(sizeof(chrAddPacket), &chrAddPacket))
-		return false;
-
-	__GlobalPositionToLocalPosition(chrAddPacket.lX, chrAddPacket.lY);
-
-	SNetworkActorData kNetActorData;
-	kNetActorData.m_dwGuildID=chrAddPacket.dwGuild;
-	kNetActorData.m_dwEmpireID=chrAddPacket.bEmpire;
-	kNetActorData.m_dwMovSpd=chrAddPacket.bMovingSpeed;
-	kNetActorData.m_dwAtkSpd=chrAddPacket.bAttackSpeed;
-	kNetActorData.m_dwRace=chrAddPacket.wRaceNum;
-	kNetActorData.m_dwShape=chrAddPacket.parts[CRaceData::PART_MAIN];
-	kNetActorData.m_dwStateFlags=chrAddPacket.bStateFlag;
-	kNetActorData.m_dwVID=chrAddPacket.dwVID;
-	kNetActorData.m_dwWeapon=chrAddPacket.parts[CRaceData::PART_WEAPON];
-	kNetActorData.m_fRot=chrAddPacket.angle;
-	kNetActorData.m_kAffectFlags.CopyData(0, sizeof(chrAddPacket.dwAffectFlag[0]), &chrAddPacket.dwAffectFlag[0]);
-	kNetActorData.m_kAffectFlags.CopyData(32, sizeof(chrAddPacket.dwAffectFlag[1]), &chrAddPacket.dwAffectFlag[1]);
-	kNetActorData.SetPosition(chrAddPacket.lX, chrAddPacket.lY);
-	kNetActorData.m_stName=chrAddPacket.name;
-	__RecvCharacterAppendPacket(&kNetActorData);
-	return true;
-}
-*/
-

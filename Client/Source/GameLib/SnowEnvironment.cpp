@@ -259,7 +259,7 @@ bool CSnowEnvironment::__CreateGeometry()
     if (FAILED(ms_lpd3dDevice->CreateVertexBuffer(sizeof(SParticleVertex)*m_dwParticleMaxNum * 4,
                                                   D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY,
                                                   D3DFVF_XYZ | D3DFVF_TEX1,
-                                                  D3DPOOL_SYSTEMMEM,
+                                                  D3DPOOL_DEFAULT,
                                                   &m_pVB, nullptr)))
     {
         return false;

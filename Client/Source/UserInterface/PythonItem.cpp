@@ -48,14 +48,6 @@ bool CPythonItem::TGroundItemInstance::Update()
     {
         ThingInstance.SetRotationQuaternion(qEnd);
 
-        /*D3DXVECTOR3 v3Adjust = -v3Center;
-        D3DXMATRIX mat;
-        D3DXMatrixRotationYawPitchRoll(&mat,
-        D3DXToRadian(rEnd.y),
-        D3DXToRadian(rEnd.x),
-        D3DXToRadian(rEnd.z));
-        D3DXVec3TransformCoord(&v3Adjust,&v3Adjust,&mat);*/
-
         D3DXQUATERNION qAdjust(-v3Center.x, -v3Center.y, -v3Center.z, 0.0f);
         D3DXQUATERNION qc;
         D3DXQuaternionConjugate(&qc, &qEnd);
@@ -65,7 +57,6 @@ bool CPythonItem::TGroundItemInstance::Update()
         ThingInstance.SetPosition(v3EndPosition.x + qAdjust.x,
                                   v3EndPosition.y + qAdjust.y,
                                   v3EndPosition.z + qAdjust.z);
-        //ThingInstance.Update();
         bAnimEnded = true;
 
         __PlayDropSound(eDropSoundType, v3EndPosition);
@@ -77,12 +68,11 @@ bool CPythonItem::TGroundItemInstance::Update()
         DWORD etime = dwEndTime - CTimer::Instance().GetCurrentMillisecond();
         float rate = time * 1.0f / (dwEndTime - dwStartTime);
 
-        D3DXVECTOR3 v3NewPosition = v3EndPosition; // = rate*(v3EndPosition - v3StartPosition) + v3StartPosition;
-        v3NewPosition.z += 100 - 100 * rate * (3 * rate - 2); //-100*(rate-1)*(3*rate+2);
+        D3DXVECTOR3 v3NewPosition = v3EndPosition;
+        v3NewPosition.z += 100 - 100 * rate * (3 * rate - 2);
 
         D3DXQUATERNION q;
         D3DXQuaternionRotationAxis(&q, &v3RotationAxis, etime * 0.03f * (-1 + rate * (3 * rate - 2)));
-        //ThingInstance.SetRotation(rEnd.y + etime*rStart.y, rEnd.x + etime*rStart.x, rEnd.z + etime*rStart.z);
         D3DXQuaternionMultiply(&q, &qEnd, &q);
 
         ThingInstance.SetRotationQuaternion(q);
@@ -95,18 +85,6 @@ bool CPythonItem::TGroundItemInstance::Update()
         ThingInstance.SetPosition(v3NewPosition.x + qAdjust.x,
                                   v3NewPosition.y + qAdjust.y,
                                   v3NewPosition.z + qAdjust.z);
-
-        /*D3DXVECTOR3 v3Adjust = -v3Center;
-        D3DXMATRIX mat;
-        D3DXMatrixRotationYawPitchRoll(&mat,
-        D3DXToRadian(rEnd.y + etime*rStart.y),
-        D3DXToRadian(rEnd.x + etime*rStart.x),
-        D3DXToRadian(rEnd.z + etime*rStart.z));
-
-        D3DXVec3TransformCoord(&v3Adjust,&v3Adjust,&mat);
-        //Tracef("%f %f %f\n",v3Adjust.x,v3Adjust.y,v3Adjust.z);
-        v3NewPosition += v3Adjust;
-        ThingInstance.SetPosition(v3NewPosition.x, v3NewPosition.y, v3NewPosition.z);*/
     }
 
     ThingInstance.Transform();
@@ -134,7 +112,6 @@ void CPythonItem::Render()
     for (; itor != m_GroundItemInstanceMap.end(); ++itor)
     {
         CGraphicThingInstance & rInstance = itor->second->ThingInstance;
-        //rInstance.Update();
         rInstance.Render();
         rInstance.BlendRender();
     }
@@ -146,8 +123,6 @@ void CPythonItem::SetUseSoundFileName(DWORD eItemType, const std::string& c_rstF
     {
         return;
     }
-
-    //Tracenf("SetUseSoundFile %d : %s", eItemType, c_rstFileName.c_str());
 
     m_astUseSoundFileName[eItemType] = c_rstFileName;
 }
@@ -166,8 +141,6 @@ void CPythonItem::SetDropSoundFileName(DWORD eItemType, const std::string& c_rst
 
 void	CPythonItem::PlayUseSound(DWORD dwItemID)
 {
-    //CItemManager& rkItemMgr=CItemManager::Instance();
-
     CItemData* pkItemData;
 
     if (!CItemManager::Instance().GetItemDataPointer(dwItemID, &pkItemData))
@@ -193,8 +166,6 @@ void	CPythonItem::PlayUseSound(DWORD dwItemID)
 
 void	CPythonItem::PlayDropSound(DWORD dwItemID)
 {
-    //CItemManager& rkItemMgr=CItemManager::Instance();
-
     CItemData* pkItemData;
 
     if (!CItemManager::Instance().GetItemDataPointer(dwItemID, &pkItemData))
@@ -338,8 +309,6 @@ DWORD	CPythonItem::__GetUseSoundType(const CItemData& c_rkItemData)
 
 void CPythonItem::CreateItem(DWORD dwVirtualID, DWORD dwVirtualNumber, float x, float y, float z, bool bDrop)
 {
-    //CItemManager& rkItemMgr=CItemManager::Instance();
-
     CItemData * pItemData;
 
     if (!CItemManager::Instance().GetItemDataPointer(dwVirtualNumber, &pItemData))
@@ -431,7 +400,7 @@ void CPythonItem::CreateItem(DWORD dwVirtualID, DWORD dwVirtualNumber, float x, 
 
         D3DXVECTOR3 rEnd;
 
-        if (/*f[1].first-f[0].first < (f[2].first-f[0].first)*0.30f*/ bStabGround)
+        if (bStabGround)
         {
             // »ÏÁ·
             if (f[2].second == 0) // axis x
@@ -495,7 +464,6 @@ void CPythonItem::CreateItem(DWORD dwVirtualID, DWORD dwVirtualNumber, float x, 
             }
         }
 
-        //D3DXQuaternionRotationYawPitchRoll(&pGroundItemInstance->qEnd, rEnd.y, rEnd.x, rEnd.z );
         float rot = frandom(0, 2 * 3.1415926535f);
         D3DXQUATERNION q(0, 0, cosf(rot), sinf(rot));
         D3DXQuaternionMultiply(&pGroundItemInstance->qEnd, &pGroundItemInstance->qEnd, &q);
@@ -504,36 +472,14 @@ void CPythonItem::CreateItem(DWORD dwVirtualID, DWORD dwVirtualNumber, float x, 
 
         pGroundItemInstance->dwStartTime = CTimer::Instance().GetCurrentMillisecond();
         pGroundItemInstance->dwEndTime = pGroundItemInstance->dwStartTime + 300;
-        pGroundItemInstance->v3RotationAxis.x = sinf(rot + 0); //frandom(0.4f,0.7f) * (2*(int)(random()%2) - 1);
-        pGroundItemInstance->v3RotationAxis.y = cosf(rot + 0); //frandom(0.4f,0.7f) * (2*(int)(random()%2) - 1);
-        pGroundItemInstance->v3RotationAxis.z = 0;//frandom(0.4f,0.7f) * (2*(int)(random()%2) - 1);
-
-        /*
-        switch (no_rotation_axis)
-        {
-        case 0:
-        	pGroundItemInstance->rStart.x = 0;
-        	break;
-        case 1:
-        	pGroundItemInstance->rStart.y = 0;
-        	break;
-        case 2:
-        	pGroundItemInstance->rStart.z = 0;
-        	break;
-        }*/
+        pGroundItemInstance->v3RotationAxis.x = sinf(rot + 0);
+        pGroundItemInstance->v3RotationAxis.y = cosf(rot + 0);
+        pGroundItemInstance->v3RotationAxis.z = 0;
 
         D3DXVECTOR3 v3Adjust = -pGroundItemInstance->v3Center;
         D3DXMATRIX mat;
         D3DXMatrixRotationQuaternion(&mat, &pGroundItemInstance->qEnd);
-        /*D3DXMatrixRotationYawPitchRoll(&mat,
-        	D3DXToRadian(pGroundItemInstance->rEnd.y),
-        	D3DXToRadian(pGroundItemInstance->rEnd.x),
-        	D3DXToRadian(pGroundItemInstance->rEnd.z));*/
-
         D3DXVec3TransformCoord(&v3Adjust, &v3Adjust, &mat);
-        //Tracef("%f %f %f\n",v3Adjust.x,v3Adjust.y,v3Adjust.z);
-        //pGroundItemInstance->v3EndPosition += v3Adjust;
-        //pGroundItemInstance->rEnd.z += pGroundItemInstance->v3Center.z;
     }
 
     pGroundItemInstance->ThingInstance.Show();
@@ -747,38 +693,6 @@ DWORD CPythonItem::GetVirtualNumberOfGroundItem(DWORD dwVID)
     {
         return itor->second->dwVirtualNumber;
     }
-}
-
-void CPythonItem::BuildNoGradeNameData(int iType)
-{
-    /*
-    CMapIterator<std::string, CItemData *> itor = CItemManager::Instance().GetItemNameMapIterator();
-
-    m_NoGradeNameItemData.clear();
-    m_NoGradeNameItemData.reserve(1024);
-
-    while (++itor)
-    {
-    	CItemData * pItemData = *itor;
-    	if (iType == pItemData->GetType())
-    		m_NoGradeNameItemData.push_back(pItemData);
-    }
-    */
-}
-
-DWORD CPythonItem::GetNoGradeNameDataCount()
-{
-    return m_NoGradeNameItemData.size();
-}
-
-CItemData* CPythonItem::GetNoGradeNameDataPtr(DWORD dwIndex)
-{
-    if (dwIndex >= m_NoGradeNameItemData.size())
-    {
-        return NULL;
-    }
-
-    return m_NoGradeNameItemData[dwIndex];
 }
 
 void CPythonItem::Destroy()

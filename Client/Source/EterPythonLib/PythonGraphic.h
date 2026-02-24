@@ -32,8 +32,6 @@ class CPythonGraphic : public CScreen, public CSingleton<CPythonGraphic>
         void RestoreViewport();
 
         long GenerateColor(float r, float g, float b, float a);
-        void RenderDownButton(float sx, float sy, float ex, float ey);
-        void RenderUpButton(float sx, float sy, float ex, float ey);
 
         void RenderImage(CGraphicImageInstance* pImageInstance, float x, float y);
         void RenderAlphaImage(CGraphicImageInstance* pImageInstance, float x, float y, float aLeft, float aRight);

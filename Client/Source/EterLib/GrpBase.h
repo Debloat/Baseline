@@ -140,15 +140,11 @@ class CGraphicBase
         virtual	~CGraphicBase();
 
         void		SetSimpleCamera(float x, float y, float z, float pitch, float roll);
-        void		SetEyeCamera(float xEye, float yEye, float zEye, float xCenter, float yCenter, float zCenter, float xUp, float yUp, float zUp);
-        void		SetAroundCamera(float distance, float pitch, float roll, float lookAtZ = 0.0f);
         void		SetPositionCamera(float fx, float fy, float fz, float fDistance, float fPitch, float fRotation);
-        void		MoveCamera(float fdeltax, float fdeltay, float fdeltaz);
 
         void		GetTargetPosition(float* px, float* py, float* pz);
         void		GetCameraPosition(float* px, float* py, float* pz);
         void		SetOrtho2D(float hres, float vres, float zres);
-        void		SetOrtho3D(float hres, float vres, float zmin, float zmax);
         void		SetPerspective(float fov, float aspect, float nearz, float farz);
         float		GetFOV();
         void		GetClipPlane(float* fNearY, float* fFarY)
@@ -158,8 +154,6 @@ class CGraphicBase
         }
 
         ////////////////////////////////////////////////////////////////////////
-        void		PushMatrix();
-
         void		MultMatrix(const D3DXMATRIX* pMat);
         void		MultMatrixLocal(const D3DXMATRIX* pMat);
 
@@ -168,7 +162,6 @@ class CGraphicBase
         void		RotateLocal(float degree, float x, float y, float z);
         void		RotateYawPitchRollLocal(float fYaw, float fPitch, float fRoll);
         void		Scale(float x, float y, float z);
-        void		PopMatrix();
         void		LoadMatrix(const D3DXMATRIX & c_rSrcMatrix);
         void		GetMatrix(D3DXMATRIX * pRetMatrix) const;
         const		D3DXMATRIX* GetMatrixPointer() const;

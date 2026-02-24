@@ -26,15 +26,6 @@ void CFlyTrace::Delete(CFlyTrace* pkInst)
 CFlyTrace::CFlyTrace()
 {
     __Initialize();
-
-    /*
-    // Code for texture
-    CGraphicImage * pImage = (CGraphicImage *)CResourceManager::Instance().GetResourcePointer("d:/ray.jpg");
-    m_ImageInstance.SetImagePointer(pImage);
-
-    CGraphicTexture * pTexture = m_ImageInstance.GetTexturePointer();
-    m_lpTexture = pTexture->GetD3DTexture();
-    */
 }
 
 CFlyTrace::~CFlyTrace()
@@ -62,7 +53,6 @@ void CFlyTrace::UpdateNewPosition(const D3DXVECTOR3 & v3Position)
 {
     m_TimePositionDeque.push_front(TTimePosition(CTimer::Instance().GetCurrentSecond(), v3Position));
 
-    //Tracenf("%f %f",m_TimePositionDeque.back().first, CTimer::Instance().GetCurrentSecond());
     while (!m_TimePositionDeque.empty() && m_TimePositionDeque.back().first + m_fTailLength < CTimer::Instance().GetCurrentSecond())
     {
         m_TimePositionDeque.pop_back();
@@ -71,7 +61,6 @@ void CFlyTrace::UpdateNewPosition(const D3DXVECTOR3 & v3Position)
 
 void CFlyTrace::Create(const CFlyingData::TFlyingAttachData & rFlyingAttachData)
 {
-    //assert(rFlyingAttachData.bHasTail);
     m_dwColor = rFlyingAttachData.dwTailColor;
     m_fTailLength = rFlyingAttachData.fTailLength;
     m_fSize = rFlyingAttachData.fTailSize;
@@ -86,8 +75,6 @@ void CFlyTrace::Update()
 
 //1. 알파를 쓰려면 색깔만 줄수있다.
 //2. 텍스쳐를 쓰려면 알파 없다-_-
-
-
 struct TFlyVertex
 {
     D3DXVECTOR3 p;
@@ -129,9 +116,7 @@ void CFlyTrace::Render()
 
     TFlyVertexSetVector VSVector;
 
-    //STATEMANAGER.SaveRenderState(D3DRS_ZFUNC,D3DCMP_LESS);
     STATEMANAGER.SaveRenderState(D3DRS_ZFUNC, D3DCMP_LESS);
-    //STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE,FALSE);
 
     D3DXMATRIX matWorld;
     D3DXMatrixIdentity(&matWorld);
@@ -149,16 +134,13 @@ void CFlyTrace::Render()
     STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0x00000000);
 
     STATEMANAGER.SaveRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
-    //STATEMANAGER.SaveRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD );
 
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_TEXTURE);
-    //STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, /*(m_bUseTexture)?D3DTOP_SELECTARG2:*/D3DTOP_SELECTARG2);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
 
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TEXTURE);
-    //STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, /*(m_bUseTexture)?D3DTOP_SELECTARG2:*/D3DTOP_SELECTARG1);
     STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
     STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
@@ -185,7 +167,6 @@ void CFlyTrace::Render()
     m._33 = F.z;
 
     Frustum & frustum = s.GetFrustum();
-    //frustum.BuildViewFrustum(ms_matView * ms_matProj);
 
     TTimePositionDeque::iterator it1, it2;
     it2 = it1 = m_TimePositionDeque.begin();
@@ -227,27 +208,6 @@ void CFlyTrace::Render()
             TFlyVertex(D3DXVECTOR3(-size2, 0.0f, 0.0f), m_dwColor, D3DXVECTOR2(0.5f, 1.0f)),
             TFlyVertex(D3DXVECTOR3(size2, 0.0f, 0.0f), m_dwColor, D3DXVECTOR2(1.0f, 0.5f)),
             TFlyVertex(D3DXVECTOR3(0.0f, -size2, 0.0f), m_dwColor, D3DXVECTOR2(1.0f, 1.0f)),
-
-            /*TVertex(D3DXVECTOR3(0.0f,size1,0.0f), ((DWORD)(0x40*rate1)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size1,0.0f,0.0f),((DWORD)(0x40*rate1)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size1,0.0f,0.0f), ((DWORD)(0x40*rate1)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size2,0.0f,0.0f),((DWORD)(0x40*rate2)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size2,0.0f,0.0f), ((DWORD)(0x40*rate2)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(0.0f,-size2,0.0f),((DWORD)(0x40*rate2)<<24) + 0x0000ff,D3DXVECTOR2(0.0f,0.0f)),*/
-
-            /*TVertex(D3DXVECTOR3(0.0f,size1,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size1,0.0f,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size1,0.0f,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size2,0.0f,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size2,0.0f,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(0.0f,-size2,0.0f),0x20ff0000,D3DXVECTOR2(0.0f,0.0f)),*/
-
-            /*TVertex(D3DXVECTOR3(0.0f,size1,0.0f),0xffff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size1,0.0f,0.0f),0xffff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size1,0.0f,0.0f),0xffff0000,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(-size2,0.0f,0.0f),0xff0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(size2,0.0f,0.0f),0xff0000ff,D3DXVECTOR2(0.0f,0.0f)),
-            TVertex(D3DXVECTOR3(0.0f,-size2,0.0f),0xff0000ff,D3DXVECTOR2(0.0f,0.0f)),*/
         };
 
 
@@ -291,8 +251,6 @@ void CFlyTrace::Render()
         //	Tracenf("#%d:%f %f %f", i, v[i].p.x,v[i].p.y,v[i].p.z);
 
         VSVector.push_back(std::make_pair(-D3DXVec3Dot(&E, &pCurrentCamera->GetView()), TFlyVertexSet(v)));
-        //OLD: STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 4, v, sizeof(TVertex));
-        //OLD: STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, v+1, sizeof(TVertex));
     }
 
     std::sort(VSVector.begin(), VSVector.end());
@@ -308,7 +266,6 @@ void CFlyTrace::Render()
     STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
     STATEMANAGER.RestoreVertexShader();
     STATEMANAGER.RestoreTransform(D3DTS_WORLD);
-    //STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
     STATEMANAGER.RestoreRenderState(D3DRS_ZFUNC);
     STATEMANAGER.RestoreRenderState(D3DRS_BLENDOP);
 

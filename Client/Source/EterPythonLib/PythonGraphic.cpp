@@ -355,10 +355,8 @@ void CPythonGraphic::PushState()
 
     curState.matProj = ms_matProj;
     curState.matView = ms_matView;
-    //STATEMANAGER.SaveTransform(D3DTS_WORLD, &m_SaveWorldMatrix);
 
     m_stateStack.push(curState);
-    //CCamera::Instance().PushParams();
 }
 
 void CPythonGraphic::PopState()
@@ -371,21 +369,18 @@ void CPythonGraphic::PopState()
 
     TState & rState = m_stateStack.top();
 
-    //STATEMANAGER.RestoreTransform(D3DTS_WORLD);
     ms_matProj = rState.matProj;
     ms_matView = rState.matView;
 
     UpdatePipeLineMatrix();
 
     m_stateStack.pop();
-    //CCamera::Instance().PopParams();
 }
 
 void CPythonGraphic::RenderImage(CGraphicImageInstance* pImageInstance, float x, float y)
 {
     assert(pImageInstance != NULL);
 
-    //SetColorRenderState();
     const CGraphicTexture * c_pTexture = pImageInstance->GetTexturePointer();
 
     float width = (float) pImageInstance->GetWidth();
@@ -547,32 +542,6 @@ void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRa
 long CPythonGraphic::GenerateColor(float r, float g, float b, float a)
 {
     return GetColor(r, g, b, a);
-}
-
-void CPythonGraphic::RenderDownButton(float sx, float sy, float ex, float ey)
-{
-    RenderBox2d(sx, sy, ex, ey);
-
-    SetDiffuseColor(m_darkColor);
-    RenderLine2d(sx, sy, ex, sy);
-    RenderLine2d(sx, sy, sx, ey);
-
-    SetDiffuseColor(m_lightColor);
-    RenderLine2d(sx, ey, ex, ey);
-    RenderLine2d(ex, sy, ex, ey);
-}
-
-void CPythonGraphic::RenderUpButton(float sx, float sy, float ex, float ey)
-{
-    RenderBox2d(sx, sy, ex, ey);
-
-    SetDiffuseColor(m_lightColor);
-    RenderLine2d(sx, sy, ex, sy);
-    RenderLine2d(sx, sy, sx, ey);
-
-    SetDiffuseColor(m_darkColor);
-    RenderLine2d(sx, ey, ex, ey);
-    RenderLine2d(ex, sy, ex, ey);
 }
 
 DWORD CPythonGraphic::GetAvailableMemory()

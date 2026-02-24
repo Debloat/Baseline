@@ -646,7 +646,6 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         void		__ClearMotion();
 
         bool		__BindMotionData(DWORD dwMotionKey);	// 모션 데이터를 바인딩
-        void		__ClearHittedActorInstanceMap();		// 때려진 액터 인스턴스 맵을 지운다
 
         UINT		__GetMotionType();			// 모션 타입 얻기
 
@@ -666,7 +665,6 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         bool		__CanNextComboAttack();		// 다음 콤보 어택이 가능한가?
 
         bool		__IsComboAttacking();	// 콤보 공격중인가?
-        void		__CancelComboAttack();	// 콤보 공격 취소
 
         WORD		__GetCurrentMotionIndex();
         DWORD		__GetCurrentMotionKey();
@@ -871,8 +869,6 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         void __BlendAlpha_Initialize();
         void __BlendAlpha_Apply(float fDstAlpha, float fDuration);
         void __BlendAlpha_Update();
-        void __BlendAlpha_UpdateFadeIn();
-        void __BlendAlpha_UpdateFadeOut();
         void __BlendAlpha_UpdateComplete();
         float __BlendAlpha_GetElapsedTime();
 

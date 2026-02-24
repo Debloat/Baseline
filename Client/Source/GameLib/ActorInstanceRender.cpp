@@ -303,19 +303,6 @@ void CActorInstance::RenderCollisionData()
     s_Screen.SetColorOperation();
     s_Screen.SetDiffuseColor(1.0f, 0.0f, 0.0f);
     TCollisionPointInstanceList::iterator itor;
-    /*itor = m_AttackingPointInstanceList.begin();
-    for (; itor != m_AttackingPointInstanceList.end(); ++itor)
-    {
-    	const TCollisionPointInstance & c_rInstance = *itor;
-    	for (DWORD i = 0; i < c_rInstance.SphereInstanceVector.size(); ++i)
-    	{
-    		const CDynamicSphereInstance & c_rSphereInstance = c_rInstance.SphereInstanceVector[i];
-    		s_Screen.RenderCircle3d(c_rSphereInstance.v3Position.x,
-    								c_rSphereInstance.v3Position.y,
-    								c_rSphereInstance.v3Position.z,
-    								c_rSphereInstance.fRadius);
-    	}
-    }*/
     s_Screen.SetDiffuseColor(1.0f, (isShow()) ? 1.0f : 0.0f, 0.0f);
     D3DXVECTOR3 center;
     float r;

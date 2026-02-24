@@ -615,98 +615,6 @@ PyObject* chrSetInstanceType(PyObject* poSelf, PyObject* poArgs)
     return Py_BuildNone();
 }
 
-PyObject* chrAttachEffectByName(PyObject* poSelf, PyObject* poArgs)
-{
-    int iParentPartIndex;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &iParentPartIndex))
-    {
-        return Py_BuildException();
-    }
-
-    char* pszBoneName;
-
-    if (!PyTuple_GetString(poArgs, 1, &pszBoneName))
-    {
-        pszBoneName = NULL;
-        //return Py_BuildException();
-    }
-
-    char* pszEffectName;
-
-    if (!PyTuple_GetString(poArgs, 2, &pszEffectName))
-    {
-        return Py_BuildException();
-    }
-
-    int iLife = CActorInstance::EFFECT_LIFE_INFINITE;
-
-    if (PyTuple_Size(poArgs) == 4)
-    {
-        if (!PyTuple_GetInteger(poArgs, 3, &iLife))
-        {
-            return Py_BuildException();
-        }
-    }
-
-    CInstanceBase * pkInst = CPythonCharacterManager::Instance().GetSelectedInstancePtr();
-
-    if (!pkInst)
-    {
-        return Py_BuildNone();
-    }
-
-    //pkInst->AttachEffectByName(iParentPartIndex, pszBoneName, pszEffectName, iLife);
-    return Py_BuildNone();
-}
-
-PyObject* chrAttachEffectByID(PyObject* poSelf, PyObject* poArgs)
-{
-    int iParentPartIndex;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &iParentPartIndex))
-    {
-        return Py_BuildException();
-    }
-
-    char* pszBoneName;
-
-    if (!PyTuple_GetString(poArgs, 1, &pszBoneName))
-    {
-        pszBoneName = NULL;
-    }
-
-    //	return Py_BuildException();
-
-    // FIXME : bug or error on getting unsigned value
-    int iEffectID;
-
-    if (!PyTuple_GetInteger(poArgs, 2, &iEffectID))
-    {
-        return Py_BuildException();
-    }
-
-    int iLife = CActorInstance::EFFECT_LIFE_INFINITE;
-
-    if (PyTuple_Size(poArgs) == 4)
-    {
-        if (!PyTuple_GetInteger(poArgs, 3, &iLife))
-        {
-            return Py_BuildException();
-        }
-    }
-
-    CInstanceBase * pkInst = CPythonCharacterManager::Instance().GetSelectedInstancePtr();
-
-    if (!pkInst)
-    {
-        return Py_BuildNone();
-    }
-
-    //pkInst->AttachEffectByID(iParentPartIndex, pszBoneName, iEffectID, iLife);
-    return Py_BuildNone();
-}
-
 PyObject* chrRefresh(PyObject* poSelf, PyObject* poArgs)
 {
     CInstanceBase * pkInst = CPythonCharacterManager::Instance().GetSelectedInstancePtr();
@@ -1731,9 +1639,6 @@ void initchr()
         { "Refresh",					chrRefresh,							METH_VARARGS },
         { "Revive",						chrRevive,							METH_VARARGS },
         { "Die",						chrDie,								METH_VARARGS },
-
-        { "AttachEffectByID",			chrAttachEffectByID,				METH_VARARGS },
-        { "AttachEffectByName",			chrAttachEffectByName,				METH_VARARGS },
 
         { "LookAt",						chrLookAt,							METH_VARARGS },
         { "SetMotionMode",				chrSetMotionMode,					METH_VARARGS },

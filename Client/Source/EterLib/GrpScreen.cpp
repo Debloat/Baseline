@@ -54,79 +54,6 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
     }
 }
 
-void CScreen::RenderBox3d(float sx, float sy, float sz, float ex, float ey, float ez)
-{
-    assert(ms_lpd3dDevice != NULL);
-
-    SPDTVertexRaw vertices[8] =
-    {
-        { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-
-        { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { sx, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-
-        { ex, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-
-        { sx, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-        { ex + 1.0f, ey, ez, ms_diffuseColor, 0.0f, 0.0f }
-    };
-
-    if (SetPDTStream(vertices, 8))
-    {
-        const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
-            return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
-
-        CGraphicDevice::UploadScreenPrimitiveConstants(in);
-
-        STATEMANAGER.DrawPrimitive(D3DPT_LINELIST, 0, 4);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-    }
-}
-
-void CScreen::RenderBar3d(float sx, float sy, float sz, float ex, float ey, float ez)
-{
-    assert(ms_lpd3dDevice != NULL);
-
-    SPDTVertexRaw vertices[4] =
-    {
-        { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { sx, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-    };
-
-    if (SetPDTStream(vertices, 4))
-    {
-        const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
-            return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
-
-        CGraphicDevice::UploadScreenPrimitiveConstants(in);
-
-        STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-    }
-}
-
 void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
 {
     assert(ms_lpd3dDevice != NULL);
@@ -154,78 +81,6 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-    }
-}
-
-void CScreen::RenderGradationBar3d(float sx, float sy, float sz, float ex, float ey, float ez, DWORD dwStartColor, DWORD dwEndColor)
-{
-    assert(ms_lpd3dDevice != NULL);
-
-    if (sx == ex || sy == ey)
-        return;
-
-    SPDTVertexRaw vertices[4] =
-    {
-        { sx, sy, sz, dwStartColor, 0.0f, 0.0f },
-        { sx, ey, ez, dwEndColor,   0.0f, 0.0f },
-        { ex, sy, sz, dwStartColor, 0.0f, 0.0f },
-        { ex, ey, ez, dwEndColor,   0.0f, 0.0f },
-    };
-
-    if (SetPDTStream(vertices, 4))
-    {
-        const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
-            return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
-
-        CGraphicDevice::UploadScreenPrimitiveConstants(in);
-
-        STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-    }
-}
-
-void CScreen::RenderLineCube(float sx, float sy, float sz, float ex, float ey, float ez)
-{
-    SPDTVertexRaw vertices[8] =
-    {
-        { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { sx, ey, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, ey, sz, ms_diffuseColor, 0.0f, 0.0f },
-        { sx, sy, ez, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, sy, ez, ms_diffuseColor, 0.0f, 0.0f },
-        { sx, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-        { ex, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-    };
-
-    if (SetPDTStream(vertices, 8))
-    {
-        const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
-            return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
-
-        CGraphicDevice::UploadScreenPrimitiveConstants(in);
-
-        SetDefaultIndexBuffer(DEFAULT_IB_LINE_CUBE);
-        STATEMANAGER.DrawIndexedPrimitive(D3DPT_LINELIST, 0, 8, 0, 4 * 3);
 
         STATEMANAGER.SetVertexShader(nullptr);
         STATEMANAGER.SetPixelShader(nullptr);
@@ -334,7 +189,11 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
         in.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -374,7 +233,11 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
         in.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -407,7 +270,11 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
         in.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -443,7 +310,11 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
         in.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -635,7 +506,11 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
         in.mode[0] = 1.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -645,107 +520,6 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
         STATEMANAGER.SetVertexShader(nullptr);
         STATEMANAGER.SetPixelShader(nullptr);
     }
-}
-
-void CScreen::RenderBillboard(D3DXVECTOR3* Position, D3DXCOLOR& Color)
-{
-    assert(ms_lpd3dDevice != NULL);
-
-    TPDTVertex vertices[4];
-
-    vertices[0].position = TPosition(Position[0].x, Position[0].y, Position[0].z);
-    vertices[0].diffuse = Color;
-    vertices[0].texCoord = TTextureCoordinate(0, 0);
-
-    vertices[1].position = TPosition(Position[1].x, Position[1].y, Position[1].z);
-    vertices[1].diffuse = Color;
-    vertices[1].texCoord = TTextureCoordinate(1, 0);
-
-    vertices[2].position = TPosition(Position[2].x, Position[2].y, Position[2].z);
-    vertices[2].diffuse = Color;
-    vertices[2].texCoord = TTextureCoordinate(0, 1);
-
-    vertices[3].position = TPosition(Position[3].x, Position[3].y, Position[3].z);
-    vertices[3].diffuse = Color;
-    vertices[3].texCoord = TTextureCoordinate(1, 1);
-
-    SetDefaultIndexBuffer(DEFAULT_IB_FILL_RECT);
-
-    if (SetPDTStream(vertices, 4))
-    {
-        const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
-            return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2D(in);
-        in.mode[0] = 1.0f;
-
-        CGraphicDevice::UploadScreenPrimitiveConstants(in);
-
-        STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-    }
-}
-
-void CScreen::DrawMinorGrid(float xMin, float yMin, float xMax, float yMax, float xminorStep, float yminorStep, float zPos)
-{
-    float x, y;
-
-    for (y = yMin; y <= yMax; y += yminorStep)
-    {
-        RenderLine2d(xMin, y, xMax, y, zPos);
-    }
-
-    for (x = xMin; x <= xMax; x += xminorStep)
-    {
-        RenderLine2d(x, yMin, x, yMax, zPos);
-    }
-}
-
-void CScreen::DrawGrid(float xMin, float yMin, float xMax, float yMax, float xmajorStep, float ymajorStep, float xminorStep, float yminorStep, float zPos)
-{
-    xMin *= xminorStep;
-    xMax *= xminorStep;
-    yMin *= yminorStep;
-    yMax *= yminorStep;
-    xmajorStep *= xminorStep;
-    ymajorStep *= yminorStep;
-
-    float x, y;
-
-    SetDiffuseColor(0.5f, 0.5f, 0.5f);
-    DrawMinorGrid(xMin, yMin, xMax, yMax, xminorStep, yminorStep, zPos);
-
-    SetDiffuseColor(0.7f, 0.7f, 0.7f);
-
-    for (y = 0.0f; y >= yMin; y -= ymajorStep)
-    {
-        RenderLine2d(xMin, y, xMax, y, zPos);
-    }
-
-    for (y = 0.0f; y <= yMax; y += ymajorStep)
-    {
-        RenderLine2d(xMin, y, xMax, y, zPos);
-    }
-
-    for (x = 0.0f; x >= xMin; x -= xmajorStep)
-    {
-        RenderLine2d(x, yMin, x, yMax, zPos);
-    }
-
-    for (x = 0.0f; x <= yMax; x += xmajorStep)
-    {
-        RenderLine2d(x, yMin, x, yMax, zPos);
-    }
-
-    SetDiffuseColor(1.0f, 1.0f, 1.0f);
-    RenderLine2d(xMin, 0.0f, xMax, 0.0f, zPos);
-    RenderLine2d(0.0f, yMin, 0.0f, yMax, zPos);
 }
 
 void CScreen::SetCursorPosition(int x, int y, int hres, int vres)
@@ -857,13 +631,6 @@ bool CScreen::GetCursorZPosition(float* pz)
     return false;
 }
 
-void CScreen::GetPickingPosition(float t, float* x, float* y, float* z)
-{
-    *x = ms_vtPickRayOrig.x + ms_vtPickRayDir.x * t;
-    *y = ms_vtPickRayOrig.y + ms_vtPickRayDir.y * t;
-    *z = ms_vtPickRayOrig.z + ms_vtPickRayDir.z * t;
-}
-
 void CScreen::SetDiffuseColor(DWORD diffuseColor)
 {
     ms_diffuseColor = diffuseColor;
@@ -877,16 +644,6 @@ void CScreen::SetDiffuseColor(float r, float g, float b, float a)
 void CScreen::SetClearColor(float r, float g, float b, float a)
 {
     ms_clearColor = GetColor(r, g, b, a);
-}
-
-void CScreen::SetClearDepth(float depth)
-{
-    ms_clearDepth = depth;
-}
-
-void CScreen::SetClearStencil(DWORD stencil)
-{
-    ms_clearStencil = stencil;
 }
 
 void CScreen::ClearDepthBuffer()
@@ -1064,17 +821,6 @@ void CScreen::ProjectPosition(float x, float y, float z, float* pfX, float* pfY,
     D3DXVECTOR3 Input(x, y, z);
     D3DXVECTOR3 Output;
     D3DXVec3Project(&Output, &Input, &ms_Viewport, &ms_matProj, &ms_matView, &ms_matWorld);
-
-    *pfX = Output.x;
-    *pfY = Output.y;
-    *pfZ = Output.z;
-}
-
-void CScreen::UnprojectPosition(float x, float y, float z, float* pfX, float* pfY, float* pfZ)
-{
-    D3DXVECTOR3 Input(x, y, z);
-    D3DXVECTOR3 Output;
-    D3DXVec3Unproject(&Output, &Input, &ms_Viewport, &ms_matProj, &ms_matView, &ms_matWorld);
 
     *pfX = Output.x;
     *pfY = Output.y;

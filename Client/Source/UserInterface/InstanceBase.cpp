@@ -3046,30 +3046,6 @@ DWORD CInstanceBase::GetWeaponType()
     return pItemData->GetWeaponType();
 }
 
-/*
-void CInstanceBase::SetParts(const WORD * c_pParts)
-{
-	if (IsPoly())
-		return;
-
-	if (__IsShapeAnimalWear())
-		return;
-
-	UINT eWeapon=c_pParts[CRaceData::PART_WEAPON];
-
-	if (__IsChangableWeapon(eWeapon) == false)
-			eWeapon = 0;
-
-	if (eWeapon != m_GraphicThingInstance.GetPartItemID(CRaceData::PART_WEAPON))
-	{
-		m_GraphicThingInstance.AttachPart(CRaceData::PART_MAIN, CRaceData::PART_WEAPON, eWeapon);
-		m_awPart[CRaceData::PART_WEAPON] = eWeapon;
-	}
-
-	__AttachHorseSaddle();
-}
-*/
-
 void CInstanceBase::__ClearWeaponRefineEffect()
 {
     if (m_swordRefineEffectRight)

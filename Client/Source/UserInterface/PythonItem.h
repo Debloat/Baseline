@@ -111,10 +111,6 @@ class CPythonItem : public CSingleton<CPythonItem>
 
         DWORD	GetVirtualNumberOfGroundItem(DWORD dwVID);
 
-        void	BuildNoGradeNameData(int iType);
-        DWORD	GetNoGradeNameDataCount();
-        CItemData* GetNoGradeNameDataPtr(DWORD dwIndex);
-
     protected:
         DWORD	__Pick(const POINT& c_rkPtMouse);
 
@@ -132,6 +128,4 @@ class CPythonItem : public CSingleton<CPythonItem>
         int m_nMouseY;
 
         std::string m_astUseSoundFileName[USESOUND_NUM];
-
-        std::vector<CItemData*> m_NoGradeNameItemData;
 };
