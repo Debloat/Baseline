@@ -220,37 +220,6 @@ bool CGrannyMesh::LoadTriGroupNodeList(CGrannyMaterialPalette& rkMtrlPal)
     return true;
 }
 
-void CGrannyMesh::RebuildTriGroupNodeList()
-{
-    assert(!"CGrannyMesh::RebuildTriGroupNodeList() - 왜 리빌드를 하는가- -?");
-    /*
-    int mtrlCount = m_pgrnMesh->MaterialBindingCount;
-    int GroupNodeCount = GrannyGetMeshTriangleGroupCount(m_pgrnMesh);
-
-    if (GroupNodeCount <= 0)
-    	return;
-
-    const granny_tri_material_group * c_pgrnTriGroups = GrannyGetMeshTriangleGroups(m_pgrnMesh);
-
-    for (int g = 0; g < GroupNodeCount; ++g)
-    {
-    	const granny_tri_material_group& c_rgrnTriGroup = c_pgrnTriGroups[g];
-    	TTriGroupNode * pTriGroupNode = m_triGroupNodes + g;
-
-    	int iMtrl = c_rgrnTriGroup.MaterialIndex;
-
-    	if (iMtrl >= 0 && iMtrl < mtrlCount)
-    	{
-    		CGrannyMaterial & rMtrl = m_mtrls[iMtrl];
-
-    		pTriGroupNode->lpd3dTextures[0] = rMtrl.GetD3DTexture(0);
-    		pTriGroupNode->lpd3dTextures[1] = rMtrl.GetD3DTexture(1);
-
-    	}
-    }
-    */
-}
-
 bool CGrannyMesh::LoadMaterials(CGrannyMaterialPalette& rkMtrlPal)
 {
     assert(m_pgrnMesh != NULL);

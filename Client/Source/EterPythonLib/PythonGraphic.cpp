@@ -399,58 +399,6 @@ void CPythonGraphic::RenderImage(CGraphicImageInstance* pImageInstance, float x,
                      (height + 0.5f) / height);
 }
 
-void CPythonGraphic::RenderAlphaImage(CGraphicImageInstance* pImageInstance, float x, float y, float aLeft, float aRight)
-{
-    assert(pImageInstance != NULL);
-
-    D3DXCOLOR DiffuseColor1 = D3DXCOLOR(1.0f, 1.0f, 1.0f, aLeft);
-    D3DXCOLOR DiffuseColor2 = D3DXCOLOR(1.0f, 1.0f, 1.0f, aRight);
-
-    const CGraphicTexture * c_pTexture = pImageInstance->GetTexturePointer();
-
-    float width = (float) pImageInstance->GetWidth();
-    float height = (float) pImageInstance->GetHeight();
-
-    c_pTexture->SetTextureStage(0);
-
-    float sx = x;
-    float sy = y;
-    float ex = x + width;
-    float ey = y + height;
-    float z = 0.0f;
-
-    float su = 0.0f;
-    float sv = 0.0f;
-    float eu = 1.0f;
-    float ev = 1.0f;
-
-    TPDTVertex vertices[4];
-    vertices[0].position = TPosition(sx, sy, z);
-    vertices[0].diffuse = DiffuseColor1;
-    vertices[0].texCoord = TTextureCoordinate(su, sv);
-
-    vertices[1].position = TPosition(ex, sy, z);
-    vertices[1].diffuse = DiffuseColor2;
-    vertices[1].texCoord = TTextureCoordinate(eu, sv);
-
-    vertices[2].position = TPosition(sx, ey, z);
-    vertices[2].diffuse = DiffuseColor1;
-    vertices[2].texCoord = TTextureCoordinate(su, ev);
-
-    vertices[3].position = TPosition(ex, ey, z);
-    vertices[3].diffuse = DiffuseColor2;
-    vertices[3].texCoord = TTextureCoordinate(eu, ev);
-
-    STATEMANAGER.SetVertexDeclaration(ms_pntVS);
-    // 2004.11.18.myevan.DrawIndexPrimitiveUP -> DynamicVertexBuffer
-    CGraphicBase::SetDefaultIndexBuffer(DEFAULT_IB_FILL_RECT);
-
-    if (CGraphicBase::SetPDTStream(vertices, 4))
-    {
-        STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
-    }
-}
-
 void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRadius, float fTime)
 {
     if (fTime >= 1.0f)

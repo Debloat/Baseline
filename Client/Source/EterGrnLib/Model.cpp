@@ -381,14 +381,6 @@ bool CGrannyModel::CreateDeviceObjects()
             return false;
         }
 
-    int meshCount = GetMeshCount();
-
-    for (int i = 0; i < meshCount; ++i)
-    {
-        CGrannyMesh& rMesh = m_meshs[i];
-        rMesh.RebuildTriGroupNodeList();
-    }
-
     return true;
 }
 

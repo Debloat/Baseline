@@ -59,7 +59,6 @@ class CGrannyMesh
         const granny_mesh* 					GetGrannyMeshPointer() const;
         const CGrannyMesh::TTriGroupNode* 	GetTriGroupNodeList(CGrannyMaterial::EType eMtrlType) const;
 
-        void					RebuildTriGroupNodeList();
         void					ReloadMaterials();
 
     protected:
