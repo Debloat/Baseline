@@ -532,6 +532,11 @@ void CGraphicDevice::UploadTextConstants(const TextShaderInputs& in)
     UploadVSConstants(0, vs.invScreenSize.data(), 1); // c0
 }
 
+void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& in)
+{
+
+}
+
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
 {
     if (!ms_lpd3dDevice || !data || registerCount == 0)
@@ -800,6 +805,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
         ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
         ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS },
+        ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

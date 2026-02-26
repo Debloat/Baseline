@@ -65,6 +65,7 @@ public:
     static void UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderInputs& inputs);
     static void UploadMiniMapConstants(const MiniMapShaderInputs& inputs);
     static void UploadTextConstants(const TextShaderInputs& inputs);
+    static void UploadModelConstants(const ModelShaderInputs& inputs);
     /* ---------------------------------------------------- */
 
     /* - SHADER [LOW-LEVEL CONSTANT UPLOAD] ------------------ */

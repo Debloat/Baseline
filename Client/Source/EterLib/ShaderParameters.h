@@ -395,3 +395,19 @@ struct TextShaderInputs
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
+struct ModelVSCB
+{
+
+};
+
+struct ModelPSCB
+{
+
+};
+
+struct ModelShaderInputs
+{
+    ModelVSCB vs;
+    ModelPSCB ps;
+};
