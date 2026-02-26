@@ -216,9 +216,9 @@ void CLensFlare::DrawBeforeFlare()
 
     sp->FillScreenPrimitive2DOrtho01World(world, spIn);
 
-    in.worldViewProj = spIn.worldViewProj;
+    in.vs.worldViewProj = spIn.vs.worldViewProj;
 
-    in.brightness = {
+    in.ps.brightnessColor = {
         m_afColor[0],
         m_afColor[1],
         m_afColor[2],
@@ -462,9 +462,9 @@ void CFlare::Draw(float fBrightScale, int nWidth, int nHeight, int nX, int nY)
     ScreenPrimitiveShaderInputs spIn{};
     sp->FillScreenPrimitive2DOrthoPixel(static_cast<float>(nWidth), static_cast<float>(nHeight), spIn);
 
-    in.worldViewProj = spIn.worldViewProj;
+    in.vs.worldViewProj = spIn.vs.worldViewProj;
 
-    in.brightness = {
+    in.ps.brightnessColor = {
         1.0f,              // no extra tint here
         1.0f,
         1.0f,

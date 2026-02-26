@@ -27,21 +27,9 @@ void CPythonGraphic::SetInterfaceRenderState()
     STATEMANAGER.SetTransform(D3DTS_VIEW, &ms_matIdentity);
     STATEMANAGER.SetTransform(D3DTS_WORLD, &ms_matIdentity);
 
-    /* - YOSUN_CONTROL_CENTER ------------------------------ */
-    if (const auto& ycc = GetYosunControlSettings().worldEditor; ycc.anisotropy.interfaceAnisotropy)
-    {
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_ANISOTROPIC);
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_ANISOTROPIC);
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MAXANISOTROPY, ycc.anisotropy.level);
-    }
-    else
-        /* ----------------------------------------------------- */
-    {
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_NONE);
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_NONE);
-        STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
-    }
+    STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_NONE);
+    STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_NONE);
+    STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
 
     STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
     STATEMANAGER.SetRenderState(D3DRS_SRCBLEND,	D3DBLEND_SRCALPHA);

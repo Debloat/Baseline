@@ -435,24 +435,6 @@ void YosunAdminPanel::RenderWorldEditor(bool* p_open) const
         }
 
         {
-            auto& ycc = GetYosunControlSettings().worldEditor.anisotropy;
-            ImGui::SeparatorText("Anisotropy");
-
-            auto choose_level = [&](const char* label, uint8_t value)
-                {
-                    bool checked = (ycc.level == value);
-                    if (ImGui::Checkbox(label, &checked) && checked)
-                    {
-                        ycc.level = value;    // exclusive: only sets when turned on
-                    }
-                };
-
-            choose_level("2x", 2); ImGui::SameLine(); choose_level("4x", 4); ImGui::SameLine();
-            choose_level("8x", 8); ImGui::SameLine(); choose_level("16x", 16);
-
-            ImGui::Checkbox("Enable Interface Anisotropy", &ycc.interfaceAnisotropy);
-        }
-        {
             ImGui::SeparatorText("Environment");
 
             CMapOutdoor& rkMap = m_rkMapMgr.GetMapOutdoorRef();

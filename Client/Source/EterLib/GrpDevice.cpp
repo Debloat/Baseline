@@ -250,15 +250,15 @@ void CGraphicDevice::UploadWaterConstants(const WaterShaderInputs& inputs)
 
     // per-frame (VS c0..c1, PS c0)
     perFrame.slot0 = {
-        inputs.windDirection[0],
-        inputs.windDirection[1],
-        inputs.windStrength,
-        inputs.timeSeconds
+        inputs.vs.perFrame.slot0[0], // WindDirection U
+        inputs.vs.perFrame.slot0[1], // WindDirection V
+        inputs.vs.perFrame.slot0[2], // WindStrength
+        inputs.vs.perFrame.slot0[3]  // TimeSeconds
     };
     perFrame.slot1 = {
-        inputs.cameraPos[0],
-        inputs.cameraPos[1],
-        inputs.cameraPos[2],
+        inputs.vs.perFrame.slot1[0], // CameraPos x
+        inputs.vs.perFrame.slot1[1], // CameraPos y
+        inputs.vs.perFrame.slot1[2], // CameraPos z
         0.0f
     };
     // displacement (VS c2..c6)
@@ -286,15 +286,15 @@ void CGraphicDevice::UploadWaterConstants(const WaterShaderInputs& inputs)
         ws.reflection.specularIntensity[3]
     };
     material.slot1 = {
-        inputs.lightDir[0],
-        inputs.lightDir[1],
-        inputs.lightDir[2],
+        inputs.ps.material.slot1[0], // LightDir x
+        inputs.ps.material.slot1[1], // LightDir y
+        inputs.ps.material.slot1[2], // LightDir z
         0.0f
     };
     material.slot2 = {
-        inputs.lightColor[0],
-        inputs.lightColor[1],
-        inputs.lightColor[2],
+        inputs.ps.material.slot2[0], // LightColor x
+        inputs.ps.material.slot2[1], // LightColor y
+        inputs.ps.material.slot2[2], // LightColor z
         1.0f
     };
     material.slot3 = {
@@ -323,9 +323,9 @@ void CGraphicDevice::UploadWaterConstants(const WaterShaderInputs& inputs)
     D3DXMATRIX view;
     D3DXMATRIX tex;
 
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
-    std::memcpy(&view, inputs.view.data(), sizeof(D3DXMATRIX));
-    std::memcpy(&tex, inputs.texTransform.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.matrices.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&view, inputs.vs.matrices.view.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&tex, inputs.vs.matrices.texTransform.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMATRIX viewT;
@@ -356,13 +356,13 @@ void CGraphicDevice::UploadSkyboxConstants(const SkyboxShaderInputs& inputs)
 
     // --- Transpose ---
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
 
     // --- Pack ---
-    SkyboxMatricesCB mats{};
+    SkyboxVSCB mats{};
     std::memcpy(mats.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
     // --- Upload ---
@@ -379,35 +379,35 @@ void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
 
     // --- Transpose matrix ---
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
 
-    CloudVSConstants vs{};
+    CloudVSCB vs{};
     std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
-    vs.params0 = {
-        inputs.uvScale[0],
-        inputs.uvScale[1],
-        inputs.uvSpeed[0],
-        inputs.uvSpeed[1]
+    vs.uvScaleSpeed = {
+        inputs.vs.uvScaleSpeed[0],
+        inputs.vs.uvScaleSpeed[1],
+        inputs.vs.uvScaleSpeed[2],
+        inputs.vs.uvScaleSpeed[3]
     };
 
-    vs.params1 = {
-        inputs.timeSeconds,
+    vs.timeSeconds = {
+        inputs.vs.timeSeconds[0],
         0.0f,
         0.0f,
         0.0f
     };
 
     UploadVSConstants(0, vs.worldViewProj.data(), 4);
-    UploadVSConstants(4, vs.params0.data(), 1);
-    UploadVSConstants(5, vs.params1.data(), 1);
+    UploadVSConstants(4, vs.uvScaleSpeed.data(), 1);
+    UploadVSConstants(5, vs.timeSeconds.data(), 1);
 
     // --- Pack PS ---
     CloudPSCB ps{};
-    ps.cloudTint = inputs.cloudTintMultiplier;
+    ps.cloudTint = inputs.ps.cloudTint;
 
     UploadPSConstants(0, ps.cloudTint.data(), 1);     // PS c0
 }
@@ -419,14 +419,14 @@ void CGraphicDevice::UploadWeaponTraceConstants(const WeaponTraceShaderInputs& i
 
     // Transpose here (HLSL mul(v, M) with column-major expectation)
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
 
     std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
-    ps.slot0 = { inputs.useTexture, 0.0f, 0.0f, 0.0f };
+    ps.slot0 = { inputs.ps.slot0 };
 
     UploadVSConstants(0, vs.worldViewProj.data(), 4); // c0..c3
     UploadPSConstants(0, ps.slot0.data(), 1);         // c0
@@ -441,7 +441,7 @@ void CGraphicDevice::UploadLensFlareConstants(const LensFlareShaderInputs& input
 
     // --- Transpose ---
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
@@ -450,7 +450,7 @@ void CGraphicDevice::UploadLensFlareConstants(const LensFlareShaderInputs& input
     LensFlareVSCB vs{};
     std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
     LensFlarePSCB ps{};
-    ps.brightnessColor = inputs.brightness;
+    ps.brightnessColor = inputs.ps.brightnessColor;
 
     // --- Upload ---
     UploadVSConstants(0, vs.worldViewProj.data(), 4);
@@ -464,7 +464,7 @@ void CGraphicDevice::UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderI
 
     // --- Transpose ---
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
@@ -474,8 +474,8 @@ void CGraphicDevice::UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderI
     std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
     ScreenPrimitivePSCB ps{};
-    ps.mode = { inputs.mode[0], inputs.mode[1], 0.0f, 0.0f};
-    ps.colorFactor = { inputs.colorFactor[0], inputs.colorFactor[1], inputs.colorFactor[2], inputs.colorFactor[3] };
+    ps.mode = { inputs.ps.mode };
+    ps.colorFactor = { inputs.ps.colorFactor };
 
     // --- Upload ---
     UploadVSConstants(0, vs.worldViewProj.data(), 4); // VS c0..c3
@@ -489,21 +489,21 @@ void CGraphicDevice::UploadMiniMapConstants(const MiniMapShaderInputs& in)
 
     // --- Transpose worldViewProj ---
     D3DXMATRIX wvp;
-    std::memcpy(&wvp, in.worldViewProj.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&wvp, in.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX wvpT;
     D3DXMatrixTranspose(&wvpT, &wvp);
 
     // --- Transpose world ---
     D3DXMATRIX world;
-    std::memcpy(&world, in.world.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&world, in.vs.world.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX worldT;
     D3DXMatrixTranspose(&worldT, &world);
 
     // --- Transpose texTransform ---
     D3DXMATRIX tex;
-    std::memcpy(&tex, in.texTransform.data(), sizeof(D3DXMATRIX));
+    std::memcpy(&tex, in.vs.texTransform.data(), sizeof(D3DXMATRIX));
 
     D3DXMATRIX texT;
     D3DXMatrixTranspose(&texT, &tex);
@@ -516,8 +516,11 @@ void CGraphicDevice::UploadMiniMapConstants(const MiniMapShaderInputs& in)
 
     // --- Pack PS ---
     MiniMapPSCB ps{};
-    ps.colorFactor = in.colorFactor;
-    ps.flags = { in.useTexture, in.useMask, 0.0f, 0.0f };
+    ps.colorFactor = in.ps.colorFactor;
+    ps.flags = {
+        in.ps.flags[0], // UseTexture
+        in.ps.flags[1], // UseMask
+        0.0f, 0.0f};
 
     // --- Upload ---
     UploadVSConstants(0, vs.worldViewProj.data(), 12); // c0–c11
@@ -580,20 +583,20 @@ void CGraphicDevice::FillScreenPrimitive3D(const D3DXMATRIX& world, ScreenPrimit
 {
     D3DXMATRIX wvp;
     ComputeWorldViewProj(world, wvp);
-    std::memcpy(out.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2D(ScreenPrimitiveShaderInputs& out) const
 {
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
-    std::memcpy(out.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DWorld(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const
 {
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
     D3DXMATRIX wvp = world * proj;
-    std::memcpy(out.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DOrtho01World(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const
@@ -602,7 +605,7 @@ void CGraphicDevice::FillScreenPrimitive2DOrtho01World(const D3DXMATRIX& world, 
     D3DXMatrixOrthoOffCenterRH(&proj, 0.0f, 1.0f, 1.0f, 0.0f, -1.0f, 1.0f);
 
     D3DXMATRIX wvp = world * proj;
-    std::memcpy(out.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DOrthoPixel(float width, float height, ScreenPrimitiveShaderInputs& out) const
@@ -613,7 +616,7 @@ void CGraphicDevice::FillScreenPrimitive2DOrthoPixel(float width, float height, 
         height, 0.0f,
         -1.0f, 1.0f);
 
-    std::memcpy(out.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 bool CGraphicDevice::BindShader(ShaderID id) const
@@ -805,7 +808,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
         ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
         ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS },
-        ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
+        //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

@@ -1045,13 +1045,13 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
             ScreenPrimitiveShaderInputs in{};
             sp->FillScreenPrimitive2D(in);
 
-            in.mode[0] = 0.0f; // color only
-            in.mode[1] = 0.0f;
+            in.ps.mode[0] = 0.0f; // color only
+            in.ps.mode[1] = 0.0f;
 
-            in.colorFactor[0] = 1.0f;
-            in.colorFactor[1] = 1.0f;
-            in.colorFactor[2] = 1.0f;
-            in.colorFactor[3] = 1.0f;
+            in.ps.colorFactor[0] = 1.0f;
+            in.ps.colorFactor[1] = 1.0f;
+            in.ps.colorFactor[2] = 1.0f;
+            in.ps.colorFactor[3] = 1.0f;
 
             CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -1099,13 +1099,13 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
                 ScreenPrimitiveShaderInputs in{};
                 sp->FillScreenPrimitive2D(in);
 
-                in.mode[0] = 0.0f; // color only
-                in.mode[1] = 0.0f;
+                in.ps.mode[0] = 0.0f; // color only
+                in.ps.mode[1] = 0.0f;
 
-                in.colorFactor[0] = 1.0f;
-                in.colorFactor[1] = 1.0f;
-                in.colorFactor[2] = 1.0f;
-                in.colorFactor[3] = 1.0f;
+                in.ps.colorFactor[0] = 1.0f;
+                in.ps.colorFactor[1] = 1.0f;
+                in.ps.colorFactor[2] = 1.0f;
+                in.ps.colorFactor[3] = 1.0f;
 
                 CGraphicDevice::UploadScreenPrimitiveConstants(in);
 

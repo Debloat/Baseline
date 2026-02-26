@@ -68,34 +68,6 @@ void CLightData::GetRange(float fTime, float& rRange)
     }
 
     return;
-    /*
-    float vecLastRange = m_TimeEventTableRange[0].m_Value;
-
-    for (DWORD dwIndex = 0; dwIndex < m_TimeEventTableRange.size(); ++dwIndex)
-    {
-    	if(fTime < m_TimeEventTableRange[dwIndex].m_fTime)
-    	{
-    		break;
-    	}
-    }
-
-    if (dwIndex >= m_TimeEventTableRange.size())
-    {
-    	rRange = m_TimeEventTableRange[m_TimeEventTableRange.size()-1].m_Value * m_fMaxRange;
-    	if (rRange<0.0f)
-    		rRange = 0.0f;
-    	return;
-    }
-
-    TTimeEventTypeFloat & rEffectRange = m_TimeEventTableRange[dwIndex];
-    TTimeEventTypeFloat & rPrevEffectRange = m_TimeEventTableRange[dwIndex-1];
-
-    float Head = fabs(rEffectRange.m_fTime - fTime) / fabs(rEffectRange.m_fTime - rPrevEffectRange.m_fTime);
-    float Tail = 1.0f - fabs(rEffectRange.m_fTime - fTime) / fabs(rEffectRange.m_fTime - rPrevEffectRange.m_fTime);
-    rRange = ((rPrevEffectRange.m_Value*Head) + (rEffectRange.m_Value*Tail) )*m_fMaxRange;
-    if (rRange<0.0f)
-    	rRange = 0.0f;
-    	*/
 }
 
 bool CLightData::OnIsData()

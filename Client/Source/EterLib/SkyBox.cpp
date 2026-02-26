@@ -426,7 +426,7 @@ void CSkyBox::Render()
     SkyboxShaderInputs in{};
     D3DXMATRIX matWVP;
     sp->ComputeWorldViewProj(m_matWorld, matWVP);
-    std::memcpy(in.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
 
     CGraphicDevice::UploadSkyboxConstants(in);
     /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
@@ -511,18 +511,12 @@ void CSkyBox::RenderCloud()
     sp->ComputeWorldViewProj(world, matWVP);
 
     CloudShaderInputs in{};
-    std::memcpy(in.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
 
-    in.uvScale = { m_fCloudTextureScaleX, m_fCloudTextureScaleY };
-    in.uvSpeed = { m_fCloudScrollSpeedU, m_fCloudScrollSpeedV };
-    in.timeSeconds = frame.timeSeconds;
+    in.vs.uvScaleSpeed = { m_fCloudTextureScaleX, m_fCloudTextureScaleY, m_fCloudScrollSpeedU, m_fCloudScrollSpeedV };
+    in.vs.timeSeconds[0] = frame.timeSeconds;
 
-    in.cloudTintMultiplier = {
-    m_cloudTintMultiplier.r,
-    m_cloudTintMultiplier.g,
-    m_cloudTintMultiplier.b,
-    m_cloudTintMultiplier.a
-    };
+    in.ps.cloudTint = { m_cloudTintMultiplier.r, m_cloudTintMultiplier.g, m_cloudTintMultiplier.b, m_cloudTintMultiplier.a };
 
     CGraphicDevice::UploadCloudConstants(in);
     /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */

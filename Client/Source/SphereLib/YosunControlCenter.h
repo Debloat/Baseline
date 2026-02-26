@@ -35,12 +35,6 @@ namespace YosunControlDefaults
             constexpr float WindStrength         = 40.0f;
             constexpr float WindOscillationSpeed = 20.0f;
         }
-
-        namespace Anisotropy
-        {
-            constexpr uint8_t Level  = 0;
-            constexpr bool Interface = false;
-        }
     }
 
 }
@@ -72,12 +66,6 @@ struct YosunControlSettings
             float windStrength         = YosunControlDefaults::WorldEditor::SpeedTree::WindStrength;
             float windOscillationSpeed = YosunControlDefaults::WorldEditor::SpeedTree::WindOscillationSpeed;
         } speedTree;
-
-        struct Anisotropy
-        {
-            uint8_t level              = YosunControlDefaults::WorldEditor::Anisotropy::Level;
-            bool interfaceAnisotropy   = YosunControlDefaults::WorldEditor::Anisotropy::Interface;
-        } anisotropy;
 
     } worldEditor;
 };

@@ -358,13 +358,13 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
     /* constants (WVP source required) */
     MiniMapShaderInputs in{};
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
-    std::memcpy(in.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
 
     // world matrix is your existing m_matWorld (same math as before)
-    std::memcpy(in.world.data(), &m_matWorld, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.world.data(), &m_matWorld, sizeof(D3DXMATRIX));
 
     // texTransform is your existing m_matMiniMapCover (what you previously set as D3DTS_TEXTURE1)
-    std::memcpy(in.texTransform.data(), &m_matMiniMapCover, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.texTransform.data(), &m_matMiniMapCover, sizeof(D3DXMATRIX));
 
     LPDIRECT3DTEXTURE9 pMaskTex = nullptr;
     if (!m_MiniMapFilterGraphicImageInstance.IsEmpty() &&
@@ -382,16 +382,16 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
 
         const bool hasTile = (pMiniMapTexture != nullptr);
 
-        in.useTexture = hasTile ? 1.0f : 0.0f;
-        in.useMask = (pMaskTex != nullptr) ? 1.0f : 0.0f;
+        in.ps.flags[0] = hasTile ? 1.0f : 0.0f;               // UserTexture
+        in.ps.flags[1] = (pMaskTex != nullptr) ? 1.0f : 0.0f; // UseMask
 
         // Exact FFP equivalence:
         // - If tile exists -> neutral multiply
         // - If tile missing -> black fallback
         if (hasTile)
-            in.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
+            in.ps.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
         else
-            in.colorFactor = { 0.0f, 0.0f, 0.0f, 1.0f };
+            in.ps.colorFactor = { 0.0f, 0.0f, 0.0f, 1.0f };
 
         CGraphicDevice::UploadMiniMapConstants(in);
 
@@ -420,11 +420,11 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
         ScreenPrimitiveShaderInputs spi{};
         spIcons->FillScreenPrimitive2D(spi);
 
-        spi.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
+        spi.ps.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
 
         auto UploadColor = [&](DWORD col)
             {
-                spi.colorFactor =
+                spi.ps.colorFactor =
                 {
                     ((col >> 16) & 0xFF) / 255.0f,
                     ((col >> 8) & 0xFF) / 255.0f,
@@ -1227,13 +1227,13 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
     ScreenPrimitiveShaderInputs spi{};
     sp->FillScreenPrimitive2DWorld(m_matWorldAtlas, spi);
 
-    spi.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
-    spi.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
+    spi.ps.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
+    spi.ps.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
     CGraphicDevice::UploadScreenPrimitiveConstants(spi);
 
     auto UploadColor = [&](DWORD col)
         {
-            spi.colorFactor =
+            spi.ps.colorFactor =
             {
                 ((col >> 16) & 0xFF) / 255.0f,
                 ((col >> 8) & 0xFF) / 255.0f,

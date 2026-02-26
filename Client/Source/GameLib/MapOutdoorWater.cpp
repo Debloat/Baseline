@@ -136,16 +136,29 @@ void CMapOutdoor::RenderWater()
     std::memcpy(&matView, frame.view.data(), sizeof(D3DXMATRIX));
 
     WaterShaderInputs in{};
-    std::memcpy(in.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
-    std::memcpy(in.view.data(), &matView, sizeof(D3DXMATRIX));
-    std::memcpy(in.texTransform.data(), &matTexTransformWater, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.matrices.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.matrices.view.data(), &matView, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.matrices.texTransform.data(), &matTexTransformWater, sizeof(D3DXMATRIX));
 
-    in.cameraPos     = frame.cameraPos;
-    in.lightDir      = frame.sunDir;
-    in.lightColor    = frame.sunColor;
-    in.timeSeconds   = frame.timeSeconds;
-    in.windDirection = frame.windDirection;
-    in.windStrength  = frame.windStrength;
+    in.vs.perFrame.slot1[0] = frame.cameraPos[0];
+    in.vs.perFrame.slot1[1] = frame.cameraPos[1];
+    in.vs.perFrame.slot1[2] = frame.cameraPos[2];
+    in.vs.perFrame.slot1[3] = 0.0f;
+
+    in.ps.material.slot1[0] = frame.sunDir[0];
+    in.ps.material.slot1[1] = frame.sunDir[1];
+    in.ps.material.slot1[2] = frame.sunDir[2];
+    in.ps.material.slot1[3] = 0.0f;
+
+    in.ps.material.slot2[0] = frame.sunColor[0];
+    in.ps.material.slot2[1] = frame.sunColor[1];
+    in.ps.material.slot2[2] = frame.sunColor[2];
+    in.ps.material.slot2[3] = 1.0f;
+
+    in.vs.perFrame.slot0[0] = frame.windDirection[0];
+    in.vs.perFrame.slot0[1] = frame.windDirection[1];
+    in.vs.perFrame.slot0[2] = frame.windStrength;
+    in.vs.perFrame.slot0[3] = frame.timeSeconds;
 
     in.settings = &ws;
     CGraphicDevice::UploadWaterConstants(in);

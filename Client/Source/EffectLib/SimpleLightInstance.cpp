@@ -60,15 +60,6 @@ bool CLightInstance::OnUpdate(float fElapsedTime)
             m_iLoopCount = 1;
             return false;
         }
-
-        /*
-        if (!m_pData->isLoop())
-        {
-        	OnClear();
-        	return false;
-        }
-        m_fLocalTime -= m_pData->GetDuration();
-        */
     }
 
     CLight * pLight = CLightManager::Instance().GetLight(m_LightID);
@@ -77,27 +68,6 @@ bool CLightInstance::OnUpdate(float fElapsedTime)
     {
         pLight->SetAmbientColor(m_pData->m_cAmbient.r, m_pData->m_cAmbient.g, m_pData->m_cAmbient.b, m_pData->m_cAmbient.a);
         pLight->SetDiffuseColor(m_pData->m_cDiffuse.r, m_pData->m_cDiffuse.g, m_pData->m_cDiffuse.b, m_pData->m_cDiffuse.a);
-
-        /*if (m_pData->m_TimeEventTableRange.size()
-        	&& m_fLocalTime>=m_pData->GetDuration()*m_pData->m_TimeEventTableRange[m_dwRangeIndex].m_fTime)
-        {
-        	while(m_dwRangeIndex<m_pData->m_TimeEventTableRange.size()
-        		&& m_fLocalTime>=m_pData->GetDuration()*m_pData->m_TimeEventTableRange[m_dwRangeIndex].m_fTime)
-        		m_dwRangeIndex++;
-        	float fLastTime;
-        	float fLastRange=m_pData->m_TimeEventTableRange[m_pData->m_TimeEventTableRange.size()-1].m_Value;
-        	if (m_dwRangeIndex == m_pData->m_TimeEventTableRange.size())
-        		fLastTime = 1.0f;
-        	else
-        	{
-        		fLastTime = m_pData->m_TimeEventTableRange[m_dwRangeIndex].m_fTime;
-        		fLastRange = m_pData->m_TimeEventTableRange[m_dwRangeIndex].m_Value;
-        	}
-        	m_dwRangeIndex--;
-        	pLight->BlendRange(fLastRange*m_pData->m_fMaxRange,
-        		(fLastTime-m_pData->m_TimeEventTableRange[m_dwRangeIndex].m_fTime)*m_pData->GetDuration());
-        	m_dwRangeIndex++;
-        }*/
 
         float fRange;
         m_pData->GetRange(m_fLocalTime, fRange);

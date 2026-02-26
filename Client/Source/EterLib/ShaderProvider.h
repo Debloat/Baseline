@@ -13,7 +13,7 @@ enum class ShaderID
     ScreenPrimitive,
     MiniMap,
     Text,
-    Model,
+    //Model,
     Count
 };
 

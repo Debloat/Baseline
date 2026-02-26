@@ -43,7 +43,7 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -76,7 +76,7 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -111,7 +111,7 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -158,7 +158,7 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -194,7 +194,7 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
             static_cast<float>(ms_Viewport.Height),
             in
         );
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -238,7 +238,7 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
             static_cast<float>(ms_Viewport.Height),
             in
         );
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -275,7 +275,7 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
             static_cast<float>(ms_Viewport.Height),
             in
         );
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -315,7 +315,7 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
             static_cast<float>(ms_Viewport.Height),
             in
         );
-        in.mode[0] = 0.0f;
+        in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -432,9 +432,9 @@ void CScreen::RenderD3DXMesh(LPD3DXMESH lpMesh, const D3DXMATRIX* c_pmatWorld, f
     D3DXMATRIX matWVP = matWorld * ms_matView * ms_matProj;
 
     ScreenPrimitiveShaderInputs in{};
-    std::memcpy(in.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
-    in.mode[0] = 0.0f;
-    in.mode[1] = 1.0f;
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    in.ps.mode[0] = 0.0f;
+    in.ps.mode[1] = 1.0f;
 
     CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -511,7 +511,7 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
             static_cast<float>(ms_Viewport.Height),
             in
         );
-        in.mode[0] = 1.0f;
+        in.ps.mode[0] = 1.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
@@ -873,8 +873,6 @@ CScreen::CScreen()
 CScreen::~CScreen()
 {
 }
-
-//void BuildViewFrustum() { ms_frustum.BuildViewFrustum(ms_matView*ms_matProj); }
 
 void CScreen::BuildViewFrustum()
 {

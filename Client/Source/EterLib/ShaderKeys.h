@@ -50,9 +50,9 @@ namespace ShaderKeys
         inline constexpr const char* PS = "d:/ymir work/shader/Text/text_ps.hlsl";
     }
 
-    namespace Model
-    {
-        inline constexpr const char* VS = "d:/ymir work/shader/Model/model_vs.hlsl";
-        inline constexpr const char* PS = "d:/ymir work/shader/Model/model_ps.hlsl";
-    }
+    //namespace Model
+    //{
+    //    inline constexpr const char* VS = "d:/ymir work/shader/Model/model_vs.hlsl";
+    //    inline constexpr const char* PS = "d:/ymir work/shader/Model/model_ps.hlsl";
+    //}
 }

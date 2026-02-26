@@ -131,50 +131,44 @@ static_assert(sizeof(WaterMaterialCB) == 96);
 
 struct WaterShaderInputs
 {
-    // Matrices (raw, not transposed)
-    std::array<float, 16> worldViewProj;
-    std::array<float, 16> view;
-    std::array<float, 16> texTransform;
+    struct VS
+    {
+        WaterMatricesCB matrices;
+        WaterPerFrameCB perFrame;
+        WaterDisplacementCB displacement;
+    } vs;
 
-    // Camera (world)
-    std::array<float, 3> cameraPos;
+    struct PS
+    {
+        WaterMaterialCB material;
+        WaterPerFrameCB perFrame;
+    } ps;
 
-    // Light (world)
-    std::array<float, 3> lightDir;
-    std::array<float, 3> lightColor;
-
-    // Environment runtime
-    float timeSeconds = 0.0f;
-    std::array<float, 4> windDirection = { 0.f, 0.f, 0.f, 0.f };
-    float windStrength = 0.0f;
-
-    // Settings source (non-owning)
     const WaterShaderSettings* settings = nullptr;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
 
-struct SkyboxMatricesCB
+struct SkyboxVSCB
 {
     std::array<float, 16> worldViewProj; /* ==== VS: c0..c3   | PS: -- ==== */
 };
 
-static_assert(sizeof(SkyboxMatricesCB) == 64);
+static_assert(sizeof(SkyboxVSCB) == 64);
 
 struct SkyboxShaderInputs
 {
-    // Raw matrix (not transposed)
-    std::array<float, 16> worldViewProj;
+    SkyboxVSCB vs;
 };
 
-struct CloudVSConstants
+struct CloudVSCB
 {
     std::array<float, 16> worldViewProj; /* ==== VS: c0..c3   | PS: -- ==== */
-    std::array<float, 4>  params0;       /* ==== VS: c4       | PS: -- ==== */
-    std::array<float, 4>  params1;       /* ==== VS: c5       | PS: -- ==== */
+    std::array<float, 4>  uvScaleSpeed;  /* ==== VS: c4       | PS: -- ==== */
+    std::array<float, 4>  timeSeconds;   /* ==== VS: c5       | PS: -- ==== */
 };
 
-static_assert(sizeof(CloudVSConstants) == 96);
+static_assert(sizeof(CloudVSCB) == 96);
 
 struct CloudPSCB
 {
@@ -185,18 +179,8 @@ static_assert(sizeof(CloudPSCB) == 16);
 
 struct CloudShaderInputs
 {
-    // Raw matrix
-    std::array<float, 16> worldViewProj;
-
-    // UV
-    std::array<float, 2> uvScale;
-    std::array<float, 2> uvSpeed;
-
-    // Environment
-    float timeSeconds = 0.0f;
-
-    // PS tint multiplier (rgba)
-    std::array<float, 4> cloudTintMultiplier;
+    CloudVSCB vs;
+    CloudPSCB ps;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
@@ -282,11 +266,8 @@ static_assert(sizeof(WeaponTracePSCB) == 16);
 
 struct WeaponTraceShaderInputs
 {
-    std::array<float, 16> worldViewProj;
-    float useTexture;
-    float padding0;
-    float padding1;
-    float padding2;
+    WeaponTraceVSCB vs;
+    WeaponTracePSCB ps;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
@@ -306,8 +287,8 @@ static_assert(sizeof(LensFlarePSCB) == 16);
 
 struct LensFlareShaderInputs
 {
-    std::array<float, 16> worldViewProj;
-    std::array<float, 4>  brightness; // rgb=color, a=maxBrightness
+    LensFlareVSCB vs;
+    LensFlarePSCB ps;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
@@ -328,9 +309,8 @@ static_assert(sizeof(ScreenPrimitivePSCB) == 32);
 
 struct ScreenPrimitiveShaderInputs
 {
-    std::array<float, 16> worldViewProj;
-    std::array<float, 4> mode;
-    std::array<float, 4>  colorFactor;
+    ScreenPrimitiveVSCB vs;
+    ScreenPrimitivePSCB ps;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
@@ -366,16 +346,8 @@ static_assert(sizeof(MiniMapPSCB) == 32);
 
 struct MiniMapShaderInputs
 {
-    std::array<float, 16> worldViewProj;
-    std::array<float, 16> world;
-    std::array<float, 16> texTransform;
-
-    std::array<float, 4> colorFactor;
-
-    float useTexture;
-    float useMask;
-    float padding0;
-    float padding1;
+    MiniMapVSCB vs;
+    MiniMapPSCB ps;
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
