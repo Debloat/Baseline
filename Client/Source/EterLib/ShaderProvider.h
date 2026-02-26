@@ -12,7 +12,8 @@ enum class ShaderID
     WeaponTrace,
     ScreenPrimitive,
     MiniMap,
-    Text
+    Text,
+    Count
 };
 
 struct IShaderProvider

@@ -1,5 +1,8 @@
 #pragma once
 
+#include <utility>
+#include <array>
+
 #include "GrpBase.h"
 #include "GrpDetector.h"
 #include "StateManager.h"
@@ -95,29 +98,13 @@ protected:
     std::map<UINT, std::string>	m_kMap_strWarningMessage;
     CStateManager*				m_pStateManager;
 
-    ShaderManager::VertexShaderHandle m_hWaterVS;
-    ShaderManager::PixelShaderHandle  m_hWaterPS;
+    struct ShaderProgram
+    {
+        ShaderManager::VertexShaderHandle vs;
+        ShaderManager::PixelShaderHandle  ps;
+    };
 
-    ShaderManager::VertexShaderHandle m_hSkyBoxVS;
-    ShaderManager::PixelShaderHandle  m_hSkyBoxPS;
-
-    ShaderManager::VertexShaderHandle m_hCloudVS;
-    ShaderManager::PixelShaderHandle  m_hCloudPS;
-
-    ShaderManager::VertexShaderHandle m_hLensFlareVS;
-    ShaderManager::PixelShaderHandle  m_hLensFlarePS;
-
-    ShaderManager::VertexShaderHandle m_hWeaponTraceVS;
-    ShaderManager::PixelShaderHandle  m_hWeaponTracePS;
-
-    ShaderManager::VertexShaderHandle m_hScreenPrimitiveVS;
-    ShaderManager::PixelShaderHandle  m_hScreenPrimitivePS;
-
-    ShaderManager::VertexShaderHandle m_hMiniMapVS;
-    ShaderManager::PixelShaderHandle  m_hMiniMapPS;
-
-    ShaderManager::VertexShaderHandle m_hTextVS;
-    ShaderManager::PixelShaderHandle  m_hTextPS;
+    std::array<ShaderProgram, static_cast<size_t>(std::to_underlying(ShaderID::Count))> m_shaders;
 
     FrameShaderInputs m_frameShaderInputs{};
 

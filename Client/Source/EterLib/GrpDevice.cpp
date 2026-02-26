@@ -616,66 +616,16 @@ bool CGraphicDevice::BindShader(ShaderID id) const
     if (!ms_lpd3dDevice)
         return false;
 
-    switch (id)
-    {
-    case ShaderID::Water:
-        if (!m_hWaterVS.shader || !m_hWaterPS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hWaterVS.shader);
-        STATEMANAGER.SetPixelShader(m_hWaterPS.shader);
-        return true;
+    assert(static_cast<size_t>(id) < m_shaders.size());
+    const auto index = static_cast<size_t>(std::to_underlying(id));
+    const auto& program = m_shaders[index];
 
-    case ShaderID::SkyBox:
-        if (!m_hSkyBoxVS.shader || !m_hSkyBoxPS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hSkyBoxVS.shader);
-        STATEMANAGER.SetPixelShader(m_hSkyBoxPS.shader);
-        return true;
+    if (!program.vs.shader || !program.ps.shader)
+        return false;
 
-    case ShaderID::Cloud:
-        if (!m_hCloudVS.shader || !m_hCloudPS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hCloudVS.shader);
-        STATEMANAGER.SetPixelShader(m_hCloudPS.shader);
-        return true;
-
-    case ShaderID::LensFlare:
-        if (!m_hLensFlareVS.shader || !m_hLensFlarePS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hLensFlareVS.shader);
-        STATEMANAGER.SetPixelShader(m_hLensFlarePS.shader);
-        return true;
-
-    case ShaderID::WeaponTrace:
-        if (!m_hWeaponTraceVS.shader || !m_hWeaponTracePS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hWeaponTraceVS.shader);
-        STATEMANAGER.SetPixelShader(m_hWeaponTracePS.shader);
-        return true;
-
-    case ShaderID::ScreenPrimitive:
-        if (!m_hScreenPrimitiveVS.shader || !m_hScreenPrimitivePS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hScreenPrimitiveVS.shader);
-        STATEMANAGER.SetPixelShader(m_hScreenPrimitivePS.shader);
-        return true;
-
-    case ShaderID::MiniMap:
-        if (!m_hMiniMapVS.shader || !m_hMiniMapPS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hMiniMapVS.shader);
-        STATEMANAGER.SetPixelShader(m_hMiniMapPS.shader);
-        return true;
-
-    case ShaderID::Text:
-        if (!m_hTextVS.shader || !m_hTextPS.shader)
-            return false;
-        STATEMANAGER.SetVertexShader(m_hTextVS.shader);
-        STATEMANAGER.SetPixelShader(m_hTextPS.shader);
-        return true;
-    }
-
-    return false;
+    STATEMANAGER.SetVertexShader(program.vs.shader);
+    STATEMANAGER.SetPixelShader(program.ps.shader);
+    return true;
 }
 
 LPDIRECT3DVERTEXDECLARATION9 CGraphicDevice::CreatePNTStreamVertexShader()
@@ -831,71 +781,41 @@ bool CGraphicDevice::__CreateShaderResources()
     ShaderManager& sm = ShaderManager::Instance();
     sm.SetDevice(ms_lpd3dDevice);
 
-    // Water
     using namespace ShaderKeys;
-    bool okWaterVS = sm.GetVertexShaderFromPack(Water::VS, &m_hWaterVS);
-    bool okWaterPS = sm.GetPixelShaderFromPack(Water::PS, &m_hWaterPS);
-    if (!okWaterVS || !okWaterPS)
-    {
-        Tracen("Failed to load water shaders");
-        return false;
-    }
 
-    // Skybox + Clouds
-    bool okSkyVS = sm.GetVertexShaderFromPack(SkyBox::VS,&m_hSkyBoxVS);
-    bool okSkyPS = sm.GetPixelShaderFromPack(SkyBox::PS, &m_hSkyBoxPS);
-    bool okCloudVS = sm.GetVertexShaderFromPack(Clouds::VS, &m_hCloudVS);
-    bool okCloudPS = sm.GetPixelShaderFromPack(Clouds::PS, &m_hCloudPS);
-
-    if (!okSkyVS || !okSkyPS || !okCloudVS || !okCloudPS)
+    struct ShaderDesc
     {
-        TraceError("Failed to load sky shaders");
-        return false;
-    }
+        ShaderID id;
+        const char* vsPath;
+        const char* psPath;
+    };
 
-    // Lens Flare
-    bool okLensFlareVS = sm.GetVertexShaderFromPack(LensFlare::VS, &m_hLensFlareVS);
-    bool okLensFlarePS = sm.GetPixelShaderFromPack(LensFlare::PS, &m_hLensFlarePS);
-    if (!okLensFlareVS || !okLensFlarePS)
+    static constexpr std::array<ShaderDesc, static_cast<size_t>(std::to_underlying(ShaderID::Count))> kShaderTable =
     {
-        Tracen("Failed to load lens flare shaders");
-        return false;
-    }
+        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS },
+        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS },
+        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS },
+        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS },
+        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS },
+        ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
+        ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
+        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS },
+    };
 
-    // WeaponTrace
-    bool okWeaponTraceVS = sm.GetVertexShaderFromPack(WeaponTrace::VS, &m_hWeaponTraceVS);
-    bool okWeaponTracePS = sm.GetPixelShaderFromPack(WeaponTrace::PS, &m_hWeaponTracePS);
-    if (!okWeaponTraceVS || !okWeaponTracePS)
-    {
-        Tracen("Failed to load WeaponTrace shaders");
-        return false;
-    }
+    static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");
 
-    // ScreenPrimitive
-    bool okScreenPrimitiveVS = sm.GetVertexShaderFromPack(ScreenPrimitive::VS, &m_hScreenPrimitiveVS);
-    bool okScreenPrimitivePS = sm.GetPixelShaderFromPack(ScreenPrimitive::PS, &m_hScreenPrimitivePS);
-    if (!okScreenPrimitiveVS || !okScreenPrimitivePS)
+    for (const auto& desc : kShaderTable)
     {
-        Tracen("Failed to load ScreenPrimitive shaders");
-        return false;
-    }
+        const auto index = static_cast<size_t>(std::to_underlying(desc.id));
 
-    // MiniMap
-    bool okMiniMapVS = sm.GetVertexShaderFromPack(MiniMap::VS, &m_hMiniMapVS);
-    bool okMiniMapPS = sm.GetPixelShaderFromPack(MiniMap::PS, &m_hMiniMapPS);
-    if (!okMiniMapVS || !okMiniMapPS)
-    {
-        Tracen("Failed to load MiniMap shaders");
-        return false;
-    }
+        bool okVS = sm.GetVertexShaderFromPack(desc.vsPath, &m_shaders[index].vs);
+        bool okPS = sm.GetPixelShaderFromPack(desc.psPath, &m_shaders[index].ps);
 
-    // Text
-    bool okTextVS = sm.GetVertexShaderFromPack(Text::VS, &m_hTextVS);
-    bool okTextPS = sm.GetPixelShaderFromPack(Text::PS, &m_hTextPS);
-    if (!okTextVS || !okTextPS)
-    {
-        Tracen("Failed to load Text shaders");
-        return false;
+        if (!okVS || !okPS)
+        {
+            TraceError("Failed to load shader program");
+            return false;
+        }
     }
 
     return true;
@@ -909,22 +829,8 @@ void CGraphicDevice::__DestroyShaderResources()
 
     ShaderManager::Instance().Clear();
 
-    m_hWaterVS = {};
-    m_hWaterPS = {};
-    m_hSkyBoxVS = {};
-    m_hSkyBoxPS = {};
-    m_hCloudVS = {};
-    m_hCloudPS = {};
-    m_hLensFlareVS = {};
-    m_hLensFlarePS = {};
-    m_hWeaponTraceVS = {};
-    m_hWeaponTracePS = {};
-    m_hScreenPrimitiveVS = {};
-    m_hScreenPrimitivePS = {};
-    m_hMiniMapVS = {};
-    m_hMiniMapPS = {};
-    m_hTextVS = {};
-    m_hTextPS = {};
+    for (auto& s : m_shaders)
+        s = {};
 
     // Input layouts must be released on reset/destroy
     CShaderInputLayouts::DestroyAll();
