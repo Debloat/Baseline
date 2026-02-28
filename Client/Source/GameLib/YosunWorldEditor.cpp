@@ -14,7 +14,15 @@ void CMapOutdoor::OnRenderPatchGrid()
 
 
     STATEMANAGER.SetTransform(D3DTS_WORLD, &GetIdentityMatrix());
-    SetDiffuseOperation();
+
+    STATEMANAGER.SetTexture(0, NULL);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
+
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+
     SetDiffuseColor(1.0f, 0.0f, 1.0f);
 
     const long viewRadius = GetViewRadius();

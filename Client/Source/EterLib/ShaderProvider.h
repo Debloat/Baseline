@@ -17,6 +17,55 @@ enum class ShaderID
     Count
 };
 
+enum class EDepthState
+{
+    EnabledWrite,
+    EnabledReadOnly,
+    Disabled
+};
+
+enum class EBlendState
+{
+    Opaque,
+    AlphaBlend,
+    AlphaAdditive,  // ALPHABLENDENABLE=TRUE, SRCBLEND=SRCALPHA, DESTBLEND=ONE
+    Additive,       // ALPHABLENDENABLE=TRUE, SRCBLEND=ONE, DESTBLEND=ONE
+    One_InvSrcColor // ALPHABLENDENABLE=TRUE, SRCBLEND=ONE, DESTBLEND=INVSRCOLOR
+};
+
+enum class ERasterState
+{
+    CullBack,
+    CullFront,
+    CullNone,
+    Wireframe
+};
+
+enum class ESamplerState
+{
+    LinearClamp,
+    LinearWrap,
+    PointClamp
+};
+
+struct PipelineStateDesc
+{
+    ShaderID shader;
+
+    EDepthState depth;
+    EBlendState blend;
+    ERasterState raster;
+
+    struct SamplerBinding
+    {
+        UINT slot;
+        ESamplerState state;
+    };
+
+    const SamplerBinding* samplers;
+    UINT samplerCount;
+};
+
 struct IShaderProvider
 {
     virtual bool BindShader(ShaderID id) const = 0;
@@ -30,6 +79,12 @@ struct IShaderProvider
     virtual void ComputeWorldViewProj(const D3DXMATRIX& world, D3DXMATRIX& outWVP) const = 0;
     virtual void FillScreenPrimitive2DOrtho01World(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const = 0;
     virtual void FillScreenPrimitive2DOrthoPixel(float width, float height, ScreenPrimitiveShaderInputs& out) const = 0;
+
+    virtual void BindDepthState(EDepthState state) const = 0;
+    virtual void BindBlendState(EBlendState state) const = 0;
+    virtual void BindRasterState(ERasterState state) const = 0;
+    virtual void BindSamplerState(UINT slot, ESamplerState state) const = 0;
+    virtual bool BindPipelineState(const PipelineStateDesc& desc) const = 0;
 
 protected:
     ~IShaderProvider() = default;

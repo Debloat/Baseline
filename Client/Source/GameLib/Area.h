@@ -240,7 +240,6 @@ class CArea
         void			Render();
         void			RenderEffect();
         void			RenderCollision();
-        void			RenderAmbience();
         void			RenderDungeon();
         void			Refresh();
 

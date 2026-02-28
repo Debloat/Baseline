@@ -109,8 +109,8 @@ void CEffectInstance::OnRender()
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TEXTURE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,   D3DTOP_MODULATE);
     STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
-    std::for_each(m_ParticleInstanceVector.begin(), m_ParticleInstanceVector.end(), std::mem_fn(&CEffectElementBaseInstance::Render));
-    std::for_each(m_MeshInstanceVector.begin(), m_MeshInstanceVector.end(), std::mem_fn(&CEffectElementBaseInstance::Render));
+    std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::Render));
+    std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::Render));
 
     /////
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
@@ -137,34 +137,16 @@ BOOL CEffectInstance::isAlive()
 
 void CEffectInstance::SetActive()
 {
-    std::for_each(
-        m_ParticleInstanceVector.begin(),
-        m_ParticleInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetActive));
-    std::for_each(
-        m_MeshInstanceVector.begin(),
-        m_MeshInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetActive));
-    std::for_each(
-        m_LightInstanceVector.begin(),
-        m_LightInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetActive));
+    std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
+    std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
+    std::ranges::for_each(m_LightInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
 }
 
 void CEffectInstance::SetDeactive()
 {
-    std::for_each(
-        m_ParticleInstanceVector.begin(),
-        m_ParticleInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
-    std::for_each(
-        m_MeshInstanceVector.begin(),
-        m_MeshInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
-    std::for_each(
-        m_LightInstanceVector.begin(),
-        m_LightInstanceVector.end(),
-        std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
+    std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
+    std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
+    std::ranges::for_each(m_LightInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
 }
 
 void CEffectInstance::__SetParticleData(CParticleSystemData * pData)
@@ -248,19 +230,19 @@ void CEffectInstance::Clear()
 {
     if (!m_ParticleInstanceVector.empty())
     {
-        std::for_each(m_ParticleInstanceVector.begin(), m_ParticleInstanceVector.end(), CParticleSystemInstance::Delete);
+        std::ranges::for_each(m_ParticleInstanceVector, CParticleSystemInstance::Delete);
         m_ParticleInstanceVector.clear();
     }
 
     if (!m_MeshInstanceVector.empty())
     {
-        std::for_each(m_MeshInstanceVector.begin(), m_MeshInstanceVector.end(), CEffectMeshInstance::Delete);
+        std::ranges::for_each(m_MeshInstanceVector, CEffectMeshInstance::Delete);
         m_MeshInstanceVector.clear();
     }
 
     if (!m_LightInstanceVector.empty())
     {
-        std::for_each(m_LightInstanceVector.begin(), m_LightInstanceVector.end(), CLightInstance::Delete);
+        std::ranges::for_each(m_LightInstanceVector, CLightInstance::Delete);
         m_LightInstanceVector.clear();
     }
 

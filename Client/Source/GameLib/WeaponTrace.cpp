@@ -4,7 +4,6 @@
 
 #include "WeaponTrace.h"
 
-#include "../EterLib/ShaderVertexDeclarations.h"
 #include "../EterLib/GrpDevice.h"
 
 CDynamicPool<CWeaponTrace> CWeaponTrace::ms_kPool;
@@ -253,6 +252,24 @@ bool CWeaponTrace::BuildVertex()
     return true;
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> WeaponTraceSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc WeaponTracePipeline =
+    {
+        ShaderID::WeaponTrace,
+        EDepthState::EnabledReadOnly,   // Z test ON, Z write OFF
+        EBlendState::AlphaBlend,        // SRCALPHA / INVSRCALPHA
+        ERasterState::CullNone,
+        WeaponTraceSamplers.data(),
+        WeaponTraceSamplers.size()
+    };
+}
+
 void CWeaponTrace::Render()
 {
     if (!BuildVertex())
@@ -265,36 +282,19 @@ void CWeaponTrace::Render()
         return;
     }
 
-
     LPDIRECT3DTEXTURE9 lpTexture = NULL;
 
     // Have to optimize
     D3DXMATRIX matWorld;
     D3DXMatrixIdentity(&matWorld);
 
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0x00000011);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ZENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-
     /* - SHADER [WEAPONTRACE] ------------------------------ */
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::WeaponTrace))
+    if (!sp || !sp->BindPipelineState(WeaponTracePipeline))
     {
-        TraceError("WeaponTrace shader bind failed");
+        TraceError("WeaponTrace pipeline bind failed");
         return;
     }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
     D3DXMATRIX matWVP;
     sp->ComputeWorldViewProj(matWorld, matWVP);
@@ -323,24 +323,6 @@ void CWeaponTrace::Render()
         int(m_PDTVertexVector.size() - 2),
         &m_PDTVertexVector[0],
         sizeof(TPDTVertex));
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZFUNC);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
-
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
 }
 
 void CWeaponTrace::UseAlpha()

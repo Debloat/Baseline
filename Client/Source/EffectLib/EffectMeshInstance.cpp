@@ -268,7 +268,7 @@ void CEffectMeshInstance::OnSetDataPointer(CEffectElementBase * pElement)
         rImageInstanceVector.clear();
         rImageInstanceVector.reserve(rTextureVector.size());
 
-        for (std::vector<CGraphicImage*>::iterator itor = rTextureVector.begin(); itor != rTextureVector.end(); ++itor)
+        for (auto itor = rTextureVector.begin(); itor != rTextureVector.end(); ++itor)
         {
             CGraphicImage * pImage = *itor;
             CGraphicImageInstance * pImageInstance = CGraphicImageInstance::ms_kPool.Alloc();
@@ -286,7 +286,7 @@ void CEffectMeshInstance_DeleteImageInstance(CGraphicImageInstance * pkInstance)
 void CEffectMeshInstance_DeleteTextureInstance(CEffectMeshInstance::TTextureInstance & rkInstance)
 {
     std::vector<CGraphicImageInstance*>& rVector = rkInstance.TextureInstanceVector;
-    for_each(rVector.begin(), rVector.end(), CEffectMeshInstance_DeleteImageInstance);
+    std::ranges::for_each(rVector, CEffectMeshInstance_DeleteImageInstance);
     rVector.clear();
 }
 
@@ -296,7 +296,7 @@ void CEffectMeshInstance::OnInitialize()
 
 void CEffectMeshInstance::OnDestroy()
 {
-    for_each(m_TextureInstanceVector.begin(), m_TextureInstanceVector.end(), CEffectMeshInstance_DeleteTextureInstance);
+    std::ranges::for_each(m_TextureInstanceVector, CEffectMeshInstance_DeleteTextureInstance);
     m_TextureInstanceVector.clear();
     m_roMesh.SetPointer(NULL);
 }

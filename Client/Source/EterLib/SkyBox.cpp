@@ -5,7 +5,6 @@
 #include "ResourceManager.h"
 
 /* - SHADER -------------------------------------------- */
-#include "ShaderVertexDeclarations.h"
 #include "GrpDevice.h"
 /* ----------------------------------------------------- */
 
@@ -405,37 +404,41 @@ void CSkyBox::Refresh()
         0.0f, 1.0f);
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> SkySamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc SkyPipeline =
+    {
+        ShaderID::SkyBox,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Opaque,
+        ERasterState::CullFront,
+        SkySamplers.data(),
+        SkySamplers.size()
+    };
+}
+
 void CSkyBox::Render()
 {
-    // 2004.01.25 myevan Ã³¸®¸¦ ·»´õ¸µ ÈÄ¹ÝÀ¸·Î ¿Å±â°í, DepthTest Ã³¸®
-    STATEMANAGER.SaveRenderState(D3DRS_ZENABLE,	TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-
-    /* - SHADER [SKYBOX] ----------------------------------- */
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::SkyBox))
+    if (!sp || !sp->BindPipelineState(SkyPipeline))
     {
-        TraceError("Skybox shader bind failed");
+        TraceError("Skybox pipeline bind failed");
         return;
     }
 
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-    /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+    /* - SHADER [SKYBOX] ----------------------------------- */
     SkyboxShaderInputs in{};
     D3DXMATRIX matWVP;
     sp->ComputeWorldViewProj(m_matWorld, matWVP);
     std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
 
     CGraphicDevice::UploadSkyboxConstants(in);
-    /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
-
     /* ----------------------------------------------------- */
-
-    //Render Face
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSU,	D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSV,	D3DTADDRESS_CLAMP);
 
     if (m_strSkyTextureFileName.empty())
     {
@@ -460,24 +463,37 @@ void CSkyBox::Render()
     {
         m_Faces[i].Render();
     }
+}
 
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSU);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSV);
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> CloudSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap }
+    } };
 
-    /* - SHADER [SKYBOX] ----------------------------------- */
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-    /* ----------------------------------------------------- */
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
+    constexpr PipelineStateDesc CloudPipeline =
+    {
+        ShaderID::Cloud,
+        EDepthState::EnabledReadOnly,
+        EBlendState::One_InvSrcColor,
+        ERasterState::CullFront,
+        CloudSamplers.data(),
+        CloudSamplers.size()
+    };
 }
 
 void CSkyBox::RenderCloud()
 {
+    IShaderProvider const* sp = GetShaderProvider();
+
+    if (!sp || !sp->BindPipelineState(CloudPipeline))
+    {
+        TraceError("Cloud pipeline bind failed");
+        return;
+    }
+    const FrameShaderInputs& frame = sp->GetFrameShaderInputs();
+
     CGraphicImageInstance * pCloudGraphicImageInstance = m_GraphicImageInstanceMap[m_FaceCloud.m_strfacename];
 
     if (!pCloudGraphicImageInstance)
@@ -485,26 +501,7 @@ void CSkyBox::RenderCloud()
         return;
     }
 
-    // 2004.01.25 myevan Ã³¸®¸¦ ·»´õ¸µ ÈÄ¹ÝÀ¸·Î ¿Å±â°í, DepthTest Ã³¸®
-    STATEMANAGER.SaveRenderState(D3DRS_ZENABLE,	TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_ONE);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCCOLOR);
-
     /* - SHADER [CLOUDS] ----------------------------------- */
-    IShaderProvider const* sp = GetShaderProvider();
-    const FrameShaderInputs& frame = sp->GetFrameShaderInputs();
-
-    if (!sp || !sp->BindShader(ShaderID::Cloud))
-    {
-        TraceError("Cloud shader bind failed");
-        return;
-    }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-    /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
     D3DXMATRIX world = m_matWorldCloud;
 
     D3DXMATRIX matWVP;
@@ -519,23 +516,8 @@ void CSkyBox::RenderCloud()
     in.ps.cloudTint = { m_cloudTintMultiplier.r, m_cloudTintMultiplier.g, m_cloudTintMultiplier.b, m_cloudTintMultiplier.a };
 
     CGraphicDevice::UploadCloudConstants(in);
-    /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
-
     /* ----------------------------------------------------- */
 
     STATEMANAGER.SetTexture(0, pCloudGraphicImageInstance->GetTexturePointer()->GetD3DTexture());
     m_FaceCloud.Render();
-
-    /* - SHADER [CLOUDS] ----------------------------------- */
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-    /* ----------------------------------------------------- */
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
 }

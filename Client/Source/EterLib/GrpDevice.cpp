@@ -633,6 +633,12 @@ bool CGraphicDevice::BindShader(ShaderID id) const
 
     STATEMANAGER.SetVertexShader(program.vs.shader);
     STATEMANAGER.SetPixelShader(program.ps.shader);
+
+    if (program.layout)
+    {
+        STATEMANAGER.SetVertexDeclaration(program.layout);
+    }
+
     return true;
 }
 
@@ -679,6 +685,134 @@ LPDIRECT3DVERTEXDECLARATION9 CGraphicDevice::CreatePNT2StreamVertexShader()
     }
 
     return dwShader;
+}
+
+void CGraphicDevice::BindDepthState(EDepthState state) const
+{
+    switch (state)
+    {
+    case EDepthState::EnabledWrite:
+        STATEMANAGER.SetRenderState(D3DRS_ZENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
+        break;
+
+    case EDepthState::EnabledReadOnly:
+        STATEMANAGER.SetRenderState(D3DRS_ZENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+        break;
+
+    case EDepthState::Disabled:
+        STATEMANAGER.SetRenderState(D3DRS_ZENABLE, FALSE);
+        STATEMANAGER.SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+        break;
+    }
+}
+
+void CGraphicDevice::BindBlendState(EBlendState state) const
+{
+    switch (state)
+    {
+    case EBlendState::Opaque:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+        break;
+
+    case EBlendState::AlphaBlend:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+        STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+        break;
+
+    case EBlendState::AlphaAdditive:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+        STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
+        break;
+
+    case EBlendState::Additive:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ONE);
+        STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
+        break;
+
+    case EBlendState::One_InvSrcColor:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ONE);
+        STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCCOLOR);
+        break;
+    }
+}
+
+void CGraphicDevice::BindRasterState(ERasterState state) const
+{
+    switch (state)
+    {
+    case ERasterState::CullBack:
+        STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
+        STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+        break;
+
+    case ERasterState::CullFront:
+        STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
+        STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+        break;
+
+    case ERasterState::CullNone:
+        STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+        STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+        break;
+
+    case ERasterState::Wireframe:
+        STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+        STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+        break;
+    }
+}
+
+void CGraphicDevice::BindSamplerState(UINT slot, ESamplerState state) const
+{
+    switch (state)
+    {
+    case ESamplerState::LinearClamp:
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
+        break;
+
+    case ESamplerState::LinearWrap:
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
+        break;
+
+    case ESamplerState::PointClamp:
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MINFILTER, D3DTEXF_POINT);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
+        STATEMANAGER.SetSamplerState(slot, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
+        break;
+    }
+}
+
+bool CGraphicDevice::BindPipelineState(const PipelineStateDesc& desc) const
+{
+    if (!BindShader(desc.shader))
+        return false;
+
+    BindDepthState(desc.depth);
+    BindBlendState(desc.blend);
+    BindRasterState(desc.raster);
+
+    for (UINT i = 0; i < desc.samplerCount; ++i)
+    {
+        BindSamplerState(desc.samplers[i].slot, desc.samplers[i].state);
+    }
+
+    return true;
 }
 
 CGraphicDevice::EDeviceState CGraphicDevice::GetDeviceState()
@@ -796,18 +930,19 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderID id;
         const char* vsPath;
         const char* psPath;
+        EShaderInputLayout layout;
     };
 
     static constexpr std::array<ShaderDesc, static_cast<size_t>(std::to_underlying(ShaderID::Count))> kShaderTable =
     {
-        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS },
-        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS },
-        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS },
-        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS },
-        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS },
+        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS, EShaderInputLayout::PTC },
+        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS, EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
         ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
-        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS },
+        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS, EShaderInputLayout::PCT },
         //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
     };
 
@@ -825,6 +960,8 @@ bool CGraphicDevice::__CreateShaderResources()
             TraceError("Failed to load shader program");
             return false;
         }
+
+        m_shaders[index].layout = CShaderInputLayouts::Get(desc.layout);
     }
 
     return true;

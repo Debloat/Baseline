@@ -339,7 +339,7 @@ bool CParticleSystemInstance::OnUpdate(float fElapsedTime)
 
     for (dwFrameIndex = 0; dwFrameIndex < dwFrameCount; dwFrameIndex++)
     {
-        TParticleInstanceList::iterator itor = m_ParticleInstanceListVector[dwFrameIndex].begin();
+        auto itor = m_ParticleInstanceListVector[dwFrameIndex].begin();
 
         for (; itor != m_ParticleInstanceListVector[dwFrameIndex].end();)
         {
@@ -535,15 +535,11 @@ void CParticleSystemInstance::OnInitialize()
 void CParticleSystemInstance::OnDestroy()
 {
     // 2004. 3. 1. myevan. 파티클 제거 루틴
-    TParticleInstanceListVector::iterator i;
-
-    for (i = m_ParticleInstanceListVector.begin(); i != m_ParticleInstanceListVector.end(); ++i)
+    for (auto i = m_ParticleInstanceListVector.begin(); i != m_ParticleInstanceListVector.end(); ++i)
     {
         TParticleInstanceList& rkLst_kParticleInst = *i;
 
-        TParticleInstanceList::iterator j;
-
-        for (j = rkLst_kParticleInst.begin(); j != rkLst_kParticleInst.end(); ++j)
+        for (auto j = rkLst_kParticleInst.begin(); j != rkLst_kParticleInst.end(); ++j)
         {
             CParticleInstance* pkParticleInst = *j;
             pkParticleInst->DeleteThis();
@@ -554,7 +550,7 @@ void CParticleSystemInstance::OnDestroy()
 
     m_ParticleInstanceListVector.clear();
 
-    std::for_each(m_kVct_pkImgInst.begin(), m_kVct_pkImgInst.end(), CGraphicImageInstance::Delete);
+    std::ranges::for_each(m_kVct_pkImgInst, CGraphicImageInstance::Delete);
     m_kVct_pkImgInst.clear();
 }
 

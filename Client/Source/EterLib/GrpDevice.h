@@ -102,7 +102,8 @@ protected:
     struct ShaderProgram
     {
         ShaderManager::VertexShaderHandle vs;
-        ShaderManager::PixelShaderHandle  ps;
+        ShaderManager::PixelShaderHandle ps;
+        LPDIRECT3DVERTEXDECLARATION9 layout = nullptr;
     };
 
     std::array<ShaderProgram, static_cast<size_t>(std::to_underlying(ShaderID::Count))> m_shaders;
@@ -120,6 +121,10 @@ public:
     void FillScreenPrimitive2DOrtho01World(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const override;
     void FillScreenPrimitive2DOrthoPixel(float width, float height, ScreenPrimitiveShaderInputs& out) const override;
 
-public:
     bool BindShader(ShaderID id) const override;
+    void BindDepthState(EDepthState state) const override;
+    void BindBlendState(EBlendState state) const override;
+    void BindRasterState(ERasterState state) const override;
+    void BindSamplerState(UINT slot, ESamplerState state) const override;
+    bool BindPipelineState(const PipelineStateDesc& desc) const override;
 };

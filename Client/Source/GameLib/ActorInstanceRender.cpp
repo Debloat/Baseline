@@ -344,7 +344,14 @@ void CActorInstance::RenderCollisionData()
     }
 
     STATEMANAGER.SetRenderState(D3DRS_ZENABLE, FALSE);
-    s_Screen.SetColorOperation();
+
+    STATEMANAGER.SetTexture(0, NULL);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+
     s_Screen.SetDiffuseColor(1.0f, 0.0f, 0.0f);
     TCollisionPointInstanceList::iterator itor;
     s_Screen.SetDiffuseColor(1.0f, (isShow()) ? 1.0f : 0.0f, 0.0f);

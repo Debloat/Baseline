@@ -65,36 +65,6 @@ void CEffectElementBase::GetPosition(float fTime, D3DXVECTOR3 & rPosition)
     }
 }
 
-/*
-bool CEffectElementBase::isVisible(float fTime)
-{
-	for (DWORD i = 0; i < m_TimeEventTableVisible.size(); ++i)
-	{
-		float fPointTime = m_TimeEventTableVisible[i];
-
-		if (fTime < fPointTime)
-		{
-			if (1 == i % 2)
-				return true;
-			else
-				return false;
-		}
-	}
-
-	return 1 == (m_TimeEventTableVisible.size() % 2);
-}
-
-void CEffectElementBase::GetAlpha(float fTime, float * pAlpha)
-{
-	GetTimeEventBlendValue<TTimeEventTableFloat, float>(fTime, m_TimeEventAlpha, pAlpha);
-}
-
-void CEffectElementBase::GetScale(float fTime, float * pScale)
-{
-	GetTimeEventBlendValue<TTimeEventTableFloat, float>(fTime, m_TimeEventScale, pScale);
-}
-*/
-
 bool CEffectElementBase::isData()
 {
     return OnIsData();

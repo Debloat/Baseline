@@ -9,7 +9,6 @@
 #include <math.h>
 
 #include "ShaderProvider.h"
-#include "ShaderVertexDeclarations.h"
 #include "GrpDevice.h"
 
 using namespace std;
@@ -61,6 +60,36 @@ static float g_afColors[][4] =
     { 1.0f, 0.6f, 0.3f, 0.4f }
 };
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> LensFlareSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    // Main sun sprite: alpha blend
+    constexpr PipelineStateDesc LensFlareSunPipeline =
+    {
+        ShaderID::LensFlare,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        LensFlareSamplers.data(),
+        LensFlareSamplers.size()
+    };
+
+    // Flare pieces: SRCALPHA / ONE (alpha-scaled additive)
+    constexpr PipelineStateDesc LensFlarePiecePipeline =
+    {
+        ShaderID::LensFlare,
+        EDepthState::Disabled,
+        EBlendState::AlphaAdditive,
+        ERasterState::CullNone,
+        LensFlareSamplers.data(),
+        LensFlareSamplers.size()
+    };
+}
+
 CLensFlare::CLensFlare() :
     m_fBeforeBright(0.0f),
     m_fAfterBright(0.0f),
@@ -90,13 +119,15 @@ float CLensFlare::Interpolate(float fStart, float fEnd, float fPercent)
 
 void CLensFlare::Compute(const D3DXVECTOR3 & c_rv3LightDirection)
 {
-    float afSunPos[3];
 
     D3DXVECTOR3 v3Target = CCameraManager::Instance().GetCurrentCamera()->GetTarget();
 
-    afSunPos[0]	= v3Target.x - c_rv3LightDirection.x * 99999999.0f;
-    afSunPos[1]	= v3Target.y - c_rv3LightDirection.y * 99999999.0f;
-    afSunPos[2]	= v3Target.z - c_rv3LightDirection.z * 99999999.0f;
+    constexpr float kSunDistance = 99999999.0f;
+    std::array<float, 3> afSunPos{
+        v3Target.x - c_rv3LightDirection.x * kSunDistance,
+        v3Target.y - c_rv3LightDirection.y * kSunDistance,
+        v3Target.z - c_rv3LightDirection.z * kSunDistance
+    };
 
     float fX, fY;
     ProjectPosition(afSunPos[0], afSunPos[1], afSunPos[2], &fX, &fY);
@@ -108,15 +139,19 @@ void CLensFlare::Compute(const D3DXVECTOR3 & c_rv3LightDirection)
     float fSunVectorMagnitude = sqrtf(afSunPos[0] * afSunPos[0] +
                                       afSunPos[1] * afSunPos[1] +
                                       afSunPos[2] * afSunPos[2]);
-    float afSunVector[3];
-    afSunVector[0] = -afSunPos[0] / fSunVectorMagnitude;
-    afSunVector[1] = -afSunPos[1] / fSunVectorMagnitude;
-    afSunVector[2] = -afSunPos[2] / fSunVectorMagnitude;
 
-    float afCameraDirection[3];
-    afCameraDirection[0] = ms_matView._13;
-    afCameraDirection[1] = ms_matView._23;
-    afCameraDirection[2] = ms_matView._33;
+    const float invMagnitude = 1.0f / fSunVectorMagnitude;
+    std::array<float, 3> afSunVector{
+        -afSunPos[0] * invMagnitude,
+        -afSunPos[1] * invMagnitude,
+        -afSunPos[2] * invMagnitude
+    };
+
+    std::array<float, 3> afCameraDirection{
+        ms_matView._13,
+        ms_matView._23,
+        ms_matView._33
+    };
 
     if (float fDotProduct =
         (afSunVector[0] * afCameraDirection[0]) +
@@ -154,57 +189,24 @@ void CLensFlare::DrawBeforeFlare()
         return;
     }
 
-    STATEMANAGER.SaveRenderState(D3DRS_ZENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    STATEMANAGER.SaveRenderState(D3DRS_SHADEMODE, D3DSHADE_FLAT);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
     float fAspectRatio = static_cast<float>(ms_Viewport.Width) / static_cast<float>(ms_Viewport.Height);
     float fHeight = m_fSunSize * fAspectRatio;
     D3DXCOLOR color(1.0f, 1.0f, 1.0f, 1.0f);
 
-    SVertex vertices[4];
-    vertices[0].x = -m_fSunSize;
-    vertices[0].y = -fHeight;
-    vertices[0].z = 0.0f;
-    vertices[0].color = color;
-    vertices[0].u = 0.0f;
-    vertices[0].v = 0.0f;
-
-    vertices[1].x = -m_fSunSize;
-    vertices[1].y = fHeight;
-    vertices[1].z = 0.0f;
-    vertices[1].color = color;
-    vertices[1].u = 0.0f;
-    vertices[1].v = 1.0f;
-
-    vertices[2].x = m_fSunSize;
-    vertices[2].y = -fHeight;
-    vertices[2].z = 0.0f;
-    vertices[2].color = color;
-    vertices[2].u = 1.0f;
-    vertices[2].v = 0.0f;
-
-    vertices[3].x = m_fSunSize;
-    vertices[3].y = fHeight;
-    vertices[3].z = 0.0f;
-    vertices[3].color = color;
-    vertices[3].u = 1.0f;
-    vertices[3].v = 1.0f;
+    std::array<SVertex, 4> vertices{ {
+        { -m_fSunSize, -fHeight, 0.0f, color, 0.0f, 0.0f },
+        { -m_fSunSize,  fHeight, 0.0f, color, 0.0f, 1.0f },
+        {  m_fSunSize, -fHeight, 0.0f, color, 1.0f, 0.0f },
+        {  m_fSunSize,  fHeight, 0.0f, color, 1.0f, 1.0f },
+    } };
 
     /* - SHADER [LENSFLARE] ----------------------------------- */
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::LensFlare))
+    if (!sp || !sp->BindPipelineState(LensFlareSunPipeline))
     {
-        TraceError("LensFlare shader bind failed");
+        TraceError("LensFlare pipeline bind failed");
         return;
     }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
     /* ----------------------------------------------------- */
 
     LensFlareShaderInputs in{};
@@ -230,23 +232,7 @@ void CLensFlare::DrawBeforeFlare()
     STATEMANAGER.SetTexture(0, m_SunFlareImageInstance.GetTexturePointer()->GetD3DTexture());
     STATEMANAGER.SetTexture(1, nullptr);
 
-    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertices, sizeof(SVertex));
-
-    /* - SHADER [LENSFLARE] ----------------------------------- */
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-    /* ----------------------------------------------------- */
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SHADEMODE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
+    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertices.data(), sizeof(SVertex));
 }
 
 void CLensFlare::DrawAfterFlare()
@@ -278,24 +264,15 @@ void CLensFlare::DrawFlare()
 {
     if (m_bEnabled && m_bFlareVisible && m_bDrawFlare && m_fAfterBright != 0.0f)
     {
-        STATEMANAGER.SaveRenderState(D3DRS_ZENABLE, FALSE);
-        STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-        STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
-        STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-
+        // Bright screen overlay uses RenderBar2d -> ScreenPrimitive pipeline (handled there)
         DrawAfterFlare();
 
+        // Flare pieces: bind explicit lens flare pipeline inside CFlare::Draw
         m_cFlare.Draw(m_fAfterBright,
-                      ms_Viewport.Width,
-                      ms_Viewport.Height,
-                      static_cast<int>(m_afFlareWinPos[0]),
-                      static_cast<int>(m_afFlareWinPos[1]));
-
-        STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-        STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-        STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-        STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-
+            ms_Viewport.Width,
+            ms_Viewport.Height,
+            static_cast<int>(m_afFlareWinPos[0]),
+            static_cast<int>(m_afFlareWinPos[1]));
     }
 }
 
@@ -446,16 +423,12 @@ void CFlare::Init(std::string strPath)
 
 void CFlare::Draw(float fBrightScale, int nWidth, int nHeight, int nX, int nY)
 {
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
 
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::LensFlare))
+    if (!sp || !sp->BindPipelineState(LensFlarePiecePipeline))
     {
-        STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
         return;
     }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
     LensFlareShaderInputs in{};
 
@@ -489,43 +462,14 @@ void CFlare::Draw(float fBrightScale, int nWidth, int nHeight, int nX, int nY)
 
         STATEMANAGER.SetTexture(0, m_vFlares[i]->m_imageInstance.GetTexturePointer()->GetD3DTexture());
 
-        TVertex vertices[4];
+        std::array<TVertex, 4> vertices =
+        { {
+            {0.0f, 0.0f, fCenterX - fW, fCenterY - fW, 0.0f, d3dColor},
+            {0.0f, 1.0f, fCenterX - fW, fCenterY + fW, 0.0f, d3dColor},
+            {1.0f, 0.0f, fCenterX + fW, fCenterY - fW, 0.0f, d3dColor},
+            {1.0f, 1.0f, fCenterX + fW, fCenterY + fW, 0.0f, d3dColor},
+        } };
 
-        vertices[0].u = 0.0f;
-        vertices[0].v = 0.0f;
-        vertices[0].x = fCenterX - fW;
-        vertices[0].y = fCenterY - fW;
-        vertices[0].z = 0.0f;
-        vertices[0].color = d3dColor;
-
-        vertices[1].u = 0.0f;
-        vertices[1].v = 1.0f;
-        vertices[1].x = fCenterX - fW;
-        vertices[1].y = fCenterY + fW;
-        vertices[1].z = 0.0f;
-        vertices[1].color = d3dColor;
-
-        vertices[2].u = 1.0f;
-        vertices[2].v = 0.0f;
-        vertices[2].x = fCenterX + fW;
-        vertices[2].y = fCenterY - fW;
-        vertices[2].z = 0.0f;
-        vertices[2].color = d3dColor;
-
-        vertices[3].u = 1.0f;
-        vertices[3].v = 1.0f;
-        vertices[3].x = fCenterX + fW;
-        vertices[3].y = fCenterY + fW;
-        vertices[3].z = 0.0f;
-        vertices[3].color = d3dColor;
-
-        STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertices, sizeof(TVertex));
+        STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertices.data(), sizeof(TVertex));
     }
-
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
 }

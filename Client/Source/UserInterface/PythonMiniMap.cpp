@@ -398,14 +398,6 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, byTerrainNum * 4, 4, byTerrainNum * 6, 2);
     }
 
-    /* - SHADER [MINIMAP] ----------------------------------- */
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetTexture(1, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-    /* ----------------------------------------------------- */
-
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSU);
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSV);
     STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSU);
@@ -510,10 +502,6 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
             m_WhiteMark.Render();
             ++aIterator;
         }
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-        STATEMANAGER.SetVertexDeclaration(nullptr);
     }
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MIPFILTER);
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
@@ -1323,10 +1311,6 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
     {
         m_AtlasPlayerMark.Render();
     }
-
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
 
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
     STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MAGFILTER);

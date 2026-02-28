@@ -10,7 +10,6 @@
 #include "../SphereLib/YosunControlCenter.h"
 
 #include "ShaderProvider.h"
-#include "ShaderVertexDeclarations.h"
 #include "ShaderParameters.h"
 #include "GrpDevice.h"
 
@@ -865,6 +864,37 @@ void CGraphicTextInstance::__BuildGeometry(RECT* pClipRect)
     m_isGeometryDirty = false;
 }
 
+namespace
+{
+    // Font atlas sampling: usually clamp to avoid bleeding across pages.
+    // If your glyph atlas relies on wrap for any reason, change this.
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> TextSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc TextPipeline =
+    {
+        ShaderID::Text,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        TextSamplers.data(),
+        TextSamplers.size()
+    };
+
+    // Cursor / underline: solid-color quad (no texture needed, but harmless).
+    constexpr PipelineStateDesc CursorPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        nullptr,
+        0
+    };
+}
+
 void CGraphicTextInstance::Render(RECT * pClipRect)
 {
     if (!m_isUpdate)
@@ -898,18 +928,13 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
 
     //WORD FillRectIndices[6] = { 0, 2, 1, 2, 3, 1 };
 
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
     // Shader bind
-    if (const IShaderProvider* sp = GetShaderProvider(); !sp || !sp->BindShader(ShaderID::Text))
+    const IShaderProvider* sp = GetShaderProvider();
+    if (!sp || !sp->BindPipelineState(TextPipeline))
     {
-        TraceError("Text shader bind failed");
+        TraceError("Text pipeline bind failed");
         return;
     }
-
-    // TPDTVertex = position(float3) + color(d3dcolor) + uv(float2)
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
     // Upload VS constants: inv screen size
     UINT bbW = 0, bbH = 0;
@@ -963,12 +988,6 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
 
             ++tm.totalDrawCalls;
         }
-        // -----------------------------------------------------------------
-        // Restore pipeline to FFP-safe state (until full shader migration)
-        // -----------------------------------------------------------------
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
-        STATEMANAGER.SetVertexDeclaration(nullptr);
     }
 
     if (m_isCursor)
@@ -1021,26 +1040,20 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
             break;
         }
 
-        TPDTVertex vertices[4];
-        vertices[0].diffuse = diffuse;
-        vertices[1].diffuse = diffuse;
-        vertices[2].diffuse = diffuse;
-        vertices[3].diffuse = diffuse;
-        vertices[0].position = TPosition(sx, sy, 0.0f);
-        vertices[1].position = TPosition(ex, sy, 0.0f);
-        vertices[2].position = TPosition(sx, ey, 0.0f);
-        vertices[3].position = TPosition(ex, ey, 0.0f);
+        std::array<TPDTVertex, 4> vertices{ {
+            { TPosition(sx, sy, 0.0f), diffuse },
+            { TPosition(ex, sy, 0.0f), diffuse },
+            { TPosition(sx, ey, 0.0f), diffuse },
+            { TPosition(ex, ey, 0.0f), diffuse },
+        } };
 
         // -----------------------------------------------------------------
         // Cursor quad via ScreenPrimitive (color-only)
         // -----------------------------------------------------------------
-        if (CGraphicBase::SetPDTStream(vertices, 4))
+        if (CGraphicBase::SetPDTStream(vertices.data(), 4))
         {
-            const IShaderProvider* sp = GetShaderProvider();
-            if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+            if (!sp || !sp->BindPipelineState(CursorPipeline))
                 return;
-
-            STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
             ScreenPrimitiveShaderInputs in{};
             sp->FillScreenPrimitive2D(in);
@@ -1058,9 +1071,6 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
             CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
             STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
             ++tm.totalDrawCalls;
-
-            STATEMANAGER.SetVertexShader(nullptr);
-            STATEMANAGER.SetPixelShader(nullptr);
         }
 
         int ulbegin = CIME::GetULBegin();
@@ -1088,13 +1098,10 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
             // -------------------------------------------------------------
             // Underline quad via ScreenPrimitive (color-only)
             // -------------------------------------------------------------
-            if (CGraphicBase::SetPDTStream(vertices, 4))
+            if (CGraphicBase::SetPDTStream(vertices.data(), 4))
             {
-                const IShaderProvider* sp = GetShaderProvider();
                 if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
                     return;
-
-                STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
                 ScreenPrimitiveShaderInputs in{};
                 sp->FillScreenPrimitive2D(in);
@@ -1112,16 +1119,9 @@ void CGraphicTextInstance::Render(RECT * pClipRect)
                 CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
                 STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
                 ++tm.totalDrawCalls;
-
-                STATEMANAGER.SetVertexShader(nullptr);
-                STATEMANAGER.SetPixelShader(nullptr);
-                STATEMANAGER.SetVertexDeclaration(nullptr);
             }
         }
     }
-
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
 
     //금강경 링크 띄워주는 부분.
     if (m_hyperlinkVector.size() != 0)

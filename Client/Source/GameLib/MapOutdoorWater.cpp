@@ -6,9 +6,9 @@
 #include "TerrainPatch.h"
 
 /* - SHADER [WATER] ------------------------------------ */
-#include "../EterLib/ShaderVertexDeclarations.h"
 #include "../EterLib/Camera.h"
 #include "../EterLib/GrpDevice.h"
+#include "../EterLib/SkyBox.h"
 /* ----------------------------------------------------- */
 /* - YOSUN_CONTROL_CENTER [Water Wireframe] ------------ */
 #include "../SphereLib/YosunControlCenter.h"
@@ -36,7 +36,27 @@ void CMapOutdoor::UnloadWaterTexture()
     m_WaterHeightMapInstance.Destroy();
     /* ----------------------------------------------------- */
 }
-#include "../EterLib/SkyBox.h"
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 3> WaterSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }, // Sky reflection atlas
+        { 1, ESamplerState::LinearWrap  }, // Normal map
+        { 2, ESamplerState::PointClamp  }  // Height map (vertex texture)
+    } };
+
+    constexpr PipelineStateDesc WaterPipeline =
+    {
+        ShaderID::Water,
+        EDepthState::EnabledReadOnly,
+        EBlendState::AlphaBlend,
+        ERasterState::CullFront,   // default (wireframe override handled at runtime)
+        WaterSamplers.data(),
+        WaterSamplers.size()
+    };
+}
+
 void CMapOutdoor::RenderWater()
 {
     if (m_PatchVector.empty())
@@ -53,13 +73,16 @@ void CMapOutdoor::RenderWater()
     // RenderState
     D3DXMATRIX matTexTransformWater;
 
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    STATEMANAGER.SaveRenderState(D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_COLOR1);
-    STATEMANAGER.SaveRenderState(D3DRS_COLORVERTEX, TRUE);
+    /* - SHADER [WATER] ------------------------------------ */
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp || !sp->BindPipelineState(WaterPipeline))
+    {
+        TraceError("Water pipeline bind failed");
+        return;
+    }
+    /* ----------------------------------------------------- */
 
-    CGraphicImageInstance* skyInst = m_SkyBox.GetSkyTextureInstance();
+    CGraphicImageInstance const* skyInst = m_SkyBox.GetSkyTextureInstance();
     if (!skyInst)
     {
         TraceError("RenderWater: Sky texture instance missing (sky reflections need it)");
@@ -76,45 +99,11 @@ void CMapOutdoor::RenderWater()
     D3DXMatrixScaling(&matTexTransformWater, m_fWaterTexCoordBase, -m_fWaterTexCoordBase, 0.0f);
     D3DXMatrixMultiply(&matTexTransformWater, &m_matViewInverse, &matTexTransformWater);
 
-    // Sky atlas must clamp, otherwise cross edges will wrap and seam
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
-
-    // Normal map must wrap
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
-
-    // Heightmap uses point sampling
-    STATEMANAGER.SaveSamplerState(2, D3DSAMP_MINFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(2, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(2, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
-    STATEMANAGER.SaveSamplerState(2, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(2, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
-
     /* - YOSUN_CONTROL_CENTER [Water Wireframe] ------------ */
     const bool wireframe = GetYosunControlSettings().worldEditor.terrain.drawWaterWireFrame;
 
     if (wireframe)
-    {
-        STATEMANAGER.SaveRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
-    }
-    /* ----------------------------------------------------- */
-
-    /* - SHADER [WATER] ------------------------------------ */
-    IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::Water))
-    {
-        TraceError("Water shader bind failed");
-        return;
-    }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PTC));
+        sp->BindRasterState(ERasterState::Wireframe);
     /* ----------------------------------------------------- */
 
     // RenderState
@@ -126,7 +115,6 @@ void CMapOutdoor::RenderWater()
     /* - SHADER [WATER] ------------------------------------ */
     const auto& ws = GetWaterShaderSettings();
 
-    /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
     const FrameShaderInputs& frame = sp->GetFrameShaderInputs();
     // --- WVP ---
     D3DXMATRIX matWVP;
@@ -170,37 +158,6 @@ void CMapOutdoor::RenderWater()
     {
         DrawWater(it.second);
     }
-
-    //////////////////////////////////////////////////////////////////////////
-    // RenderState
-    for (int i = 0; i < 3; ++i)
-    {
-        STATEMANAGER.RestoreSamplerState(i, D3DSAMP_MINFILTER);
-        STATEMANAGER.RestoreSamplerState(i, D3DSAMP_MAGFILTER);
-        STATEMANAGER.RestoreSamplerState(i, D3DSAMP_MIPFILTER);
-        STATEMANAGER.RestoreSamplerState(i, D3DSAMP_ADDRESSU);
-        STATEMANAGER.RestoreSamplerState(i, D3DSAMP_ADDRESSV);
-    }
-
-    /* - YOSUN_CONTROL_CENTER [Water Wireframe] ------------ */
-    if (wireframe)
-    {
-        STATEMANAGER.RestoreRenderState(D3DRS_FILLMODE);
-    }
-    /* ----------------------------------------------------- */
-
-    /* - SHADER [WATER] ------------------------------------ */
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-    STATEMANAGER.SetVertexDeclaration(nullptr);
-    /* ----------------------------------------------------- */
-
-    STATEMANAGER.RestoreRenderState(D3DRS_DIFFUSEMATERIALSOURCE);
-    STATEMANAGER.RestoreRenderState(D3DRS_COLORVERTEX);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
 }
 
 void CMapOutdoor::DrawWater(long patchnum)

@@ -36,9 +36,6 @@ class CScreen : public CGraphicCollisionObject
         void RenderSphere(const D3DXMATRIX * c_pmatWorld, float fx, float fy, float fz, float fRadius, D3DFILLMODE d3dFillMode = D3DFILL_SOLID);
         void RenderCylinder(const D3DXMATRIX * c_pmatWorld, float fx, float fy, float fz, float fRadius, float fLength, D3DFILLMODE d3dFillMode = D3DFILL_SOLID);
 
-        void SetColorOperation();
-        void SetDiffuseOperation();
-        void SetBlendOperation();
         void SetDiffuseColor(DWORD diffuseColor);
         void SetDiffuseColor(float r, float g, float b, float a = 1.0f);
         void SetClearColor(float r, float g, float b, float a = 1.0f);

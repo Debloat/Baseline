@@ -27,13 +27,12 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
 {
     assert(ms_lpd3dDevice != NULL);
 
-    SPDTVertexRaw vertices[2] =
-    {
+    std::array<SPDTVertexRaw, 2> vertices{ {
         { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
         { ex, ey, ez, ms_diffuseColor, 0.0f, 0.0f }
-    };
+    } };
 
-    if (SetPDTStream(vertices, 2))
+    if (SetPDTStream(vertices.data(), 2))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -48,9 +47,6 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_LINELIST, 0, 1);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -58,15 +54,14 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
 {
     assert(ms_lpd3dDevice != NULL);
 
-    SPDTVertexRaw vertices[4] =
-    {
+    std::array<SPDTVertexRaw, 4> vertices{ {
         { c_pv3Positions[0].x, c_pv3Positions[0].y, c_pv3Positions[0].z, ms_diffuseColor, 0.0f, 0.0f },
         { c_pv3Positions[2].x, c_pv3Positions[2].y, c_pv3Positions[2].z, ms_diffuseColor, 0.0f, 0.0f },
         { c_pv3Positions[1].x, c_pv3Positions[1].y, c_pv3Positions[1].z, ms_diffuseColor, 0.0f, 0.0f },
         { c_pv3Positions[3].x, c_pv3Positions[3].y, c_pv3Positions[3].z, ms_diffuseColor, 0.0f, 0.0f },
-    };
+    } };
 
-    if (SetPDTStream(vertices, 4))
+    if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -81,16 +76,12 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
 void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float ez)
 {
-    SPDTVertexRaw vertices[8] =
-    {
+    std::array<SPDTVertexRaw, 8> vertices{ {
         { sx, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
         { ex, sy, sz, ms_diffuseColor, 0.0f, 0.0f },
         { sx, ey, sz, ms_diffuseColor, 0.0f, 0.0f },
@@ -99,9 +90,9 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
         { ex, sy, ez, ms_diffuseColor, 0.0f, 0.0f },
         { sx, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
         { ex, ey, ez, ms_diffuseColor, 0.0f, 0.0f },
-    };
+    } };
 
-    if (SetPDTStream(vertices, 8))
+    if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -117,24 +108,20 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
 
         SetDefaultIndexBuffer(DEFAULT_IB_FILL_CUBE);
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 8, 0, 4 * 3);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
 void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float ez, D3DXMATRIX matRotation)
 {
     D3DXVECTOR3 v3Center((sx + ex) * 0.5f, (sy + ey) * 0.5f, (sz + ez) * 0.5f);
-    D3DXVECTOR3 v3Vertex[8] =
-    {
+    std::array<D3DXVECTOR3, 8> v3Vertex{ {
         { sx, sy, sz }, { ex, sy, sz }, { sx, ey, sz }, { ex, ey, sz },
         { sx, sy, ez }, { ex, sy, ez }, { sx, ey, ez }, { ex, ey, ez }
-    };
+    } };
 
-    SPDTVertexRaw vertices[8];
+    std::array<SPDTVertexRaw, 8> vertices{};
 
-    for (int i = 0; i < 8; ++i)
+    for (std::size_t i = 0; i < v3Vertex.size(); ++i)
     {
         v3Vertex[i] -= v3Center;
         D3DXVec3TransformCoord(&v3Vertex[i], &v3Vertex[i], &matRotation);
@@ -148,7 +135,7 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
         vertices[i].v = 0.0f;
     }
 
-    if (SetPDTStream(vertices, 8))
+    if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -164,9 +151,6 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
 
         SetDefaultIndexBuffer(DEFAULT_IB_FILL_CUBE);
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 8, 0, 4 * 3);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -174,13 +158,12 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
 {
     assert(ms_lpd3dDevice != NULL);
 
-    SPDTVertexRaw vertices[2] =
-    {
+    std::array<SPDTVertexRaw, 2> vertices{ {
         { sx, sy, z, ms_diffuseColor, 0.0f, 0.0f },
         { ex, ey, z, ms_diffuseColor, 0.0f, 0.0f }
-    };
+    } };
 
-    if (SetPDTStream(vertices, 2))
+    if (SetPDTStream(vertices.data(), 2))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -199,9 +182,6 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_LINELIST, 0, 1);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -209,8 +189,7 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
 {
     assert(ms_lpd3dDevice != NULL);
 
-    SPDTVertexRaw vertices[8] =
-    {
+    std::array<SPDTVertexRaw, 8> vertices{ {
         { sx, sy, z, ms_diffuseColor, 0.0f, 0.0f },
         { ex, sy, z, ms_diffuseColor, 0.0f, 0.0f },
 
@@ -222,9 +201,9 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
 
         { sx, ey, z, ms_diffuseColor, 0.0f, 0.0f },
         { ex + 1.0f, ey, z, ms_diffuseColor, 0.0f, 0.0f }
-    };
+    } };
 
-    if (SetPDTStream(vertices, 8))
+    if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -243,9 +222,6 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_LINELIST, 0, 4);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -253,15 +229,14 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
 {
     assert(ms_lpd3dDevice != NULL);
 
-    SPDTVertexRaw vertices[4] =
-    {
+    std::array<SPDTVertexRaw, 4> vertices{ {
         { sx, sy, z, ms_diffuseColor, 0.0f, 0.0f },
         { sx, ey, z, ms_diffuseColor, 0.0f, 0.0f },
         { ex, sy, z, ms_diffuseColor, 0.0f, 0.0f },
         { ex, ey, z, ms_diffuseColor, 0.0f, 0.0f },
-    };
+    } };
 
-    if (SetPDTStream(vertices, 4))
+    if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -280,9 +255,6 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -293,15 +265,14 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
     if (sx == ex || sy == ey)
         return;
 
-    SPDTVertexRaw vertices[4] =
-    {
+    std::array<SPDTVertexRaw, 4> vertices{ {
         { sx, sy, ez, dwStartColor, 0.0f, 0.0f },
         { sx, ey, ez, dwEndColor,   0.0f, 0.0f },
         { ex, sy, ez, dwStartColor, 0.0f, 0.0f },
         { ex, ey, ez, dwEndColor,   0.0f, 0.0f },
-    };
+    } };
 
-    if (SetPDTStream(vertices, 4))
+    if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -320,9 +291,6 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -456,9 +424,6 @@ void CScreen::RenderD3DXMesh(LPD3DXMESH lpMesh, const D3DXMATRIX* c_pmatWorld, f
 
     STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
-    STATEMANAGER.SetVertexShader(nullptr);
-    STATEMANAGER.SetPixelShader(nullptr);
-
     lpIndexBuffer->Release();
     lpVertexBuffer->Release();
 }
@@ -477,27 +442,16 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
 {
     assert(ms_lpd3dDevice != NULL);
 
-    TPDTVertex vertices[4];
-
-    vertices[0].position = TPosition(sx, sy, z);
-    vertices[0].diffuse = ms_diffuseColor;
-    vertices[0].texCoord = TTextureCoordinate(su, sv);
-
-    vertices[1].position = TPosition(ex, sy, z);
-    vertices[1].diffuse = ms_diffuseColor;
-    vertices[1].texCoord = TTextureCoordinate(eu, sv);
-
-    vertices[2].position = TPosition(sx, ey, z);
-    vertices[2].diffuse = ms_diffuseColor;
-    vertices[2].texCoord = TTextureCoordinate(su, ev);
-
-    vertices[3].position = TPosition(ex, ey, z);
-    vertices[3].diffuse = ms_diffuseColor;
-    vertices[3].texCoord = TTextureCoordinate(eu, ev);
+    std::array<TPDTVertex, 4> vertices{ {
+        { TPosition(sx, sy, z), ms_diffuseColor, TTextureCoordinate(su, sv) },
+        { TPosition(ex, sy, z), ms_diffuseColor, TTextureCoordinate(eu, sv) },
+        { TPosition(sx, ey, z), ms_diffuseColor, TTextureCoordinate(su, ev) },
+        { TPosition(ex, ey, z), ms_diffuseColor, TTextureCoordinate(eu, ev) },
+    } };
 
     SetDefaultIndexBuffer(DEFAULT_IB_FILL_RECT);
 
-    if (SetPDTStream(vertices, 4))
+    if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
@@ -516,9 +470,6 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
-
-        STATEMANAGER.SetVertexShader(nullptr);
-        STATEMANAGER.SetPixelShader(nullptr);
     }
 }
 
@@ -574,11 +525,13 @@ bool CScreen::GetCursorXYPosition(float* px, float* py)
 {
     D3DXVECTOR3 v3Eye = CCameraManager::Instance().GetCurrentCamera()->GetEye();
 
-    TPosition posVertices[4];
-    posVertices[0] = TPosition(v3Eye.x - 90000000.0f, v3Eye.y + 90000000.0f, 0.0f);
-    posVertices[1] = TPosition(v3Eye.x - 90000000.0f, v3Eye.y - 90000000.0f, 0.0f);
-    posVertices[2] = TPosition(v3Eye.x + 90000000.0f, v3Eye.y + 90000000.0f, 0.0f);
-    posVertices[3] = TPosition(v3Eye.x + 90000000.0f, v3Eye.y - 90000000.0f, 0.0f);
+    constexpr float kExtent = 90000000.0f;
+    std::array<TPosition, 4> posVertices{ {
+        TPosition(v3Eye.x - kExtent, v3Eye.y + kExtent, 0.0f),
+        TPosition(v3Eye.x - kExtent, v3Eye.y - kExtent, 0.0f),
+        TPosition(v3Eye.x + kExtent, v3Eye.y + kExtent, 0.0f),
+        TPosition(v3Eye.x + kExtent, v3Eye.y - kExtent, 0.0f),
+    } };
 
     static const WORD sc_awFillRectIndices[6] = { 0, 2, 1, 2, 3, 1, };
 
@@ -605,11 +558,13 @@ bool CScreen::GetCursorZPosition(float* pz)
 {
     D3DXVECTOR3 v3Eye = CCameraManager::Instance().GetCurrentCamera()->GetEye();
 
-    TPosition posVertices[4];
-    posVertices[0] = TPosition(v3Eye.x - 90000000.0f, 0.0f, v3Eye.z + 90000000.0f);
-    posVertices[1] = TPosition(v3Eye.x - 90000000.0f, 0.0f, v3Eye.z - 90000000.0f);
-    posVertices[2] = TPosition(v3Eye.x + 90000000.0f, 0.0f, v3Eye.z + 90000000.0f);
-    posVertices[3] = TPosition(v3Eye.x + 90000000.0f, 0.0f, v3Eye.z - 90000000.0f);
+    constexpr float kExtent = 90000000.0f;
+    std::array<TPosition, 4> posVertices{ {
+        TPosition(v3Eye.x - kExtent, 0.0f, v3Eye.z + kExtent),
+        TPosition(v3Eye.x - kExtent, 0.0f, v3Eye.z - kExtent),
+        TPosition(v3Eye.x + kExtent, 0.0f, v3Eye.z + kExtent),
+        TPosition(v3Eye.x + kExtent, 0.0f, v3Eye.z - kExtent),
+    } };
 
     static const WORD sc_awFillRectIndices[6] = { 0, 2, 1, 2, 3, 1, };
 
@@ -825,40 +780,6 @@ void CScreen::ProjectPosition(float x, float y, float z, float* pfX, float* pfY,
     *pfX = Output.x;
     *pfY = Output.y;
     *pfZ = Output.z;
-}
-
-void CScreen::SetColorOperation()
-{
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-}
-
-void CScreen::SetDiffuseOperation()
-{
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-}
-
-void CScreen::SetBlendOperation()
-{
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
 }
 
 void CScreen::Identity()

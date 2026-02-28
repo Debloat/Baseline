@@ -50,21 +50,6 @@ bool CEffectManager::IsAliveEffect(DWORD dwInstanceIndex)
 void CEffectManager::Update()
 {
 
-    // 2004. 3. 1. myevan. 이펙트 모니터링 하는 코드
-    /*
-    if (GetAsyncKeyState(VK_F9))
-    {
-    	Tracenf("CEffectManager::m_EffectInstancePool %d", m_EffectInstancePool.GetCapacity());
-    	Tracenf("CEffectManager::m_EffectDataPool %d", m_EffectDataPool.GetCapacity());
-    	Tracenf("CEffectInstance::ms_LightInstancePool %d", CEffectInstance::ms_LightInstancePool.GetCapacity());
-    	Tracenf("CEffectInstance::ms_MeshInstancePool %d", CEffectInstance::ms_MeshInstancePool.GetCapacity());
-    	Tracenf("CEffectInstance::ms_ParticleSystemInstancePool %d", CEffectInstance::ms_ParticleSystemInstancePool.GetCapacity());
-    	Tracenf("CParticleInstance::ms_ParticleInstancePool %d", CParticleInstance::ms_kPool.GetCapacity());
-    	Tracenf("CRayParticleInstance::ms_RayParticleInstancePool %d", CRayParticleInstance::ms_kPool.GetCapacity());
-    	Tracen("---------------------------------------------");
-    }
-    */
-
     for (TEffectInstanceMap::iterator itor = m_kEftInstMap.begin(); itor != m_kEftInstMap.end();)
     {
         CEffectInstance * pEffectInstance = itor->second;
@@ -109,7 +94,7 @@ void CEffectManager::Render()
 
     if (m_isDisableSortRendering)
     {
-        for (TEffectInstanceMap::iterator itor = m_kEftInstMap.begin(); itor != m_kEftInstMap.end();)
+        for (auto itor = m_kEftInstMap.begin(); itor != m_kEftInstMap.end();)
         {
             CEffectInstance * pEffectInstance = itor->second;
             pEffectInstance->Render();
@@ -123,9 +108,8 @@ void CEffectManager::Render()
         s_kVct_pkEftInstSort.clear();
 
         TEffectInstanceMap& rkMap_pkEftInstSrc = m_kEftInstMap;
-        TEffectInstanceMap::iterator i;
 
-        for (i = rkMap_pkEftInstSrc.begin(); i != rkMap_pkEftInstSrc.end(); ++i)
+        for (auto i = rkMap_pkEftInstSrc.begin(); i != rkMap_pkEftInstSrc.end(); ++i)
         {
             s_kVct_pkEftInstSort.push_back(i->second);
         }
@@ -172,7 +156,7 @@ BOOL CEffectManager::RegisterEffect(const char* c_szFileName, bool isExistDelete
 
     if (isNeedCache)
     {
-        if (m_kEftCacheMap.find(dwCRC) == m_kEftCacheMap.end())
+        if (!m_kEftCacheMap.contains(dwCRC))
         {
             CEffectInstance* pkNewEftInst = CEffectInstance::New();
             pkNewEftInst->SetEffectDataPointer(pkEftData);
@@ -414,7 +398,7 @@ DWORD CEffectManager::GetRandomEffect()
 {
     int iIndex = random() % m_kEftDataMap.size();
 
-    TEffectDataMap::iterator itor = m_kEftDataMap.begin();
+    auto itor = m_kEftDataMap.begin();
 
     for (int i = 0; i < iIndex; ++i, ++itor);
 
@@ -447,7 +431,7 @@ void CEffectManager::DeleteAllInstances()
 
 void CEffectManager::__DestroyEffectInstanceMap()
 {
-    for (TEffectInstanceMap::iterator i = m_kEftInstMap.begin(); i != m_kEftInstMap.end(); ++i)
+    for (auto i = m_kEftInstMap.begin(); i != m_kEftInstMap.end(); ++i)
     {
         CEffectInstance * pkEftInst = i->second;
         CEffectInstance::Delete(pkEftInst);
@@ -458,7 +442,7 @@ void CEffectManager::__DestroyEffectInstanceMap()
 
 void CEffectManager::__DestroyEffectCacheMap()
 {
-    for (TEffectInstanceMap::iterator i = m_kEftCacheMap.begin(); i != m_kEftCacheMap.end(); ++i)
+    for (auto i = m_kEftCacheMap.begin(); i != m_kEftCacheMap.end(); ++i)
     {
         CEffectInstance * pkEftInst = i->second;
         CEffectInstance::Delete(pkEftInst);
@@ -469,7 +453,7 @@ void CEffectManager::__DestroyEffectCacheMap()
 
 void CEffectManager::__DestroyEffectDataMap()
 {
-    for (TEffectDataMap::iterator i = m_kEftDataMap.begin(); i != m_kEftDataMap.end(); ++i)
+    for (auto i = m_kEftDataMap.begin(); i != m_kEftDataMap.end(); ++i)
     {
         CEffectData * pData = i->second;
         CEffectData::Delete(pData);

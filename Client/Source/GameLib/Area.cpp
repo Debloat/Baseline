@@ -343,25 +343,6 @@ void CArea::RenderCollision()
     STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
-void CArea::RenderAmbience()
-{
-    DWORD dwColorArg1, dwColorOp;
-    STATEMANAGER.GetTextureStageState(0, D3DTSS_COLORARG1, &dwColorArg1);
-    STATEMANAGER.GetTextureStageState(0, D3DTSS_COLOROP, &dwColorOp);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    TAmbienceInstanceVector::iterator itor = m_AmbienceCloneInstanceVector.begin();
-
-    for (; itor != m_AmbienceCloneInstanceVector.end(); ++itor)
-    {
-        TAmbienceInstance * pInstance = *itor;
-        pInstance->Render();
-    }
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, dwColorArg1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, dwColorOp);
-}
-
 void CArea::RenderDungeon()
 {
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);

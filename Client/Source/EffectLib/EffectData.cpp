@@ -201,19 +201,19 @@ const char* CEffectData::GetFileName() const
 
 void CEffectData::__ClearParticleDataVector()
 {
-    std::for_each(m_ParticleVector.begin(), m_ParticleVector.end(), CParticleSystemData::Delete);
+    std::ranges::for_each(m_ParticleVector, CParticleSystemData::Delete);
     m_ParticleVector.clear();
 }
 
 void CEffectData::__ClearLightDataVector()
 {
-    std::for_each(m_LightVector.begin(), m_LightVector.end(), CLightData::Delete);
+    std::ranges::for_each(m_LightVector, CLightData::Delete);
     m_LightVector.clear();
 }
 
 void CEffectData::__ClearMeshDataVector()
 {
-    std::for_each(m_MeshVector.begin(), m_MeshVector.end(), CEffectMeshScript::Delete);
+    std::ranges::for_each(m_MeshVector, CEffectMeshScript::Delete);
     m_MeshVector.clear();
 }
 
