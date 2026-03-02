@@ -58,8 +58,6 @@ class CMapManager : public CScreen, public IPhysicsWorld
         void					BeginEnvironment();
         void					EndEnvironment();
 
-        void					BlendEnvironmentData(const TEnvironmentData * c_pEnvironmentData, int iTransitionTime);
-
         void					GetCurrentEnvironmentData(const TEnvironmentData** c_ppEnvironmentData);
         bool					RegisterEnvironmentData(DWORD dwIndex, const char* c_szFileName);
         bool					GetEnvironmentData(DWORD dwIndex, const TEnvironmentData** c_ppEnvironmentData);
@@ -105,9 +103,6 @@ class CMapManager : public CScreen, public IPhysicsWorld
         CSpeedTreeForestDirectX9	m_Forest;
 
     public:
-        // 2004.10.14.myevan.TEMP_CAreaLoaderThread
-        //bool	BGLoadingEnable();
-        //void	BGLoadingEnable(bool bBGLoadingEnable);
         void	SetTerrainRenderSort(CMapOutdoor::ETerrainRenderSort eTerrainRenderSort);
         CMapOutdoor::ETerrainRenderSort	GetTerrainRenderSort();
 

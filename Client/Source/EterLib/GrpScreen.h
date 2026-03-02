@@ -52,7 +52,6 @@ class CScreen : public CGraphicCollisionObject
 
         void BuildViewFrustum();
 
-        static void Identity();
         static Frustum& GetFrustum()
         {
             return ms_frustum;

@@ -78,7 +78,6 @@ class CreateCharacterWindow(ui.Window):
 	class CharacterRenderer(ui.Window):
 		def OnRender(self):
 			grp.ClearDepthBuffer()
-			grp.SetGameRenderState()
 			grp.PushState()
 			grp.SetOmniLight()
 

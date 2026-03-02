@@ -58,7 +58,6 @@ class SelectCharacterWindow(ui.Window):
 		def OnRender(self):
 			grp.ClearDepthBuffer()
 
-			grp.SetGameRenderState()
 			grp.PushState()
 			grp.SetOmniLight()
 

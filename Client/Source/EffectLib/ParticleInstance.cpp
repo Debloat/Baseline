@@ -128,10 +128,6 @@ BOOL CParticleInstance::Update(float fElapsedTime, float fAngle)
 
 void CParticleInstance::Transform(const D3DXMATRIX * c_matLocal)
 {
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, m_dcColor);
-
-    /////
-
     D3DXVECTOR3 v3Up;
     D3DXVECTOR3 v3Cross;
 
@@ -290,10 +286,6 @@ void CParticleInstance::Transform(const D3DXMATRIX * c_matLocal)
 
 void CParticleInstance::Transform(const D3DXMATRIX * c_matLocal, const float c_fZRotation)
 {
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, (DWORD)m_dcColor);
-
-    /////
-
     D3DXVECTOR3 v3Up;
     D3DXVECTOR3 v3Cross;
 

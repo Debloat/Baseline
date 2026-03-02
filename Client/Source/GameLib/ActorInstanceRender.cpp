@@ -331,9 +331,6 @@ void CActorInstance::RenderCollisionData()
 {
     static CScreen s_Screen;
 
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-
     if (m_pAttributeInstance)
     {
         for (DWORD col = 0; col < GetCollisionInstanceCount(); ++col)
@@ -342,15 +339,6 @@ void CActorInstance::RenderCollisionData()
             pInstance->Render();
         }
     }
-
-    STATEMANAGER.SetRenderState(D3DRS_ZENABLE, FALSE);
-
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 
     s_Screen.SetDiffuseColor(1.0f, 0.0f, 0.0f);
     TCollisionPointInstanceList::iterator itor;
@@ -397,7 +385,7 @@ void CActorInstance::RenderCollisionData()
     s_Screen.SetDiffuseColor(1.0f, 0.0f, 0.0f);
 //	if (m_SplashArea.fDisappearingTime > GetLocalTime())
     {
-        CDynamicSphereInstanceVector::iterator itor = m_kSplashArea.SphereInstanceVector.begin();
+        auto itor = m_kSplashArea.SphereInstanceVector.begin();
 
         for (; itor != m_kSplashArea.SphereInstanceVector.end(); ++itor)
         {
@@ -408,10 +396,6 @@ void CActorInstance::RenderCollisionData()
                                     c_rInstance.fRadius);
         }
     }
-
-    STATEMANAGER.SetRenderState(D3DRS_ZENABLE, TRUE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
 

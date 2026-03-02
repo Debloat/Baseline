@@ -73,7 +73,7 @@ void CPythonTextTail::UpdateAllTextTail()
             UpdateDistance(pixelPos, itorMap->second);
         }
 
-        for (TChatTailMap::iterator itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end(); ++itorChat)
+        for (auto itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end(); ++itorChat)
         {
             UpdateDistance(pixelPos, itorChat->second);
 
@@ -131,7 +131,6 @@ void CPythonTextTail::UpdateTextTail(TTextTail * pTextTail)
     /////
 
     CPythonGraphic & rpyGraphic = CPythonGraphic::Instance();
-    rpyGraphic.Identity();
 
     const D3DXVECTOR3 & c_rv3Position = pTextTail->pOwner->GetPosition();
     rpyGraphic.ProjectPosition(c_rv3Position.x,
@@ -160,7 +159,6 @@ void CPythonTextTail::UpdateTextTail(TTextTail * pTextTail)
 void CPythonTextTail::ArrangeTextTail()
 {
     TTextTailList::iterator itor;
-    TTextTailList::iterator itorCompare;
 
     DWORD dwTime = CTimer::Instance().GetCurrentMillisecond();
 
@@ -171,7 +169,7 @@ void CPythonTextTail::ArrangeTextTail()
         int yTemp = 5;
         int LimitCount = 0;
 
-        for (itorCompare = m_ItemTextTailList.begin(); itorCompare != m_ItemTextTailList.end();)
+        for (auto itorCompare = m_ItemTextTailList.begin(); itorCompare != m_ItemTextTailList.end();)
         {
             TTextTail * pCompareTextTail = *itorCompare;
 
@@ -318,7 +316,7 @@ void CPythonTextTail::ArrangeTextTail()
         pTextTail->pTextInstance->Update();
     }
 
-    for (TChatTailMap::iterator itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end();)
+    for (auto itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end();)
     {
         TTextTail * pTextTail = itorChat->second;
 
@@ -379,7 +377,7 @@ void CPythonTextTail::Render()
         }
     }
 
-    for (TChatTailMap::iterator itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end(); ++itorChat)
+    for (auto itorChat = m_ChatTailMap.begin(); itorChat != m_ChatTailMap.end(); ++itorChat)
     {
         TTextTail * pTextTail = itorChat->second;
 
@@ -465,7 +463,7 @@ void CPythonTextTail::ShowCharacterTextTail(DWORD VirtualID)
 
     TTextTail * pTextTail = itor->second;
 
-    if (m_CharacterTextTailList.end() != std::find(m_CharacterTextTailList.begin(), m_CharacterTextTailList.end(), pTextTail))
+    if (m_CharacterTextTailList.end() != std::ranges::find(m_CharacterTextTailList, pTextTail))
     {
         //Tracef("이미 리스트에 있음 : %d\n", VirtualID);
         return;

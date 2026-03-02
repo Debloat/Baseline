@@ -50,6 +50,18 @@ namespace ShaderKeys
         inline constexpr const char* PS = "d:/ymir work/shader/Text/text_ps.hlsl";
     }
 
+    namespace EffectParticle
+    {
+        inline constexpr const char* VS = "d:/ymir work/shader/Effect/effect_particle_vs.hlsl";
+        inline constexpr const char* PS = "d:/ymir work/shader/Effect/effect_particle_ps.hlsl";
+    }
+
+    namespace EffectMesh
+    {
+        inline constexpr const char* VS = "d:/ymir work/shader/Effect/effect_mesh_vs.hlsl";
+        inline constexpr const char* PS = "d:/ymir work/shader/Effect/effect_mesh_ps.hlsl";
+    }
+
     //namespace Model
     //{
     //    inline constexpr const char* VS = "d:/ymir work/shader/Model/model_vs.hlsl";

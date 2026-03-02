@@ -2,6 +2,7 @@
 #include "../EterBase/CRC32.h"
 #include "GrpExpandedImageInstance.h"
 #include "StateManager.h"
+#include <array>
 
 CDynamicPool<CGraphicExpandedImageInstance>		CGraphicExpandedImageInstance::ms_kPool;
 
@@ -39,30 +40,28 @@ void CGraphicExpandedImageInstance::OnRender()
     float eu = (c_rRect.left + m_RenderingRect.right + (c_rRect.right - c_rRect.left)) * texReverseWidth;
     float ev = (c_rRect.top + m_RenderingRect.bottom + (c_rRect.bottom - c_rRect.top)) * texReverseHeight;
 
-    TPDTVertex vertices[4];
-    vertices[0].position.x	= m_v2Position.x - 0.5f;
-    vertices[0].position.y	= m_v2Position.y - 0.5f;
-    vertices[0].position.z	= m_fDepth;
-    vertices[0].texCoord	= TTextureCoordinate(su, sv);
-    vertices[0].diffuse		= m_DiffuseColor;
-
-    vertices[1].position.x	= m_v2Position.x - 0.5f;
-    vertices[1].position.y	= m_v2Position.y - 0.5f;
-    vertices[1].position.z	= m_fDepth;
-    vertices[1].texCoord	= TTextureCoordinate(eu, sv);
-    vertices[1].diffuse		= m_DiffuseColor;
-
-    vertices[2].position.x	= m_v2Position.x - 0.5f;
-    vertices[2].position.y	= m_v2Position.y - 0.5f;
-    vertices[2].position.z	= m_fDepth;
-    vertices[2].texCoord	= TTextureCoordinate(su, ev);
-    vertices[2].diffuse		= m_DiffuseColor;
-
-    vertices[3].position.x	= m_v2Position.x - 0.5f;
-    vertices[3].position.y	= m_v2Position.y - 0.5f;
-    vertices[3].position.z	= m_fDepth;
-    vertices[3].texCoord	= TTextureCoordinate(eu, ev);
-    vertices[3].diffuse		= m_DiffuseColor;
+    std::array<TPDTVertex, 4> vertices{ {
+        {
+            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
+            m_DiffuseColor,
+            TTextureCoordinate(su, sv)
+        },
+        {
+            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
+            m_DiffuseColor,
+            TTextureCoordinate(eu, sv)
+        },
+        {
+            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
+            m_DiffuseColor,
+            TTextureCoordinate(su, ev)
+        },
+        {
+            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
+            m_DiffuseColor,
+            TTextureCoordinate(eu, ev)
+        }
+    } };
 
     if (0.0f == m_fRotation)
     {
@@ -121,7 +120,7 @@ void CGraphicExpandedImageInstance::OnRender()
     }
 
     // 2004.11.18.myevan.ctrl+alt+del 반복 사용시 튕기는 문제
-    if (CGraphicBase::SetPDTStream(vertices, 4))
+    if (CGraphicBase::SetPDTStream(vertices.data(), 4))
     {
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 

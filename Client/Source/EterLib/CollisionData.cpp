@@ -538,7 +538,6 @@ D3DXVECTOR3 CCylinderCollisionInstance::OnGetCollisionMovementAdjust(const CDyna
 void CCylinderCollisionInstance::Render(D3DFILLMODE d3dFillMode)
 {
     static CScreen s;
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xffffffff);
     s.RenderCylinder(NULL, m_attribute.v3Position.x, m_attribute.v3Position.y, m_attribute.v3Position.z + m_attribute.fHeight / 2, m_attribute.fRadius, m_attribute.fHeight,
                      d3dFillMode);
 }
@@ -822,7 +821,6 @@ D3DXVECTOR3 CAABBCollisionInstance::OnGetCollisionMovementAdjust(const CDynamicS
 void CAABBCollisionInstance::Render(D3DFILLMODE d3dFillMode)
 {
     static CScreen s;
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xffffffff);
     s.RenderCube(m_attribute.v3Min.x, m_attribute.v3Min.y, m_attribute.v3Min.z, m_attribute.v3Max.x, m_attribute.v3Max.y, m_attribute.v3Max.z);
     return;
 }
@@ -1034,7 +1032,6 @@ D3DXVECTOR3 COBBCollisionInstance::OnGetCollisionMovementAdjust(const CDynamicSp
 void COBBCollisionInstance::Render(D3DFILLMODE d3dFillMode)
 {
     static CScreen s;
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xffffffff);
     s.RenderCube(m_attribute.v3Min.x, m_attribute.v3Min.y, m_attribute.v3Min.z, m_attribute.v3Max.x, m_attribute.v3Max.y, m_attribute.v3Max.z, m_attribute.matRot);
     return;
 }

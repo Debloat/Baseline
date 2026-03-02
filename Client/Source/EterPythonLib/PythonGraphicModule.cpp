@@ -653,54 +653,6 @@ PyObject* grpRenderBar(PyObject* poSelf, PyObject* poArgs)
     return Py_BuildNone();
 }
 
-PyObject* grpRenderCube(PyObject* poSelf, PyObject* poArgs)
-{
-    float sx;
-
-    if (!PyTuple_GetFloat(poArgs, 0, &sx))
-    {
-        return Py_BuildException();
-    }
-
-    float sy;
-
-    if (!PyTuple_GetFloat(poArgs, 1, &sy))
-    {
-        return Py_BuildException();
-    }
-
-    float sz;
-
-    if (!PyTuple_GetFloat(poArgs, 2, &sz))
-    {
-        return Py_BuildException();
-    }
-
-    float ex;
-
-    if (!PyTuple_GetFloat(poArgs, 3, &ex))
-    {
-        return Py_BuildException();
-    }
-
-    float ey;
-
-    if (!PyTuple_GetFloat(poArgs, 4, &ey))
-    {
-        return Py_BuildException();
-    }
-
-    float ez;
-
-    if (!PyTuple_GetFloat(poArgs, 5, &ez))
-    {
-        return Py_BuildException();
-    }
-
-    CPythonGraphic::Instance().RenderCube(sx, sy, sz, ex, ey, ez);
-    return Py_BuildNone();
-}
-
 PyObject* grpRenderGradationBar(PyObject* poSelf, PyObject* poArgs)
 {
     int x;
@@ -810,12 +762,6 @@ PyObject* grpSetDiffuseColor(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* grpIdentity(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonGraphic::Instance().Identity();
-    return Py_BuildNone();
-}
-
 PyObject* grpGetAvailableMemory(PyObject * poSelf, PyObject * poArgs)
 {
     int iValue = CPythonGraphic::Instance().GetAvailableMemory();
@@ -891,12 +837,6 @@ PyObject* grpSetInterfaceRenderState(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* grpSetGameRenderState(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonGraphic::Instance().SetGameRenderState();
-    return Py_BuildNone();
-}
-
 PyObject* grpSetViewport(PyObject * poSelf, PyObject * poArgs)
 {
     float fx;
@@ -965,7 +905,6 @@ void initgrp()
         { "InitScreenEffect",			grpInitScreenEffect,			METH_VARARGS },
         { "Culling",					grpCulling,						METH_VARARGS },
         { "ClearDepthBuffer",			grpClearDepthBuffer,			METH_VARARGS },
-        { "Identity",					grpIdentity,					METH_VARARGS },
         { "GenerateColor",				grpGenerateColor,				METH_VARARGS },
         { "PopState",					grpPopState,					METH_VARARGS },
         { "PushState",					grpPushState,					METH_VARARGS },
@@ -983,12 +922,10 @@ void initgrp()
         { "RenderRoundBox",				grpRenderRoundBox,				METH_VARARGS },
         { "RenderBar",					grpRenderBar,					METH_VARARGS },
         { "RenderGradationBar",			grpRenderGradationBar,			METH_VARARGS },
-        { "RenderCube",					grpRenderCube,					METH_VARARGS },
         { "GetAvailableMemory",			grpGetAvailableMemory,			METH_VARARGS },
         { "SaveScreenShot",				grpSaveScreenShot,				METH_VARARGS },
         { "SaveScreenShotToPath",		grpSaveScreenShotToPath,		METH_VARARGS },
         { "SetInterfaceRenderState",	grpSetInterfaceRenderState,		METH_VARARGS },
-        { "SetGameRenderState",			grpSetGameRenderState,			METH_VARARGS },
         { "SetViewport",				grpSetViewport,					METH_VARARGS },
         { "RestoreViewport",			grpRestoreViewport,				METH_VARARGS },
         { "SetOmniLight",				grpSetOmniLight,				METH_VARARGS },

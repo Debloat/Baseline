@@ -368,6 +368,45 @@ struct TextShaderInputs
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
 
+struct EffectParticleVSCB
+{
+    std::array<float, 16> viewProj;
+};
+static_assert(sizeof(EffectParticleVSCB) == 64);
+
+struct EffectParticlePSCB
+{
+    std::array<float, 4> textureFactor; // rgba
+    std::array<float, 4> ops;           // x = colorOpId, yzw unused
+};
+static_assert(sizeof(EffectParticlePSCB) == 32);
+
+struct EffectParticleShaderInputs
+{
+    EffectParticleVSCB vs;
+    EffectParticlePSCB ps;
+};
+
+struct EffectMeshVSCB
+{
+    std::array<float, 16> worldViewProj;
+};
+static_assert(sizeof(EffectMeshVSCB) == 64);
+
+struct EffectMeshPSCB
+{
+    std::array<float, 4> textureFactor;
+};
+static_assert(sizeof(EffectMeshPSCB) == 16);
+
+struct EffectMeshShaderInputs
+{
+    EffectMeshVSCB vs;
+    EffectMeshPSCB ps;
+};
+
+/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
 struct ModelVSCB
 {
 
@@ -383,3 +422,5 @@ struct ModelShaderInputs
     ModelVSCB vs;
     ModelPSCB ps;
 };
+
+/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */

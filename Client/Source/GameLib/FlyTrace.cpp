@@ -51,7 +51,7 @@ void CFlyTrace::Destroy()
 
 void CFlyTrace::UpdateNewPosition(const D3DXVECTOR3 & v3Position)
 {
-    m_TimePositionDeque.push_front(TTimePosition(CTimer::Instance().GetCurrentSecond(), v3Position));
+    m_TimePositionDeque.emplace_front(CTimer::Instance().GetCurrentSecond(), v3Position);
 
     while (!m_TimePositionDeque.empty() && m_TimePositionDeque.back().first + m_fTailLength < CTimer::Instance().GetCurrentSecond())
     {
@@ -168,7 +168,8 @@ void CFlyTrace::Render()
 
     Frustum & frustum = s.GetFrustum();
 
-    TTimePositionDeque::iterator it1, it2;
+    TTimePositionDeque::iterator it1;
+    TTimePositionDeque::iterator it2;
     it2 = it1 = m_TimePositionDeque.begin();
     ++it2;
 
@@ -250,12 +251,12 @@ void CFlyTrace::Render()
         //for(i=0;i<6;i++)
         //	Tracenf("#%d:%f %f %f", i, v[i].p.x,v[i].p.y,v[i].p.z);
 
-        VSVector.push_back(std::make_pair(-D3DXVec3Dot(&E, &pCurrentCamera->GetView()), TFlyVertexSet(v)));
+        VSVector.emplace_back(-D3DXVec3Dot(&E, &pCurrentCamera->GetView()), TFlyVertexSet(v));
     }
 
     std::sort(VSVector.begin(), VSVector.end());
 
-    for (TFlyVertexSetVector::iterator it = VSVector.begin(); it != VSVector.end(); ++it)
+    for (auto it = VSVector.begin(); it != VSVector.end(); ++it)
     {
         STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 4, it->second.v, sizeof(TVertex));
     }

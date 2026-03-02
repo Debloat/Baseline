@@ -8,21 +8,6 @@
 /* - YOSUN_CONTROL_CENTER [Patch Grid] ----------------- */
 void CMapOutdoor::OnRenderPatchGrid()
 {
-    STATEMANAGER.SetTexture(0, nullptr);
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-    STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-
-
-    STATEMANAGER.SetTransform(D3DTS_WORLD, &GetIdentityMatrix());
-
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-
     SetDiffuseColor(1.0f, 0.0f, 1.0f);
 
     const long viewRadius = GetViewRadius();

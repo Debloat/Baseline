@@ -92,35 +92,8 @@ void CEffectInstance::OnUpdate()
 
 void CEffectInstance::OnRender()
 {
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_NONE);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_NONE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    /////
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,   D3DTOP_MODULATE);
-    STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
     std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::Render));
     std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::Render));
-
-    /////
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MAGFILTER);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
 
     ++ms_iRenderingEffectCount;
 }

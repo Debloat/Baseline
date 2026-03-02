@@ -6,6 +6,7 @@
 /* - YOSUN_CONTROL_CENTER ------------------------------ */
 #include "../SphereLib/YosunControlCenter.h"
 /* ----------------------------------------------------- */
+#include <array>
 
 void CPythonGraphic::Destroy()
 {
@@ -27,38 +28,7 @@ void CPythonGraphic::SetInterfaceRenderState()
     STATEMANAGER.SetTransform(D3DTS_VIEW, &ms_matIdentity);
     STATEMANAGER.SetTransform(D3DTS_WORLD, &ms_matIdentity);
 
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_NONE);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_NONE);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
-
-    STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SetRenderState(D3DRS_SRCBLEND,	D3DBLEND_SRCALPHA);
-    STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
-
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-
     CPythonGraphic::Instance().SetOrtho2D(ms_iWidth, ms_iHeight, GetOrthoDepth());
-
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-}
-
-void CPythonGraphic::SetGameRenderState()
-{
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
-    STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
 void CPythonGraphic::SetCursorPosition(int x, int y)
@@ -375,28 +345,6 @@ void CPythonGraphic::PopState()
     m_stateStack.pop();
 }
 
-void CPythonGraphic::RenderImage(CGraphicImageInstance* pImageInstance, float x, float y)
-{
-    assert(pImageInstance != NULL);
-
-    const CGraphicTexture * c_pTexture = pImageInstance->GetTexturePointer();
-
-    float width = (float) pImageInstance->GetWidth();
-    float height = (float) pImageInstance->GetHeight();
-
-    c_pTexture->SetTextureStage(0);
-
-    RenderTextureBox(x,
-                     y,
-                     x + width,
-                     y + height,
-                     0.0f,
-                     0.5f / width,
-                     0.5f / height,
-                     (width + 0.5f) / width,
-                     (height + 0.5f) / height);
-}
-
 void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRadius, float fTime)
 {
     if (fTime >= 1.0f)
@@ -407,18 +355,17 @@ void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRa
     fTime = max(0.0f, fTime);
 
     static D3DXCOLOR color = D3DXCOLOR(0.0f, 0.0f, 0.0f, 0.5f);
-    static WORD s_wBoxIndicies[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    static D3DXVECTOR2 s_v2BoxPos[8] =
-    {
-        D3DXVECTOR2(-1.0f, -1.0f),
-        D3DXVECTOR2(-1.0f,  0.0f),
-        D3DXVECTOR2(-1.0f, +1.0f),
-        D3DXVECTOR2(0.0f, +1.0f),
-        D3DXVECTOR2(+1.0f, +1.0f),
-        D3DXVECTOR2(+1.0f,  0.0f),
-        D3DXVECTOR2(+1.0f, -1.0f),
-        D3DXVECTOR2(0.0f, -1.0f),
-    };
+
+    static std::array<D3DXVECTOR2, 8> s_v2BoxPos{ {
+        { -1.0f, -1.0f },
+        { -1.0f,  0.0f },
+        { -1.0f, +1.0f },
+        {  0.0f, +1.0f },
+        { +1.0f, +1.0f },
+        { +1.0f,  0.0f },
+        { +1.0f, -1.0f },
+        {  0.0f, -1.0f },
+    } };
 
     int iTriCount = int(8 - 8.0f * fTime);
     float fLastPercentage = (8 - 8.0f * fTime) - iTriCount;

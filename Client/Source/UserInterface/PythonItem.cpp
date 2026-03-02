@@ -94,7 +94,7 @@ bool CPythonItem::TGroundItemInstance::Update()
 
 void CPythonItem::Update(const POINT& c_rkPtMouse)
 {
-    TGroundItemInstanceMap::iterator itor = m_GroundItemInstanceMap.begin();
+    auto itor = m_GroundItemInstanceMap.begin();
 
     for (; itor != m_GroundItemInstanceMap.end(); ++itor)
     {
@@ -114,7 +114,7 @@ void CPythonItem::Render()
     STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
     STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 
-    TGroundItemInstanceMap::iterator itor = m_GroundItemInstanceMap.begin();
+    auto itor = m_GroundItemInstanceMap.begin();
 
     for (; itor != m_GroundItemInstanceMap.end(); ++itor)
     {
@@ -535,9 +535,7 @@ void CPythonItem::DeleteAllItems()
 {
     CPythonTextTail& rkTextTail = CPythonTextTail::Instance();
 
-    TGroundItemInstanceMap::iterator i;
-
-    for (i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
+    for (auto i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
     {
         TGroundItemInstance* pGroundItemInst = i->second;
         rkTextTail.DeleteItemTextTail(i->first);
@@ -572,9 +570,7 @@ bool CPythonItem::GetCloseMoney(const TPixelPosition & c_rPixelPosition, DWORD *
     DWORD dwCloseItemID = 0;
     DWORD dwCloseItemDistance = 1000 * 1000;
 
-    TGroundItemInstanceMap::iterator i;
-
-    for (i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
+    for (auto i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
     {
         TGroundItemInstance * pInstance = i->second;
 
@@ -609,9 +605,7 @@ bool CPythonItem::GetCloseItem(const TPixelPosition & c_rPixelPosition, DWORD * 
     DWORD dwCloseItemID = 0;
     DWORD dwCloseItemDistance = 1000 * 1000;
 
-    TGroundItemInstanceMap::iterator i;
-
-    for (i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
+    for (auto i = m_GroundItemInstanceMap.begin(); i != m_GroundItemInstanceMap.end(); ++i)
     {
         TGroundItemInstance * pInstance = i->second;
 
@@ -660,7 +654,7 @@ DWORD CPythonItem::__Pick(const POINT& c_rkPtMouse)
 {
     float fu, fv, ft;
 
-    TGroundItemInstanceMap::iterator itor = m_GroundItemInstanceMap.begin();
+    auto itor = m_GroundItemInstanceMap.begin();
 
     for (; itor != m_GroundItemInstanceMap.end(); ++itor)
     {

@@ -23,6 +23,47 @@ DWORD		CScreen::ms_clearStencil = 0L;
 float		CScreen::ms_clearDepth = 1.0f;
 Frustum		CScreen::ms_frustum;
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kScreenPrimitiveSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    // 3D solid debug
+    constexpr PipelineStateDesc kScreenPrimitive3DSolidPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Opaque,
+        ERasterState::CullNone,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
+
+    // 3D wire debug
+    constexpr PipelineStateDesc kScreenPrimitive3DWirePipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Opaque,
+        ERasterState::Wireframe,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
+
+    // 2D overlay
+    constexpr PipelineStateDesc kScreenPrimitive2DPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
+}
+
 void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, float ez)
 {
     assert(ms_lpd3dDevice != NULL);
@@ -35,7 +76,7 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
     if (SetPDTStream(vertices.data(), 2))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -64,7 +105,7 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
     if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -95,7 +136,7 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
     if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -138,7 +179,7 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
     if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -166,7 +207,7 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
     if (SetPDTStream(vertices.data(), 2))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -206,7 +247,7 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
     if (SetPDTStream(vertices.data(), 8))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -239,7 +280,7 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
     if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -275,7 +316,7 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
     if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -388,7 +429,20 @@ void CScreen::RenderD3DXMesh(LPD3DXMESH lpMesh, const D3DXMATRIX* c_pmatWorld, f
         return;
     }
 
-    if (const IShaderProvider* sp = GetShaderProvider(); !sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+    const IShaderProvider* sp = GetShaderProvider();
+    if (!sp)
+    {
+        lpIndexBuffer->Release();
+        lpVertexBuffer->Release();
+        return;
+    }
+
+    const PipelineStateDesc& pipeline =
+        (d3dFillMode == D3DFILL_WIREFRAME)
+        ? kScreenPrimitive3DWirePipeline
+        : kScreenPrimitive3DSolidPipeline;
+
+    if (!sp->BindPipelineState(pipeline))
     {
         lpIndexBuffer->Release();
         lpVertexBuffer->Release();
@@ -409,20 +463,7 @@ void CScreen::RenderD3DXMesh(LPD3DXMESH lpMesh, const D3DXMATRIX* c_pmatWorld, f
     STATEMANAGER.SetIndices(lpIndexBuffer, 0);
     STATEMANAGER.SetStreamSource(0, lpVertexBuffer, 24);
 
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_POINT);
-    STATEMANAGER.SetRenderState(D3DRS_POINTSCALEENABLE, FALSE);
-
-    float pointSize = 5.0f;
-    DWORD pointSizeBits = std::bit_cast<DWORD>(pointSize);
-    STATEMANAGER.SetRenderState(D3DRS_POINTSIZE, pointSizeBits);
-
-    float pointMin = 1.0f;
-    DWORD pointMinBits = std::bit_cast<DWORD>(pointMin);
-    STATEMANAGER.SetRenderState(D3DRS_POINTSIZE_MIN, pointMinBits);
-
     STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, lpMesh->GetNumVertices(), 0, lpMesh->GetNumFaces());
-
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
     lpIndexBuffer->Release();
     lpVertexBuffer->Release();
@@ -454,7 +495,7 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
     if (SetPDTStream(vertices.data(), 4))
     {
         const IShaderProvider* sp = GetShaderProvider();
-        if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
         STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
@@ -780,11 +821,6 @@ void CScreen::ProjectPosition(float x, float y, float z, float* pfX, float* pfY,
     *pfX = Output.x;
     *pfY = Output.y;
     *pfZ = Output.z;
-}
-
-void CScreen::Identity()
-{
-    STATEMANAGER.SetTransform(D3DTS_WORLD, &ms_matIdentity);
 }
 
 CScreen::CScreen()

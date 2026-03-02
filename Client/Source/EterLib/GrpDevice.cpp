@@ -535,6 +535,56 @@ void CGraphicDevice::UploadTextConstants(const TextShaderInputs& in)
     UploadVSConstants(0, vs.invScreenSize.data(), 1); // c0
 }
 
+void CGraphicDevice::UploadEffectParticleConstants(const EffectParticleShaderInputs& in)
+{
+    if (!ms_lpd3dDevice)
+        return;
+
+    // --- Transpose viewProj ---
+    D3DXMATRIX viewProj;
+    std::memcpy(&viewProj, in.vs.viewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewProjT;
+    D3DXMatrixTranspose(&viewProjT, &viewProj);
+
+    // --- Pack VS ---
+    EffectParticleVSCB vs{};
+    std::memcpy(vs.viewProj.data(), &viewProjT, sizeof(D3DXMATRIX));
+
+    // --- Pack PS ---
+    EffectParticlePSCB ps{};
+    ps.textureFactor = in.ps.textureFactor;
+    ps.ops = in.ps.ops;
+
+    // --- Upload ---
+    UploadVSConstants(0, vs.viewProj.data(), 4);          // VS c0..c3
+    UploadPSConstants(0, ps.textureFactor.data(), 2);     // PS c0..c1 (textureFactor + ops)
+}
+
+void CGraphicDevice::UploadEffectMeshConstants(const EffectMeshShaderInputs& in)
+{
+    if (!ms_lpd3dDevice)
+        return;
+
+    // --- Transpose WVP ---
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, in.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    // --- Pack ---
+    EffectMeshVSCB vs{};
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+
+    EffectMeshPSCB ps{};
+    ps.textureFactor = in.ps.textureFactor;
+
+    // --- Upload ---
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3 (WVP)
+    UploadPSConstants(0, ps.textureFactor.data(), 1);   // PS c0
+}
+
 void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& in)
 {
 
@@ -935,14 +985,16 @@ bool CGraphicDevice::__CreateShaderResources()
 
     static constexpr std::array<ShaderDesc, static_cast<size_t>(std::to_underlying(ShaderID::Count))> kShaderTable =
     {
-        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS, EShaderInputLayout::PTC },
-        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS, EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS, EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS, EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS,          EShaderInputLayout::PTC },
+        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS,         EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS,         EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS,      EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS,    EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
         ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
-        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS,           EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS, EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,     EShaderInputLayout::PT },
         //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
     };
 

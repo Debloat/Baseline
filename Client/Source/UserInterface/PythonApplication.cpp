@@ -220,7 +220,6 @@ void CPythonApplication::RenderGame()
 
         m_pyBackground.RenderCharacterShadowToTexture();
 
-        m_pyGraphic.SetGameRenderState();
         m_pyGraphic.PushState();
 
         {
@@ -295,7 +294,6 @@ void CPythonApplication::RenderGame()
     m_pyBackground.RenderCharacterShadowToTexture();
     DWORD t4 = ELTimer_GetMSec();
 
-    m_pyGraphic.SetGameRenderState();
     m_pyGraphic.PushState();
 
     float fAspect = m_kWndMgr.GetAspect();
@@ -945,22 +943,14 @@ bool CPythonApplication::CreateDevice(int width, int height, int Windowed, int f
             return false;
 
         case CGraphicDevice::CREATE_NO_DIRECTX:
-            //PyErr_SetString(PyExc_RuntimeError, "DirectX 9Ex or greater required to run game");
             SET_EXCEPTION(CREATE_NO_DIRECTX);
             TraceError("CreateDevice: DirectX 9Ex or greater required to run game");
             return false;
 
         case CGraphicDevice::CREATE_DEVICE:
-            //PyErr_SetString(PyExc_RuntimeError, "GraphicDevice create failed");
             SET_EXCEPTION(CREATE_DEVICE);
             TraceError("CreateDevice: GraphicDevice create failed");
             return false;
-
-        /*case CGraphicDevice::CREATE_GET_ADAPTER_DISPLAY_MODE:
-        //PyErr_SetString(PyExc_RuntimeError, "GetAdapterDisplayModeEx failed");
-        SET_EXCEPTION(CREATE_GET_ADAPTER_DISPLAY_MODE);
-        TraceError("CreateDevice: GetAdapterDisplayModeEx failed");
-        return false;*/
 
         case CGraphicDevice::CREATE_GET_DEVICE_CAPS:
             PyErr_SetString(PyExc_RuntimeError, "GetDevCaps failed");
@@ -978,7 +968,6 @@ bool CPythonApplication::CreateDevice(int width, int height, int Windowed, int f
                 return true;
             }
 
-            //PyErr_SetString(PyExc_RuntimeError, "Unknown Error!");
             SET_EXCEPTION(UNKNOWN_ERROR);
             TraceError("CreateDevice: Unknown Error!");
             return false;

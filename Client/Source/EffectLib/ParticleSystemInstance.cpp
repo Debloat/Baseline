@@ -5,6 +5,9 @@
 #include "ParticleSystemInstance.h"
 #include "ParticleInstance.h"
 
+#include "../EterLib/ShaderProvider.h"
+#include "../EterLib/GrpDevice.h"
+
 CDynamicPool<CParticleSystemInstance>	CParticleSystemInstance::ms_kPool;
 
 using namespace NEffectUpdateDecorator;
@@ -447,54 +450,221 @@ namespace NParticleRenderer
     };
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kEffectParticleSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap },
+    } };
+
+    constexpr PipelineStateDesc kEffectParticlePipeline =
+    {
+        ShaderID::EffectParticle,
+        EDepthState::EnabledReadOnly,
+        EBlendState::AlphaBlend,   // overridden per-system
+        ERasterState::CullNone,
+        kEffectParticleSamplers.data(),
+        kEffectParticleSamplers.size()
+    };
+
+    inline float MapParticleColorOpToId(BYTE byType)
+    {
+        // Keep this mapping stable with effect_particle_ps.hlsl.
+        switch (byType)
+        {
+        case D3DTOP_MODULATE:   return 0.0f;
+        case D3DTOP_ADD:        return 1.0f;
+        case D3DTOP_SUBTRACT:   return 2.0f;
+        case D3DTOP_MODULATE2X: return 3.0f;
+        case D3DTOP_MODULATE4X: return 4.0f;
+        case D3DTOP_ADDSMOOTH:  return 5.0f;
+        default:                return 0.0f;
+        }
+    }
+
+    inline void BuildParticleTextureFactor(DWORD color, std::array<float, 4>& outRGBA)
+    {
+        const float a = ((color >> 24) & 0xFF) / 255.0f;
+        const float r = ((color >> 16) & 0xFF) / 255.0f;
+        const float g = ((color >> 8) & 0xFF) / 255.0f;
+        const float b = ((color >> 0) & 0xFF) / 255.0f;
+
+        outRGBA = { r, g, b, a };
+    }
+}
+
 void CParticleSystemInstance::OnRender()
 {
-    CScreen::Identity();
-    STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, m_pParticleProperty->m_bySrcBlendType);
-    STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, m_pParticleProperty->m_byDestBlendType);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, m_pParticleProperty->m_byColorOperationType);
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp || !sp->BindPipelineState(kEffectParticlePipeline))
+    {
+        return;
+    }
 
+    // --- Blend (preserve original src/dest behavior) ---
+    const int src = m_pParticleProperty->m_bySrcBlendType;
+    const int dst = m_pParticleProperty->m_byDestBlendType;
+
+    if (src == D3DBLEND_SRCALPHA && dst == D3DBLEND_INVSRCALPHA)
+    {
+        sp->BindBlendState(EBlendState::AlphaBlend);
+    }
+    else if (src == D3DBLEND_SRCALPHA && dst == D3DBLEND_ONE)
+    {
+        sp->BindBlendState(EBlendState::AlphaAdditive);
+    }
+    else if (src == D3DBLEND_ONE && dst == D3DBLEND_ONE)
+    {
+        sp->BindBlendState(EBlendState::Additive);
+    }
+    else if (src == D3DBLEND_ONE && dst == D3DBLEND_INVSRCCOLOR)
+    {
+        sp->BindBlendState(EBlendState::One_InvSrcColor);
+    }
+    else
+    {
+        TraceError("CParticleSystemInstance::OnRender - No compatible blend state found.");
+    }
+
+    // --- Build base inputs once (viewProj + op id) ---
+    EffectParticleShaderInputs base{};
+    {
+        const D3DXMATRIX& view = CGraphicBase::GetViewMatrix();
+        const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
+        D3DXMATRIX viewProj = view * proj;
+        std::memcpy(base.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
+    }
+
+    base.ps.ops = { MapParticleColorOpToId(m_pParticleProperty->m_byColorOperationType), 0.0f, 0.0f, 0.0f };
+
+    // --- Render functors that upload per-particle textureFactor ---
     if (m_pParticleProperty->m_byBillboardType < BILLBOARD_TYPE_2FACE)
     {
         if (!m_pParticleProperty->m_bAttachFlag)
         {
-            auto obj = NParticleRenderer::NormalRenderer();
+            struct Renderer
+            {
+                EffectParticleShaderInputs* pBase;
+                void operator()(CParticleInstance* pInstance)
+                {
+                    pInstance->Transform();
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+            } obj{ &base };
+
             ForEachParticleRendering(obj);
         }
-
         else
         {
-            auto obj = NParticleRenderer::AttachRenderer(mc_pmatLocal);
+            struct Renderer
+            {
+                const D3DXMATRIX* pmat;
+                EffectParticleShaderInputs* pBase;
+
+                void operator()(CParticleInstance* pInstance)
+                {
+                    pInstance->Transform(pmat);
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+            } obj{ mc_pmatLocal, &base };
+
             ForEachParticleRendering(obj);
         }
     }
-
     else if (m_pParticleProperty->m_byBillboardType == BILLBOARD_TYPE_2FACE)
     {
+        struct Renderer
+        {
+            const D3DXMATRIX* pmat;
+            EffectParticleShaderInputs* pBase;
+
+            void operator()(CParticleInstance* pInstance)
+            {
+                {
+                    pInstance->Transform(pmat, D3DXToRadian(-30.0f));
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+
+                {
+                    pInstance->Transform(pmat, D3DXToRadian(+30.0f));
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+            }
+        };
+
         if (!m_pParticleProperty->m_bAttachFlag)
         {
-            auto obj = NParticleRenderer::TwoSideRenderer();
+            Renderer obj{ nullptr, &base };
             ForEachParticleRendering(obj);
         }
-
         else
         {
-            auto obj = NParticleRenderer::TwoSideRenderer(mc_pmatLocal);
+            Renderer obj{ mc_pmatLocal, &base };
             ForEachParticleRendering(obj);
         }
     }
-
     else if (m_pParticleProperty->m_byBillboardType == BILLBOARD_TYPE_3FACE)
     {
+        struct Renderer
+        {
+            const D3DXMATRIX* pmat;
+            EffectParticleShaderInputs* pBase;
+
+            void operator()(CParticleInstance* pInstance)
+            {
+                {
+                    pInstance->Transform(pmat);
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+
+                {
+                    pInstance->Transform(pmat, D3DXToRadian(-60.0f));
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+
+                {
+                    pInstance->Transform(pmat, D3DXToRadian(+60.0f));
+
+                    BuildParticleTextureFactor(pInstance->m_dcColor.m_dwColor, pBase->ps.textureFactor);
+                    CGraphicDevice::UploadEffectParticleConstants(*pBase);
+
+                    STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, pInstance->GetParticleMeshPointer(), sizeof(TPTVertex));
+                }
+            }
+        };
+
         if (!m_pParticleProperty->m_bAttachFlag)
         {
-            auto obj = NParticleRenderer::ThreeSideRenderer();
+            Renderer obj{ nullptr, &base };
             ForEachParticleRendering(obj);
         }
-
         else
         {
-            auto obj = NParticleRenderer::ThreeSideRenderer(mc_pmatLocal);
+            Renderer obj{ mc_pmatLocal, &base };
             ForEachParticleRendering(obj);
         }
     }

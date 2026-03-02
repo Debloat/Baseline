@@ -4,6 +4,7 @@
 #include "GrpDib.h"
 #include "../EterBase/Stl.h"
 #include "../EterLib/StateManager.h"
+#include <array>
 
 void CBlockTexture::SetClipRect(const RECT & c_rRect)
 {
@@ -74,32 +75,14 @@ void CBlockTexture::Render(int ix, int iy)
         }
     }
 
-    TPDTVertex vertices[4];
-    vertices[0].position.x	= isx - 0.5f;
-    vertices[0].position.y	= isy - 0.5f;
-    vertices[0].position.z	= 0.0f;
-    vertices[0].texCoord	= TTextureCoordinate(su, sv);
-    vertices[0].diffuse		= 0xffffffff;
+    std::array<TPDTVertex, 4> vertices{ {
+        { { isx - 0.5f, isy - 0.5f, 0.0f }, 0xffffffff, TTextureCoordinate(su, sv) },
+        { { iex - 0.5f, isy - 0.5f, 0.0f }, 0xffffffff, TTextureCoordinate(eu, sv) },
+        { { isx - 0.5f, iey - 0.5f, 0.0f }, 0xffffffff, TTextureCoordinate(su, ev) },
+        { { iex - 0.5f, iey - 0.5f, 0.0f }, 0xffffffff, TTextureCoordinate(eu, ev) },
+    } };
 
-    vertices[1].position.x	= iex - 0.5f;
-    vertices[1].position.y	= isy - 0.5f;
-    vertices[1].position.z	= 0.0f;
-    vertices[1].texCoord	= TTextureCoordinate(eu, sv);
-    vertices[1].diffuse		= 0xffffffff;
-
-    vertices[2].position.x	= isx - 0.5f;
-    vertices[2].position.y	= iey - 0.5f;
-    vertices[2].position.z	= 0.0f;
-    vertices[2].texCoord	= TTextureCoordinate(su, ev);
-    vertices[2].diffuse		= 0xffffffff;
-
-    vertices[3].position.x	= iex - 0.5f;
-    vertices[3].position.y	= iey - 0.5f;
-    vertices[3].position.z	= 0.0f;
-    vertices[3].texCoord	= TTextureCoordinate(eu, ev);
-    vertices[3].diffuse		= 0xffffffff;
-
-    if (CGraphicBase::SetPDTStream(vertices, 4))
+    if (CGraphicBase::SetPDTStream(vertices.data(), 4))
     {
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 

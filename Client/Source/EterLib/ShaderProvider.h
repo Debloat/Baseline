@@ -13,6 +13,8 @@ enum class ShaderID
     ScreenPrimitive,
     MiniMap,
     Text,
+    EffectParticle,
+    EffectMesh,
     //Model,
     Count
 };

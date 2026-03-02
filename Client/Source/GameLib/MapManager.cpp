@@ -318,10 +318,6 @@ void CMapManager::ResetEnvironmentDataPtr(const TEnvironmentData * c_pEnvironmen
     rkMap.ResetEnvironmentDataPtr(mc_pcurEnvironmentData);
 }
 
-void CMapManager::BlendEnvironmentData(const TEnvironmentData * c_pEnvironmentData, int iTransitionTime)
-{
-}
-
 bool CMapManager::RegisterEnvironmentData(DWORD dwIndex, const char* c_szFileName)
 {
     TEnvironmentData * pEnvironmentData = AllocEnvironmentData();
@@ -332,9 +328,7 @@ bool CMapManager::RegisterEnvironmentData(DWORD dwIndex, const char* c_szFileNam
         return false;
     }
 
-    TEnvironmentDataMap::iterator f = m_EnvironmentDataMap.find(dwIndex);
-
-    if (m_EnvironmentDataMap.end() == f)
+    if (TEnvironmentDataMap::iterator f = m_EnvironmentDataMap.find(dwIndex); m_EnvironmentDataMap.end() == f)
     {
         m_EnvironmentDataMap.insert(TEnvironmentDataMap::value_type(dwIndex, pEnvironmentData));
     }
@@ -549,23 +543,6 @@ bool CMapManager::GetAttr(int iX, int iY, BYTE * pbyAttr)
     CMapOutdoor& rkMap = GetMapOutdoorRef();
     return rkMap.GetAttr(iX, iY, pbyAttr);
 }
-
-// 2004.10.14.myevan.TEMP_CAreaLoaderThread
-/*
-bool CMapManager::BGLoadingEnable()
-{
-	if (!IsMapReady())
-		return false;
-	return ((CMapOutdoor*)m_pMap)->BGLoadingEnable();
-}
-
-void CMapManager::BGLoadingEnable(bool bBGLoadingEnable)
-{
-	if (!IsMapReady())
-		return;
-	((CMapOutdoor*)m_pMap)->BGLoadingEnable(bBGLoadingEnable);
-}
-*/
 
 void CMapManager::SetTerrainRenderSort(CMapOutdoor::ETerrainRenderSort eTerrainRenderSort)
 {

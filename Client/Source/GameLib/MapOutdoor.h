@@ -412,8 +412,6 @@ class CMapOutdoor : public CMapBase
 
         void					SetPatchDrawVector();
 
-        void					NEW_DrawWireFrame(CTerrainPatchProxy * pTerrainPatchProxy, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType);
-
         /* - YOSUN_WORLD_EDITOR -------------------------------- */
         void					OnRenderPatchGrid();
         /* ----------------------------------------------------- */

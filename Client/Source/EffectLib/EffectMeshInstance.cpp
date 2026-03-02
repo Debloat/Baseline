@@ -4,6 +4,9 @@
 #include "EffectMeshInstance.h"
 #include "../EterLib/GrpMath.h"
 
+#include "../EterLib/ShaderProvider.h"
+#include "../EterLib/GrpDevice.h"
+
 CDynamicPool<CEffectMeshInstance>		CEffectMeshInstance::ms_kPool;
 
 void CEffectMeshInstance::DestroySystem()
@@ -70,6 +73,24 @@ bool CEffectMeshInstance::OnUpdate(float fElapsedTime)
     }
 
     return true;
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kEffectMeshSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap },
+    } };
+
+    constexpr PipelineStateDesc kEffectMeshPipeline =
+    {
+        ShaderID::EffectMesh,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Opaque,      // overridden per-mesh
+        ERasterState::CullNone,
+        kEffectMeshSamplers.data(),
+        kEffectMeshSamplers.size()
+    };
 }
 
 void CEffectMeshInstance::OnRender()
@@ -140,37 +161,62 @@ void CEffectMeshInstance::OnRender()
             break;
         }
 
-        if (!m_pMeshScript->isBlendingEnable(i))
-        {
-            STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-        }
-
-        else
-        {
-            int iBlendingSrcType = m_pMeshScript->GetBlendingSrcType(i);
-            int iBlendingDestType = m_pMeshScript->GetBlendingDestType(i);
-            STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-            STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, iBlendingSrcType);
-            STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, iBlendingDestType);
-        }
-
         D3DXVECTOR3 Position;
         m_pMeshScript->GetPosition(m_fLocalTime, Position);
         m_matWorld._41 = Position.x;
         m_matWorld._42 = Position.y;
         m_matWorld._43 = Position.z;
         m_matWorld = m_matWorld * *mc_pmatLocal;
-        STATEMANAGER.SetTransform(D3DTS_WORLD, &m_matWorld);
 
-        BYTE byType;
-        D3DXCOLOR Color(1.0f, 1.0f, 1.0f, 1.0f);
-
-        if (m_pMeshScript->GetColorOperationType(i, &byType))
+        IShaderProvider const* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kEffectMeshPipeline))
         {
-            STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, byType);
+            return;
         }
 
+        if (!m_pMeshScript->isBlendingEnable(i))
+        {
+            sp->BindBlendState(EBlendState::Opaque);
+        }
+        else
+        {
+            int iBlendingSrcType = m_pMeshScript->GetBlendingSrcType(i);
+            int iBlendingDestType = m_pMeshScript->GetBlendingDestType(i);
+
+            if (iBlendingSrcType == D3DBLEND_SRCALPHA &&
+                iBlendingDestType == D3DBLEND_INVSRCALPHA)
+            {
+                sp->BindBlendState(EBlendState::AlphaBlend);
+            }
+            else if (iBlendingSrcType == D3DBLEND_SRCALPHA &&
+                iBlendingDestType == D3DBLEND_ONE)
+            {
+                sp->BindBlendState(EBlendState::AlphaAdditive);
+            }
+            else if (iBlendingSrcType == D3DBLEND_ONE &&
+                iBlendingDestType == D3DBLEND_ONE)
+            {
+                sp->BindBlendState(EBlendState::Additive);
+            }
+            else if (iBlendingSrcType == D3DBLEND_ONE &&
+                iBlendingDestType == D3DBLEND_INVSRCCOLOR)
+            {
+                sp->BindBlendState(EBlendState::One_InvSrcColor);
+            }
+            else
+            {
+                sp->BindBlendState(EBlendState::AlphaBlend);
+            }
+        }
+
+        D3DXCOLOR Color(1.0f, 1.0f, 1.0f, 1.0f);
         m_pMeshScript->GetColorFactor(i, &Color);
+
+        EffectMeshShaderInputs in{};
+
+        D3DXMATRIX wvp;
+        sp->ComputeWorldViewProj(m_matWorld, wvp);
+        std::memcpy(in.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
 
         TTimeEventTableFloat * TableAlpha;
 
@@ -196,8 +242,11 @@ void CEffectMeshInstance::OnRender()
         }
 
         Color.a = fAlpha * rFrameData.fVisibility;
-        STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, DWORD(Color));
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
+
+        in.ps.textureFactor = { Color.r, Color.g, Color.b, Color.a };
+
+        CGraphicDevice::UploadEffectMeshConstants(in);
+
         STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLELIST,
                                      rFrameData.dwIndexCount / 3,
                                      &rFrameData.PDTVertexVector[0],

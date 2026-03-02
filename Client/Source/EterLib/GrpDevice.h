@@ -65,6 +65,8 @@ public:
     static void UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderInputs& inputs);
     static void UploadMiniMapConstants(const MiniMapShaderInputs& inputs);
     static void UploadTextConstants(const TextShaderInputs& inputs);
+    static void UploadEffectParticleConstants(const EffectParticleShaderInputs& in);
+    static void UploadEffectMeshConstants(const EffectMeshShaderInputs& in);
     static void UploadModelConstants(const ModelShaderInputs& inputs);
     /* ---------------------------------------------------- */
 

@@ -532,7 +532,7 @@ void CMapOutdoor::RenderArea()
 
                 CArea::TCRCWithNumberVector & rCRCWithNumberVector = pArea->DEBUG_GetRenderedCRCWithNumVector();
 
-                CArea::TCRCWithNumberVector::iterator aIterator = rCRCWithNumberVector.begin();
+                auto aIterator = rCRCWithNumberVector.begin();
 
                 while (aIterator != rCRCWithNumberVector.end())
                 {
@@ -743,24 +743,6 @@ struct FPatchNumMatch
         return m_lPatchNumToCheck == aPair.first;
     }
 };
-
-void CMapOutdoor::NEW_DrawWireFrame(CTerrainPatchProxy * pTerrainPatchProxy, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType)
-{
-    DWORD dwFillMode = STATEMANAGER.GetRenderState(D3DRS_FILLMODE);
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
-
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTexture(1, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_DISABLE);
-
-    STATEMANAGER.DrawIndexedPrimitive(ePrimitiveType, 0, m_iPatchTerrainVertexCount, 0, wPrimitiveCount);
-
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, dwFillMode);
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
-}
 
 void CMapOutdoor::DrawWireFrame(long patchnum, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType)
 {

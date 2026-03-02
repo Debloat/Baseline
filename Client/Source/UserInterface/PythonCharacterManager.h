@@ -108,7 +108,6 @@ class CPythonCharacterManager : public CSingleton<CPythonCharacterManager>, publ
 
         void __DeleteBlendOutInstance(CInstanceBase* pkInstDel);
 
-        void __OLD_Pick();
         void __NEW_Pick();
 
         void __UpdateSortPickedActorList();
