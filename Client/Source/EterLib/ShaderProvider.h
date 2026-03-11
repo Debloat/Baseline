@@ -16,6 +16,7 @@ enum class ShaderID
     EffectParticle,
     EffectMesh,
     //Model,
+    SnowParticle,
     Count
 };
 

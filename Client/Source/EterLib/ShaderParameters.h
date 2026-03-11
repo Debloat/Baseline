@@ -424,3 +424,14 @@ struct ModelShaderInputs
 };
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
+struct SnowParticleVSCB
+{
+    std::array<float, 16> viewProj;
+};
+static_assert(sizeof(SnowParticleVSCB) == 64);
+
+struct SnowParticleShaderInputs
+{
+    SnowParticleVSCB vs;
+};

@@ -67,4 +67,10 @@ namespace ShaderKeys
     //    inline constexpr const char* VS = "d:/ymir work/shader/Model/model_vs.hlsl";
     //    inline constexpr const char* PS = "d:/ymir work/shader/Model/model_ps.hlsl";
     //}
+
+    namespace SnowParticle
+    {
+        inline constexpr const char* VS = "d:/ymir work/shader/Snow/snow_particle_vs.hlsl";
+        inline constexpr const char* PS = "d:/ymir work/shader/Snow/snow_particle_ps.hlsl";
+    }
 }

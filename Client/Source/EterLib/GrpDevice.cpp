@@ -590,6 +590,23 @@ void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& in)
 
 }
 
+void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs& in)
+{
+    if (!ms_lpd3dDevice)
+        return;
+
+    D3DXMATRIX vp;
+    std::memcpy(&vp, in.vs.viewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX vpT;
+    D3DXMatrixTranspose(&vpT, &vp);
+
+    SnowParticleVSCB vs{};
+    std::memcpy(vs.viewProj.data(), &vpT, sizeof(D3DXMATRIX));
+
+    UploadVSConstants(0, vs.viewProj.data(), 4); // VS c0..c3
+}
+
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
 {
     if (!ms_lpd3dDevice || !data || registerCount == 0)
@@ -996,6 +1013,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS, EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,     EShaderInputLayout::PT },
         //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
+        ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,   EShaderInputLayout::PT },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

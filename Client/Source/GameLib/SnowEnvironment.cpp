@@ -5,6 +5,8 @@
 #include "../EterLib/Camera.h"
 #include "../EterLib/ResourceManager.h"
 #include "SnowParticle.h"
+#include "../EterLib/ShaderProvider.h"
+#include "../EterLib/GrpDevice.h"
 
 void CSnowEnvironment::Enable()
 {
@@ -23,26 +25,16 @@ void CSnowEnvironment::Disable()
 
 void CSnowEnvironment::Update(const D3DXVECTOR3 & c_rv3Pos)
 {
-    if (!m_bSnowEnable)
-    {
-        if (m_kVct_pkParticleSnow.empty())
-        {
-            return;
-        }
-    }
+    if (!m_bSnowEnable && m_kVct_pkParticleSnow.empty())
+        return;
 
     m_v3Center = c_rv3Pos;
 }
 
 void CSnowEnvironment::Deform()
 {
-    if (!m_bSnowEnable)
-    {
-        if (m_kVct_pkParticleSnow.empty())
-        {
-            return;
-        }
-    }
+    if (!m_bSnowEnable && m_kVct_pkParticleSnow.empty())
+        return;
 
     const D3DXVECTOR3 & c_rv3Pos = m_v3Center;
 
@@ -63,7 +55,7 @@ void CSnowEnvironment::Deform()
     D3DXVECTOR3 v3ChangedPos = c_rv3View * 3500.0f + c_rv3Pos;
     v3ChangedPos.z = c_rv3Pos.z;
 
-    std::vector<CSnowParticle*>::iterator itor = m_kVct_pkParticleSnow.begin();
+    auto itor = m_kVct_pkParticleSnow.begin();
 
     for (; itor != m_kVct_pkParticleSnow.end();)
     {
@@ -94,68 +86,28 @@ void CSnowEnvironment::Deform()
     }
 }
 
-void CSnowEnvironment::__BeginBlur()
+namespace
 {
-    if (!m_bBlurEnable)
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kSnowSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap }
+    } };
+
+    constexpr PipelineStateDesc kSnowParticlePipeline =
     {
-        return;
-    }
-
-    ms_lpd3dDevice->GetRenderTarget(0, &m_lpOldSurface);
-    ms_lpd3dDevice->GetDepthStencilSurface(&m_lpOldDepthStencilSurface);
-    ms_lpd3dDevice->SetRenderTarget(0, m_lpSnowRenderTargetSurface);
-    ms_lpd3dDevice->SetDepthStencilSurface(m_lpSnowDepthSurface);
-    ms_lpd3dDevice->Clear(0L, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00000000, 1.0f, 0L);
-
-    STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_DESTALPHA);
-}
-
-void CSnowEnvironment::__ApplyBlur()
-{
-    if (!m_bBlurEnable)
-    {
-        return;
-    }
-
-    ///////////////
-    {
-        ms_lpd3dDevice->SetRenderTarget(0, m_lpOldSurface);
-        ms_lpd3dDevice->SetDepthStencilSurface(m_lpOldDepthStencilSurface);
-
-        STATEMANAGER.SetTexture(0, m_lpSnowTexture);
-        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE,   TRUE);
-
-        D3DSURFACE_DESC	desc;
-        m_lpOldSurface->GetDesc(&desc);
-        float sx = (float)desc.Width ;
-        float sy = (float)desc.Height;
-        SAFE_RELEASE(m_lpOldSurface);
-        SAFE_RELEASE(m_lpOldDepthStencilSurface);
-
-        BlurVertex V[4] = {	BlurVertex(D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f	, 0xFFFFFF, 0, 0),
-                            BlurVertex(D3DXVECTOR3(sx, 0.0f, 0.0f), 1.0f	, 0xFFFFFF, 1, 0),
-                            BlurVertex(D3DXVECTOR3(0.0f, sy, 0.0f), 1.0f	, 0xFFFFFF, 0, 1),
-                            BlurVertex(D3DXVECTOR3(sx, sy, 0.0f), 1.0f		, 0xFFFFFF, 1, 1)
-                          };
-
-        STATEMANAGER.SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);
-        STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, V, sizeof(BlurVertex));
-    }
+        ShaderID::SnowParticle,
+        EDepthState::EnabledReadOnly,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kSnowSamplers.data(),
+        kSnowSamplers.size()
+    };
 }
 
 void CSnowEnvironment::Render()
 {
-    if (!m_bSnowEnable)
-    {
-        if (m_kVct_pkParticleSnow.empty())
-        {
-            return;
-        }
-    }
-
-    __BeginBlur();
+    if (!m_bSnowEnable && m_kVct_pkParticleSnow.empty())
+        return;
 
     DWORD dwParticleCount = min(m_dwParticleMaxNum, m_kVct_pkParticleSnow.size());
 
@@ -174,7 +126,7 @@ void CSnowEnvironment::Render()
     if (SUCCEEDED(m_pVB->Lock(0, sizeof(SParticleVertex)*dwParticleCount * 4, (void**) &pv3Verticies, D3DLOCK_DISCARD)))
     {
         int i = 0;
-        std::vector<CSnowParticle*>::iterator itor = m_kVct_pkParticleSnow.begin();
+        auto itor = m_kVct_pkParticleSnow.begin();
 
         for (; i < dwParticleCount && itor != m_kVct_pkParticleSnow.end(); ++i, ++itor)
         {
@@ -187,78 +139,33 @@ void CSnowEnvironment::Render()
         }
 
         m_pVB->Unlock();
-    }
 
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    STATEMANAGER.SetRenderState(D3DRS_SRCBLEND,  D3DBLEND_SRCALPHA);
-    STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTexture(1, NULL);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kSnowParticlePipeline))
+            return;
+
+        SnowParticleShaderInputs in{};
+
+        D3DXMATRIX wvp;
+        sp->ComputeWorldViewProj(GetIdentityMatrix(), wvp);
+
+        std::memcpy(in.vs.viewProj.data(), &wvp, sizeof(D3DXMATRIX));
+
+        CGraphicDevice::UploadSnowParticleConstants(in);
+    }
 
     m_pImageInstance->GetGraphicImagePointer()->GetTextureReference().SetTextureStage(0);
     STATEMANAGER.SetIndices(m_pIB, 0);
     STATEMANAGER.SetStreamSource(0, m_pVB, sizeof(SParticleVertex));
-    STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
+
     STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, dwParticleCount * 4, 0, dwParticleCount * 2);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-
-    __ApplyBlur();
-}
-
-bool CSnowEnvironment::__CreateBlurTexture()
-{
-    if (!m_bBlurEnable)
-    {
-        return true;
-    }
-
-    if (FAILED(ms_lpd3dDevice->CreateTexture(m_wBlurTextureSize, m_wBlurTextureSize, 1, D3DUSAGE_RENDERTARGET, D3DFMT_X8R8G8B8, D3DPOOL_DEFAULT, &m_lpSnowTexture, nullptr)))
-    {
-        return false;
-    }
-
-    if (FAILED(m_lpSnowTexture->GetSurfaceLevel(0, &m_lpSnowRenderTargetSurface)))
-    {
-        return false;
-    }
-
-    if (FAILED(ms_lpd3dDevice->CreateDepthStencilSurface(m_wBlurTextureSize, m_wBlurTextureSize, D3DFMT_D16, D3DMULTISAMPLE_NONE, 0, true, &m_lpSnowDepthSurface, nullptr)))
-    {
-        return false;
-    }
-
-    if (FAILED(ms_lpd3dDevice->CreateTexture(m_wBlurTextureSize, m_wBlurTextureSize, 1, D3DUSAGE_RENDERTARGET, D3DFMT_X8R8G8B8, D3DPOOL_DEFAULT, &m_lpAccumTexture, nullptr)))
-    {
-        return false;
-    }
-
-    if (FAILED(m_lpAccumTexture->GetSurfaceLevel(0, &m_lpAccumRenderTargetSurface)))
-    {
-        return false;
-    }
-
-    if (FAILED(ms_lpd3dDevice->CreateDepthStencilSurface(m_wBlurTextureSize, m_wBlurTextureSize, D3DFMT_D16, D3DMULTISAMPLE_NONE, 0, true, &m_lpAccumDepthSurface, nullptr)))
-    {
-        return false;
-    }
-
-    return true;
 }
 
 bool CSnowEnvironment::__CreateGeometry()
 {
     if (FAILED(ms_lpd3dDevice->CreateVertexBuffer(sizeof(SParticleVertex)*m_dwParticleMaxNum * 4,
                                                   D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY,
-                                                  D3DFVF_XYZ | D3DFVF_TEX1,
+                                                  NULL,
                                                   D3DPOOL_DEFAULT,
                                                   &m_pVB, nullptr)))
     {
@@ -299,11 +206,6 @@ bool CSnowEnvironment::Create()
 {
     Destroy();
 
-    if (!__CreateBlurTexture())
-    {
-        return false;
-    }
-
     if (!__CreateGeometry())
     {
         return false;
@@ -318,12 +220,6 @@ bool CSnowEnvironment::Create()
 
 void CSnowEnvironment::Destroy()
 {
-    SAFE_RELEASE(m_lpSnowTexture);
-    SAFE_RELEASE(m_lpSnowRenderTargetSurface);
-    SAFE_RELEASE(m_lpSnowDepthSurface);
-    SAFE_RELEASE(m_lpAccumTexture);
-    SAFE_RELEASE(m_lpAccumRenderTargetSurface);
-    SAFE_RELEASE(m_lpAccumDepthSurface);
     SAFE_RELEASE(m_pVB);
     SAFE_RELEASE(m_pIB);
 
@@ -342,12 +238,6 @@ void CSnowEnvironment::Destroy()
 void CSnowEnvironment::__Initialize()
 {
     m_bSnowEnable = FALSE;
-    m_lpSnowTexture = NULL;
-    m_lpSnowRenderTargetSurface = NULL;
-    m_lpSnowDepthSurface = NULL;
-    m_lpAccumTexture = NULL;
-    m_lpAccumRenderTargetSurface = NULL;
-    m_lpAccumDepthSurface = NULL;
     m_pVB = NULL;
     m_pIB = NULL;
     m_pImageInstance = NULL;
@@ -357,9 +247,7 @@ void CSnowEnvironment::__Initialize()
 
 CSnowEnvironment::CSnowEnvironment()
 {
-    m_bBlurEnable = FALSE;
     m_dwParticleMaxNum = 3000;
-    m_wBlurTextureSize = 512;
 
     __Initialize();
 }
