@@ -3,6 +3,8 @@
 #include "ModelInstance.h"
 #include "Model.h"
 
+#include "../EterLib/ShaderVertexDeclarations.h"
+
 void CGrannyModelInstance::DeformNoSkin(const D3DXMATRIX * c_pWorldMatrix)
 {
     if (IsEmpty())
@@ -22,7 +24,7 @@ void CGrannyModelInstance::__RenderModelFFP(EModelTexturePath eTexPath, EModelRe
     if (IsEmpty())
         return;
 
-    STATEMANAGER.SetVertexDeclaration(ms_pntVS);
+    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNT));
 
     if (eTexPath == MODEL_TEX_NONE)
     {

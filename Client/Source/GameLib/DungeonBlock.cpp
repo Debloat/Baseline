@@ -3,6 +3,8 @@
 
 #include "../EterLib/StateManager.h"
 
+#include "../EterLib/ShaderVertexDeclarations.h"
+
 class CDungeonModelInstance : public CGrannyModelInstance
 {
     public:
@@ -17,7 +19,7 @@ class CDungeonModelInstance : public CGrannyModelInstance
                 return;
             }
 
-            STATEMANAGER.SetVertexDeclaration(ms_pnt2VS);
+            STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNTT));
             LPDIRECT3DVERTEXBUFFER9 lpd3dRigidPNTVtxBuf = m_pModel->GetPNTD3DVertexBuffer();
 
             if (lpd3dRigidPNTVtxBuf)
@@ -42,7 +44,7 @@ class CDungeonModelInstance : public CGrannyModelInstance
             STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO);
             STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_SRCCOLOR);
 
-            STATEMANAGER.SetVertexDeclaration(ms_pnt2VS);
+            STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNTT));
             LPDIRECT3DVERTEXBUFFER9 lpd3dRigidPNTVtxBuf = m_pModel->GetPNTD3DVertexBuffer();
 
             if (lpd3dRigidPNTVtxBuf)

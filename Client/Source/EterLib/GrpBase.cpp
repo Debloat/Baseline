@@ -44,9 +44,6 @@ D3DCAPS9				CGraphicBase::ms_d3dCaps;
 
 DWORD					CGraphicBase::ms_dwD3DBehavior = 0;
 
-LPDIRECT3DVERTEXDECLARATION9                    CGraphicBase::ms_pntVS = 0;
-LPDIRECT3DVERTEXDECLARATION9                    CGraphicBase::ms_pnt2VS = 0;
-
 D3DXMATRIX				CGraphicBase::ms_matIdentity;
 
 D3DXMATRIX				CGraphicBase::ms_matView;

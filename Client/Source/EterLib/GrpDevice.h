@@ -94,9 +94,6 @@ protected:
     void __DestroyPDTVertexBufferList();
     bool __CreatePDTVertexBufferList();
 
-    LPDIRECT3DVERTEXDECLARATION9 CreatePNTStreamVertexShader();
-    LPDIRECT3DVERTEXDECLARATION9 CreatePNT2StreamVertexShader();
-
 protected:
     DWORD						m_uBackBufferCount;
     std::map<UINT, std::string>	m_kMap_strWarningMessage;

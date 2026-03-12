@@ -709,51 +709,6 @@ bool CGraphicDevice::BindShader(ShaderID id) const
     return true;
 }
 
-LPDIRECT3DVERTEXDECLARATION9 CGraphicDevice::CreatePNTStreamVertexShader()
-{
-    assert(ms_lpd3dDevice != nullptr);
-
-    LPDIRECT3DVERTEXDECLARATION9 dwShader = nullptr;
-
-    if (D3DVERTEXELEMENT9 pShaderDecl[] =
-{
-    { 0, 0, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0 },
-    { 0, 12, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_NORMAL, 0 },
-    { 0, 24, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 0 },
-    D3DDECL_END()
-    }; ms_lpd3dDevice->CreateVertexDeclaration(pShaderDecl, &dwShader) != D3D_OK)
-    {
-        char szError[1024];
-        sprintf(szError, "Failed to create CreatePNTStreamVertexShader");
-        MessageBox(nullptr, szError, "Vertex Shader Error", MB_ICONSTOP);
-    }
-
-    return dwShader;
-}
-
-LPDIRECT3DVERTEXDECLARATION9 CGraphicDevice::CreatePNT2StreamVertexShader()
-{
-    assert(ms_lpd3dDevice != nullptr);
-
-    LPDIRECT3DVERTEXDECLARATION9 dwShader = nullptr;
-
-    if (D3DVERTEXELEMENT9 pShaderDecl[] =
-{
-    { 0, 0, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0 },
-    { 0, 12, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_NORMAL, 0 },
-    { 0, 24, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 0 },
-    { 0, 32, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 1 },
-    D3DDECL_END()
-    }; ms_lpd3dDevice->CreateVertexDeclaration(pShaderDecl, &dwShader) != D3D_OK)
-    {
-        char szError[1024];
-        sprintf(szError, "Failed to create CreatePNT2StreamVertexShader");
-        MessageBox(nullptr, szError, "Vertex Shader Error", MB_ICONSTOP);
-    }
-
-    return dwShader;
-}
-
 void CGraphicDevice::BindDepthState(EDepthState state) const
 {
     switch (state)
@@ -1205,17 +1160,12 @@ RETRY:
         SetWindowPos(hWnd, HWND_TOPMOST, 0, 0, iHres, iVres, SWP_SHOWWINDOW);
     }
 
-    //Tracef("vertex shader version : %X\n",(DWORD)ms_d3dCaps.VertexShaderVersion);
-
     ms_lpd3dDevice->GetViewport(&ms_Viewport);
 
     m_pStateManager = new CStateManager(ms_lpd3dDevice);
 
     D3DXCreateMatrixStack(0, &ms_lpd3dMatStack);
     ms_lpd3dMatStack->LoadIdentity();
-
-    ms_pntVS = CreatePNTStreamVertexShader();
-    ms_pnt2VS = CreatePNT2StreamVertexShader();
 
     /* - SHADER [RESOURCES] -------------------------------- */
     if (__CreateShaderResources())
@@ -1293,7 +1243,7 @@ bool CGraphicDevice::__CreatePDTVertexBufferList()
                         sizeof(TPDTVertex)*PDT_VERTEX_NUM,
                         D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY,
                         D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1,
-                        D3DPOOL_SYSTEMMEM,
+                        D3DPOOL_DEFAULT,
                         &ms_alpd3dPDTVB[i], nullptr)
                 ))
         {
@@ -1434,18 +1384,6 @@ void CGraphicDevice::Destroy()
     {
         ReleaseDC(ms_hWnd, ms_hDC);
         ms_hDC = NULL;
-    }
-
-    if (ms_pntVS)
-    {
-        ms_pntVS->Release();
-        ms_pntVS = nullptr;
-    }
-
-    if (ms_pnt2VS)
-    {
-        ms_pnt2VS->Release();
-        ms_pnt2VS = nullptr;
     }
 
     safe_release(ms_lpSphereMesh);
