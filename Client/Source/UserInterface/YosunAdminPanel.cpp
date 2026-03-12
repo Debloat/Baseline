@@ -376,12 +376,24 @@ void YosunAdminPanel::RenderWorldEditor(bool* p_open) const
         {
             ImGui::SeparatorText("WorldEditor");
             {
-                auto& ycc = GetYosunControlSettings().worldEditor.terrain;
+                auto& ycc = GetYosunControlSettings().worldEditor;
+                {
+                    ImGui::Checkbox("Collision", &ycc.drawCollision);
+                    ImGui::SameLine(0.0f, 12.0f);
+
+                    const bool enabled = ycc.drawCollision;
+
+                    ImGui::PushStyleColor(ImGuiCol_Text, enabled ? ImVec4(0.2f, 1.0f, 0.2f, 1.0f) : ImVec4(1.0f, 0.2f, 0.2f, 1.0f));
+                    ImGui::Text("%s", enabled ? "ON" : "OFF");
+                    ImGui::PopStyleColor();
+                }
+
+                auto& ycct = ycc.terrain;
                 {
                     /* - YOSUN_CONTROL_CENTER [Terrain Wireframe] ---------- */
-                    ImGui::Checkbox("Terrain Wireframe", &ycc.drawTerrainWireFrame);
+                    ImGui::Checkbox("Terrain Wireframe", &ycct.drawTerrainWireFrame);
                     ImGui::SameLine(0.0f, 12.0f);
-                    const bool enabled = ycc.drawTerrainWireFrame;
+                    const bool enabled = ycct.drawTerrainWireFrame;
                     ImGui::PushStyleColor(ImGuiCol_Text, enabled ? ImVec4(0.2f, 1.0f, 0.2f, 1.0f) : ImVec4(1.0f, 0.2f, 0.2f, 1.0f));
                     ImGui::Text("%s", enabled ? "ON" : "OFF");
                     ImGui::PopStyleColor();
@@ -389,9 +401,9 @@ void YosunAdminPanel::RenderWorldEditor(bool* p_open) const
                 }
                 {
                     /* - YOSUN_CONTROL_CENTER [Water Wireframe] ------------ */
-                    ImGui::Checkbox("Water Wireframe", &ycc.drawWaterWireFrame);
+                    ImGui::Checkbox("Water Wireframe", &ycct.drawWaterWireFrame);
                     ImGui::SameLine(0.0f, 12.0f);
-                    const bool enabled = ycc.drawWaterWireFrame;
+                    const bool enabled = ycct.drawWaterWireFrame;
                     ImGui::PushStyleColor(ImGuiCol_Text, enabled ? ImVec4(0.2f, 1.0f, 0.2f, 1.0f) : ImVec4(1.0f, 0.2f, 0.2f, 1.0f));
                     ImGui::Text("%s", enabled ? "ON" : "OFF");
                     ImGui::PopStyleColor();
@@ -399,9 +411,9 @@ void YosunAdminPanel::RenderWorldEditor(bool* p_open) const
                 }
                 {
                     /* - YOSUN_CONTROL_CENTER [Patch Grid] ------------------ */
-                    ImGui::Checkbox("Patch Grid", &ycc.drawPatchGrid);
+                    ImGui::Checkbox("Patch Grid", &ycct.drawPatchGrid);
                     ImGui::SameLine(0.0f, 12.0f);
-                    const bool enabled = ycc.drawPatchGrid;
+                    const bool enabled = ycct.drawPatchGrid;
                     ImGui::PushStyleColor(ImGuiCol_Text, enabled ? ImVec4(0.2f, 1.0f, 0.2f, 1.0f) : ImVec4(1.0f, 0.2f, 0.2f, 1.0f));
                     ImGui::Text("%s", enabled ? "ON" : "OFF");
                     ImGui::PopStyleColor();

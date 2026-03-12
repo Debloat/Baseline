@@ -268,6 +268,12 @@ void CPythonApplication::RenderGame()
         m_pyBackground.SetBackgroundDirLight();
         m_kChrMgr.Render();
 
+        if (GetYosunControlSettings().worldEditor.drawCollision)
+        {
+            m_pyBackground.GetMapOutdoorRef().RenderCollision();
+            m_kChrMgr.RenderCollision();
+        }
+
         m_pyBackground.RenderWater();
         m_pyBackground.RenderSnow();
         m_pyBackground.RenderEffect();

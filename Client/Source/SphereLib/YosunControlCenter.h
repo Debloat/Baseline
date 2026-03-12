@@ -23,6 +23,8 @@ namespace YosunControlDefaults
 
     namespace WorldEditor
     {
+        constexpr bool DrawCollision = false;
+
         namespace Terrain
         {
             constexpr bool DrawTerrainWireFrame = false;
@@ -54,6 +56,8 @@ struct YosunControlSettings
 
     struct WorldEditor
     {
+        bool drawCollision = YosunControlDefaults::WorldEditor::DrawCollision;
+
         struct Terrain
         {
             bool drawTerrainWireFrame  = YosunControlDefaults::WorldEditor::Terrain::DrawTerrainWireFrame;

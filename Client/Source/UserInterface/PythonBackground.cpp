@@ -568,17 +568,6 @@ void CPythonBackground::RenderSnow()
     m_SnowEnvironment.Render();
 }
 
-void CPythonBackground::RenderCollision()
-{
-    if (!IsMapReady())
-    {
-        return;
-    }
-
-    CMapOutdoor& rkMap = GetMapOutdoorRef();
-    rkMap.RenderCollision();
-}
-
 void CPythonBackground::RenderCharacterShadowToTexture()
 {
     if (!IsMapReady())

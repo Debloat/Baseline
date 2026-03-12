@@ -398,7 +398,6 @@ void CActorInstance::RenderCollisionData()
     }
 }
 
-
 void CActorInstance::RenderToShadowMap()
 {
     if (m_iAlphaMode == ALPHA_MODE_BLEND)

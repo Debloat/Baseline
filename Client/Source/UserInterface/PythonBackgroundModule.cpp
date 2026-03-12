@@ -211,12 +211,6 @@ PyObject* backgroundRenderPCBlocker(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* backgroundRenderCollision(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground::Instance().RenderCollision();
-    return Py_BuildNone();
-}
-
 PyObject* backgroundRenderSky(PyObject * poSelf, PyObject * poArgs)
 {
     CPythonBackground::Instance().RenderSky();
@@ -615,7 +609,6 @@ void initBackground()
         { "Update",								backgroundUpdate,							METH_VARARGS },
         { "Render",								backgroundRender,							METH_VARARGS },
         { "RenderPCBlocker",					backgroundRenderPCBlocker,					METH_VARARGS },
-        { "RenderCollision",					backgroundRenderCollision,					METH_VARARGS },
         { "RenderSky",							backgroundRenderSky,						METH_VARARGS },
         { "RenderCloud",						backgroundRenderCloud,						METH_VARARGS },
         { "RenderWater",						backgroundRenderWater,						METH_VARARGS },

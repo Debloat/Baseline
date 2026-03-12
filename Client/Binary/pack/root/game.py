@@ -1479,11 +1479,6 @@ class GameWindow(ui.ScriptWindow):
 
 	def OnRender(self):
 		app.RenderGame()
-		
-		if self.console.Console.collision:
-			background.RenderCollision()
-			chr.RenderCollision()
-
 		(x, y) = app.GetCursorPosition()
 
 		########################

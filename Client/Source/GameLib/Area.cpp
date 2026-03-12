@@ -273,19 +273,6 @@ void CArea::Render()
 
 void CArea::RenderCollision()
 {
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTexture(1, NULL);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xff000000);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-
     for (DWORD i = 0; i < GetObjectInstanceCount(); i++)
     {
         const TObjectInstance * po;
@@ -317,10 +304,6 @@ void CArea::RenderCollision()
             }
         }
     }
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
 void CArea::RenderDungeon()

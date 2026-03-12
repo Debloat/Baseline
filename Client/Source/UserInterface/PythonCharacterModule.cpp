@@ -50,12 +50,6 @@ PyObject* chrRender(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* chrRenderCollision(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonCharacterManager::Instance().RenderCollision();
-    return Py_BuildNone();
-}
-
 // Functions For Python Test Code
 PyObject* chrCreateInstance(PyObject* poSelf, PyObject* poArgs)
 {
@@ -1600,7 +1594,6 @@ void initchr()
         { "Update",						chrUpdate,							METH_VARARGS },
         { "Deform",						chrDeform,							METH_VARARGS },
         { "Render",						chrRender,							METH_VARARGS },
-        { "RenderCollision",			chrRenderCollision,					METH_VARARGS },
 
         // Functions For Python Code
         { "CreateInstance",				chrCreateInstance,					METH_VARARGS },

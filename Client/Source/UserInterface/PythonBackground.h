@@ -84,7 +84,6 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         void ReleaseCharacterShadowTexture();
         void Render();
         void RenderSnow();
-        void RenderCollision();
         void RenderCharacterShadowToTexture();
         void RenderSky();
         void RenderCloud();

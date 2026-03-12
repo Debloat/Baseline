@@ -824,9 +824,6 @@ class ConsoleWindow(ui.Window):
 		self.AddFunction("hide",		Console.HideBackgroundPart)
 		self.AddFunction("debuginfo",	Console.ToggleDebugInfo)
 
-		self.AddFunction("collision",	Console.SetCollision)
-		self.AddFunction("colli",	Console.SetCollision)
-
 		#self.AddFunction("wt",	Console.SetWeaponTrace)
 		self.AddFunction("wtt",	Console.SetWeaponTraceTexture)
 		self.AddFunction("wtm",	Console.SetWeaponTraceMode)
