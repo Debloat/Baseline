@@ -4,6 +4,9 @@
 #include "StateManager.h"
 #include <array>
 
+#include "ShaderProvider.h"
+#include "GrpDevice.h"
+
 CDynamicPool<CGraphicExpandedImageInstance>		CGraphicExpandedImageInstance::ms_kPool;
 
 void CGraphicExpandedImageInstance::CreateSystem(UINT uCapacity)
@@ -27,40 +30,97 @@ void CGraphicExpandedImageInstance::Delete(CGraphicExpandedImageInstance* pkImgI
     ms_kPool.Free(pkImgInst);
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kImageSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap }
+    } };
+
+    // Alpha
+    constexpr PipelineStateDesc kImageAlphaPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+
+    constexpr PipelineStateDesc kImageAlphaCullFrontPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullFront,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+
+    // Screen / Color Dodge
+    constexpr PipelineStateDesc kImageScreenPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::One_InvSrcColor,
+        ERasterState::CullNone,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+
+    constexpr PipelineStateDesc kImageScreenCullFrontPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::One_InvSrcColor,
+        ERasterState::CullFront,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+
+    // Modulate (ZERO / SRCCOLOR)
+    constexpr PipelineStateDesc kImageModulatePipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::Zero_SrcColor,
+        ERasterState::CullNone,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+
+    constexpr PipelineStateDesc kImageModulateCullFrontPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::Zero_SrcColor,
+        ERasterState::CullFront,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
+}
+
 void CGraphicExpandedImageInstance::OnRender()
 {
-    CGraphicImage * pImage = m_roImage.GetPointer();
-    CGraphicTexture * pTexture = pImage->GetTexturePointer();
+    CGraphicImage* pImage = m_roImage.GetPointer();
+    CGraphicTexture* pTexture = pImage->GetTexturePointer();
 
     const RECT& c_rRect = pImage->GetRectReference();
+
     float texReverseWidth = 1.0f / float(pTexture->GetWidth());
     float texReverseHeight = 1.0f / float(pTexture->GetHeight());
+
     float su = (c_rRect.left - m_RenderingRect.left) * texReverseWidth;
     float sv = (c_rRect.top - m_RenderingRect.top) * texReverseHeight;
     float eu = (c_rRect.left + m_RenderingRect.right + (c_rRect.right - c_rRect.left)) * texReverseWidth;
     float ev = (c_rRect.top + m_RenderingRect.bottom + (c_rRect.bottom - c_rRect.top)) * texReverseHeight;
 
     std::array<TPDTVertex, 4> vertices{ {
-        {
-            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
-            m_DiffuseColor,
-            TTextureCoordinate(su, sv)
-        },
-        {
-            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
-            m_DiffuseColor,
-            TTextureCoordinate(eu, sv)
-        },
-        {
-            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
-            m_DiffuseColor,
-            TTextureCoordinate(su, ev)
-        },
-        {
-            { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth },
-            m_DiffuseColor,
-            TTextureCoordinate(eu, ev)
-        }
+        { { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth }, m_DiffuseColor, TTextureCoordinate(su, sv) },
+        { { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth }, m_DiffuseColor, TTextureCoordinate(eu, sv) },
+        { { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth }, m_DiffuseColor, TTextureCoordinate(su, ev) },
+        { { m_v2Position.x - 0.5f, m_v2Position.y - 0.5f, m_fDepth }, m_DiffuseColor, TTextureCoordinate(eu, ev) }
     } };
 
     if (0.0f == m_fRotation)
@@ -70,19 +130,16 @@ void CGraphicExpandedImageInstance::OnRender()
 
         vertices[0].position.x -= m_RenderingRect.left;
         vertices[0].position.y -= m_RenderingRect.top;
+
         vertices[1].position.x += fimgWidth + m_RenderingRect.right;
         vertices[1].position.y -= m_RenderingRect.top;
+
         vertices[2].position.x -= m_RenderingRect.left;
         vertices[2].position.y += fimgHeight + m_RenderingRect.bottom;
+
         vertices[3].position.x += fimgWidth + m_RenderingRect.right;
         vertices[3].position.y += fimgHeight + m_RenderingRect.bottom;
-
-        if ((0.0f < m_v2Scale.x && 0.0f > m_v2Scale.y) || (0.0f > m_v2Scale.x && 0.0f < m_v2Scale.y))
-        {
-            STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
-        }
     }
-
     else
     {
         float fimgHalfWidth = float(pImage->GetWidth()) / 2.0f * m_v2Scale.x;
@@ -95,55 +152,76 @@ void CGraphicExpandedImageInstance::OnRender()
         }
 
         float fRadian = D3DXToRadian(m_fRotation);
+
         vertices[0].position.x += (-fimgHalfWidth * cosf(fRadian)) - (-fimgHalfHeight * sinf(fRadian));
         vertices[0].position.y += (-fimgHalfWidth * sinf(fRadian)) + (-fimgHalfHeight * cosf(fRadian));
+
         vertices[1].position.x += (+fimgHalfWidth * cosf(fRadian)) - (-fimgHalfHeight * sinf(fRadian));
         vertices[1].position.y += (+fimgHalfWidth * sinf(fRadian)) + (-fimgHalfHeight * cosf(fRadian));
+
         vertices[2].position.x += (-fimgHalfWidth * cosf(fRadian)) - (+fimgHalfHeight * sinf(fRadian));
         vertices[2].position.y += (-fimgHalfWidth * sinf(fRadian)) + (+fimgHalfHeight * cosf(fRadian));
+
         vertices[3].position.x += (+fimgHalfWidth * cosf(fRadian)) - (+fimgHalfHeight * sinf(fRadian));
         vertices[3].position.y += (+fimgHalfWidth * sinf(fRadian)) + (+fimgHalfHeight * cosf(fRadian));
     }
 
+    const bool flipCull =
+        (0.0f < m_v2Scale.x && 0.0f > m_v2Scale.y) ||
+        (0.0f > m_v2Scale.x && 0.0f < m_v2Scale.y);
+
+    const PipelineStateDesc* pipeline = &kImageAlphaPipeline;
+
     switch (m_iRenderingMode)
     {
-        case RENDERING_MODE_SCREEN:
-        case RENDERING_MODE_COLOR_DODGE:
-            STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_INVDESTCOLOR);
-            STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
-            break;
+    case RENDERING_MODE_SCREEN:
+    case RENDERING_MODE_COLOR_DODGE:
+        pipeline = flipCull ?
+            &kImageScreenCullFrontPipeline :
+            &kImageScreenPipeline;
+        break;
 
-        case RENDERING_MODE_MODULATE:
-            STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO);
-            STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_SRCCOLOR);
-            break;
+    case RENDERING_MODE_MODULATE:
+        pipeline = flipCull ?
+            &kImageModulateCullFrontPipeline :
+            &kImageModulatePipeline;
+        break;
+
+    default:
+        pipeline = flipCull ?
+            &kImageAlphaCullFrontPipeline :
+            &kImageAlphaPipeline;
+        break;
     }
 
-    // 2004.11.18.myevan.ctrl+alt+del 반복 사용시 튕기는 문제
     if (CGraphicBase::SetPDTStream(vertices.data(), 4))
     {
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(*pipeline))
+            return;
+
+        ScreenPrimitiveShaderInputs in{};
+
+        const D3DVIEWPORT9& vp = CGraphicBase::GetViewport();
+
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(vp.Width),
+            static_cast<float>(vp.Height),
+            in
+        );
+
+        in.ps.mode[0] = 1.0f;
+        in.ps.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+        CGraphicDevice::UploadScreenPrimitiveConstants(in);
+
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 
         STATEMANAGER.SetTexture(0, pTexture->GetD3DTexture());
-        STATEMANAGER.SetTexture(1, NULL);
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1);
+        STATEMANAGER.SetTexture(1, nullptr);
+
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
     }
-
-    //STATEMANAGER.DrawIndexedPrimitiveUP(D3DPT_TRIANGLELIST, 0, 4, 2, c_FillRectIndices, D3DFMT_INDEX16, vertices, sizeof(TPDTVertex));
-    /////////////////////////////////////////////////////////////
-
-    switch (m_iRenderingMode)
-    {
-        case RENDERING_MODE_SCREEN:
-        case RENDERING_MODE_COLOR_DODGE:
-        case RENDERING_MODE_MODULATE:
-            STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-            STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
-            break;
-    }
-
-    STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
 }
 
 void CGraphicExpandedImageInstance::SetDepth(float fDepth)
@@ -197,7 +275,7 @@ void CGraphicExpandedImageInstance::SetRenderingMode(int iMode)
 DWORD CGraphicExpandedImageInstance::Type()
 {
     static DWORD s_dwType = GetCRC32("CGraphicExpandedImageInstance", strlen("CGraphicExpandedImageInstance"));
-    return (s_dwType);
+    return s_dwType;
 }
 
 void CGraphicExpandedImageInstance::OnSetImagePointer()

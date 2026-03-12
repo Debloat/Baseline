@@ -4,7 +4,6 @@
 
 #include "../EterBase/Random.h"
 #include "../EterLib/Camera.h"
-#include "../EterLib/StateManager.h"
 
 CDynamicPool<CParticleInstance> CParticleInstance::ms_kPool;
 
@@ -27,47 +26,10 @@ void CParticleInstance::DeleteThis()
     ms_kPool.Free(this);
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//CDynamicPool<CRayParticleInstance> CRayParticleInstance::ms_kPool;
-
-/*void CRayParticleInstance::DestroySystem()
-{
-	ms_kPool.Destroy();
-}
-
-CRayParticleInstance* CRayParticleInstance::New()
-{
-	return ms_kPool.Alloc();
-}
-
-void CRayParticleInstance::DeleteThis()
-{
-#ifdef RAY_TO_AFTERIMAGE
-	m_PositionList.clear();
-#else
-	m_bStart = false;
-#endif
-	ms_kPool.Free(this);
-}
-*/
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 float CParticleInstance::GetRadiusApproximation()
 {
     return m_v2HalfSize.y * m_v2Scale.y + m_v2HalfSize.x * m_v2Scale.x;
 }
-
-/*
-D3DXVECTOR3 CBaseParticleInstance::GetCenterApproximation()
-{
-	return D3DXVECTOR3(
-		m_v3Position.x + mc_pmatLocal._41,
-		m_v3Position.y + mc_pmatLocal._42,
-		m_v3Position.z + mc_pmatLocal._43
-		);
-}*/
-
 
 BOOL CParticleInstance::Update(float fElapsedTime, float fAngle)
 {

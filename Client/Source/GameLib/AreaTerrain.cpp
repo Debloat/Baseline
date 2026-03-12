@@ -2,7 +2,6 @@
 #include "../TerrainLib/StdAfx.h"
 
 #include "../EterLib/ResourceManager.h"
-#include "../EterLib/StateManager.h"
 #include "../EterPack/EterPackManager.h"
 
 #include "AreaTerrain.h"

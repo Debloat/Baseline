@@ -3,7 +3,6 @@
 #include "Mesh.h"
 #include "../EterBase/Filename.h"
 #include "../EterLib/ResourceManager.h"
-#include "../EterLib/StateManager.h"
 #include "../EterLib/GrpScreen.h"
 
 CGraphicImageInstance CGrannyMaterial::ms_akSphereMapInstance[SPHEREMAP_NUM];
@@ -328,9 +327,8 @@ CGrannyMaterial& CGrannyMaterialPalette::GetMaterialRef(DWORD mtrlIndex)
 void CGrannyMaterialPalette::SetMaterialImagePointer(const char* c_szImageName, CGraphicImage* pImage)
 {
     DWORD size = m_mtrlVector.size();
-    DWORD i;
 
-    for (i = 0; i < size; ++i)
+    for (DWORD i = 0; i < size; ++i)
     {
         CGrannyMaterial::TRef& roMtrl = m_mtrlVector[i];
 
@@ -352,9 +350,7 @@ void CGrannyMaterialPalette::SetMaterialData(const char* c_szMtrlName, const SMa
 {
     if (c_szMtrlName)
     {
-        std::vector<CGrannyMaterial::TRef>::iterator i;
-
-        for (i = m_mtrlVector.begin(); i != m_mtrlVector.end(); ++i)
+        for (auto i = m_mtrlVector.begin(); i != m_mtrlVector.end(); ++i)
         {
             CGrannyMaterial::TRef& roMtrl = *i;
 
@@ -375,9 +371,7 @@ void CGrannyMaterialPalette::SetMaterialData(const char* c_szMtrlName, const SMa
 
     else
     {
-        std::vector<CGrannyMaterial::TRef>::iterator i;
-
-        for (i = m_mtrlVector.begin(); i != m_mtrlVector.end(); ++i)
+        for (auto i = m_mtrlVector.begin(); i != m_mtrlVector.end(); ++i)
         {
             CGrannyMaterial::TRef& roMtrl = *i;
             roMtrl->SetSpecularInfo(c_rkMaterialData.isSpecularEnable, c_rkMaterialData.fSpecularPower, c_rkMaterialData.bSphereMapIndex);
@@ -419,9 +413,8 @@ void CGrannyMaterialPalette::SetSpecularInfo(const char* c_szMtrlName, BOOL bEna
 DWORD CGrannyMaterialPalette::RegisterMaterial(granny_material* pgrnMaterial)
 {
     DWORD size = m_mtrlVector.size();
-    DWORD i;
 
-    for (i = 0; i < size; ++i)
+    for (DWORD i = 0; i < size; ++i)
     {
         CGrannyMaterial::TRef& roMtrl = m_mtrlVector[i];
 

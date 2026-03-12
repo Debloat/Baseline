@@ -4,7 +4,7 @@
 #include "GrpScreen.h"
 #include "GrpMath.h"
 #include "lineintersect_utils.h"
-#include "StateManager.h"
+
 const float gc_fReduceMove = 0.5f;
 
 CDynamicPool<CSphereCollisionInstance> gs_sci;

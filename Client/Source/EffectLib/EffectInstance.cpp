@@ -4,7 +4,6 @@
 #include "SimpleLightInstance.h"
 
 #include "../EterBase/Stl.h"
-#include "../EterLib/StateManager.h"
 #include "../MilesLib/SoundManager.h"
 
 CDynamicPool<CEffectInstance>	CEffectInstance::ms_kPool;

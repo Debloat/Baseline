@@ -114,8 +114,8 @@ void CEffectManager::Render()
             s_kVct_pkEftInstSort.push_back(i->second);
         }
 
-        std::sort(s_kVct_pkEftInstSort.begin(), s_kVct_pkEftInstSort.end(), CEffectManager_LessEffectInstancePtrRenderOrder());
-        std::for_each(s_kVct_pkEftInstSort.begin(), s_kVct_pkEftInstSort.end(), CEffectManager_FEffectInstanceRender());
+        std::ranges::sort(s_kVct_pkEftInstSort, CEffectManager_LessEffectInstancePtrRenderOrder());
+        std::ranges::for_each(s_kVct_pkEftInstSort, CEffectManager_FEffectInstanceRender());
     }
 }
 
@@ -125,9 +125,7 @@ BOOL CEffectManager::RegisterEffect(const char* c_szFileName, bool isExistDelete
     StringPath(c_szFileName, strFileName);
     DWORD dwCRC = GetCaseCRC32(strFileName.c_str(), strFileName.length());
 
-    TEffectDataMap::iterator itor = m_kEftDataMap.find(dwCRC);
-
-    if (m_kEftDataMap.end() != itor)
+    if (TEffectDataMap::iterator itor = m_kEftDataMap.find(dwCRC); m_kEftDataMap.end() != itor)
     {
         if (isExistDelete)
         {

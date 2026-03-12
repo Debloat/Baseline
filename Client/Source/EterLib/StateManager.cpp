@@ -437,11 +437,6 @@ void CStateManager::SetTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE
     m_CurrentState.m_TextureStates[dwStage][Type] = dwValue;
 }
 
-void CStateManager::GetTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD* pdwValue)
-{
-    *pdwValue = m_CurrentState.m_TextureStates[dwStage][Type];
-}
-
 // Sampler states
 void CStateManager::SaveSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD dwValue)
 {
@@ -668,20 +663,6 @@ void CStateManager::SetPixelShaderConstant(DWORD dwRegister, CONST void* pConsta
     }
 }
 
-void CStateManager::SaveStreamSource(UINT StreamNumber, LPDIRECT3DVERTEXBUFFER9 pStreamData, UINT Stride)
-{
-    // Check that we have set this up before, if not, the default is this.
-    m_CopyState.m_StreamData[StreamNumber] = m_CurrentState.m_StreamData[StreamNumber];
-    SetStreamSource(StreamNumber, pStreamData, Stride);
-}
-
-void CStateManager::RestoreStreamSource(UINT StreamNumber)
-{
-    SetStreamSource(StreamNumber,
-                    m_CopyState.m_StreamData[StreamNumber].m_lpStreamData,
-                    m_CopyState.m_StreamData[StreamNumber].m_Stride);
-}
-
 void CStateManager::SetStreamSource(UINT StreamNumber, LPDIRECT3DVERTEXBUFFER9 pStreamData, UINT Stride)
 {
     CStreamData kStreamData(pStreamData, Stride);
@@ -699,11 +680,6 @@ void CStateManager::SaveIndices(LPDIRECT3DINDEXBUFFER9 pIndexData, UINT BaseVert
 {
     m_CopyState.m_IndexData = m_CurrentState.m_IndexData;
     SetIndices(pIndexData, BaseVertexIndex);
-}
-
-void CStateManager::RestoreIndices()
-{
-    SetIndices(m_CopyState.m_IndexData.m_lpIndexData, m_CopyState.m_IndexData.m_BaseVertexIndex);
 }
 
 void CStateManager::SetIndices(LPDIRECT3DINDEXBUFFER9 pIndexData, UINT BaseVertexIndex)

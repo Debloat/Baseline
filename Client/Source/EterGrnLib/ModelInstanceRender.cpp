@@ -39,10 +39,20 @@ void CGrannyModelInstance::__RenderModelFFP(EModelTexturePath eTexPath, EModelRe
     LPDIRECT3DVERTEXBUFFER9 lpd3dRigidPNTVtxBuf = m_pModel->GetPNTD3DVertexBuffer();
 
     // Determine meshlist mode from tex path
-    EMeshNodeListRenderMode eMode =
-        (eTexPath == MODEL_TEX_ONE) ? MESHNODELIST_ONE_TEXTURE :
-        (eTexPath == MODEL_TEX_TWO) ? MESHNODELIST_TWO_TEXTURE :
-        MESHNODELIST_NO_TEXTURE;
+    EMeshNodeListRenderMode eMode;
+
+    if (eTexPath == MODEL_TEX_ONE)
+    {
+        eMode = MESHNODELIST_ONE_TEXTURE;
+    }
+    else if (eTexPath == MODEL_TEX_TWO)
+    {
+        eMode = MESHNODELIST_TWO_TEXTURE;
+    }
+    else
+    {
+        eMode = MESHNODELIST_NO_TEXTURE;
+    }
 
     auto RenderType = [&](CGrannyMesh::EType eMeshType, LPDIRECT3DVERTEXBUFFER9 vb, UINT stride, CGrannyMaterial::EType eMtrlType)
         {
@@ -147,8 +157,7 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
                     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
 
                     // Stage1 combiner setup (match old behavior)
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_TEXCOORDINDEX,
-                        D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR);
+                    STATEMANAGER.SetTextureStageState(1, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR);
 
                     STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
                     STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_TEXTURE);

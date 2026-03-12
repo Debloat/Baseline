@@ -122,6 +122,7 @@ class CGraphicBase
         static const D3DXMATRIX& GetViewMatrix();
         static const D3DXMATRIX& GetIdentityMatrix();
         static const D3DXMATRIX& GetProjMatrix();
+        static const D3DVIEWPORT9& GetViewport();
 
         enum
         {
@@ -152,6 +153,8 @@ class CGraphicBase
             *fNearY = ms_fNearY;
             *fFarY = ms_fFarY;
         }
+
+
 
         ////////////////////////////////////////////////////////////////////////
         void		MultMatrix(const D3DXMATRIX* pMat);

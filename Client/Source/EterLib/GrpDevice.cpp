@@ -761,6 +761,12 @@ void CGraphicDevice::BindBlendState(EBlendState state) const
         STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ONE);
         STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCCOLOR);
         break;
+
+    case EBlendState::Zero_SrcColor:
+        STATEMANAGER.SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+        STATEMANAGER.SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO);
+        STATEMANAGER.SetRenderState(D3DRS_DESTBLEND, D3DBLEND_SRCCOLOR);
+        break;
     }
 }
 
@@ -957,18 +963,18 @@ bool CGraphicDevice::__CreateShaderResources()
 
     static constexpr std::array<ShaderDesc, static_cast<size_t>(std::to_underlying(ShaderID::Count))> kShaderTable =
     {
-        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS,          EShaderInputLayout::PTC },
-        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS,         EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS,         EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS,      EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS,    EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS },
-        ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS },
-        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS,           EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS, EShaderInputLayout::PT },
-        ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,     EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS,           EShaderInputLayout::PTC },
+        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS,          EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS,          EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS,       EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS,     EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS, EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS,         EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS,            EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS,  EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,      EShaderInputLayout::PT },
         //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
-        ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,   EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

@@ -79,8 +79,6 @@ void CScreen::RenderLine3d(float sx, float sy, float sz, float ex, float ey, flo
         if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
         in.ps.mode[0] = 0.0f;
@@ -107,8 +105,6 @@ void CScreen::RenderBar3d(const D3DXVECTOR3* c_pv3Positions)
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
@@ -138,8 +134,6 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
@@ -182,8 +176,6 @@ void CScreen::RenderCube(float sx, float sy, float sz, float ex, float ey, float
         if (!sp || !sp->BindPipelineState(kScreenPrimitive3DSolidPipeline))
             return;
 
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive3D(*ms_lpd3dMatStack->GetTop(), in);
         in.ps.mode[0] = 0.0f;
@@ -209,8 +201,6 @@ void CScreen::RenderLine2d(float sx, float sy, float ex, float ey, float z)
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive2DOrthoPixel(
@@ -250,8 +240,6 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
         if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
 
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive2DOrthoPixel(
             static_cast<float>(ms_Viewport.Width),
@@ -282,8 +270,6 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive2DOrthoPixel(
@@ -318,8 +304,6 @@ void CScreen::RenderGradationBar2d(float sx, float sy, float ex, float ey, DWORD
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive2DOrthoPixel(
@@ -497,8 +481,6 @@ void CScreen::RenderTextureBox(float sx, float sy, float ex, float ey, float z, 
         const IShaderProvider* sp = GetShaderProvider();
         if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
             return;
-
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
 
         ScreenPrimitiveShaderInputs in{};
         sp->FillScreenPrimitive2DOrthoPixel(

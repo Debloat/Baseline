@@ -295,7 +295,6 @@ class CStateManager : public CSingleton<CStateManager>
         void    SaveTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD dwValue);
         void    RestoreTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type);
         void    SetTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD dwValue);
-        void    GetTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD* pdwValue);
         void    SetBestFiltering(DWORD dwStage);  // if possible set anisotropy filtering, or use trilinear
 
         // Sampler states
@@ -343,12 +342,9 @@ class CStateManager : public CSingleton<CStateManager>
         void RestorePixelShaderConstant(DWORD dwRegister, DWORD dwConstantCount);
         void SetPixelShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
 
-        void SaveStreamSource(UINT StreamNumber, LPDIRECT3DVERTEXBUFFER9 pStreamData, UINT Stride);
-        void RestoreStreamSource(UINT StreamNumber);
         void SetStreamSource(UINT StreamNumber, LPDIRECT3DVERTEXBUFFER9 pStreamData, UINT Stride);
 
         void SaveIndices(LPDIRECT3DINDEXBUFFER9 pIndexData, UINT BaseVertexIndex);
-        void RestoreIndices();
         void SetIndices(LPDIRECT3DINDEXBUFFER9 pIndexData, UINT BaseVertexIndex);
 
         HRESULT DrawPrimitive(D3DPRIMITIVETYPE PrimitiveType, UINT StartVertex, UINT PrimitiveCount);

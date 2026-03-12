@@ -179,6 +179,11 @@ const D3DXMATRIX& CGraphicBase::GetProjMatrix()
     return ms_matProj;
 }
 
+const D3DVIEWPORT9& CGraphicBase::GetViewport()
+{
+    return ms_Viewport;
+}
+
 void CGraphicBase::SetSimpleCamera(float x, float y, float z, float pitch, float roll)
 {
     CCamera * pCamera = CCameraManager::Instance().GetCurrentCamera();

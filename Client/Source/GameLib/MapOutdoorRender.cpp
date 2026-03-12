@@ -611,8 +611,6 @@ void CMapOutdoor::RenderBlendArea()
 
     if (!s_kVct_pkBlendThingInstSort.empty())
     {
-
-
         std::ranges::sort(s_kVct_pkBlendThingInstSort, CMapOutdoor_LessThingInstancePtrRenderOrder());
 
         STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, TRUE);

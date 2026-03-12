@@ -18,7 +18,10 @@ float4 main(PS_IN input) : COLOR0
         color = tex2D(sTex0, input.uvTile);
 
     if (g_vFlags.y > 0.5)
-        color *= tex2D(sMask, input.uvMask);
+    {
+        float mask = tex2D(sMask, input.uvMask).a;
+        clip(mask - 0.01);
+    }
 
     color *= g_vColorFactor;
 

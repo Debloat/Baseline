@@ -1,5 +1,4 @@
 #include "StdAfx.h"
-#include "../EterLib/StateManager.h"
 #include "../EterLib/ResourceManager.h"
 #include "../EterPack/EterPackManager.h"
 #include "EffectMesh.h"

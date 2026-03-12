@@ -308,6 +308,43 @@ void CPythonMiniMap::Update(float fCenterX, float fCenterY)
     }
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 2> MiniMapSamplers =
+    { {
+        { 0, ESamplerState::PointClamp },
+        { 1, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc MiniMapPipeline =
+    {
+        ShaderID::MiniMap,
+        EDepthState::Disabled,
+        EBlendState::Opaque,
+        ERasterState::CullNone,
+        MiniMapSamplers.data(),
+        MiniMapSamplers.size()
+    };
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> MiniMapIconSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc MiniMapIconPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        MiniMapIconSamplers.data(),
+        MiniMapIconSamplers.size()
+    };
+}
+
 void CPythonMiniMap::Render(float fScreenX, float fScreenY)
 {
     CPythonBackground& rkBG = CPythonBackground::Instance();
@@ -334,23 +371,13 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
         __SetPosition();
     }
 
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
-
     /* - SHADER [MINIMAP] ----------------------------------- */
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::MiniMap))
+    if (!sp || !sp->BindPipelineState(MiniMapPipeline))
     {
         TraceError("MiniMap shader bind failed");
         return;
     }
-
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PT));
 
     STATEMANAGER.SetStreamSource(0, m_VertexBuffer.GetD3DVertexBuffer(), 20);
     STATEMANAGER.SetIndices(m_IndexBuffer.GetD3DIndexBuffer(), 0);
@@ -398,33 +425,18 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, byTerrainNum * 4, 4, byTerrainNum * 6, 2);
     }
 
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSU);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_ADDRESSV);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSU);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSV);
-
     /* - SHADER [MINIMAP ICONS] ---------------------------- */
     IShaderProvider const* spIcons = GetShaderProvider();
-    if (spIcons && spIcons->BindShader(ShaderID::ScreenPrimitive))
+    if (spIcons && spIcons->BindPipelineState(MiniMapIconPipeline))
     {
-        STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-        ScreenPrimitiveShaderInputs spi{};
-        spIcons->FillScreenPrimitive2D(spi);
-
-        spi.ps.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
-
         auto UploadColor = [&](DWORD col)
             {
-                spi.ps.colorFactor =
-                {
+                m_WhiteMark.SetDiffuseColor(
                     ((col >> 16) & 0xFF) / 255.0f,
                     ((col >> 8) & 0xFF) / 255.0f,
                     ((col) & 0xFF) / 255.0f,
                     ((col >> 24) & 0xFF) / 255.0f
-                };
-
-                CGraphicDevice::UploadScreenPrimitiveConstants(spi);
+                );
             };
 
         TInstancePositionVectorIterator aIterator;
@@ -503,12 +515,6 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
             ++aIterator;
         }
     }
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MIPFILTER);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MAGFILTER);
-
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 
     // 캐릭터 마크
     CInstanceBase * pkInst = CPythonCharacterManager::Instance().GetMainInstancePtr();
@@ -567,9 +573,6 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
         m_MiniMapCameraraphicImageInstance.SetRotation(pkCmrCur->GetRoll());
         m_MiniMapCameraraphicImageInstance.Render();
     }
-
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MAGFILTER);
 }
 
 void CPythonMiniMap::SetScale(float fScale)
@@ -1167,8 +1170,10 @@ void CPythonMiniMap::UpdateAtlas()
             fRotation += 360.0f;
         }
 
-        m_AtlasPlayerMark.SetPosition(kInstPos.x / m_fAtlasMaxX * m_fAtlasImageSizeX - (float)m_AtlasPlayerMark.GetWidth() / 2.0f,
-                                      kInstPos.y / m_fAtlasMaxY * m_fAtlasImageSizeY - (float)m_AtlasPlayerMark.GetHeight() / 2.0f);
+        m_AtlasPlayerMark.SetPosition(
+            m_fAtlasScreenX + kInstPos.x / m_fAtlasMaxX * m_fAtlasImageSizeX - (float)m_AtlasPlayerMark.GetWidth() / 2.0f,
+            m_fAtlasScreenY + kInstPos.y / m_fAtlasMaxY * m_fAtlasImageSizeY - (float)m_AtlasPlayerMark.GetHeight() / 2.0f
+        );
         m_AtlasPlayerMark.SetRotation(fRotation);
     }
 
@@ -1184,6 +1189,42 @@ void CPythonMiniMap::UpdateAtlas()
     }
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> AtlasPointSamplers =
+    { {
+        { 0, ESamplerState::PointClamp }
+    } };
+
+    constexpr PipelineStateDesc AtlasPointPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        AtlasPointSamplers.data(),
+        AtlasPointSamplers.size()
+    };
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> AtlasLinearSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc AtlasLinearPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        AtlasLinearSamplers.data(),
+        AtlasLinearSamplers.size()
+    };
+}
+
 void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
 {
     if (!m_bShowAtlas)
@@ -1197,39 +1238,25 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
         m_matWorldAtlas._42 = fScreenY;
         m_fAtlasScreenX = fScreenX;
         m_fAtlasScreenY = fScreenY;
+        m_AtlasImageInstance.SetPosition(fScreenX, fScreenY);
     }
-
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
 
     /* - SHADER [ATLAS BASE] -------------------------------- */
     IShaderProvider const* sp = GetShaderProvider();
-    if (!sp || !sp->BindShader(ShaderID::ScreenPrimitive))
+    if (!sp || !sp->BindPipelineState(AtlasPointPipeline))
     {
         TraceError("Atlas ScreenPrimitive shader bind failed");
         return;
     }
 
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PCT));
-
-    ScreenPrimitiveShaderInputs spi{};
-    sp->FillScreenPrimitive2DWorld(m_matWorldAtlas, spi);
-
-    spi.ps.mode = { 1.0f, 0.0f, 0.0f, 0.0f }; // texture * vertexColor
-    spi.ps.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
-    CGraphicDevice::UploadScreenPrimitiveConstants(spi);
-
     auto UploadColor = [&](DWORD col)
         {
-            spi.ps.colorFactor =
-            {
+            m_WhiteMark.SetDiffuseColor(
                 ((col >> 16) & 0xFF) / 255.0f,
                 ((col >> 8) & 0xFF) / 255.0f,
                 ((col) & 0xFF) / 255.0f,
                 ((col >> 24) & 0xFF) / 255.0f
-            };
-
-            CGraphicDevice::UploadScreenPrimitiveConstants(spi);
+            );
         };
     /* ------------------------------------------------------- */
 
@@ -1249,8 +1276,8 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
 
         /* - ATLAS_MARK_INFO [REFACTOR] ------------------------ */
         m_WhiteMark.SetPosition(
-            rAtlasMarkInfo.m_fScreenX - halfWidth,
-            rAtlasMarkInfo.m_fScreenY - halfHeight
+            fScreenX + rAtlasMarkInfo.m_fScreenX - halfWidth,
+            fScreenY + rAtlasMarkInfo.m_fScreenY - halfHeight
         );
         /* ----------------------------------------------------- */
 
@@ -1267,8 +1294,8 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
 
         /* - ATLAS_MARK_INFO [REFACTOR] ------------------------ */
         m_WhiteMark.SetPosition(
-            rAtlasMarkInfo.m_fScreenX - halfWidth,
-            rAtlasMarkInfo.m_fScreenY - halfHeight
+            fScreenX + rAtlasMarkInfo.m_fScreenX - halfWidth,
+            fScreenY + rAtlasMarkInfo.m_fScreenY - halfHeight
         );
         /* ----------------------------------------------------- */
 
@@ -1276,8 +1303,11 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
         ++m_AtlasMarkInfoVectorIterator;
     }
 
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+    if (!sp->BindPipelineState(AtlasLinearPipeline))
+    {
+        TraceError("AtlasLinearPipeline bind failed");
+        return;
+    }
 
     UploadColor(CInstanceBase::GetIndexedNameColor(CInstanceBase::NAMECOLOR_WAYPOINT));
     m_AtlasMarkInfoVectorIterator = m_AtlasWayPointInfoVector.begin();
@@ -1298,12 +1328,12 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
 
         if (TYPE_TARGET == rAtlasMarkInfo.m_byType)
         {
-            __RenderMiniWayPointMark(rAtlasMarkInfo.m_fScreenX, rAtlasMarkInfo.m_fScreenY);
+            __RenderMiniWayPointMark(fScreenX + rAtlasMarkInfo.m_fScreenX, fScreenY + rAtlasMarkInfo.m_fScreenY);
         }
 
         else
         {
-            __RenderWayPointMark(rAtlasMarkInfo.m_fScreenX, rAtlasMarkInfo.m_fScreenY);
+            __RenderWayPointMark(fScreenX + rAtlasMarkInfo.m_fScreenX, fScreenY + rAtlasMarkInfo.m_fScreenY);
         }
     }
 
@@ -1311,9 +1341,6 @@ void CPythonMiniMap::RenderAtlas(float fScreenX, float fScreenY)
     {
         m_AtlasPlayerMark.Render();
     }
-
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MINFILTER);
-    STATEMANAGER.RestoreSamplerState(0, D3DSAMP_MAGFILTER);
 
     {
         TGuildAreaInfoVectorIterator itor = m_GuildAreaInfoVector.begin();

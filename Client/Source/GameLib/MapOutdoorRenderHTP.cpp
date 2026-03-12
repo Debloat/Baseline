@@ -70,7 +70,7 @@ void CMapOutdoor::__RenderTerrain_RenderHardwareTransformPatch()
         fTerrainLODMid = max(fTerrainLODNear + 1.0f, fMaxVisiblePatchDistance * 0.75f);
     }
 
-    auto near_it = std::upper_bound(m_PatchVector.begin(), m_PatchVector.end(), std::make_pair(fTerrainLODNear, 0L));
+    auto near_it = std::ranges::upper_bound(m_PatchVector, std::make_pair(fTerrainLODNear, 0L));
     auto far_it = m_PatchVector.end();
 
     WORD wPrimitiveCount;
@@ -143,7 +143,7 @@ void CMapOutdoor::__RenderTerrain_RenderHardwareTransformPatch()
     // terrain rendering finished
     STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
 
-    std::sort(m_RenderedTextureNumVector.begin(), m_RenderedTextureNumVector.end());
+    std::ranges::sort(m_RenderedTextureNumVector);
 
     //////////////////////////////////////////////////////////////////////////
     // Render State & TextureStageState
@@ -267,9 +267,7 @@ void CMapOutdoor::__HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD 
             STATEMANAGER.DrawIndexedPrimitive(ePrimitiveType, 0, m_iPatchTerrainVertexCount, 0, wPrimitiveCount);
         }
 
-        std::vector<int>::iterator aIterator = std::find(m_RenderedTextureNumVector.begin(), m_RenderedTextureNumVector.end(), (int)j);
-
-        if (aIterator == m_RenderedTextureNumVector.end())
+        if (auto aIterator = std::ranges::find(m_RenderedTextureNumVector, (int)j); aIterator == m_RenderedTextureNumVector.end())
         {
             m_RenderedTextureNumVector.push_back(j);
         }

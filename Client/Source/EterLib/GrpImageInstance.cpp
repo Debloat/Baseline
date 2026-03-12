@@ -4,6 +4,9 @@
 
 #include "../EterBase/CRC32.h"
 
+#include "ShaderProvider.h"
+#include "GrpDevice.h"
+
 CDynamicPool<CGraphicImageInstance>		CGraphicImageInstance::ms_kPool;
 
 void CGraphicImageInstance::CreateSystem(UINT uCapacity)
@@ -37,6 +40,24 @@ void CGraphicImageInstance::Render()
     assert(!IsEmpty());
 
     OnRender();
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kImageSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc kImagePipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kImageSamplers.data(),
+        kImageSamplers.size()
+    };
 }
 
 void CGraphicImageInstance::OnRender()
@@ -84,11 +105,29 @@ void CGraphicImageInstance::OnRender()
     // 2004.11.18.myevan.ctrl+alt+del 반복 사용시 튕기는 문제
     if (CGraphicBase::SetPDTStream(vertices, 4))
     {
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kImagePipeline))
+            return;
+
+        ScreenPrimitiveShaderInputs in{};
+        const D3DVIEWPORT9& vp = CGraphicBase::GetViewport();
+
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(vp.Width),
+            static_cast<float>(vp.Height),
+            in
+        );
+
+        in.ps.mode[0] = 1.0f; // texture * color
+        in.ps.colorFactor = { 1.0f,1.0f,1.0f,1.0f };
+
+        CGraphicDevice::UploadScreenPrimitiveConstants(in);
+
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 
         STATEMANAGER.SetTexture(0, pTexture->GetD3DTexture());
-        STATEMANAGER.SetTexture(1, NULL);
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1);
+        STATEMANAGER.SetTexture(1, nullptr);
+
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
     }
 

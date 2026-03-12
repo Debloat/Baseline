@@ -587,7 +587,7 @@ struct FCharacterManagerCharacterInstanceRenderToShadowMap
 
 void CPythonCharacterManager::RenderShadowAllInstances()
 {
-    std::for_each(m_kAliveInstMap.begin(), m_kAliveInstMap.end(), FCharacterManagerCharacterInstanceRenderToShadowMap());
+    std::ranges::for_each(m_kAliveInstMap, FCharacterManagerCharacterInstanceRenderToShadowMap());
 }
 
 struct FCharacterManagerCharacterInstanceRenderCollision
@@ -600,7 +600,7 @@ struct FCharacterManagerCharacterInstanceRenderCollision
 
 void CPythonCharacterManager::RenderCollision()
 {
-    std::for_each(m_kAliveInstMap.begin(), m_kAliveInstMap.end(), FCharacterManagerCharacterInstanceRenderCollision());
+    std::ranges::for_each(m_kAliveInstMap, FCharacterManagerCharacterInstanceRenderCollision());
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

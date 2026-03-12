@@ -212,7 +212,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
 
     if (ulRenderBitVector & Forest_RenderToShadow)
     {
-        //STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,  D3DTOP_DISABLE);
         STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
         STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
         STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,   D3DTOP_MODULATE);
