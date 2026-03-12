@@ -23,8 +23,6 @@ CStateManager::~CStateManager()
 
 void CStateManager::SetDefaultState()
 {
-    UpdateAnisotropy();
-
     m_CurrentState.ResetState();
     m_CopyState.ResetState();
 
@@ -493,12 +491,6 @@ void CStateManager::GetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWO
 }
 
 // Vertex Shader
-void CStateManager::SaveVertexShader(LPDIRECT3DVERTEXSHADER9 dwShader)
-{
-    m_CopyState.m_dwVertexShader = m_CurrentState.m_dwVertexShader;
-    SetVertexShader(dwShader);
-}
-
 void CStateManager::RestoreVertexShader()
 {
     SetVertexShader(m_CopyState.m_dwVertexShader);
@@ -516,26 +508,10 @@ void CStateManager::GetVertexShader(LPDIRECT3DVERTEXSHADER9* pdwShader)
 }
 
 // Vertex Declaration
-void CStateManager::SaveVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9 dwShader)
-{
-    m_CopyState.m_dwVertexDeclaration = m_CurrentState.m_dwVertexDeclaration;
-    SetVertexDeclaration(dwShader);
-}
-
-void CStateManager::RestoreVertexDeclaration()
-{
-    SetVertexDeclaration(m_CopyState.m_dwVertexDeclaration);
-}
-
 void CStateManager::SetVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9 dwShader)
 {
     m_lpD3DDev->SetVertexDeclaration(dwShader);
     m_CurrentState.m_dwVertexDeclaration = dwShader;
-}
-
-void CStateManager::GetVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9* pdwShader)
-{
-    *pdwShader = m_CurrentState.m_dwVertexDeclaration;
 }
 
 // FVF
@@ -646,17 +622,6 @@ void CStateManager::GetTransform(D3DTRANSFORMSTATETYPE Type, D3DMATRIX* pMatrix)
 }
 
 // SetVertexShaderConstant
-void CStateManager::SaveVertexShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount)
-{
-    for (DWORD i = 0; i < dwConstantCount; i++)
-    {
-        StateManager_Assert((dwRegister + i) < STATEMANAGER_MAX_VCONSTANTS);
-        m_CopyState.m_VertexShaderConstants[dwRegister + i] = m_CurrentState.m_VertexShaderConstants[dwRegister + i];
-    }
-
-    SetVertexShaderConstant(dwRegister, pConstantData, dwConstantCount);
-}
-
 void CStateManager::RestoreVertexShaderConstant(DWORD dwRegister, DWORD dwConstantCount)
 {
     SetVertexShaderConstant(dwRegister, &m_CopyState.m_VertexShaderConstants[dwRegister], dwConstantCount);
@@ -777,42 +742,6 @@ HRESULT CStateManager::DrawIndexedPrimitiveUP(D3DPRIMITIVETYPE PrimitiveType, UI
     m_CurrentState.m_StreamData[0] = nullptr;
     return (m_lpD3DDev->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertexIndices, PrimitiveCount, pIndexData, IndexDataFormat, pVertexStreamZeroData,
                                                VertexStreamZeroStride));
-}
-
-void CStateManager::UpdateAnisotropy()
-{
-    D3DCAPS9 d3dCaps;
-    m_lpD3DDev->GetDeviceCaps(&d3dCaps);
-
-    if (d3dCaps.TextureFilterCaps & D3DPTFILTERCAPS_MAGFANISOTROPIC)
-    {
-        m_dwBestMagFilter = D3DTEXF_ANISOTROPIC;
-    }
-
-    else
-    {
-        m_dwBestMagFilter = D3DTEXF_LINEAR;
-    }
-
-    if (d3dCaps.TextureFilterCaps & D3DPTFILTERCAPS_MINFANISOTROPIC)
-    {
-        m_dwBestMinFilter = D3DTEXF_ANISOTROPIC;
-    }
-
-    else
-    {
-        m_dwBestMinFilter = D3DTEXF_LINEAR;
-    }
-
-    DWORD dwMax = d3dCaps.MaxAnisotropy;
-    dwMax = dwMax < 4 ? dwMax : 4;
-
-    for (int i = 0; i < 8; ++i)
-    {
-        m_lpD3DDev->SetSamplerState(i, D3DSAMP_MAXANISOTROPY, dwMax);
-    }
-
-    m_lpD3DDev->SetSoftwareVertexProcessing(false);
 }
 
 LPDIRECT3DDEVICE9EX CStateManager::GetDevice()

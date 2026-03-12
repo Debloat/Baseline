@@ -305,16 +305,12 @@ class CStateManager : public CSingleton<CStateManager>
         void    GetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD* pdwValue);
 
         // Vertex Shader
-        void    SaveVertexShader(LPDIRECT3DVERTEXSHADER9 dwShader);
         void    RestoreVertexShader();
         void    SetVertexShader(LPDIRECT3DVERTEXSHADER9 dwShader);
         void    GetVertexShader(LPDIRECT3DVERTEXSHADER9* pdwShader);
 
         // Vertex Declaration
-        void    SaveVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9 dwShader);
-        void    RestoreVertexDeclaration();
         void    SetVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9 dwShader);
-        void    GetVertexDeclaration(LPDIRECT3DVERTEXDECLARATION9* pdwShader);
 
         // FVF
         void    SaveFVF(DWORD dwShader);
@@ -339,7 +335,6 @@ class CStateManager : public CSingleton<CStateManager>
         void GetTransform(D3DTRANSFORMSTATETYPE Type, D3DMATRIX* pMatrix);
 
         // SetVertexShaderConstant
-        void SaveVertexShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
         void RestoreVertexShaderConstant(DWORD dwRegister, DWORD dwConstantCount);
         void SetVertexShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
 
@@ -369,7 +364,6 @@ class CStateManager : public CSingleton<CStateManager>
 
     private:
         void SetDevice(LPDIRECT3DDEVICE9EX lpDevice);
-        void UpdateAnisotropy();
 
     private:
         CStateManagerState  m_CurrentState;
