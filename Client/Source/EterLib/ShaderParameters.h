@@ -435,3 +435,23 @@ struct SnowParticleShaderInputs
 {
     SnowParticleVSCB vs;
 };
+
+/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
+struct TerrainVSCB
+{
+    std::array<float, 16> worldViewProj;
+    std::array<float, 16> colorTexMatrix;
+    std::array<float, 16> alphaTexMatrix;
+};
+
+struct TerrainPSCB
+{
+    std::array<float, 4> layerState;
+};
+
+struct TerrainShaderInputs
+{
+    TerrainVSCB vs;
+    TerrainPSCB ps;
+};

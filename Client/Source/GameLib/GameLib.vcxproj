@@ -179,7 +179,6 @@
     <ClCompile Include="MapBase.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="MapOutdoor.cpp" />
-    <ClCompile Include="MapOutdoorCharacterShadow.cpp" />
     <ClCompile Include="MapOutdoorIndexBuffer.cpp" />
     <ClCompile Include="MapOutdoorLoad.cpp" />
     <ClCompile Include="MapOutdoorQuadtree.cpp" />

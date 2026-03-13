@@ -35,6 +35,14 @@ namespace
         D3DDECL_END()
     };
 
+    // Position + Normal
+    static const D3DVERTEXELEMENT9 kDecl_PN[] =
+    {
+        { 0, 0,  D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0 },
+        { 0, 12, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_NORMAL,   0 },
+        D3DDECL_END()
+    };
+
     // Position + Normal + TexCoord
     static const D3DVERTEXELEMENT9 kDecl_PNT[] =
     {
@@ -66,6 +74,9 @@ namespace
 
         case EShaderInputLayout::PCT:
             return kDecl_PCT;
+
+        case EShaderInputLayout::PN:
+            return kDecl_PN;
 
         case EShaderInputLayout::PNT:
             return kDecl_PNT;

@@ -133,32 +133,12 @@ bool CMapOutdoor::Initialize()
 
     m_bSettingTerrainVisible = false;
     m_bDrawWireFrame	= false;
-    m_bDrawShadow		= false;
-    m_bDrawChrShadow	= false;
 
     m_iSplatLimit = 50000;
 
     m_wPatchCount = 0;
 
     m_pRootNode = NULL;
-
-    //////////////////////////////////////////////////////////////////////////
-    // Character Shadow
-    m_lpCharacterShadowMapTexture = NULL;
-    m_lpCharacterShadowMapRenderTargetSurface = NULL;
-    m_lpCharacterShadowMapDepthSurface = NULL;
-
-    m_lpBackupRenderTargetSurface = NULL;
-    m_lpBackupDepthSurface = NULL;
-    // Character Shadow
-    //////////////////////////////////////////////////////////////////////////
-
-    m_lpSceneDepthTexture = nullptr;
-    m_lpSceneDepthRenderTargetSurface = nullptr;
-    m_lpSceneDepthDepthSurface = nullptr;
-
-    m_lpSceneDepthBackupRT = nullptr;
-    m_lpSceneDepthBackupDepth = nullptr;
 
     m_iRenderedPatchNum = 0;
     m_iRenderedSplatNum = 0;
@@ -203,8 +183,6 @@ bool CMapOutdoor::Initialize()
     m_bEnableTerrainOnlyForHeight = FALSE;
     m_bEnablePortal = FALSE;
 
-    m_wShadowMapSize = 512;
-
     return true;
 }
 
@@ -221,9 +199,6 @@ bool CMapOutdoor::Destroy()
     DestroyTerrainPatchProxyList();
 
     FreeQuadTree();
-    ReleaseCharacterShadowTexture();
-
-    ReleaseSceneDepthTexture();
 
     CTerrain::DestroySystem();
     CArea::DestroySystem();
@@ -1130,16 +1105,6 @@ BOOL CMapOutdoor::GetTerrainPointer(const BYTE c_byTerrainNum, CTerrain** ppTerr
 
     *ppTerrain = m_pTerrain[c_byTerrainNum];
     return TRUE;
-}
-
-void CMapOutdoor::SetDrawShadow(bool bDrawShadow)
-{
-    m_bDrawShadow = bDrawShadow;
-}
-
-void CMapOutdoor::SetDrawCharacterShadow(bool bDrawChrShadow)
-{
-    m_bDrawChrShadow = bDrawChrShadow;
 }
 
 bool CMapOutdoor::isAttrOn(float fX, float fY, BYTE byAttr)

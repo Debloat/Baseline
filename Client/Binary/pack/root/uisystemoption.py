@@ -37,7 +37,6 @@ class OptionDialog(ui.ScriptWindow):
 		self.ctrlSoundVolume = 0
 		self.musicListDlg = 0
 		self.cameraModeButtonList = []
-		self.ctrlShadowQuality = 0
 		
 	def Destroy(self):
 		self.ClearDictionary()
@@ -63,7 +62,6 @@ class OptionDialog(ui.ScriptWindow):
 			self.ctrlSoundVolume = GetObject("sound_volume_controller")			
 			self.cameraModeButtonList.append(GetObject("camera_short"))
 			self.cameraModeButtonList.append(GetObject("camera_long"))
-			#self.ctrlShadowQuality = GetObject("shadow_bar")
 		except:
 			import exception
 			exception.Abort("OptionDialog.__Load_BindObject")
@@ -81,9 +79,6 @@ class OptionDialog(ui.ScriptWindow):
 
 		self.ctrlSoundVolume.SetSliderPos(float(systemSetting.GetSoundVolume()) / 5.0)
 		self.ctrlSoundVolume.SetEvent(ui.__mem_func__(self.OnChangeSoundVolume))
-
-#		self.ctrlShadowQuality.SetSliderPos(float(systemSetting.GetShadowLevel()) / 5.0)
-#		self.ctrlShadowQuality.SetEvent(ui.__mem_func__(self.OnChangeShadowQuality))
 
 		self.changeMusicButton.SAFE_SetEvent(self.__OnClickChangeMusicButton)
 
@@ -152,10 +147,6 @@ class OptionDialog(ui.ScriptWindow):
 		pos = self.ctrlSoundVolume.GetSliderPos()
 		snd.SetSoundVolumef(pos)
 		systemSetting.SetSoundVolumef(pos)
-
-	def OnChangeShadowQuality(self):
-		pos = self.ctrlShadowQuality.GetSliderPos()
-		systemSetting.SetShadowLevel(int(pos / 0.2))
 
 	def OnCloseInputDialog(self):
 		self.inputDialog.Close()

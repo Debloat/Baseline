@@ -57,7 +57,6 @@ namespace prt
         std::string strName;
         std::string	strFileName;
         std::string	strAttributeDataFileName;
-        BOOL		isShadowFlag;
     };
 
     struct TPropertyEffect

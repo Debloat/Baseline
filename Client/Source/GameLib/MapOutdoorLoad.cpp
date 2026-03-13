@@ -31,7 +31,6 @@ bool CMapOutdoor::Load(float x, float y, float z)
     CreateTerrainPatchProxyList();
     BuildQuadTree();
     LoadWaterTexture();
-    CreateCharacterShadowTexture();
 
     m_lOldReadX = -1;
 
@@ -189,7 +188,7 @@ bool CMapOutdoor::LoadArea(WORD wAreaCoordX, WORD wAreaCoordY, WORD wCellCoordX,
 
     if (!pArea->Load(szAreaPathName))
     {
-        TraceError(" CMapOutdoor::LoadArea(%d, %d) LoadShadowMap ERROR", wAreaCoordX, wAreaCoordY);
+        TraceError(" CMapOutdoor::LoadArea(%d, %d) ERROR", wAreaCoordX, wAreaCoordY);
     }
 
 #ifdef _DEBUG
@@ -442,10 +441,6 @@ bool CMapOutdoor::LoadSetting(const char* c_szFileName)
                       0.0f);
     m_matSplatAlpha._41 = m_fTerrainTexCoordBase * 4.6f;
     m_matSplatAlpha._42 = m_fTerrainTexCoordBase * 4.6f;
-
-    D3DXMatrixScaling(&m_matDynamicShadowScale, 1.0f / 2550.0f, -1.0f / 2550.0f, 1.0f);
-    m_matDynamicShadowScale._41 = 0.5f;
-    m_matDynamicShadowScale._42 = 0.5f;
 
     NANOEND
     return true;

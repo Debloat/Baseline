@@ -2251,42 +2251,6 @@ void CInstanceBase::Render()
     }
 }
 
-void CInstanceBase::RenderToShadowMap()
-{
-    if (IsDoor())
-    {
-        return;
-    }
-
-    if (IsBuilding())
-    {
-        return;
-    }
-
-    if (!__CanRender())
-    {
-        return;
-    }
-
-    if (!__IsExistMainInstance())
-    {
-        return;
-    }
-
-    CInstanceBase* pkInstMain = __GetMainInstancePtr();
-
-    const float SHADOW_APPLY_DISTANCE = 2500.0f;
-
-    float fDistance = NEW_GetDistanceFromDestInstance(*pkInstMain);
-
-    if (fDistance >= SHADOW_APPLY_DISTANCE)
-    {
-        return;
-    }
-
-    m_GraphicThingInstance.RenderToShadowMap();
-}
-
 void CInstanceBase::RenderCollision()
 {
     m_GraphicThingInstance.RenderCollisionData();

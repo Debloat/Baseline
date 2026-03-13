@@ -285,30 +285,6 @@ void CMapOutdoor::RenderTree()
     }
 }
 
-void CMapOutdoor::SetInverseViewAndDynamicShaodwMatrices()
-{
-    CCamera * pCamera = CCameraManager::Instance().GetCurrentCamera();
-
-    if (!pCamera)
-    {
-        return;
-    }
-
-    m_matViewInverse = pCamera->GetInverseViewMatrix();
-
-    D3DXVECTOR3 v3Target = pCamera->GetTarget();
-
-    /* - DYNAMIC_SHADOWS ------------------------------------*/
-    const D3DXVECTOR3& sunDir = mc_pEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND].Direction;
-
-    D3DXVECTOR3 v3LightEye = v3Target - sunDir * 1250.0f;
-    /* ----------------------------------------------------- */
-
-    const auto vv = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
-    D3DXMatrixLookAtRH(&m_matLightView, &v3LightEye, &v3Target, &vv);
-    m_matDynamicShadow = m_matViewInverse * m_matLightView * m_matDynamicShadowScale;
-}
-
 void CMapOutdoor::OnRender()
 {
     /* - YOSUN_CONTROL_CENTER [Terrain Wireframe] ---------- */
@@ -321,21 +297,6 @@ void CMapOutdoor::OnRender()
         OnRenderPatchGrid();
     }
     /* ----------------------------------------------------- */
-
-#ifdef __PERFORMANCE_CHECKER__
-    DWORD t1 = ELTimer_GetMSec();
-#endif
-    SetInverseViewAndDynamicShaodwMatrices();
-
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 
 #ifdef __PERFORMANCE_CHECKER__
     DWORD t2 = ELTimer_GetMSec();
@@ -398,15 +359,6 @@ void CMapOutdoor::OnRender()
     fprintf(fp, "MAP.TRE %d\n", t5 - t4);
 #endif
 }
-
-struct FAreaRenderShadow
-{
-    void operator()(CGraphicObjectInstance * pInstance)
-    {
-        pInstance->RenderShadow();
-        pInstance->Hide();
-    }
-};
 
 void CMapOutdoor::RenderEffect()
 {
@@ -480,41 +432,6 @@ void CMapOutdoor::RenderArea()
         }
     }
 
-    // Shadow Receiver
-    if (m_bDrawShadow && m_bDrawChrShadow)
-    {
-        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
-        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-        STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEPOSITION);
-        STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
-
-        // Transform
-        STATEMANAGER.SaveTransform(D3DTS_TEXTURE1, &m_matDynamicShadow);
-        STATEMANAGER.SetTexture(1, m_lpCharacterShadowMapTexture);
-
-        STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-        STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
-        STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,   D3DTOP_MODULATE);
-        STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,   D3DTOP_DISABLE);
-        STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_BORDER);
-        STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_BORDER);
-        STATEMANAGER.SaveSamplerState(1, D3DSAMP_BORDERCOLOR, 0xFFFFFFFF);
-
-        std::ranges::for_each(m_ShadowReceiverVector, FAreaRenderShadow());
-
-        STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXCOORDINDEX);
-        STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS);
-        STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSU);
-        STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSV);
-        STATEMANAGER.RestoreSamplerState(1, D3DSAMP_BORDERCOLOR);
-
-        STATEMANAGER.RestoreTransform(D3DTS_TEXTURE1);
-    }
-
-    STATEMANAGER.SaveRenderState(D3DRS_ZWRITEENABLE, TRUE);
-
     bool m_isDisableSortRendering = false;
 
     if (m_isDisableSortRendering)
@@ -578,14 +495,6 @@ void CMapOutdoor::RenderArea()
 
         std::ranges::sort(s_kVct_pkOpaqueThingInstSort, CMapOutdoor_LessThingInstancePtrRenderOrder());
         std::ranges::for_each(s_kVct_pkOpaqueThingInstSort, CMapOutdoor_FOpaqueThingInstanceRender());
-    }
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ZWRITEENABLE);
-
-    // Shadow Receiver
-    if (m_bDrawShadow && m_bDrawChrShadow)
-    {
-        std::ranges::for_each(m_ShadowReceiverVector, std::mem_fn(&CGraphicObjectInstance::Show));
     }
 }
 

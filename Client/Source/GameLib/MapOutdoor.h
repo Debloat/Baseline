@@ -82,7 +82,6 @@ class CMapOutdoor : public CMapBase
         virtual void	OnPreAssignTerrainPtr() {};
 
     public:
-        void			SetInverseViewAndDynamicShaodwMatrices();
         virtual bool	Load(float x, float y, float z);
         virtual float	GetHeight(float x, float y);
         virtual float	GetCacheHeight(float x, float y);
@@ -104,19 +103,6 @@ class CMapOutdoor : public CMapBase
         void			SetEnvironmentScreenFilter();
         void			SetEnvironmentSkyBox();
         void			SetEnvironmentLensFlare();
-
-        void			CreateCharacterShadowTexture();
-        void			ReleaseCharacterShadowTexture();
-        void			SetShadowTextureSize(WORD size);
-
-        bool			BeginRenderCharacterShadowToTexture();
-        void			EndRenderCharacterShadowToTexture();
-
-        // Scene Depth
-        void CreateSceneDepthTexture();
-        void ReleaseSceneDepthTexture();
-        bool BeginRenderSceneDepth();
-        void EndRenderSceneDepth();
 
         void			RenderWater();
         void			RenderMarkedArea();
@@ -149,13 +135,6 @@ class CMapOutdoor : public CMapBase
         }
 
         bool			SetTerrainCount(short sTerrainCountX, short sTerrainCountY);
-
-        // Shadow
-        void			SetDrawShadow(bool bDrawShadow);
-        void			SetDrawCharacterShadow(bool bDrawChrShadow);
-
-        bool            IsDrawShadow() const { return m_bDrawShadow; }
-        bool            IsDrawCharacterShadow() const { return m_bDrawChrShadow; }
 
     protected:
         bool			__PickTerrainHeight(float& fPos, const D3DXVECTOR3& v3Start, const D3DXVECTOR3& v3End, float fStep, float fRayRange, float fLimitRange, D3DXVECTOR3* pv3Pick);
@@ -285,10 +264,7 @@ class CMapOutdoor : public CMapBase
 
         void			__Game_UpdateArea(D3DXVECTOR3& v3Player);
 
-        void			__CollectShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
-        void			__CollectCollisionShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
         void			__UpdateAroundAreaList();
-        bool			__IsInShadowReceiverList(CGraphicObjectInstance* pkObjInstTest);
 
         void			ConvertToMapCoords(float fx, float fy, int* iCellX, int* iCellY, BYTE * pucSubCellX, BYTE * pucSubCellY, WORD * pwTerrainNumX, WORD * pwTerrainNumY);
 
@@ -420,8 +396,6 @@ class CMapOutdoor : public CMapBase
         void					DrawWater(long patchnum);
 
         bool					m_bDrawWireFrame;
-        bool					m_bDrawShadow;
-        bool					m_bDrawChrShadow;
 
         //////////////////////////////////////////////////////////////////////////
         // Water
@@ -430,34 +404,6 @@ class CMapOutdoor : public CMapBase
         void					UnloadWaterTexture();
 
         //Water
-        //////////////////////////////////////////////////////////////////////////
-
-        //////////////////////////////////////////////////////////////////////////
-        // Character Shadow
-        LPDIRECT3DTEXTURE9		m_lpCharacterShadowMapTexture;
-        LPDIRECT3DSURFACE9		m_lpCharacterShadowMapRenderTargetSurface;
-        LPDIRECT3DSURFACE9		m_lpCharacterShadowMapDepthSurface;
-        D3DVIEWPORT9			m_ShadowMapViewport;
-        WORD					m_wShadowMapSize;
-
-        // Backup Device Context
-        LPDIRECT3DSURFACE9		m_lpBackupRenderTargetSurface;
-        LPDIRECT3DSURFACE9		m_lpBackupDepthSurface;
-        D3DVIEWPORT9			m_BackupViewport;
-
-        // Character Shadow
-        //////////////////////////////////////////////////////////////////////////
-
-        //////////////////////////////////////////////////////////////////////////
-        // Scene Depth (Water Refraction / Absorption)
-        LPDIRECT3DTEXTURE9      m_lpSceneDepthTexture;
-        LPDIRECT3DSURFACE9      m_lpSceneDepthRenderTargetSurface;
-        LPDIRECT3DSURFACE9      m_lpSceneDepthDepthSurface;
-        D3DVIEWPORT9            m_SceneDepthViewport;
-
-        LPDIRECT3DSURFACE9      m_lpSceneDepthBackupRT;
-        LPDIRECT3DSURFACE9      m_lpSceneDepthBackupDepth;
-        D3DVIEWPORT9            m_SceneDepthBackupViewport;
         //////////////////////////////////////////////////////////////////////////
 
         // View Frustum Culling
@@ -480,9 +426,6 @@ class CMapOutdoor : public CMapBase
         D3DXMATRIX m_matViewInverse;
 
         D3DXMATRIX m_matSplatAlpha;
-        D3DXMATRIX m_matDynamicShadow;
-        D3DXMATRIX m_matDynamicShadowScale;
-        D3DXMATRIX m_matLightView;
 
         float m_fTerrainTexCoordBase;
         float m_fWaterTexCoordBase;
@@ -592,9 +535,6 @@ class CMapOutdoor : public CMapBase
         void __HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType);
 
     protected:
-        std::vector<CGraphicObjectInstance*> m_ShadowReceiverVector;
-
-    protected:
         float	m_fOpaqueWaterDepth;
 
         /* - SHADER [WATER] ------------------------------------ */
@@ -621,11 +561,6 @@ class CMapOutdoor : public CMapBase
         ETerrainRenderSort	GetTerrainRenderSort()
         {
             return m_eTerrainRenderSort;
-        }
-
-        LPDIRECT3DTEXTURE9 GetSceneDepthTexture() const
-        {
-            return m_lpSceneDepthTexture;
         }
 
     protected:

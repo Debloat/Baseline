@@ -1,7 +1,5 @@
 import app
 
-OPTION_SHADOW = "SHADOW"
-
 CODEPAGE = str(app.GetDefaultCodePage())
 
 #CUBE_TITLE = "Cube Window"

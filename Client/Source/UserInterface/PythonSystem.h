@@ -54,7 +54,6 @@ class CPythonSystem : public CSingleton<CPythonSystem>
             bool			is_software_cursor;
             bool			is_object_culling;
             int				iDistance;
-            int				iShadowLevel;
 
             FLOAT			music_volume;
             BYTE			voice_volume;
@@ -86,9 +85,6 @@ class CPythonSystem : public CSingleton<CPythonSystem>
         void							SetDefaultConfig();
         bool							LoadConfig();
         bool							SaveConfig();
-        void							ApplyConfig();
-        void							SetConfig(TConfig * set_config);
-        TConfig* 						GetConfig();
         void							ChangeSystem();
 
         // Interface
@@ -124,8 +120,6 @@ class CPythonSystem : public CSingleton<CPythonSystem>
         /// Display
         void							GetDisplaySettings();
 
-        int								GetResolutionCount();
-        int								GetFrequencyCount(int index);
         bool							GetResolution(int index, OUT DWORD *width, OUT DWORD *height);
         bool							GetFrequency(int index, int freq_index, OUT DWORD *frequncy);
         int								GetResolutionIndex(DWORD width, DWORD height);
@@ -139,8 +133,6 @@ class CPythonSystem : public CSingleton<CPythonSystem>
         void							SetSoundVolumef(float fVolume);
 
         int								GetDistance();
-        int								GetShadowLevel();
-        void							SetShadowLevel(unsigned int level);
 
     protected:
         TResolution						m_ResolutionList[RESOLUTION_MAX_NUM];

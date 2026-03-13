@@ -207,6 +207,10 @@ void YosunAdminPanel::Render()
     {
         RenderTextMetrics(&show_text_metrics);
     }
+    if (show_terrain_metrics)
+    {
+        RenderTerrainMetrics(&show_terrain_metrics);
+    }
 
     if (show_world_editor)
     {
@@ -250,6 +254,7 @@ void YosunAdminPanel::RenderMenuBar()
     {
         ImGui::SeparatorText("Metrics");
         ImGui::MenuItem("Text Metrics", nullptr, &show_text_metrics);
+        ImGui::MenuItem("Terrain Metrics", nullptr, &show_terrain_metrics);
 
         ImGui::SeparatorText("Map-Related");
         ImGui::MenuItem("World Editor", nullptr, &show_world_editor);
@@ -366,6 +371,73 @@ void YosunAdminPanel::RenderTextMetrics(bool* p_open) const
     ImGui::End();
 }
 
+void YosunAdminPanel::RenderTerrainMetrics(bool* p_open) const
+{
+    ImGuiWindowFlags flags =
+        ImGuiWindowFlags_AlwaysAutoResize;
+
+    auto& tm = GetYosunControlSettings().terrainMetrics;
+
+    if (!ImGui::Begin("Terrain Rendering Metrics", p_open, flags))
+    {
+        ImGui::End();
+        return;
+    }
+
+    ImGui::SeparatorText("Frame Metrics");
+
+    float fps = ImGui::GetIO().Framerate;
+    float frameMs = 1000.0f / (fps > 0.0f ? fps : 1.0f);
+
+    ImGui::Text("FPS");
+    ImGui::SameLine(200);
+    ImGui::Text("%.1f", fps);
+
+    ImGui::Text("Frame Time (ms)");
+    ImGui::SameLine(200);
+    ImGui::Text("%.3f", frameMs);
+
+    ImGui::Spacing();
+    ImGui::Separator();
+
+    ImGui::SeparatorText("Terrain Rendering");
+
+    ImGui::Text("Rendered Patches");
+    ImGui::SameLine(200);
+    ImGui::Text("%llu", tm.renderedPatches);
+
+    ImGui::Text("Rendered Splats");
+    ImGui::SameLine(200);
+    ImGui::Text("%llu", tm.renderedSplats);
+
+    ImGui::Text("Draw Calls");
+    ImGui::SameLine(200);
+    ImGui::Text("%llu", tm.totalDrawCalls);
+
+    float splatsPerPatch = tm.renderedPatches > 0 ? float(tm.renderedSplats) / float(tm.renderedPatches) : 0.0f;
+
+    ImGui::Text("Splats / Patch");
+    ImGui::SameLine(200);
+    ImGui::Text("%.2f", splatsPerPatch);
+
+    ImGui::Spacing();
+    ImGui::SeparatorText("Peaks (Since Launch)");
+
+    ImGui::Text("Peak Draw Calls");
+    ImGui::SameLine(200);
+    ImGui::Text("%llu", tm.peakDrawCalls);
+
+    ImGui::Spacing();
+    ImGui::Separator();
+
+    if (ImGui::Button("Reset Counters"))
+    {
+        tm.totalDrawCalls = YosunControlDefaults::TerrainMetrics::TotalDrawCalls;
+        tm.peakDrawCalls = YosunControlDefaults::TerrainMetrics::PeakDrawCalls;
+    }
+
+    ImGui::End();
+}
 
 void YosunAdminPanel::RenderWorldEditor(bool* p_open) const
 {
@@ -683,29 +755,6 @@ void YosunAdminPanel::RenderShaderManager(bool* p_open) const
             if (ImGui::BeginTabItem("Water"))
             {
                 ImGui::TextDisabled("Water Shader");
-                ImGui::Separator();
-                // Scene Depth Debug Preview
-                {
-                    LPDIRECT3DTEXTURE9 depthTex =
-                        CPythonBackground::Instance().GetSceneDepthTexture();
-
-                    if (depthTex)
-                    {
-                        ImGui::SeparatorText("Scene Depth (Prepass)");
-
-                        const float previewSize = 256.0f;
-                        float avail = ImGui::GetContentRegionAvail().x;
-                        float offset = (avail - previewSize) * 0.5f;
-
-                        if (offset > 0.0f)
-                            ImGui::SetCursorPosX(ImGui::GetCursorPosX() + offset);
-
-                        ImGui::Image(
-                            (ImTextureID)depthTex,
-                            ImVec2(previewSize, previewSize));
-                    }
-                }
-
                 {
                     ImGui::SeparatorText("Features");
 

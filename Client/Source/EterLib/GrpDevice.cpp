@@ -607,6 +607,50 @@ void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs&
     UploadVSConstants(0, vs.viewProj.data(), 4); // VS c0..c3
 }
 
+void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
+{
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
+
+    // --- Transpose matrices ---
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    D3DXMATRIX colorTex;
+    std::memcpy(&colorTex, inputs.vs.colorTexMatrix.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX colorTexT;
+    D3DXMatrixTranspose(&colorTexT, &colorTex);
+
+    D3DXMATRIX alphaTex;
+    std::memcpy(&alphaTex, inputs.vs.alphaTexMatrix.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX alphaTexT;
+    D3DXMatrixTranspose(&alphaTexT, &alphaTex);
+
+    // --- Pack ---
+    TerrainVSCB vs{};
+    TerrainPSCB ps{};
+
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+    std::memcpy(vs.colorTexMatrix.data(), &colorTexT, sizeof(D3DXMATRIX));
+    std::memcpy(vs.alphaTexMatrix.data(), &alphaTexT, sizeof(D3DXMATRIX));
+
+    ps.layerState = inputs.ps.layerState;
+
+    // --- Upload ---
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);     // VS c0..c3
+    UploadVSConstants(4, vs.colorTexMatrix.data(), 4);    // VS c4..c7
+    UploadVSConstants(8, vs.alphaTexMatrix.data(), 4);    // VS c8..c11
+
+    UploadPSConstants(0, ps.layerState.data(), 1);        // PS c0
+}
+
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
 {
     if (!ms_lpd3dDevice || !data || registerCount == 0)
@@ -975,6 +1019,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,      EShaderInputLayout::PT },
         //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
         ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Terrain,         Terrain::VS,         Terrain::PS,         EShaderInputLayout::PN },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

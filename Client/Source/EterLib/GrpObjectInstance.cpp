@@ -51,26 +51,6 @@ void CGraphicObjectInstance::BlendRender()
     OnBlendRender();
 }
 
-void CGraphicObjectInstance::RenderToShadowMap()
-{
-    if (!isShow())
-    {
-        return;
-    }
-
-    OnRenderToShadowMap();
-}
-
-void CGraphicObjectInstance::RenderShadow()
-{
-    if (!isShow())
-    {
-        return;
-    }
-
-    OnRenderShadow();
-}
-
 void CGraphicObjectInstance::Update()
 {
     OnUpdate();

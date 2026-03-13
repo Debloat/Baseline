@@ -26,6 +26,9 @@ class YosunAdminPanel
         void RenderTextMetrics(bool* p_open) const;
         bool show_text_metrics = false;
 
+        void RenderTerrainMetrics(bool* p_open) const;
+        bool show_terrain_metrics = false;
+
         /* - WORLD_EDITOR_IMGUI -------------------------------- */
         void RenderWorldEditor(bool* p_open) const;
         bool show_world_editor = false;

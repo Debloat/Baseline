@@ -120,8 +120,6 @@ class CGraphicThingInstance : public CGraphicObjectInstance
         void		OnUpdate();
         void		OnRender();
         void		OnBlendRender();
-        void		OnRenderToShadowMap();
-        void		OnRenderShadow();
 
     protected:
         bool									m_bUpdated;

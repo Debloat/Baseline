@@ -17,6 +17,7 @@ enum class ShaderID
     EffectMesh,
     //Model,
     SnowParticle,
+    Terrain,
     Count
 };
 

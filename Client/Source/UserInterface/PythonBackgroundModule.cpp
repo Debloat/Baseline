@@ -69,7 +69,6 @@ PyObject* backgroundLoadMap(PyObject * poSelf, PyObject * poArgs)
 PyObject* backgroundDestroy(PyObject * poSelf, PyObject * poArgs)
 {
     CPythonBackground& rkBG = CPythonBackground::Instance();
-    rkBG.SetShadowLevel(CPythonBackground::SHADOW_NONE);
     rkBG.Destroy();
     return Py_BuildNone();
 }
@@ -247,12 +246,6 @@ PyObject* backgroundRenderAfterLensFlare(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* backgroundRenderCharacterShadowToTexture(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground::Instance().RenderCharacterShadowToTexture();
-    return Py_BuildNone();
-}
-
 PyObject* backgroundRenderDungeon(PyObject * poSelf, PyObject * poArgs)
 {
     assert(!"background.RenderDungeon() - 사용하지 않는 함수입니다 - [levites]");
@@ -315,26 +308,6 @@ PyObject* backgroundGetRenderedGTINum(PyObject * poSelf, PyObject * poArgs)
     */
 
     return Py_BuildValue("ii", dwGraphicThingInstanceNum, dwCRCNum);
-}
-
-PyObject* backgroundGetRenderShadowTime(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground& rkBG = CPythonBackground::Instance();
-    return Py_BuildValue("i", rkBG.GetRenderShadowTime());
-}
-
-PyObject* backgroundSetShadowLevel(PyObject * poSelf, PyObject * poArgs)
-{
-    int iLevel;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &iLevel))
-    {
-        return Py_BadArgument();
-    }
-
-    CPythonBackground& rkBG = CPythonBackground::Instance();
-    rkBG.SetShadowLevel(iLevel);
-    return Py_BuildNone();
 }
 
 PyObject* backgroundSetVisiblePart(PyObject * poSelf, PyObject * poArgs)
@@ -593,7 +566,6 @@ void initBackground()
         { "EnableSnow",							backgroundEnableSnow,						METH_VARARGS },
         { "GlobalPositionToLocalPosition",		backgroundGlobalPositionToLocalPosition,	METH_VARARGS },
         { "GlobalPositionToMapInfo",			backgroundGlobalPositionToMapInfo,			METH_VARARGS },
-        { "GetRenderShadowTime",				backgroundGetRenderShadowTime,				METH_VARARGS },
         { "LoadMap",							backgroundLoadMap,							METH_VARARGS },
         { "Destroy",							backgroundDestroy,							METH_VARARGS },
         { "RegisterEnvironmentData",			backgroundRegisterEnvironmentData,			METH_VARARGS },
@@ -615,11 +587,8 @@ void initBackground()
         { "RenderEffect",						backgroundRenderEffect,						METH_VARARGS },
         { "RenderBeforeLensFlare",				backgroundRenderBeforeLensFlare,			METH_VARARGS },
         { "RenderAfterLensFlare",				backgroundRenderAfterLensFlare,				METH_VARARGS },
-        { "RenderCharacterShadowToTexture",		backgroundRenderCharacterShadowToTexture,	METH_VARARGS },
         { "RenderDungeon",						backgroundRenderDungeon,					METH_VARARGS },
         { "GetHeight",							backgroundGetHeight,						METH_VARARGS },
-
-        { "SetShadowLevel",						backgroundSetShadowLevel,					METH_VARARGS },
 
         { "SetVisiblePart",						backgroundSetVisiblePart,					METH_VARARGS },
         { "SetSplatLimit",						backgroundSetSpaltLimit,					METH_VARARGS },
@@ -651,13 +620,6 @@ void initBackground()
     PyModule_AddIntConstant(poModule, "PART_WATER",				CMapOutdoor::PART_WATER);
     PyModule_AddIntConstant(poModule, "PART_OBJECT",			CMapOutdoor::PART_OBJECT);
     PyModule_AddIntConstant(poModule, "PART_TERRAIN",			CMapOutdoor::PART_TERRAIN);
-
-    PyModule_AddIntConstant(poModule, "SHADOW_NONE", CPythonBackground::SHADOW_NONE);
-    PyModule_AddIntConstant(poModule, "SHADOW_GROUND", CPythonBackground::SHADOW_GROUND);
-    PyModule_AddIntConstant(poModule, "SHADOW_GROUND_AND_SOLO", CPythonBackground::SHADOW_GROUND_AND_SOLO);
-    PyModule_AddIntConstant(poModule, "SHADOW_ALL", CPythonBackground::SHADOW_ALL);
-    PyModule_AddIntConstant(poModule, "SHADOW_ALL_HIGH", CPythonBackground::SHADOW_ALL_HIGH);
-    PyModule_AddIntConstant(poModule, "SHADOW_ALL_MAX", CPythonBackground::SHADOW_ALL_MAX);
 
     PyModule_AddIntConstant(poModule, "DISTANCE0", CPythonBackground::DISTANCE0);
     PyModule_AddIntConstant(poModule, "DISTANCE1", CPythonBackground::DISTANCE1);

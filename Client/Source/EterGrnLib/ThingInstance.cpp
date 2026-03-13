@@ -937,23 +937,6 @@ void CGraphicThingInstance::__RenderLOD(CGrannyModelInstance::EModelTexturePath 
     std::ranges::for_each(m_LODControllerVector, render);
 }
 
-void CGraphicThingInstance::OnRenderToShadowMap()
-{
-    if (!m_bUpdated)
-    {
-        return;
-    }
-
-    CGrannyLODController::FRenderToShadowMap RenderToShadowMap;
-    std::ranges::for_each(m_LODControllerVector, RenderToShadowMap);
-}
-
-void CGraphicThingInstance::OnRenderShadow()
-{
-    CGrannyLODController::FRenderShadow RenderShadow;
-    std::ranges::for_each(m_LODControllerVector, RenderShadow);
-}
-
 DWORD CGraphicThingInstance::GetLODControllerCount() const
 {
     return m_LODControllerVector.size();

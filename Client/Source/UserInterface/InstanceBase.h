@@ -471,7 +471,6 @@ class CInstanceBase
         void					Deform();
         void					Render();
         void					RenderTrace();
-        void					RenderToShadowMap();
         void					RenderCollision();
         void					RegisterBoundingSphere();
 

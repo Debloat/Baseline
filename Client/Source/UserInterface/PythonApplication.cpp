@@ -218,8 +218,6 @@ void CPythonApplication::RenderGame()
         m_kChrMgr.Deform();
         m_kEftMgr.Update();
 
-        m_pyBackground.RenderCharacterShadowToTexture();
-
         m_pyGraphic.PushState();
 
         {
@@ -233,34 +231,6 @@ void CPythonApplication::RenderGame()
         m_pyBackground.RenderBeforeLensFlare();
 
         m_pyBackground.RenderCloud();
-
-        {
-            CMapOutdoor& rkMap = m_pyBackground.GetMapOutdoorRef();
-
-            if (rkMap.BeginRenderSceneDepth())
-            {
-                DWORD prevLighting = STATEMANAGER.GetRenderState(D3DRS_LIGHTING);
-                STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-
-                bool prevDrawShadow = rkMap.IsDrawShadow();
-                bool prevDrawChrShadow = rkMap.IsDrawCharacterShadow();
-
-                rkMap.SetDrawShadow(false);
-                rkMap.SetDrawCharacterShadow(false);
-
-                rkMap.RenderTerrain();
-                rkMap.RenderArea();
-                rkMap.RenderTree();
-                rkMap.RenderBlendArea();
-
-                rkMap.SetDrawShadow(prevDrawShadow);
-                rkMap.SetDrawCharacterShadow(prevDrawChrShadow);
-
-                STATEMANAGER.SetRenderState(D3DRS_LIGHTING, prevLighting);
-
-                rkMap.EndRenderSceneDepth();
-            }
-        }
 
         m_pyBackground.BeginEnvironment();
         m_pyBackground.Render();
@@ -292,13 +262,8 @@ void CPythonApplication::RenderGame()
         return;
     }
 
-    DWORD t1 = ELTimer_GetMSec();
     m_kChrMgr.Deform();
-    DWORD t2 = ELTimer_GetMSec();
     m_kEftMgr.Update();
-    DWORD t3 = ELTimer_GetMSec();
-    m_pyBackground.RenderCharacterShadowToTexture();
-    DWORD t4 = ELTimer_GetMSec();
 
     m_pyGraphic.PushState();
 
@@ -307,11 +272,7 @@ void CPythonApplication::RenderGame()
 
     m_pyGraphic.SetPerspective(30.0f, fAspect, 100.0, fFarClip);
 
-    DWORD t5 = ELTimer_GetMSec();
-
     CCullingManager::Instance().Process();
-
-    DWORD t6 = ELTimer_GetMSec();
 
     {
         long lx, ly;
@@ -320,70 +281,25 @@ void CPythonApplication::RenderGame()
     }
 
     m_pyBackground.RenderSky();
-    DWORD t7 = ELTimer_GetMSec();
     m_pyBackground.RenderBeforeLensFlare();
-    DWORD t8 = ELTimer_GetMSec();
     m_pyBackground.RenderCloud();
-    DWORD t9 = ELTimer_GetMSec();
     m_pyBackground.BeginEnvironment();
     m_pyBackground.Render();
 
     m_pyBackground.SetBackgroundDirLight();
-    DWORD t10 = ELTimer_GetMSec();
     m_kChrMgr.Render();
-    DWORD t11 = ELTimer_GetMSec();
 
     m_pyBackground.RenderWater();
-    DWORD t12 = ELTimer_GetMSec();
     m_pyBackground.RenderEffect();
-    DWORD t13 = ELTimer_GetMSec();
     m_pyBackground.EndEnvironment();
+
     m_kEftMgr.Render();
-    DWORD t14 = ELTimer_GetMSec();
     m_pyItem.Render();
-    DWORD t15 = ELTimer_GetMSec();
     m_FlyingManager.Render();
-    DWORD t16 = ELTimer_GetMSec();
+
     m_pyBackground.BeginEnvironment();
     m_pyBackground.EndEnvironment();
-    DWORD t17 = ELTimer_GetMSec();
     m_pyBackground.RenderAfterLensFlare();
-    DWORD t18 = ELTimer_GetMSec();
-    DWORD tEnd = ELTimer_GetMSec();
-
-    if (GetAsyncKeyState(VK_Z))
-    {
-        STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
-    }
-
-    if (tEnd - t1 < 3)
-    {
-        return;
-    }
-
-    static FILE* fp = fopen("perf_game_render.txt", "w");
-
-    fprintf(fp, "GR.Total %d (Time %d)\n", tEnd - t1, ELTimer_GetMSec());
-    fprintf(fp, "GR.DFM %d\n", t2 - t1);
-    fprintf(fp, "GR.EFT.UP %d\n", t3 - t2);
-    fprintf(fp, "GR.SHW %d\n", t4 - t3);
-    fprintf(fp, "GR.STT %d\n", t5 - t4);
-    fprintf(fp, "GR.CLL %d\n", t6 - t5);
-    fprintf(fp, "GR.BG.SKY %d\n", t7 - t6);
-    fprintf(fp, "GR.BG.LEN %d\n", t8 - t7);
-    fprintf(fp, "GR.BG.CLD %d\n", t9 - t8);
-    fprintf(fp, "GR.BG.MAIN %d\n", t10 - t9);
-    fprintf(fp, "GR.CHR %d\n",	t11 - t10);
-    fprintf(fp, "GR.BG.WTR %d\n", t12 - t11);
-    fprintf(fp, "GR.BG.EFT %d\n", t13 - t12);
-    fprintf(fp, "GR.EFT %d\n", t14 - t13);
-    fprintf(fp, "GR.ITM %d\n", t15 - t14);
-    fprintf(fp, "GR.FLY %d\n", t16 - t15);
-    fprintf(fp, "GR.BG.BLK %d\n", t17 - t16);
-    fprintf(fp, "GR.BG.LEN %d\n", t18 - t17);
-
-
-    fflush(fp);
 }
 
 void CPythonApplication::UpdateGame()
@@ -681,18 +597,7 @@ bool CPythonApplication::Process()
         {
             if (m_pyGraphic.IsLostDevice())
             {
-                CPythonBackground& rkBG = CPythonBackground::Instance();
-                rkBG.ReleaseCharacterShadowTexture();
-
-                if (m_pyGraphic.RestoreDevice())
-                {
-                    rkBG.CreateCharacterShadowTexture();
-                }
-
-                else
-                {
-                    canRender = false;
-                }
+                canRender = false;
             }
         }
 

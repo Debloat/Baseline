@@ -44,10 +44,6 @@ class CDungeonBlock : public CGraphicObjectInstance
 
         void OnBlendRender() {}
 
-        void OnRenderToShadowMap() {}
-
-        void OnRenderShadow();
-
     protected:
         void __Initialize();
 

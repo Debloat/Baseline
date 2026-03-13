@@ -117,21 +117,6 @@ void CPythonSystem::GetDisplaySettings()
     }
 }
 
-int	CPythonSystem::GetResolutionCount()
-{
-    return m_ResolutionCount;
-}
-
-int CPythonSystem::GetFrequencyCount(int index)
-{
-    if (index >= m_ResolutionCount)
-    {
-        return 0;
-    }
-
-    return m_ResolutionList[index].frequency_count;
-}
-
 bool CPythonSystem::GetResolution(int index, OUT DWORD *width, OUT DWORD *height)
 {
     if (index >= m_ResolutionCount)
@@ -247,17 +232,6 @@ int CPythonSystem::GetDistance()
     return m_Config.iDistance;
 }
 
-int CPythonSystem::GetShadowLevel()
-{
-    return m_Config.iShadowLevel;
-}
-
-void CPythonSystem::SetShadowLevel(unsigned int level)
-{
-    m_Config.iShadowLevel = MIN(level, 5);
-    CPythonBackground::instance().RefreshShadowLevel();
-}
-
 int CPythonSystem::IsSaveID()
 {
     return m_Config.isSaveID;
@@ -284,16 +258,6 @@ void CPythonSystem::SetSaveID(int iValue, const char* c_szSaveID)
     strncpy(m_Config.SaveID, c_szSaveID, sizeof(m_Config.SaveID) - 1);
 }
 
-CPythonSystem::TConfig* CPythonSystem::GetConfig()
-{
-    return &m_Config;
-}
-
-void CPythonSystem::SetConfig(TConfig * pNewConfig)
-{
-    m_Config = *pNewConfig;
-}
-
 void CPythonSystem::SetDefaultConfig()
 {
     memset(&m_Config, 0, sizeof(m_Config));
@@ -312,7 +276,6 @@ void CPythonSystem::SetDefaultConfig()
     m_Config.voice_volume		= 5;
 
     m_Config.bDecompressDDS		= 0;
-    m_Config.iShadowLevel		= 3;
     m_Config.bViewChat			= true;
     m_Config.bAlwaysShowName	= DEFAULT_VALUE_ALWAYS_SHOW_NAME;
     m_Config.bShowDamage		= true;
@@ -472,11 +435,6 @@ bool CPythonSystem::LoadConfig()
             m_Config.bUseDefaultIME = atoi(value) == 1 ? true : false;
         }
 
-        else if (!stricmp(command, "SHADOW_LEVEL"))
-        {
-            m_Config.iShadowLevel = atoi(value);
-        }
-
         else if (!stricmp(command, "DECOMPRESSED_TEXTURE"))
         {
             m_Config.bDecompressDDS = atoi(value) == 1 ? true : false;
@@ -569,7 +527,6 @@ bool CPythonSystem::SaveConfig()
     fprintf(fp, "SHOW_DAMAGE\t\t\t\t%d\n", m_Config.bShowDamage);
     fprintf(fp, "SHOW_SALESTEXT\t\t\t%d\n", m_Config.bShowSalesText);
     fprintf(fp, "USE_DEFAULT_IME\t\t\t%d\n", m_Config.bUseDefaultIME);
-    fprintf(fp, "SHADOW_LEVEL\t\t\t%d\n", m_Config.iShadowLevel);
 
     fclose(fp);
     return true;
@@ -623,65 +580,8 @@ const CPythonSystem::TWindowStatus& CPythonSystem::GetWindowStatusReference(int 
     return m_WindowStatus[iIndex];
 }
 
-void CPythonSystem::ApplyConfig() // 이전 설정과 현재 설정을 비교해서 바뀐 설정을 적용 한다.
-{
-    if (m_OldConfig.gamma != m_Config.gamma)
-    {
-        float val = 1.0f;
-
-        switch (m_Config.gamma)
-        {
-            case 0:
-                val = 0.4f;
-                break;
-
-            case 1:
-                val = 0.7f;
-                break;
-
-            case 2:
-                val = 1.0f;
-                break;
-
-            case 3:
-                val = 1.2f;
-                break;
-
-            case 4:
-                val = 1.4f;
-                break;
-        }
-
-        CPythonGraphic::Instance().SetGamma(val);
-    }
-
-    if (m_OldConfig.is_software_cursor != m_Config.is_software_cursor)
-    {
-        if (m_Config.is_software_cursor)
-        {
-            CPythonApplication::Instance().SetCursorMode(CPythonApplication::CURSOR_MODE_SOFTWARE);
-        }
-
-        else
-        {
-            CPythonApplication::Instance().SetCursorMode(CPythonApplication::CURSOR_MODE_HARDWARE);
-        }
-    }
-
-    m_OldConfig = m_Config;
-
-    ChangeSystem();
-}
-
 void CPythonSystem::ChangeSystem()
 {
-    // Shadow
-    /*
-    if (m_Config.is_shadow)
-    	CScreen::SetShadowFlag(true);
-    else
-    	CScreen::SetShadowFlag(false);
-    */
     CSoundManager& rkSndMgr = CSoundManager::Instance();
     /*
     float fMusicVolume;

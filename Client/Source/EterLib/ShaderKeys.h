@@ -73,4 +73,10 @@ namespace ShaderKeys
         inline constexpr const char* VS = "d:/ymir work/shader/Snow/snow_particle_vs.hlsl";
         inline constexpr const char* PS = "d:/ymir work/shader/Snow/snow_particle_ps.hlsl";
     }
+
+    namespace Terrain
+    {
+        inline constexpr const char* VS = "d:/ymir work/shader/Terrain/terrain_vs.hlsl";
+        inline constexpr const char* PS = "d:/ymir work/shader/Terrain/terrain_ps.hlsl";
+    }
 }

@@ -2728,7 +2728,6 @@ if __name__ == "__main__":
 
 			background.Initialize()
 			background.LoadMap("metin2_map_a1", x, y, 0)
-			background.SetShadowLevel(background.SHADOW_ALL)
 
 			self.MakeCharacter(1, 0, x, y)
 			player.SetMainCharacterIndex(1)
@@ -2816,48 +2815,3 @@ if __name__ == "__main__":
 	wndGuildBuilding.SetTop()
 
 	app.Loop()
-
-	"""
-	- 프로토콜
-
-게임돌입시:
-	RecvLandPacket:
-		CPythonMiniMap::RegisterGuildArea
-
-게임이동중:
-	PythonPlayer::Update()
-		CPythonPlayer::__Update_NotifyGuildAreaEvent()
-			game.py.BINARY_Guild_EnterGuildArea
-				uigameButton.GameButtonWindow.ShowBuildButton()
-			game.py.BINARY_Guild_ExitGuildArea
-				uigameButton.GameButtonWindow.HideBuildButton()
-
-BuildButton:
-!길드장인지 처리 없음
-!건물이 있어도 짓기 버튼은 있음
-
-!건물이 임시로 사용하는 VID 는 서버가 보내주는 것과 혼동될 염려가 있음
-!건물 VNUM 은 BuildGuildBuildingWindow.BUILDING_VNUM_LIST 를 이용해 변환
-
-!건물 지을때는 /build c(reate)
-!건물 부술때는 /build d(estroy)
-!rotation 의 단위는 degree
-
-	interfaceModule.interface.__OnClickBuildButton:
-		interfaceModule.interface.BUILD_OpenWindow:
-
-AcceptButton:
-	BuildGuildBuildingWindow.Build:
-		net.SendChatPacket("/build c vnum x y x_rot y_rot z_rot")
-
-	x_rot, y_rot 는 AffectContainer에 저장
-
-PreviewButton:
-	__OnPreviewMode:
-	__RestoreViewMode:
-
-건물 부수기:
-	uiTarget.TargetBoard.__OnDestroyBuilding
-		net.SendChatPacket("/build d vid")
-	"""
-

@@ -21,6 +21,14 @@ namespace YosunControlDefaults
         constexpr bool ForceDisableOutline = false;
     }
 
+    namespace TerrainMetrics
+    {
+        constexpr uint64_t TotalDrawCalls = 0;
+        constexpr uint64_t PeakDrawCalls = 0;
+        constexpr uint64_t RenderedPatches = 0;
+        constexpr uint64_t RenderedSplats = 0;
+    }
+
     namespace WorldEditor
     {
         constexpr bool DrawCollision = false;
@@ -54,9 +62,17 @@ struct YosunControlSettings
         bool forceDisableOutline    = YosunControlDefaults::TextMetrics::ForceDisableOutline;
     } textMetrics;
 
+    struct TerrainMetrics
+    {
+        uint64_t totalDrawCalls     = YosunControlDefaults::TerrainMetrics::TotalDrawCalls;
+        uint64_t peakDrawCalls      = YosunControlDefaults::TerrainMetrics::PeakDrawCalls;
+        uint64_t renderedPatches    = YosunControlDefaults::TerrainMetrics::RenderedPatches;
+        uint64_t renderedSplats     = YosunControlDefaults::TerrainMetrics::RenderedSplats;
+    } terrainMetrics;
+
     struct WorldEditor
     {
-        bool drawCollision = YosunControlDefaults::WorldEditor::DrawCollision;
+        bool drawCollision          = YosunControlDefaults::WorldEditor::DrawCollision;
 
         struct Terrain
         {

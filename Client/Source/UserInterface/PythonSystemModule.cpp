@@ -108,23 +108,6 @@ PyObject* systemGetWindowStatus(PyObject* poSelf, PyObject* poArgs)
                          c_rWindowStatus.iHeight);
 }
 
-PyObject* systemGetConfig(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonSystem::TConfig *tmp = CPythonSystem::Instance().GetConfig();
-
-    int iRes = CPythonSystem::Instance().GetResolutionIndex(tmp->width, tmp->height);
-    int iFrequency = CPythonSystem::Instance().GetFrequencyIndex(iRes, tmp->frequency);
-
-    return Py_BuildValue("iiiiiiii",  iRes,
-                         iFrequency,
-                         tmp->is_software_cursor,
-                         tmp->is_object_culling,
-                         tmp->music_volume,
-                         tmp->voice_volume,
-                         tmp->gamma,
-                         tmp->iDistance);
-}
-
 PyObject* systemSetSaveID(PyObject * poSelf, PyObject * poArgs)
 {
     int iValue;
@@ -274,123 +257,6 @@ PyObject* systemIsShowSalesText(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildValue("i", CPythonSystem::Instance().IsShowSalesText());
 }
 
-PyObject* systemSetConfig(PyObject * poSelf, PyObject * poArgs)
-{
-    int res_index;
-    int width;
-    int height;
-    int frequency_index;
-    int frequency;
-    int software_cursor;
-    int shadow;
-    int object_culling;
-    int music_volume;
-    int voice_volume;
-    int gamma;
-    int distance;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &res_index))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 1, &frequency_index))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 2, &software_cursor))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 3, &shadow))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 4, &object_culling))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 5, &music_volume))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 6, &voice_volume))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 7, &gamma))
-    {
-        return Py_BuildException();
-    }
-
-    if (!PyTuple_GetInteger(poArgs, 8, &distance))
-    {
-        return Py_BuildException();
-    }
-
-    if (!CPythonSystem::Instance().GetResolution(res_index, (DWORD*) &width, (DWORD*) &height))
-    {
-        return Py_BuildNone();
-    }
-
-    if (!CPythonSystem::Instance().GetFrequency(res_index, frequency_index, (DWORD*) &frequency))
-    {
-        return Py_BuildNone();
-    }
-
-    CPythonSystem::TConfig tmp;
-
-    memcpy(&tmp, CPythonSystem::Instance().GetConfig(), sizeof(tmp));
-
-    tmp.width				= width;
-    tmp.height				= height;
-    tmp.frequency			= frequency;
-    tmp.is_software_cursor	= software_cursor ? true : false;
-    tmp.is_object_culling	= object_culling ? true : false;
-    tmp.music_volume		= (char) music_volume;
-    tmp.voice_volume		= (char) voice_volume;
-    tmp.gamma				= gamma;
-    tmp.iDistance			= distance;
-
-    CPythonSystem::Instance().SetConfig(&tmp);
-    return Py_BuildNone();
-}
-
-PyObject* systemApplyConfig(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonSystem::Instance().ApplyConfig();
-    return Py_BuildNone();
-}
-
-PyObject* systemSaveConfig(PyObject * poSelf, PyObject * poArgs)
-{
-    int ret = CPythonSystem::Instance().SaveConfig();
-    return Py_BuildValue("i", ret);
-}
-
-PyObject* systemGetResolutionCount(PyObject * poSelf, PyObject * poArgs)
-{
-    return Py_BuildValue("i", CPythonSystem::Instance().GetResolutionCount());
-}
-
-PyObject* systemGetFrequencyCount(PyObject * poSelf, PyObject * poArgs)
-{
-    int	index;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &index))
-    {
-        return Py_BuildException();
-    }
-
-    return Py_BuildValue("i", CPythonSystem::Instance().GetFrequencyCount(index));
-}
-
 PyObject* systemGetResolution(PyObject * poSelf, PyObject * poArgs)
 {
     int	index;
@@ -403,12 +269,6 @@ PyObject* systemGetResolution(PyObject * poSelf, PyObject * poArgs)
 
     CPythonSystem::Instance().GetResolution(index, &width, &height);
     return Py_BuildValue("ii", width, height);
-}
-
-PyObject* systemGetCurrentResolution(PyObject * poSelf, PyObject *poArgs)
-{
-    CPythonSystem::TConfig *tmp = CPythonSystem::Instance().GetConfig();
-    return Py_BuildValue("ii", tmp->width, tmp->height);
 }
 
 PyObject* systemGetFrequency(PyObject * poSelf, PyObject * poArgs)
@@ -430,28 +290,6 @@ PyObject* systemGetFrequency(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildValue("i", frequency);
 }
 
-PyObject* systemGetShadowLevel(PyObject * poSelf, PyObject * poArgs)
-{
-    return Py_BuildValue("i", CPythonSystem::Instance().GetShadowLevel());
-}
-
-PyObject* systemSetShadowLevel(PyObject * poSelf, PyObject * poArgs)
-{
-    int level;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &level))
-    {
-        return Py_BuildException();
-    }
-
-    if (level > 0)
-    {
-        CPythonSystem::Instance().SetShadowLevel(level);
-    }
-
-    return Py_BuildNone();
-}
-
 void initsystem()
 {
     static PyMethodDef s_methods[] =
@@ -467,18 +305,8 @@ void initsystem()
         { "SaveWindowStatus",			systemSaveWindowStatus,			METH_VARARGS },
         { "GetWindowStatus",			systemGetWindowStatus,			METH_VARARGS },
 
-        { "GetResolutionCount",			systemGetResolutionCount,		METH_VARARGS },
-        { "GetFrequencyCount",			systemGetFrequencyCount,		METH_VARARGS },
-
-        { "GetCurrentResolution",		systemGetCurrentResolution,		METH_VARARGS },
-
         { "GetResolution",				systemGetResolution,			METH_VARARGS },
         { "GetFrequency",				systemGetFrequency,				METH_VARARGS },
-
-        { "ApplyConfig",				systemApplyConfig,				METH_VARARGS },
-        { "SetConfig",					systemSetConfig,				METH_VARARGS },
-        { "SaveConfig",					systemSaveConfig,				METH_VARARGS },
-        { "GetConfig",					systemGetConfig,				METH_VARARGS },
 
         { "SetSaveID",					systemSetSaveID,				METH_VARARGS },
         { "isSaveID",					systemisSaveID,					METH_VARARGS },
@@ -502,9 +330,6 @@ void initsystem()
 
         { "SetShowSalesTextFlag",		systemSetShowSalesTextFlag,		METH_VARARGS },
         { "IsShowSalesText",			systemIsShowSalesText,			METH_VARARGS },
-
-        { "GetShadowLevel",				systemGetShadowLevel,			METH_VARARGS },
-        { "SetShadowLevel",				systemSetShadowLevel,			METH_VARARGS },
 
         { NULL,							NULL,							NULL }
     };

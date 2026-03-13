@@ -14,16 +14,6 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
     public:
         enum
         {
-            SHADOW_NONE,
-            SHADOW_GROUND,
-            SHADOW_GROUND_AND_SOLO,
-            SHADOW_ALL,
-            SHADOW_ALL_HIGH,
-            SHADOW_ALL_MAX,
-        };
-
-        enum
-        {
             DISTANCE0,
             DISTANCE1,
             DISTANCE2,
@@ -61,16 +51,11 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         void EnableTerrainOnlyForHeight();
         bool SetSplatLimit(int iSplatNum);
         bool SetVisiblePart(int ePart, bool isVisible);
-        bool SetShadowLevel(int eLevel);
-        void RefreshShadowLevel();
-
-        LPDIRECT3DTEXTURE9 GetSceneDepthTexture() const;
 
         void SelectViewDistanceNum(int eNum);
         void SetViewDistanceSet(int eNum, float fFarClip);
         float GetFarClip();
 
-        DWORD GetRenderShadowTime();
         void GetDistanceSetInfo(int* peNum, float* pfStart, float* pfEnd, float* pfFarClip);
 
         bool GetPickingPoint(D3DXVECTOR3 * v3IntersectPt);
@@ -80,11 +65,8 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
 
         void Update(float fCenterX, float fCenterY, float fCenterZ);
 
-        void CreateCharacterShadowTexture();
-        void ReleaseCharacterShadowTexture();
         void Render();
         void RenderSnow();
-        void RenderCharacterShadowToTexture();
         void RenderSky();
         void RenderCloud();
         void RenderWater();
@@ -134,12 +116,9 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         int m_iDayMode;
         int m_iXMasTreeGrade;
 
-        int m_eShadowLevel;
         int m_eViewDistanceNum;
 
         BOOL m_bVisibleGuildArea;
-
-        DWORD m_dwRenderShadowTime;
 
         DWORD m_dwBaseX;
         DWORD m_dwBaseY;

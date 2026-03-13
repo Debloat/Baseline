@@ -65,8 +65,6 @@ using TTerrainGlobals = struct
     long			SplatTilesX;					/* Number of splat textures across map */
     long			SplatTilesY;					/* Number of splat textures down map */
     long			DisableWrapping;
-    long			DisableShadow;
-    long			ShadowMode;
     long			OutsideVisible;
     D3DXVECTOR3		SunLocation;
 };

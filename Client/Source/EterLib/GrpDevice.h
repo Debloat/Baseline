@@ -69,6 +69,7 @@ public:
     static void UploadEffectMeshConstants(const EffectMeshShaderInputs& in);
     static void UploadModelConstants(const ModelShaderInputs& inputs);
     static void UploadSnowParticleConstants(const SnowParticleShaderInputs& inputs);
+    static void UploadTerrainConstants(const TerrainShaderInputs& inputs);
     /* ---------------------------------------------------- */
 
     /* - SHADER [LOW-LEVEL CONSTANT UPLOAD] ------------------ */

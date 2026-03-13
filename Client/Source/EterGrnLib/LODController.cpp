@@ -648,22 +648,6 @@ void CGrannyLODController::Deform(const D3DXMATRIX * c_pWorldMatrix)
     }
 }
 
-void CGrannyLODController::RenderToShadowMap()
-{
-    if (m_pCurrentModelInstance)
-    {
-        m_pCurrentModelInstance->__RenderModelFFP(CGrannyModelInstance::MODEL_TEX_NONE, CGrannyModelInstance::MODEL_PASS_ALL);
-    }
-}
-
-void CGrannyLODController::RenderShadow()
-{
-    if (m_pCurrentModelInstance)
-    {
-        m_pCurrentModelInstance->__RenderModelFFP(CGrannyModelInstance::MODEL_TEX_ONE, CGrannyModelInstance::MODEL_PASS_OPAQUE);
-    }
-}
-
 void CGrannyLODController::ReloadTexture()
 {
     if (m_pCurrentModelInstance)

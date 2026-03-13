@@ -336,7 +336,6 @@ void CArea::Refresh()
     m_ThingCloneInstaceVector.clear();
     m_DungeonBlockCloneInstanceVector.clear();
     m_AniThingCloneInstanceVector.clear();
-    m_ShadowThingCloneInstaceVector.clear();
     m_AmbienceCloneInstanceVector.clear();
 
     for (auto it = m_ObjectInstanceVector.begin(); it != m_ObjectInstanceVector.end(); ++it)
@@ -371,11 +370,6 @@ void CArea::Refresh()
             {
                 m_AniThingCloneInstanceVector.push_back(pObjectInstance->pThingInstance);
                 pObjectInstance->pThingInstance->SetMotion(0);
-            }
-
-            if (pObjectInstance->isShadowFlag)
-            {
-                m_ShadowThingCloneInstaceVector.push_back(pObjectInstance->pThingInstance);
             }
 
             if (pObjectInstance->pAttributeInstance)
@@ -638,7 +632,6 @@ void CArea::__SetObjectInstance_SetBuilding(TObjectInstance * pObjectInstance, c
         c_pData->m_fPitch,
         c_pData->m_fRoll
     );
-    pObjectInstance->isShadowFlag = Data.isShadowFlag;
     pObjectInstance->pThingInstance->RegisterBoundingSphere();
     __LoadAttribute(pObjectInstance, Data.strAttributeDataFileName.c_str());
     pThing->Release();
@@ -1116,7 +1109,6 @@ void CArea::Clear()
     m_ThingCloneInstaceVector.clear();
     m_DungeonBlockCloneInstanceVector.clear();
     m_AniThingCloneInstanceVector.clear();
-    m_ShadowThingCloneInstaceVector.clear();
     m_AmbienceCloneInstanceVector.clear();
     m_GraphicThingInstanceCRCMap.clear();
     m_kRenderedThingInstanceCRCWithNumberVector.clear();

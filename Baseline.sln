@@ -1048,6 +1048,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snow", "Snow", "{906D92F5-B
 		Client\Binary\pack\Shaders\ymir work\shader\Snow\snow_particle_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Snow\snow_particle_vs.hlsl
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terrain", "Terrain", "{52674148-6AA2-4DB0-9F50-D0EAC6A782EF}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_ps.hlsl
+		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_vs.hlsl
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CL-Debug|Win32 = CL-Debug|Win32
@@ -1483,6 +1489,7 @@ Global
 		{3F16BCDD-10CF-4790-B66D-68C9319906F7} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{CB3ECB2B-64E6-42C0-AF81-6537C67DB0A7} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{906D92F5-B024-4D47-B03F-ABDE29CD8335} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
+		{52674148-6AA2-4DB0-9F50-D0EAC6A782EF} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F46A540A-7868-41C7-AA54-AC5713509850}

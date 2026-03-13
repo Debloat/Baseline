@@ -47,8 +47,7 @@ class CGraphicObjectInstance : public CGraphicCollisionObject
         void					Update();
         bool					Render();
         void					BlendRender();
-        void					RenderToShadowMap();
-        void					RenderShadow();
+
         void					Deform();
         void					Transform();
 
@@ -115,8 +114,6 @@ class CGraphicObjectInstance : public CGraphicCollisionObject
 
         virtual void			OnRender() = 0;
         virtual void			OnBlendRender() = 0;
-        virtual void			OnRenderToShadowMap() = 0;
-        virtual void			OnRenderShadow() = 0;
         virtual void			OnClear() {}
 
         virtual void			OnUpdate() {}
