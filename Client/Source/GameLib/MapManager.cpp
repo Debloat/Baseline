@@ -232,37 +232,7 @@ void CMapManager::BeginEnvironment()
     }
 
     CMapOutdoor& rkMap = GetMapOutdoorRef();
-
-    // Light always on
-    STATEMANAGER.SaveRenderState(D3DRS_LIGHTING, TRUE);
-
-    // Material
-    STATEMANAGER.SetMaterial(&mc_pcurEnvironmentData->Material);
-
-    // Directional Light
-    if (mc_pcurEnvironmentData->bDirLightsEnable[ENV_DIRLIGHT_BACKGROUND])
-    {
-        ms_lpd3dDevice->LightEnable(0, TRUE);
-
-        rkMap.ApplyLight(mc_pcurEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND]);
-    }
-
-    else
-    {
-        ms_lpd3dDevice->LightEnable(0, FALSE);
-    }
-
     rkMap.OnBeginEnvironment();
-}
-
-void CMapManager::EndEnvironment()
-{
-    if (!mc_pcurEnvironmentData)
-    {
-        return;
-    }
-
-    STATEMANAGER.RestoreRenderState(D3DRS_LIGHTING);
 }
 
 void CMapManager::SetEnvironmentData(int nEnvDataIndex)

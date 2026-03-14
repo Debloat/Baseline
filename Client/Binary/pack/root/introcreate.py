@@ -79,7 +79,6 @@ class CreateCharacterWindow(ui.Window):
 		def OnRender(self):
 			grp.ClearDepthBuffer()
 			grp.PushState()
-			grp.SetOmniLight()
 
 			screenWidth = wndMgr.GetScreenWidth()
 			screenHeight = wndMgr.GetScreenHeight()

@@ -1,7 +1,6 @@
 #include "StdAfx.h"
 #include "EffectInstance.h"
 #include "ParticleSystemInstance.h"
-#include "SimpleLightInstance.h"
 
 #include "../EterBase/Stl.h"
 #include "../MilesLib/SoundManager.h"
@@ -42,7 +41,6 @@ void CEffectInstance::DestroySystem()
 
     CParticleSystemInstance::DestroySystem();
     CEffectMeshInstance::DestroySystem();
-    CLightInstance::DestroySystem();
 }
 
 void CEffectInstance::UpdateSound()
@@ -83,7 +81,6 @@ void CEffectInstance::OnUpdate()
 
     f = std::for_each(m_ParticleInstanceVector.begin(), m_ParticleInstanceVector.end(), f);
     f = std::for_each(m_MeshInstanceVector.begin(), m_MeshInstanceVector.end(), f);
-    f = std::for_each(m_LightInstanceVector.begin(), m_LightInstanceVector.end(), f);
     m_isAlive = f.isAlive;
 
     m_fLastTime = CTimer::Instance().GetCurrentSecond();
@@ -111,14 +108,12 @@ void CEffectInstance::SetActive()
 {
     std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
     std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
-    std::ranges::for_each(m_LightInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetActive));
 }
 
 void CEffectInstance::SetDeactive()
 {
     std::ranges::for_each(m_ParticleInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
     std::ranges::for_each(m_MeshInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
-    std::ranges::for_each(m_LightInstanceVector, std::mem_fn(&CEffectElementBaseInstance::SetDeactive));
 }
 
 void CEffectInstance::__SetParticleData(CParticleSystemData * pData)
@@ -137,15 +132,6 @@ void CEffectInstance::__SetMeshData(CEffectMeshScript * pMesh)
     pMeshInstance->SetLocalMatrixPointer(&m_matGlobal);
 
     m_MeshInstanceVector.push_back(pMeshInstance);
-}
-
-void CEffectInstance::__SetLightData(CLightData* pData)
-{
-    CLightInstance * pInstance = CLightInstance::New();
-    pInstance->SetDataPointer(pData);
-    pInstance->SetLocalMatrixPointer(&m_matGlobal);
-
-    m_LightInstanceVector.push_back(pInstance);
 }
 
 void CEffectInstance::SetEffectDataPointer(CEffectData * pEffectData)
@@ -179,13 +165,6 @@ void CEffectInstance::SetEffectDataPointer(CEffectData * pEffectData)
         __SetMeshData(pMesh);
     }
 
-    for (i = 0; i < pEffectData->GetLightCount(); ++i)
-    {
-        CLightData * pLight = pEffectData->GetLightPointer(i);
-
-        __SetLightData(pLight);
-    }
-
     m_pSoundInstanceVector = pEffectData->GetSoundInstanceVector();
 }
 
@@ -210,12 +189,6 @@ void CEffectInstance::Clear()
     {
         std::ranges::for_each(m_MeshInstanceVector, CEffectMeshInstance::Delete);
         m_MeshInstanceVector.clear();
-    }
-
-    if (!m_LightInstanceVector.empty())
-    {
-        std::ranges::for_each(m_LightInstanceVector, CLightInstance::Delete);
-        m_LightInstanceVector.clear();
     }
 
     __Initialize();
@@ -243,5 +216,4 @@ CEffectInstance::~CEffectInstance()
 {
     assert(m_ParticleInstanceVector.empty());
     assert(m_MeshInstanceVector.empty());
-    assert(m_LightInstanceVector.empty());
 }

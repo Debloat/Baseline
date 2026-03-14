@@ -432,31 +432,6 @@ void CGraphicDevice::UploadWeaponTraceConstants(const WeaponTraceShaderInputs& i
     UploadPSConstants(0, ps.slot0.data(), 1);         // c0
 }
 
-void CGraphicDevice::UploadLensFlareConstants(const LensFlareShaderInputs& inputs)
-{
-    if (!ms_lpd3dDevice)
-    {
-        return;
-    }
-
-    // --- Transpose ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    // --- Pack ---
-    LensFlareVSCB vs{};
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-    LensFlarePSCB ps{};
-    ps.brightnessColor = inputs.ps.brightnessColor;
-
-    // --- Upload ---
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);
-    UploadPSConstants(0, ps.brightnessColor.data(), 1);
-}
-
 void CGraphicDevice::UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderInputs& inputs)
 {
     if (!ms_lpd3dDevice)
@@ -957,28 +932,13 @@ bool CGraphicDevice::Reset()
 static LPDIRECT3DSURFACE9 s_lpStencil;
 static DWORD   s_MaxTextureWidth, s_MaxTextureHeight;
 
-BOOL EL3D_ConfirmDevice(D3DCAPS9& rkD3DCaps, UINT uBehavior, D3DFORMAT /*eD3DFmt*/)
+BOOL EL3D_ConfirmDevice(D3DCAPS9& rkD3DCaps, UINT uBehavior, D3DFORMAT)
 {
-    if (uBehavior & D3DCREATE_HARDWARE_VERTEXPROCESSING)
-    {
-        // DirectionalLight
-        if (!(rkD3DCaps.VertexProcessingCaps & D3DVTXPCAPS_DIRECTIONALLIGHTS))
-        {
-            return FALSE;
-        }
+    if (rkD3DCaps.VertexShaderVersion < D3DVS_VERSION(3, 0))
+        return FALSE;
 
-        // PositionalLight
-        if (!(rkD3DCaps.VertexProcessingCaps & D3DVTXPCAPS_POSITIONALLIGHTS))
-        {
-            return FALSE;
-        }
-
-        // Shadow/Terrain
-        if (!(rkD3DCaps.VertexProcessingCaps & D3DVTXPCAPS_TEXGEN))
-        {
-            return FALSE;
-        }
-    }
+    if (rkD3DCaps.PixelShaderVersion < D3DPS_VERSION(3, 0))
+        return FALSE;
 
     s_MaxTextureWidth = rkD3DCaps.MaxTextureWidth;
     s_MaxTextureHeight = rkD3DCaps.MaxTextureHeight;
@@ -1024,7 +984,6 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS,           EShaderInputLayout::PTC },
         ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS,          EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS,          EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::LensFlare,       LensFlare::VS,       LensFlare::PS,       EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS,     EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS, EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS,         EShaderInputLayout::PT },

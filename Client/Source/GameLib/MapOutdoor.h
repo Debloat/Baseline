@@ -1,8 +1,6 @@
 #pragma once
 
 #include "../EterLib/SkyBox.h"
-#include "../EterLib/LensFlare.h"
-#include "../EterLib/ScreenFilter.h"
 
 #include "../TerrainLib/TerrainType.h"
 #include "../TerrainLib/TextureSet.h"
@@ -99,10 +97,7 @@ class CMapOutdoor : public CMapBase
 
         bool			LoadSetting(const char* c_szFileName);
 
-        void			ApplyLight(const D3DLIGHT9& c_rkLight);
-        void			SetEnvironmentScreenFilter();
         void			SetEnvironmentSkyBox();
-        void			SetEnvironmentLensFlare();
 
         void			RenderWater();
         void			RenderMarkedArea();
@@ -118,9 +113,6 @@ class CMapOutdoor : public CMapBase
         void			RenderCollision();
         void			RenderSky();
         void			RenderCloud();
-        void			RenderBeforeLensFlare();
-        void			RenderAfterLensFlare();
-        void			RenderScreenFiltering();
 
         void			SetWireframe(bool bWireFrame);
         bool			IsWireframe();
@@ -415,8 +407,6 @@ class CMapOutdoor : public CMapBase
 
     protected:
         CSkyBox						m_SkyBox;
-        CLensFlare					m_LensFlare;
-        CScreenFilter				m_ScreenFilter;
 
     protected:
         void SetIndexBuffer();

@@ -115,27 +115,8 @@ namespace prt
 /////////////////////////////////////////////////////////////////
 // Environment
 //
-enum
-{
-    ENV_DIRLIGHT_BACKGROUND,
-    ENV_DIRLIGHT_NUM
-};
-
 using TEnvironmentData = struct SEnvironmentData
 {
-    // Light
-    BOOL		bDirLightsEnable[ENV_DIRLIGHT_NUM];
-    D3DLIGHT9	DirLights[ENV_DIRLIGHT_NUM];
-
-    // Material
-    D3DMATERIAL9 Material;
-
-    // Filtering
-    BOOL bFilteringEnable;
-    D3DXCOLOR FilteringColor;
-    BYTE byFilteringAlphaSrc;
-    BYTE byFilteringAlphaDest;
-
     // Wind
     float fWindStrength;
     float fWindRandom;
@@ -152,15 +133,6 @@ using TEnvironmentData = struct SEnvironmentData
     D3DXVECTOR2 v2CloudSpeed;
     std::string strCloudTextureFileName;
     D3DXCOLOR cloudTintMultiplier;
-
-    // LensFlare
-    BOOL bLensFlareEnable;
-    D3DXCOLOR LensFlareBrightnessColor;
-    float fLensFlareMaxBrightness;
-
-    BOOL bMainFlareEnable;
-    std::string strMainFlareTextureFileName;
-    float fMainFlareSize;
 
     BOOL bReserve; // 외부에서 설정을 고치지 않음
 };

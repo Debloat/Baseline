@@ -880,12 +880,6 @@ PyObject* grpRestoreViewport(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* grpSetOmniLight(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonGraphic::Instance().SetOmniLight();
-    return Py_BuildNone();
-}
-
 PyObject* grpGetCameraPosition(PyObject * poSelf, PyObject * poArgs)
 {
     D3DXVECTOR3 v3Eye = CCameraManager::Instance().GetCurrentCamera()->GetEye();
@@ -928,7 +922,6 @@ void initgrp()
         { "SetInterfaceRenderState",	grpSetInterfaceRenderState,		METH_VARARGS },
         { "SetViewport",				grpSetViewport,					METH_VARARGS },
         { "RestoreViewport",			grpRestoreViewport,				METH_VARARGS },
-        { "SetOmniLight",				grpSetOmniLight,				METH_VARARGS },
         { "GetCameraPosition",			grpGetCameraPosition,			METH_VARARGS },
         { "GetTargetPosition",			grpGetTargetPosition,			METH_VARARGS },
 

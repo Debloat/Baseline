@@ -228,14 +228,11 @@ void CPythonApplication::RenderGame()
 
         m_pyBackground.RenderSky();
 
-        m_pyBackground.RenderBeforeLensFlare();
-
         m_pyBackground.RenderCloud();
 
         m_pyBackground.BeginEnvironment();
         m_pyBackground.Render();
 
-        m_pyBackground.SetBackgroundDirLight();
         m_kChrMgr.Render();
 
         if (GetYosunControlSettings().worldEditor.drawCollision)
@@ -248,16 +245,11 @@ void CPythonApplication::RenderGame()
         m_pyBackground.RenderSnow();
         m_pyBackground.RenderEffect();
 
-        m_pyBackground.EndEnvironment();
-
         m_kEftMgr.Render();
         m_pyItem.Render();
         m_FlyingManager.Render();
 
         m_pyBackground.BeginEnvironment();
-        m_pyBackground.EndEnvironment();
-
-        m_pyBackground.RenderAfterLensFlare();
 
         return;
     }
@@ -281,25 +273,20 @@ void CPythonApplication::RenderGame()
     }
 
     m_pyBackground.RenderSky();
-    m_pyBackground.RenderBeforeLensFlare();
     m_pyBackground.RenderCloud();
     m_pyBackground.BeginEnvironment();
     m_pyBackground.Render();
 
-    m_pyBackground.SetBackgroundDirLight();
     m_kChrMgr.Render();
 
     m_pyBackground.RenderWater();
     m_pyBackground.RenderEffect();
-    m_pyBackground.EndEnvironment();
 
     m_kEftMgr.Render();
     m_pyItem.Render();
     m_FlyingManager.Render();
 
     m_pyBackground.BeginEnvironment();
-    m_pyBackground.EndEnvironment();
-    m_pyBackground.RenderAfterLensFlare();
 }
 
 void CPythonApplication::UpdateGame()
@@ -1167,9 +1154,6 @@ bool CPythonApplication::Create(PyObject * poSelf, const char* c_szName, int wid
     CPythonIME::Instance().SetText("", 0);
     CPythonTextTail::Instance().Initialize();
 
-    // Light Manager
-    m_LightManager.Initialize();
-
     CGraphicImageInstance::CreateSystem(32);
 
     // ¹é¾÷
@@ -1323,7 +1307,6 @@ void CPythonApplication::Destroy()
     m_pyBackground.Destroy();
 
     m_kEftMgr.Destroy();
-    m_LightManager.Destroy();
 
     // DEFAULT_FONT
     DefaultFont_Cleanup();

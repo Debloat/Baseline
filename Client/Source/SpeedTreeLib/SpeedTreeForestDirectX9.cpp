@@ -181,15 +181,9 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
         UpdateCompundMatrix(CCameraManager::Instance().GetCurrentCamera()->GetEye(), ms_matView, ms_matProj);
     }
 
-    DWORD dwLightState = STATEMANAGER.GetRenderState(D3DRS_LIGHTING);
     DWORD dwColorVertexState = STATEMANAGER.GetRenderState(D3DRS_COLORVERTEX);
 
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
-#else
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, TRUE);
-#endif
 
     TTreeMap::iterator itor;
     UINT uiCount;
@@ -328,7 +322,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
 
     if (ulRenderBitVector & Forest_RenderBillboards)
     {
-        STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
         STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, FALSE);
 
         itor = m_pMainTreeMap.begin();
@@ -354,8 +347,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
     STATEMANAGER.SetVertexShader(nullptr);
     STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1);
 #endif
-
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, dwLightState);
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, dwColorVertexState);
 
     STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);

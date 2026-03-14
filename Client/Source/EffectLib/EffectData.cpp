@@ -20,7 +20,6 @@ void CEffectData::DestroySystem()
 
     CParticleSystemData::DestroySystem();
     CEffectMeshScript::DestroySystem();
-    CLightData::DestroySystem();
 }
 
 bool CEffectData::LoadScript(const char* c_szFileName)
@@ -75,13 +74,6 @@ bool CEffectData::LoadScript(const char* c_szFileName)
             pParticleSystemData->LoadScript(TextFileLoader);
         }
 
-        else if (0 == strName.compare("light"))
-        {
-            CLightData * pLightData = AllocLight();
-            pLightData->Clear();
-            pLightData->LoadScript(TextFileLoader);
-        }
-
         TextFileLoader.SetParentNode();
     }
 
@@ -129,24 +121,6 @@ CEffectMeshScript* CEffectData::AllocMesh()
     CEffectMeshScript * pMesh = CEffectMeshScript::New();
     m_MeshVector.push_back(pMesh);
     return pMesh;
-}
-
-CLightData* CEffectData::AllocLight()
-{
-    CLightData * pLight = CLightData::New();
-    m_LightVector.push_back(pLight);
-    return pLight;
-}
-
-DWORD CEffectData::GetLightCount()
-{
-    return m_LightVector.size();
-}
-
-CLightData* CEffectData::GetLightPointer(DWORD dwPosition)
-{
-    assert(dwPosition < m_LightVector.size());
-    return m_LightVector[dwPosition];
 }
 
 DWORD CEffectData::GetParticleCount()
@@ -205,12 +179,6 @@ void CEffectData::__ClearParticleDataVector()
     m_ParticleVector.clear();
 }
 
-void CEffectData::__ClearLightDataVector()
-{
-    std::ranges::for_each(m_LightVector, CLightData::Delete);
-    m_LightVector.clear();
-}
-
 void CEffectData::__ClearMeshDataVector()
 {
     std::ranges::for_each(m_MeshVector, CEffectMeshScript::Delete);
@@ -222,7 +190,6 @@ void CEffectData::Clear()
     m_fBoundingSphereRadius = 0.0f;
     m_v3BoundingSpherePosition.x = m_v3BoundingSpherePosition.y = m_v3BoundingSpherePosition.z = 0.0f;
     __ClearParticleDataVector();
-    __ClearLightDataVector();
     __ClearMeshDataVector();
 }
 

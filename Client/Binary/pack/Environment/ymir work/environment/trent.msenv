@@ -1,40 +1,6 @@
 ScriptType         EnvrionmentData
 ScriptVersion      1.0000
 
-Group DirectionalLight
-{
-    Direction     0.411789 0.910903 0.026193
-
-    Group Background
-    {
-        Enable        1
-        Diffuse       1.000000 1.000000 1.000000 1.000000
-        Ambient       0.247059 0.313726 0.309804 1.000000
-    }
-}
-Group Material
-{
-    Diffuse       1.000000 1.000000 1.000000 1.000000
-    Ambient       0.494118 0.447059 0.313726 1.000000
-    Emissive      0.200000 0.200000 0.200000 1.000000
-}
-
-Group Fog
-{
-    Enable        1
-    NearDistance  0.000000
-    FarDistance   18000.000000
-    Color         0.145098 0.058824 0.062745 1.000000
-}
-
-Group Filter
-{
-    Enable        0
-    Color         0.301961 0.109804 0.109804 0.000000
-    AlphaSrc      2
-    AlphaDest     2
-}
-
 Group SkyBox
 {
     Scale                 3500.000000 3500.000000 3500.000000
@@ -46,14 +12,3 @@ Group SkyBox
     CloudTextureFileName  "D:\YMIR WORK\environment\clouds_zone05.tga"
     CloudColor 1.000000 1.000000 1.000000 1.000000
 }
-
-Group LensFlare
-{
-    Enable                     0
-    BrightnessColor            0.976471 0.976471 0.976471 1.000000
-    MaxBrightness              1.000000
-    MainFlareEnable            0
-    MainFlareTextureFileName   ""
-    MainFlareSize              0.200000
-}
-

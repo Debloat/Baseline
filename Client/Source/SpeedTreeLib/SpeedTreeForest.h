@@ -75,8 +75,6 @@ class CSpeedTreeForest
         void                        UpdateSystem(float fCurrentTime);
 
         void                        Clear();
-
-        void                        SetLight(const float* afDirection, const float* afAmbient, const float* afDiffuse);
         //////////////////////////////////////////////////////////////////////////
 
         const float*                GetExtents(void) const

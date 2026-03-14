@@ -8,7 +8,6 @@ enum class ShaderID
     Water,
     SkyBox,
     Cloud,
-    LensFlare,
     WeaponTrace,
     ScreenPrimitive,
     MiniMap,

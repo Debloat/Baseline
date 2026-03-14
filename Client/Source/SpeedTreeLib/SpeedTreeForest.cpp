@@ -269,21 +269,3 @@ void CSpeedTreeForest::SetupWindMatrices(float fDeltaTime)
     // track wind strength
     fOldStrength = m_fWindStrength;
 }
-
-void CSpeedTreeForest::SetLight(const float* afDirection, const float* afAmbient, const float* afDiffuse)
-{
-    m_afLighting[0] = afDirection[0];
-    m_afLighting[1] = afDirection[1];
-    m_afLighting[2] = afDirection[2];
-    m_afLighting[3] = 1.0f;
-
-    m_afLighting[4] = afAmbient[0];
-    m_afLighting[5] = afAmbient[1];
-    m_afLighting[6] = afAmbient[2];
-    m_afLighting[7] = afAmbient[3];
-
-    m_afLighting[8] = afDiffuse[0];
-    m_afLighting[9] = afDiffuse[1];
-    m_afLighting[10] = afDiffuse[2];
-    m_afLighting[11] = afDiffuse[3];
-}

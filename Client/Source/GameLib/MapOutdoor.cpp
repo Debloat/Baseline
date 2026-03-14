@@ -243,40 +243,18 @@ void CMapOutdoor::OnBeginEnvironment()
 
     CSpeedTreeForestDirectX9& rkForest = CSpeedTreeForestDirectX9::Instance();
 
-    const D3DLIGHT9& c_rkLight = mc_pEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND];
-    rkForest.SetLight(
-        (const float*)&c_rkLight.Direction,
-        (const float*)&c_rkLight.Ambient,
-        (const float*)&c_rkLight.Diffuse);
-
     rkForest.SetWindStrength(mc_pEnvironmentData->fWindStrength);
 }
 
 void CMapOutdoor::OnSetEnvironmentDataPtr()
 {
-    SetEnvironmentScreenFilter();
     SetEnvironmentSkyBox();
-    SetEnvironmentLensFlare();
 }
 
 void CMapOutdoor::OnResetEnvironmentDataPtr()
 {
     m_SkyBox.Unload();
-    SetEnvironmentScreenFilter();
     SetEnvironmentSkyBox();
-    SetEnvironmentLensFlare();
-}
-
-void CMapOutdoor::SetEnvironmentScreenFilter()
-{
-    if (!mc_pEnvironmentData)
-    {
-        return;
-    }
-
-    m_ScreenFilter.SetEnable(mc_pEnvironmentData->bFilteringEnable);
-    m_ScreenFilter.SetBlendType(mc_pEnvironmentData->byFilteringAlphaSrc, mc_pEnvironmentData->byFilteringAlphaDest);
-    m_ScreenFilter.SetColor(mc_pEnvironmentData->FilteringColor);
 }
 
 void CMapOutdoor::SetEnvironmentSkyBox()
@@ -302,25 +280,6 @@ void CMapOutdoor::SetEnvironmentSkyBox()
     m_SkyBox.SetCloudTintMultiplier(mc_pEnvironmentData->cloudTintMultiplier);
 
     m_SkyBox.Refresh();
-}
-
-void CMapOutdoor::SetEnvironmentLensFlare()
-{
-    if (!mc_pEnvironmentData)
-    {
-        return;
-    }
-
-    m_LensFlare.CharacterizeFlare(mc_pEnvironmentData->bLensFlareEnable == 1 ? true : false,
-                                  mc_pEnvironmentData->bMainFlareEnable == 1 ? true : false,
-                                  mc_pEnvironmentData->fLensFlareMaxBrightness,
-                                  mc_pEnvironmentData->LensFlareBrightnessColor);
-
-    m_LensFlare.Initialize("d:/ymir work/environment");
-
-    if (!mc_pEnvironmentData->strMainFlareTextureFileName.empty())
-        m_LensFlare.SetMainFlare(mc_pEnvironmentData->strMainFlareTextureFileName,
-                                 mc_pEnvironmentData->fMainFlareSize);
 }
 
 void CMapOutdoor::SetWireframe(bool bWireFrame)

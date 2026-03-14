@@ -4,7 +4,6 @@
 #include "../EterLib/Input.h"
 #include "../EterLib/GrpDevice.h"
 #include "../EterLib/NetDevice.h"
-#include "../EterLib/GrpLightManager.h"
 #include "../EffectLib/EffectManager.h"
 #include "../GameLib/RaceManager.h"
 #include "../GameLib/ItemManager.h"
@@ -342,7 +341,6 @@ class CPythonApplication : public CMSApplication, public CInputKeyboard, public 
     protected:
         CTimer m_timer;
 
-        CLightManager				m_LightManager;
         CSoundManager				m_SoundManager;
         CFlyingManager				m_FlyingManager;
         CRaceManager				m_RaceManager;

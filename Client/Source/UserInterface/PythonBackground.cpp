@@ -206,19 +206,6 @@ bool CPythonBackground::GetPickingPointWithRayOnlyTerrain(const CRay & rRay, D3D
     return rkMap.GetPickingPointWithRayOnlyTerrain(rRay, v3IntersectPt);
 }
 
-BOOL CPythonBackground::GetLightDirection(D3DXVECTOR3 & rv3LightDirection)
-{
-    if (!mc_pcurEnvironmentData)
-    {
-        return FALSE;
-    }
-
-    rv3LightDirection.x = mc_pcurEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND].Direction.x;
-    rv3LightDirection.y = mc_pcurEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND].Direction.y;
-    rv3LightDirection.z = mc_pcurEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND].Direction.z;
-    return TRUE;
-}
-
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -603,28 +590,6 @@ void CPythonBackground::RenderEffect()
     rkMap.RenderEffect();
 }
 
-void CPythonBackground::RenderBeforeLensFlare()
-{
-    if (!IsMapReady())
-    {
-        return;
-    }
-
-    CMapOutdoor& rkMap = GetMapOutdoorRef();
-    rkMap.RenderBeforeLensFlare();
-}
-
-void CPythonBackground::RenderAfterLensFlare()
-{
-    if (!IsMapReady())
-    {
-        return;
-    }
-
-    CMapOutdoor& rkMap = GetMapOutdoorRef();
-    rkMap.RenderAfterLensFlare();
-}
-
 void CPythonBackground::ClearGuildArea()
 {
     if (!IsMapReady())
@@ -647,21 +612,6 @@ void CPythonBackground::RegisterGuildArea(int isx, int isy, int iex, int iey)
     rkMap.RegisterGuildArea(isx, isy, iex, iey);
 }
 
-void CPythonBackground::SetBackgroundDirLight()
-{
-    if (!IsMapReady())
-    {
-        return;
-    }
-
-    if (!mc_pcurEnvironmentData)
-    {
-        return;
-    }
-
-    STATEMANAGER.SetLight(0, &mc_pcurEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND]);
-}
-
 void CPythonBackground::GlobalPositionToLocalPosition(LONG& rGlobalX, LONG& rGlobalY)
 {
     rGlobalX -= m_dwBaseX;
@@ -676,12 +626,12 @@ void CPythonBackground::LocalPositionToGlobalPosition(LONG& rLocalX, LONG& rLoca
 
 void CPythonBackground::RegisterDungeonMapName(const char* c_szMapName)
 {
-    m_kSet_strDungeonMapName.insert(c_szMapName);
+    m_kSet_strDungeonMapName.emplace(c_szMapName);
 }
 
 CPythonBackground::TMapInfo* CPythonBackground::GlobalPositionToMapInfo(DWORD dwGlobalX, DWORD dwGlobalY)
 {
-    TMapInfoVector::iterator f = std::find_if(m_kVct_kMapInfo.begin(), m_kVct_kMapInfo.end(), FFindWarpMapName(dwGlobalX, dwGlobalY));
+    auto f = std::ranges::find_if(m_kVct_kMapInfo, FFindWarpMapName(dwGlobalX, dwGlobalY));
 
     if (f == m_kVct_kMapInfo.end())
     {

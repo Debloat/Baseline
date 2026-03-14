@@ -142,27 +142,6 @@ PyObject* backgroundGetPickingPoint(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildValue("fff", kPPosPicked.x, kPPosPicked.y, kPPosPicked.z);
 }
 
-PyObject* backgroundBeginEnvironment(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground& rkBG = CPythonBackground::Instance();
-    rkBG.BeginEnvironment();
-    return Py_BuildNone();
-}
-
-PyObject* backgroundEndEnvironemt(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground& rkBG = CPythonBackground::Instance();
-    rkBG.EndEnvironment();
-    return Py_BuildNone();
-}
-
-PyObject* backgroundSetBackgroundDirLight(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground& rkBG = CPythonBackground::Instance();
-    rkBG.SetBackgroundDirLight();
-    return Py_BuildNone();
-}
-
 PyObject* backgroundInitialize(PyObject * poSelf, PyObject * poArgs)
 {
     CPythonBackground& rkBG = CPythonBackground::Instance();
@@ -231,18 +210,6 @@ PyObject* backgroundRenderWater(PyObject * poSelf, PyObject * poArgs)
 PyObject* backgroundRenderEffect(PyObject * poSelf, PyObject * poArgs)
 {
     CPythonBackground::Instance().RenderEffect();
-    return Py_BuildNone();
-}
-
-PyObject* backgroundRenderBeforeLensFlare(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground::Instance().RenderBeforeLensFlare();
-    return Py_BuildNone();
-}
-
-PyObject* backgroundRenderAfterLensFlare(PyObject * poSelf, PyObject * poArgs)
-{
-    CPythonBackground::Instance().RenderAfterLensFlare();
     return Py_BuildNone();
 }
 
@@ -573,10 +540,6 @@ void initBackground()
         { "GetCurrentMapName",					backgroundGetCurrentMapName,				METH_VARARGS },
         { "GetPickingPoint",					backgroundGetPickingPoint,					METH_VARARGS },
 
-        { "BeginEnvironment",					backgroundBeginEnvironment,					METH_VARARGS },
-        { "EndEnvironment",						backgroundEndEnvironemt,					METH_VARARGS },
-        { "SetBackgroundDirLight",				backgroundSetBackgroundDirLight,			METH_VARARGS },
-
         { "Initialize",							backgroundInitialize,						METH_VARARGS },
         { "Update",								backgroundUpdate,							METH_VARARGS },
         { "Render",								backgroundRender,							METH_VARARGS },
@@ -585,8 +548,6 @@ void initBackground()
         { "RenderCloud",						backgroundRenderCloud,						METH_VARARGS },
         { "RenderWater",						backgroundRenderWater,						METH_VARARGS },
         { "RenderEffect",						backgroundRenderEffect,						METH_VARARGS },
-        { "RenderBeforeLensFlare",				backgroundRenderBeforeLensFlare,			METH_VARARGS },
-        { "RenderAfterLensFlare",				backgroundRenderAfterLensFlare,				METH_VARARGS },
         { "RenderDungeon",						backgroundRenderDungeon,					METH_VARARGS },
         { "GetHeight",							backgroundGetHeight,						METH_VARARGS },
 

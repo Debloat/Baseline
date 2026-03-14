@@ -59,7 +59,6 @@ class SelectCharacterWindow(ui.Window):
 			grp.ClearDepthBuffer()
 
 			grp.PushState()
-			grp.SetOmniLight()
 
 			screenWidth = wndMgr.GetScreenWidth()
 			screenHeight = wndMgr.GetScreenHeight()

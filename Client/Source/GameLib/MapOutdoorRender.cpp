@@ -160,11 +160,6 @@ void CMapOutdoor::__RenderTerrain_AppendPatch(const D3DXVECTOR3& c_rv3Center, fl
     m_PatchVector.push_back(std::make_pair(fDistance, lPatchNum));
 }
 
-void CMapOutdoor::ApplyLight(const D3DLIGHT9& c_rkLight)
-{
-    STATEMANAGER.SetLight(0, &c_rkLight);
-}
-
 // 2004. 2. 17. myevan. 모든 부분을 보이게 초기화 한다
 void CMapOutdoor::InitializeVisibleParts()
 {
@@ -224,25 +219,6 @@ CArea::TCRCWithNumberVector& CMapOutdoor::GetRenderedGraphicThingInstanceNum(DWO
     return m_dwRenderedCRCWithNumberVector;
 }
 
-void CMapOutdoor::RenderBeforeLensFlare()
-{
-    m_LensFlare.DrawBeforeFlare();
-
-    if (!mc_pEnvironmentData)
-    {
-        TraceError("CMapOutdoor::RenderBeforeLensFlare mc_pEnvironmentData is NULL");
-        return;
-    }
-
-    m_LensFlare.Compute(mc_pEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND].Direction);
-}
-
-void CMapOutdoor::RenderAfterLensFlare()
-{
-    m_LensFlare.AdjustBrightness();
-    m_LensFlare.DrawFlare();
-}
-
 void CMapOutdoor::RenderCollision()
 {
     for (int i = 0; i < AROUND_AREA_NUM; ++i)
@@ -254,11 +230,6 @@ void CMapOutdoor::RenderCollision()
             pArea->RenderCollision();
         }
     }
-}
-
-void CMapOutdoor::RenderScreenFiltering()
-{
-    m_ScreenFilter.Render();
 }
 
 void CMapOutdoor::RenderSky()
@@ -301,30 +272,6 @@ void CMapOutdoor::OnRender()
 #ifdef __PERFORMANCE_CHECKER__
     DWORD t2 = ELTimer_GetMSec();
 #endif
-
-    // -----------------------------------------------------------------
-    // Sync sun to EnvironmentShaderSettings (world pass)
-    // -----------------------------------------------------------------
-    if (mc_pEnvironmentData)
-    {
-        const D3DLIGHT9& light =
-            mc_pEnvironmentData->DirLights[ENV_DIRLIGHT_BACKGROUND];
-
-        auto& es = GetEnvironmentShaderSettings();
-
-        es.runtime.sunDir = {
-            light.Direction.x,
-            light.Direction.y,
-            light.Direction.z
-        };
-
-        es.runtime.sunColor = {
-            light.Diffuse.r,
-            light.Diffuse.g,
-            light.Diffuse.b
-        };
-    }
-    // -----------------------------------------------------------------
 
     RenderArea();
 #ifdef __PERFORMANCE_CHECKER__

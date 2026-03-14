@@ -8,7 +8,6 @@
 #include "EffectData.h"
 #include "EffectMeshInstance.h"
 #include "ParticleSystemInstance.h"
-#include "SimpleLightInstance.h"
 
 class CEffectInstance : public CGraphicObjectInstance
 {
@@ -57,7 +56,6 @@ class CEffectInstance : public CGraphicObjectInstance
 
         void					__SetParticleData(CParticleSystemData * pData);
         void					__SetMeshData(CEffectMeshScript * pMesh);
-        void					__SetLightData(CLightData * pData);
 
         virtual void			OnUpdateCollisionData(const CStaticCollisionDataVector * pscdVector) {} // Not used
 
@@ -77,7 +75,6 @@ class CEffectInstance : public CGraphicObjectInstance
 
         std::vector<CParticleSystemInstance*>	m_ParticleInstanceVector;
         std::vector<CEffectMeshInstance*>		m_MeshInstanceVector;
-        std::vector<CLightInstance*>			m_LightInstanceVector;
 
         NSound::TSoundInstanceVector* 	m_pSoundInstanceVector;
 

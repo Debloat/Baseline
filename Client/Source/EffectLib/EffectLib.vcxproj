@@ -153,8 +153,6 @@
     <ClInclude Include="ParticleProperty.h" />
     <ClInclude Include="ParticleSystemData.h" />
     <ClInclude Include="ParticleSystemInstance.h" />
-    <ClInclude Include="SimpleLightData.h" />
-    <ClInclude Include="SimpleLightInstance.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="Type.h" />
   </ItemGroup>
@@ -173,8 +171,6 @@
     <ClCompile Include="ParticleProperty.cpp" />
     <ClCompile Include="ParticleSystemData.cpp" />
     <ClCompile Include="ParticleSystemInstance.cpp" />
-    <ClCompile Include="SimpleLightData.cpp" />
-    <ClCompile Include="SimpleLightInstance.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='WE-Release|Win32'">Create</PrecompiledHeader>

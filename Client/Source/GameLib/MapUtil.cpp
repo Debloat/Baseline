@@ -3,35 +3,6 @@
 
 void Environment_Init(SEnvironmentData& envData)
 {
-    for (int i = 0; i < ENV_DIRLIGHT_NUM; ++i)
-    {
-        envData.bDirLightsEnable[i] = false;
-        envData.DirLights[i].Type = D3DLIGHT_DIRECTIONAL;
-        envData.DirLights[i].Direction = D3DXVECTOR3(0.5f, 0.5f, -0.5f);
-        envData.DirLights[i].Position = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-        envData.DirLights[i].Specular = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
-        envData.DirLights[i].Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
-        envData.DirLights[i].Ambient = D3DXCOLOR(0.5f, 0.5f, 0.5f, 1.0f);
-        envData.DirLights[i].Range = 0.0f; // Used by Point Light & Spot Light
-        envData.DirLights[i].Falloff = 1.0f; // Used by Spot Light
-        envData.DirLights[i].Theta = 0.0f; // Used by Spot Light
-        envData.DirLights[i].Phi = 0.0f; // Used by Spot Light
-        envData.DirLights[i].Attenuation0 = 0.0f;
-        envData.DirLights[i].Attenuation1 = 1.0f;
-        envData.DirLights[i].Attenuation2 = 0.0f;
-    }
-
-    envData.Material.Diffuse = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
-    envData.Material.Ambient = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
-    envData.Material.Emissive = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
-    envData.Material.Specular = D3DXCOLOR(0.0f, 0.0f, 0.0f, 1.0f);
-    envData.Material.Power = 0.0f;
-
-     envData.bFilteringEnable = FALSE;
-    envData.FilteringColor = D3DXCOLOR(0.3f, 0.1f, 0.1f, 0.0f);
-    envData.byFilteringAlphaSrc = D3DBLEND_ONE;
-    envData.byFilteringAlphaDest = D3DBLEND_ONE;
-
     envData.fWindStrength = 0.2f;
     envData.fWindRandom = 0.0f;
 
@@ -43,14 +14,6 @@ void Environment_Init(SEnvironmentData& envData)
     envData.v2CloudSpeed = D3DXVECTOR2(0.001f, 0.001f);
     envData.strCloudTextureFileName = "";
     envData.cloudTintMultiplier = D3DXCOLOR{ 1.f, 1.f, 1.f, 1.f };
-
-    envData.bLensFlareEnable = FALSE;
-    envData.LensFlareBrightnessColor = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
-    envData.fLensFlareMaxBrightness = 1.0f;
-
-    envData.bMainFlareEnable = FALSE;
-    envData.strMainFlareTextureFileName = "";
-    envData.fMainFlareSize = 0.2f;
 
     envData.bReserve = FALSE;
 }
@@ -68,40 +31,6 @@ bool Environment_Load(SEnvironmentData& envData, const char* envFileName)
 
     textLoader.GetTokenBoolean("reserved", &envData.bReserve);
 
-    if (textLoader.SetChildNode("directionallight"))
-    {
-        D3DVECTOR v3Dir;
-        textLoader.GetTokenDirection("direction", &v3Dir);
-
-        if (textLoader.SetChildNode("background"))
-        {
-            envData.DirLights[ENV_DIRLIGHT_BACKGROUND].Direction = v3Dir;
-            textLoader.GetTokenBoolean("enable", &envData.bDirLightsEnable[ENV_DIRLIGHT_BACKGROUND]);
-            textLoader.GetTokenColor("diffuse", &envData.DirLights[ENV_DIRLIGHT_BACKGROUND].Diffuse);
-            textLoader.GetTokenColor("ambient", &envData.DirLights[ENV_DIRLIGHT_BACKGROUND].Ambient);
-            textLoader.SetParentNode();
-        }
-
-        textLoader.SetParentNode();
-    }
-
-    if (textLoader.SetChildNode("material"))
-    {
-        textLoader.GetTokenColor("diffuse", &envData.Material.Diffuse);
-        textLoader.GetTokenColor("ambient", &envData.Material.Ambient);
-        textLoader.GetTokenColor("emissive", &envData.Material.Emissive);
-        textLoader.SetParentNode();
-    }
-
-    if (textLoader.SetChildNode("filter"))
-    {
-        textLoader.GetTokenBoolean("enable", &envData.bFilteringEnable);
-        textLoader.GetTokenColor("color", &envData.FilteringColor);
-        textLoader.GetTokenByte("alphasrc", &envData.byFilteringAlphaSrc);
-        textLoader.GetTokenByte("alphadest", &envData.byFilteringAlphaDest);
-        textLoader.SetParentNode();
-    }
-
     if (textLoader.SetChildNode("skybox"))
     {
         textLoader.GetTokenVector3("scale", &envData.v3SkyBoxScale);
@@ -114,18 +43,6 @@ bool Environment_Load(SEnvironmentData& envData, const char* envFileName)
         textLoader.GetTokenVector2("cloudspeed", &envData.v2CloudSpeed);
         textLoader.GetTokenString("cloudtexturefilename", &envData.strCloudTextureFileName);
         textLoader.GetTokenColor("cloudcolor", &envData.cloudTintMultiplier);
-
-        textLoader.SetParentNode();
-    }
-
-    if (textLoader.SetChildNode("lensflare"))
-    {
-        textLoader.GetTokenBoolean("enable", &envData.bLensFlareEnable);
-        textLoader.GetTokenColor("brightnesscolor", &envData.LensFlareBrightnessColor);
-        textLoader.GetTokenFloat("maxbrightness", &envData.fLensFlareMaxBrightness);
-        textLoader.GetTokenBoolean("mainflareenable", &envData.bMainFlareEnable);
-        textLoader.GetTokenString("mainflaretexturefilename", &envData.strMainFlareTextureFileName);
-        textLoader.GetTokenFloat("mainflaresize", &envData.fMainFlareSize);
 
         textLoader.SetParentNode();
     }

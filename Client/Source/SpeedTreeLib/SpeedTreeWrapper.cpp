@@ -126,7 +126,6 @@ void CSpeedTreeWrapper::OnRender()
     STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
     STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
 
-    STATEMANAGER.SaveRenderState(D3DRS_LIGHTING, FALSE);
     STATEMANAGER.SaveRenderState(D3DRS_COLORVERTEX, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -156,7 +155,6 @@ void CSpeedTreeWrapper::OnRender()
     RenderLeaves();
     EndLeafForTreeType();
 
-    STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, FALSE);
     RenderBillboards();
 
@@ -165,7 +163,6 @@ void CSpeedTreeWrapper::OnRender()
     STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1);
 #endif
 
-    STATEMANAGER.RestoreRenderState(D3DRS_LIGHTING);
     STATEMANAGER.RestoreRenderState(D3DRS_COLORVERTEX);
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);

@@ -7,8 +7,6 @@
 CStateManager::CStateManager(LPDIRECT3DDEVICE9EX lpDevice) : m_lpD3DDev(nullptr)
 {
     m_bScene = false;
-    m_dwBestMinFilter = D3DTEXF_LINEAR;
-    m_dwBestMagFilter = D3DTEXF_LINEAR;
     SetDevice(lpDevice);
 }
 
@@ -36,49 +34,14 @@ void CStateManager::SetDefaultState()
     SetTransform(D3DTS_VIEW, &Identity);
     SetTransform(D3DTS_PROJECTION, &Identity);
 
-    D3DMATERIAL9 DefaultMat;
-    ZeroMemory(&DefaultMat, sizeof(D3DMATERIAL9));
-
-    DefaultMat.Diffuse.r = 1.0f;
-    DefaultMat.Diffuse.g = 1.0f;
-    DefaultMat.Diffuse.b = 1.0f;
-    DefaultMat.Diffuse.a = 1.0f;
-    DefaultMat.Ambient.r = 1.0f;
-    DefaultMat.Ambient.g = 1.0f;
-    DefaultMat.Ambient.b = 1.0f;
-    DefaultMat.Ambient.a = 1.0f;
-    DefaultMat.Emissive.r = 0.0f;
-    DefaultMat.Emissive.g = 0.0f;
-    DefaultMat.Emissive.b = 0.0f;
-    DefaultMat.Emissive.a = 0.0f;
-    DefaultMat.Specular.r = 0.0f;
-    DefaultMat.Specular.g = 0.0f;
-    DefaultMat.Specular.b = 0.0f;
-    DefaultMat.Specular.a = 0.0f;
-    DefaultMat.Power = 0.0f;
-
-    SetMaterial(&DefaultMat);
-
-    SetRenderState(D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_MATERIAL);
-    SetRenderState(D3DRS_SPECULARMATERIALSOURCE, D3DMCS_MATERIAL);
-    SetRenderState(D3DRS_AMBIENTMATERIALSOURCE, D3DMCS_MATERIAL);
-    SetRenderState(D3DRS_EMISSIVEMATERIALSOURCE, D3DMCS_MATERIAL);
-
-    SetRenderState(D3DRS_LASTPIXEL, FALSE);
     SetRenderState(D3DRS_ALPHAREF, 1);
     SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATEREQUAL);
     SetRenderState(D3DRS_STENCILWRITEMASK, 0xFFFFFFFF);
-    SetRenderState(D3DRS_AMBIENT, 0x00000000);
-    SetRenderState(D3DRS_LOCALVIEWER, FALSE);
-    SetRenderState(D3DRS_NORMALIZENORMALS, FALSE);
-    SetRenderState(D3DRS_VERTEXBLEND, D3DVBF_DISABLE);
     SetRenderState(D3DRS_CLIPPLANEENABLE, 0);
     SetRenderState(D3DRS_MULTISAMPLEANTIALIAS, FALSE);
     SetRenderState(D3DRS_MULTISAMPLEMASK, 0xFFFFFFFF);
-    SetRenderState(D3DRS_INDEXEDVERTEXBLENDENABLE, FALSE);
     SetRenderState(D3DRS_COLORWRITEENABLE, 0xFFFFFFFF);
     SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
-    SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
     SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
     SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
     SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
@@ -87,13 +50,9 @@ void CStateManager::SetDefaultState()
     SetRenderState(D3DRS_ZENABLE, TRUE);
     SetRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
     SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
-    SetRenderState(D3DRS_DITHERENABLE, TRUE);
     SetRenderState(D3DRS_STENCILENABLE, FALSE);
     SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
     SetRenderState(D3DRS_CLIPPING, TRUE);
-    SetRenderState(D3DRS_LIGHTING, FALSE);
-    SetRenderState(D3DRS_SPECULARENABLE, FALSE);
-    SetRenderState(D3DRS_COLORVERTEX, FALSE);
     SetRenderState(D3DRS_WRAP0, 0);
     SetRenderState(D3DRS_WRAP1, 0);
     SetRenderState(D3DRS_WRAP2, 0);
@@ -103,44 +62,12 @@ void CStateManager::SetDefaultState()
     SetRenderState(D3DRS_WRAP6, 0);
     SetRenderState(D3DRS_WRAP7, 0);
 
-    SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
-    SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-
-    for (int i = 1; i < 8; ++i)
-    {
-        SetTextureStageState(i, D3DTSS_COLOROP, D3DTOP_DISABLE);
-        SetTextureStageState(i, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-        SetTextureStageState(i, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
-        SetTextureStageState(i, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-        SetTextureStageState(i, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-        SetTextureStageState(i, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
-    }
-
-    for (int i = 0; i < 8; ++i)
-    {
-        SetTextureStageState(i, D3DTSS_TEXCOORDINDEX, i);
-    }
-
     for (DWORD i = 0; i < 8; ++i)
     {
-        SetSamplerState(i, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-        SetSamplerState(i, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-        SetSamplerState(i, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
-        SetSamplerState(i, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-        SetSamplerState(i, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
-
-        SetTextureStageState(i, D3DTSS_TEXTURETRANSFORMFLAGS, 0);
-
         SetTexture(i, nullptr);
     }
 
     SetPixelShader(nullptr);
-    SetFVF(D3DFVF_XYZ);
 
     D3DXVECTOR4 av4Null[STATEMANAGER_MAX_VCONSTANTS];
     memset(av4Null, 0, sizeof(av4Null));
@@ -264,30 +191,6 @@ void CStateManager::GetMaterial(D3DMATERIAL9* pMaterial)
     *pMaterial = m_CurrentState.m_D3DMaterial;
 }
 
-struct SLightData
-{
-    enum
-    {
-        LIGHT_NUM = 8,
-    };
-    D3DLIGHT9 m_akD3DLight[LIGHT_NUM];
-} m_kLightData;
-
-
-void CStateManager::SetLight(DWORD index, CONST D3DLIGHT9* pLight)
-{
-    assert(index < SLightData::LIGHT_NUM);
-    m_kLightData.m_akD3DLight[index] = *pLight;
-
-    m_lpD3DDev->SetLight(index, pLight);
-}
-
-void CStateManager::GetLight(DWORD index, D3DLIGHT9* pLight)
-{
-    assert(index < 8);
-    *pLight = m_kLightData.m_akD3DLight[index];
-}
-
 // Renderstates
 DWORD CStateManager::GetRenderState(D3DRENDERSTATETYPE Type)
 {
@@ -387,13 +290,6 @@ void CStateManager::GetTexture(DWORD dwStage, LPDIRECT3DBASETEXTURE9* ppTexture)
     *ppTexture = m_CurrentState.m_Textures[dwStage];
 }
 
-void CStateManager::SetBestFiltering(DWORD dwStage)
-{
-    SetSamplerState(dwStage, D3DSAMP_MINFILTER, m_dwBestMinFilter);
-    SetSamplerState(dwStage, D3DSAMP_MAGFILTER, m_dwBestMagFilter);
-    SetSamplerState(dwStage, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-}
-
 // Texture stage states
 void CStateManager::SaveTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD dwValue)
 {
@@ -480,11 +376,6 @@ void CStateManager::SetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWO
     m_CurrentState.m_SamplerStates[dwStage][Type] = dwValue;
 }
 
-void CStateManager::GetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD* pdwValue)
-{
-    *pdwValue = m_CurrentState.m_SamplerStates[dwStage][Type];
-}
-
 // Vertex Shader
 void CStateManager::RestoreVertexShader()
 {
@@ -533,17 +424,6 @@ void CStateManager::GetFVF(DWORD* pdwShader)
 }
 
 // Pixel Shader
-void CStateManager::SavePixelShader(LPDIRECT3DPIXELSHADER9 dwShader)
-{
-    m_CopyState.m_dwPixelShader = m_CurrentState.m_dwPixelShader;
-    SetPixelShader(dwShader);
-}
-
-void CStateManager::RestorePixelShader()
-{
-    SetPixelShader(m_CopyState.m_dwPixelShader);
-}
-
 void CStateManager::SetPixelShader(LPDIRECT3DPIXELSHADER9 dwShader)
 {
     if (m_CurrentState.m_dwPixelShader == dwShader)
@@ -617,11 +497,6 @@ void CStateManager::GetTransform(D3DTRANSFORMSTATETYPE Type, D3DMATRIX* pMatrix)
 }
 
 // SetVertexShaderConstant
-void CStateManager::RestoreVertexShaderConstant(DWORD dwRegister, DWORD dwConstantCount)
-{
-    SetVertexShaderConstant(dwRegister, &m_CopyState.m_VertexShaderConstants[dwRegister], dwConstantCount);
-}
-
 void CStateManager::SetVertexShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount)
 {
     m_lpD3DDev->SetVertexShaderConstantF(dwRegister, (const float*)pConstantData, dwConstantCount);
@@ -635,22 +510,6 @@ void CStateManager::SetVertexShaderConstant(DWORD dwRegister, CONST void* pConst
 }
 
 // SetPixelShaderConstant
-void CStateManager::SavePixelShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount)
-{
-    for (DWORD i = 0; i < dwConstantCount; i++)
-    {
-        StateManager_Assert((dwRegister + i) < STATEMANAGER_MAX_VCONSTANTS);
-        m_CopyState.m_PixelShaderConstants[dwRegister + i] = *(((D3DXVECTOR4*)pConstantData) + i);
-    }
-
-    SetPixelShaderConstant(dwRegister, pConstantData, dwConstantCount);
-}
-
-void CStateManager::RestorePixelShaderConstant(DWORD dwRegister, DWORD dwConstantCount)
-{
-    SetPixelShaderConstant(dwRegister, &m_CopyState.m_PixelShaderConstants[dwRegister], dwConstantCount);
-}
-
 void CStateManager::SetPixelShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount)
 {
     m_lpD3DDev->SetPixelShaderConstantF(dwRegister, *(D3DXVECTOR4*)pConstantData, dwConstantCount);

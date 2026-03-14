@@ -60,7 +60,6 @@ public:
     static void UploadWaterConstants(const WaterShaderInputs& inputs);
     static void UploadSkyboxConstants(const SkyboxShaderInputs& inputs);
     static void UploadCloudConstants(const CloudShaderInputs& inputs);
-    static void UploadLensFlareConstants(const LensFlareShaderInputs& inputs);
     static void UploadWeaponTraceConstants(const WeaponTraceShaderInputs& inputs);
     static void UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderInputs& inputs);
     static void UploadMiniMapConstants(const MiniMapShaderInputs& inputs);

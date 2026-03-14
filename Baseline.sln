@@ -1004,12 +1004,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sky", "Sky", "{ADFED9C6-82E
 		Client\Binary\pack\Shaders\ymir work\shader\Sky\skybox_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Sky\skybox_vs.hlsl
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LensFlare", "LensFlare", "{27E18B55-2026-4B8F-9393-71AECB48AA3E}"
-	ProjectSection(SolutionItems) = preProject
-		Client\Binary\pack\Shaders\ymir work\shader\LensFlare\lensflare_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\LensFlare\lensflare_ps.hlsl
-		Client\Binary\pack\Shaders\ymir work\shader\LensFlare\lensflare_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\LensFlare\lensflare_vs.hlsl
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeaponTrace", "WeaponTrace", "{C4666E2D-D45D-42E2-985A-3CB42E102804}"
 	ProjectSection(SolutionItems) = preProject
 		Client\Binary\pack\Shaders\ymir work\shader\WeaponTrace\weapontrace_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\WeaponTrace\weapontrace_ps.hlsl
@@ -1488,7 +1482,6 @@ Global
 		{8A4B63C3-6CA0-4B8B-8F53-A26D0194A278} = {24D8EF46-B35F-4337-89E6-ADD9252A3599}
 		{044B3957-685C-49B8-A466-D10F4D312CE0} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{ADFED9C6-82EF-417A-A470-DF73C84ACF9B} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
-		{27E18B55-2026-4B8F-9393-71AECB48AA3E} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{C4666E2D-D45D-42E2-985A-3CB42E102804} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{24559823-59F5-4336-89EA-01A8DE17D78C} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{F4A8BF87-DBA6-4CF6-BFD9-FA3F43D5BAA6} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}

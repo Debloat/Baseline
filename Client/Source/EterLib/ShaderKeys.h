@@ -20,12 +20,6 @@ namespace ShaderKeys
         inline constexpr const char* PS = "d:/ymir work/shader/Sky/cloud_ps.hlsl";
     }
 
-    namespace LensFlare
-    {
-        inline constexpr const char* VS = "d:/ymir work/shader/LensFlare/lensflare_vs.hlsl";
-        inline constexpr const char* PS = "d:/ymir work/shader/LensFlare/lensflare_ps.hlsl";
-    }
-
     namespace WeaponTrace
     {
         inline constexpr const char* VS = "d:/ymir work/shader/WeaponTrace/weapontrace_vs.hlsl";

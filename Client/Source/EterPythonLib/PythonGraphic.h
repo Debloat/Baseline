@@ -25,8 +25,6 @@ class CPythonGraphic : public CScreen, public CSingleton<CPythonGraphic>
 
         void SetCursorPosition(int x, int y);
 
-        void SetOmniLight();
-
         void SetViewport(float fx, float fy, float fWidth, float fHeight);
         void RestoreViewport();
 

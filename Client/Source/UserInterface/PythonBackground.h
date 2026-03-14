@@ -61,7 +61,6 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         bool GetPickingPoint(D3DXVECTOR3 * v3IntersectPt);
         bool GetPickingPointWithRay(const CRay & rRay, D3DXVECTOR3 * v3IntersectPt);
         bool GetPickingPointWithRayOnlyTerrain(const CRay & rRay, D3DXVECTOR3 * v3IntersectPt);
-        BOOL GetLightDirection(D3DXVECTOR3 & rv3LightDirection);
 
         void Update(float fCenterX, float fCenterY, float fCenterZ);
 
@@ -71,12 +70,8 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         void RenderCloud();
         void RenderWater();
         void RenderEffect();
-        void RenderBeforeLensFlare();
-        void RenderAfterLensFlare();
 
         bool CheckAdvancing(CInstanceBase * pInstance);
-
-        void SetBackgroundDirLight();
 
         void ChangeToDay();
         void ChangeToNight();

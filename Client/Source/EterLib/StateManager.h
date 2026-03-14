@@ -275,9 +275,6 @@ class CStateManager : public CSingleton<CStateManager>
         void    SetMaterial(const D3DMATERIAL9* pMaterial);
         void    GetMaterial(D3DMATERIAL9* pMaterial);
 
-        void    SetLight(DWORD index, CONST D3DLIGHT9* pLight);
-        void    GetLight(DWORD index, D3DLIGHT9* pLight);
-
         // Renderstates
         void    SaveRenderState(D3DRENDERSTATETYPE Type, DWORD dwValue);
         void    RestoreRenderState(D3DRENDERSTATETYPE Type);
@@ -295,13 +292,11 @@ class CStateManager : public CSingleton<CStateManager>
         void    SaveTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD dwValue);
         void    RestoreTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type);
         void    SetTextureStageState(DWORD dwStage, D3DTEXTURESTAGESTATETYPE Type, DWORD dwValue);
-        void    SetBestFiltering(DWORD dwStage);  // if possible set anisotropy filtering, or use trilinear
 
         // Sampler states
         void    SaveSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD dwValue);
         void    RestoreSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type);
         void    SetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD dwValue);
-        void    GetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE Type, DWORD* pdwValue);
 
         // Vertex Shader
         void    RestoreVertexShader();
@@ -318,9 +313,6 @@ class CStateManager : public CSingleton<CStateManager>
         void    GetFVF(DWORD* pdwShader);
 
         // Pixel Shader
-        void    SavePixelShader(LPDIRECT3DPIXELSHADER9 dwShader);
-        void    RestorePixelShader();
-
         void SetPixelShader(LPDIRECT3DPIXELSHADER9 dwShader);
         void    GetPixelShader(LPDIRECT3DPIXELSHADER9* pdwShader);
 
@@ -334,12 +326,9 @@ class CStateManager : public CSingleton<CStateManager>
         void GetTransform(D3DTRANSFORMSTATETYPE Type, D3DMATRIX* pMatrix);
 
         // SetVertexShaderConstant
-        void RestoreVertexShaderConstant(DWORD dwRegister, DWORD dwConstantCount);
         void SetVertexShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
 
         // SetPixelShaderConstant
-        void SavePixelShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
-        void RestorePixelShaderConstant(DWORD dwRegister, DWORD dwConstantCount);
         void SetPixelShaderConstant(DWORD dwRegister, CONST void* pConstantData, DWORD dwConstantCount);
 
         void SetStreamSource(UINT StreamNumber, LPDIRECT3DVERTEXBUFFER9 pStreamData, UINT Stride);
@@ -367,8 +356,6 @@ class CStateManager : public CSingleton<CStateManager>
         TStateID            m_DirtyStates;
         bool                m_bForce;
         bool                m_bScene;
-        DWORD               m_dwBestMinFilter;
-        DWORD               m_dwBestMagFilter;
         LPDIRECT3DDEVICE9EX   m_lpD3DDev;
 
 #ifdef _DEBUG

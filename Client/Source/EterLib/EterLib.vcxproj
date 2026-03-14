@@ -169,7 +169,6 @@
     <ClCompile Include="GrpImageInstance.cpp" />
     <ClCompile Include="GrpImageTexture.cpp" />
     <ClCompile Include="GrpIndexBuffer.cpp" />
-    <ClCompile Include="GrpLightManager.cpp" />
     <ClCompile Include="GrpMarkInstance.cpp" />
     <ClCompile Include="GrpMath.cpp" />
     <ClCompile Include="GrpObjectInstance.cpp" />
@@ -189,7 +188,6 @@
     <ClCompile Include="ImGui\imgui_widgets.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="JpegFile.cpp" />
-    <ClCompile Include="LensFlare.cpp" />
     <ClCompile Include="lineintersect_utils.cpp" />
     <ClCompile Include="MSApplication.cpp" />
     <ClCompile Include="MSWindow.cpp" />
@@ -203,7 +201,6 @@
     <ClCompile Include="ReferenceObject.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="ScreenFilter.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="ShaderProvider.cpp" />
     <ClCompile Include="ShaderVertexDeclarations.cpp" />
@@ -249,7 +246,6 @@
     <ClInclude Include="GrpImageInstance.h" />
     <ClInclude Include="GrpImageTexture.h" />
     <ClInclude Include="GrpIndexBuffer.h" />
-    <ClInclude Include="GrpLightManager.h" />
     <ClInclude Include="GrpMarkInstance.h" />
     <ClInclude Include="GrpMath.h" />
     <ClInclude Include="GrpObjectInstance.h" />
@@ -270,7 +266,6 @@
     <ClInclude Include="ImGui\imstb_truetype.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="JpegFile.h" />
-    <ClInclude Include="LensFlare.h" />
     <ClInclude Include="lineintersect_utils.h" />
     <ClInclude Include="MSApplication.h" />
     <ClInclude Include="MSWindow.h" />
@@ -287,7 +282,6 @@
     <ClInclude Include="ReferenceObject.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="ScreenFilter.h" />
     <ClInclude Include="ShaderKeys.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="ShaderProvider.h" />

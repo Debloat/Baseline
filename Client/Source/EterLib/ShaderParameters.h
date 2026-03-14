@@ -272,27 +272,6 @@ struct WeaponTraceShaderInputs
 
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
 
-struct LensFlareVSCB
-{
-    std::array<float, 16> worldViewProj; // VS c0..c3
-};
-
-struct LensFlarePSCB
-{
-    std::array<float, 4> brightnessColor; // rgb=color, a=maxBrightness
-};
-
-static_assert(sizeof(LensFlareVSCB) == 64);
-static_assert(sizeof(LensFlarePSCB) == 16);
-
-struct LensFlareShaderInputs
-{
-    LensFlareVSCB vs;
-    LensFlarePSCB ps;
-};
-
-/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
-
 struct ScreenPrimitiveVSCB
 {
     std::array<float, 16> worldViewProj; // VS c0..c3

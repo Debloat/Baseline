@@ -56,7 +56,6 @@ class CMapManager : public CScreen, public IPhysicsWorld
         void					SetEnvironmentData(int nEnvDataIndex);
 
         void					BeginEnvironment();
-        void					EndEnvironment();
 
         void					GetCurrentEnvironmentData(const TEnvironmentData** c_ppEnvironmentData);
         bool					RegisterEnvironmentData(DWORD dwIndex, const char* c_szFileName);

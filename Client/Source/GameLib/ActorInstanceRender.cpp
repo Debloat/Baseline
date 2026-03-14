@@ -82,25 +82,11 @@ void CActorInstance::OnRender()
 
         static CScreen s_kScreen;
 
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_DIFFUSE);
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
-        STATEMANAGER.SaveRenderState(D3DRS_ZENABLE, FALSE);
-        STATEMANAGER.SetRenderState(D3DRS_LIGHTING, FALSE);
-
         s_kScreen.SetDiffuseColor(1.0f, 1.0f, 0.0f);
         s_kScreen.RenderLine3d(kD3DVt3Cur.x, kD3DVt3Cur.y, kD3DVt3Cur.z, kD3DVt3AdvDir.x, kD3DVt3AdvDir.y, kD3DVt3AdvDir.z);
 
         s_kScreen.SetDiffuseColor(0.0f, 1.0f, 1.0f);
         s_kScreen.RenderLine3d(kD3DVt3Cur.x, kD3DVt3Cur.y, kD3DVt3Cur.z, kD3DVt3LookDir.x, kD3DVt3LookDir.y, kD3DVt3LookDir.z);
-
-        STATEMANAGER.SetRenderState(D3DRS_LIGHTING, TRUE);
-        STATEMANAGER.RestoreRenderState(D3DRS_ZENABLE);
-
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLORARG1);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLOROP);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_ALPHAOP);
-        STATEMANAGER.RestoreVertexShader();
     }
 }
 

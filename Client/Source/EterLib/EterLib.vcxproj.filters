@@ -23,7 +23,6 @@
     <ClCompile Include="GrpImageInstance.cpp" />
     <ClCompile Include="GrpImageTexture.cpp" />
     <ClCompile Include="GrpIndexBuffer.cpp" />
-    <ClCompile Include="GrpLightManager.cpp" />
     <ClCompile Include="GrpMarkInstance.cpp" />
     <ClCompile Include="GrpMath.cpp" />
     <ClCompile Include="GrpObjectInstance.cpp" />
@@ -36,7 +35,6 @@
     <ClCompile Include="IME.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="JpegFile.cpp" />
-    <ClCompile Include="LensFlare.cpp" />
     <ClCompile Include="lineintersect_utils.cpp" />
     <ClCompile Include="MSApplication.cpp" />
     <ClCompile Include="MSWindow.cpp" />
@@ -50,7 +48,6 @@
     <ClCompile Include="ReferenceObject.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="ScreenFilter.cpp" />
     <ClCompile Include="SkyBox.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StdAfx.cpp" />
@@ -112,7 +109,6 @@
     <ClInclude Include="GrpImageInstance.h" />
     <ClInclude Include="GrpImageTexture.h" />
     <ClInclude Include="GrpIndexBuffer.h" />
-    <ClInclude Include="GrpLightManager.h" />
     <ClInclude Include="GrpMarkInstance.h" />
     <ClInclude Include="GrpMath.h" />
     <ClInclude Include="GrpObjectInstance.h" />
@@ -125,7 +121,6 @@
     <ClInclude Include="IME.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="JpegFile.h" />
-    <ClInclude Include="LensFlare.h" />
     <ClInclude Include="lineintersect_utils.h" />
     <ClInclude Include="MSApplication.h" />
     <ClInclude Include="MSWindow.h" />
@@ -142,7 +137,6 @@
     <ClInclude Include="ReferenceObject.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="ScreenFilter.h" />
     <ClInclude Include="SkyBox.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="StdAfx.h" />
