@@ -409,12 +409,12 @@ struct EffectMeshShaderInputs
 
 struct ModelVSCB
 {
-
+    std::array<float, 16> worldViewProj;
 };
 
 struct ModelPSCB
 {
-
+    std::array<float, 4> textureFlags;
 };
 
 struct ModelShaderInputs

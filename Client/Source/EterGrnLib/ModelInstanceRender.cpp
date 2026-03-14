@@ -4,6 +4,7 @@
 #include "Model.h"
 
 #include "../EterLib/ShaderVertexDeclarations.h"
+#include "../EterLib/GrpDevice.h"
 
 void CGrannyModelInstance::DeformNoSkin(const D3DXMATRIX * c_pWorldMatrix)
 {
@@ -16,6 +17,35 @@ void CGrannyModelInstance::DeformNoSkin(const D3DXMATRIX * c_pWorldMatrix)
     UpdateWorldMatrices(c_pWorldMatrix);
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 2> ModelSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap },
+        { 1, ESamplerState::LinearWrap }
+    } };
+
+    constexpr PipelineStateDesc ModelOpaquePipeline =
+    {
+        ShaderID::Model,
+        EDepthState::EnabledWrite,
+        EBlendState::Opaque,
+        ERasterState::CullFront,
+        ModelSamplers.data(),
+        ModelSamplers.size()
+    };
+
+    constexpr PipelineStateDesc ModelBlendPipeline =
+    {
+        ShaderID::Model,
+        EDepthState::EnabledWrite,
+        EBlendState::AlphaBlend,
+        ERasterState::CullFront,
+        ModelSamplers.data(),
+        ModelSamplers.size()
+    };
+}
+
 //// Render
 
 void CGrannyModelInstance::__RenderModelFFP(EModelTexturePath eTexPath, EModelRenderPass ePass)
@@ -24,7 +54,9 @@ void CGrannyModelInstance::__RenderModelFFP(EModelTexturePath eTexPath, EModelRe
     if (IsEmpty())
         return;
 
-    STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNT));
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp)
+        return;
 
     if (eTexPath == MODEL_TEX_NONE)
     {
@@ -59,6 +91,17 @@ void CGrannyModelInstance::__RenderModelFFP(EModelTexturePath eTexPath, EModelRe
             if (!vb)
                 return;
 
+            if (eMtrlType == CGrannyMaterial::TYPE_BLEND_PNT)
+            {
+                if (!sp->BindPipelineState(ModelBlendPipeline))
+                    return;
+            }
+            else
+            {
+                if (!sp->BindPipelineState(ModelOpaquePipeline))
+                    return;
+            }
+
             STATEMANAGER.SetStreamSource(0, vb, stride);
             RenderMeshNodeList(eMeshType, eMtrlType, eMode);
         };
@@ -90,6 +133,12 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
 {
     assert(m_pModel != NULL);
 
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp)
+    {
+        return;
+    }
+
     LPDIRECT3DINDEXBUFFER9 lpd3dIdxBuf = m_pModel->GetD3DIndexBuffer();
     assert(lpd3dIdxBuf != NULL);
 
@@ -101,7 +150,6 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
         const int vtxMeshBasePos = pMesh->GetVertexBasePosition();
 
         STATEMANAGER.SetIndices(lpd3dIdxBuf, vtxMeshBasePos);
-        STATEMANAGER.SetTransform(D3DTS_WORLD, &m_meshMatrices[pMeshNode->iMesh]);
 
         const CGrannyMesh::TTriGroupNode* pTriGroupNode = pMesh->GetTriGroupNodeList(eMtrlType);
         const int vtxCount = pMesh->GetVertexCount();
@@ -116,109 +164,85 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
             {
                 CGrannyMaterial& rkMtrl = m_kMtrlPal.GetMaterialRef(pTriGroupNode->mtrlIndex);
 
-                // ------------------------------------------------------------------
-                // Stage 0: Diffuse
-                // ------------------------------------------------------------------
+                D3DXMATRIX matWVP;
+                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
+
+                ModelShaderInputs in{};
+                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+                in.ps.textureFlags[0] = rkMtrl.GetD3DTexture(0) ? 1.0f : 0.0f;
+                in.ps.textureFlags[1] = 0.0f;
+                in.ps.textureFlags[2] = 0.0f;
+                in.ps.textureFlags[3] = 0.0f;
+
+                CGraphicDevice::UploadModelConstants(in);
+
+                if (rkMtrl.IsTwoSided())
+                {
+                    sp->BindRasterState(ERasterState::CullNone);
+                }
+                else
+                {
+                    sp->BindRasterState(ERasterState::CullFront);
+                }
+
                 STATEMANAGER.SetTexture(0, rkMtrl.GetD3DTexture(0));
+                STATEMANAGER.SetTexture(1, NULL);
 
-                // ------------------------------------------------------------------
-                // Two-sided handling
-                // ------------------------------------------------------------------
-                DWORD oldCull = 0;
-                if (rkMtrl.IsTwoSided())
-                {
-                    oldCull = STATEMANAGER.GetRenderState(D3DRS_CULLMODE);
-                    STATEMANAGER.SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-                }
-
-                // ------------------------------------------------------------------
-                // Specular (FFP sphere map) — PHASE 4
-                // ------------------------------------------------------------------
-                bool specularActive = false;
-
-                if (rkMtrl.IsSpecularEnabled() && !STATEMANAGER.GetRenderState(D3DRS_ALPHABLENDENABLE))
-                {
-                    specularActive = true;
-
-                    // Bind sphere map texture to stage 1
-                    CGraphicTexture* pkTexture = CGrannyMaterial::GetSphereMapTexture(rkMtrl.GetSphereMapIndex());
-
-                    STATEMANAGER.SetTexture(1, pkTexture ? pkTexture->GetD3DTexture() : NULL);
-
-                    // Texture factor (specular power in alpha)
-                    const D3DXCOLOR& specColor = CGrannyMaterial::GetSpecularColor();
-                    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, D3DXCOLOR(specColor.r, specColor.g, specColor.b, rkMtrl.GetSpecularPower()));
-
-                    // ------------------------------------------------------
-                    // Stage 0 alpha = texture * textureFactor (spec power)
-                    // ------------------------------------------------------
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
-
-                    // Stage1 combiner setup (match old behavior)
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR);
-
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_TEXTURE);
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_MODULATEALPHA_ADDCOLOR);
-
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_CURRENT);
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-
-                    STATEMANAGER.SetTransform(D3DTS_TEXTURE1, &CGrannyMaterial::GetSpecularMatrix());
-
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
-                }
-
-                // ------------------------------------------------------------------
-                // Draw
-                // ------------------------------------------------------------------
                 STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, vtxCount, pTriGroupNode->idxPos, pTriGroupNode->triCount, vtxMeshBasePos);
-
-                // ------------------------------------------------------------------
-                // Specular cleanup
-                // ------------------------------------------------------------------
-                if (specularActive)
-                {
-                    // --------------------------------------------------
-                    // Restore Stage 0 alpha state
-                    // --------------------------------------------------
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
-                    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-
-                    // --------------------------------------------------
-                    // Disable Stage 1
-                    // --------------------------------------------------
-                    STATEMANAGER.SetTexture(1, NULL);
-
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-                    STATEMANAGER.SetTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_DISABLE);
-                }
-
-                // ------------------------------------------------------------------
-                // Restore cull
-                // ------------------------------------------------------------------
-                if (rkMtrl.IsTwoSided())
-                {
-                    STATEMANAGER.SetRenderState(D3DRS_CULLMODE, oldCull);
-                }
             }
             break;
 
             case MESHNODELIST_TWO_TEXTURE:
             {
                 const CGrannyMaterial& rkMtrl = m_kMtrlPal.GetMaterialRef(pTriGroupNode->mtrlIndex);
+
+                D3DXMATRIX matWVP;
+                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
+
+                ModelShaderInputs in{};
+                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+                in.ps.textureFlags[0] = rkMtrl.GetD3DTexture(0) ? 1.0f : 0.0f;
+                in.ps.textureFlags[1] = rkMtrl.GetD3DTexture(1) ? 1.0f : 0.0f;
+                in.ps.textureFlags[2] = 0.0f;
+                in.ps.textureFlags[3] = 0.0f;
+
+                CGraphicDevice::UploadModelConstants(in);
+
+                if (rkMtrl.IsTwoSided())
+                {
+                    sp->BindRasterState(ERasterState::CullNone);
+                }
+                else
+                {
+                    sp->BindRasterState(ERasterState::CullFront);
+                }
+
                 STATEMANAGER.SetTexture(0, rkMtrl.GetD3DTexture(0));
                 STATEMANAGER.SetTexture(1, rkMtrl.GetD3DTexture(1));
+
                 STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, vtxCount, pTriGroupNode->idxPos, pTriGroupNode->triCount, vtxMeshBasePos);
             }
             break;
 
             case MESHNODELIST_NO_TEXTURE:
             {
+                D3DXMATRIX matWVP;
+                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
+
+                ModelShaderInputs in{};
+                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+                in.ps.textureFlags[0] = 0.0f;
+                in.ps.textureFlags[1] = 0.0f;
+                in.ps.textureFlags[2] = 0.0f;
+                in.ps.textureFlags[3] = 0.0f;
+
+                CGraphicDevice::UploadModelConstants(in);
+
+                sp->BindRasterState(ERasterState::CullFront);
+
+                STATEMANAGER.SetTexture(0, NULL);
+                STATEMANAGER.SetTexture(1, NULL);
+
                 STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, vtxCount, pTriGroupNode->idxPos, pTriGroupNode->triCount, vtxMeshBasePos);
             }
             break;

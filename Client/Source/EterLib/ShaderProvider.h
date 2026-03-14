@@ -15,7 +15,7 @@ enum class ShaderID
     Text,
     EffectParticle,
     EffectMesh,
-    //Model,
+    Model,
     SnowParticle,
     Terrain,
     Count

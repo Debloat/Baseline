@@ -585,9 +585,27 @@ void CGraphicDevice::UploadEffectMeshConstants(const EffectMeshShaderInputs& in)
     UploadPSConstants(0, ps.textureFactor.data(), 1);   // PS c0
 }
 
-void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& in)
+void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
 {
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
 
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    ModelVSCB vs{};
+    ModelPSCB ps{};
+
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+    ps.textureFlags = inputs.ps.textureFlags;
+
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadPSConstants(0, ps.textureFlags.data(), 1);    // PS c0
 }
 
 void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs& in)
@@ -931,11 +949,7 @@ bool CGraphicDevice::Reset()
         pFullscreenMode = &fullscreenMode;
     }
 
-    const HRESULT hr = ms_lpd3dDevice->ResetEx(
-                           &ms_d3dPresentParameter,
-                           pFullscreenMode
-                       );
-
+    const HRESULT hr = ms_lpd3dDevice->ResetEx(&ms_d3dPresentParameter, pFullscreenMode);
     return SUCCEEDED(hr);
 }
 
@@ -1017,7 +1031,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS,            EShaderInputLayout::PCT },
         ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS,  EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,      EShaderInputLayout::PT },
-        //ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS },
+        ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS,           EShaderInputLayout::PNT },
         ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::Terrain,         Terrain::VS,         Terrain::PS,         EShaderInputLayout::PN },
     };

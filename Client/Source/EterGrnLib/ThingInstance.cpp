@@ -61,7 +61,7 @@ void CGraphicThingInstance::Delete(CGraphicThingInstance* pkThingInst)
 
 void CGraphicThingInstance::SetMotionAtEnd()
 {
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), std::mem_fn(&CGrannyLODController::SetMotionAtEnd));
+    std::ranges::for_each(m_LODControllerVector, std::mem_fn(&CGrannyLODController::SetMotionAtEnd));
 }
 
 bool CGraphicThingInstance::Picking(const D3DXVECTOR3 & v, const D3DXVECTOR3 & dir, float& out_x, float& out_y)
@@ -78,9 +78,8 @@ bool CGraphicThingInstance::Picking(const D3DXVECTOR3 & v, const D3DXVECTOR3 & d
 void CGraphicThingInstance::OnUpdateCollisionData(const CStaticCollisionDataVector * pscdVector)
 {
     assert(pscdVector);
-    CStaticCollisionDataVector::const_iterator it;
 
-    for (it = pscdVector->begin(); it != pscdVector->end(); ++it)
+    for (auto it = pscdVector->begin(); it != pscdVector->end(); ++it)
     {
         AddCollision(&(*it), &GetTransform());
     }
@@ -219,14 +218,14 @@ void CGraphicThingInstance::CalculateBBox()
 bool CGraphicThingInstance::CreateDeviceObjects()
 {
     CGrannyLODController::FCreateDeviceObjects createDeviceObjects;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), createDeviceObjects);
+    std::ranges::for_each(m_LODControllerVector, createDeviceObjects);
     return true;
 }
 
 void CGraphicThingInstance::DestroyDeviceObjects()
 {
     CGrannyLODController::FDestroyDeviceObjects destroyDeviceObjects;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), destroyDeviceObjects);
+    std::ranges::for_each(m_LODControllerVector, destroyDeviceObjects);
 }
 
 bool CGraphicThingInstance::CheckModelInstanceIndex(int iModelInstance)
@@ -265,9 +264,7 @@ bool CGraphicThingInstance::CheckModelThingIndex(int iModelThing)
 
 bool CGraphicThingInstance::CheckMotionThingIndex(DWORD dwMotionKey)
 {
-    std::map<DWORD, CGraphicThing::TRef*>::iterator itor = m_roMotionThingMap.find(dwMotionKey);
-
-    if (m_roMotionThingMap.end() == itor)
+    if (std::map<DWORD, CGraphicThing::TRef*>::iterator itor = m_roMotionThingMap.find(dwMotionKey); m_roMotionThingMap.end() == itor)
     {
         return false;
     }
@@ -550,7 +547,7 @@ bool CGraphicThingInstance::SetMotion(DWORD dwMotionKey, float blendTime, int lo
     SetMotionPointer.m_loopCount = loopCount;
     SetMotionPointer.m_speedRatio = speedRatio;
 
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), SetMotionPointer);
+    std::ranges::for_each(m_LODControllerVector, SetMotionPointer);
     return true;
 }
 
@@ -627,7 +624,7 @@ void CGraphicThingInstance::ResetLocalTime()
     m_fLocalTime = 0.0f;
 
     CGrannyLODController::FResetLocalTime resetLocalTime;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), resetLocalTime);
+    std::ranges::for_each(m_LODControllerVector, resetLocalTime);
 }
 
 /*
@@ -686,7 +683,7 @@ void CGraphicThingInstance::GetBoundBox(D3DXVECTOR3* vtMin, D3DXVECTOR3* vtMax)
 {
     vtMin->x = vtMin->y = vtMin->z = 100000.0f;
     vtMax->x = vtMax->y = vtMax->z = -100000.0f;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), CGrannyLODController::FBoundBox(vtMin, vtMax));
+    std::ranges::for_each(m_LODControllerVector, CGrannyLODController::FBoundBox(vtMin, vtMax));
 }
 
 BOOL CGraphicThingInstance::GetBoundBox(DWORD dwModelInstanceIndex, D3DXVECTOR3 * vtMin, D3DXVECTOR3 * vtMax)
@@ -794,16 +791,14 @@ void CGraphicThingInstance::DeformAll()
 
     CGrannyLODController::FDeformAll deform;
     deform.mc_pWorldMatrix = &m_worldMatrix;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), deform);
+    std::ranges::for_each(m_LODControllerVector, deform);
 }
 
 void CGraphicThingInstance::DeformNoSkin()
 {
     m_bUpdated = true;
 
-    std::vector<CGrannyLODController*>::iterator i;
-
-    for (i = m_LODControllerVector.begin(); i != m_LODControllerVector.end(); ++i)
+    for (auto i = m_LODControllerVector.begin(); i != m_LODControllerVector.end(); ++i)
     {
         CGrannyLODController* pkLOD = *i;
 
@@ -820,7 +815,7 @@ void CGraphicThingInstance::OnDeform()
 
     CGrannyLODController::FDeform deform;
     deform.mc_pWorldMatrix = &m_worldMatrix;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), deform);
+    std::ranges::for_each(m_LODControllerVector, deform);
 }
 
 void CGraphicThingInstance::__SetLocalTime(float fLocalTime)
@@ -830,7 +825,7 @@ void CGraphicThingInstance::__SetLocalTime(float fLocalTime)
 
     CGrannyLODController::FSetLocalTime SetLocalTime;
     SetLocalTime.fLocalTime = fLocalTime;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), SetLocalTime);
+    std::ranges::for_each(m_LODControllerVector, SetLocalTime);
 }
 
 void CGraphicThingInstance::UpdateLODLevel()
@@ -855,7 +850,7 @@ void CGraphicThingInstance::UpdateLODLevel()
                                        (c_rv3CameraPosition.y - c_v3Position.y) * (c_rv3CameraPosition.y - c_v3Position.y) +
                                        (c_rv3CameraPosition.z - c_v3Position.z) * (c_rv3CameraPosition.z - c_v3Position.z));
 
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), update);
+    std::ranges::for_each(m_LODControllerVector, update);
 }
 
 void CGraphicThingInstance::UpdateTime()
@@ -880,7 +875,7 @@ void CGraphicThingInstance::UpdateTime()
 
     CGrannyLODController::FUpdateTime update;
     update.fElapsedTime = m_fSecondElapsed;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), update);
+    std::ranges::for_each(m_LODControllerVector, update);
 }
 
 void CGraphicThingInstance::OnUpdate()
@@ -983,7 +978,7 @@ float CGraphicThingInstance::GetHeight()
 void CGraphicThingInstance::ReloadTexture()
 {
     CGrannyLODController::FReloadTexture ReloadTexture;
-    std::for_each(m_LODControllerVector.begin(), m_LODControllerVector.end(), ReloadTexture);
+    std::ranges::for_each(m_LODControllerVector, ReloadTexture);
 }
 
 bool CGraphicThingInstance::HaveBlendThing()
