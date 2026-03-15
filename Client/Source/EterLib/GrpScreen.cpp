@@ -241,11 +241,7 @@ void CScreen::RenderBox2d(float sx, float sy, float ex, float ey, float z)
             return;
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2DOrthoPixel(
-            static_cast<float>(ms_Viewport.Width),
-            static_cast<float>(ms_Viewport.Height),
-            in
-        );
+        sp->FillScreenPrimitive2D(in);
         in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);
@@ -272,11 +268,7 @@ void CScreen::RenderBar2d(float sx, float sy, float ex, float ey, float z)
             return;
 
         ScreenPrimitiveShaderInputs in{};
-        sp->FillScreenPrimitive2DOrthoPixel(
-            static_cast<float>(ms_Viewport.Width),
-            static_cast<float>(ms_Viewport.Height),
-            in
-        );
+        sp->FillScreenPrimitive2D(in);
         in.ps.mode[0] = 0.0f;
 
         CGraphicDevice::UploadScreenPrimitiveConstants(in);

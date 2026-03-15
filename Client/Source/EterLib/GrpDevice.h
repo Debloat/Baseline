@@ -70,6 +70,7 @@ public:
     static void UploadDungeonConstants(const DungeonShaderInputs& inputs);
     static void UploadSnowParticleConstants(const SnowParticleShaderInputs& inputs);
     static void UploadTerrainConstants(const TerrainShaderInputs& inputs);
+    static void UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs);
     /* ---------------------------------------------------- */
 
     /* - SHADER [LOW-LEVEL CONSTANT UPLOAD] ------------------ */

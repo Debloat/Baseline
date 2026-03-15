@@ -3,8 +3,6 @@
 
 #include "../EterLib/StateManager.h"
 
-#include "../EterLib/ShaderVertexDeclarations.h"
-
 class CDungeonModelInstance : public CGrannyModelInstance
 {
     public:

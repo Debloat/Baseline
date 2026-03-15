@@ -79,4 +79,10 @@ namespace ShaderKeys
         inline constexpr const char* VS = "d:/ymir work/shader/Terrain/terrain_vs.hlsl";
         inline constexpr const char* PS = "d:/ymir work/shader/Terrain/terrain_ps.hlsl";
     }
+
+    namespace FlyTrace
+    {
+        inline constexpr const char* VS = "d:/ymir work/shader/FlyTrace/fly_trace_vs.hlsl";
+        inline constexpr const char* PS = "d:/ymir work/shader/FlyTrace/fly_trace_ps.hlsl";
+    }
 }

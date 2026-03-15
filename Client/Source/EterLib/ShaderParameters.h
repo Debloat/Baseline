@@ -449,3 +449,20 @@ struct TerrainShaderInputs
     TerrainVSCB vs;
     TerrainPSCB ps;
 };
+
+/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
+struct FlyTraceVSCB
+{
+    std::array<float, 16> worldViewProj;
+};
+
+struct FlyTracePSCB
+{
+};
+
+struct FlyTraceShaderInputs
+{
+    FlyTraceVSCB vs;
+    FlyTracePSCB ps;
+};

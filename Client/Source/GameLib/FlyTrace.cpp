@@ -4,6 +4,8 @@
 
 #include "FlyingData.h"
 #include "FlyTrace.h"
+#include "../EterLib/ShaderProvider.h"
+#include "../EterLib/GrpDevice.h"
 
 CDynamicPool<CFlyTrace>		CFlyTrace::ms_kPool;
 
@@ -107,6 +109,24 @@ struct TFlyVertexSet
 
 using TFlyVertexSetVector = std::vector<std::pair<float, TFlyVertexSet >>;
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> FlyTraceSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc FlyTracePipeline =
+    {
+        ShaderID::FlyTrace,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Additive,
+        ERasterState::CullNone,
+        FlyTraceSamplers.data(),
+        FlyTraceSamplers.size()
+    };
+}
+
 void CFlyTrace::Render()
 {
     if (m_TimePositionDeque.size() <= 1)
@@ -114,39 +134,29 @@ void CFlyTrace::Render()
         return;
     }
 
-    TFlyVertexSetVector VSVector;
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp)
+    {
+        return;
+    }
 
-    STATEMANAGER.SaveRenderState(D3DRS_ZFUNC, D3DCMP_LESS);
+    if (!sp->BindPipelineState(FlyTracePipeline))
+    {
+        return;
+    }
 
+    FlyTraceShaderInputs in{};
     D3DXMATRIX matWorld;
     D3DXMatrixIdentity(&matWorld);
 
-    STATEMANAGER.SaveTransform(D3DTS_WORLD, &matWorld);
-    STATEMANAGER.SaveFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1);
-    STATEMANAGER.SaveRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+    D3DXMATRIX matWVP;
+    sp->ComputeWorldViewProj(matWorld, matWVP);
 
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
 
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0x00000000);
+    CGraphicDevice::UploadFlyTraceConstants(in);
 
-    STATEMANAGER.SaveRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, /*(m_bUseTexture)?D3DTOP_SELECTARG2:*/D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTexture(1, NULL);
-
+    TFlyVertexSetVector VSVector;
 
     D3DXMATRIX m;
     CScreen s;
@@ -253,24 +263,10 @@ void CFlyTrace::Render()
         VSVector.emplace_back(-D3DXVec3Dot(&E, &pCurrentCamera->GetView()), TFlyVertexSet(v));
     }
 
-    std::sort(VSVector.begin(), VSVector.end());
+    std::ranges::sort(VSVector);
 
     for (auto it = VSVector.begin(); it != VSVector.end(); ++it)
     {
         STATEMANAGER.DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 4, it->second.v, sizeof(TVertex));
     }
-
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_CULLMODE);
-    STATEMANAGER.RestoreVertexShader();
-    STATEMANAGER.RestoreTransform(D3DTS_WORLD);
-    STATEMANAGER.RestoreRenderState(D3DRS_ZFUNC);
-    STATEMANAGER.RestoreRenderState(D3DRS_BLENDOP);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
-
 }

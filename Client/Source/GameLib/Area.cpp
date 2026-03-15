@@ -10,6 +10,8 @@
 #include "PropertyManager.h"
 #include "Property.h"
 
+#include "../EterLib/GrpDevice.h"
+
 CDynamicPool<CArea::TObjectInstance>	CArea::ms_ObjectInstancePool;
 CDynamicPool<CAttributeInstance>		CArea::ms_AttributeInstancePool;
 CDynamicPool<CArea::TAmbienceInstance>	CArea::ms_AmbienceInstancePool;
@@ -305,7 +307,6 @@ void CArea::RenderCollision()
         }
     }
 }
-#include "../EterLib/ShaderProvider.h"
 
 namespace
 {
@@ -325,6 +326,7 @@ namespace
         ModelSamplers.size()
     };
 }
+
 void CArea::RenderDungeon()
 {
     IShaderProvider const* sp = GetShaderProvider();
@@ -337,6 +339,17 @@ void CArea::RenderDungeon()
     {
         return;
     }
+
+    DungeonShaderInputs in{};
+    D3DXMATRIX world;
+    D3DXMatrixIdentity(&world);
+
+    D3DXMATRIX wvp;
+    sp->ComputeWorldViewProj(world, wvp);
+
+    std::memcpy(in.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+
+    CGraphicDevice::UploadDungeonConstants(in);
 
     auto itor = m_DungeonBlockCloneInstanceVector.begin();
 

@@ -664,6 +664,26 @@ void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
     UploadPSConstants(0, ps.layerState.data(), 1);        // PS c0
 }
 
+void CGraphicDevice::UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs)
+{
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
+
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    FlyTraceVSCB vs{};
+
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+}
+
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
 {
     if (!ms_lpd3dDevice || !data || registerCount == 0)
@@ -1014,6 +1034,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::Dungeon,         Dungeon::VS,         Dungeon::PS,         EShaderInputLayout::PNTT },
         ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::Terrain,         Terrain::VS,         Terrain::PS,         EShaderInputLayout::PN },
+        ShaderDesc{ ShaderID::FlyTrace,        FlyTrace::VS,        FlyTrace::PS,        EShaderInputLayout::PCT },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

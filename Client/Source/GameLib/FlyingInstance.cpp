@@ -615,9 +615,7 @@ void CFlyingInstance::Render()
 
 void CFlyingInstance::RenderAttachInstance()
 {
-    TAttachEffectInstanceVector::iterator it;
-
-    for (it = m_vecAttachEffectInstance.begin(); it != m_vecAttachEffectInstance.end(); ++it)
+    for (auto it = m_vecAttachEffectInstance.begin(); it != m_vecAttachEffectInstance.end(); ++it)
     {
         if (it->pFlyTrace)
         {

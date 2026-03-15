@@ -5,4 +5,4 @@ port = 13910
 account_port = 11900
 slot = 0
 autoLogin = 1
-autoSelect = 1
+autoSelect = 0
