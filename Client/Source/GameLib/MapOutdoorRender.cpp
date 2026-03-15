@@ -600,45 +600,61 @@ struct FPatchNumMatch
     }
 };
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> ScreenPrimitiveSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc TerrainWireframePipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::EnabledReadOnly,
+        EBlendState::Opaque,
+        ERasterState::Wireframe,
+        ScreenPrimitiveSamplers.data(),
+        ScreenPrimitiveSamplers.size()
+    };
+}
+
 void CMapOutdoor::DrawWireFrame(long patchnum, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType)
 {
     assert(NULL != m_pTerrainPatchProxyList && "CMapOutdoor::DrawWireFrame");
 
-    CTerrainPatchProxy * pTerrainPatchProxy = &m_pTerrainPatchProxyList[patchnum];
+    CTerrainPatchProxy* pTerrainPatchProxy = &m_pTerrainPatchProxyList[patchnum];
 
     if (!pTerrainPatchProxy->isUsed())
-    {
         return;
-    }
 
     long sPatchNum = pTerrainPatchProxy->GetPatchNum();
-
     if (sPatchNum < 0)
-    {
         return;
-    }
 
     BYTE ucTerrainNum = pTerrainPatchProxy->GetTerrainNum();
-
     if (0xFF == ucTerrainNum)
-    {
         return;
-    }
 
-    DWORD dwFillMode = STATEMANAGER.GetRenderState(D3DRS_FILLMODE);
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+    const IShaderProvider* sp = GetShaderProvider();
 
-    STATEMANAGER.SetTexture(0, NULL);
-    STATEMANAGER.SetTexture(1, NULL);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_DISABLE);
+    if (!sp || !sp->BindPipelineState(TerrainWireframePipeline))
+        return;
+
+    D3DXMATRIX matIdentity;
+    D3DXMatrixIdentity(&matIdentity);
+
+    D3DXMATRIX matWVP;
+    sp->ComputeWorldViewProj(matIdentity, matWVP);
+
+    ScreenPrimitiveShaderInputs in{};
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+    in.ps.mode[0] = 0.0f;
+    in.ps.mode[1] = 1.0f;
+
+    CGraphicDevice::UploadScreenPrimitiveConstants(in);
 
     STATEMANAGER.DrawIndexedPrimitive(ePrimitiveType, 0, m_iPatchTerrainVertexCount, 0, wPrimitiveCount);
-
-    STATEMANAGER.SetRenderState(D3DRS_FILLMODE, dwFillMode);
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
 }
 
 namespace

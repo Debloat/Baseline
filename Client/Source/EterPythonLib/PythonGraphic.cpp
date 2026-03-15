@@ -8,6 +8,8 @@
 /* ----------------------------------------------------- */
 #include <array>
 
+#include "../EterLib/GrpDevice.h"
+
 void CPythonGraphic::Destroy()
 {
 }
@@ -305,6 +307,24 @@ void CPythonGraphic::PopState()
     m_stateStack.pop();
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kScreenPrimitiveSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc kScreenPrimitive2DPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
+}
+
 void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRadius, float fTime)
 {
     if (fTime >= 1.0f)
@@ -375,20 +395,24 @@ void CPythonGraphic::RenderCoolTimeBox(float fxCenter, float fyCenter, float fRa
         return;
     }
 
-    if (SetPDTStream(&vertices[0], vertices.size()))
+    if (SetPDTStream(vertices.data(), vertices.size()))
     {
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_DIFFUSE);
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_DIFFUSE);
-        STATEMANAGER.SaveTextureStageState(0, D3DTSS_ALPHAOP,	D3DTOP_SELECTARG1);
-        STATEMANAGER.SetTexture(0, NULL);
-        STATEMANAGER.SetTexture(1, NULL);
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1);
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
+            return;
+
+        ScreenPrimitiveShaderInputs in{};
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
+
+        in.ps.mode[0] = 0.0f;
+
+        CGraphicDevice::UploadScreenPrimitiveConstants(in);
+
         STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLEFAN, 0, iTriCount);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLORARG1);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLOROP);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_ALPHAARG1);
-        STATEMANAGER.RestoreTextureStageState(0, D3DTSS_ALPHAOP);
     }
 }
 
