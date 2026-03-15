@@ -5,6 +5,10 @@
 
 #include "../EterBase/CRC32.h"
 
+#include "ShaderProvider.h"
+#include "GrpDevice.h"
+#include "GrpBase.h"
+
 CDynamicPool<CGraphicMarkInstance> CGraphicMarkInstance::ms_kPool;
 
 void CGraphicMarkInstance::SetImageFileName(const char* c_szFileName)
@@ -48,6 +52,24 @@ void CGraphicMarkInstance::Render()
     assert(!IsEmpty());
 
     OnRender();
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kScreenPrimitiveSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc kScreenPrimitive2DPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
 }
 
 void CGraphicMarkInstance::OnRender()
@@ -110,9 +132,26 @@ void CGraphicMarkInstance::OnRender()
     {
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
+            return;
+
+        ScreenPrimitiveShaderInputs in{};
+        const D3DVIEWPORT9& vp = CGraphicBase::GetViewport();
+
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(vp.Width),
+            static_cast<float>(vp.Height),
+            in
+        );
+
+        in.ps.mode[0] = 1.0f; // textured
+        in.ps.colorFactor = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+        CGraphicDevice::UploadScreenPrimitiveConstants(in);
+
         STATEMANAGER.SetTexture(0, pTexture->GetD3DTexture());
-        STATEMANAGER.SetTexture(1, NULL);
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1);
+
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
     }
 }
