@@ -450,6 +450,24 @@ struct TerrainShaderInputs
     TerrainPSCB ps;
 };
 
+struct TerrainMarkedAreaVSCB
+{
+    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewInverse;
+    std::array<float, 4> texScale; // x= texscale yzw = padding
+};
+
+struct TerrainMarkedAreaPSCB
+{
+    std::array<float, 4> alpha; // x= alpha yzw = padding
+};
+
+struct TerrainMarkedAreaShaderInputs
+{
+    TerrainMarkedAreaVSCB vs;
+    TerrainMarkedAreaPSCB ps;
+};
+
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
 
 struct FlyTraceVSCB

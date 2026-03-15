@@ -11,6 +11,8 @@
 #include "../SphereLib/YosunControlCenter.h"
 /* ----------------------------------------------------- */
 
+#include "../EterLib/GrpDevice.h"
+
 #define MAX_RENDER_SPALT 150
 
 CArea::TCRCWithNumberVector m_dwRenderedCRCWithNumberVector;
@@ -639,79 +641,64 @@ void CMapOutdoor::DrawWireFrame(long patchnum, WORD wPrimitiveCount, D3DPRIMITIV
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
 }
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> TerrainMarkedAreaSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap }
+    } };
+
+    constexpr PipelineStateDesc TerrainMarkedAreaPipeline =
+    {
+        ShaderID::TerrainMarkedArea,
+        EDepthState::EnabledReadOnly,
+        EBlendState::AlphaBlend,
+        ERasterState::CullFront,
+        TerrainMarkedAreaSamplers.data(),
+        TerrainMarkedAreaSamplers.size()
+    };
+}
+
 // Attr
 void CMapOutdoor::RenderMarkedArea()
 {
     if (!m_pTerrainPatchProxyList)
-    {
         return;
-    }
 
-    m_matWorldForCommonUse._41 = 0.0f;
-    m_matWorldForCommonUse._42 = 0.0f;
-    STATEMANAGER.SetTransform(D3DTS_WORLD, &m_matWorldForCommonUse);
+    const IShaderProvider* sp = GetShaderProvider();
+
+    if (!sp || !sp->BindPipelineState(TerrainMarkedAreaPipeline))
+        return;
 
     WORD wPrimitiveCount;
     D3DPRIMITIVETYPE eType;
     SelectIndexBuffer(0, &wPrimitiveCount, &eType);
 
-    D3DXMATRIX matTexTransform, matTexTransformTemp;
-
-    D3DXMatrixScaling(&matTexTransform, m_fTerrainTexCoordBase * 32.0f, -m_fTerrainTexCoordBase * 32.0f, 0.0f);
-    D3DXMatrixMultiply(&matTexTransform, &m_matViewInverse, &matTexTransform);
-    STATEMANAGER.SaveTransform(D3DTS_TEXTURE0, &matTexTransform);
-    STATEMANAGER.SaveTransform(D3DTS_TEXTURE1, &matTexTransform);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-    STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
     static long lStartTime = timeGetTime();
+
     float fTime = float((timeGetTime() - lStartTime) % 3000) / 3000.0f;
     float fAlpha = fabs(fTime - 0.5f) / 2.0f + 0.1f;
-    STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, D3DXCOLOR(1.0f, 1.0f, 1.0f, fAlpha));
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG2);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2);
-    STATEMANAGER.SaveTextureStageState(0, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEPOSITION);
-    STATEMANAGER.SaveTextureStageState(0, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
 
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
-    STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEPOSITION);
-    STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MINFILTER,	D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MAGFILTER,	D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_MIPFILTER,	D3DTEXF_POINT);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSU,	D3DTADDRESS_CLAMP);
-    STATEMANAGER.SaveSamplerState(1, D3DSAMP_ADDRESSV,	D3DTADDRESS_CLAMP);
+    D3DXMATRIX matIdentity;
+    D3DXMatrixIdentity(&matIdentity);
+
+    D3DXMATRIX matWVP;
+    sp->ComputeWorldViewProj(matIdentity, matWVP);
+
+    TerrainMarkedAreaShaderInputs in{};
+
+    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.viewInverse.data(), &m_matViewInverse, sizeof(D3DXMATRIX));
+
+    in.vs.texScale[0] = m_fTerrainTexCoordBase * 32.0f;
+
+    in.ps.alpha[0] = fAlpha;
+
+    CGraphicDevice::UploadTerrainMarkedAreaConstants(in);
 
     STATEMANAGER.SetTexture(0, m_attrImageInstance.GetTexturePointer()->GetD3DTexture());
 
     RecurseRenderAttr(m_pRootNode);
-
-    STATEMANAGER.RestoreTextureStageState(0, D3DTSS_TEXCOORDINDEX);
-    STATEMANAGER.RestoreTextureStageState(0, D3DTSS_TEXTURETRANSFORMFLAGS);
-    STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXCOORDINDEX);
-    STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_MINFILTER);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_MAGFILTER);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_MIPFILTER);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSU);
-    STATEMANAGER.RestoreSamplerState(1, D3DSAMP_ADDRESSV);
-
-    STATEMANAGER.RestoreTransform(D3DTS_TEXTURE0);
-    STATEMANAGER.RestoreTransform(D3DTS_TEXTURE1);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
-    STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
 }
 
 void CMapOutdoor::RecurseRenderAttr(CTerrainQuadtreeNode *Node, bool bCullEnable)

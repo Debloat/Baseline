@@ -18,6 +18,7 @@ enum class ShaderID
     Dungeon,
     SnowParticle,
     Terrain,
+    TerrainMarkedArea,
     FlyTrace,
     Count
 };

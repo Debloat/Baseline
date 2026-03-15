@@ -1044,6 +1044,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snow", "Snow", "{906D92F5-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terrain", "Terrain", "{52674148-6AA2-4DB0-9F50-D0EAC6A782EF}"
 	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_marked_area_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_marked_area_ps.hlsl
+		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_marked_area_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_marked_area_vs.hlsl
 		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_ps.hlsl
 		Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Terrain\terrain_vs.hlsl
 	EndProjectSection

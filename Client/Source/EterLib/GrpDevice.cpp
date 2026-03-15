@@ -664,6 +664,41 @@ void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
     UploadPSConstants(0, ps.layerState.data(), 1);        // PS c0
 }
 
+void CGraphicDevice::UploadTerrainMarkedAreaConstants(const TerrainMarkedAreaShaderInputs& inputs)
+{
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
+
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    D3DXMATRIX viewInverse;
+    std::memcpy(&viewInverse, inputs.vs.viewInverse.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewInverseT;
+    D3DXMatrixTranspose(&viewInverseT, &viewInverse);
+
+    TerrainMarkedAreaVSCB vs{};
+    TerrainMarkedAreaPSCB ps{};
+
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+    std::memcpy(vs.viewInverse.data(), &viewInverseT, sizeof(D3DXMATRIX));
+    vs.texScale = inputs.vs.texScale;
+
+    ps.alpha = inputs.ps.alpha;
+
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(4, vs.viewInverse.data(), 4);     // VS c4..c7
+    UploadVSConstants(8, vs.texScale.data(), 1);        // VS c8
+
+    UploadPSConstants(0, ps.alpha.data(), 1);           // PS c0
+}
+
 void CGraphicDevice::UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs)
 {
     if (!ms_lpd3dDevice)
@@ -1021,20 +1056,21 @@ bool CGraphicDevice::__CreateShaderResources()
 
     static constexpr std::array<ShaderDesc, static_cast<size_t>(std::to_underlying(ShaderID::Count))> kShaderTable =
     {
-        ShaderDesc{ ShaderID::Water,           Water::VS,           Water::PS,           EShaderInputLayout::PTC },
-        ShaderDesc{ ShaderID::SkyBox,          SkyBox::VS,          SkyBox::PS,          EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::Cloud,           Clouds::VS,          Clouds::PS,          EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::WeaponTrace,     WeaponTrace::VS,     WeaponTrace::PS,     EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::ScreenPrimitive, ScreenPrimitive::VS, ScreenPrimitive::PS, EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::MiniMap,         MiniMap::VS,         MiniMap::PS,         EShaderInputLayout::PT },
-        ShaderDesc{ ShaderID::Text,            Text::VS,            Text::PS,            EShaderInputLayout::PCT },
-        ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS,  EShaderInputLayout::PT },
-        ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,      EShaderInputLayout::PT },
-        ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS,           EShaderInputLayout::PNT },
-        ShaderDesc{ ShaderID::Dungeon,         Dungeon::VS,         Dungeon::PS,         EShaderInputLayout::PNTT },
-        ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
-        ShaderDesc{ ShaderID::Terrain,         Terrain::VS,         Terrain::PS,         EShaderInputLayout::PN },
-        ShaderDesc{ ShaderID::FlyTrace,        FlyTrace::VS,        FlyTrace::PS,        EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Water,             Water::VS,             Water::PS,             EShaderInputLayout::PTC },
+        ShaderDesc{ ShaderID::SkyBox,            SkyBox::VS,            SkyBox::PS,            EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Cloud,             Clouds::VS,            Clouds::PS,            EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::WeaponTrace,       WeaponTrace::VS,       WeaponTrace::PS,       EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::ScreenPrimitive,   ScreenPrimitive::VS,   ScreenPrimitive::PS,   EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::MiniMap,           MiniMap::VS,           MiniMap::PS,           EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Text,              Text::VS,              Text::PS,              EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::EffectParticle,    EffectParticle::VS,    EffectParticle::PS,    EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::EffectMesh,        EffectMesh::VS,        EffectMesh::PS,        EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Model,             Model::VS,             Model::PS,             EShaderInputLayout::PNT },
+        ShaderDesc{ ShaderID::Dungeon,           Dungeon::VS,           Dungeon::PS,           EShaderInputLayout::PNTT },
+        ShaderDesc{ ShaderID::SnowParticle,      SnowParticle::VS,      SnowParticle::PS,      EShaderInputLayout::PT },
+        ShaderDesc{ ShaderID::Terrain,           Terrain::VS,           Terrain::PS,           EShaderInputLayout::PN },
+        ShaderDesc{ ShaderID::TerrainMarkedArea, TerrainMarkedArea::VS, TerrainMarkedArea::PS, EShaderInputLayout::PN },
+        ShaderDesc{ ShaderID::FlyTrace,          FlyTrace::VS,          FlyTrace::PS,          EShaderInputLayout::PCT },
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");
