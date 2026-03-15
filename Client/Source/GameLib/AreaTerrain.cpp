@@ -1432,7 +1432,7 @@ void CTerrain::AllocateMarkedSplats(BYTE * pbyAlphaMap)
 
     do
     {
-        hr = ms_lpd3dDevice->CreateTexture(ATTRMAP_XSIZE, ATTRMAP_YSIZE, 1, 0, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_lpMarkedTexture, nullptr);
+        hr = ms_lpd3dDevice->CreateTexture(ATTRMAP_XSIZE, ATTRMAP_YSIZE, 1, D3DUSAGE_DYNAMIC, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_lpMarkedTexture, nullptr);
     }
     while (FAILED(hr));
 
