@@ -760,55 +760,31 @@ void CMapOutdoor::RecurseRenderAttr(CTerrainQuadtreeNode *Node, bool bCullEnable
 
 void CMapOutdoor::DrawPatchAttr(long patchnum)
 {
-    CTerrainPatchProxy * pTerrainPatchProxy = &m_pTerrainPatchProxyList[patchnum];
+    CTerrainPatchProxy* pTerrainPatchProxy = &m_pTerrainPatchProxyList[patchnum];
 
     if (!pTerrainPatchProxy->isUsed())
-    {
         return;
-    }
 
     long sPatchNum = pTerrainPatchProxy->GetPatchNum();
-
     if (sPatchNum < 0)
-    {
         return;
-    }
 
     BYTE ucTerrainNum = pTerrainPatchProxy->GetTerrainNum();
-
-    if (0xFF == ucTerrainNum)
-    {
+    if (ucTerrainNum == 0xFF)
         return;
-    }
 
-    // Deal with this material buffer
-    CTerrain * pTerrain;
-
+    CTerrain* pTerrain;
     if (!GetTerrainPointer(ucTerrainNum, &pTerrain))
-    {
         return;
-    }
 
     if (!pTerrain->IsMarked())
-    {
         return;
-    }
 
-    WORD wCoordX, wCoordY;
-    pTerrain->GetCoordinate(&wCoordX, &wCoordY);
-
-    m_matWorldForCommonUse._41 = -(float)(wCoordX * CTerrainImpl::XSIZE * CTerrainImpl::CELLSCALE);
-    m_matWorldForCommonUse._42 = (float)(wCoordY * CTerrainImpl::YSIZE * CTerrainImpl::CELLSCALE);
-
-    D3DXMATRIX matTexTransform, matTexTransformTemp;
-    D3DXMatrixMultiply(&matTexTransform, &m_matViewInverse, &m_matWorldForCommonUse);
-    STATEMANAGER.SetTransform(D3DTS_TEXTURE1, &matTexTransform);
-
-    TTerrainSplatPatch & rAttrSplatPatch = pTerrain->GetMarkedSplatPatch();
-    STATEMANAGER.SetTexture(1, rAttrSplatPatch.Splats[0].pd3dTexture);
-
-    STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_NORMAL);
-    STATEMANAGER.SetStreamSource(0, pTerrainPatchProxy->HardwareTransformPatch_GetVertexBufferPtr()->GetD3DVertexBuffer(), m_iPatchTerrainVertexSize);
+    STATEMANAGER.SetStreamSource(
+        0,
+        pTerrainPatchProxy->HardwareTransformPatch_GetVertexBufferPtr()->GetD3DVertexBuffer(),
+        m_iPatchTerrainVertexSize
+    );
 
     STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLESTRIP, 0, m_iPatchTerrainVertexCount, 0, m_wNumIndices[0] - 2);
 }

@@ -111,10 +111,6 @@ class CTerrain : public CTerrainImpl, public CGraphicBase
 
         void						AllocateMarkedSplats(BYTE * pbyAlphaMap);
         void						DeallocateMarkedSplats();
-        TTerrainSplatPatch& 		GetMarkedSplatPatch()
-        {
-            return m_MarkedSplatPatch;
-        }
 
         // Coordinate
         void			GetCoordinate(WORD * usCoordX, WORD * usCoordY)
