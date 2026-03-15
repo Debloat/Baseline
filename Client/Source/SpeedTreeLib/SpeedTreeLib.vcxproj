@@ -149,8 +149,6 @@
   <ItemGroup>
     <ClInclude Include="BoundaryShapeManager.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="SpeedGrassRT.h" />
-    <ClInclude Include="SpeedGrassWrapper.h" />
     <ClInclude Include="SpeedTreeConfig.h" />
     <ClInclude Include="SpeedTreeForest.h" />
     <ClInclude Include="SpeedTreeForestDirectX9.h" />
@@ -161,8 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoundaryShapeManager.cpp" />
-    <ClCompile Include="SpeedGrassRT.cpp" />
-    <ClCompile Include="SpeedGrassWrapper.cpp" />
     <ClCompile Include="SpeedTreeForest.cpp" />
     <ClCompile Include="SpeedTreeForestDirectX9.cpp" />
     <ClCompile Include="SpeedTreeWrapper.cpp" />

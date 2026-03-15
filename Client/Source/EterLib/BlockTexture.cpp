@@ -5,11 +5,31 @@
 #include "../EterBase/Stl.h"
 #include "../EterLib/StateManager.h"
 #include <array>
+#include "ShaderProvider.h"
+#include "GrpDevice.h"
 
 void CBlockTexture::SetClipRect(const RECT & c_rRect)
 {
     m_bClipEnable = TRUE;
     m_clipRect = c_rRect;
+}
+
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 1> kScreenPrimitiveSamplers =
+    { {
+        { 0, ESamplerState::LinearClamp }
+    } };
+
+    constexpr PipelineStateDesc kScreenPrimitive2DPipeline =
+    {
+        ShaderID::ScreenPrimitive,
+        EDepthState::Disabled,
+        EBlendState::AlphaBlend,
+        ERasterState::CullNone,
+        kScreenPrimitiveSamplers.data(),
+        kScreenPrimitiveSamplers.size()
+    };
 }
 
 void CBlockTexture::Render(int ix, int iy)
@@ -86,9 +106,23 @@ void CBlockTexture::Render(int ix, int iy)
     {
         CGraphicBase::SetDefaultIndexBuffer(CGraphicBase::DEFAULT_IB_FILL_RECT);
 
+        const IShaderProvider* sp = GetShaderProvider();
+        if (!sp || !sp->BindPipelineState(kScreenPrimitive2DPipeline))
+            return;
+
+        ScreenPrimitiveShaderInputs in{};
+        sp->FillScreenPrimitive2DOrthoPixel(
+            static_cast<float>(ms_Viewport.Width),
+            static_cast<float>(ms_Viewport.Height),
+            in
+        );
+
+        in.ps.mode[0] = 1.0f; // textured
+
+        CGraphicDevice::UploadScreenPrimitiveConstants(in);
+
         STATEMANAGER.SetTexture(0, m_lpd3dTexture);
-        STATEMANAGER.SetTexture(1, NULL);
-        STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_TEX1 | D3DFVF_DIFFUSE);
+
         STATEMANAGER.DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 4, 0, 2);
     }
 }
@@ -160,7 +194,7 @@ void CBlockTexture::InvalidateRect(const RECT & c_rsrcRect)
 
 bool CBlockTexture::Create(CGraphicDib * pDIB, const RECT & c_rRect, DWORD dwWidth, DWORD dwHeight)
 {
-    if (FAILED(ms_lpd3dDevice->CreateTexture(dwWidth, dwHeight, 0, 0, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_lpd3dTexture, nullptr)))
+    if (FAILED(ms_lpd3dDevice->CreateTexture(dwWidth, dwHeight, 0, D3DUSAGE_DYNAMIC, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_lpd3dTexture, nullptr)))
     {
         Tracef("Failed to create block texture %u, %u\n", dwWidth, dwHeight);
         return false;
