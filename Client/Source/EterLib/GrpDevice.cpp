@@ -583,6 +583,26 @@ void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
     UploadPSConstants(0, ps.textureFlags.data(), 1);    // PS c0
 }
 
+void CGraphicDevice::UploadDungeonConstants(const DungeonShaderInputs& inputs)
+{
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
+
+    D3DXMATRIX wvp;
+    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
+
+    D3DXMATRIX wvpT;
+    D3DXMatrixTranspose(&wvpT, &wvp);
+
+    DungeonVSCB vs{};
+
+    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
+
+    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+}
+
 void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs& in)
 {
     if (!ms_lpd3dDevice)
@@ -991,6 +1011,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::EffectParticle,  EffectParticle::VS,  EffectParticle::PS,  EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::EffectMesh,      EffectMesh::VS,      EffectMesh::PS,      EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::Model,           Model::VS,           Model::PS,           EShaderInputLayout::PNT },
+        ShaderDesc{ ShaderID::Dungeon,         Dungeon::VS,         Dungeon::PS,         EShaderInputLayout::PNTT },
         ShaderDesc{ ShaderID::SnowParticle,    SnowParticle::VS,    SnowParticle::PS,    EShaderInputLayout::PT },
         ShaderDesc{ ShaderID::Terrain,         Terrain::VS,         Terrain::PS,         EShaderInputLayout::PN },
     };

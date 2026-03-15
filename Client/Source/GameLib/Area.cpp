@@ -305,19 +305,38 @@ void CArea::RenderCollision()
         }
     }
 }
+#include "../EterLib/ShaderProvider.h"
 
+namespace
+{
+    constexpr std::array<PipelineStateDesc::SamplerBinding, 2> ModelSamplers =
+    { {
+        { 0, ESamplerState::LinearWrap },
+        { 1, ESamplerState::LinearWrap }
+    } };
+
+    constexpr PipelineStateDesc DungeonPipeline =
+    {
+        ShaderID::Dungeon,
+        EDepthState::EnabledWrite,
+        EBlendState::AlphaBlend,
+        ERasterState::CullFront,
+        ModelSamplers.data(),
+        ModelSamplers.size()
+    };
+}
 void CArea::RenderDungeon()
 {
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,	D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1,	D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG2,	D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_MODULATE);
+    IShaderProvider const* sp = GetShaderProvider();
+    if (!sp)
+    {
+        return;
+    }
+
+    if (!sp->BindPipelineState(DungeonPipeline))
+    {
+        return;
+    }
 
     auto itor = m_DungeonBlockCloneInstanceVector.begin();
 
@@ -325,9 +344,6 @@ void CArea::RenderDungeon()
     {
         (*itor)->Render();
     }
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP,	D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP,	D3DTOP_DISABLE);
 }
 
 void CArea::Refresh()

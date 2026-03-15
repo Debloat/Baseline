@@ -402,6 +402,21 @@ struct ModelShaderInputs
     ModelPSCB ps;
 };
 
+struct DungeonVSCB
+{
+    std::array<float, 16> worldViewProj;
+};
+
+struct DungeonPSCB
+{
+};
+
+struct DungeonShaderInputs
+{
+    DungeonVSCB vs;
+    DungeonPSCB ps;
+};
+
 /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
 
 struct SnowParticleVSCB

@@ -67,6 +67,7 @@ public:
     static void UploadEffectParticleConstants(const EffectParticleShaderInputs& in);
     static void UploadEffectMeshConstants(const EffectMeshShaderInputs& in);
     static void UploadModelConstants(const ModelShaderInputs& inputs);
+    static void UploadDungeonConstants(const DungeonShaderInputs& inputs);
     static void UploadSnowParticleConstants(const SnowParticleShaderInputs& inputs);
     static void UploadTerrainConstants(const TerrainShaderInputs& inputs);
     /* ---------------------------------------------------- */

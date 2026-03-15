@@ -1050,6 +1050,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terrain", "Terrain", "{5267
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{6E892FB1-0F33-43AE-8539-20B375E0D12C}"
 	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\Shaders\ymir work\shader\Model\dungeon_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Model\dungeon_ps.hlsl
+		Client\Binary\pack\Shaders\ymir work\shader\Model\dungeon_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Model\dungeon_vs.hlsl
 		Client\Binary\pack\Shaders\ymir work\shader\Model\model_ps.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Model\model_ps.hlsl
 		Client\Binary\pack\Shaders\ymir work\shader\Model\model_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Model\model_vs.hlsl
 	EndProjectSection

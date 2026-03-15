@@ -19,7 +19,6 @@ class CDungeonModelInstance : public CGrannyModelInstance
                 return;
             }
 
-            STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNTT));
             LPDIRECT3DVERTEXBUFFER9 lpd3dRigidPNTVtxBuf = m_pModel->GetPNTD3DVertexBuffer();
 
             if (lpd3dRigidPNTVtxBuf)
@@ -50,7 +49,7 @@ void CDungeonBlock::Update()
     FUpdate Update;
     Update.fElapsedTime = 0.0f;
     Update.pmatWorld = &m_worldMatrix;
-    for_each(m_ModelInstanceContainer.begin(), m_ModelInstanceContainer.end(), Update);
+    std::ranges::for_each(m_ModelInstanceContainer, Update);
 }
 
 struct FRender
@@ -66,7 +65,7 @@ void CDungeonBlock::Render()
 //	if (!isShow())
 //		return;
 
-    for_each(m_ModelInstanceContainer.begin(), m_ModelInstanceContainer.end(), FRender());
+    std::ranges::for_each(m_ModelInstanceContainer, FRender());
 }
 
 struct FBoundBox
@@ -97,9 +96,8 @@ bool CDungeonBlock::GetBoundingSphere(D3DXVECTOR3 & v3Center, float& fRadius)
 void CDungeonBlock::OnUpdateCollisionData(const CStaticCollisionDataVector * pscdVector)
 {
     assert(pscdVector);
-    CStaticCollisionDataVector::const_iterator it;
 
-    for (it = pscdVector->begin(); it != pscdVector->end(); ++it)
+    for (auto it = pscdVector->begin(); it != pscdVector->end(); ++it)
     {
         AddCollision(&(*it), &GetTransform());
     }
@@ -124,7 +122,7 @@ bool CDungeonBlock::OnGetObjectHeight(float fX, float fY, float* pfHeight)
 void CDungeonBlock::BuildBoundingSphere()
 {
     D3DXVECTOR3 v3Min, v3Max;
-    for_each(m_ModelInstanceContainer.begin(), m_ModelInstanceContainer.end(), FBoundBox(&v3Min, &v3Max));
+    std::ranges::for_each(m_ModelInstanceContainer, FBoundBox(&v3Min, &v3Max));
 
     m_v3Center = (v3Min + v3Max) * 0.5f;
     const auto vv = (v3Max - v3Min);
@@ -133,7 +131,7 @@ void CDungeonBlock::BuildBoundingSphere()
 
 bool CDungeonBlock::Intersect(float* pfu, float* pfv, float* pft)
 {
-    TModelInstanceContainer::iterator itor = m_ModelInstanceContainer.begin();
+    auto itor = m_ModelInstanceContainer.begin();
 
     for (; itor != m_ModelInstanceContainer.end(); ++itor)
     {
@@ -157,7 +155,7 @@ void CDungeonBlock::GetBoundBox(D3DXVECTOR3 * pv3Min, D3DXVECTOR3 * pv3Max)
     pv3Max->y = -10000000.0f;
     pv3Max->z = -10000000.0f;
 
-    TModelInstanceContainer::iterator itor = m_ModelInstanceContainer.begin();
+    auto itor = m_ModelInstanceContainer.begin();
 
     for (; itor != m_ModelInstanceContainer.end(); ++itor)
     {
@@ -200,7 +198,7 @@ bool CDungeonBlock::Load(const char* c_szFileName)
         m_kDeformableVertexBuffer.Destroy();
         m_kDeformableVertexBuffer.Create(
             dwVertexCount,
-            D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1,
+            0,
             D3DUSAGE_WRITEONLY,
             D3DPOOL_DEFAULT);
         m_ModelInstanceContainer.push_back(pModelInstance);
