@@ -99,7 +99,6 @@ class CSpeedTreeForest
         TTreeMap                    m_pMainTreeMap;
 
         float                       m_afLighting[12];
-        float                       m_afFog[4];
 
     private:
         void                        AdjustExtents(float x, float y, float z);

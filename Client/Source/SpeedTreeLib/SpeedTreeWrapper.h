@@ -127,7 +127,6 @@ class CSpeedTreeWrapper : public CGraphicObjectInstance
         void                        SetupBranchForTreeType(void) const;
         void                        SetupFrondForTreeType(void) const;
         void                        SetupLeafForTreeType(void) const;
-        void                        EndLeafForTreeType(void);
 
 #ifdef WRAPPER_USE_GPU_LEAF_PLACEMENT
         void                        UploadLeafTables(unsigned int uiLocation) const;

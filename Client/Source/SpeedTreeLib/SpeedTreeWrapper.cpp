@@ -120,12 +120,6 @@ void CSpeedTreeWrapper::OnRender()
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,   D3DTOP_MODULATE);
 
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
-
     STATEMANAGER.SaveRenderState(D3DRS_COLORVERTEX, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -153,7 +147,6 @@ void CSpeedTreeWrapper::OnRender()
 
     SetupLeafForTreeType();
     RenderLeaves();
-    EndLeafForTreeType();
 
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, FALSE);
     RenderBillboards();
@@ -237,17 +230,6 @@ bool CSpeedTreeWrapper::LoadTree(const char* pszSptFile, const BYTE * c_pbBlock,
         }
     }
 
-    // override the lighting method stored in the spt file
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-    m_pSpeedTree->SetBranchLightingMethod(CSpeedTreeRT::LIGHT_DYNAMIC);
-    m_pSpeedTree->SetLeafLightingMethod(CSpeedTreeRT::LIGHT_DYNAMIC);
-    m_pSpeedTree->SetFrondLightingMethod(CSpeedTreeRT::LIGHT_DYNAMIC);
-#else
-    m_pSpeedTree->SetBranchLightingMethod(CSpeedTreeRT::LIGHT_STATIC);
-    m_pSpeedTree->SetLeafLightingMethod(CSpeedTreeRT::LIGHT_STATIC);
-    m_pSpeedTree->SetFrondLightingMethod(CSpeedTreeRT::LIGHT_STATIC);
-#endif
-
     // set the wind method
 #ifdef WRAPPER_USE_GPU_WIND
     m_pSpeedTree->SetBranchWindMethod(CSpeedTreeRT::WIND_GPU);
@@ -296,16 +278,6 @@ bool CSpeedTreeWrapper::LoadTree(const char* pszSptFile, const BYTE * c_pbBlock,
         auto vs1 = std::string(pszSptFile);
         auto vs2 = std::string(m_pTextureInfo->m_pBranchTextureFilename);
         LoadTexture((CFileNameHelper::GetPath(vs1) + CFileNameHelper::NoExtension(vs2) + ".dds").c_str(), m_BranchImageInstance);
-
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-
-        if (m_pTextureInfo->m_pSelfShadowFilename != nullptr)
-        {
-            auto vss = std::string(m_pTextureInfo->m_pSelfShadowFilename);
-            LoadTexture((CFileNameHelper::GetPath(vs1) + CFileNameHelper::NoExtension(vss) + ".dds").c_str(), m_ShadowImageInstance);
-        }
-
-#endif
 
         if (m_pTextureInfo->m_pCompositeFilename)
         {
@@ -376,13 +348,7 @@ void CSpeedTreeWrapper::SetupBranchBuffers(void)
             {
                 // position
                 memcpy(&pVertexBuffer->m_vPosition, & (pBranches->m_pCoords[i * 3]), 3 * sizeof(float));
-
-                // normal or color
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-                memcpy(&pVertexBuffer->m_vNormal, & (pBranches->m_pNormals[i * 3]), 3 * sizeof(float));
-#else
-                pVertexBuffer->m_dwDiffuseColor = pBranches->m_pColors[i];
-#endif
+                memcpy(&pVertexBuffer->m_vNormal, &(pBranches->m_pNormals[i * 3]), 3 * sizeof(float));
 
                 // texcoords for layer 0
                 pVertexBuffer->m_fTexCoords[0] = pBranches->m_pTexCoords0[i * 2];
@@ -392,12 +358,6 @@ void CSpeedTreeWrapper::SetupBranchBuffers(void)
 #ifdef WRAPPER_USE_GPU_WIND
                 pVertexBuffer->m_fWindIndex = 4.0f * pBranches->m_pWindMatrixIndices[i];
                 pVertexBuffer->m_fWindWeight = pBranches->m_pWindWeights[i];
-#endif
-
-                // texcoords for layer 1 (if enabled)
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-                pVertexBuffer->m_fShadowCoords[0] = pBranches->m_pTexCoords1[i * 2];
-                pVertexBuffer->m_fShadowCoords[1] = pBranches->m_pTexCoords1[i * 2 + 1];
 #endif
 
                 ++pVertexBuffer;
@@ -469,13 +429,7 @@ void CSpeedTreeWrapper::SetupFrondBuffers(void)
         {
             // position
             memcpy(&pVertexBuffer->m_vPosition, & (pFronds->m_pCoords[i * 3]), 3 * sizeof(float));
-
-            // normal or color
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-            memcpy(&pVertexBuffer->m_vNormal, & (pFronds->m_pNormals[i * 3]), 3 * sizeof(float));
-#else
-            pVertexBuffer->m_dwDiffuseColor = pFronds->m_pColors[i];
-#endif
+            memcpy(&pVertexBuffer->m_vNormal, &(pFronds->m_pNormals[i * 3]), 3 * sizeof(float));
 
             // texcoords for layer 0
             pVertexBuffer->m_fTexCoords[0] = pFronds->m_pTexCoords0[i * 2];
@@ -485,12 +439,6 @@ void CSpeedTreeWrapper::SetupFrondBuffers(void)
 #ifdef WRAPPER_USE_GPU_WIND
             pVertexBuffer->m_fWindIndex = 4.0f * pFronds->m_pWindMatrixIndices[i];
             pVertexBuffer->m_fWindWeight = pFronds->m_pWindWeights[i];
-#endif
-
-            // texcoords for layer 1 (if enabled)
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-            pVertexBuffer->m_fShadowCoords[0] = pFronds->m_pTexCoords1[i * 2];
-            pVertexBuffer->m_fShadowCoords[1] = pFronds->m_pTexCoords1[i * 2 + 1];
 #endif
 
             ++pVertexBuffer;
@@ -586,14 +534,7 @@ void CSpeedTreeWrapper::SetupLeafBuffers(void)
             {
                 // position
                 memcpy(pVertex->m_vPosition, & (pLeaf->m_pCenterCoords[unLeaf * 3]), 3 * sizeof(float));
-
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-                // normal
-                memcpy(&pVertex->m_vNormal, & (pLeaf->m_pNormals[unLeaf * 3]), 3 * sizeof(float));
-#else
-                // color
-                pVertex->m_dwDiffuseColor = pLeaf->m_pColors[unLeaf];
-#endif
+                memcpy(&pVertex->m_vNormal, &(pLeaf->m_pNormals[unLeaf * 3]), 3 * sizeof(float));
 
                 // tex coord
                 memcpy(pVertex->m_fTexCoords, & (pLeaf->m_pLeafMapTexCoords[unLeaf][anVertexIndices[unVert] * 2]), 2 * sizeof(float));
@@ -735,12 +676,6 @@ void CSpeedTreeWrapper::DeleteInstance(CSpeedTreeWrapper * pInstance)
 
 void CSpeedTreeWrapper::SetupBranchForTreeType(void) const
 {
-#ifdef WRAPPER_USE_DYNAMIC_LIGHTING
-    // set lighting material
-    STATEMANAGER.SetMaterial(m_cBranchMaterial.Get());
-    SetShaderConstants(m_pSpeedTree->GetBranchMaterial());
-#endif
-
     LPDIRECT3DTEXTURE9 lpd3dTexture;
 
     // set texture map
@@ -748,21 +683,6 @@ void CSpeedTreeWrapper::SetupBranchForTreeType(void) const
     {
         STATEMANAGER.SetTexture(0, lpd3dTexture);
     }
-
-    // bind shadow texture
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-
-    if (ms_bSelfShadowOn && (lpd3dTexture = m_ShadowImageInstance.GetTextureReference().GetD3DTexture()))
-    {
-        STATEMANAGER.SetTexture(1, lpd3dTexture);
-    }
-
-    else
-    {
-        STATEMANAGER.SetTexture(1, nullptr);
-    }
-
-#endif
 
     if (m_pGeometryCache->m_sBranches.m_usVertexCount > 0)
     {
@@ -805,26 +725,10 @@ void CSpeedTreeWrapper::RenderBranches(void) const
 
 void CSpeedTreeWrapper::SetupFrondForTreeType(void) const
 {
-#ifdef SPEEDTREE_LIGHTING_DYNAMIC
-    // set lighting material
-    STATEMANAGER.SetMaterial(m_cFrondMaterial.Get());
-    SetShaderConstants(m_pSpeedTree->GetFrondMaterial());
-#endif
-
     if (!m_CompositeImageInstance.IsEmpty())
     {
         STATEMANAGER.SetTexture(0, m_CompositeImageInstance.GetTextureReference().GetD3DTexture());
     }
-
-    // bind shadow texture
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-
-    if (LPDIRECT3DTEXTURE9 lpd3dTexture; (lpd3dTexture = m_ShadowImageInstance.GetTextureReference().GetD3DTexture()))
-    {
-        STATEMANAGER.SetTexture(1, lpd3dTexture);
-    }
-
-#endif
 
     if (m_pGeometryCache->m_sFronds.m_usVertexCount > 0)
     {
@@ -867,12 +771,6 @@ void CSpeedTreeWrapper::RenderFronds(void) const
 
 void CSpeedTreeWrapper::SetupLeafForTreeType(void) const
 {
-#ifdef SPEEDTREE_LIGHTING_DYNAMIC
-    // set lighting material
-    STATEMANAGER.SetMaterial(m_cLeafMaterial.Get());
-    SetShaderConstants(m_pSpeedTree->GetLeafMaterial());
-#endif
-
     // pass leaf tables to shader
 #ifdef WRAPPER_USE_GPU_LEAF_PLACEMENT
     UploadLeafTables(c_nVertexShader_LeafTables);
@@ -882,11 +780,6 @@ void CSpeedTreeWrapper::SetupLeafForTreeType(void) const
     {
         STATEMANAGER.SetTexture(0, m_CompositeImageInstance.GetTextureReference().GetD3DTexture());
     }
-
-    // bind shadow texture
-#ifdef WRAPPER_RENDER_SELF_SHADOWS
-    STATEMANAGER.SetTexture(1, nullptr);
-#endif
 }
 
 
@@ -933,19 +826,6 @@ void CSpeedTreeWrapper::RenderLeaves(void) const
             ms_faceCount += pLeaf->m_usLeafCount * 2;
             STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLELIST, 0, pLeaf->m_usLeafCount * 2);
         }
-    }
-}
-
-
-///////////////////////////////////////////////////////////////////////
-//  CSpeedTreeWrapper::EndLeafForTreeType
-
-void CSpeedTreeWrapper::EndLeafForTreeType(void)
-{
-    // reset copy flags for CPU wind
-    for (UINT i = 0; i < m_usNumLeafLods; ++i)
-    {
-        m_pLeavesUpdatedByCpu[i] = false;
     }
 }
 

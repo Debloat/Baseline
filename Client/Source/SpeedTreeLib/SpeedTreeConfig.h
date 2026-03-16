@@ -23,14 +23,8 @@
 #pragma once
 
 const int       c_nNumWindMatrices = 4;
-const int       c_nNumInstancesPerModel = 10;
-const float     c_fForestSize = 200.0f;
-const float     c_fSpacingTolerance = 30.0f;
-const int       c_nMaxPlacementIterations = 500;
-const int       c_nDefaultAlphaTestValue = 84;
 const float     c_fNearLodFactor = 2.0f;
 const float     c_fFarLodFactor = 9.0f;
-const float     c_fBenchmarkPeriod = 1.0f;
 
 // vertex shader constant locations
 const int c_nVertexShader_LeafLightingAdjustment = 70;
@@ -40,19 +34,6 @@ const int c_nVertexShader_TreePos = 52;
 const int c_nVertexShader_CompoundMatrix = 0;
 const int c_nVertexShader_WindMatrices = 54;
 const int c_nVertexShader_LeafTables = 4;
-const int c_nVertexShader_Fog = 85;
-
-// lighting
-const float c_afLightPosition[4] = { -0.707f, 0.0f, 0.707f, 0.0f };
-const float c_afLightAmbient[4] = { 0.5f, 0.5f, 0.5f, 1.0f };
-const float c_afLightDiffuse[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const float c_afLightSpecular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const float c_afLightGlobalAmbient[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
-
-/* =============== LIGHTING =============== */
-#define WRAPPER_USE_STATIC_LIGHTING
-//#define WRAPPER_USE_DYNAMIC_LIGHTING
-/* ======================================== */
 
 /* ================= WIND ================= */
 #define WRAPPER_USE_GPU_WIND
@@ -64,10 +45,6 @@ const float c_afLightGlobalAmbient[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 
 /* ============= SELF SHADOWS ============= */
 #define WRAPPER_RENDER_SELF_SHADOWS
-/* ======================================== */
-
-/* ================= FOG ================== */
-#define WRAPPER_USE_FOG
 /* ======================================== */
 
 // texture coordinates (enable this define for DirectX-based engines)
@@ -87,10 +64,6 @@ const float c_afLightGlobalAmbient[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 
 
 /* ERRORS */
-#if defined WRAPPER_USE_STATIC_LIGHTING && defined WRAPPER_USE_DYNAMIC_LIGHTING
-#error Please define exactly one lighting mode
-#endif
-
 #if defined WRAPPER_UP_POS_Y && defined WRAPPER_UP_POS_Z
 #error Please define exactly one up vector
 #endif

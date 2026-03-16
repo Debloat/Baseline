@@ -1,32 +1,3 @@
-///////////////////////////////////////////////////////////////////////
-//  CSpeedTreeForestDirectX9 Class
-//
-//  (c) 2003 IDV, Inc.
-//
-//  This class is provided to illustrate one way to incorporate
-//  SpeedTreeRT into an OpenGL application.  All of the SpeedTreeRT
-//  calls that must be made on a per tree basis are done by this class.
-//  Calls that apply to all trees (i.e. static SpeedTreeRT functions)
-//  are made in the functions in main.cpp.
-//
-//
-//  *** INTERACTIVE DATA VISUALIZATION (IDV) PROPRIETARY INFORMATION ***
-//
-//  This software is supplied under the terms of a license agreement or
-//  nondisclosure agreement with Interactive Data Visualization and may
-//  not be copied or disclosed except in accordance with the terms of
-//  that agreement.
-//
-//      Copyright (c) 2001-2003 IDV, Inc.
-//      All Rights Reserved.
-//
-//      IDV, Inc.
-//      1233 Washington St. Suite 610
-//      Columbia, SC 29201
-//      Voice: (803) 799-1699
-//      Fax:   (803) 931-0320
-//      Web:   http://www.idvinc.com
-
 #include "StdAfx.h"
 
 #include <stdio.h>
@@ -95,25 +66,8 @@ bool CSpeedTreeForestDirectX9::SetRenderingDevice(LPDIRECT3DDEVICE9EX lpDevice)
         return false;
     }
 
-    const float c_afLightPosition[4] = { -0.707f, -0.300f, 0.707f, 0.0f };
-    const float c_afLightAmbient[4] = { 0.5f, 0.5f, 0.5f, 1.0f };
-    const float c_afLightDiffuse[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-    const float c_afLightSpecular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-    float afLight1[] =
-    {
-        c_afLightPosition[0], c_afLightPosition[1], c_afLightPosition[2],   // pos
-        c_afLightDiffuse[0], c_afLightDiffuse[1], c_afLightDiffuse[2],      // diffuse
-        c_afLightAmbient[0], c_afLightAmbient[1], c_afLightAmbient[2],      // ambient
-        c_afLightSpecular[0], c_afLightSpecular[1], c_afLightSpecular[2],   // specular
-        c_afLightPosition[3],                                               // directional flag
-        1.0f, 0.0f, 0.0f                                                    // attenuation (constant, linear, quadratic)
-    };
-
     CSpeedTreeRT::SetNumWindMatrices(c_nNumWindMatrices);
 
-    CSpeedTreeRT::SetLightAttributes(0, afLight1);
-    CSpeedTreeRT::SetLightState(0, true);
     return true;
 }
 
@@ -202,7 +156,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
     }
 
     STATEMANAGER.SetVertexShaderConstant(c_nVertexShader_Light,    m_afLighting, 3);
-    STATEMANAGER.SetVertexShaderConstant(c_nVertexShader_Fog, m_afFog, 1);
 
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
     STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
@@ -214,13 +167,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
     STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
     STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
     STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
 
     STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -305,11 +251,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
                 }
         }
 
-        while (itor != m_pMainTreeMap.end())
-        {
-            (itor++)->second->EndLeafForTreeType();
-        }
-
         if (ulRenderBitVector & Forest_RenderToMiniMap)
         {
             STATEMANAGER.SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -348,9 +289,6 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
     STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1);
 #endif
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, dwColorVertexState);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
