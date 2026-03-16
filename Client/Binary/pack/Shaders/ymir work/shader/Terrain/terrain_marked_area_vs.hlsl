@@ -1,5 +1,5 @@
-float4x4 worldViewProj : register(c0); // c0..c3
-float4x4 viewInverse : register(c4); // c4..c7
+row_major float4x4 worldViewProj : register(c0); // c0..c3
+row_major float4x4 viewInverse : register(c4); // c4..c7
 float4 texScale : register(c8); // c8
 
 struct VS_INPUT

@@ -1,5 +1,5 @@
 // -----------------------------------
-float4x4 g_mWorldViewProj : register(c0); // c0..c3
+row_major float4x4 g_mWorldViewProj : register(c0); // c0..c3
 
 float4 g_vCloudParams0 : register(c4);    // x=uvScale.x, y=uvScale.y, z=uvSpeed.x, w=uvSpeed.y
 float4 g_vCloudParams1 : register(c5);    // x=environmentTime

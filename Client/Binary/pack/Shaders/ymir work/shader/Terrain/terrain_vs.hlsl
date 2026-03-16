@@ -1,6 +1,6 @@
-float4x4 WorldViewProj : register(c0);
-float4x4 ColorTexMatrix : register(c4);
-float4x4 AlphaTexMatrix : register(c8);
+row_major float4x4 WorldViewProj : register(c0);
+row_major float4x4 ColorTexMatrix : register(c4);
+row_major float4x4 AlphaTexMatrix : register(c8);
 
 struct VS_INPUT
 {

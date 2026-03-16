@@ -9,9 +9,9 @@ float4 g_vWaterDisp1      : register(c3);  // waveAmplitude
 float4 g_vWaterDisp2      : register(c4);  // wavesIntensity
 float4 g_vWaterDisp3      : register(c5);  // wavesNoise
 float4 g_vWaterDisp4      : register(c6);  // x=waveAmplitudeFactor, y=heightAmplitude, z/w padding
-float4x4 g_mWorldViewProj : register(c7);  // Combined world * view * projection matrix
-float4x4 g_mView          : register(c11); // View matrix (used for fog depth computation)
-float4x4 g_mTexTransform  : register(c15); // Legacy texture transform (kept for compatibility, not used here)
+row_major float4x4 g_mWorldViewProj : register(c7);  // Combined world * view * projection matrix
+row_major float4x4 g_mView          : register(c11); // View matrix (used for fog depth computation)
+row_major float4x4 g_mTexTransform : register(c15); // Legacy texture transform (kept for compatibility, not used here)
 // -----------------------------------
 
 // Heightmap texture (R channel used as displacement source)

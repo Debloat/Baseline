@@ -1,4 +1,4 @@
-float4x4 WorldViewProj : register(c0);
+row_major float4x4 WorldViewProj : register(c0);
 
 struct VS_INPUT
 {

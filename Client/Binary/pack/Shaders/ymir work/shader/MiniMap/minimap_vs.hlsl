@@ -1,6 +1,6 @@
-float4x4 g_mWorldViewProj : register(c0);
-float4x4 g_mWorld : register(c4);
-float4x4 g_mTexTransform : register(c8);
+row_major float4x4 g_mWorldViewProj : register(c0);
+row_major float4x4 g_mWorld : register(c4);
+row_major float4x4 g_mTexTransform : register(c8);
 
 struct VS_IN
 {

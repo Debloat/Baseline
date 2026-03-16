@@ -1,4 +1,4 @@
-float4x4 g_worldViewProj;
+row_major float4x4 g_worldViewProj;
 
 struct VS_INPUT
 {

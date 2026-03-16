@@ -317,31 +317,12 @@ void CGraphicDevice::UploadWaterConstants(const WaterShaderInputs& inputs)
         1.0f
     };
 
-
-    // matrices: inputs are raw; device transposes before upload
-    D3DXMATRIX wvp;
-    D3DXMATRIX view;
-    D3DXMATRIX tex;
-
-    std::memcpy(&wvp, inputs.vs.matrices.worldViewProj.data(), sizeof(D3DXMATRIX));
-    std::memcpy(&view, inputs.vs.matrices.view.data(), sizeof(D3DXMATRIX));
-    std::memcpy(&tex, inputs.vs.matrices.texTransform.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMATRIX viewT;
-    D3DXMATRIX texT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-    D3DXMatrixTranspose(&viewT, &view);
-    D3DXMatrixTranspose(&texT, &tex);
-
-    std::memcpy(mats.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-    std::memcpy(mats.view.data(), &viewT, sizeof(D3DXMATRIX));
-    std::memcpy(mats.texTransform.data(), &texT, sizeof(D3DXMATRIX));
-
     // ---- Upload ----
     UploadVSConstants(0, perFrame.slot0.data(), 2);         // c0..c1
     UploadVSConstants(2, disp.slot0.data(), 5);             // c2..c6
-    UploadVSConstants(7, mats.worldViewProj.data(), 12);    // c7..c18
+    UploadVSConstants(7, inputs.vs.matrices.worldViewProj.data(), 4);   // c7..c10
+    UploadVSConstants(11, inputs.vs.matrices.view.data(), 4);            // c11..c14
+    UploadVSConstants(15, inputs.vs.matrices.texTransform.data(), 4);    // c15..c18
 
     UploadPSConstants(0, perFrame.slot1.data(), 1);         // c0
     UploadPSConstants(1, material.slot0.data(), 6);         // c1..c6
@@ -354,19 +335,7 @@ void CGraphicDevice::UploadSkyboxConstants(const SkyboxShaderInputs& inputs)
         return;
     }
 
-    // --- Transpose ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    // --- Pack ---
-    SkyboxVSCB mats{};
-    std::memcpy(mats.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-
-    // --- Upload ---
-    UploadVSConstants(0, mats.worldViewProj.data(), 4);
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);
 }
 
 void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
@@ -376,16 +345,7 @@ void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
         return;
     }
 
-
-    // --- Transpose matrix ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
     CloudVSCB vs{};
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
     vs.uvScaleSpeed = {
         inputs.vs.uvScaleSpeed[0],
@@ -401,7 +361,7 @@ void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
         0.0f
     };
 
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);
     UploadVSConstants(4, vs.uvScaleSpeed.data(), 1);
     UploadVSConstants(5, vs.timeSeconds.data(), 1);
 
@@ -414,21 +374,11 @@ void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
 
 void CGraphicDevice::UploadWeaponTraceConstants(const WeaponTraceShaderInputs& inputs)
 {
-    WeaponTraceVSCB vs{};
     WeaponTracePSCB ps{};
-
-    // Transpose here (HLSL mul(v, M) with column-major expectation)
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
 
     ps.slot0 = { inputs.ps.slot0 };
 
-    UploadVSConstants(0, vs.worldViewProj.data(), 4); // c0..c3
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4); // c0..c3
     UploadPSConstants(0, ps.slot0.data(), 1);         // c0
 }
 
@@ -437,23 +387,13 @@ void CGraphicDevice::UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderI
     if (!ms_lpd3dDevice)
         return;
 
-    // --- Transpose ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
     // --- Pack ---
-    ScreenPrimitiveVSCB vs{};
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-
     ScreenPrimitivePSCB ps{};
     ps.mode = { inputs.ps.mode };
     ps.colorFactor = { inputs.ps.colorFactor };
 
     // --- Upload ---
-    UploadVSConstants(0, vs.worldViewProj.data(), 4); // VS c0..c3
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4); // VS c0..c3
     UploadPSConstants(0, ps.mode.data(), 2);          // PS c0..c1
 }
 
@@ -461,33 +401,6 @@ void CGraphicDevice::UploadMiniMapConstants(const MiniMapShaderInputs& in)
 {
     if (!ms_lpd3dDevice)
         return;
-
-    // --- Transpose worldViewProj ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, in.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    // --- Transpose world ---
-    D3DXMATRIX world;
-    std::memcpy(&world, in.vs.world.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX worldT;
-    D3DXMatrixTranspose(&worldT, &world);
-
-    // --- Transpose texTransform ---
-    D3DXMATRIX tex;
-    std::memcpy(&tex, in.vs.texTransform.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX texT;
-    D3DXMatrixTranspose(&texT, &tex);
-
-    // --- Pack VS ---
-    MiniMapVSCB vs{};
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-    std::memcpy(vs.world.data(), &worldT, sizeof(D3DXMATRIX));
-    std::memcpy(vs.texTransform.data(), &texT, sizeof(D3DXMATRIX));
 
     // --- Pack PS ---
     MiniMapPSCB ps{};
@@ -498,16 +411,23 @@ void CGraphicDevice::UploadMiniMapConstants(const MiniMapShaderInputs& in)
         0.0f, 0.0f};
 
     // --- Upload ---
-    UploadVSConstants(0, vs.worldViewProj.data(), 12); // c0–c11
+    UploadVSConstants(0, in.vs.worldViewProj.data(), 4);  // c0–c3
+    UploadVSConstants(4, in.vs.world.data(), 4);          // c4–c7
+    UploadVSConstants(8, in.vs.texTransform.data(), 4);   // c8–c11
     UploadPSConstants(0, ps.colorFactor.data(), 2);    // c0–c1
 }
 
 void CGraphicDevice::UploadTextConstants(const TextShaderInputs& in)
 {
-    TextVSCB vs{};
-    vs.invScreenSize = { in.invScreenW, in.invScreenH, 0.0f, 0.0f };
+    std::array<float, 4> invScreenSize =
+    {
+        in.invScreenW,
+        in.invScreenH,
+        0.0f,
+        0.0f
+    };
 
-    UploadVSConstants(0, vs.invScreenSize.data(), 1); // c0
+    UploadVSConstants(0, invScreenSize.data(), 1); // c0
 }
 
 void CGraphicDevice::UploadEffectParticleConstants(const EffectParticleShaderInputs& in)
@@ -515,24 +435,13 @@ void CGraphicDevice::UploadEffectParticleConstants(const EffectParticleShaderInp
     if (!ms_lpd3dDevice)
         return;
 
-    // --- Transpose viewProj ---
-    D3DXMATRIX viewProj;
-    std::memcpy(&viewProj, in.vs.viewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX viewProjT;
-    D3DXMatrixTranspose(&viewProjT, &viewProj);
-
-    // --- Pack VS ---
-    EffectParticleVSCB vs{};
-    std::memcpy(vs.viewProj.data(), &viewProjT, sizeof(D3DXMATRIX));
-
     // --- Pack PS ---
     EffectParticlePSCB ps{};
     ps.textureFactor = in.ps.textureFactor;
     ps.ops = in.ps.ops;
 
     // --- Upload ---
-    UploadVSConstants(0, vs.viewProj.data(), 4);          // VS c0..c3
+    UploadVSConstants(0, in.vs.viewProj.data(), 4);          // VS c0..c3
     UploadPSConstants(0, ps.textureFactor.data(), 2);     // PS c0..c1 (textureFactor + ops)
 }
 
@@ -541,22 +450,12 @@ void CGraphicDevice::UploadEffectMeshConstants(const EffectMeshShaderInputs& in)
     if (!ms_lpd3dDevice)
         return;
 
-    // --- Transpose WVP ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, in.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
     // --- Pack ---
-    EffectMeshVSCB vs{};
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-
     EffectMeshPSCB ps{};
     ps.textureFactor = in.ps.textureFactor;
 
     // --- Upload ---
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3 (WVP)
+    UploadVSConstants(0, in.vs.worldViewProj.data(), 4);   // VS c0..c3 (WVP)
     UploadPSConstants(0, ps.textureFactor.data(), 1);   // PS c0
 }
 
@@ -567,19 +466,10 @@ void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
         return;
     }
 
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    ModelVSCB vs{};
     ModelPSCB ps{};
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
     ps.textureFlags = inputs.ps.textureFlags;
 
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
     UploadPSConstants(0, ps.textureFlags.data(), 1);    // PS c0
 }
 
@@ -590,17 +480,7 @@ void CGraphicDevice::UploadDungeonConstants(const DungeonShaderInputs& inputs)
         return;
     }
 
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    DungeonVSCB vs{};
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
 }
 
 void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs& in)
@@ -608,16 +488,7 @@ void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs&
     if (!ms_lpd3dDevice)
         return;
 
-    D3DXMATRIX vp;
-    std::memcpy(&vp, in.vs.viewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX vpT;
-    D3DXMatrixTranspose(&vpT, &vp);
-
-    SnowParticleVSCB vs{};
-    std::memcpy(vs.viewProj.data(), &vpT, sizeof(D3DXMATRIX));
-
-    UploadVSConstants(0, vs.viewProj.data(), 4); // VS c0..c3
+    UploadVSConstants(0, in.vs.viewProj.data(), 4); // VS c0..c3
 }
 
 void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
@@ -627,39 +498,15 @@ void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
         return;
     }
 
-    // --- Transpose matrices ---
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    D3DXMATRIX colorTex;
-    std::memcpy(&colorTex, inputs.vs.colorTexMatrix.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX colorTexT;
-    D3DXMatrixTranspose(&colorTexT, &colorTex);
-
-    D3DXMATRIX alphaTex;
-    std::memcpy(&alphaTex, inputs.vs.alphaTexMatrix.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX alphaTexT;
-    D3DXMatrixTranspose(&alphaTexT, &alphaTex);
-
     // --- Pack ---
-    TerrainVSCB vs{};
     TerrainPSCB ps{};
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-    std::memcpy(vs.colorTexMatrix.data(), &colorTexT, sizeof(D3DXMATRIX));
-    std::memcpy(vs.alphaTexMatrix.data(), &alphaTexT, sizeof(D3DXMATRIX));
 
     ps.layerState = inputs.ps.layerState;
 
     // --- Upload ---
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);     // VS c0..c3
-    UploadVSConstants(4, vs.colorTexMatrix.data(), 4);    // VS c4..c7
-    UploadVSConstants(8, vs.alphaTexMatrix.data(), 4);    // VS c8..c11
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);     // VS c0..c3
+    UploadVSConstants(4, inputs.vs.colorTexMatrix.data(), 4);    // VS c4..c7
+    UploadVSConstants(8, inputs.vs.alphaTexMatrix.data(), 4);    // VS c8..c11
 
     UploadPSConstants(0, ps.layerState.data(), 1);        // PS c0
 }
@@ -671,30 +518,13 @@ void CGraphicDevice::UploadTerrainMarkedAreaConstants(const TerrainMarkedAreaSha
         return;
     }
 
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    D3DXMATRIX viewInverse;
-    std::memcpy(&viewInverse, inputs.vs.viewInverse.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX viewInverseT;
-    D3DXMatrixTranspose(&viewInverseT, &viewInverse);
-
-    TerrainMarkedAreaVSCB vs{};
     TerrainMarkedAreaPSCB ps{};
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-    std::memcpy(vs.viewInverse.data(), &viewInverseT, sizeof(D3DXMATRIX));
-    vs.texScale = inputs.vs.texScale;
 
     ps.alpha = inputs.ps.alpha;
 
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
-    UploadVSConstants(4, vs.viewInverse.data(), 4);     // VS c4..c7
-    UploadVSConstants(8, vs.texScale.data(), 1);        // VS c8
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(4, inputs.vs.viewInverse.data(), 4);     // VS c4..c7
+    UploadVSConstants(8, inputs.vs.texScale.data(), 1);        // VS c8
 
     UploadPSConstants(0, ps.alpha.data(), 1);           // PS c0
 }
@@ -706,17 +536,7 @@ void CGraphicDevice::UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs)
         return;
     }
 
-    D3DXMATRIX wvp;
-    std::memcpy(&wvp, inputs.vs.worldViewProj.data(), sizeof(D3DXMATRIX));
-
-    D3DXMATRIX wvpT;
-    D3DXMatrixTranspose(&wvpT, &wvp);
-
-    FlyTraceVSCB vs{};
-
-    std::memcpy(vs.worldViewProj.data(), &wvpT, sizeof(D3DXMATRIX));
-
-    UploadVSConstants(0, vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
 }
 
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)

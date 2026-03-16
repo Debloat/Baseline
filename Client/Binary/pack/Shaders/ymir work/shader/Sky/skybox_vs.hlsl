@@ -1,5 +1,5 @@
 // -----------------------------------
-float4x4 g_mWorldViewProj : register(c0);
+row_major float4x4 g_mWorldViewProj : register(c0);
 // -----------------------------------
 
 struct VS_IN

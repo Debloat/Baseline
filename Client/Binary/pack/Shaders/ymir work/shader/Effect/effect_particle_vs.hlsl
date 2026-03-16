@@ -1,4 +1,4 @@
-float4x4 g_viewProj;
+row_major float4x4 g_viewProj;
 
 struct VS_INPUT
 {
