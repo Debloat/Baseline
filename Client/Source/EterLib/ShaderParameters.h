@@ -198,8 +198,9 @@ struct EnvironmentRuntime
     std::array<float, 4> windDirection = { 0.f, 0.f, 0.f, 0.f };
     float windStrength = 0.0f;
 
-    std::array<float, 3> sunDir = { 0.f, 0.f, 0.f };
+    std::array<float, 3> sunDir = { 0.0f, 0.0f, 1.0f };
     std::array<float, 3> sunColor = { 1.f, 1.f, 1.f };
+    std::array<float, 3> ambientColor = { 0.2f, 0.2f, 0.25f };
 };
 
 // NOTE:
@@ -230,6 +231,7 @@ struct FrameShaderInputs
     // Light (world)
     std::array<float, 3> sunDir;
     std::array<float, 3> sunColor;
+    std::array<float, 3> ambientColor;
 
     // Environment runtime (optional but useful to centralize)
     float timeSeconds = 0.0f;

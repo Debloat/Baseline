@@ -1064,6 +1064,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlyTrace", "FlyTrace", "{A8
 		Client\Binary\pack\Shaders\ymir work\shader\FlyTrace\fly_trace_vs.hlsl = Client\Binary\pack\Shaders\ymir work\shader\FlyTrace\fly_trace_vs.hlsl
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{406601E5-B76A-4061-87A8-59537A2755D5}"
+	ProjectSection(SolutionItems) = preProject
+		Client\Binary\pack\Shaders\ymir work\shader\Common\light.hlsl = Client\Binary\pack\Shaders\ymir work\shader\Common\light.hlsl
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CL-Debug|Win32 = CL-Debug|Win32
@@ -1501,6 +1506,7 @@ Global
 		{52674148-6AA2-4DB0-9F50-D0EAC6A782EF} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{6E892FB1-0F33-43AE-8539-20B375E0D12C} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 		{A8D39EB8-481D-455B-B292-DFED85C53014} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
+		{406601E5-B76A-4061-87A8-59537A2755D5} = {8A4B63C3-6CA0-4B8B-8F53-A26D0194A278}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F46A540A-7868-41C7-AA54-AC5713509850}

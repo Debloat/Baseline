@@ -1,3 +1,5 @@
+#include "../Common/light.hlsl"
+
 sampler2D TerrainTexture : register(s0);
 sampler2D AlphaTexture : register(s1);
 
@@ -7,6 +9,9 @@ struct PS_INPUT
 {
     float2 uvColor : TEXCOORD0;
     float2 uvAlpha : TEXCOORD1;
+
+    float3 normal : TEXCOORD2;
+    float3 worldPos : TEXCOORD3;
 };
 
 float4 main(PS_INPUT input) : COLOR
@@ -19,5 +24,14 @@ float4 main(PS_INPUT input) : COLOR
         alpha = tex2D(AlphaTexture, input.uvAlpha).a;
     }
 
-    return float4(color.rgb, alpha);
+    float3 N = normalize(input.normal);
+    float3 V = normalize(GetCameraPos() - input.worldPos);
+    float3 L = GetSunDir();
+
+    float3 lightDiffuse = ComputeDiffuse(N, L) * GetSunColor();
+    float3 ambient = GetAmbientColor();
+
+    float3 lit = color.rgb * (ambient + lightDiffuse);
+
+    return float4(lit, alpha);
 }

@@ -569,6 +569,19 @@ const FrameShaderInputs& CGraphicDevice::GetFrameShaderInputs() const
     return m_frameShaderInputs;
 }
 
+void CGraphicDevice::UploadFrameConstants(const FrameShaderInputs& frame)
+{
+    float v0[4] = { frame.cameraPos[0], frame.cameraPos[1], frame.cameraPos[2], 1.0f };
+    float v1[4] = { frame.sunDir[0], frame.sunDir[1], frame.sunDir[2], 0.0f };
+    float v2[4] = { frame.sunColor[0], frame.sunColor[1], frame.sunColor[2], 0.0f };
+    float v3[4] = { frame.ambientColor[0], frame.ambientColor[1], frame.ambientColor[2], 0.0f };
+
+    UploadPSConstants(1, v0, 1);
+    UploadPSConstants(2, v1, 1);
+    UploadPSConstants(3, v2, 1);
+    UploadPSConstants(4, v3, 1);
+}
+
 void CGraphicDevice::ComputeWorldViewProj(const D3DXMATRIX& world,
     D3DXMATRIX& outWVP) const
 {
@@ -636,6 +649,12 @@ bool CGraphicDevice::BindShader(ShaderID id) const
     if (program.layout)
     {
         STATEMANAGER.SetVertexDeclaration(program.layout);
+    }
+
+    const IShaderProvider* sp = GetShaderProvider();
+    if (sp)
+    {
+        UploadFrameConstants(sp->GetFrameShaderInputs());
     }
 
     return true;

@@ -13,6 +13,9 @@ struct VS_OUTPUT
     float4 position : POSITION;
     float2 uvColor : TEXCOORD0;
     float2 uvAlpha : TEXCOORD1;
+
+    float3 normal : TEXCOORD2;
+    float3 worldPos : TEXCOORD3;
 };
 
 VS_OUTPUT main(VS_INPUT input)
@@ -20,6 +23,9 @@ VS_OUTPUT main(VS_INPUT input)
     VS_OUTPUT o;
 
     float4 worldPos = float4(input.pos, 1.0);
+
+    o.worldPos = worldPos.xyz;
+    o.normal = input.normal;
 
     o.position = mul(worldPos, WorldViewProj);
 

@@ -404,8 +404,22 @@ void CPythonBackground::Render()
         frame.timeSeconds = es.runtime.timeSeconds;
         frame.windDirection = es.runtime.windDirection;
         frame.windStrength = es.runtime.windStrength;
-        frame.sunDir = es.runtime.sunDir;
+
+        D3DXVECTOR3 sun(es.runtime.sunDir[0], es.runtime.sunDir[1], es.runtime.sunDir[2]);
+
+        if (D3DXVec3LengthSq(&sun) < 0.0001f)
+        {
+            sun = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
+        }
+        else
+        {
+            D3DXVec3Normalize(&sun, &sun);
+        }
+
+        frame.sunDir = { sun.x, sun.y, sun.z };
+
         frame.sunColor = es.runtime.sunColor;
+        frame.ambientColor = es.runtime.ambientColor;
 
         // push to provider
         if (IShaderProvider* sp = GetShaderProviderMutable())

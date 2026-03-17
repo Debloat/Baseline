@@ -243,6 +243,25 @@ void CSkyBox::SetCloudTintMultiplier(const D3DXCOLOR& c_rvCloudTintMultiplier)
     m_cloudTintMultiplier = c_rvCloudTintMultiplier;
 }
 
+void CSkyBox::SetSunTexture(const char* filename)
+{
+    if (!filename || !*filename)
+        return;
+
+    m_strSunTextureFileName = filename;
+
+    if (!m_GraphicImageInstanceMap.contains(filename))
+    {
+        CGraphicImageInstance* p = GenerateTexture(filename);
+        m_GraphicImageInstanceMap.try_emplace(filename, p);
+    }
+}
+
+void CSkyBox::SetSunSize(float size)
+{
+    m_fSunSize = size;
+}
+
 CGraphicImageInstance* CSkyBox::GetSkyTextureInstance() const
 {
     if (m_strSkyTextureFileName.empty())
@@ -462,6 +481,52 @@ void CSkyBox::Render()
     for (unsigned int i = 0; i < 6; ++i)
     {
         m_Faces[i].Render();
+    }
+
+    // --- SUN RENDER --------------------------------------------------
+    const auto& es = GetEnvironmentShaderSettings();
+    const auto& sunDir = es.runtime.sunDir;
+
+    if (!m_strSunTextureFileName.empty())
+    {
+        auto itSun = m_GraphicImageInstanceMap.find(m_strSunTextureFileName);
+        if (itSun != m_GraphicImageInstanceMap.end() && itSun->second)
+        {
+            CGraphicImageInstance* pSun = itSun->second;
+
+            STATEMANAGER.SetTexture(0, pSun->GetTextureReference().GetD3DTexture());
+
+            // Camera basis (from view matrix)
+            const D3DXMATRIX& view = CCameraManager::Instance().GetCurrentCamera()->GetViewMatrix();
+
+            D3DXVECTOR3 right(view._11, view._21, view._31);
+            D3DXVECTOR3 up(view._12, view._22, view._32);
+
+            // Position sun far away in its direction
+            D3DXVECTOR3 eye = CCameraManager::Instance().GetCurrentCamera()->GetEye();
+
+            const float distance = 10000.0f;
+            D3DXVECTOR3 center = eye + D3DXVECTOR3(sunDir[0], sunDir[1], sunDir[2]) * distance;
+
+            const float halfSize = m_fSunSize * 0.5f;
+
+            D3DXVECTOR3 v0 = center - right * halfSize - up * halfSize;
+            D3DXVECTOR3 v1 = center - right * halfSize + up * halfSize;
+            D3DXVECTOR3 v2 = center + right * halfSize - up * halfSize;
+            D3DXVECTOR3 v3 = center + right * halfSize + up * halfSize;
+
+            TPDTVertex verts[4]{};
+
+            verts[0].position = v0; verts[0].texCoord = { 0.0f, 1.0f };
+            verts[1].position = v1; verts[1].texCoord = { 0.0f, 0.0f };
+            verts[2].position = v2; verts[2].texCoord = { 1.0f, 1.0f };
+            verts[3].position = v3; verts[3].texCoord = { 1.0f, 0.0f };
+
+            if (CGraphicBase::SetPDTStream(verts, 4))
+            {
+                STATEMANAGER.DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
+            }
+        }
     }
 }
 

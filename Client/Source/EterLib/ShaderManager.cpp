@@ -67,6 +67,93 @@ bool ShaderManager::ReadFileFromPack(const char* packFilename, std::string* outC
     return true;
 }
 
+class PackInclude : public ID3DXInclude
+{
+public:
+    STDMETHOD(Open)(
+        D3DXINCLUDE_TYPE IncludeType,
+        LPCSTR pFileName,
+        LPCVOID pParentData,
+        LPCVOID* ppData,
+        UINT* pBytes) override
+    {
+        if (!pFileName || !ppData || !pBytes)
+            return E_FAIL;
+
+        CMappedFile mappedFile;
+        LPCVOID pData = nullptr;
+
+        std::string resolvedPath = pFileName;
+
+        // Normalize slashes
+        std::replace(resolvedPath.begin(), resolvedPath.end(), '\\', '/');
+
+        // --- Collapse "../" ---
+        {
+            std::vector<std::string> parts;
+            size_t start = 0;
+
+            while (true)
+            {
+                size_t slash = resolvedPath.find('/', start);
+                std::string part = resolvedPath.substr(start, slash - start);
+
+                if (part == "..")
+                {
+                    if (!parts.empty())
+                        parts.pop_back();
+                }
+                else if (!part.empty() && part != ".")
+                {
+                    parts.push_back(part);
+                }
+
+                if (slash == std::string::npos)
+                    break;
+
+                start = slash + 1;
+            }
+
+            std::string collapsed;
+            for (size_t i = 0; i < parts.size(); ++i)
+            {
+                if (i > 0) collapsed += "/";
+                collapsed += parts[i];
+            }
+
+            resolvedPath = collapsed;
+
+            // --- Ensure root path ---
+            const char* kShaderRoot = "d:/ymir work/shader/";
+
+            if (resolvedPath.find(kShaderRoot) != 0)
+            {
+                resolvedPath = std::string(kShaderRoot) + resolvedPath;
+            }
+        }
+
+        if (!CEterPackManager::Instance().Get(mappedFile, resolvedPath.c_str(), &pData))
+            return E_FAIL;
+
+        const size_t size = mappedFile.Size();
+
+        // Store path at beginning for child includes
+        char* buffer = new char[size];
+        memcpy(buffer, pData, size);
+
+        *ppData = buffer;
+        *pBytes = static_cast<UINT>(size);
+
+        return S_OK;
+    }
+
+    STDMETHOD(Close)(LPCVOID pData) override
+    {
+        delete[] static_cast<const char*>(pData);
+        return S_OK;
+    }
+};
+
 bool ShaderManager::CompileHLSL(
     const char* hlslCode,
     std::size_t hlslCodeSize,
@@ -84,11 +171,13 @@ bool ShaderManager::CompileHLSL(
 
     LPD3DXBUFFER errorBuffer = nullptr;
 
+    PackInclude includeHandler;
+
     const HRESULT hr = D3DXCompileShader(
         hlslCode,
         hlslCodeSize,
         nullptr,
-        nullptr,
+        &includeHandler,
         entryPoint,
         profile,
         0,

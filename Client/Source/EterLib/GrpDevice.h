@@ -72,6 +72,7 @@ public:
     static void UploadTerrainConstants(const TerrainShaderInputs& inputs);
     static void UploadTerrainMarkedAreaConstants(const TerrainMarkedAreaShaderInputs& inputs);
     static void UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs);
+    static void UploadFrameConstants(const FrameShaderInputs& frame);
     /* ---------------------------------------------------- */
 
     /* - SHADER [LOW-LEVEL CONSTANT UPLOAD] ------------------ */

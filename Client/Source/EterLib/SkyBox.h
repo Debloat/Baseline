@@ -123,6 +123,10 @@ class CSkyBox : public CSkyObject
         void SetCloudTextureScale(const D3DXVECTOR2 & c_rv2CloudTextureScale);
         void SetCloudScrollSpeed(const D3DXVECTOR2 & c_rv2CloudScrollSpeed);
         void SetCloudTintMultiplier(const D3DXCOLOR& c_rvCloudTintMultiplier);
+
+        void SetSunTexture(const char* filename);
+        void SetSunSize(float size);
+
         void Refresh();
 
         CGraphicImageInstance* GetSkyTextureInstance() const;
@@ -137,4 +141,8 @@ class CSkyBox : public CSkyObject
     protected:
         TSkyObjectFace m_Faces[6];
         std::string m_strSkyTextureFileName;
+
+        // --- SUN (authoritative directional light) ---
+        std::string m_strSunTextureFileName;
+        float m_fSunSize = 500.0f; // world size of quad
 };

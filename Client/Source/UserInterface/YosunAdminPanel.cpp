@@ -563,6 +563,7 @@ void YosunAdminPanel::RenderShaderManager(bool* p_open) const
             /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
             const float resetButtonPosition = ImGui::GetWindowWidth() - 80;
             /* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
             if (ImGui::BeginTabItem("Environment"))
             {
                 ImGui::TextDisabled("Global Scene Environment");
@@ -606,6 +607,46 @@ void YosunAdminPanel::RenderShaderManager(bool* p_open) const
                     ImGui::SliderFloat("Strength", &es.authoring.windStrength, 0.0f, 5.0f, "%.2f");
 
                     ImGui::TextDisabled("Consumed by water, clouds, foliage, etc.");
+                }
+                /* ⎯⎯⎯⎯⎯⎯⎯⎯ SUN / LIGHT ⎯⎯⎯⎯⎯⎯⎯⎯ */
+                {
+                    ImGui::SeparatorText("Sun / Light");
+
+                    ImGui::SameLine(resetButtonPosition);
+                    if (ImGui::Button("Reset##EnvSun"))
+                    {
+                        es.runtime.sunDir = { 0.3f, 0.8f, 0.2f };
+                        es.runtime.sunColor = { 1.0f, 1.0f, 0.95f };
+                        es.runtime.ambientColor = { 0.2f, 0.2f, 0.25f };
+                    }
+
+                    // --- Direction ---
+                    ImGui::Text("Direction");
+
+                    ImGui::DragFloat("Dir X", &es.runtime.sunDir[0], 0.01f, -1.0f, 1.0f);
+                    ImGui::DragFloat("Dir Y", &es.runtime.sunDir[1], 0.01f, -1.0f, 1.0f);
+                    ImGui::DragFloat("Dir Z", &es.runtime.sunDir[2], 0.01f, -1.0f, 1.0f);
+
+                    // Normalize button (important)
+                    if (ImGui::Button("Normalize Direction"))
+                    {
+                        D3DXVECTOR3 v(es.runtime.sunDir[0], es.runtime.sunDir[1], es.runtime.sunDir[2]);
+
+                        if (D3DXVec3LengthSq(&v) > 0.0001f)
+                        {
+                            D3DXVec3Normalize(&v, &v);
+                            es.runtime.sunDir = { v.x, v.y, v.z };
+                        }
+                    }
+
+                    // --- Color ---
+                    ImGui::Text("Color");
+                    ImGui::ColorEdit3("Sun Color", es.runtime.sunColor.data());
+
+                    ImGui::Text("Ambient Color");
+                    ImGui::ColorEdit3("Ambient Color", es.runtime.ambientColor.data());
+
+                    ImGui::TextDisabled("Used by all lighting shaders (terrain, model, water, etc.)");
                 }
 
                 ImGui::EndTabItem();
