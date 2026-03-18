@@ -310,56 +310,21 @@ void CPythonApplication::UpdateGame()
         s.BuildViewFrustum();
     }
 
-    DWORD t3 = ELTimer_GetMSec();
     TPixelPosition kPPosMainActor;
     m_pyPlayer.NEW_GetMainActorPosition(&kPPosMainActor);
-
-    DWORD t4 = ELTimer_GetMSec();
     m_pyBackground.Update(kPPosMainActor.x, kPPosMainActor.y, kPPosMainActor.z);
-
-    DWORD t5 = ELTimer_GetMSec();
     m_GameEventManager.SetCenterPosition(kPPosMainActor.x, kPPosMainActor.y, kPPosMainActor.z);
     m_GameEventManager.Update();
-
-    DWORD t6 = ELTimer_GetMSec();
     m_kChrMgr.Update();
-    DWORD t7 = ELTimer_GetMSec();
     m_kEftMgr.UpdateSound();
-    DWORD t8 = ELTimer_GetMSec();
     m_FlyingManager.Update();
-    DWORD t9 = ELTimer_GetMSec();
     m_pyItem.Update(ptMouse);
-    DWORD t10 = ELTimer_GetMSec();
     m_pyPlayer.Update();
-    DWORD t11 = ELTimer_GetMSec();
 
     // NOTE : Update 동안 위치 값이 바뀌므로 다시 얻어 옵니다 - [levites]
     //        이 부분 때문에 메인 케릭터의 Sound가 이전 위치에서 플레이 되는 현상이 있었음.
     m_pyPlayer.NEW_GetMainActorPosition(&kPPosMainActor);
     SetCenterPosition(kPPosMainActor.x, kPPosMainActor.y, kPPosMainActor.z);
-    DWORD t12 = ELTimer_GetMSec();
-
-    if (PERF_CHECKER_RENDER_GAME)
-    {
-        if (t12 - t1 > 5)
-        {
-            static FILE* fp = fopen("perf_game_update.txt", "w");
-
-            fprintf(fp, "GU.Total %d (Time %d)\n", t12 - t1, ELTimer_GetMSec());
-            fprintf(fp, "GU.GMP %d\n", t2 - t1);
-            fprintf(fp, "GU.SCR %d\n", t3 - t2);
-            fprintf(fp, "GU.MPS %d\n", t4 - t3);
-            fprintf(fp, "GU.BG %d\n", t5 - t4);
-            fprintf(fp, "GU.GEM %d\n", t6 - t5);
-            fprintf(fp, "GU.CHR %d\n", t7 - t6);
-            fprintf(fp, "GU.EFT %d\n", t8 - t7);
-            fprintf(fp, "GU.FLY %d\n", t9 - t8);
-            fprintf(fp, "GU.ITM %d\n", t10 - t9);
-            fprintf(fp, "GU.PLR %d\n", t11 - t10);
-            fprintf(fp, "GU.POS %d\n", t12 - t11);
-            fflush(fp);
-        }
-    }
 }
 
 void CPythonApplication::SkipRenderBuffering(DWORD dwSleepMSec)

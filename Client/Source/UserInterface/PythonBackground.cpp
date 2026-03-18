@@ -264,33 +264,11 @@ void CPythonBackground::Update(float fCenterX, float fCenterY, float fCenterZ)
         return;
     }
 
-#ifdef __PERFORMANCE_CHECKER__
-    DWORD t1 = ELTimer_GetMSec();
-#endif
     UpdateMap(fCenterX, fCenterY, fCenterZ);
-#ifdef __PERFORMANCE_CHECKER__
-    DWORD t2 = ELTimer_GetMSec();
-#endif
+
     UpdateAroundAmbience(fCenterX, fCenterY, fCenterZ);
-#ifdef __PERFORMANCE_CHECKER__
-    DWORD t3 = ELTimer_GetMSec();
-#endif
+
     m_SnowEnvironment.Update(D3DXVECTOR3(fCenterX, -fCenterY, fCenterZ));
-
-#ifdef __PERFORMANCE_CHECKER__
-    {
-        static FILE* fp = fopen("perf_bg_update.txt", "w");
-
-        if (t3 - t1 > 5)
-        {
-            fprintf(fp, "BG.Total %d (Time %f)\n", t3 - t1, ELTimer_GetMSec() / 1000.0f);
-            fprintf(fp, "BG.UpdateMap %d\n", t2 - t1);
-            fprintf(fp, "BG.UpdateAmb %d\n", t3 - t2);
-            fflush(fp);
-        }
-    }
-
-#endif
 
     // Portal Process
     CMapOutdoor& rkMap = GetMapOutdoorRef();
@@ -308,12 +286,12 @@ void CPythonBackground::Update(float fCenterX, float fCenterY, float fCenterZ)
 
         rkCullingMgr.ForInRay(aVector3d, toTop, &kGetPortalID);
 
-        std::set<int>::iterator itor = kGetPortalID.m_kSet_iPortalID.begin();
+        auto itor = kGetPortalID.m_kSet_iPortalID.begin();
 
         if (!__IsSame(kGetPortalID.m_kSet_iPortalID, m_kSet_iShowingPortalID))
         {
             ClearPortal();
-            std::set<int>::iterator itor = kGetPortalID.m_kSet_iPortalID.begin();
+            auto itor = kGetPortalID.m_kSet_iPortalID.begin();
 
             for (; itor != kGetPortalID.m_kSet_iPortalID.end(); ++itor)
             {
@@ -328,7 +306,7 @@ void CPythonBackground::Update(float fCenterX, float fCenterY, float fCenterZ)
 
     // Target Effect Process
     {
-        std::map<DWORD, DWORD>::iterator itor = m_kMap_dwTargetID_dwChrID.begin();
+        auto itor = m_kMap_dwTargetID_dwChrID.begin();
 
         for (; itor != m_kMap_dwTargetID_dwChrID.end(); ++itor)
         {
@@ -355,7 +333,7 @@ void CPythonBackground::Update(float fCenterX, float fCenterY, float fCenterZ)
 
     // Reserve Target Effect
     {
-        std::map<DWORD, SReserveTargetEffect>::iterator itor = m_kMap_dwID_kReserveTargetEffect.begin();
+        auto itor = m_kMap_dwID_kReserveTargetEffect.begin();
 
         for (; itor != m_kMap_dwID_kReserveTargetEffect.end();)
         {
@@ -382,10 +360,7 @@ void CPythonBackground::Update(float fCenterX, float fCenterY, float fCenterZ)
 
 bool CPythonBackground::__IsSame(std::set<int>& rleft, std::set<int>& rright)
 {
-    std::set<int>::iterator itor_l;
-    std::set<int>::iterator itor_r;
-
-    for (itor_l = rleft.begin(); itor_l != rleft.end(); ++itor_l)
+    for (auto itor_l = rleft.begin(); itor_l != rleft.end(); ++itor_l)
     {
         if (!rright.contains(*itor_l))
         {
@@ -393,7 +368,7 @@ bool CPythonBackground::__IsSame(std::set<int>& rleft, std::set<int>& rright)
         }
     }
 
-    for (itor_r = rright.begin(); itor_r != rright.end(); ++itor_r)
+    for (auto itor_r = rright.begin(); itor_r != rright.end(); ++itor_r)
     {
         if (!rleft.contains(*itor_r))
         {
@@ -417,9 +392,7 @@ void CPythonBackground::Render()
         FrameShaderInputs frame{};
 
         // view
-        std::memcpy(frame.view.data(),
-            &CGraphicBase::GetViewMatrix(),
-            sizeof(D3DXMATRIX));
+        std::memcpy(frame.view.data(), &CGraphicBase::GetViewMatrix(), sizeof(D3DXMATRIX));
 
         // camera
         CCamera* pCamera = CCameraManager::Instance().GetCurrentCamera();

@@ -50,9 +50,6 @@ class Console(object):
 		"Exit Program"
 		app.Exit()
 
-	def EnablePerformanceTime(self, mode, isEnable):
-		app.EnablePerformanceTime(mode, int(isEnable))
-
 	def ReloadLocale(self):
 		"Reload Locale"
 		reload(localeInfo)
@@ -825,7 +822,6 @@ class ConsoleWindow(ui.Window):
 		self.AddFunction("perfinfo", Console.ShowPerformanceInfo)
 		self.AddFunction("reload_locale", Console.ReloadLocale)
 		self.AddFunction("re", Console.ReloadDevel)
-		self.AddFunction("perftime", Console.EnablePerformanceTime)
 		self.AddFunction("cooltime", Console.SetCoolTime)
 		self.AddFunction("levellimit", Console.SetLevelLimit)
 		self.AddFunction("showcursor", Console.ShowCursor)

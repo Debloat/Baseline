@@ -3,7 +3,6 @@
 #include "PythonApplication.h"
 #include "../EterLib/Camera.h"
 
-extern bool PERF_CHECKER_RENDER_GAME;
 extern BOOL bVisibleNotice = true;
 extern BOOL bTestServerFlag = FALSE;
 extern int TWOHANDED_WEWAPON_ATT_SPEED_DECREASE_VALUE = 0;
@@ -66,32 +65,6 @@ PyObject* appHideWebPage(PyObject* poSelf, PyObject* poArgs)
 PyObject* appIsWebPageMode(PyObject * poSelf, PyObject * poArgs)
 {
     return Py_BuildValue("i", CPythonApplication::Instance().IsWebPageMode());
-}
-
-PyObject* appEnablePerformanceTime(PyObject* poSelf, PyObject* poArgs)
-{
-    char* szMode;
-
-    if (!PyTuple_GetString(poArgs, 0, &szMode))
-    {
-        return Py_BuildException();
-    }
-
-    int nEnable;
-
-    if (!PyTuple_GetInteger(poArgs, 1, &nEnable))
-    {
-        return Py_BuildException();
-    }
-
-    bool isEnable = nEnable ? true : false;
-
-    if (strcmp(szMode, "RENDER_GAME") == 0)
-    {
-        PERF_CHECKER_RENDER_GAME = isEnable;
-    }
-
-    return Py_BuildNone();
 }
 
 /////////////////////////////////////////////////////
@@ -1361,7 +1334,6 @@ void initapp()
         { "SetTextTailLivingTime",		appSetTextTailLivingTime,		METH_VARARGS },
         // END_OF_TEXTTAIL_LIVINGTIME_CONTROL
 
-        { "EnablePerformanceTime",		appEnablePerformanceTime,		METH_VARARGS },
         { "SetHairColorEnable",			appSetHairColorEnable,			METH_VARARGS },
 
         { "SetArmorSpecularEnable",		appSetArmorSpecularEnable,		METH_VARARGS },
