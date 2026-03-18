@@ -232,7 +232,7 @@ PyObject* questGetQuestData(PyObject * poSelf, PyObject * poArgs)
     {
         {
             // 비어있을 경우 디폴트 이미지를 넣는다.
-            std::string strIconFileName = "icon/scroll_open.tga";
+            std::string strIconFileName = "locale/common/icon/scroll_open.tga";
             pImage = (CGraphicImage*)CResourceManager::Instance().GetResourcePointer(strIconFileName.c_str());
         }
     }

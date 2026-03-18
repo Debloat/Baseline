@@ -1271,7 +1271,7 @@ class Interface(object):
 	
 	def RecvQuest(self, index, name):
 		# QUEST_LETTER_IMAGE
-		self.BINARY_RecvQuest(index, name, "file", localeInfo.GetLetterImageName())
+		self.BINARY_RecvQuest(index, name, "file", "locale/common/icon/scroll_close.tga")
 		# END_OF_QUEST_LETTER_IMAGE
 
 	def BINARY_RecvQuest(self, index, name, iconType, iconName):
@@ -1297,9 +1297,9 @@ class Interface(object):
 			btn.SetDownVisual("locale/common/ui/highlighted_quest_r.tga")
 			btn.Flash()
 		else:
-			btn.SetUpVisual("icon/scroll_close.tga")
-			btn.SetOverVisual("icon/scroll_open.tga")
-			btn.SetDownVisual("icon/scroll_open.tga")
+			btn.SetUpVisual("locale/common/icon/scroll_close.tga")
+			btn.SetOverVisual("locale/common/icon/scroll_open.tga")
+			btn.SetDownVisual("locale/common/icon/scroll_open.tga")
 			btn.Flash()
 		# END_OF_QUEST_LETTER_IMAGE
 

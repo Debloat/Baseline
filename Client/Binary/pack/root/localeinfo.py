@@ -328,9 +328,6 @@ STAT_MINUS_DESCRIPTION = {
 MODE_NAME_LIST = ( PVP_OPTION_NORMAL, PVP_OPTION_REVENGE, PVP_OPTION_KILL, PVP_OPTION_PROTECT, )
 TITLE_NAME_LIST = ( PVP_LEVEL0, PVP_LEVEL1, PVP_LEVEL2, PVP_LEVEL3, PVP_LEVEL4, PVP_LEVEL5, PVP_LEVEL6, PVP_LEVEL7, PVP_LEVEL8, )
 
-def GetLetterImageName():
-	return "icon/scroll_close.tga"
-
 def DO_YOU_SELL_ITEM(sellItemName, sellItemCount, sellItemPrice):
 	if sellItemCount > 1 :
 		return DO_YOU_SELL_ITEM2 % (sellItemName, sellItemCount, NumberToMoneyString(sellItemPrice) )
