@@ -643,11 +643,14 @@ void CMapOutdoor::DrawWireFrame(long patchnum, WORD wPrimitiveCount, D3DPRIMITIV
     D3DXMATRIX matIdentity;
     D3DXMatrixIdentity(&matIdentity);
 
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(matIdentity, matWVP);
-
     ScreenPrimitiveShaderInputs in{};
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+    // world = identity
+    std::memcpy(in.vs.world.data(), &matIdentity, sizeof(D3DXMATRIX));
+
+    // viewProj
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
     in.ps.mode[0] = 0.0f;
     in.ps.mode[1] = 1.0f;
@@ -698,12 +701,14 @@ void CMapOutdoor::RenderMarkedArea()
     D3DXMATRIX matIdentity;
     D3DXMatrixIdentity(&matIdentity);
 
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(matIdentity, matWVP);
-
     TerrainMarkedAreaShaderInputs in{};
 
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    // world = identity
+    std::memcpy(in.vs.world.data(), &matIdentity, sizeof(D3DXMATRIX));
+
+    // viewProj
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
     std::memcpy(in.vs.viewInverse.data(), &m_matViewInverse, sizeof(D3DXMATRIX));
 
     in.vs.texScale[0] = m_fTerrainTexCoordBase * 32.0f;

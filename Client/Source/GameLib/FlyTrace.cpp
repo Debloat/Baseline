@@ -149,10 +149,12 @@ void CFlyTrace::Render()
     D3DXMATRIX matWorld;
     D3DXMatrixIdentity(&matWorld);
 
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(matWorld, matWVP);
+    // world
+    std::memcpy(in.vs.world.data(), &matWorld, sizeof(D3DXMATRIX));
 
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    // viewProj
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
     CGraphicDevice::UploadFlyTraceConstants(in);
 

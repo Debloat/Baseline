@@ -320,9 +320,10 @@ void CGraphicDevice::UploadWaterConstants(const WaterShaderInputs& inputs)
     // ---- Upload ----
     UploadVSConstants(0, perFrame.slot0.data(), 2);         // c0..c1
     UploadVSConstants(2, disp.slot0.data(), 5);             // c2..c6
-    UploadVSConstants(7, inputs.vs.matrices.worldViewProj.data(), 4);   // c7..c10
-    UploadVSConstants(11, inputs.vs.matrices.view.data(), 4);            // c11..c14
-    UploadVSConstants(15, inputs.vs.matrices.texTransform.data(), 4);    // c15..c18
+    UploadVSConstants(7, inputs.vs.matrices.viewProj.data(), 4);  // c7..c10
+    UploadVSConstants(11, inputs.vs.matrices.world.data(), 4);    // c11..c14
+    UploadVSConstants(15, inputs.vs.matrices.view.data(), 4);     // c15..c18
+    UploadVSConstants(19, inputs.vs.matrices.texTransform.data(), 4); // c19..c22
 
     UploadPSConstants(0, perFrame.slot1.data(), 1);         // c0
     UploadPSConstants(1, material.slot0.data(), 6);         // c1..c6
@@ -335,7 +336,8 @@ void CGraphicDevice::UploadSkyboxConstants(const SkyboxShaderInputs& inputs)
         return;
     }
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
 }
 
 void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
@@ -361,9 +363,10 @@ void CGraphicDevice::UploadCloudConstants(const CloudShaderInputs& inputs)
         0.0f
     };
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);
-    UploadVSConstants(4, vs.uvScaleSpeed.data(), 1);
-    UploadVSConstants(5, vs.timeSeconds.data(), 1);
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+    UploadVSConstants(8, vs.uvScaleSpeed.data(), 1);
+    UploadVSConstants(9, vs.timeSeconds.data(), 1);
 
     // --- Pack PS ---
     CloudPSCB ps{};
@@ -378,7 +381,9 @@ void CGraphicDevice::UploadWeaponTraceConstants(const WeaponTraceShaderInputs& i
 
     ps.slot0 = { inputs.ps.slot0 };
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4); // c0..c3
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+
     UploadPSConstants(0, ps.slot0.data(), 1);         // c0
 }
 
@@ -393,7 +398,9 @@ void CGraphicDevice::UploadScreenPrimitiveConstants(const ScreenPrimitiveShaderI
     ps.colorFactor = { inputs.ps.colorFactor };
 
     // --- Upload ---
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4); // VS c0..c3
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+
     UploadPSConstants(0, ps.mode.data(), 2);          // PS c0..c1
 }
 
@@ -411,9 +418,10 @@ void CGraphicDevice::UploadMiniMapConstants(const MiniMapShaderInputs& in)
         0.0f, 0.0f};
 
     // --- Upload ---
-    UploadVSConstants(0, in.vs.worldViewProj.data(), 4);  // c0–c3
-    UploadVSConstants(4, in.vs.world.data(), 4);          // c4–c7
+    UploadVSConstants(0, in.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, in.vs.world.data(), 4);    // c4..c7
     UploadVSConstants(8, in.vs.texTransform.data(), 4);   // c8–c11
+
     UploadPSConstants(0, ps.colorFactor.data(), 2);    // c0–c1
 }
 
@@ -441,7 +449,8 @@ void CGraphicDevice::UploadEffectParticleConstants(const EffectParticleShaderInp
     ps.ops = in.ps.ops;
 
     // --- Upload ---
-    UploadVSConstants(0, in.vs.viewProj.data(), 4);          // VS c0..c3
+    UploadVSConstants(0, in.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, in.vs.world.data(), 4);    // c4..c7
     UploadPSConstants(0, ps.textureFactor.data(), 2);     // PS c0..c1 (textureFactor + ops)
 }
 
@@ -455,7 +464,9 @@ void CGraphicDevice::UploadEffectMeshConstants(const EffectMeshShaderInputs& in)
     ps.textureFactor = in.ps.textureFactor;
 
     // --- Upload ---
-    UploadVSConstants(0, in.vs.worldViewProj.data(), 4);   // VS c0..c3 (WVP)
+    UploadVSConstants(0, in.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, in.vs.world.data(), 4);    // c4..c7
+
     UploadPSConstants(0, ps.textureFactor.data(), 1);   // PS c0
 }
 
@@ -469,7 +480,9 @@ void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
     ModelPSCB ps{};
     ps.textureFlags = inputs.ps.textureFlags;
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+
     UploadPSConstants(0, ps.textureFlags.data(), 1);    // PS c0
 }
 
@@ -480,7 +493,8 @@ void CGraphicDevice::UploadDungeonConstants(const DungeonShaderInputs& inputs)
         return;
     }
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
 }
 
 void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs& in)
@@ -488,7 +502,8 @@ void CGraphicDevice::UploadSnowParticleConstants(const SnowParticleShaderInputs&
     if (!ms_lpd3dDevice)
         return;
 
-    UploadVSConstants(0, in.vs.viewProj.data(), 4); // VS c0..c3
+    UploadVSConstants(0, in.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, in.vs.world.data(), 4);    // c4..c7
 }
 
 void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
@@ -504,9 +519,10 @@ void CGraphicDevice::UploadTerrainConstants(const TerrainShaderInputs& inputs)
     ps.layerState = inputs.ps.layerState;
 
     // --- Upload ---
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);     // VS c0..c3
-    UploadVSConstants(4, inputs.vs.colorTexMatrix.data(), 4);    // VS c4..c7
-    UploadVSConstants(8, inputs.vs.alphaTexMatrix.data(), 4);    // VS c8..c11
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+    UploadVSConstants(8, inputs.vs.colorTexMatrix.data(), 4);    // VS c8..c11
+    UploadVSConstants(12, inputs.vs.alphaTexMatrix.data(), 4);    // VS c12..c15
 
     UploadPSConstants(0, ps.layerState.data(), 1);        // PS c0
 }
@@ -522,9 +538,10 @@ void CGraphicDevice::UploadTerrainMarkedAreaConstants(const TerrainMarkedAreaSha
 
     ps.alpha = inputs.ps.alpha;
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
-    UploadVSConstants(4, inputs.vs.viewInverse.data(), 4);     // VS c4..c7
-    UploadVSConstants(8, inputs.vs.texScale.data(), 1);        // VS c8
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
+    UploadVSConstants(8, inputs.vs.viewInverse.data(), 4);     // VS c8..c11
+    UploadVSConstants(12, inputs.vs.texScale.data(), 1);        // VS c12
 
     UploadPSConstants(0, ps.alpha.data(), 1);           // PS c0
 }
@@ -536,7 +553,8 @@ void CGraphicDevice::UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs)
         return;
     }
 
-    UploadVSConstants(0, inputs.vs.worldViewProj.data(), 4);   // VS c0..c3
+    UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
+    UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
 }
 
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
@@ -593,42 +611,61 @@ void CGraphicDevice::ComputeWorldViewProj(const D3DXMATRIX& world,
 
 void CGraphicDevice::FillScreenPrimitive3D(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const
 {
-    D3DXMATRIX wvp;
-    ComputeWorldViewProj(world, wvp);
-    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    // world
+    std::memcpy(out.vs.world.data(), &world, sizeof(D3DXMATRIX));
+
+    // viewProj
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(out.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2D(ScreenPrimitiveShaderInputs& out) const
 {
+    // world = identity
+    const D3DXMATRIX& identity = CGraphicBase::GetIdentityMatrix();
+    std::memcpy(out.vs.world.data(), &identity, sizeof(D3DXMATRIX));
+
+    // viewProj = proj (no view)
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
-    std::memcpy(out.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.viewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DWorld(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const
 {
+    // world
+    std::memcpy(out.vs.world.data(), &world, sizeof(D3DXMATRIX));
+
+    // viewProj = proj
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
-    D3DXMATRIX wvp = world * proj;
-    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.viewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DOrtho01World(const D3DXMATRIX& world, ScreenPrimitiveShaderInputs& out) const
 {
+    // world
+    std::memcpy(out.vs.world.data(), &world, sizeof(D3DXMATRIX));
+
+    // viewProj = ortho
     D3DXMATRIX proj;
     D3DXMatrixOrthoOffCenterRH(&proj, 0.0f, 1.0f, 1.0f, 0.0f, -1.0f, 1.0f);
 
-    D3DXMATRIX wvp = world * proj;
-    std::memcpy(out.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.viewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 void CGraphicDevice::FillScreenPrimitive2DOrthoPixel(float width, float height, ScreenPrimitiveShaderInputs& out) const
 {
+    // world = identity
+    const D3DXMATRIX& identity = CGraphicBase::GetIdentityMatrix();
+    std::memcpy(out.vs.world.data(), &identity, sizeof(D3DXMATRIX));
+
+    // viewProj = ortho
     D3DXMATRIX proj;
     D3DXMatrixOrthoOffCenterRH(&proj,
         0.0f, width,
         height, 0.0f,
         -1.0f, 1.0f);
 
-    std::memcpy(out.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(out.vs.viewProj.data(), &proj, sizeof(D3DXMATRIX));
 }
 
 bool CGraphicDevice::BindShader(ShaderID id) const

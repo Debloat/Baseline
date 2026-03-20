@@ -1,4 +1,5 @@
-row_major float4x4 g_mWorldViewProj : register(c0);
+row_major float4x4 g_mViewProj : register(c0); // c0..c3
+row_major float4x4 g_mWorld : register(c4); // c4..c7
 
 struct VS_INPUT
 {
@@ -17,7 +18,8 @@ struct VS_OUTPUT
 VS_OUTPUT main(VS_INPUT input)
 {
     VS_OUTPUT o;
-    o.pos = mul(float4(input.pos, 1.0f), g_mWorldViewProj);
+    float4 worldPos = mul(float4(input.pos, 1.0f), g_mWorld);
+    o.pos = mul(worldPos, g_mViewProj);
     o.diffuse = input.diffuse;
     o.uv = input.uv;
     return o;

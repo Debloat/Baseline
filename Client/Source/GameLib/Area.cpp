@@ -344,10 +344,12 @@ void CArea::RenderDungeon()
     D3DXMATRIX world;
     D3DXMatrixIdentity(&world);
 
-    D3DXMATRIX wvp;
-    sp->ComputeWorldViewProj(world, wvp);
+    // world
+    std::memcpy(in.vs.world.data(), &world, sizeof(D3DXMATRIX));
 
-    std::memcpy(in.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+    // viewProj
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
     CGraphicDevice::UploadDungeonConstants(in);
 

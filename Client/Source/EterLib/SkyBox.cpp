@@ -452,9 +452,10 @@ void CSkyBox::Render()
 
     /* - SHADER [SKYBOX] ----------------------------------- */
     SkyboxShaderInputs in{};
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(m_matWorld, matWVP);
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.world.data(), &m_matWorld, sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
     CGraphicDevice::UploadSkyboxConstants(in);
     /* ----------------------------------------------------- */
@@ -567,13 +568,14 @@ void CSkyBox::RenderCloud()
     }
 
     /* - SHADER [CLOUDS] ----------------------------------- */
-    D3DXMATRIX world = m_matWorldCloud;
-
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(world, matWVP);
-
     CloudShaderInputs in{};
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+    // world
+    std::memcpy(in.vs.world.data(), &m_matWorldCloud, sizeof(D3DXMATRIX));
+
+    // viewProj (computed locally using existing API)
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
     in.vs.uvScaleSpeed = { m_fCloudTextureScaleX, m_fCloudTextureScaleY, m_fCloudScrollSpeedU, m_fCloudScrollSpeedV };
     in.vs.timeSeconds[0] = frame.timeSeconds;

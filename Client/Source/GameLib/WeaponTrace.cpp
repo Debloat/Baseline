@@ -296,11 +296,11 @@ void CWeaponTrace::Render()
         return;
     }
 
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(matWorld, matWVP);
-
     WeaponTraceShaderInputs in{};
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.world.data(), &matWorld, sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
     in.ps.slot0[0] = m_bUseTexture ? 1.0f : 0.0f;
     in.ps.slot0[1] = 0.0f;
     in.ps.slot0[2] = 0.0f;

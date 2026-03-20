@@ -1,6 +1,7 @@
-row_major float4x4 worldViewProj : register(c0); // c0..c3
-row_major float4x4 viewInverse : register(c4); // c4..c7
-float4 texScale : register(c8); // c8
+row_major float4x4 viewProj : register(c0); // c0..c3
+row_major float4x4 world : register(c4); // c4..c7
+row_major float4x4 viewInverse : register(c8); // c8..c11
+float4 texScale : register(c12); // c12
 
 struct VS_INPUT
 {
@@ -18,9 +19,9 @@ VS_OUTPUT main(VS_INPUT input)
 {
     VS_OUTPUT output;
 
-    float4 worldPos = float4(input.position, 1.0f);
+    float4 worldPos = mul(float4(input.position, 1.0f), world);
 
-    output.position = mul(worldPos, worldViewProj);
+    output.position = mul(worldPos, viewProj);
 
     float4 camPos = mul(worldPos, viewInverse);
 

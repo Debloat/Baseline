@@ -427,10 +427,12 @@ void CScreen::RenderD3DXMesh(LPD3DXMESH lpMesh, const D3DXMATRIX* c_pmatWorld, f
 
     STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNT));
 
-    D3DXMATRIX matWVP = matWorld * ms_matView * ms_matProj;
-
     ScreenPrimitiveShaderInputs in{};
-    std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+    std::memcpy(in.vs.world.data(), &matWorld, sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewProj = ms_matView * ms_matProj;
+    std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
     in.ps.mode[0] = 0.0f;
     in.ps.mode[1] = 1.0f;
 

@@ -385,7 +385,7 @@ void CPythonMiniMap::Render(float fScreenX, float fScreenY)
     /* constants (WVP source required) */
     MiniMapShaderInputs in{};
     const D3DXMATRIX& proj = CGraphicBase::GetProjMatrix();
-    std::memcpy(in.vs.worldViewProj.data(), &proj, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.viewProj.data(), &proj, sizeof(D3DXMATRIX));
 
     // world matrix is your existing m_matWorld (same math as before)
     std::memcpy(in.vs.world.data(), &m_matWorld, sizeof(D3DXMATRIX));

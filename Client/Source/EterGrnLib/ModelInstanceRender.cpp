@@ -164,11 +164,14 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
             {
                 CGrannyMaterial& rkMtrl = m_kMtrlPal.GetMaterialRef(pTriGroupNode->mtrlIndex);
 
-                D3DXMATRIX matWVP;
-                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
-
                 ModelShaderInputs in{};
-                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+                // world
+                std::memcpy(in.vs.world.data(), &m_meshMatrices[pMeshNode->iMesh], sizeof(D3DXMATRIX));
+
+                // viewProj
+                D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+                std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
                 in.ps.textureFlags[0] = rkMtrl.GetD3DTexture(0) ? 1.0f : 0.0f;
                 in.ps.textureFlags[1] = 0.0f;
                 in.ps.textureFlags[2] = 0.0f;
@@ -196,11 +199,14 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
             {
                 const CGrannyMaterial& rkMtrl = m_kMtrlPal.GetMaterialRef(pTriGroupNode->mtrlIndex);
 
-                D3DXMATRIX matWVP;
-                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
-
                 ModelShaderInputs in{};
-                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+                // world
+                std::memcpy(in.vs.world.data(), &m_meshMatrices[pMeshNode->iMesh], sizeof(D3DXMATRIX));
+
+                // viewProj
+                D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+                std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
                 in.ps.textureFlags[0] = rkMtrl.GetD3DTexture(0) ? 1.0f : 0.0f;
                 in.ps.textureFlags[1] = rkMtrl.GetD3DTexture(1) ? 1.0f : 0.0f;
                 in.ps.textureFlags[2] = 0.0f;
@@ -226,11 +232,14 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
 
             case MESHNODELIST_NO_TEXTURE:
             {
-                D3DXMATRIX matWVP;
-                sp->ComputeWorldViewProj(m_meshMatrices[pMeshNode->iMesh], matWVP);
-
                 ModelShaderInputs in{};
-                std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+
+                // world
+                std::memcpy(in.vs.world.data(), &m_meshMatrices[pMeshNode->iMesh], sizeof(D3DXMATRIX));
+
+                // viewProj
+                D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+                std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
                 in.ps.textureFlags[0] = 0.0f;
                 in.ps.textureFlags[1] = 0.0f;
                 in.ps.textureFlags[2] = 0.0f;

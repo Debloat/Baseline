@@ -214,9 +214,10 @@ void CEffectMeshInstance::OnRender()
 
         EffectMeshShaderInputs in{};
 
-        D3DXMATRIX wvp;
-        sp->ComputeWorldViewProj(m_matWorld, wvp);
-        std::memcpy(in.vs.worldViewProj.data(), &wvp, sizeof(D3DXMATRIX));
+        std::memcpy(in.vs.world.data(), &m_matWorld, sizeof(D3DXMATRIX));
+
+        D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+        std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
 
         TTimeEventTableFloat * TableAlpha;
 

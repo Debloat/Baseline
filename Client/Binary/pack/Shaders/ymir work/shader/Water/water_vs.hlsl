@@ -9,9 +9,10 @@ float4 g_vWaterDisp1      : register(c3);  // waveAmplitude
 float4 g_vWaterDisp2      : register(c4);  // wavesIntensity
 float4 g_vWaterDisp3      : register(c5);  // wavesNoise
 float4 g_vWaterDisp4      : register(c6);  // x=waveAmplitudeFactor, y=heightAmplitude, z/w padding
-row_major float4x4 g_mWorldViewProj : register(c7);  // Combined world * view * projection matrix
-row_major float4x4 g_mView          : register(c11); // View matrix (used for fog depth computation)
-row_major float4x4 g_mTexTransform : register(c15); // Legacy texture transform (kept for compatibility, not used here)
+row_major float4x4 g_mViewProj : register(c7); // c7..c10
+row_major float4x4 g_mWorld : register(c11); // c11..c14
+row_major float4x4 g_mView : register(c15); // c15..c18
+row_major float4x4 g_mTexTransform : register(c19); // c19..c22
 // -----------------------------------
 
 // Heightmap texture (R channel used as displacement source)
@@ -185,23 +186,23 @@ VS_OUT main(VS_IN vin)
                 * heightAmplitude // world units
                 * attenDetail;
 
-    float4 worldPos = float4(displacedPos, 1.0f);
+    float4 worldPos = mul(float4(displacedPos, 1.0f), g_mWorld);
 
-    // --------------------------------------------------
-    // Standard transform pipeline
-    // --------------------------------------------------
+// --------------------------------------------------
+// Standard transform pipeline
+// --------------------------------------------------
 
-    // Clip-space transform
-    vout.Pos = mul(worldPos, g_mWorldViewProj);
+// Clip-space transform
+    vout.Pos = mul(worldPos, g_mViewProj);
 
-    // Pass world-space UV to pixel shader
+// Pass world-space UV to pixel shader
     vout.Tex = worldUV;
 
-    // Debug: expose raw blended height (total displacement in world units)
+// Debug: expose raw blended height (total displacement in world units)
     vout.Height = displacedPos.z - vin.Pos.z;
 
-    // World-space position after displacement
-    vout.WorldPos = displacedPos;
+// World-space position after displacement
+    vout.WorldPos = worldPos.xyz;
 
     // Forward vertex color (alpha = shoreline fade)
     vout.Color = vin.Color;

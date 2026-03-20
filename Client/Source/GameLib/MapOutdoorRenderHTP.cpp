@@ -179,7 +179,6 @@ void CMapOutdoor::__HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD 
         return;
     }
 
-    D3DXMATRIX matWVP;
     D3DXMATRIX matPatchTranslate;
     D3DXMATRIX matSplatAlphaTexTransform;
     D3DXMATRIX matSplatColorTexTransform;
@@ -187,7 +186,7 @@ void CMapOutdoor::__HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD 
     D3DXMATRIX matIdentity;
     D3DXMatrixIdentity(&matIdentity);
 
-    sp->ComputeWorldViewProj(matIdentity, matWVP);
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
 
     D3DXMatrixIdentity(&matPatchTranslate);
     matPatchTranslate._41 = -(float)(wCoordX * CTerrainImpl::TERRAIN_XSIZE);
@@ -239,7 +238,8 @@ void CMapOutdoor::__HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD 
         std::memcpy(&matSplatColorTexTransform, &rTexture.m_matTransform, sizeof(D3DXMATRIX));
 
         TerrainShaderInputs in{};
-        std::memcpy(in.vs.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+        std::memcpy(in.vs.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
+        std::memcpy(in.vs.world.data(), &matIdentity, sizeof(D3DXMATRIX));
         std::memcpy(in.vs.colorTexMatrix.data(), &matSplatColorTexTransform, sizeof(D3DXMATRIX));
         std::memcpy(in.vs.alphaTexMatrix.data(), &matSplatAlphaTexTransform, sizeof(D3DXMATRIX));
 

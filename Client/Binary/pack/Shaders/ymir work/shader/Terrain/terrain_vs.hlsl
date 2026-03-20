@@ -1,6 +1,7 @@
-row_major float4x4 WorldViewProj : register(c0);
-row_major float4x4 ColorTexMatrix : register(c4);
-row_major float4x4 AlphaTexMatrix : register(c8);
+row_major float4x4 ViewProj : register(c0); // c0..c3
+row_major float4x4 World : register(c4); // c4..c7
+row_major float4x4 ColorTexMatrix : register(c8); // c8..c11
+row_major float4x4 AlphaTexMatrix : register(c12); // c12..c15
 
 struct VS_INPUT
 {
@@ -22,12 +23,12 @@ VS_OUTPUT main(VS_INPUT input)
 {
     VS_OUTPUT o;
 
-    float4 worldPos = float4(input.pos, 1.0);
+    float4 worldPos = mul(float4(input.pos, 1.0), World);
 
     o.worldPos = worldPos.xyz;
-    o.normal = input.normal;
+    o.normal = mul(float4(input.normal, 0.0f), World).xyz;
 
-    o.position = mul(worldPos, WorldViewProj);
+    o.position = mul(worldPos, ViewProj);
 
     float4 colorUV = mul(worldPos, ColorTexMatrix);
     float4 alphaUV = mul(worldPos, AlphaTexMatrix);

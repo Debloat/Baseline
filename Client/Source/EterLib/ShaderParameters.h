@@ -109,9 +109,10 @@ struct WaterDisplacementCB
 
 struct WaterMatricesCB
 {
-    std::array<float, 16> worldViewProj; /* ==== VS: c7..c10  | PS: -- ==== */
-    std::array<float, 16> view;          /* ==== VS: c11..c14 | PS: -- ==== */
-    std::array<float, 16> texTransform;  /* ==== VS: c15..c18 | PS: -- ==== */
+    std::array<float, 16> viewProj;      /* ==== VS: c7..c10  | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c11..c14 | PS: -- ==== */
+    std::array<float, 16> view;          /* ==== VS: c15..c18 | PS: -- ==== */
+    std::array<float, 16> texTransform;  /* ==== VS: c19..c22 | PS: -- ==== */
 };
 
 struct WaterMaterialCB
@@ -126,7 +127,7 @@ struct WaterMaterialCB
 
 static_assert(sizeof(WaterPerFrameCB) == 32);
 static_assert(sizeof(WaterDisplacementCB) == 80);
-static_assert(sizeof(WaterMatricesCB) == 192);
+static_assert(sizeof(WaterMatricesCB) == 256);
 static_assert(sizeof(WaterMaterialCB) == 96);
 
 struct WaterShaderInputs
@@ -151,10 +152,11 @@ struct WaterShaderInputs
 
 struct SkyboxVSCB
 {
-    std::array<float, 16> worldViewProj; /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> viewProj; /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;    /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
-static_assert(sizeof(SkyboxVSCB) == 64);
+static_assert(sizeof(SkyboxVSCB) == 128);
 
 struct SkyboxShaderInputs
 {
@@ -163,12 +165,13 @@ struct SkyboxShaderInputs
 
 struct CloudVSCB
 {
-    std::array<float, 16> worldViewProj; /* ==== VS: c0..c3   | PS: -- ==== */
-    std::array<float, 4>  uvScaleSpeed;  /* ==== VS: c4       | PS: -- ==== */
-    std::array<float, 4>  timeSeconds;   /* ==== VS: c5       | PS: -- ==== */
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
+    std::array<float, 4>  uvScaleSpeed;  /* ==== VS: c8       | PS: -- ==== */
+    std::array<float, 4>  timeSeconds;   /* ==== VS: c9       | PS: -- ==== */
 };
 
-static_assert(sizeof(CloudVSCB) == 96);
+static_assert(sizeof(CloudVSCB) == 160);
 
 struct CloudPSCB
 {
@@ -255,7 +258,8 @@ inline WeaponTraceShaderSettings& GetWeaponTraceShaderSettings()
 
 struct WeaponTraceVSCB
 {
-    std::array<float, 16> worldViewProj; // VS c0..c3
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
 struct WeaponTracePSCB
@@ -263,7 +267,7 @@ struct WeaponTracePSCB
     std::array<float, 4> slot0; // PS c0 (x = useTexture)
 };
 
-static_assert(sizeof(WeaponTraceVSCB) == 64);
+static_assert(sizeof(WeaponTraceVSCB) == 128);
 static_assert(sizeof(WeaponTracePSCB) == 16);
 
 struct WeaponTraceShaderInputs
@@ -276,7 +280,8 @@ struct WeaponTraceShaderInputs
 
 struct ScreenPrimitiveVSCB
 {
-    std::array<float, 16> worldViewProj; // VS c0..c3
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
 struct ScreenPrimitivePSCB
@@ -285,7 +290,7 @@ struct ScreenPrimitivePSCB
     std::array<float, 4>  colorFactor;
 };
 
-static_assert(sizeof(ScreenPrimitiveVSCB) == 64);
+static_assert(sizeof(ScreenPrimitiveVSCB) == 128);
 static_assert(sizeof(ScreenPrimitivePSCB) == 32);
 
 struct ScreenPrimitiveShaderInputs
@@ -310,8 +315,8 @@ inline MiniMapShaderSettings& GetMiniMapShaderSettings()
 
 struct MiniMapVSCB
 {
-    std::array<float, 16> worldViewProj; // c0..c3
-    std::array<float, 16> world;         // c4..c7
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
     std::array<float, 16> texTransform;  // c8..c11
 };
 
@@ -351,9 +356,10 @@ struct TextShaderInputs
 
 struct EffectParticleVSCB
 {
-    std::array<float, 16> viewProj;
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
-static_assert(sizeof(EffectParticleVSCB) == 64);
+static_assert(sizeof(EffectParticleVSCB) == 128);
 
 struct EffectParticlePSCB
 {
@@ -370,9 +376,10 @@ struct EffectParticleShaderInputs
 
 struct EffectMeshVSCB
 {
-    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
-static_assert(sizeof(EffectMeshVSCB) == 64);
+static_assert(sizeof(EffectMeshVSCB) == 128);
 
 struct EffectMeshPSCB
 {
@@ -390,7 +397,8 @@ struct EffectMeshShaderInputs
 
 struct ModelVSCB
 {
-    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
 struct ModelPSCB
@@ -406,7 +414,8 @@ struct ModelShaderInputs
 
 struct DungeonVSCB
 {
-    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
 struct DungeonPSCB
@@ -423,9 +432,10 @@ struct DungeonShaderInputs
 
 struct SnowParticleVSCB
 {
-    std::array<float, 16> viewProj;
+    std::array<float, 16> viewProj;      /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;         /* ==== VS: c4..c7   | PS: -- ==== */
 };
-static_assert(sizeof(SnowParticleVSCB) == 64);
+static_assert(sizeof(SnowParticleVSCB) == 128);
 
 struct SnowParticleShaderInputs
 {
@@ -436,9 +446,10 @@ struct SnowParticleShaderInputs
 
 struct TerrainVSCB
 {
-    std::array<float, 16> worldViewProj;
-    std::array<float, 16> colorTexMatrix;
-    std::array<float, 16> alphaTexMatrix;
+    std::array<float, 16> viewProj;       /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;          /* ==== VS: c4..c7   | PS: -- ==== */
+    std::array<float, 16> colorTexMatrix; /* ==== VS: c8..c11  | PS: -- ==== */
+    std::array<float, 16> alphaTexMatrix; /* ==== VS: c12..c15 | PS: -- ==== */
 };
 
 struct TerrainPSCB
@@ -454,7 +465,8 @@ struct TerrainShaderInputs
 
 struct TerrainMarkedAreaVSCB
 {
-    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewProj;       /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;          /* ==== VS: c4..c7   | PS: -- ==== */
     std::array<float, 16> viewInverse;
     std::array<float, 4> texScale; // x= texscale yzw = padding
 };
@@ -474,7 +486,8 @@ struct TerrainMarkedAreaShaderInputs
 
 struct FlyTraceVSCB
 {
-    std::array<float, 16> worldViewProj;
+    std::array<float, 16> viewProj;       /* ==== VS: c0..c3   | PS: -- ==== */
+    std::array<float, 16> world;          /* ==== VS: c4..c7   | PS: -- ==== */
 };
 
 struct FlyTracePSCB

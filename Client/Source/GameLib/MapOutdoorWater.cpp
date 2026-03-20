@@ -116,15 +116,16 @@ void CMapOutdoor::RenderWater()
     const auto& ws = GetWaterShaderSettings();
 
     const FrameShaderInputs& frame = sp->GetFrameShaderInputs();
-    // --- WVP ---
-    D3DXMATRIX matWVP;
-    sp->ComputeWorldViewProj(m_matWorldForCommonUse, matWVP);
+
     // --- View ---
     D3DXMATRIX matView;
     std::memcpy(&matView, frame.view.data(), sizeof(D3DXMATRIX));
 
     WaterShaderInputs in{};
-    std::memcpy(in.vs.matrices.worldViewProj.data(), &matWVP, sizeof(D3DXMATRIX));
+    std::memcpy(in.vs.matrices.world.data(), &m_matWorldForCommonUse, sizeof(D3DXMATRIX));
+
+    D3DXMATRIX viewProj = CGraphicBase::GetViewMatrix() * CGraphicBase::GetProjMatrix();
+    std::memcpy(in.vs.matrices.viewProj.data(), &viewProj, sizeof(D3DXMATRIX));
     std::memcpy(in.vs.matrices.view.data(), &matView, sizeof(D3DXMATRIX));
     std::memcpy(in.vs.matrices.texTransform.data(), &matTexTransformWater, sizeof(D3DXMATRIX));
 

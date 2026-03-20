@@ -1,4 +1,5 @@
-row_major float4x4 g_worldViewProj;
+row_major float4x4 g_viewProj;
+row_major float4x4 g_world;
 
 struct VS_INPUT
 {
@@ -15,7 +16,8 @@ struct VS_OUTPUT
 VS_OUTPUT main(VS_INPUT input)
 {
     VS_OUTPUT o;
-    o.position = mul(float4(input.position, 1.0f), g_worldViewProj);
+    float4 worldPos = mul(float4(input.position, 1.0f), g_world);
+    o.position = mul(worldPos, g_viewProj);
     o.texcoord = input.texcoord;
     return o;
 }

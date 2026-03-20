@@ -1,4 +1,4 @@
-row_major float4x4 g_mWorldViewProj : register(c0);
+row_major float4x4 g_mViewProj : register(c0);
 row_major float4x4 g_mWorld : register(c4);
 row_major float4x4 g_mTexTransform : register(c8);
 
@@ -20,7 +20,7 @@ VS_OUT main(VS_IN input)
     VS_OUT o;
 
     float4 worldPos = mul(float4(input.pos, 1.0), g_mWorld);
-    o.pos = mul(worldPos, g_mWorldViewProj);
+    o.pos = mul(worldPos, g_mViewProj);
 
     o.uvTile = input.uv;
 
