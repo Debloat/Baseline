@@ -1,10 +1,10 @@
 #ifndef LIGHT_HLSL
 #define LIGHT_HLSL
 
-float4 g_frame0 : register(c1); // xyz = cameraPos
-float4 g_frame1 : register(c2); // xyz = sunDir
-float4 g_frame2 : register(c3); // xyz = sunColor
-float4 g_frame3 : register(c4); // xyz = ambientColor
+float4 g_frame0 : register(c100); // xyz = cameraPos
+float4 g_frame1 : register(c101); // xyz = sunDir
+float4 g_frame2 : register(c102); // xyz = sunColor
+float4 g_frame3 : register(c103); // xyz = ambientColor
 
 float3 GetCameraPos()
 {

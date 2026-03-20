@@ -177,6 +177,13 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
                 in.ps.textureFlags[2] = 0.0f;
                 in.ps.textureFlags[3] = 0.0f;
 
+                in.ps.specularParams[0] = rkMtrl.IsSpecularEnabled() ? 1.0f : 0.0f;
+                const float s = rkMtrl.GetSpecularPower();
+                // remap [0..1] → [8..128]
+                in.ps.specularParams[1] = 8.0f + s * (128.0f - 8.0f);
+                in.ps.specularParams[2] = rkMtrl.IsSpecularEnabled() ? 1.0f : 0.0f;
+                in.ps.specularParams[3] = 0.0f;
+
                 CGraphicDevice::UploadModelConstants(in);
 
                 if (rkMtrl.IsTwoSided())
@@ -212,6 +219,13 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
                 in.ps.textureFlags[2] = 0.0f;
                 in.ps.textureFlags[3] = 0.0f;
 
+                in.ps.specularParams[0] = rkMtrl.IsSpecularEnabled() ? 1.0f : 0.0f;
+                const float s = rkMtrl.GetSpecularPower();
+                // remap [0..1] → [8..128]
+                in.ps.specularParams[1] = 8.0f + s * (128.0f - 8.0f);
+                in.ps.specularParams[2] = rkMtrl.IsSpecularEnabled() ? 1.0f : 0.0f;
+                in.ps.specularParams[3] = 0.0f;
+
                 CGraphicDevice::UploadModelConstants(in);
 
                 if (rkMtrl.IsTwoSided())
@@ -244,6 +258,11 @@ void CGrannyModelInstance::RenderMeshNodeList(CGrannyMesh::EType eMeshType, CGra
                 in.ps.textureFlags[1] = 0.0f;
                 in.ps.textureFlags[2] = 0.0f;
                 in.ps.textureFlags[3] = 0.0f;
+
+                in.ps.specularParams[0] = 0.0f;
+                in.ps.specularParams[1] = 0.0f;
+                in.ps.specularParams[2] = 0.0f;
+                in.ps.specularParams[3] = 0.0f;
 
                 CGraphicDevice::UploadModelConstants(in);
 

@@ -404,6 +404,7 @@ struct ModelVSCB
 struct ModelPSCB
 {
     std::array<float, 4> textureFlags;
+    std::array<float, 4> specularParams;  // x = enabled, y = power, z = intensity, w unused
 };
 
 struct ModelShaderInputs

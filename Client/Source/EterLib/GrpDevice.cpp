@@ -459,15 +459,11 @@ void CGraphicDevice::UploadEffectMeshConstants(const EffectMeshShaderInputs& in)
     if (!ms_lpd3dDevice)
         return;
 
-    // --- Pack ---
-    EffectMeshPSCB ps{};
-    ps.textureFactor = in.ps.textureFactor;
-
     // --- Upload ---
     UploadVSConstants(0, in.vs.viewProj.data(), 4); // c0..c3
     UploadVSConstants(4, in.vs.world.data(), 4);    // c4..c7
 
-    UploadPSConstants(0, ps.textureFactor.data(), 1);   // PS c0
+    UploadPSConstants(0, in.ps.textureFactor.data(), 1);   // PS c0
 }
 
 void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
@@ -477,13 +473,11 @@ void CGraphicDevice::UploadModelConstants(const ModelShaderInputs& inputs)
         return;
     }
 
-    ModelPSCB ps{};
-    ps.textureFlags = inputs.ps.textureFlags;
-
     UploadVSConstants(0, inputs.vs.viewProj.data(), 4); // c0..c3
     UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
 
-    UploadPSConstants(0, ps.textureFlags.data(), 1);    // PS c0
+    UploadPSConstants(0, inputs.ps.textureFlags.data(), 1);    // PS c0
+    UploadPSConstants(1, inputs.ps.specularParams.data(), 1);  // PS c1
 }
 
 void CGraphicDevice::UploadDungeonConstants(const DungeonShaderInputs& inputs)
@@ -594,10 +588,10 @@ void CGraphicDevice::UploadFrameConstants(const FrameShaderInputs& frame)
     float v2[4] = { frame.sunColor[0], frame.sunColor[1], frame.sunColor[2], 0.0f };
     float v3[4] = { frame.ambientColor[0], frame.ambientColor[1], frame.ambientColor[2], 0.0f };
 
-    UploadPSConstants(1, v0, 1);
-    UploadPSConstants(2, v1, 1);
-    UploadPSConstants(3, v2, 1);
-    UploadPSConstants(4, v3, 1);
+    UploadPSConstants(100, v0, 1);
+    UploadPSConstants(101, v1, 1);
+    UploadPSConstants(102, v2, 1);
+    UploadPSConstants(103, v3, 1);
 }
 
 void CGraphicDevice::ComputeWorldViewProj(const D3DXMATRIX& world,
