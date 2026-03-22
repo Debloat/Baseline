@@ -56,12 +56,6 @@ class CMapOutdoor : public CMapBase
             PART_NUM,
         };
 
-        enum ETerrainRenderSort
-        {
-            DISTANCE_SORT,
-            TEXTURE_SORT,
-        };
-
     public:
         CMapOutdoor();
         virtual ~CMapOutdoor();
@@ -315,70 +309,10 @@ class CMapOutdoor : public CMapBase
             }
         };
 
-    public:
-        using TTerrainNumVector = std::vector<BYTE>;
-        struct FSortPatchDrawStructWithTerrainNum
-        {
-            static TTerrainNumVector m_TerrainNumVector;
-            FSortPatchDrawStructWithTerrainNum()
-            {
-                m_TerrainNumVector.clear();
-            }
-
-            bool operator()(const TPatchDrawStruct & lhs, const TPatchDrawStruct & rhs)
-            {
-                DWORD lhsTerrainNumOrder = 0, rhsTerrainNumOrder = 0;
-                bool blhsOrderFound = false;
-                bool brhsOrderFound = false;
-
-                auto lhsIterator = std::ranges::find(m_TerrainNumVector, lhs.byTerrainNum);
-                auto rhsIterator = std::ranges::find(m_TerrainNumVector, rhs.byTerrainNum);
-
-                if (lhsIterator != m_TerrainNumVector.end())
-                {
-                    blhsOrderFound = true;
-                    lhsTerrainNumOrder = lhsIterator - m_TerrainNumVector.begin();
-                }
-
-                if (rhsIterator != m_TerrainNumVector.end())
-                {
-                    brhsOrderFound = true;
-                    rhsTerrainNumOrder = rhsIterator - m_TerrainNumVector.begin();
-                }
-
-                if (!brhsOrderFound)
-                {
-                    m_TerrainNumVector.push_back(rhs.byTerrainNum);
-                    rhsTerrainNumOrder = m_TerrainNumVector.size() - 1;
-                }
-
-                if (!blhsOrderFound)
-                {
-                    lhsIterator = std::find(m_TerrainNumVector.begin(), m_TerrainNumVector.end(), lhs.byTerrainNum);
-
-                    if (lhsIterator != m_TerrainNumVector.end())
-                    {
-                        blhsOrderFound = true;
-                        lhsTerrainNumOrder = lhsIterator - m_TerrainNumVector.begin();
-                    }
-
-                    if (!blhsOrderFound)
-                    {
-                        m_TerrainNumVector.push_back(lhs.byTerrainNum);
-                        lhsTerrainNumOrder = m_TerrainNumVector.size() - 1;
-                    }
-                }
-
-                return lhsTerrainNumOrder < rhsTerrainNumOrder;
-            }
-        };
-
     protected:
 
         std::vector<std::pair<float, long >> m_PatchVector;
         std::vector<TPatchDrawStruct> m_PatchDrawStructVector;
-
-        void					SetPatchDrawVector();
 
         /* - YOSUN_WORLD_EDITOR -------------------------------- */
         void					OnRenderPatchGrid();
@@ -542,19 +476,6 @@ class CMapOutdoor : public CMapBase
         {
             m_fOpaqueWaterDepth = fOpaqueWaterDepth;
         }
-
-        void	SetTerrainRenderSort(ETerrainRenderSort eTerrainRenderSort)
-        {
-            m_eTerrainRenderSort = eTerrainRenderSort;
-        }
-
-        ETerrainRenderSort	GetTerrainRenderSort()
-        {
-            return m_eTerrainRenderSort;
-        }
-
-    protected:
-        ETerrainRenderSort m_eTerrainRenderSort;
 
     protected:
         CGraphicImageInstance	m_attrImageInstance;

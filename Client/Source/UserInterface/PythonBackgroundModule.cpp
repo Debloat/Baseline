@@ -387,19 +387,6 @@ PyObject* backgroundSetBGLoading(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildNone();
 }
 
-PyObject* backgroundSetRenderSort(PyObject * poSelf, PyObject * poArgs)
-{
-    int eSort;
-
-    if (!PyTuple_GetInteger(poArgs, 0, &eSort))
-    {
-        return Py_BadArgument();
-    }
-
-    CPythonBackground::Instance().SetTerrainRenderSort((CMapOutdoor::ETerrainRenderSort) eSort);
-    return Py_BuildNone();
-}
-
 PyObject* backgroundSetTransparentTree(PyObject * poSelf, PyObject * poArgs)
 {
     int bTransparent;
@@ -560,7 +547,6 @@ void initBackground()
         { "GetFarClip",							backgroundGetFarClip,						METH_VARARGS },
         { "GetDistanceSetInfo",					backgroundGetDistanceSetInfo,				METH_VARARGS },
         { "SetBGLoading",						backgroundSetBGLoading,						METH_VARARGS },
-        { "SetRenderSort",						backgroundSetRenderSort,					METH_VARARGS },
         { "SetTransparentTree",					backgroundSetTransparentTree,				METH_VARARGS },
         { "SetXMasTree",						backgroundSetXMasTree,						METH_VARARGS },
         { "RegisterDungeonMapName",				backgroundRegisterDungeonMapName,			METH_VARARGS },
@@ -587,7 +573,4 @@ void initBackground()
     PyModule_AddIntConstant(poModule, "DISTANCE2", CPythonBackground::DISTANCE2);
     PyModule_AddIntConstant(poModule, "DISTANCE3", CPythonBackground::DISTANCE3);
     PyModule_AddIntConstant(poModule, "DISTANCE4", CPythonBackground::DISTANCE4);
-
-    PyModule_AddIntConstant(poModule, "DISTANCE_SORT", CMapOutdoor::DISTANCE_SORT);
-    PyModule_AddIntConstant(poModule, "TEXTURE_SORT", CMapOutdoor::TEXTURE_SORT);
 }

@@ -33,11 +33,6 @@ class Console(object):
 			"sky":background.PART_SKY,
 		}
 
-		self.bgSortDict = {
-			"distance":background.DISTANCE_SORT,
-			"texture":background.TEXTURE_SORT,
-		}
-
 		self.game = 0
 
 	def Close(self):
@@ -370,15 +365,6 @@ class Console(object):
 		else:
 			background.SetBGLoading(bResultBoolean)
 			self.Print("Background loading: %d" % (bResultBoolean))
-
-	def SetTerrainRenderSort(self, arg):
-		"Terrain rendering type"
-		try:
-			background.SetRenderSort(self.bgSortDict[arg]);
-		except KeyError:
-			self.Print("Unknown part: ", arg);
-		except:
-			raise
 
 	def SetTransparentTree(self, arg):
 		"Tree's leaf transparency"
@@ -791,7 +777,6 @@ class ConsoleWindow(ui.Window):
 		self.AddFunction("splat",		Console.SetSplatLimit)
 		self.AddFunction("distance", 	Console.SelectViewDistanceNum)
 		self.AddFunction("bgloading",	Console.SetBGLoading)
-		self.AddFunction("terrainrender",	Console.SetTerrainRenderSort)
 		self.AddFunction("transtree",		Console.SetTransparentTree)
 		self.AddFunction("stune",		Console.SetStunEffect)
 		self.AddFunction("duste",		Console.SetDustEffect)

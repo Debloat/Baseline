@@ -17,8 +17,6 @@
 
 CArea::TCRCWithNumberVector m_dwRenderedCRCWithNumberVector;
 
-CMapOutdoor::TTerrainNumVector CMapOutdoor::FSortPatchDrawStructWithTerrainNum::m_TerrainNumVector;
-
 void CMapOutdoor::RenderTerrain()
 {
     if (!IsVisiblePart(PART_TERRAIN))
@@ -523,67 +521,6 @@ void CMapOutdoor::SelectIndexBuffer(BYTE byLODLevel, WORD * pwPrimitiveCount, D3
     }
 
     STATEMANAGER.SetIndices(m_IndexBuffer[byLODLevel].GetD3DIndexBuffer(), 0);
-}
-
-void CMapOutdoor::SetPatchDrawVector()
-{
-    assert(NULL != m_pTerrainPatchProxyList && "CMapOutdoor::__SetPatchDrawVector");
-
-    m_PatchDrawStructVector.clear();
-
-    std::vector<std::pair<float, long >>::iterator aDistancePatchVectorIterator;
-
-    TPatchDrawStruct aPatchDrawStruct;
-
-    aDistancePatchVectorIterator = m_PatchVector.begin();
-
-    while (aDistancePatchVectorIterator != m_PatchVector.end())
-    {
-        std::pair<float, long> adistancePatchPair = *aDistancePatchVectorIterator;
-
-        CTerrainPatchProxy * pTerrainPatchProxy = &m_pTerrainPatchProxyList[adistancePatchPair.second];
-
-        if (!pTerrainPatchProxy->isUsed())
-        {
-            ++aDistancePatchVectorIterator;
-            continue;
-        }
-
-        long lPatchNum = pTerrainPatchProxy->GetPatchNum();
-
-        if (lPatchNum < 0)
-        {
-            ++aDistancePatchVectorIterator;
-            continue;
-        }
-
-        BYTE byTerrainNum = pTerrainPatchProxy->GetTerrainNum();
-
-        if (0xFF == byTerrainNum)
-        {
-            ++aDistancePatchVectorIterator;
-            continue;
-        }
-
-        CTerrain * pTerrain;
-
-        if (!GetTerrainPointer(byTerrainNum, &pTerrain))
-        {
-            ++aDistancePatchVectorIterator;
-            continue;
-        }
-
-        aPatchDrawStruct.fDistance				= adistancePatchPair.first;
-        aPatchDrawStruct.byTerrainNum			= byTerrainNum;
-        aPatchDrawStruct.lPatchNum				= lPatchNum;
-        aPatchDrawStruct.pTerrainPatchProxy		= pTerrainPatchProxy;
-
-        m_PatchDrawStructVector.push_back(aPatchDrawStruct);
-
-        ++aDistancePatchVectorIterator;
-    }
-
-    std::ranges::stable_sort(m_PatchDrawStructVector, FSortPatchDrawStructWithTerrainNum());
 }
 
 struct FPatchNumMatch

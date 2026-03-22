@@ -514,17 +514,6 @@ bool CMapManager::GetAttr(int iX, int iY, BYTE * pbyAttr)
     return rkMap.GetAttr(iX, iY, pbyAttr);
 }
 
-void CMapManager::SetTerrainRenderSort(CMapOutdoor::ETerrainRenderSort eTerrainRenderSort)
-{
-    if (!IsMapReady())
-    {
-        return;
-    }
-
-    CMapOutdoor& rkMap = GetMapOutdoorRef();
-    rkMap.SetTerrainRenderSort(eTerrainRenderSort);
-}
-
 void CMapManager::SetTransparentTree(bool bTransparenTree)
 {
     if (!IsMapReady())
@@ -534,17 +523,6 @@ void CMapManager::SetTransparentTree(bool bTransparenTree)
 
     CMapOutdoor& rkMap = GetMapOutdoorRef();
     rkMap.SetTransparentTree(bTransparenTree);
-}
-
-CMapOutdoor::ETerrainRenderSort CMapManager::GetTerrainRenderSort()
-{
-    if (!IsMapReady())
-    {
-        return CMapOutdoor::DISTANCE_SORT;
-    }
-
-    CMapOutdoor& rkMap = GetMapOutdoorRef();
-    return rkMap.GetTerrainRenderSort();
 }
 
 void CMapManager::GetBaseXY(DWORD * pdwBaseX, DWORD * pdwBaseY)

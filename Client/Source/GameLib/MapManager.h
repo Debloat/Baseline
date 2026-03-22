@@ -102,9 +102,6 @@ class CMapManager : public CScreen, public IPhysicsWorld
         CSpeedTreeForestDirectX9	m_Forest;
 
     public:
-        void	SetTerrainRenderSort(CMapOutdoor::ETerrainRenderSort eTerrainRenderSort);
-        CMapOutdoor::ETerrainRenderSort	GetTerrainRenderSort();
-
         void	GetBaseXY(DWORD * pdwBaseX, DWORD * pdwBaseY);
 
     public:
