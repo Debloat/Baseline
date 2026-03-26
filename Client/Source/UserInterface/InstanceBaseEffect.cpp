@@ -17,27 +17,6 @@ std::string CInstanceBase::ms_astAffectEffectAttachBone[EFFECT_NUM];
 
 #define BYTE_COLOR_TO_D3DX_COLOR(r, g, b) D3DXCOLOR(float(r)/255.0f, float(g)/255.0f, float(b)/255.0f, 1.0f)
 
-/*
-D3DXCOLOR CInstanceBase::ms_kD3DXClrPC(0xFFFFD84D);//1.0f, 0.8470f, 0.3f, 1.0f
-D3DXCOLOR CInstanceBase::ms_kD3DXClrNPC(0xFF7BE85E);//0.4823f, 0.9098f, 0.3686f, 1.0f
-D3DXCOLOR CInstanceBase::ms_kD3DXClrMOB(0xFFEC170a);//0.9254f, 0.0901f, 0.0392f, 1.0f
-D3DXCOLOR CInstanceBase::ms_kD3DXClrPVP(0xFF8532D9);
-D3DXCOLOR CInstanceBase::ms_kD3DXClrPVPSelf(0xFFEE36DF);
-D3DXCOLOR CInstanceBase::ms_kD3DXClrKiller = BYTE_COLOR_TO_D3DX_COLOR(180, 100, 0);
-D3DXCOLOR CInstanceBase::ms_kD3DXClrTitle[CInstanceBase::TITLE_MAX_NUM] =
-{
-	BYTE_COLOR_TO_D3DX_COLOR(  0, 204, 255),
-	BYTE_COLOR_TO_D3DX_COLOR(  0, 144, 255),
-	BYTE_COLOR_TO_D3DX_COLOR( 92, 110, 255),
-	BYTE_COLOR_TO_D3DX_COLOR(155, 155, 255),
-	0xFFFFFFFF, // None
-	BYTE_COLOR_TO_D3DX_COLOR(207, 117,   0),
-	BYTE_COLOR_TO_D3DX_COLOR(235,  83,   0),
-	BYTE_COLOR_TO_D3DX_COLOR(227,   0,   0),
-	BYTE_COLOR_TO_D3DX_COLOR(255,   0,   0),
-};
-*/
-
 D3DXCOLOR g_akD3DXClrTitle[CInstanceBase::TITLE_NUM];
 D3DXCOLOR g_akD3DXClrName[CInstanceBase::NAMECOLOR_NUM];
 
@@ -265,9 +244,7 @@ void CInstanceBase::__EffectContainer_Destroy()
 {
     SEffectContainer::Dict& rkDctEftID = __EffectContainer_GetDict();
 
-    SEffectContainer::Dict::iterator i;
-
-    for (i = rkDctEftID.begin(); i != rkDctEftID.end(); ++i)
+    for (auto i = rkDctEftID.begin(); i != rkDctEftID.end(); ++i)
     {
         __DetachEffect(i->second);
     }
@@ -290,9 +267,8 @@ CInstanceBase::SEffectContainer::Dict& CInstanceBase::__EffectContainer_GetDict(
 DWORD CInstanceBase::__EffectContainer_AttachEffect(DWORD dwEftKey)
 {
     SEffectContainer::Dict& rkDctEftID = __EffectContainer_GetDict();
-    SEffectContainer::Dict::iterator f = rkDctEftID.find(dwEftKey);
 
-    if (rkDctEftID.end() != f)
+    if (SEffectContainer::Dict::iterator f = rkDctEftID.find(dwEftKey); rkDctEftID.end() != f)
     {
         return 0;
     }
