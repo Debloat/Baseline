@@ -55,6 +55,10 @@ class CPythonSystem : public CSingleton<CPythonSystem>
             bool			is_object_culling;
             int				iDistance;
 
+            /* - SHADOWS ------------------------------------------- */
+            int				iShadowLevel;
+            /* ----------------------------------------------------- */
+
             FLOAT			music_volume;
             BYTE			voice_volume;
 
@@ -133,6 +137,11 @@ class CPythonSystem : public CSingleton<CPythonSystem>
         void							SetSoundVolumef(float fVolume);
 
         int								GetDistance();
+
+        /* - SHADOWS ------------------------------------------- */
+        int								GetShadowLevel();
+        void							SetShadowLevel(unsigned int level);
+        /* ----------------------------------------------------- */
 
     protected:
         TResolution						m_ResolutionList[RESOLUTION_MAX_NUM];

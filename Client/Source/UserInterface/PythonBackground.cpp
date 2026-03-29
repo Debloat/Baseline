@@ -17,6 +17,13 @@
 
 std::string g_strEffectName = "d:/ymir work/effect/etc/direction/direction_land.mse";
 
+/* - SHADOWS ------------------------------------------- */
+DWORD CPythonBackground::GetRenderShadowTime()
+{
+    return m_dwRenderShadowTime;
+}
+/* ----------------------------------------------------- */
+
 bool CPythonBackground::SetVisiblePart(int eMapOutDoorPart, bool isVisible)
 {
     if (!m_pkMap)
@@ -39,6 +46,92 @@ void CPythonBackground::EnableTerrainOnlyForHeight()
     CMapOutdoor& rkMap = GetMapOutdoorRef();
     rkMap.EnableTerrainOnlyForHeight(TRUE);
 }
+
+/* - SHADOWS ------------------------------------------- */
+void CPythonBackground::CreateCharacterShadowTexture()
+{
+    if (!m_pkMap)
+    {
+        return;
+    }
+
+    CMapOutdoor& rkMap = GetMapOutdoorRef();
+    rkMap.CreateCharacterShadowTexture();
+}
+
+void CPythonBackground::ReleaseCharacterShadowTexture()
+{
+    if (!m_pkMap)
+    {
+        return;
+    }
+
+    CMapOutdoor& rkMap = GetMapOutdoorRef();
+    rkMap.ReleaseCharacterShadowTexture();
+}
+
+void CPythonBackground::RefreshShadowLevel()
+{
+    SetShadowLevel(CPythonSystem::Instance().GetShadowLevel());
+}
+
+bool CPythonBackground::SetShadowLevel(int eLevel)
+{
+    if (!m_pkMap)
+    {
+        return false;
+    }
+
+    if (m_eShadowLevel == eLevel)
+    {
+        return true;
+    }
+
+    CMapOutdoor& rkMap = GetMapOutdoorRef();
+
+    m_eShadowLevel = eLevel;
+
+    switch (m_eShadowLevel)
+    {
+    case SHADOW_NONE:
+        rkMap.SetDrawShadow(false);
+        rkMap.SetShadowTextureSize(0);
+        break;
+
+    case SHADOW_GROUND:
+        rkMap.SetDrawShadow(true);
+        rkMap.SetDrawCharacterShadow(false);
+        rkMap.SetShadowTextureSize(512);
+        break;
+
+    case SHADOW_GROUND_AND_SOLO:
+        rkMap.SetDrawShadow(true);
+        rkMap.SetDrawCharacterShadow(true);
+        rkMap.SetShadowTextureSize(512);
+        break;
+
+    case SHADOW_ALL:
+        rkMap.SetDrawShadow(true);
+        rkMap.SetDrawCharacterShadow(true);
+        rkMap.SetShadowTextureSize(1024);
+        break;
+
+    case SHADOW_ALL_HIGH:
+        rkMap.SetDrawShadow(true);
+        rkMap.SetDrawCharacterShadow(true);
+        rkMap.SetShadowTextureSize(2048);
+        break;
+
+    case SHADOW_ALL_MAX:
+        rkMap.SetDrawShadow(true);
+        rkMap.SetDrawCharacterShadow(true);
+        rkMap.SetShadowTextureSize(4096);
+        break;
+    }
+
+    return true;
+}
+/* ----------------------------------------------------- */
 
 bool CPythonBackground::SetSplatLimit(int iSplatNum)
 {
@@ -138,9 +231,18 @@ void CPythonBackground::GetDistanceSetInfo(int* peNum, float* pfStart, float* pf
 
 CPythonBackground::CPythonBackground()
 {
+    /* - SHADOWS ------------------------------------------- */
+    m_dwRenderShadowTime = 0;
+    /* ----------------------------------------------------- */
+
     m_eViewDistanceNum = 0;
     m_eViewDistanceNum = 0;
     m_eViewDistanceNum = 0;
+
+    /* - SHADOWS ------------------------------------------- */
+    m_eShadowLevel = SHADOW_NONE;
+    /* ----------------------------------------------------- */
+
     m_dwBaseX = 0;
     m_dwBaseY = 0;
     m_strMapName = "";
@@ -421,6 +523,11 @@ void CPythonBackground::Render()
         frame.sunColor = es.runtime.sunColor;
         frame.ambientColor = es.runtime.ambientColor;
 
+        // --- SHADOW (SCALARS) ---
+        frame.shadowBias = es.runtime.shadowBias;
+        frame.shadowDarkness = es.runtime.shadowDarkness;
+        frame.invShadowMapSize = 1.0f / es.runtime.shadowMapSize;
+
         // push to provider
         if (IShaderProvider* sp = GetShaderProviderMutable())
         {
@@ -441,6 +548,53 @@ void CPythonBackground::RenderSnow()
 {
     m_SnowEnvironment.Render();
 }
+
+/* - SHADOWS ------------------------------------------- */
+void CPythonBackground::RenderCharacterShadowToTexture()
+{
+    if (!IsMapReady())
+    {
+        return;
+    }
+
+    CMapOutdoor& rkMap = GetMapOutdoorRef();
+    DWORD t1 = ELTimer_GetMSec();
+
+    if (m_eShadowLevel == SHADOW_ALL ||
+        m_eShadowLevel == SHADOW_ALL_HIGH ||
+        m_eShadowLevel == SHADOW_ALL_MAX ||
+        m_eShadowLevel == SHADOW_GROUND_AND_SOLO)
+    {
+        D3DXMATRIX matWorld;
+        STATEMANAGER.GetTransform(D3DTS_WORLD, &matWorld);
+
+        bool canRender = rkMap.BeginRenderCharacterShadowToTexture();
+
+        if (canRender)
+        {
+            CPythonCharacterManager& rkChrMgr = CPythonCharacterManager::Instance();
+
+            if (m_eShadowLevel == SHADOW_GROUND_AND_SOLO)
+            {
+                rkChrMgr.RenderShadowMainInstance();
+            }
+
+            else
+            {
+                rkChrMgr.RenderShadowAllInstances();
+            }
+        }
+
+        rkMap.EndRenderCharacterShadowToTexture();
+
+        STATEMANAGER.SetTransform(D3DTS_WORLD, &matWorld);
+    }
+
+    DWORD t2 = ELTimer_GetMSec();
+
+    m_dwRenderShadowTime = t2 - t1;
+}
+/* ----------------------------------------------------- */
 
 inline float Interpolate(float fStart, float fEnd, float fPercent)
 {
@@ -637,6 +791,10 @@ void CPythonBackground::Warp(DWORD dwX, DWORD dwY)
         TraceError("NOT_FOUND_GLOBAL_POSITION(%d, %d)", dwX, dwY);
         return;
     }
+
+    /* - SHADOWS ------------------------------------------- */
+    RefreshShadowLevel();
+    /* ----------------------------------------------------- */
 
     TMapInfo & rMapInfo = *pkMapInfo;
     assert((dwX >= rMapInfo.m_dwBaseX) && (dwY >= rMapInfo.m_dwBaseY));

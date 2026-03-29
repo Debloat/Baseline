@@ -94,6 +94,9 @@ class CArea
             CSpeedTreeWrapper* 			pTree;
 
             // Data For Normal Object or Building
+            /* - SHADOWS ------------------------------------------- */
+            BOOL						isShadowFlag;
+            /* ----------------------------------------------------- */
             CGraphicThingInstance* 		pThingInstance;
 
             // Data for Effect
@@ -144,6 +147,10 @@ class CArea
 
                 dwEffectID = 0xffffffff;
                 dwEffectInstanceIndex = 0xffffffff;
+
+                /* - SHADOWS ------------------------------------------- */
+                isShadowFlag = false;
+                /* ----------------------------------------------------- */
 
                 pTree = NULL;
                 pThingInstance = NULL;
@@ -292,6 +299,11 @@ class CArea
         TThingInstanceVector			m_ThingCloneInstaceVector;
         TDungeonBlockInstanceVector		m_DungeonBlockCloneInstanceVector;
         TThingInstanceVector			m_AniThingCloneInstanceVector;
+
+        /* - SHADOWS ------------------------------------------- */
+        TThingInstanceVector			m_ShadowThingCloneInstaceVector;
+        /* ----------------------------------------------------- */
+
         TAmbienceInstanceVector			m_AmbienceCloneInstanceVector;
         TGraphicThingInstanceCRCMap		m_GraphicThingInstanceCRCMap;
         TCRCWithNumberVector			m_kRenderedThingInstanceCRCWithNumberVector;

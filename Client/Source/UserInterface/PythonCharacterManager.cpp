@@ -555,6 +555,31 @@ void CPythonCharacterManager::Render()
     }
 }
 
+/* - SHADOWS ------------------------------------------- */
+void CPythonCharacterManager::RenderShadowMainInstance()
+{
+    CInstanceBase* pkInstMain = GetMainInstancePtr();
+
+    if (pkInstMain)
+    {
+        pkInstMain->RenderToShadowMap();
+    }
+}
+
+struct FCharacterManagerCharacterInstanceRenderToShadowMap
+{
+    inline void operator()(const std::pair<DWORD, CInstanceBase*>& cr_Pair)
+    {
+        cr_Pair.second->RenderToShadowMap();
+    }
+};
+
+void CPythonCharacterManager::RenderShadowAllInstances()
+{
+    std::ranges::for_each(m_kAliveInstMap, FCharacterManagerCharacterInstanceRenderToShadowMap());
+}
+/* ----------------------------------------------------- */
+
 struct FCharacterManagerCharacterInstanceRenderCollision
 {
     inline void operator()(const std::pair<DWORD, CInstanceBase *>& cr_Pair)

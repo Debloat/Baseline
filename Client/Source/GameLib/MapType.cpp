@@ -121,6 +121,7 @@ namespace prt
         pProperty->PutString("PropertyType", "Building");
         pProperty->PutString("PropertyName", pData->strName.c_str());
         pProperty->PutString("BuildingFile", pData->strFileName.c_str());
+        pProperty->PutString("ShadowFlag", IntegerNumberToString(pData->isShadowFlag));
         return true;
     }
 
@@ -157,6 +158,20 @@ namespace prt
 
         pData->strFileName = c_pszBuildingName;
         pData->strAttributeDataFileName = CFileNameHelper::NoExtension(pData->strFileName) + ".mdatr";
+
+        /* - SHADOWS ------------------------------------------- */
+        const char* c_pszShadowFlag;
+
+        if (!pProperty->GetString("ShadowFlag", &c_pszShadowFlag))
+        {
+            pData->isShadowFlag = FALSE;
+        }
+
+        else
+        {
+            pData->isShadowFlag = atoi(c_pszShadowFlag);
+        }
+        /* ----------------------------------------------------- */
 
         return true;
     }

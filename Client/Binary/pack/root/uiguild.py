@@ -2729,6 +2729,10 @@ if __name__ == "__main__":
 			background.Initialize()
 			background.LoadMap("metin2_map_a1", x, y, 0)
 
+			# - SHADOWS -------------------------------------------
+			background.SetShadowLevel(background.SHADOW_ALL)
+			# -----------------------------------------------------
+
 			self.MakeCharacter(1, 0, x, y)
 			player.SetMainCharacterIndex(1)
 			chr.SelectInstance(1)

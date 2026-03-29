@@ -20,6 +20,7 @@ enum class ShaderID
     Terrain,
     TerrainMarkedArea,
     FlyTrace,
+    Shadow,
     Count
 };
 

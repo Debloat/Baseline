@@ -65,6 +65,30 @@ class CGrannyLODController : public CGraphicBase
             }
         };
 
+        /* - SHADOWS ------------------------------------------- */
+        struct FRenderToShadowMap
+        {
+            void operator()(CGrannyLODController* pController)
+            {
+                if (pController->isModelInstance())
+                {
+                    pController->RenderToShadowMap();
+                }
+            }
+        };
+
+        struct FRenderShadow
+        {
+            void operator()(CGrannyLODController* pController)
+            {
+                if (pController->isModelInstance())
+                {
+                    pController->RenderShadow();
+                }
+            }
+        };
+        /* ----------------------------------------------------- */
+
         struct FDeform
         {
             const D3DXMATRIX* mc_pWorldMatrix;
@@ -244,6 +268,11 @@ class CGrannyLODController : public CGraphicBase
         void	Deform(const D3DXMATRIX * c_pWorldMatrix);
         void	DeformNoSkin(const D3DXMATRIX * c_pWorldMatrix);
         void	DeformAll(const D3DXMATRIX * c_pWorldMatrix);
+
+        /* - SHADOWS ------------------------------------------- */
+        void	RenderToShadowMap();
+        void	RenderShadow();
+        /* ----------------------------------------------------- */
 
         void	ReloadTexture();
 

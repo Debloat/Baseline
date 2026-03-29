@@ -25,6 +25,40 @@ class CDungeonModelInstance : public CGrannyModelInstance
                 RenderMeshNodeList(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT, MESHNODELIST_TWO_TEXTURE);
             }
         }
+
+        /* - SHADOWS ------------------------------------------- */
+        void RenderDungeonBlockShadow()
+        {
+            if (IsEmpty())
+            {
+                return;
+            }
+
+            STATEMANAGER.SetRenderState(D3DRS_TEXTUREFACTOR, 0xffffffff);
+            STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TFACTOR);
+            STATEMANAGER.SaveTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+            STATEMANAGER.SaveTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+            STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+            STATEMANAGER.SaveRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO);
+            STATEMANAGER.SaveRenderState(D3DRS_DESTBLEND, D3DBLEND_SRCCOLOR);
+
+            //STATEMANAGER.SetVertexDeclaration(CShaderInputLayouts::Get(EShaderInputLayout::PNTT));
+            LPDIRECT3DVERTEXBUFFER9 lpd3dRigidPNTVtxBuf = m_pModel->GetPNTD3DVertexBuffer();
+
+            if (lpd3dRigidPNTVtxBuf)
+            {
+                STATEMANAGER.SetStreamSource(0, lpd3dRigidPNTVtxBuf, sizeof(TPNT2Vertex));
+                RenderMeshNodeList(CGrannyMesh::TYPE_RIGID, CGrannyMaterial::TYPE_BLEND_PNT, MESHNODELIST_NO_TEXTURE);
+            }
+
+            STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLORARG1);
+            STATEMANAGER.RestoreTextureStageState(0, D3DTSS_COLOROP);
+            STATEMANAGER.RestoreTextureStageState(0, D3DTSS_ALPHAOP);
+            STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
+            STATEMANAGER.RestoreRenderState(D3DRS_SRCBLEND);
+            STATEMANAGER.RestoreRenderState(D3DRS_DESTBLEND);
+        }
+        /* ----------------------------------------------------- */
 };
 
 
@@ -65,6 +99,21 @@ void CDungeonBlock::Render()
 
     std::ranges::for_each(m_ModelInstanceContainer, FRender());
 }
+
+/* - SHADOWS ------------------------------------------- */
+struct FRenderShadow
+{
+    void operator()(CDungeonModelInstance* pInstance)
+    {
+        pInstance->RenderDungeonBlockShadow();
+    }
+};
+
+void CDungeonBlock::OnRenderShadow()
+{
+    for_each(m_ModelInstanceContainer.begin(), m_ModelInstanceContainer.end(), FRenderShadow());
+}
+/* ----------------------------------------------------- */
 
 struct FBoundBox
 {

@@ -74,6 +74,9 @@ class CMapOutdoor : public CMapBase
         virtual void	OnPreAssignTerrainPtr() {};
 
     public:
+        /* - SHADOWS ------------------------------------------- */
+        void			SetInverseViewAndDynamicShaodwMatrices();
+        /* ----------------------------------------------------- */
         virtual bool	Load(float x, float y, float z);
         virtual float	GetHeight(float x, float y);
         virtual float	GetCacheHeight(float x, float y);
@@ -92,6 +95,14 @@ class CMapOutdoor : public CMapBase
         bool			LoadSetting(const char* c_szFileName);
 
         void			SetEnvironmentSkyBox();
+
+        /* - SHADOWS ------------------------------------------- */
+        void			CreateCharacterShadowTexture();
+        void			ReleaseCharacterShadowTexture();
+        void			SetShadowTextureSize(WORD size);
+        bool			BeginRenderCharacterShadowToTexture();
+        void			EndRenderCharacterShadowToTexture();
+        /* ----------------------------------------------------- */
 
         void			RenderWater();
         void			RenderMarkedArea();
@@ -121,6 +132,14 @@ class CMapOutdoor : public CMapBase
         }
 
         bool			SetTerrainCount(short sTerrainCountX, short sTerrainCountY);
+
+        /* - SHADOWS ------------------------------------------- */
+        void			SetDrawShadow(bool bDrawShadow);
+        void			SetDrawCharacterShadow(bool bDrawChrShadow);
+
+        bool            IsDrawShadow() const { return m_bDrawShadow; }
+        bool            IsDrawCharacterShadow() const { return m_bDrawChrShadow; }
+        /* ----------------------------------------------------- */
 
     protected:
         bool			__PickTerrainHeight(float& fPos, const D3DXVECTOR3& v3Start, const D3DXVECTOR3& v3End, float fStep, float fRayRange, float fLimitRange, D3DXVECTOR3* pv3Pick);
@@ -250,6 +269,12 @@ class CMapOutdoor : public CMapBase
 
         void			__Game_UpdateArea(D3DXVECTOR3& v3Player);
 
+        /* - SHADOWS ------------------------------------------- */
+        void			__CollectShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
+        void			__CollectCollisionShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light);
+        bool			__IsInShadowReceiverList(CGraphicObjectInstance* pkObjInstTest);
+        /* ----------------------------------------------------- */
+
         void			__UpdateAroundAreaList();
 
         void			ConvertToMapCoords(float fx, float fy, int* iCellX, int* iCellY, BYTE * pucSubCellX, BYTE * pucSubCellY, WORD * pwTerrainNumX, WORD * pwTerrainNumY);
@@ -323,6 +348,11 @@ class CMapOutdoor : public CMapBase
 
         bool					m_bDrawWireFrame;
 
+        /* - SHADOWS ------------------------------------------- */
+        bool					m_bDrawShadow;
+        bool					m_bDrawChrShadow;
+        /* ----------------------------------------------------- */
+
         //////////////////////////////////////////////////////////////////////////
         // Water
         D3DXMATRIX				m_matBump;
@@ -331,6 +361,20 @@ class CMapOutdoor : public CMapBase
 
         //Water
         //////////////////////////////////////////////////////////////////////////
+
+        /* - SHADOWS ------------------------------------------- */
+        // Character Shadow
+        LPDIRECT3DTEXTURE9		m_lpCharacterShadowMapTexture;
+        LPDIRECT3DSURFACE9		m_lpCharacterShadowMapRenderTargetSurface;
+        LPDIRECT3DSURFACE9		m_lpCharacterShadowMapDepthSurface;
+        D3DVIEWPORT9			m_ShadowMapViewport;
+        WORD					m_wShadowMapSize;
+
+        // Backup Device Context
+        LPDIRECT3DSURFACE9		m_lpBackupRenderTargetSurface;
+        LPDIRECT3DSURFACE9		m_lpBackupDepthSurface;
+        D3DVIEWPORT9			m_BackupViewport;
+        /* ----------------------------------------------------- */
 
         // View Frustum Culling
         D3DXPLANE					m_plane[6];
@@ -350,6 +394,12 @@ class CMapOutdoor : public CMapBase
         D3DXMATRIX m_matViewInverse;
 
         D3DXMATRIX m_matSplatAlpha;
+
+        /* - SHADOWS ------------------------------------------- */
+        D3DXMATRIX m_matDynamicShadow;
+        D3DXMATRIX m_matDynamicShadowScale;
+        D3DXMATRIX m_matLightView;
+        /* ----------------------------------------------------- */
 
         float m_fTerrainTexCoordBase;
         float m_fWaterTexCoordBase;
@@ -457,6 +507,11 @@ class CMapOutdoor : public CMapBase
 
     protected:
         void __HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType);
+
+        /* - SHADOWS ------------------------------------------- */
+    protected:
+        std::vector<CGraphicObjectInstance*> m_ShadowReceiverVector;
+        /* ----------------------------------------------------- */
 
     protected:
         float	m_fOpaqueWaterDepth;

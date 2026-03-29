@@ -12,6 +12,19 @@ class CInstanceBase;
 class CPythonBackground : public CMapManager, public CSingleton<CPythonBackground>
 {
     public:
+
+        /* - SHADOWS ------------------------------------------- */
+        enum
+        {
+            SHADOW_NONE,
+            SHADOW_GROUND,
+            SHADOW_GROUND_AND_SOLO,
+            SHADOW_ALL,
+            SHADOW_ALL_HIGH,
+            SHADOW_ALL_MAX,
+        };
+        /* ----------------------------------------------------- */
+
         enum
         {
             DISTANCE0,
@@ -52,9 +65,18 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         bool SetSplatLimit(int iSplatNum);
         bool SetVisiblePart(int ePart, bool isVisible);
 
+        /* - SHADOWS ------------------------------------------- */
+        bool SetShadowLevel(int eLevel);
+        void RefreshShadowLevel();
+        /* ----------------------------------------------------- */
+
         void SelectViewDistanceNum(int eNum);
         void SetViewDistanceSet(int eNum, float fFarClip);
         float GetFarClip();
+
+        /* - SHADOWS ------------------------------------------- */
+        DWORD GetRenderShadowTime();
+        /* ----------------------------------------------------- */
 
         void GetDistanceSetInfo(int* peNum, float* pfStart, float* pfEnd, float* pfFarClip);
 
@@ -63,6 +85,12 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
         bool GetPickingPointWithRayOnlyTerrain(const CRay & rRay, D3DXVECTOR3 * v3IntersectPt);
 
         void Update(float fCenterX, float fCenterY, float fCenterZ);
+
+        /* - SHADOWS ------------------------------------------- */
+        void CreateCharacterShadowTexture();
+        void ReleaseCharacterShadowTexture();
+        void RenderCharacterShadowToTexture();
+        /* ----------------------------------------------------- */
 
         void Render();
         void RenderSnow();
@@ -110,6 +138,11 @@ class CPythonBackground : public CMapManager, public CSingleton<CPythonBackgroun
 
         int m_iDayMode;
         int m_iXMasTreeGrade;
+
+        /* - SHADOWS ------------------------------------------- */
+        int m_eShadowLevel;
+        DWORD m_dwRenderShadowTime;
+        /* ----------------------------------------------------- */
 
         int m_eViewDistanceNum;
 

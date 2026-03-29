@@ -59,6 +59,12 @@ class CPythonCharacterManager : public CSingleton<CPythonCharacterManager>, publ
         void								Update();
         void								Deform();
         void								Render();
+
+        /* - SHADOWS ------------------------------------------- */
+        void								RenderShadowMainInstance();
+        void								RenderShadowAllInstances();
+        /* ----------------------------------------------------- */
+
         void								RenderCollision();
 
         // Create/Delete Instance

@@ -232,6 +232,19 @@ int CPythonSystem::GetDistance()
     return m_Config.iDistance;
 }
 
+/* - SHADOWS ------------------------------------------- */
+int CPythonSystem::GetShadowLevel()
+{
+    return m_Config.iShadowLevel;
+}
+
+void CPythonSystem::SetShadowLevel(unsigned int level)
+{
+    m_Config.iShadowLevel = MIN(level, 5);
+    CPythonBackground::instance().RefreshShadowLevel();
+}
+/* ----------------------------------------------------- */
+
 int CPythonSystem::IsSaveID()
 {
     return m_Config.isSaveID;
@@ -276,6 +289,11 @@ void CPythonSystem::SetDefaultConfig()
     m_Config.voice_volume		= 5;
 
     m_Config.bDecompressDDS		= 0;
+
+    /* - SHADOWS ------------------------------------------- */
+    m_Config.iShadowLevel = 5;
+    /* ----------------------------------------------------- */
+
     m_Config.bViewChat			= true;
     m_Config.bAlwaysShowName	= DEFAULT_VALUE_ALWAYS_SHOW_NAME;
     m_Config.bShowDamage		= true;
@@ -435,6 +453,13 @@ bool CPythonSystem::LoadConfig()
             m_Config.bUseDefaultIME = atoi(value) == 1 ? true : false;
         }
 
+        /* - SHADOWS ------------------------------------------- */
+        else if (!stricmp(command, "SHADOW_LEVEL"))
+        {
+            m_Config.iShadowLevel = atoi(value);
+        }
+        /* ----------------------------------------------------- */
+
         else if (!stricmp(command, "DECOMPRESSED_TEXTURE"))
         {
             m_Config.bDecompressDDS = atoi(value) == 1 ? true : false;
@@ -527,6 +552,9 @@ bool CPythonSystem::SaveConfig()
     fprintf(fp, "SHOW_DAMAGE\t\t\t\t%d\n", m_Config.bShowDamage);
     fprintf(fp, "SHOW_SALESTEXT\t\t\t%d\n", m_Config.bShowSalesText);
     fprintf(fp, "USE_DEFAULT_IME\t\t\t%d\n", m_Config.bUseDefaultIME);
+    /* - SHADOWS ------------------------------------------- */
+    fprintf(fp, "SHADOW_LEVEL\t\t\t%d\n", m_Config.iShadowLevel);
+    /* ----------------------------------------------------- */
 
     fclose(fp);
     return true;

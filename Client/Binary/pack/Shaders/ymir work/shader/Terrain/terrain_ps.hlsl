@@ -1,4 +1,5 @@
 #include "../Common/light.hlsl"
+#include "../Common/shadow.hlsl"
 
 sampler2D TerrainTexture : register(s0);
 sampler2D AlphaTexture : register(s1);
@@ -31,7 +32,11 @@ float4 main(PS_INPUT input) : COLOR
     float3 lightDiffuse = ComputeDiffuse(N, L) * GetSunColor();
     float3 ambient = GetAmbientColor();
 
-    float3 lit = color.rgb * (ambient + lightDiffuse);
+// --- SHADOW ---
+    float shadowFactor = SampleShadowFactor(input.worldPos);
+
+// Apply only to direct light, NOT ambient
+    float3 lit = color.rgb * (ambient + lightDiffuse * shadowFactor);
 
     return float4(lit, alpha);
 }

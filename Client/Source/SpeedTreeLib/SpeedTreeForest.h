@@ -46,7 +46,8 @@
 #define Forest_RenderFronds         (1 << 2)
 #define Forest_RenderBillboards     (1 << 3)
 #define Forest_RenderAll            ((1 << 4) - 1)
-#define Forest_RenderToMiniMap      (1 << 5)
+#define Forest_RenderToShadow       (1 << 5)
+#define Forest_RenderToMiniMap      (1 << 6)
 
 ///////////////////////////////////////////////////////////////////////
 //  class CSpeedTreeForest declaration

@@ -383,3 +383,21 @@ void CActorInstance::RenderCollisionData()
         }
     }
 }
+
+/* - SHADOWS ------------------------------------------- */
+void CActorInstance::RenderToShadowMap()
+{
+    if (m_iAlphaMode == ALPHA_MODE_BLEND)
+    {
+        if (GetAlphaValue() < 0.5f)
+            return;
+    }
+
+    CGraphicThingInstance::RenderToShadowMap();
+
+    if (m_pkHorse)
+    {
+        m_pkHorse->RenderToShadowMap();
+    }
+}
+/* ----------------------------------------------------- */

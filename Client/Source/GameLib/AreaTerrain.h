@@ -158,6 +158,10 @@ class CTerrain : public CTerrainImpl, public CGraphicBase
     protected:
         bool					m_bReady;
 
+        /* - SHADOWS ------------------------------------------- */
+        CGraphicImageInstance	m_ShadowGraphicImageInstance;
+        /* ----------------------------------------------------- */
+
         //MiniMap
         CGraphicImageInstance	m_MiniMapGraphicImageInstance;
         LPDIRECT3DTEXTURE9		m_lpMiniMapTexture;

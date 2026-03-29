@@ -290,6 +290,30 @@ PyObject* systemGetFrequency(PyObject * poSelf, PyObject * poArgs)
     return Py_BuildValue("i", frequency);
 }
 
+/* - SHADOWS ------------------------------------------- */
+PyObject* systemGetShadowLevel(PyObject* poSelf, PyObject* poArgs)
+{
+    return Py_BuildValue("i", CPythonSystem::Instance().GetShadowLevel());
+}
+
+PyObject* systemSetShadowLevel(PyObject* poSelf, PyObject* poArgs)
+{
+    int level;
+
+    if (!PyTuple_GetInteger(poArgs, 0, &level))
+    {
+        return Py_BuildException();
+    }
+
+    if (level > 0)
+    {
+        CPythonSystem::Instance().SetShadowLevel(level);
+    }
+
+    return Py_BuildNone();
+}
+/* ----------------------------------------------------- */
+
 void initsystem()
 {
     static PyMethodDef s_methods[] =
@@ -304,6 +328,11 @@ void initsystem()
         { "isInterfaceConfig",			systemisInterfaceConfig,		METH_VARARGS },
         { "SaveWindowStatus",			systemSaveWindowStatus,			METH_VARARGS },
         { "GetWindowStatus",			systemGetWindowStatus,			METH_VARARGS },
+
+        /* - SHADOWS ------------------------------------------- */
+        { "GetShadowLevel",				systemGetShadowLevel,			METH_VARARGS },
+        { "SetShadowLevel",				systemSetShadowLevel,			METH_VARARGS },
+        /* ----------------------------------------------------- */
 
         { "GetResolution",				systemGetResolution,			METH_VARARGS },
         { "GetFrequency",				systemGetFrequency,				METH_VARARGS },

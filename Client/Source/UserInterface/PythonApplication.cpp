@@ -218,6 +218,10 @@ void CPythonApplication::RenderGame()
         m_kChrMgr.Deform();
         m_kEftMgr.Update();
 
+        /* - SHADOWS ------------------------------------------- */
+        m_pyBackground.RenderCharacterShadowToTexture();
+        /* ----------------------------------------------------- */
+
         m_pyGraphic.PushState();
 
         {
@@ -256,6 +260,10 @@ void CPythonApplication::RenderGame()
 
     m_kChrMgr.Deform();
     m_kEftMgr.Update();
+
+    /* - SHADOWS ------------------------------------------- */
+    m_pyBackground.RenderCharacterShadowToTexture();
+    /* ----------------------------------------------------- */
 
     m_pyGraphic.PushState();
 
@@ -549,7 +557,19 @@ bool CPythonApplication::Process()
         {
             if (m_pyGraphic.IsLostDevice())
             {
-                canRender = false;
+                /* - SHADOWS ------------------------------------------- */
+                CPythonBackground& rkBG = CPythonBackground::Instance();
+                rkBG.ReleaseCharacterShadowTexture();
+
+                if (m_pyGraphic.RestoreDevice())
+                {
+                    rkBG.CreateCharacterShadowTexture();
+                }
+                else
+                {
+                    canRender = false;
+                }
+                /* ----------------------------------------------------- */
             }
         }
 

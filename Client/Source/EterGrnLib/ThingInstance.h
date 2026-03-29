@@ -121,6 +121,11 @@ class CGraphicThingInstance : public CGraphicObjectInstance
         void		OnRender();
         void		OnBlendRender();
 
+        /* - SHADOWS ------------------------------------------- */
+        void		OnRenderToShadowMap();
+        void		OnRenderShadow();
+        /* ----------------------------------------------------- */
+
     protected:
         bool									m_bUpdated;
         float									m_fLastLocalTime;

@@ -473,6 +473,10 @@ class CActorInstance : public IActorInstance, public IFlyTargetableObject
         void		RenderTrace();
         void		RenderCollisionData();
 
+        /* - SHADOWS ------------------------------------------- */
+        void		RenderToShadowMap();
+        /* ----------------------------------------------------- */
+
     private:
         void __RenderMaskFFP();
         void __RenderBlendFFP();

@@ -6,6 +6,7 @@
 
 enum class EShaderInputLayout : std::uint8_t
 {
+    P,      // Position
     PT,     // Position + Tex
     PTC,    // Position + Tex + Color
     PCT,    // Position + Color + Tex

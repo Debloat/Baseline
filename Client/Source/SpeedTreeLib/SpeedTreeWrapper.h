@@ -101,6 +101,11 @@ class CSpeedTreeWrapper : public CGraphicObjectInstance
         // 그 이외에는 RenderBranches, RenderFronds 등의 메소드를 CSpeedTreeForest에서 호출한다.
         virtual void                OnBlendRender() {}
 
+        /* - SHADOWS ------------------------------------------- */
+        virtual void                OnRenderToShadowMap() {}
+        virtual void                OnRenderShadow() {}
+        /* ----------------------------------------------------- */
+
     public:
         CSpeedTreeWrapper();
         virtual ~CSpeedTreeWrapper();

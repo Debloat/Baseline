@@ -130,7 +130,7 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
         return;
     }
 
-    if (!(ulRenderBitVector & Forest_RenderToMiniMap))
+    if (!(ulRenderBitVector & Forest_RenderToShadow) && !(ulRenderBitVector & Forest_RenderToMiniMap))
     {
         UpdateCompundMatrix(CCameraManager::Instance().GetCurrentCamera()->GetEye(), ms_matView, ms_matProj);
     }
@@ -157,16 +157,27 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
 
     STATEMANAGER.SetVertexShaderConstant(c_nVertexShader_Light,    m_afLighting, 3);
 
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP,   D3DTOP_MODULATE);
+    /* - SHADOWS ------------------------------------------- */
+    if (ulRenderBitVector & Forest_RenderToShadow)
+    {
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+    }
+    else
+    {
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+        STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
 
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+        STATEMANAGER.SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+    }
+    /* ----------------------------------------------------- */
 
     STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
     STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -229,7 +240,7 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
         STATEMANAGER.SetVertexShader(m_dwLeafVertexShader);
 #endif
 
-        if (ulRenderBitVector & Forest_RenderToMiniMap)
+        if (ulRenderBitVector & Forest_RenderToShadow || ulRenderBitVector & Forest_RenderToMiniMap)
         {
             STATEMANAGER.SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_NOTEQUAL);
             STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0x00000000);
@@ -251,7 +262,7 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
                 }
         }
 
-        if (ulRenderBitVector & Forest_RenderToMiniMap)
+        if (ulRenderBitVector & Forest_RenderToShadow || ulRenderBitVector & Forest_RenderToMiniMap)
         {
             STATEMANAGER.SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
             STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
@@ -289,6 +300,14 @@ void CSpeedTreeForestDirectX9::Render(unsigned long ulRenderBitVector)
     STATEMANAGER.SetFVF(D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1);
 #endif
     STATEMANAGER.SetRenderState(D3DRS_COLORVERTEX, dwColorVertexState);
+
+    /* - SHADOWS ------------------------------------------- */
+    if (!(ulRenderBitVector & Forest_RenderToShadow))
+    {
+        STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+        STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+    }
+    /* ----------------------------------------------------- */
 
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
     STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);

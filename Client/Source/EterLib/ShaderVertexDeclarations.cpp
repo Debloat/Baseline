@@ -9,6 +9,13 @@ LPDIRECT3DVERTEXDECLARATION9 CShaderInputLayouts::ms_layouts[
 
 namespace
 {
+    // Position (float3)
+    static const D3DVERTEXELEMENT9 kDecl_P[] =
+    {
+        { 0, 0,  D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0 },
+        D3DDECL_END()
+    };
+
     // Position (float3) + TexCoord (float2)
     static const D3DVERTEXELEMENT9 kDecl_PT[] =
     {
@@ -66,6 +73,9 @@ namespace
     {
         switch (layout)
         {
+        case EShaderInputLayout::P:
+            return kDecl_P;
+
         case EShaderInputLayout::PT:
             return kDecl_PT;
 

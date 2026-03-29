@@ -1453,6 +1453,11 @@ class GameWindow(ui.ScriptWindow):
 		nRenderFPS = app.GetRenderFPS()
 		nFaceCount = app.GetFaceCount()
 		fFaceSpeed = app.GetFaceSpeed()
+
+		# - SHADOWS -------------------------------------------
+		nST=background.GetRenderShadowTime()
+		# -----------------------------------------------------
+
 		(fAveRT, nCurRT) =  app.GetRenderTime()
 		(iNum, fMinViewDistance, fMaxViewDistance, fFarCilp) = background.GetDistanceSetInfo()
 		(iPatch, iSplat, fSplatRatio, sTextureNum) = background.GetRenderedSplatNum()

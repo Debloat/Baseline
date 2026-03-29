@@ -51,6 +51,11 @@ class CEffectInstance : public CGraphicObjectInstance
         void OnRender();
         void OnBlendRender() {} // Not used
 
+        /* - SHADOWS ------------------------------------------- */
+        void OnRenderToShadowMap() {} // Not used
+        void OnRenderShadow() {} // Not used
+        /* ----------------------------------------------------- */
+
     protected:
         void					__Initialize();
 

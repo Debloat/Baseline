@@ -551,6 +551,19 @@ void CGraphicDevice::UploadFlyTraceConstants(const FlyTraceShaderInputs& inputs)
     UploadVSConstants(4, inputs.vs.world.data(), 4);    // c4..c7
 }
 
+void CGraphicDevice::UploadShadowConstants(const ShadowShaderInputs& inputs)
+{
+    if (!ms_lpd3dDevice)
+    {
+        return;
+    }
+
+    UploadVSConstants(0, inputs.vs.world.data(), 4);          // c0..c3
+    UploadVSConstants(4, inputs.vs.shadowViewProj.data(), 4); // c4..c7
+
+    UploadPSConstants(0, inputs.ps.params0.data(), 1);        // c0
+}
+
 void CGraphicDevice::UploadVSConstants(UINT startRegister, const float* data, UINT registerCount)
 {
     if (!ms_lpd3dDevice || !data || registerCount == 0)
@@ -592,6 +605,19 @@ void CGraphicDevice::UploadFrameConstants(const FrameShaderInputs& frame)
     UploadPSConstants(101, v1, 1);
     UploadPSConstants(102, v2, 1);
     UploadPSConstants(103, v3, 1);
+
+    // --- SHADOW (GLOBAL) ---
+    float s0[4] = {
+        frame.shadowBias,
+        frame.shadowDarkness,
+        frame.invShadowMapSize,
+        0.0f
+    };
+
+    UploadPSConstants(104, s0, 1);
+
+    UploadVSConstants(100, frame.shadowViewProj.data(), 4);
+    UploadVSConstants(104, frame.shadowTex.data(), 4);
 }
 
 void CGraphicDevice::ComputeWorldViewProj(const D3DXMATRIX& world,
@@ -941,6 +967,7 @@ bool CGraphicDevice::__CreateShaderResources()
         ShaderDesc{ ShaderID::Terrain,           Terrain::VS,           Terrain::PS,           EShaderInputLayout::PN },
         ShaderDesc{ ShaderID::TerrainMarkedArea, TerrainMarkedArea::VS, TerrainMarkedArea::PS, EShaderInputLayout::PN },
         ShaderDesc{ ShaderID::FlyTrace,          FlyTrace::VS,          FlyTrace::PS,          EShaderInputLayout::PCT },
+        ShaderDesc{ ShaderID::Shadow,            Shadow::VS,            Shadow::PS,            EShaderInputLayout::P},
     };
 
     static_assert(kShaderTable.size() == static_cast<size_t>(std::to_underlying(ShaderID::Count)), "ShaderID enum and shader table are out of sync");

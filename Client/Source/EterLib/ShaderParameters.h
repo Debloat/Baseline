@@ -204,6 +204,11 @@ struct EnvironmentRuntime
     std::array<float, 3> sunDir = { 0.0f, 0.0f, 1.0f };
     std::array<float, 3> sunColor = { 1.f, 1.f, 1.f };
     std::array<float, 3> ambientColor = { 0.2f, 0.2f, 0.25f };
+
+    // --- SHADOW ---
+    float shadowBias = 0.0015f;
+    float shadowDarkness = 0.3f;
+    float shadowMapSize = 4096.0f;
 };
 
 // NOTE:
@@ -228,6 +233,10 @@ struct FrameShaderInputs
     // Matrices (raw, not transposed)
     std::array<float, 16> view;
 
+    // Shadow (raw, not transposed)
+    std::array<float, 16> shadowViewProj;
+    std::array<float, 16> shadowTex;
+
     // Camera (world)
     std::array<float, 3> cameraPos;
 
@@ -235,6 +244,11 @@ struct FrameShaderInputs
     std::array<float, 3> sunDir;
     std::array<float, 3> sunColor;
     std::array<float, 3> ambientColor;
+
+    // Shadow (frame-global)
+    float shadowBias = 0.0f;
+    float shadowDarkness = 1.0f;
+    float invShadowMapSize = 0.0f;
 
     // Environment runtime (optional but useful to centralize)
     float timeSeconds = 0.0f;
@@ -499,4 +513,23 @@ struct FlyTraceShaderInputs
 {
     FlyTraceVSCB vs;
     FlyTracePSCB ps;
+};
+
+/* ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ */
+
+struct ShadowVSCB
+{
+    std::array<float, 16> world;          // c0..c3
+    std::array<float, 16> shadowViewProj; // c4..c7
+};
+
+struct ShadowPSCB
+{
+    std::array<float, 4> params0; // c0 : x = alphaCutoff, yzw unused for now
+};
+
+struct ShadowShaderInputs
+{
+    ShadowVSCB vs;
+    ShadowPSCB ps;
 };

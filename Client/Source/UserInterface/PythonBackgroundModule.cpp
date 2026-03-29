@@ -69,6 +69,11 @@ PyObject* backgroundLoadMap(PyObject * poSelf, PyObject * poArgs)
 PyObject* backgroundDestroy(PyObject * poSelf, PyObject * poArgs)
 {
     CPythonBackground& rkBG = CPythonBackground::Instance();
+
+    /* - SHADOWS ------------------------------------------- */
+    rkBG.SetShadowLevel(CPythonBackground::SHADOW_NONE);
+    /* ----------------------------------------------------- */
+
     rkBG.Destroy();
     return Py_BuildNone();
 }
@@ -212,6 +217,34 @@ PyObject* backgroundRenderEffect(PyObject * poSelf, PyObject * poArgs)
     CPythonBackground::Instance().RenderEffect();
     return Py_BuildNone();
 }
+
+/* - SHADOWS ------------------------------------------- */
+PyObject* backgroundRenderCharacterShadowToTexture(PyObject* poSelf, PyObject* poArgs)
+{
+    CPythonBackground::Instance().RenderCharacterShadowToTexture();
+    return Py_BuildNone();
+}
+
+PyObject* backgroundGetRenderShadowTime(PyObject* poSelf, PyObject* poArgs)
+{
+    CPythonBackground& rkBG = CPythonBackground::Instance();
+    return Py_BuildValue("i", rkBG.GetRenderShadowTime());
+}
+
+PyObject* backgroundSetShadowLevel(PyObject* poSelf, PyObject* poArgs)
+{
+    int iLevel;
+
+    if (!PyTuple_GetInteger(poArgs, 0, &iLevel))
+    {
+        return Py_BadArgument();
+    }
+
+    CPythonBackground& rkBG = CPythonBackground::Instance();
+    rkBG.SetShadowLevel(iLevel);
+    return Py_BuildNone();
+}
+/* ----------------------------------------------------- */
 
 PyObject* backgroundRenderDungeon(PyObject * poSelf, PyObject * poArgs)
 {
@@ -520,6 +553,13 @@ void initBackground()
         { "EnableSnow",							backgroundEnableSnow,						METH_VARARGS },
         { "GlobalPositionToLocalPosition",		backgroundGlobalPositionToLocalPosition,	METH_VARARGS },
         { "GlobalPositionToMapInfo",			backgroundGlobalPositionToMapInfo,			METH_VARARGS },
+
+        /* - SHADOWS ------------------------------------------- */
+        { "GetRenderShadowTime",				backgroundGetRenderShadowTime,				METH_VARARGS },
+        { "RenderCharacterShadowToTexture",		backgroundRenderCharacterShadowToTexture,	METH_VARARGS },
+        { "SetShadowLevel",						backgroundSetShadowLevel,					METH_VARARGS },
+        /* ----------------------------------------------------- */
+
         { "LoadMap",							backgroundLoadMap,							METH_VARARGS },
         { "Destroy",							backgroundDestroy,							METH_VARARGS },
         { "RegisterEnvironmentData",			backgroundRegisterEnvironmentData,			METH_VARARGS },

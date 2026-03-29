@@ -133,6 +133,39 @@ void CMapOutdoor::UpdateSky()
     m_SkyBox.Update();
 }
 
+/* - SHADOWS ------------------------------------------- */
+struct FGetShadowReceiverFromCollisionData
+{
+    bool m_bCollide;
+    std::vector<CGraphicObjectInstance*>* m_pkVct_pkShadowReceiver;
+    CDynamicSphereInstance* m_pdsi;
+    FGetShadowReceiverFromCollisionData(CDynamicSphereInstance* pdsi, std::vector<CGraphicObjectInstance*>* pkVct_pkShadowReceiver) : m_pdsi(pdsi), m_bCollide(false)
+    {
+        m_pkVct_pkShadowReceiver = pkVct_pkShadowReceiver;
+        m_pkVct_pkShadowReceiver->clear();
+    }
+
+    void operator()(CGraphicObjectInstance* pInstance)
+    {
+        if (!pInstance)
+        {
+            return;
+        }
+
+        if (TREE_OBJECT == pInstance->GetType() || ACTOR_OBJECT == pInstance->GetType() || EFFECT_OBJECT == pInstance->GetType())
+        {
+            return;
+        }
+
+        if (pInstance->CollisionDynamicSphere(*m_pdsi))
+        {
+            m_pkVct_pkShadowReceiver->push_back(pInstance);
+            m_bCollide = true;
+        }
+    }
+};
+/* ----------------------------------------------------- */
+
 void CMapOutdoor::UpdateAroundAmbience(float fX, float fY, float fZ)
 {
     for (int i = 0; i < AROUND_AREA_NUM; ++i)
@@ -153,6 +186,31 @@ void CMapOutdoor::__UpdateArea(D3DXVECTOR3& v3Player)
 
 void CMapOutdoor::__Game_UpdateArea(D3DXVECTOR3& v3Player)
 {
+    /* - SHADOWS ------------------------------------------- */
+    m_ShadowReceiverVector.clear();
+
+    CCameraManager& rCmrMgr = CCameraManager::Instance();
+    CCamera* pCamera = rCmrMgr.GetCurrentCamera();
+
+    if (!pCamera)
+    {
+        return;
+    }
+
+    float fDistance = pCamera->GetDistance();
+
+    D3DXVECTOR3 v3View = pCamera->GetView();
+    D3DXVECTOR3 v3Target = pCamera->GetTarget();
+    D3DXVECTOR3 v3Eye = pCamera->GetEye();
+
+    /* [KaptanYosun] TODO Make this shader light */
+    D3DXVECTOR3 v3Light = D3DXVECTOR3(1.732f, 1.0f, -3.464f); // ???? ????
+    v3Light *= 50.0f / D3DXVec3Length(&v3Light);
+
+    __CollectShadowReceiver(v3Player, v3Light);
+    __CollectCollisionShadowReceiver(v3Player, v3Light);
+    /* ----------------------------------------------------- */
+
     __UpdateAroundAreaList();
 }
 
@@ -191,6 +249,157 @@ void CMapOutdoor::__UpdateAroundAreaList()
 
 #endif
 }
+
+/* - SHADOWS ------------------------------------------- */
+struct FGetShadowReceiverFromHeightData
+{
+    enum
+    {
+        COLLECT_MAX = 100,
+    };
+
+    DWORD m_dwCollectOverCount;
+    DWORD m_dwCollectCount;
+    DWORD m_dwCheckCount;
+    bool m_bReceiverFound;
+    float m_fFromX, m_fFromY, m_fToX, m_fToY;
+    float m_fReturnHeight;
+
+    CGraphicObjectInstance* m_apkShadowReceiver[COLLECT_MAX];
+
+    FGetShadowReceiverFromHeightData(float fFromX, float fFromY, float fToX, float fToY) :
+        m_fFromX(fFromX), m_fFromY(fFromY), m_fToX(fToX), m_fToY(fToY), m_bReceiverFound(false)
+    {
+        m_dwCheckCount = 0;
+        m_dwCollectOverCount = 0;
+        m_dwCollectCount = 0;
+    }
+
+    CGraphicObjectInstance* GetCollectItem(UINT uIndex)
+    {
+        if (uIndex >= m_dwCollectCount)
+        {
+            return NULL;
+        }
+
+        return m_apkShadowReceiver[uIndex];
+    }
+
+    UINT GetCollectCount()
+    {
+        return m_dwCollectCount;
+    }
+
+    void operator()(CGraphicObjectInstance* pInstance)
+    {
+        m_dwCheckCount++;
+
+        if (!pInstance)
+        {
+            return;
+        }
+
+        if (m_fFromY < 0)
+        {
+            m_fFromY = -m_fFromY;
+        }
+
+        if (m_fToY < 0)
+        {
+            m_fToY = -m_fToY;
+        }
+
+        if (pInstance->GetObjectHeight(m_fFromX, m_fFromY, &m_fReturnHeight) ||
+            pInstance->GetObjectHeight(m_fToX, m_fToY, &m_fReturnHeight))
+        {
+            if (m_dwCollectCount < COLLECT_MAX)
+            {
+                m_apkShadowReceiver[m_dwCollectCount++] = pInstance;
+            }
+
+            else
+            {
+                m_dwCollectOverCount++;
+            }
+
+            m_bReceiverFound = true;
+        }
+    }
+};
+
+void CMapOutdoor::__CollectShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light)
+{
+    CDynamicSphereInstance s;
+    s.v3LastPosition = v3Target + v3Light;
+    s.v3Position = s.v3LastPosition + v3Light;
+    s.fRadius = 50.0f;
+
+    Vector3d aVector3d;
+    aVector3d.Set(v3Target.x, v3Target.y, v3Target.z);
+
+    CCullingManager& rkCullingMgr = CCullingManager::Instance();
+
+    FGetShadowReceiverFromHeightData kGetShadowReceiverFromHeightData(v3Target.x, v3Target.y, s.v3Position.x, s.v3Position.y);
+    rkCullingMgr.ForInRange(aVector3d, 10.0f, &kGetShadowReceiverFromHeightData);
+
+    if (kGetShadowReceiverFromHeightData.m_bReceiverFound)
+    {
+        for (UINT i = 0; i < kGetShadowReceiverFromHeightData.GetCollectCount(); ++i)
+        {
+            CGraphicObjectInstance* pObjInstEach = kGetShadowReceiverFromHeightData.GetCollectItem(i);
+
+            if (!__IsInShadowReceiverList(pObjInstEach))
+            {
+                m_ShadowReceiverVector.push_back(pObjInstEach);
+            }
+        }
+    }
+}
+
+void CMapOutdoor::__CollectCollisionShadowReceiver(D3DXVECTOR3& v3Target, D3DXVECTOR3& v3Light)
+{
+    CDynamicSphereInstance s;
+    s.fRadius = 50.0f;
+    s.v3LastPosition = v3Target + v3Light;
+    s.v3Position = s.v3LastPosition + v3Light;
+
+    Vector3d aVector3d;
+    aVector3d.Set(v3Target.x, v3Target.y, v3Target.z);
+
+    CCullingManager& rkCullingMgr = CCullingManager::Instance();
+
+    std::vector<CGraphicObjectInstance*> kVct_pkShadowReceiver;
+    FGetShadowReceiverFromCollisionData kGetShadowReceiverFromCollisionData(&s, &kVct_pkShadowReceiver);
+    rkCullingMgr.ForInRange(aVector3d, 100.0f, &kGetShadowReceiverFromCollisionData);
+
+    if (!kGetShadowReceiverFromCollisionData.m_bCollide)
+    {
+        return;
+    }
+
+    std::vector<CGraphicObjectInstance* >::iterator i;
+
+    for (i = kVct_pkShadowReceiver.begin(); i != kVct_pkShadowReceiver.end(); ++i)
+    {
+        CGraphicObjectInstance* pObjInstEach = *i;
+
+        if (!__IsInShadowReceiverList(pObjInstEach))
+        {
+            m_ShadowReceiverVector.push_back(pObjInstEach);
+        }
+    }
+}
+
+bool CMapOutdoor::__IsInShadowReceiverList(CGraphicObjectInstance* pkObjInstTest)
+{
+    if (m_ShadowReceiverVector.end() == std::ranges::find(m_ShadowReceiverVector, pkObjInstTest))
+    {
+        return false;
+    }
+
+    return true;
+}
+/* ----------------------------------------------------- */
 
 // Updates the position of the terrain
 void CMapOutdoor::UpdateTerrain(float fX, float fY)

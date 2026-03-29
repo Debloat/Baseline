@@ -332,6 +332,21 @@ class Console(object):
 		except:
 			raise
 
+	# - SHADOWS -------------------------------------------
+	def SetShadowLevel(self, arg):
+		"Shadow level setting (0~5)"
+		if arg.isdigit() == 0:
+			self.Print("Shadow setting must be a number")
+		else:
+			level = int(arg)
+
+			if level < 0 or level > 5:
+				self.Print("Shadow level range is 0~5")
+			else:
+				background.SetShadowLevel(level)
+				self.Print("Shadow level: %d" % (level))
+	# -----------------------------------------------------
+
 	def SetSplatLimit(self, arg):
 		"Splat number limit"
 		if arg.isdigit() == 0:
@@ -386,6 +401,10 @@ class Console(object):
 			background.WarpTest(iWarpX, iWarpY);
 			background.RegisterEnvironmentData(0, "d:/ymir work/environment/b3.msenv")
 			background.SetEnvironmentData(0)
+			# - SHADOWS -------------------------------------------
+			background.SetShadowLevel(background.SHADOW_ALL)
+			# -----------------------------------------------------
+
 		except:
 			import exception
 			exception.Abort("consoleModule.Console.WarpTest")
@@ -774,6 +793,11 @@ class ConsoleWindow(ui.Window):
 		self.AddFunction("mspd",		Console.SetMovingSpeed)
 		self.AddFunction("pwd",			Console.ShowPath)
 		self.AddFunction("ls", 			Console.ShowList)
+
+		# - SHADOWS -------------------------------------------
+		self.AddFunction("shadow",		Console.SetShadowLevel)
+		# -----------------------------------------------------
+
 		self.AddFunction("splat",		Console.SetSplatLimit)
 		self.AddFunction("distance", 	Console.SelectViewDistanceNum)
 		self.AddFunction("bgloading",	Console.SetBGLoading)

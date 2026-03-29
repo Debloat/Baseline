@@ -32,6 +32,10 @@ bool CMapOutdoor::Load(float x, float y, float z)
     BuildQuadTree();
     LoadWaterTexture();
 
+    /* - SHADOWS ------------------------------------------- */
+    CreateCharacterShadowTexture();
+    /* ----------------------------------------------------- */
+
     m_lOldReadX = -1;
 
     // TODO: SetRenderingDevice에서 Environment로 부터 라이트 속성을 넘겨줘야 스태틱 라이트가 제대로 작동한다.
@@ -441,6 +445,12 @@ bool CMapOutdoor::LoadSetting(const char* c_szFileName)
                       0.0f);
     m_matSplatAlpha._41 = m_fTerrainTexCoordBase * 4.6f;
     m_matSplatAlpha._42 = m_fTerrainTexCoordBase * 4.6f;
+
+    /* - SHADOWS ------------------------------------------- */
+    D3DXMatrixScaling(&m_matDynamicShadowScale, 1.0f / 2550.0f, -1.0f / 2550.0f, 1.0f);
+    m_matDynamicShadowScale._41 = 0.5f;
+    m_matDynamicShadowScale._42 = 0.5f;
+    /* ----------------------------------------------------- */
 
     NANOEND
     return true;
