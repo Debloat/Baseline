@@ -36,33 +36,6 @@ void CMapOutdoor::__RenderTerrain_RenderHardwareTransformPatch()
         return;
     }
 
-    /* - SHADOWS ------------------------------------------- */
-    STATEMANAGER.SaveTextureStageState(0, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEPOSITION);
-    STATEMANAGER.SaveTextureStageState(0, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
-    STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEPOSITION);
-    STATEMANAGER.SaveTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS, D3DTTFF_COUNT2);
-
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHATESTENABLE, TRUE);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAREF, 0x00000000);
-    STATEMANAGER.SaveRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-    STATEMANAGER.SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
-
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLORARG1, D3DTA_CURRENT);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
-    STATEMANAGER.SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
-    STATEMANAGER.SetSamplerState(1, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
-    /* ----------------------------------------------------- */
-
     CSpeedTreeWrapper::ms_bSelfShadowOn = true;
 
     auto& terrainMetrics = GetYosunControlSettings().terrainMetrics;
@@ -162,19 +135,6 @@ void CMapOutdoor::__RenderTerrain_RenderHardwareTransformPatch()
     }
 
     std::ranges::sort(m_RenderedTextureNumVector);
-
-    /* - SHADOWS ------------------------------------------- */
-
-    STATEMANAGER.RestoreTextureStageState(0, D3DTSS_TEXCOORDINDEX);
-    STATEMANAGER.RestoreTextureStageState(0, D3DTSS_TEXTURETRANSFORMFLAGS);
-    STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXCOORDINDEX);
-    STATEMANAGER.RestoreTextureStageState(1, D3DTSS_TEXTURETRANSFORMFLAGS);
-
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHABLENDENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHATESTENABLE);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAREF);
-    STATEMANAGER.RestoreRenderState(D3DRS_ALPHAFUNC);
-    /* ----------------------------------------------------- */
 }
 
 void CMapOutdoor::__HardwareTransformPatch_RenderPatchSplat(long patchnum, WORD wPrimitiveCount, D3DPRIMITIVETYPE ePrimitiveType)
